@@ -1,0 +1,17 @@
+# Changes here will be overwritten by Copier
+_commit: v0.5.0
+_src_path: https://github.com/linkml/linkml-project-copier
+add_example: true
+copyright_year: '2026'
+email: vhench@unc.edu
+existing_license_file: ''
+full_name: Ginnie Hench
+gh_action_docs_preview: true
+gh_action_pypi: false
+github_org: gingin77
+license: MIT
+project_description: This is a repository of NAMs sources collected in support of
+    a NAMs landscape analysis.
+project_name: nams-source-repository
+project_slug: nams_source_repository
+
