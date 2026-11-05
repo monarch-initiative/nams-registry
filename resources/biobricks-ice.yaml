@@ -1,0 +1,24 @@
+id: biobricks-ice
+name: BioBricks ICE
+description: BioBricks ICE (Integrated Chemical Environment) is an open knowledge
+  graph for cheminformatics and chemical safety data from EPA's CompTox database.
+homepage_url: https://github.com/biobricks-ai/biobricks-okg
+repository: https://github.com/biobricks-ai/biobricks-okg
+resource_type: KnowledgeGraph
+domain_areas:
+- chemistry and biochemistry
+- toxicology
+- cheminformatics
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://opensource.org/licenses/MIT
+  label: MIT License
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: biobricks-ice
+  source_url: https://kghub.org/kg-registry/resource/biobricks-ice/biobricks-ice.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

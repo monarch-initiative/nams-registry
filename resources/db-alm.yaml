@@ -1,0 +1,32 @@
+id: db-alm
+name: DB-ALM (EURL ECVAM DataBase service on ALternative Methods to animal experimentation)
+description: The EURL ECVAM DataBase service on ALternative Methods to animal experimentation
+  (DB-ALM) is a collection of method summaries and standardised protocols for alternative
+  methods in toxicology and biomedical science, maintained by the EU Reference Laboratory
+  for Alternatives to Animal Testing (EURL ECVAM) at the European Commission Joint
+  Research Centre (JRC). It covers methods submitted to EURL ECVAM for validation
+  and methods identified through literature reviews and end users. The former interactive
+  online database has been replaced by a versioned open dataset published through
+  the JRC Data Catalogue, with a browsable static index of documents and a complete
+  downloadable archive.
+synonyms:
+- DB-ALM
+- DBALM
+homepage_url: https://data.jrc.ec.europa.eu/dataset/b7597ada-148d-4560-9079-ab0a5539cad3
+resource_type: DataSource
+domain_areas:
+- toxicology
+- biomedical
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://creativecommons.org/licenses/by/4.0/
+  label: CC BY 4.0
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: db-alm
+  source_url: https://kghub.org/kg-registry/resource/db-alm/db-alm.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

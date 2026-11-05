@@ -1,0 +1,62 @@
+id: aopwiki-rdf
+name: AOP-Wiki RDF
+description: AOP-Wiki RDF is an RDF representation of the AOP-Wiki, the authoring
+  interface of the Adverse Outcome Pathway Knowledge Base. The AOP-Wiki XML export
+  is converted to RDF/Turtle every week using the AOP Ontology (aopo) together with
+  Dublin Core, CHEMINF and NCIT, and is enriched with gene mappings (gene names in
+  key events matched to HGNC symbols and resolved to Ensembl, NCBI Gene, UniProt and
+  Protein Ontology identifiers through BridgeDb) and chemical cross-references. AOPs,
+  key events, key event relationships, biological events, stressors and chemicals
+  get identifiers.org URIs and are linked to ChEBI, GO, PATO, UBERON, CL, NCBITaxon
+  and HGNC. The 2026.08.15 release has about 340,000 triples, covering 595 AOPs, 1,595
+  key events, 2,360 key event relationships, 754 stressors and 430 chemicals. The
+  data is served from a public SPARQL endpoint with a SNORQL query interface on top
+  of it. A grlc REST API built from the same curated query library, a second endpoint
+  holding every quarterly AOP-Wiki snapshot since 2018 as named graphs, and a dashboard
+  for version-over-version trends are also available.
+synonyms:
+- AOPWikiRDF
+- AOP-Wiki RDF Explorer
+homepage_url: https://aopwiki.rdf.bigcat-bioinformatics.org/
+repository: https://github.com/marvinm2/AOPWikiRDF
+resource_type: KnowledgeGraph
+domain_areas:
+- toxicology
+- environment
+- pathways
+- chemistry and biochemistry
+- adverse outcome pathways
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://creativecommons.org/licenses/by-sa/4.0/
+  label: CC BY-SA 4.0
+publications:
+- id: doi:10.1089/aivt.2021.0010
+  title: Providing Adverse Outcome Pathways from the AOP-Wiki in a Semantic Web Format
+    to Increase Usability and Accessibility of the Content
+  authors:
+  - Marvin Martens
+  - Chris T. Evelo
+  - Egon L. Willighagen
+  journal: Applied In Vitro Toxicology
+  year: '2022'
+  doi: 10.1089/aivt.2021.0010
+  preferred: true
+- id: doi:10.5281/zenodo.13353286
+  title: Adverse Outcome Pathway Wiki RDF
+  authors:
+  - Marvin Martens
+  - Egon Willighagen
+  - Chris Evelo
+  journal: Zenodo
+  year: '2026'
+  doi: 10.5281/zenodo.13353286
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: aopwiki-rdf
+  source_url: https://kghub.org/kg-registry/resource/aopwiki-rdf/aopwiki-rdf.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

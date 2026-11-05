@@ -1,0 +1,36 @@
+id: pbpko
+name: Physiologically-Based Pharmacokinetic Ontology
+description: An ontology for modeling and understanding of pharmacokinetics in biological
+  systems.
+homepage_url: https://github.com/InSilicoVida-Research-Lab/pbpko
+repository: https://github.com/InSilicoVida-Research-Lab/pbpko
+resource_type: Ontology
+domain_areas:
+- chemistry and biochemistry
+- pharmacology
+nams_relevance: undecided
+activity_status: active
+license:
+  id: http://creativecommons.org/licenses/by/3.0/
+  label: CC BY 3.0
+publications:
+- id: https://doi.org/10.1016/j.toxlet.2024.07.382
+  title: P05-47 An ontology of Physiologically Based Pharmacokinetic Model (PBPK)
+    for harmonization and automation of modeling framework (PBPKO)
+  authors:
+  - Kumar V
+  - Deepika D
+  - Kumar S
+  - Sharma S
+  journal: Toxicology Letters
+  year: '2024'
+  doi: 10.1016/j.toxlet.2024.07.382
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: pbpko
+  source_url: https://kghub.org/kg-registry/resource/pbpko/pbpko.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

@@ -1,0 +1,67 @@
+id: oecd-qsar-toolbox
+name: OECD QSAR Toolbox
+description: The OECD QSAR Toolbox is a free software application, owned by the Organisation
+  for Economic Co-operation and Development (OECD) and the European Chemicals Agency
+  (ECHA) and developed by the Laboratory of Mathematical Chemistry (LMC, Bourgas,
+  Bulgaria), that supports transparent and reproducible chemical hazard assessment.
+  It bundles about 63 databases with experimental data for more than 140,000 chemical
+  structures, together with profilers, metabolism simulators, and QSAR models, to
+  find structurally and mechanistically defined analogues, build and assess chemical
+  categories, and fill data gaps by read-across and trend analysis as an alternative
+  to animal testing.
+synonyms:
+- QSAR Toolbox
+- (Q)SAR Application Toolbox
+homepage_url: https://qsartoolbox.org/
+resource_type: Aggregator
+domain_areas:
+- toxicology
+- chemistry and biochemistry
+- cheminformatics
+- environment
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://qsartoolbox.org/license-agreement/
+  label: OECD QSAR Toolbox End User Licence Agreement (free of charge)
+publications:
+- id: https://doi.org/10.1080/1062936X.2015.1136680
+  title: QSAR Toolbox - workflow and major functionalities
+  authors:
+  - S. D. Dimitrov
+  - R. Diderich
+  - T. Sobanski
+  - T. S. Pavlov
+  - G. V. Chankov
+  - A. S. Chapkanov
+  - Y. H. Karakolev
+  - S. G. Temelkov
+  - R. A. Vasilev
+  - K. D. Gerova
+  - C. D. Kuseva
+  - N. D. Todorova
+  - A. M. Mehmed
+  - M. Rasenberg
+  - O. G. Mekenyan
+  journal: SAR and QSAR in Environmental Research
+  year: '2016'
+  doi: 10.1080/1062936X.2015.1136680
+  preferred: true
+- id: https://doi.org/10.1007/978-1-4939-7899-1_2
+  title: The OECD QSAR Toolbox Starts Its Second Decade
+  authors:
+  - Terry W. Schultz
+  - Robert Diderich
+  - Chanita D. Kuseva
+  - Ovanes G. Mekenyan
+  journal: Methods in Molecular Biology
+  year: '2018'
+  doi: 10.1007/978-1-4939-7899-1_2
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: oecd-qsar-toolbox
+  source_url: https://kghub.org/kg-registry/resource/oecd-qsar-toolbox/oecd-qsar-toolbox.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

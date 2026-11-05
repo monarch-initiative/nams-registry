@@ -1,0 +1,105 @@
+id: hipsci
+name: Human Induced Pluripotent Stem Cells Initiative (HipSci)
+description: The Human Induced Pluripotent Stem Cells Initiative (HipSci) generated
+  a large, systematically characterised reference panel of human induced pluripotent
+  stem cell (iPSC) lines from hundreds of phenotypically healthy donors and from cohorts
+  of donors with inherited rare diseases, using a standardised derivation pipeline.
+  Each line is profiled with assays including genotyping arrays, expression arrays,
+  methylation arrays, RNA-seq, exome sequencing, proteomics mass spectrometry and
+  high-content cellular phenotyping, with whole-genome sequencing for a subset. The
+  data are deposited in EMBL-EBI archives (ENA, EGA, ArrayExpress and PRIDE), and
+  the cell lines are available from the ECACC and EBiSC cell banks. The project was
+  funded by the Wellcome Trust and the Medical Research Council, with partners including
+  the Wellcome Sanger Institute, EMBL-EBI, King's College London, the University of
+  Dundee, the University of Cambridge and UCL.
+homepage_url: https://www.hipsci.org/
+resource_type: DataSource
+domain_areas:
+- cell biology
+- biological systems
+- genomics
+- genetic variation
+- gene expression profiling
+- epigenomics
+- proteomics
+- rare disease
+- biomedical
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://www.hipsci.org/
+  label: Open access for the open-access healthy volunteer cohort; managed access
+    through EGA for other data (no single license stated)
+publications:
+- id: https://doi.org/10.1093/nar/gkw928
+  title: The human-induced pluripotent stem cell initiative-data resources for cellular
+    genetics
+  authors:
+  - Ian Streeter
+  - Peter W. Harrison
+  - Adam Faulconbridge
+  - The HipSci Consortium
+  - Paul Flicek
+  - Helen Parkinson
+  - Laura Clarke
+  journal: Nucleic Acids Research
+  year: '2017'
+  doi: 10.1093/nar/gkw928
+  preferred: true
+- id: https://doi.org/10.1038/nature22403
+  title: Common genetic variation drives molecular heterogeneity in human iPSCs
+  authors:
+  - Helena Kilpinen
+  - Angela Goncalves
+  - Andreas Leha
+  - Vackar Afzal
+  - Kaur Alasoo
+  - Sofie Ashford
+  - Sendu Bala
+  - Dalila Bensaddek
+  - Francesco Paolo Casale
+  - Oliver J. Culley
+  - Petr Danecek
+  - Adam Faulconbridge
+  - Peter W. Harrison
+  - Annie Kathuria
+  - Davis McCarthy
+  - Shane A. McCarthy
+  - Ruta Meleckyte
+  - Yasin Memari
+  - Nathalie Moens
+  - Filipa Soares
+  - Alice Mann
+  - Ian Streeter
+  - Chukwuma A. Agu
+  - Alex Alderton
+  - Rachel Nelson
+  - Sarah Harper
+  - Minal Patel
+  - Alistair White
+  - Sharad R. Patel
+  - Laura Clarke
+  - Reena Halai
+  - Christopher M. Kirton
+  - Anja Kolb-Kokocinski
+  - Philip Beales
+  - Ewan Birney
+  - Davide Danovi
+  - Angus I. Lamond
+  - Willem H. Ouwehand
+  - Ludovic Vallier
+  - Fiona M. Watt
+  - Richard Durbin
+  - Oliver Stegle
+  - Daniel J. Gaffney
+  journal: Nature
+  year: '2017'
+  doi: 10.1038/nature22403
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: hipsci
+  source_url: https://kghub.org/kg-registry/resource/hipsci/hipsci.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

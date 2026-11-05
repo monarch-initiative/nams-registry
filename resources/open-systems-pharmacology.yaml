@@ -1,0 +1,60 @@
+id: open-systems-pharmacology
+name: Open Systems Pharmacology (OSP)
+description: Open Systems Pharmacology (OSP) is an open-source, community-governed
+  platform for physiologically based pharmacokinetic (PBPK) and quantitative systems
+  pharmacology (QSP) modeling. Its OSP Suite comprises PK-Sim, for whole-body PBPK
+  modeling, and MoBi, for multiscale physiological modeling and model extension, along
+  with the ospsuite R package and reporting tools. The project also maintains the
+  OSP PBPK Model Library, a set of released PBPK models for individual compounds,
+  including small-molecule drugs and antibodies, each with an evaluation report and
+  a PK-Sim project file, and qualification documents for the suite. The OSP management
+  team includes members from pharmaceutical companies and academic and service organizations.
+homepage_url: https://www.open-systems-pharmacology.org/
+resource_type: DataSource
+domain_areas:
+- pharmacology
+- drug interactions
+- biomedical
+- software
+- information technology
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://github.com/Open-Systems-Pharmacology/Suite/blob/master/LICENSE
+  label: GPL-2.0 with clarifying addendum
+publications:
+- id: https://doi.org/10.1002/psp4.12473
+  title: Open Systems Pharmacology Community-An Open Access, Open Source, Open Science
+    Approach to Modeling and Simulation in Pharmaceutical Sciences
+  authors:
+  - Jörg Lippert
+  - Rolf Burghaus
+  - Andrea Edginton
+  - Sebastian Frechen
+  - Mats Karlsson
+  - Andreas Kovar
+  - Thorsten Lehr
+  - Peter Milligan
+  - Valerie Nock
+  - Sergej Ramusovic
+  - Matthew Riggs
+  - Stephan Schaller
+  - Jan Schlender
+  - Stephan Schmidt
+  - Michaël Sevestre
+  - Erik Sjögren
+  - Juri Solodenko
+  - Alexander Staab
+  - Donato Teutonico
+  journal: 'CPT: Pharmacometrics & Systems Pharmacology'
+  year: '2019'
+  doi: 10.1002/psp4.12473
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: open-systems-pharmacology
+  source_url: https://kghub.org/kg-registry/resource/open-systems-pharmacology/open-systems-pharmacology.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

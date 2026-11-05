@@ -1,0 +1,44 @@
+id: echemportal
+name: eChemPortal (The Global Portal to Information on Chemical Substances)
+description: eChemPortal (The Global Portal to Information on Chemical Substances)
+  is a free public portal run by the Organisation for Economic Co-operation and Development
+  (OECD), developed in collaboration with the European Chemicals Agency (ECHA), that
+  provides simultaneous search across chemical hazard and risk information prepared
+  for government chemical programmes at national, regional, and international levels.
+  It covers existing and new industrial chemicals, pesticides, and biocides, and supports
+  search by substance name or number, by chemical property and endpoint data (structured
+  according to the OECD Harmonised Templates), and by GHS or national hazard classification,
+  linking to about 34 participating data sources.
+synonyms:
+- eChemPortal
+- Global Portal to Information on Chemical Substances
+homepage_url: https://www.echemportal.org/
+resource_type: Aggregator
+domain_areas:
+- toxicology
+- chemistry and biochemistry
+- environment
+- public health
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://www.echemportal.org/echemportal/page/12
+  label: eChemPortal Disclaimer (data remain subject to the terms of each participating
+    source)
+publications:
+- id: https://doi.org/10.1016/B978-0-12-824315-2.01159-3
+  title: eChemPortal - The Global Portal to Information on Chemical Substances
+  authors:
+  - Sally de Marcellus
+  journal: Encyclopedia of Toxicology
+  year: '2024'
+  doi: 10.1016/B978-0-12-824315-2.01159-3
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: echemportal
+  source_url: https://kghub.org/kg-registry/resource/echemportal/echemportal.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

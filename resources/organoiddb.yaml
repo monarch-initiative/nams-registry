@@ -1,0 +1,53 @@
+id: organoiddb
+name: OrganoidDB
+description: OrganoidDB is a database of curated bulk and single-cell transcriptome
+  profiles of organoids. It holds 16,218 organoid samples (12,911 human and 3,307
+  mouse) collected from GEO and ArrayExpress and organized into 1,069 datasets, 145
+  of them single-cell RNA-seq. Primary tissue and cell line samples are included so
+  that organoids can be compared against them, with GTEx and the Human Protein Atlas
+  linked as references. The web interface supports gene expression search across organoid
+  types, culture sources and protocols, sample types and developmental stages, plus
+  correlation analysis, and datasets can be browsed with culture details, differentially
+  expressed genes, enriched pathways and single-cell clusters. It is run by the Intelligent
+  Bioinformatics Research Group at the Institute of Life Sciences, Chongqing Medical
+  University.
+homepage_url: http://www.inbirg.com/organoid_db/
+resource_type: DataSource
+domain_areas:
+- biomedical
+- genomics
+- gene expression profiling
+- biological systems
+- single-cell analysis
+- anatomy and development
+nams_relevance: undecided
+activity_status: active
+license:
+  id: http://www.inbirg.com/organoid_db/
+  label: Copyright Intelligent Bioinformatics Research Group, Chongqing Medical University
+    (all rights reserved)
+publications:
+- id: https://pubmed.ncbi.nlm.nih.gov/36271792/
+  title: 'OrganoidDB: a comprehensive organoid database for the multi-perspective
+    exploration of bulk and single-cell transcriptomic profiles of organoids'
+  authors:
+  - Qinfeng Ma
+  - Haodong Tao
+  - Qiang Li
+  - Zhaoyu Zhai
+  - Xuelu Zhang
+  - Zhewei Lin
+  - Ni Kuang
+  - Jianbo Pan
+  journal: Nucleic Acids Res
+  year: '2023'
+  doi: 10.1093/nar/gkac942
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: organoiddb
+  source_url: https://kghub.org/kg-registry/resource/organoiddb/organoiddb.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

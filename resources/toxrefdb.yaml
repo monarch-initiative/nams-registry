@@ -1,0 +1,55 @@
+id: toxrefdb
+name: ToxRefDB (Toxicity Reference Database)
+description: The Toxicity Reference Database (ToxRefDB) is a US EPA database of in
+  vivo animal toxicity study data from thousands of guideline or guideline-like studies
+  covering over 1,000 chemicals. Study designs, doses, treatment-related effects,
+  and endpoints are recorded with a controlled vocabulary, making the data structured
+  and computable. ToxRefDB supports retrospective and predictive toxicology analyses,
+  including the validation and benchmarking of in vitro high-throughput screening
+  and other new approach methodologies (NAMs).
+homepage_url: https://www.epa.gov/comptox-tools/downloadable-computational-toxicology-data
+repository: https://github.com/USEPA/CompTox-ToxRefDB
+resource_type: DataSource
+domain_areas:
+- toxicology
+- chemistry and biochemistry
+- public health
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://creativecommons.org/publicdomain/zero/1.0/
+  label: CC0
+publications:
+- id: https://doi.org/10.3389/ftox.2023.1260305
+  title: 'ToxRefDB v2.1: update to curated in vivo study data in the Toxicity Reference
+    Database'
+  authors:
+  - Madison Feshuk
+  - Lori Kolaczkowski
+  - Sean Watford
+  - Katie Paul Friedman
+  journal: Frontiers in Toxicology
+  year: '2023'
+  doi: 10.3389/ftox.2023.1260305
+  preferred: true
+- id: https://doi.org/10.1016/j.reprotox.2019.07.012
+  title: 'ToxRefDB version 2.0: Improved utility for predictive and retrospective
+    toxicology analyses'
+  authors:
+  - Sean Watford
+  - Ly Ly Pham
+  - Jessica Wignall
+  - Robert Shin
+  - Matthew T. Martin
+  - Katie Paul Friedman
+  journal: Reproductive Toxicology
+  year: '2019'
+  doi: 10.1016/j.reprotox.2019.07.012
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: toxrefdb
+  source_url: https://kghub.org/kg-registry/resource/toxrefdb/toxrefdb.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

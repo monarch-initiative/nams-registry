@@ -1,0 +1,44 @@
+id: toxin
+name: TOXIN
+description: TOXIN is a knowledge graph resource integrating curated information about
+  toxic compounds, their molecular targets, mechanisms, pathways, and associated phenotypic
+  or clinical outcomes to facilitate toxicological risk assessment and mechanistic
+  discovery.
+homepage_url: https://toxin-search.netlify.app/
+resource_type: KnowledgeGraph
+domain_areas:
+- biomedical
+- toxicology
+- systems biology
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://creativecommons.org/licenses/by/4.0/
+  label: CC BY 4.0
+publications:
+- id: https://doi.org/10.1093/database/baae121
+  title: 'The TOXIN knowledge graph: supporting animal-free risk assessment of cosmetics'
+  authors:
+  - Sara Sepehri
+  - Anja Heymans
+  - Dinja De Win
+  - Jan Maushagen
+  - Audrey Sanctorum
+  - Christophe Debruyne
+  - Robim M Rodrigues
+  - Joery De Kock
+  - Vera Rogiers
+  - Olga De Troyer
+  - Tamara Vanhaecke
+  journal: Database
+  year: '2025'
+  doi: 10.1093/database/baae121
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: toxin
+  source_url: https://kghub.org/kg-registry/resource/toxin/toxin.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

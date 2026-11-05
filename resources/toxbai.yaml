@@ -1,0 +1,39 @@
+id: toxbai
+name: ToxBAI
+description: ToxBAI is a desktop application for predicting the toxicity of chemicals
+  with mechanistically explainable AI organized around the adverse outcome pathway
+  (AOP) framework. From a chemical structure (CAS number or SMILES), it computes molecular
+  descriptors and fingerprints and performs Active/Inactive binary classification
+  across toxicity endpoints, reporting a confidence level, performance metrics (F1,
+  recall, AUC), training dataset size, and an applicability-domain reliability flag
+  for each prediction. It offers two families of models — apical-outcome (AO) prediction
+  models trained on OECD Test Guideline data that map to regulatory endpoints, and
+  mechanism prediction models trained on ToxCast high-throughput bioactivity data
+  that correspond to molecular initiating events and key events; predicted MIEs and
+  KEs are mapped to AOP networks in the OECD AOP-Wiki for mechanistic interpretation.
+  ToxBAI is developed by the Environmental Systems Toxicology group at the University
+  of Seoul and operated by ChemBAI, in collaboration with RTI International. It supports
+  pre-screening of untested chemicals under the Next Generation Risk Assessment (NGRA)
+  framework.
+homepage_url: http://toxbai.com/
+resource_type: DataSource
+domain_areas:
+- toxicology
+- adverse outcome pathways
+- cheminformatics
+- machine learning
+- information technology
+- chemistry and biochemistry
+nams_relevance: undecided
+activity_status: active
+license:
+  id: http://toxbai.com/
+  label: Custom (free to use; requires Google sign-in and in-app terms acceptance)
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: toxbai
+  source_url: https://kghub.org/kg-registry/resource/toxbai/toxbai.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

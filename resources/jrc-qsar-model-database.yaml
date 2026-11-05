@@ -1,0 +1,32 @@
+id: jrc-qsar-model-database
+name: JRC QSAR Model Database
+description: The JRC QSAR Model Database is an inventory of (Q)SAR models submitted
+  to the EU Reference Laboratory for Alternatives to Animal Testing (EURL ECVAM) at
+  the European Commission Joint Research Centre (JRC), each documented in the harmonised
+  QSAR Model Reporting Format (QMRF), which is structured according to the OECD (Q)SAR
+  validation principles. It was intended to help identify valid (Q)SARs for regulatory
+  use, particularly under REACH. The database is now a historical archive published
+  as a static dataset in the JRC Data Catalogue; its most recent QMRF updates date
+  from 2019.
+synonyms:
+- QMRF Inventory
+- JRC QSAR Model Database (QMRF Inventory)
+homepage_url: https://data.jrc.ec.europa.eu/dataset/e4ef8d13-d743-4524-a6eb-80e18b58cba4
+resource_type: DataSource
+domain_areas:
+- toxicology
+- chemistry and biochemistry
+- cheminformatics
+nams_relevance: undecided
+activity_status: inactive
+license:
+  id: https://creativecommons.org/licenses/by/4.0/
+  label: CC BY 4.0
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: jrc-qsar-model-database
+  source_url: https://kghub.org/kg-registry/resource/jrc-qsar-model-database/jrc-qsar-model-database.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

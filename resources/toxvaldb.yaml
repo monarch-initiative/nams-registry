@@ -1,0 +1,57 @@
+id: toxvaldb
+name: ToxValDB (Toxicity Values Database)
+description: The US EPA Toxicity Values Database (ToxValDB) is a large compilation
+  of human health-relevant in vivo toxicology data and risk assessment values, covering
+  both in vivo toxicity experiment results and derived toxicity and guideline values.
+  It was created because consistently annotated, computable toxicology data were needed
+  to develop and validate new approach methodologies (NAMs). ToxValDB has two components.
+  ToxValDB Stage keeps data close to each source's structure and terminology, and
+  main ToxValDB maps all source data to a consistent structure and set of vocabularies.
+  Version 9.7.0 contains 249,071 records covering 41,855 chemicals from 51 sources.
+homepage_url: https://www.epa.gov/comptox-tools/downloadable-computational-toxicology-data
+repository: https://github.com/USEPA/toxvaldbmain
+resource_type: Aggregator
+domain_areas:
+- toxicology
+- chemistry and biochemistry
+- public health
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://creativecommons.org/publicdomain/zero/1.0/
+  label: CC0
+publications:
+- id: https://doi.org/10.1016/j.comtox.2025.100365
+  title: 'Development of the toxicity values database, ToxValDB: A curated resource
+    for experimental and derived human health-relevant toxicity data'
+  authors:
+  - Jonathan T. Wall
+  - Risa R. Sayre
+  - Doris Smith
+  - Samuel Winter
+  - Maxwell Groover
+  - Jasmine Hope
+  - Adriana Webb
+  - Katie Paul Friedman
+  - Madison Feshuk
+  - Antony J. Williams
+  - Charles Lowe
+  - Nisha S. Sipes
+  - Jason Lambert
+  - Jennifer H. Olker
+  - Russell S. Thomas
+  - Colleen Elonen
+  - Richard S. Judson
+  - Chelsea A. Weitekamp
+  journal: Computational Toxicology
+  year: '2025'
+  doi: 10.1016/j.comtox.2025.100365
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: toxvaldb
+  source_url: https://kghub.org/kg-registry/resource/toxvaldb/toxvaldb.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

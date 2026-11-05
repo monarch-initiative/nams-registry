@@ -1,0 +1,30 @@
+id: tsar
+name: TSAR (Tracking System for Alternative methods towards Regulatory acceptance)
+description: TSAR (EURL ECVAM Tracking System for Alternative methods towards Regulatory
+  acceptance) is a database maintained by the European Commission Joint Research Centre
+  (JRC) that tracks the progress of alternative test methods for chemicals and biological
+  agents such as vaccines toward recognition for regulatory use. For each method it
+  records the submission, validation, peer review, recommendation, and regulatory
+  acceptance (including international standards such as OECD Test Guidelines) stages,
+  with links to supporting documents where available. It covers methods validated
+  by governmental organisations affiliated with the International Cooperation on Alternative
+  Test Methods (ICATM).
+synonyms:
+- TSAR
+homepage_url: https://tsar.jrc.ec.europa.eu/
+resource_type: DataSource
+domain_areas:
+- toxicology
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://commission.europa.eu/legal-notice_en
+  label: European Commission Legal Notice
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: tsar
+  source_url: https://kghub.org/kg-registry/resource/tsar/tsar.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

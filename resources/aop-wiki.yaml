@@ -1,0 +1,28 @@
+id: aop-wiki
+name: AOP-Wiki
+description: The AOP-Wiki is the primary collaborative authoring and curation interface
+  for the Adverse Outcome Pathway Knowledge Base (AOP-KB). It enables the community
+  to develop, review, browse, and export Adverse Outcome Pathways (AOPs) linking molecular
+  initiating events through key events to adverse outcomes relevant to human and ecological
+  risk assessment. Structured exports (XML and tabular subsets) support computational
+  toxicology, ontology mapping, and integration into predictive assessment workflows.
+homepage_url: https://aopwiki.org/
+resource_type: DataSource
+domain_areas:
+- toxicology
+- environment
+- pathways
+- adverse outcome pathways
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://aopwiki.org/
+  label: Varies
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: aop-wiki
+  source_url: https://kghub.org/kg-registry/resource/aop-wiki/aop-wiki.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

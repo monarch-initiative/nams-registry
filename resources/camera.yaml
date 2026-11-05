@@ -1,0 +1,53 @@
+id: camera
+name: CAMERA (Collection of Alternative Methods for Regulatory Application)
+description: CAMERA (Collection of Alternative Methods for Regulatory Application)
+  is a public, interactive NIH database and web interface that consolidates validated
+  and qualified New Approach Methods (NAMs) for chemical safety testing into a single
+  resource. It brings together validation study reports, data, protocols and SOPs,
+  and regulatory guidance that were previously scattered across multiple agencies
+  and organizations, and lets users filter by alternative method type, defined approach,
+  test method endpoint, and regulatory guidance. CAMERA additionally uses standardized
+  ontology vocabulary and large language models to identify validated NAMs that can
+  measure the key events (KEs) of OECD-endorsed adverse outcome pathways (AOPs), linking
+  methods to AOP-Wiki content to support next generation risk assessment. It currently
+  holds 67 validated NAMs. CAMERA is supported by NICEATM and operates under the direction
+  and oversight of the Interagency Coordinating Committee on the Validation of Alternative
+  Methods (ICCVAM).
+synonyms:
+- Collection of Alternative Methods for Regulatory Application
+homepage_url: https://camera.od.nih.gov/
+resource_type: Aggregator
+domain_areas:
+- toxicology
+- adverse outcome pathways
+- chemistry and biochemistry
+- environment
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://www.usa.gov/government-works
+  label: U.S. Government Work (public domain)
+publications:
+- id: doi:10.6084/m9.figshare.34809921.v1
+  title: 'CAMERA and AOP-Wiki: Building a NAMs Database with Integrated AOP Features
+    to Support Next Generation Risk Assessment'
+  authors:
+  - Alexander Cole
+  - Katie Needham
+  - Prince Osei-Akyeampong
+  - Tosho Agunloye
+  - Jeremiah Mensah
+  - Caleb DeGroote
+  - Helena T. Hogberg
+  journal: figshare
+  year: '2026'
+  doi: 10.6084/m9.figshare.34809921.v1
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: camera
+  source_url: https://kghub.org/kg-registry/resource/camera/camera.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

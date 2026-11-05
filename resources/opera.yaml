@@ -1,0 +1,68 @@
+id: opera
+name: OPERA (OPEn structure-activity/property Relationship App)
+description: OPERA (OPEn structure-activity/property Relationship App) is a free and
+  open-source, open-data suite of QSAR models that predicts physicochemical properties,
+  environmental fate, ADME/toxicokinetic parameters and toxicity endpoints for chemicals,
+  together with an applicability domain and accuracy assessment for each prediction.
+  Endpoints include logP, logD, pKa, water solubility, melting and boiling point,
+  vapor pressure, Henry's law constant, bioconcentration factor, biodegradation, soil
+  adsorption (Koc), hepatic intrinsic clearance, plasma fraction unbound, Caco-2 permeability,
+  estrogen and androgen receptor activity (CERAPP and CoMPARA consensus models) and
+  acute oral systemic toxicity (CATMoS). The models were built following OECD principles
+  for QSAR validation and are developed through a collaboration between NIEHS NICEATM
+  and the U.S. EPA. OPERA runs as a command-line or graphical application for Windows
+  and Linux, and its predictions are also served through the EPA CompTox Chemicals
+  Dashboard and the NICEATM Integrated Chemical Environment (ICE).
+homepage_url: https://github.com/NIEHS/OPERA
+resource_type: DataSource
+domain_areas:
+- cheminformatics
+- chemistry and biochemistry
+- toxicology
+- pharmacology
+- environment
+- machine learning
+- information technology
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://opensource.org/licenses/MIT
+  label: MIT License
+publications:
+- id: https://doi.org/10.1186/s13321-018-0263-1
+  title: OPERA models for predicting physicochemical properties and environmental
+    fate endpoints
+  authors:
+  - Kamel Mansouri
+  - Chris M. Grulke
+  - Richard S. Judson
+  - Antony J. Williams
+  journal: Journal of Cheminformatics
+  year: '2018'
+  doi: 10.1186/s13321-018-0263-1
+  preferred: true
+- id: https://doi.org/10.1186/s13321-024-00814-3
+  title: Free and open-source QSAR-ready workflow for automated standardization of
+    chemical structures in support of QSAR modeling
+  authors:
+  - Kamel Mansouri
+  - José T. Moreira-Filho
+  - Charles N. Lowe
+  - Nathaniel Charest
+  - Todd Martin
+  - Valery Tkachenko
+  - Richard Judson
+  - Mike Conway
+  - Nicole C. Kleinstreuer
+  - Antony J. Williams
+  journal: Journal of Cheminformatics
+  year: '2024'
+  doi: 10.1186/s13321-024-00814-3
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: opera
+  source_url: https://kghub.org/kg-registry/resource/opera/opera.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

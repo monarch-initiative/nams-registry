@@ -1,0 +1,50 @@
+id: open-tggates
+name: Open TG-GATEs
+description: Open TG-GATEs is the public release of the toxicogenomics database built
+  by the Japanese Toxicogenomics Project (TGP, 2002-2007) and Toxicogenomics Informatics
+  Project (TGP2, 2007-2012), collaborations of the National Institute of Biomedical
+  Innovation, the National Institute of Health Sciences and Japanese pharmaceutical
+  companies. It covers 170 compounds, with Affymetrix microarray gene expression data
+  (CEL files) from rat liver and kidney in vivo (single and repeated dosing) and from
+  rat and human primary hepatocytes in vitro, linked to pathology, hematology, blood
+  biochemistry, organ and body weight, and cell viability data. The original site
+  is offline; the data were last updated in 2012 and are preserved in the NBDC LSDB
+  Archive and in ArrayExpress.
+synonyms:
+- TG-GATEs
+- Toxicogenomics Project-Genomics Assisted Toxicity Evaluation System
+homepage_url: https://dbarchive.biosciencedbc.jp/en/open-tggates/desc.html
+resource_type: DataSource
+domain_areas:
+- toxicology
+- pharmacology
+- genomics
+- gene expression profiling
+nams_relevance: undecided
+activity_status: inactive
+license:
+  id: https://creativecommons.org/licenses/by-sa/2.1/jp/
+  label: CC BY-SA 2.1 JP
+publications:
+- id: doi:10.1093/nar/gku955
+  title: 'Open TG-GATEs: a large-scale toxicogenomics database'
+  authors:
+  - Yoshinobu Igarashi
+  - Noriyuki Nakatsu
+  - Tomoya Yamashita
+  - Atsushi Ono
+  - Yasuo Ohno
+  - Tetsuro Urushidani
+  - Hiroshi Yamada
+  journal: Nucleic Acids Research
+  year: '2015'
+  doi: 10.1093/nar/gku955
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: open-tggates
+  source_url: https://kghub.org/kg-registry/resource/open-tggates/open-tggates.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

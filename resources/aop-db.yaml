@@ -1,0 +1,52 @@
+id: aop-db
+name: AOP-DB
+description: The Adverse Outcome Pathway Database (AOP-DB) is an EPA-developed integrative
+  knowledgebase that connects chemicals and stressors to molecular initiating events,
+  key events across biological organization levels, and adverse outcomes relevant
+  to human health and ecological risk assessment. It harmonizes data from toxicology,
+  high‑throughput screening, pathway, gene/protein, and phenotype resources to enable
+  computational toxicology, mode-of-action analysis, and predictive risk prioritization.
+homepage_url: https://www.epa.gov/healthresearch/adverse-outcome-pathway-database-aop-db
+resource_type: Aggregator
+domain_areas:
+- toxicology
+- environment
+- pathways
+- adverse outcome pathways
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://www.epa.gov/healthresearch/adverse-outcome-pathway-database-aop-db
+  label: EPA AOP-DB Use & Access
+publications:
+- id: doi:10.1038/s41597-021-00962-3
+  title: The 2021 update of the EPA's adverse outcome pathway database
+  authors:
+  - Mortensen HM
+  - Senn J
+  - Levey T
+  - Langley P
+  - Williams AJ
+  journal: Scientific Data
+  year: '2021'
+  doi: 10.1038/s41597-021-00962-3
+  preferred: true
+- id: doi:10.1016/j.taap.2018.02.006
+  title: 'AOP-DB: A database resource for the exploration of Adverse Outcome Pathways
+    through integrated association networks'
+  authors:
+  - Pittman ME
+  - Edwards SW
+  - Ives C
+  - Mortensen HM
+  journal: Toxicology and Applied Pharmacology
+  year: '2018'
+  doi: 10.1016/j.taap.2018.02.006
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: aop-db
+  source_url: https://kghub.org/kg-registry/resource/aop-db/aop-db.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

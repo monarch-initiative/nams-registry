@@ -1,0 +1,57 @@
+id: comptox-dashboard
+name: CompTox Chemicals Dashboard
+description: The CompTox Chemicals Dashboard (formerly the Chemistry Dashboard) is
+  a US Environmental Protection Agency (EPA) web application that integrates chemistry,
+  toxicity, and exposure information for over one million chemicals, with over 300
+  chemical lists based on structure or category. Built on the DSSTox chemical database,
+  it brings together physicochemical properties, environmental fate and transport,
+  exposure and use data, in vivo hazard data (ToxValDB, ToxRefDB), in vitro bioactivity
+  from the ToxCast and Tox21 high-throughput screening programs (invitrodb), and high-throughput
+  toxicokinetic (HTTK) ADME/IVIVE predictions. Its data and models support chemical
+  prioritization and efforts to reduce animal use in chemical testing through new
+  approach methodologies (NAMs).
+synonyms:
+- CompTox Chemistry Dashboard
+homepage_url: https://comptox.epa.gov/dashboard
+resource_type: Aggregator
+domain_areas:
+- chemistry and biochemistry
+- cheminformatics
+- toxicology
+- environment
+- environmental exposure
+- drug discovery
+- high-throughput screening
+- public health
+nams_relevance: undecided
+activity_status: active
+license:
+  label: U.S. Government Work (public domain)
+publications:
+- id: https://doi.org/10.1186/s13321-017-0247-6
+  title: 'The CompTox Chemistry Dashboard: a community data resource for environmental
+    chemistry'
+  authors:
+  - Antony J. Williams
+  - Christopher M. Grulke
+  - Jeff Edwards
+  - Andrew D. McEachran
+  - Kamel Mansouri
+  - Nancy C. Baker
+  - Grace Patlewicz
+  - Imran Shah
+  - John F. Wambaugh
+  - Richard S. Judson
+  - Ann M. Richard
+  journal: Journal of Cheminformatics
+  year: '2017'
+  doi: 10.1186/s13321-017-0247-6
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: comptox-dashboard
+  source_url: https://kghub.org/kg-registry/resource/comptox-dashboard/comptox-dashboard.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

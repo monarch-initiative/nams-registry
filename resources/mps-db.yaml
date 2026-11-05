@@ -1,0 +1,68 @@
+id: mps-db
+name: Microphysiology Systems Database
+description: The Microphysiology Systems Database (MPS-Db) was a web-based database
+  developed at the University of Pittsburgh Drug Discovery Institute and Department
+  of Computational and Systems Biology for capturing, managing, analyzing and sharing
+  experimental data from microphysiology systems, from static microplate models to
+  multi-organ microfluidic organ-on-chip models. It linked these data to reference
+  chemical, bioactivity, preclinical, clinical and post-marketing data from ChEMBL,
+  PubChem, DrugBank, UniChem, OpenFDA and FAERS, and served as the data platform for
+  the NCATS Tissue Chip Testing Center program. The Pitt-hosted MPS-Db is no longer
+  available in its published form - its homepage now redirects to EveAnalytics, a
+  login-only commercial successor platform operated under license from the University
+  of Pittsburgh.
+synonyms:
+- MPS-Db
+- MPS Database
+- BioSystics Analytics Platform
+- BioSystics-AP
+homepage_url: https://mps.csb.pitt.edu/
+resource_type: DataSource
+domain_areas:
+- drug discovery
+- toxicology
+- pharmacology
+- anatomy and development
+nams_relevance: undecided
+activity_status: inactive
+license:
+  id: https://doi.org/10.1039/c9lc01047e
+  label: Custom (free for non-profit research use with citation; license required
+    for for-profit use)
+publications:
+- id: doi:10.1089/aivt.2016.0011
+  title: The Microphysiology Systems Database for Analyzing and Modeling Compound
+    Interactions with Human and Animal Organ Models
+  authors:
+  - Albert Gough
+  - Lawrence Vernetti
+  - Luke Bergenthal
+  - Tong Ying Shun
+  - D Lansing Taylor
+  journal: Applied In Vitro Toxicology
+  year: '2016'
+  doi: 10.1089/aivt.2016.0011
+- id: doi:10.1039/c9lc01047e
+  title: Applications of the microphysiology systems database for experimental ADME-Tox
+    and disease models
+  authors:
+  - Mark Schurdak
+  - Lawrence Vernetti
+  - Luke Bergenthal
+  - Quinn K Wolter
+  - Tong Ying Shun
+  - Sandra Karcher
+  - D Lansing Taylor
+  - Albert Gough
+  journal: Lab on a Chip
+  year: '2020'
+  doi: 10.1039/c9lc01047e
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: mps-db
+  source_url: https://kghub.org/kg-registry/resource/mps-db/mps-db.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'

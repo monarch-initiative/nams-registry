@@ -1,0 +1,65 @@
+id: dsstoxdb
+name: Distributed Structure-Searchable Toxicity (DSSTox) Database
+description: EPA's Distributed Structure-Searchable Toxicity (DSSTox) database provides
+  high-quality chemical and chemistry data underpinning several publicly available
+  computational toxicology applications. DSSTox contains curated chemical substances
+  mapped to chemical identifiers including CAS Registry Numbers, IUPAC names, SMILES,
+  and InChIKeys. The database currently exceeds 1.2 million substances which includes
+  chemical lists of interest to EPA, other federal agencies, states, tribes, industry
+  and stakeholder groups. DSSTox provides accurate linkages of chemical structures
+  to source substance identifiers, allowing high-quality association of chemicals
+  to existing toxicity data, bioactivity data, experimental chemical property data
+  and enabling structure-based predictive modeling. The database supports the CompTox
+  Chemicals Dashboard, EcoTox Knowledgebase, Chemical Exposure Knowledgebase, and
+  other EPA tools.
+homepage_url: https://www.epa.gov/comptox-tools/distributed-structure-searchable-toxicity-dsstox-database
+resource_type: DataSource
+domain_areas:
+- toxicology
+- chemistry and biochemistry
+- environment
+- biomedical
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://creativecommons.org/publicdomain/zero/1.0/
+  label: CC0
+publications:
+- id: https://pubmed.ncbi.nlm.nih.gov/33426407
+  title: 'EPA''s DSSTox database: History of development of a curated chemistry resource
+    supporting computational toxicology research'
+  authors:
+  - Grulke CM
+  - Williams AJ
+  - Thillanadarajah I
+  - Richard AM
+  journal: Comput Toxicol
+  year: '2019'
+  doi: 10.1016/j.comtox.2019.100096
+  preferred: true
+- id: doi:10.1186/s13321-017-0247-6
+  title: 'The CompTox Chemistry Dashboard: a community data resource for environmental
+    chemistry'
+  authors:
+  - Williams AJ
+  - Grulke CM
+  - Edwards J
+  - McEachran AD
+  - Mansouri K
+  - Baker NC
+  - Patlewicz G
+  - Shah I
+  - Wambaugh JF
+  - Judson RS
+  - Richard AM
+  journal: Journal of Cheminformatics
+  year: '2017'
+  doi: 10.1186/s13321-017-0247-6
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+- source: kg_registry
+  source_id: dsstoxdb
+  source_url: https://kghub.org/kg-registry/resource/dsstoxdb/dsstoxdb.html
+  source_version: 006717b63
+  imported_on: '2026-11-05'
