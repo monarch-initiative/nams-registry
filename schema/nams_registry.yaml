@@ -726,7 +726,7 @@ slots:
     owner: Resource
     domain_of:
     - Resource
-    range: License
+    range: LicenseInfo
     inlined: true
     inlined_as_list: true
   publications:
@@ -843,26 +843,26 @@ slots:
     - ImportRecord
     range: date
     required: true
-  license__id:
-    name: license__id
+  licenseInfo__id:
+    name: licenseInfo__id
     description: A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/.
       Leave it out when there is none, as for a US government work.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:id
     alias: id
-    owner: License
+    owner: LicenseInfo
     domain_of:
-    - License
+    - LicenseInfo
     range: uri
-  license__label:
-    name: license__label
+  licenseInfo__label:
+    name: licenseInfo__label
     description: The name of the license.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:label
     alias: label
-    owner: License
+    owner: LicenseInfo
     domain_of:
-    - License
+    - LicenseInfo
     range: string
     required: true
   publication__id:
@@ -982,14 +982,14 @@ classes:
     - last_modified_date
     - imported_from
     class_uri: nams_registry:Resource
-  License:
-    name: License
-    definition_uri: https://w3id.org/monarch-initiative/nams-registry/License
+  LicenseInfo:
+    name: LicenseInfo
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/LicenseInfo
     description: A license for a resource.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slots:
-    - license__id
-    - license__label
+    - licenseInfo__id
+    - licenseInfo__label
     attributes:
       id:
         name: id
@@ -1000,7 +1000,7 @@ classes:
         name: label
         description: The name of the license.
         required: true
-    class_uri: nams_registry:License
+    class_uri: nams_registry:LicenseInfo
   Publication:
     name: Publication
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/Publication
@@ -1059,6 +1059,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T22:55:16'
-source_file_size: 16750
+source_file_date: '2026-11-05T23:17:10'
+source_file_size: 16758
 
