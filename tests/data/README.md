@@ -1,4 +1,4 @@
-# Example data for nams_source_repository
+# Example data for nams_registry
 
 This folder contains example data for testing and demonstrating the datamodel`
 sorted in subfolders:

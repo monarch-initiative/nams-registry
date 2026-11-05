@@ -1,5 +1,5 @@
 ---
-site_name: "nams-source-repository"
+site_name: "nams-registry"
 theme:
   # https://www.mkdocs.org/user-guide/configuration/#theme
   name: material
@@ -57,7 +57,7 @@ markdown_extensions:
   - md_in_html
 
 watch:
-  - src/nams_source_repository/schema
+  - src/nams_registry/schema
 
 nav:
   - Home: index.md
@@ -67,8 +67,8 @@ nav:
 exclude_docs: |
   /templates-linkml/
 
-site_url: https://gingin77.github.io/nams-source-repository
-repo_url: https://github.com/gingin77/nams-source-repository
+site_url: https://monarch-initiative.github.io/nams-registry
+repo_url: https://github.com/monarch-initiative/nams-registry
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.

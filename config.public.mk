@@ -6,10 +6,10 @@
 
 # Note:
 # - just works fine with quoted variables of dot-env files like this one
-LINKML_SCHEMA_NAME="nams_source_repository"
+LINKML_SCHEMA_NAME="nams_registry"
 LINKML_SCHEMA_AUTHOR="Ginnie Hench <vhench@unc.edu>"
-LINKML_SCHEMA_DESCRIPTION="This is a repository of NAMs sources collected in support of a NAMs landscape analysis."
-LINKML_SCHEMA_SOURCE_DIR="src/nams_source_repository/schema"
+LINKML_SCHEMA_DESCRIPTION="This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis."
+LINKML_SCHEMA_SOURCE_DIR="src/nams_registry/schema"
 
 ###### linkml generator variables, used by justfile
 

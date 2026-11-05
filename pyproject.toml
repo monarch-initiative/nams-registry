@@ -3,8 +3,8 @@ requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
 
 [project]
-name = "nams_source_repository"
-description = "This is a repository of NAMs sources collected in support of a NAMs landscape analysis."
+name = "nams_registry"
+description = "This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis."
 authors = [
   {name = "Ginnie Hench", email = "vhench@unc.edu"},
 ]
@@ -47,7 +47,7 @@ testpaths = ["tests"]
 # https://docs.astral.sh/ruff/configuration/
 [tool.ruff]
 exclude = [
-    "src/nams_source_repository/_version.py",
+    "src/nams_registry/_version.py",
 ]
 # Set oldest supported Python version
 target-version = "py310"
@@ -59,8 +59,8 @@ skip = [
   "pyproject.toml",
   "uv.lock",
   "project/*",
-  "src/nams_source_repository/datamodel/nams_source_repository_pydantic.py",
-  "src/nams_source_repository/datamodel/nams_source_repository.py",
+  "src/nams_registry/datamodel/nams_registry_pydantic.py",
+  "src/nams_registry/datamodel/nams_registry.py",
 ]
 
 # Reminder: words have to be lowercased for the ignore-words-list
@@ -77,6 +77,6 @@ extend-exclude = [
   "uv.lock",
   "pyproject.toml",
   "project/*",
-  "src/nams_source_repository/datamodel/nams_source_repository_pydantic.py",
-  "src/nams_source_repository/datamodel/nams_source_repository.py",
+  "src/nams_registry/datamodel/nams_registry_pydantic.py",
+  "src/nams_registry/datamodel/nams_registry.py",
 ]

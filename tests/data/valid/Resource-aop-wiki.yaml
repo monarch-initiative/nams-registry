@@ -1,0 +1,18 @@
+# A reviewed resource, with its relevance and curation model recorded.
+---
+id: aop-wiki
+name: AOP-Wiki
+homepage_url: https://aopwiki.org/
+resource_type: DataSource
+domain_areas:
+  - toxicology
+  - adverse outcome pathways
+nams_relevance: nams_adjacent
+relevance_note: >-
+  Organizes the mechanistic knowledge that NAMs are designed to measure, but
+  holds no NAMs itself.
+curation_model:
+  - community
+activity_status: active
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'

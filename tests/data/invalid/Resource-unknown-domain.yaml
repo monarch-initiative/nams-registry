@@ -1,0 +1,7 @@
+# Invalid: astrophysics is not a value of DomainAreaEnum.
+---
+id: toxcast
+name: ToxCast
+nams_relevance: undecided
+domain_areas:
+  - astrophysics

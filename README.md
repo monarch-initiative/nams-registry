@@ -1,12 +1,12 @@
 <a href="https://github.com/linkml/linkml-project-copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json" alt="Copier Badge" style="max-width:100%;"/></a>
 
-# nams-source-repository
+# nams-registry
 
-This is a repository of NAMs sources collected in support of a NAMs landscape analysis.
+This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis.
 
 ## Documentation Website
 
-[https://gingin77.github.io/nams-source-repository](https://gingin77.github.io/nams-source-repository)
+[https://monarch-initiative.github.io/nams-registry](https://monarch-initiative.github.io/nams-registry)
 
 ## Repository Structure
 
@@ -15,10 +15,10 @@ This is a repository of NAMs sources collected in support of a NAMs landscape an
 * [examples/](examples/) - Examples of using the schema
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [src/](src/) - source files (edit these)
-  * [nams_source_repository](src/nams_source_repository)
-    * [schema/](src/nams_source_repository/schema) -- LinkML schema
+  * [nams_registry](src/nams_registry)
+    * [schema/](src/nams_registry/schema) -- LinkML schema
       (edit this)
-    * [datamodel/](src/nams_source_repository/datamodel) -- generated
+    * [datamodel/](src/nams_registry/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
   * [data/](tests/data) - Example data

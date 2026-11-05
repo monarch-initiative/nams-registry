@@ -1,0 +1,8 @@
+# Invalid: a publication needs an id, and its year must be four digits.
+---
+id: toxcast
+name: ToxCast
+nams_relevance: undecided
+publications:
+  - title: Untitled
+    year: '13'

@@ -1,0 +1,7 @@
+# Invalid: an import record needs source_id and imported_on.
+---
+id: toxcast
+name: ToxCast
+nams_relevance: undecided
+imported_from:
+  - source: kg_registry

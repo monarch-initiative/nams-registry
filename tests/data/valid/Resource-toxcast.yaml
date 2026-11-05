@@ -1,0 +1,32 @@
+# A resource imported from KG-Registry, not yet reviewed.
+---
+id: toxcast
+name: ToxCast
+description: >-
+  ToxCast (US EPA Toxicity Forecaster) is a high-throughput screening program
+  generating bioactivity profiles for thousands of environmental chemicals
+  across diverse in vitro assays to prioritize substances for hazard
+  characterization, integrate exposure and pathway information, and support
+  predictive toxicology.
+homepage_url: https://www.epa.gov/comptox-tools/toxicity-forecasting-toxcast
+resource_type: DataSource
+domain_areas:
+  - toxicology
+  - environment
+  - public health
+  - biomedical
+  - drug discovery
+  - high-throughput screening
+nams_relevance: undecided
+activity_status: active
+license:
+  id: https://www.epa.gov/privacy/privacy-and-security-notice
+  label: EPA Data Usage & Privacy Notice (public domain / open government data)
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
+imported_from:
+  - source: kg_registry
+    source_id: toxcast
+    source_url: https://kghub.org/kg-registry/resource/toxcast/toxcast.html
+    source_version: 006717b63
+    imported_on: '2026-11-05'

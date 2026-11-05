@@ -8,10 +8,10 @@ existing_license_file: ''
 full_name: Ginnie Hench
 gh_action_docs_preview: true
 gh_action_pypi: false
-github_org: gingin77
+github_org: monarch-initiative
 license: MIT
 project_description: This is a repository of NAMs sources collected in support of
     a NAMs landscape analysis.
-project_name: nams-source-repository
-project_slug: nams_source_repository
+project_name: nams-registry
+project_slug: nams_registry
 

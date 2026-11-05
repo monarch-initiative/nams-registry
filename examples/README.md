@@ -1,4 +1,4 @@
-# Examples of using nams-source-repository
+# Examples of using nams-registry
 
 This folder contains examples using the datamodel.
 

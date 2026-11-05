@@ -1,3 +1,3 @@
-# About nams-source-repository
+# About nams-registry
 
-This is a repository of NAMs sources collected in support of a NAMs landscape analysis.
+This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis.

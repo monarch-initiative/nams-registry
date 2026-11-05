@@ -1,0 +1,468 @@
+---
+id: https://w3id.org/monarch-initiative/nams-registry
+name: nams-registry
+title: nams-registry
+description: |-
+  This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis.
+
+  Sources are not limited to data repositories and knowledge bases. They
+  also include reports, such as landscape analyses, reviews, and OECD Test
+  Guidelines. Primary research papers are not included.
+license: MIT
+see_also:
+  - https://monarch-initiative.github.io/nams-registry
+
+prefixes:
+  nams_registry: https://w3id.org/monarch-initiative/nams-registry/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  dcterms: http://purl.org/dc/terms/
+  pav: http://purl.org/pav/
+default_prefix: nams_registry
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+
+  NamedThing:
+    description: >-
+      A generic grouping for any identifiable entity
+    slots:
+      - id
+      - name
+      - description
+    class_uri: schema:Thing
+
+  Resource:
+    is_a: NamedThing
+    description: >-
+      A source of NAMs or NAMs-adjacent information. This includes data
+      resources, such as databases, repositories, catalogs, and portals, and
+      reports, such as landscape analyses, reviews, and OECD Test
+      Guidelines.
+    slots:
+      - synonyms
+      - homepage_url
+      - repository
+      - resource_type
+      - domain_areas
+      - nams_relevance
+      - relevance_note
+      - curation_model
+      - dismech_integration
+      - activity_status
+      - use_instead
+      - license
+      - publications
+      - creation_date
+      - last_modified_date
+      - imported_from
+
+  License:
+    description: >-
+      A license for a resource.
+    attributes:
+      id:
+        range: uri
+        description: >-
+          A URL to the license text, e.g.
+          https://creativecommons.org/licenses/by/4.0/. Leave it out when
+          there is none, as for a US government work.
+      label:
+        required: true
+        description: The name of the license.
+
+  Publication:
+    description: >-
+      A publication. The same structure as a KG-Registry Publication.
+    attributes:
+      id:
+        identifier: true
+        range: uriorcurie
+        required: true
+        description: >-
+          A CURIE for the publication, such as a DOI with its prefix
+          (doi:10.1038/s41597-021-00962-3) or a PMID.
+      title:
+        description: The title of the publication.
+      authors:
+        multivalued: true
+        description: The authors, e.g. Mortensen HM.
+      journal:
+        description: The journal the publication appeared in.
+      year:
+        pattern: "^\\d{4}$"
+        description: The year of publication, e.g. '2021'.
+      doi:
+        description: The DOI, without a prefix.
+      preferred:
+        range: boolean
+        description: >-
+          Whether this is the publication to cite for the resource.
+
+  ImportRecord:
+    description: >-
+      A record of content imported into this registry entry from another
+      registry.
+    slots:
+      - source
+      - source_id
+      - source_url
+      - source_version
+      - imported_on
+
+slots:
+  id:
+    identifier: true
+    slot_uri: schema:identifier
+    range: string
+    required: true
+    description: >-
+      The identifier of an entity within the registry. Use the KG-Registry
+      id where the resource has one, e.g. toxcast. For an OECD Test
+      Guideline, use oecd-tg- followed by the guideline number in lower
+      case, e.g. oecd-tg-442d.
+  name:
+    slot_uri: schema:name
+    required: true
+    description: The human-readable name of the resource.
+  description:
+    slot_uri: schema:description
+    description: A description of the resource.
+  homepage_url:
+    slot_uri: schema:url
+    range: uri
+    description: >-
+      The primary URL of the resource, preferably the main page
+      documenting it.
+  synonyms:
+    multivalued: true
+    description: >-
+      Acronyms, abbreviations, and other alternate names for the resource.
+  repository:
+    range: uri
+    description: >-
+      The main version control repository for the resource, if it has one.
+  resource_type:
+    range: ResourceTypeEnum
+    description: >-
+      What form the resource takes, such as a data source or a knowledge
+      graph. Imported from the KG-Registry category.
+  domain_areas:
+    range: DomainAreaEnum
+    multivalued: true
+    description: >-
+      The domains the resource covers, such as toxicology. Imported from
+      the KG-Registry domains.
+  nams_relevance:
+    range: NAMsRelevanceEnum
+    required: true
+    description: >-
+      Whether the resource holds NAMs itself or only supports work with
+      them. Use undecided until the resource has been reviewed.
+  relevance_note:
+    description: >-
+      Why the resource was given its nams_relevance value, e.g. "Holds in
+      vivo animal study data used to benchmark NAMs; holds no NAMs itself."
+  curation_model:
+    range: CurationModelEnum
+    multivalued: true
+    description: >-
+      Who creates the resource's content, as the resource works today. Use
+      more than one value when the resource mixes them.
+  dismech_integration:
+    description: >-
+      The resource's current state in DisMech: whether any of its content has
+      been incorporated into DisMech, and whether DisMech has tooling for
+      it, such as a script or skill. Records what exists, not what the
+      resource could offer. Free text for now.
+  activity_status:
+    range: ActivityStatusEnum
+    description: The status of the resource itself.
+  use_instead:
+    range: Resource
+    multivalued: true
+    description: >-
+      The ids of other registry resources to use in place of this one, for a
+      resource that is no longer active and has a clear replacement.
+  license:
+    range: License
+    inlined: true
+    slot_uri: dcterms:license
+    description: The license of the resource.
+  publications:
+    range: Publication
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      For a Report, the publications the report consists of. For any other
+      resource, publications that describe the resource.
+  creation_date:
+    range: date
+    slot_uri: dcterms:created
+    description: >-
+      The date this registry entry was created, not the date the resource
+      was created. For an entry imported from another registry, the date of
+      the import.
+  last_modified_date:
+    range: date
+    slot_uri: dcterms:modified
+    description: >-
+      The date this registry entry was last changed, not the date the
+      resource was last updated.
+  imported_from:
+    range: ImportRecord
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: pav:importedFrom
+    description: >-
+      The registries this entry's content was imported from. Leave empty for
+      an entry curated directly in this registry.
+  source:
+    range: SourceRegistryEnum
+    required: true
+    description: The registry the content was imported from.
+  source_id:
+    required: true
+    description: The resource's identifier in the source registry, e.g. toxcast.
+  source_url:
+    range: uri
+    slot_uri: pav:sourceAccessedAt
+    description: The URL of the resource's page in the source registry.
+  source_version:
+    description: >-
+      The version of the source registry the content was copied from. For a
+      registry kept in git, such as KG-Registry, the commit hash.
+  imported_on:
+    range: date
+    required: true
+    slot_uri: pav:importedOn
+    description: The date the content was imported.
+
+enums:
+  ActivityStatusEnum:
+    description: >-
+      The status of a resource. The same values as KG-Registry, which
+      follow OBO Foundry.
+    permissible_values:
+      active:
+        description: The resource is active and available.
+      inactive:
+        description: The resource is inactive. Its availability may vary.
+      orphaned:
+        description: >-
+          The resource is not actively maintained. Its availability may vary.
+      unresponsive:
+        description: >-
+          The resource is no longer accessible. Only its metadata is available.
+      unknown:
+        description: The status of the resource is unknown.
+  ResourceTypeEnum:
+    description: >-
+      What form a resource takes. The KG-Registry Resource categories, plus
+      Report.
+    permissible_values:
+      DataSource:
+        description: A data source.
+      KnowledgeGraph:
+        description: >-
+          A heterogeneous collection of data represented as nodes (entities)
+          and edges (relationships) between them.
+      Aggregator:
+        description: >-
+          An aggregator of data sources. It may be a data source itself, and
+          its content may change in the process of aggregation.
+      Ontology:
+        description: >-
+          A formal representation of the concepts in a domain and the
+          relationships between them.
+      DataModel:
+        description: >-
+          A formal representation of the concepts and relationships in a
+          domain that defines how data is structured.
+      Report:
+        description: >-
+          A report that surveys NAMs or sets out how a method is to be used,
+          such as a landscape analysis, a review article, or an OECD Test
+          Guideline. A primary research paper is not a report. Not one of the
+          KG-Registry categories.
+  DomainAreaEnum:
+    description: >-
+      Domains a resource covers. Taken from the KG-Registry domains used by
+      its NAMs resources; add a value here when a new resource needs one.
+    permissible_values:
+      adverse outcome pathways:
+        description: >-
+          Adverse outcome pathways linking molecular initiating events to
+          adverse outcomes.
+      anatomy and development:
+        description: >-
+          The anatomy and development of organisms, including their
+          structure, morphology, and developmental biology.
+      biological systems:
+        description: >-
+          The biological sciences broadly, including cellular and molecular
+          biology and other biological disciplines not better described by a
+          more specific domain.
+      biomedical:
+        description: >-
+          The biomedical sciences broadly, spanning the study of biological
+          systems in the context of health and disease. Use a more specific
+          domain (e.g., clinical) where one applies.
+      cell biology:
+        description: >-
+          Cells and cell types, including cell lines, cell markers, and
+          subcellular structures.
+      cheminformatics:
+        description: >-
+          Computational representation, identification, and classification
+          of chemical structures.
+      chemistry and biochemistry:
+        description: >-
+          The chemical and biochemical sciences, including the structure,
+          properties, and reactions of chemical compounds.
+      clinical:
+        description: >-
+          The clinical sciences concerned with the care of patients,
+          including clinical trials, patient data, and diagnosis and
+          treatment of disease.
+      clinical trials:
+        description: >-
+          Clinical trials, including trial registries and the data standards
+          used to report them.
+      drug discovery:
+        description: >-
+          The process of identifying and developing new candidate
+          medications, including target identification, validation, and
+          compound screening.
+      drug interactions:
+        description: >-
+          Interactions between drugs and between drugs and foods or natural
+          products.
+      ecology:
+        description: >-
+          The interactions of organisms with each other and their
+          environment, including ecological networks.
+      environment:
+        description: >-
+          The environment and ecosystems, including ecology and
+          environmental health.
+      environmental exposure:
+        description: >-
+          Exposure of people and organisms to environmental agents and the
+          health effects of those exposures.
+      epigenomics:
+        description: >-
+          Genome-wide chromatin state and organization, including chromatin
+          conformation and regulatory element annotation.
+      gene expression profiling:
+        description: >-
+          Measurement of gene expression across tissues, cells, and
+          conditions, including transcriptomic signatures.
+      genetic variation:
+        description: >-
+          Germline and somatic genetic variants, including their
+          frequencies, effects, and clinical interpretation.
+      genomics:
+        description: >-
+          The study of genomes, including genome structure, evolution,
+          function, mapping, and editing.
+      high-throughput screening:
+        description: >-
+          Large-scale screening of chemical or genetic perturbations,
+          including cell line sensitivity and perturbation profiling.
+      information technology:
+        description: >-
+          The information technology and informatics sciences, including
+          software, computational methods, simulation and modeling, and
+          digital health technologies.
+      machine learning:
+        description: >-
+          Machine learning and artificial intelligence, including AI-ready
+          data and models.
+      molecular evolution:
+        description: >-
+          The evolution of genes and proteins, including orthology, gene
+          families, and comparative analysis.
+      pathways:
+        description: >-
+          Biological pathways, including metabolic, signaling, and
+          regulatory networks that control cellular processes.
+      pharmacology:
+        description: >-
+          The study of how drugs interact with biological systems, including
+          drug discovery, development, and therapeutic uses.
+      protein structure:
+        description: >-
+          The three-dimensional structure of proteins, whether determined
+          experimentally or predicted.
+      proteomics:
+        description: >-
+          The large-scale study of proteins, their structures, functions,
+          and interactions.
+      public health:
+        description: >-
+          The science of protecting and improving the health of people and
+          their communities, including epidemiology, population health, and
+          the social determinants of health.
+      rare disease:
+        description: >-
+          Rare diseases, including rare Mendelian and other genetic
+          disorders, their phenotypes, genes, and treatments.
+      single-cell analysis:
+        description: >-
+          Data and methods that measure molecules in individual cells,
+          including single-cell and spatial atlases.
+      software:
+        description: >-
+          Software, including package registries, software supply chains,
+          and vulnerabilities.
+      systems biology:
+        description: >-
+          The computational and mathematical analysis of complex biological
+          systems and their interactions.
+      toxicology:
+        description: >-
+          The study of the adverse effects of chemicals on living organisms.
+  NAMsRelevanceEnum:
+    description: How a resource relates to NAMs.
+    permissible_values:
+      holds_nams:
+        description: >-
+          The resource holds NAMs or records produced with them: methods,
+          models, cell lines, or assay data.
+      nams_adjacent:
+        description: >-
+          The resource supports work with NAMs but holds none itself, such as
+          reference in vivo data used to benchmark NAMs or chemical identity
+          data.
+      undecided:
+        description: The resource has not yet been reviewed.
+  CurationModelEnum:
+    description: Who creates a resource's content.
+    permissible_values:
+      maintainers:
+        description: >-
+          The resource's own team creates or curates the content, e.g. the
+          ToxCast assay annotations curated by EPA.
+      community:
+        description: >-
+          Open contributors create the content, wiki-style, e.g. AOP-Wiki.
+      depositors:
+        description: >-
+          Authors or labs submit records about their own work, e.g. model
+          submissions to BioModels.
+      automated:
+        description: >-
+          A pipeline generates or transforms the content, e.g. BioBricks
+          repackaging another resource.
+      aggregated:
+        description: The content is copied from other resources.
+  SourceRegistryEnum:
+    description: Registries that content can be imported from.
+    permissible_values:
+      kg_registry:
+        description: KG-Registry, the Knowledge Graph Hub registry.
+        meaning: https://kghub.org/kg-registry/

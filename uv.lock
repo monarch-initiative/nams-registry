@@ -2222,7 +2222,7 @@ wheels = [
 ]
 
 [[package]]
-name = "nams-source-repository"
+name = "nams-registry"
 source = { editable = "." }
 dependencies = [
     { name = "linkml-runtime" },

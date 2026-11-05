@@ -1,1 +1,1 @@
-"""Tests for nams-source-repository."""
+"""Tests for nams-registry."""
