@@ -13,3 +13,8 @@ import-kg-registry *args:
 [group('data')]
 validate-resources:
   uv run linkml-validate -s {{source_schema_path}} -C Resource resources/*.yaml
+
+# Build the resource table page, docs/resources/index.html
+[group('data')]
+build-table:
+  uv run python -m nams_registry.build_table

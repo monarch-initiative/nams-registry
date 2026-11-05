@@ -346,7 +346,7 @@ class NamedThing(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'schema:Thing',
          'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
 
-    id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'License', 'Publication'],
+    id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication'],
          'slot_uri': 'schema:identifier'} })
     name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:name'} })
     description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:description'} })
@@ -369,25 +369,25 @@ class Resource(NamedThing):
     dismech_integration: Optional[str] = Field(default=None, description="""The resource's current state in DisMech: whether any of its content has been incorporated into DisMech, and whether DisMech has tooling for it, such as a script or skill. Records what exists, not what the resource could offer. Free text for now.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     activity_status: Optional[ActivityStatusEnum] = Field(default=None, description="""The status of the resource itself.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     use_instead: Optional[list[str]] = Field(default=None, description="""The ids of other registry resources to use in place of this one, for a resource that is no longer active and has a clear replacement.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
-    license: Optional[License] = Field(default=None, description="""The license of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'dcterms:license'} })
+    license: Optional[LicenseInfo] = Field(default=None, description="""The license of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'dcterms:license'} })
     publications: Optional[list[Publication]] = Field(default=None, description="""For a Report, the publications the report consists of. For any other resource, publications that describe the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     creation_date: Optional[date] = Field(default=None, description="""The date this registry entry was created, not the date the resource was created. For an entry imported from another registry, the date of the import.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'dcterms:created'} })
     last_modified_date: Optional[date] = Field(default=None, description="""The date this registry entry was last changed, not the date the resource was last updated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'dcterms:modified'} })
     imported_from: Optional[list[ImportRecord]] = Field(default=None, description="""The registries this entry's content was imported from. Leave empty for an entry curated directly in this registry.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'pav:importedFrom'} })
-    id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'License', 'Publication'],
+    id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication'],
          'slot_uri': 'schema:identifier'} })
     name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:name'} })
     description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:description'} })
 
 
-class License(ConfiguredBaseModel):
+class LicenseInfo(ConfiguredBaseModel):
     """
     A license for a resource.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
 
-    id: Optional[str] = Field(default=None, description="""A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/. Leave it out when there is none, as for a US government work.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'License', 'Publication']} })
-    label: str = Field(default=..., description="""The name of the license.""", json_schema_extra = { "linkml_meta": {'domain_of': ['License']} })
+    id: Optional[str] = Field(default=None, description="""A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/. Leave it out when there is none, as for a US government work.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication']} })
+    label: str = Field(default=..., description="""The name of the license.""", json_schema_extra = { "linkml_meta": {'domain_of': ['LicenseInfo']} })
 
 
 class Publication(ConfiguredBaseModel):
@@ -396,7 +396,7 @@ class Publication(ConfiguredBaseModel):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
 
-    id: str = Field(default=..., description="""A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3) or a PMID.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'License', 'Publication']} })
+    id: str = Field(default=..., description="""A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3) or a PMID.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication']} })
     title: Optional[str] = Field(default=None, description="""The title of the publication.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
     authors: Optional[list[str]] = Field(default=None, description="""The authors, e.g. Mortensen HM.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
     journal: Optional[str] = Field(default=None, description="""The journal the publication appeared in.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
@@ -435,6 +435,6 @@ class ImportRecord(ConfiguredBaseModel):
 # see https://pydantic-docs.helpmanual.io/usage/models/#rebuilding-a-model
 NamedThing.model_rebuild()
 Resource.model_rebuild()
-License.model_rebuild()
+LicenseInfo.model_rebuild()
 Publication.model_rebuild()
 ImportRecord.model_rebuild()

@@ -60,7 +60,7 @@ classes:
       - last_modified_date
       - imported_from
 
-  License:
+  LicenseInfo:
     description: >-
       A license for a resource.
     attributes:
@@ -188,7 +188,7 @@ slots:
       The ids of other registry resources to use in place of this one, for a
       resource that is no longer active and has a clear replacement.
   license:
-    range: License
+    range: LicenseInfo
     inlined: true
     slot_uri: dcterms:license
     description: The license of the resource.

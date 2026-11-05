@@ -148,7 +148,7 @@ class Resource(NamedThing):
     dismech_integration: Optional[str] = None
     activity_status: Optional[Union[str, "ActivityStatusEnum"]] = None
     use_instead: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = empty_list()
-    license: Optional[Union[dict, "License"]] = None
+    license: Optional[Union[dict, "LicenseInfo"]] = None
     publications: Optional[Union[dict[Union[str, PublicationId], Union[dict, "Publication"]], list[Union[dict, "Publication"]]]] = empty_dict()
     creation_date: Optional[Union[str, XSDDate]] = None
     last_modified_date: Optional[Union[str, XSDDate]] = None
@@ -199,8 +199,8 @@ class Resource(NamedThing):
             self.use_instead = [self.use_instead] if self.use_instead is not None else []
         self.use_instead = [v if isinstance(v, ResourceId) else ResourceId(v) for v in self.use_instead]
 
-        if self.license is not None and not isinstance(self.license, License):
-            self.license = License(**as_dict(self.license))
+        if self.license is not None and not isinstance(self.license, LicenseInfo):
+            self.license = LicenseInfo(**as_dict(self.license))
 
         self._normalize_inlined_as_list(slot_name="publications", slot_type=Publication, key_name="id", keyed=True)
 
@@ -216,16 +216,16 @@ class Resource(NamedThing):
 
 
 @dataclass(repr=False)
-class License(YAMLRoot):
+class LicenseInfo(YAMLRoot):
     """
     A license for a resource.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NAMS_REGISTRY["License"]
-    class_class_curie: ClassVar[str] = "nams_registry:License"
-    class_name: ClassVar[str] = "License"
-    class_model_uri: ClassVar[URIRef] = NAMS_REGISTRY.License
+    class_class_uri: ClassVar[URIRef] = NAMS_REGISTRY["LicenseInfo"]
+    class_class_curie: ClassVar[str] = "nams_registry:LicenseInfo"
+    class_name: ClassVar[str] = "LicenseInfo"
+    class_model_uri: ClassVar[URIRef] = NAMS_REGISTRY.LicenseInfo
 
     label: str = None
     id: Optional[Union[str, URI]] = None
@@ -622,7 +622,7 @@ slots.use_instead = Slot(uri=NAMS_REGISTRY.use_instead, name="use_instead", curi
                    model_uri=NAMS_REGISTRY.use_instead, domain=None, range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]])
 
 slots.license = Slot(uri=DCTERMS.license, name="license", curie=DCTERMS.curie('license'),
-                   model_uri=NAMS_REGISTRY.license, domain=None, range=Optional[Union[dict, License]])
+                   model_uri=NAMS_REGISTRY.license, domain=None, range=Optional[Union[dict, LicenseInfo]])
 
 slots.publications = Slot(uri=NAMS_REGISTRY.publications, name="publications", curie=NAMS_REGISTRY.curie('publications'),
                    model_uri=NAMS_REGISTRY.publications, domain=None, range=Optional[Union[dict[Union[str, PublicationId], Union[dict, Publication]], list[Union[dict, Publication]]]])
@@ -651,11 +651,11 @@ slots.source_version = Slot(uri=NAMS_REGISTRY.source_version, name="source_versi
 slots.imported_on = Slot(uri=PAV.importedOn, name="imported_on", curie=PAV.curie('importedOn'),
                    model_uri=NAMS_REGISTRY.imported_on, domain=None, range=Union[str, XSDDate])
 
-slots.license__id = Slot(uri=NAMS_REGISTRY.id, name="license__id", curie=NAMS_REGISTRY.curie('id'),
-                   model_uri=NAMS_REGISTRY.license__id, domain=None, range=Optional[Union[str, URI]])
+slots.licenseInfo__id = Slot(uri=NAMS_REGISTRY.id, name="licenseInfo__id", curie=NAMS_REGISTRY.curie('id'),
+                   model_uri=NAMS_REGISTRY.licenseInfo__id, domain=None, range=Optional[Union[str, URI]])
 
-slots.license__label = Slot(uri=NAMS_REGISTRY.label, name="license__label", curie=NAMS_REGISTRY.curie('label'),
-                   model_uri=NAMS_REGISTRY.license__label, domain=None, range=str)
+slots.licenseInfo__label = Slot(uri=NAMS_REGISTRY.label, name="licenseInfo__label", curie=NAMS_REGISTRY.curie('label'),
+                   model_uri=NAMS_REGISTRY.licenseInfo__label, domain=None, range=str)
 
 slots.publication__id = Slot(uri=NAMS_REGISTRY.id, name="publication__id", curie=NAMS_REGISTRY.curie('id'),
                    model_uri=NAMS_REGISTRY.publication__id, domain=None, range=URIRef)

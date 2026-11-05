@@ -288,8 +288,11 @@ import "project.justfile"
 # ====== Override recipes from above with custom versions =======
 
 # Uncomment the following line to allow duplicate recipe names
-#set allow-duplicate-recipes
+set allow-duplicate-recipes
 
 # Overriding recipes from the root justfile by adding a recipe with the same
 # name in an imported file is not possible until a known issue in just is fixed,
 # https://github.com/casey/just/issues/2540 - So we need to override them here.
+
+# Add the resource table to the documentation site
+_add-artifacts: build-table
