@@ -552,6 +552,19 @@ enums:
         text: medium
       low:
         text: low
+  ExtractionEffortEnum:
+    name: ExtractionEffortEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/ExtractionEffortEnum
+    description: The estimated effort to ready a resource for incorporation. The levels
+      are left loose for now; effort_rationale carries the detail.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      high:
+        text: high
+      medium:
+        text: medium
+      low:
+        text: low
   SourceRegistryEnum:
     name: SourceRegistryEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/SourceRegistryEnum
@@ -731,6 +744,31 @@ slots:
       beyond the original, or that nothing was found.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:priority_rationale
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  extraction_effort:
+    name: extraction_effort
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/extraction_effort
+    description: 'The estimated effort to ready the resource for incorporation: deciding
+      what to extract from it and getting that content into a usable form. Independent
+      of priority, which records how much the resource adds. Set it once the resource
+      has been looked at.'
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:extraction_effort
+    owner: Resource
+    domain_of:
+    - Resource
+    range: ExtractionEffortEnum
+  effort_rationale:
+    name: effort_rationale
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/effort_rationale
+    description: Why the resource was given its extraction_effort, for example its
+      format, its access, existing tooling, or decisions still to be made about what
+      to extract.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:effort_rationale
     owner: Resource
     domain_of:
     - Resource
@@ -1030,6 +1068,8 @@ classes:
     - dismech_integration
     - priority
     - priority_rationale
+    - extraction_effort
+    - effort_rationale
     - discussion_issue
     - activity_status
     - use_instead
@@ -1116,6 +1156,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T19:41:48'
-source_file_size: 18131
+source_file_date: '2026-11-05T20:27:20'
+source_file_size: 18995
 

@@ -148,6 +148,8 @@ class Resource(NamedThing):
     dismech_integration: Optional[str] = None
     priority: Optional[Union[str, "PriorityEnum"]] = None
     priority_rationale: Optional[str] = None
+    extraction_effort: Optional[Union[str, "ExtractionEffortEnum"]] = None
+    effort_rationale: Optional[str] = None
     discussion_issue: Optional[Union[str, URI]] = None
     activity_status: Optional[Union[str, "ActivityStatusEnum"]] = None
     use_instead: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = empty_list()
@@ -198,6 +200,12 @@ class Resource(NamedThing):
 
         if self.priority_rationale is not None and not isinstance(self.priority_rationale, str):
             self.priority_rationale = str(self.priority_rationale)
+
+        if self.extraction_effort is not None and not isinstance(self.extraction_effort, ExtractionEffortEnum):
+            self.extraction_effort = ExtractionEffortEnum(self.extraction_effort)
+
+        if self.effort_rationale is not None and not isinstance(self.effort_rationale, str):
+            self.effort_rationale = str(self.effort_rationale)
 
         if self.discussion_issue is not None and not isinstance(self.discussion_issue, URI):
             self.discussion_issue = URI(self.discussion_issue)
@@ -587,6 +595,20 @@ class PriorityEnum(EnumDefinitionImpl):
         description="Extraction priority: how much a resource adds, and so how soon it is worth extracting content from.",
     )
 
+class ExtractionEffortEnum(EnumDefinitionImpl):
+    """
+    The estimated effort to ready a resource for incorporation. The levels are left loose for now; effort_rationale
+    carries the detail.
+    """
+    high = PermissibleValue(text="high")
+    medium = PermissibleValue(text="medium")
+    low = PermissibleValue(text="low")
+
+    _defn = EnumDefinition(
+        name="ExtractionEffortEnum",
+        description="""The estimated effort to ready a resource for incorporation. The levels are left loose for now; effort_rationale carries the detail.""",
+    )
+
 class SourceRegistryEnum(EnumDefinitionImpl):
     """
     Registries that content can be imported from.
@@ -646,6 +668,12 @@ slots.priority = Slot(uri=NAMS_REGISTRY.priority, name="priority", curie=NAMS_RE
 
 slots.priority_rationale = Slot(uri=NAMS_REGISTRY.priority_rationale, name="priority_rationale", curie=NAMS_REGISTRY.curie('priority_rationale'),
                    model_uri=NAMS_REGISTRY.priority_rationale, domain=None, range=Optional[str])
+
+slots.extraction_effort = Slot(uri=NAMS_REGISTRY.extraction_effort, name="extraction_effort", curie=NAMS_REGISTRY.curie('extraction_effort'),
+                   model_uri=NAMS_REGISTRY.extraction_effort, domain=None, range=Optional[Union[str, "ExtractionEffortEnum"]])
+
+slots.effort_rationale = Slot(uri=NAMS_REGISTRY.effort_rationale, name="effort_rationale", curie=NAMS_REGISTRY.curie('effort_rationale'),
+                   model_uri=NAMS_REGISTRY.effort_rationale, domain=None, range=Optional[str])
 
 slots.discussion_issue = Slot(uri=NAMS_REGISTRY.discussion_issue, name="discussion_issue", curie=NAMS_REGISTRY.curie('discussion_issue'),
                    model_uri=NAMS_REGISTRY.discussion_issue, domain=None, range=Optional[Union[str, URI]],

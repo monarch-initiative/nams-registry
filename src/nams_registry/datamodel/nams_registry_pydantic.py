@@ -341,6 +341,15 @@ class PriorityEnum(str, Enum):
     low = "low"
 
 
+class ExtractionEffortEnum(str, Enum):
+    """
+    The estimated effort to ready a resource for incorporation. The levels are left loose for now; effort_rationale carries the detail.
+    """
+    high = "high"
+    medium = "medium"
+    low = "low"
+
+
 class SourceRegistryEnum(str, Enum):
     """
     Registries that content can be imported from.
@@ -382,6 +391,8 @@ class Resource(NamedThing):
     dismech_integration: Optional[str] = Field(default=None, description="""The resource's current state in DisMech: whether any of its content has been incorporated into DisMech, and whether DisMech has tooling for it, such as a script or skill. Records what exists, not what the resource could offer. Free text for now.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     priority: Optional[PriorityEnum] = Field(default=None, description="""Extraction priority: how much the resource adds, and so how soon it is worth extracting content from. Set it once that has been investigated. A resource that repackages another one can still add value, for example through a new format, integration with other data, or easier access, so repackaging alone does not make a resource low priority.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     priority_rationale: Optional[str] = Field(default=None, description="""Why the resource was given its priority, based on what was found about what it adds. For a resource that repackages another, say what it adds beyond the original, or that nothing was found.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    extraction_effort: Optional[ExtractionEffortEnum] = Field(default=None, description="""The estimated effort to ready the resource for incorporation: deciding what to extract from it and getting that content into a usable form. Independent of priority, which records how much the resource adds. Set it once the resource has been looked at.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    effort_rationale: Optional[str] = Field(default=None, description="""Why the resource was given its extraction_effort, for example its format, its access, existing tooling, or decisions still to be made about what to extract.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     discussion_issue: Optional[str] = Field(default=None, description="""The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2. Set by `just create-review-issues`.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     activity_status: Optional[ActivityStatusEnum] = Field(default=None, description="""The status of the resource itself.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     use_instead: Optional[list[str]] = Field(default=None, description="""The ids of other registry resources to use in place of this one, for a resource that is no longer active and has a clear replacement.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })

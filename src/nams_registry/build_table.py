@@ -194,6 +194,8 @@ function detail(r) {
     ${r.dismech_integration ? `<dt>DisMech integration</dt><dd>${esc(r.dismech_integration)}</dd>` : ""}
     <dt>Priority</dt><dd>${text(r.priority)}</dd>
     ${r.priority_rationale ? `<dt>Priority rationale</dt><dd>${esc(r.priority_rationale)}</dd>` : ""}
+    <dt>Extraction effort</dt><dd>${text(r.extraction_effort)}</dd>
+    ${r.effort_rationale ? `<dt>Effort rationale</dt><dd>${esc(r.effort_rationale)}</dd>` : ""}
     <dt>Publications</dt><dd>${pubs ? `<ul class="pubs">${pubs}</ul>` : text("")}</dd>
     <dt>Imported from</dt><dd>${imp || text("")}</dd>
   </dl>`;
