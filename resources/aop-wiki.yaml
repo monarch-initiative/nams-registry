@@ -63,7 +63,7 @@ effort_rationale: >-
   challenges and considerations in extracting NAM-related measurement methods
   from the AOP-Wiki.
 expectations: Based on prior queries and the structure of the AOP-Wiki, I expect
-  to find "old school" methods (ie Western blot, ELISA assays), ToxCast assays,
+  to find "old school" methods (e.g., Western blot, ELISA assays), ToxCast assays,
   and possibly some air-liquid interface methods. I don't expect to find many
   organoid assays.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/5
