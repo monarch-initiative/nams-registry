@@ -17,21 +17,26 @@ import yaml
 
 REPOSITORY = "https://github.com/monarch-initiative/nams-registry"
 
-# The columns shown in each row, as (field, column heading, display).
+# The columns shown in each row, as (field, column heading, display, filter).
 # Display is one of:
 #   text      the value, or tags for a field holding a list
 #   clamp     text cut to two lines; the full text is in the details
 #   check     a check mark when the value is true
 #   issue     the number of the resource's review issue (discussion_issue),
 #             linked, or a dash if it has none
+# Filter, shown under the column heading, is one of:
+#   None      no filter
+#   values    choose one of the column's values
+#   present   choose whether the column has a value
+# Clicking a column heading sorts by that column, ascending then descending.
 # Everything else stays in the details that open below the row.
 COLUMNS = [
-    ("name", "Name", "text"),
-    ("nams_relevance", "NAMs relevance", "text"),
-    ("priority", "Priority", "text"),
-    ("dismech_integration", "DisMech integration", "clamp"),
-    ("is_tox", "is_tox", "check"),
-    ("discussion_issue", "GH Issue", "issue"),
+    ("name", "Name", "text", None),
+    ("holds_nams", "Holds NAMs", "text", "values"),
+    ("priority", "Priority", "text", "values"),
+    ("dismech_integration", "DisMech integration", "clamp", "present"),
+    ("is_tox", "is_tox", "check", "present"),
+    ("discussion_issue", "GH Issue", "issue", "present"),
 ]
 
 
@@ -75,6 +80,17 @@ PAGE = """<!doctype html>
     border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px;
   }
   .controls input { flex: 1 1 260px; }
+  tr.filters th { padding-top: 0; font-weight: 400; }
+  button.sort {
+    font: inherit; color: inherit; background: none; border: 0; padding: 0;
+    cursor: pointer; white-space: nowrap;
+  }
+  button.sort .arrow { display: inline-block; width: 1em; color: var(--muted); }
+  tr.filters select {
+    font: inherit; font-size: 13px; color: inherit; background: var(--bg);
+    border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px;
+    max-width: 100%;
+  }
   .count { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; }
@@ -87,7 +103,7 @@ PAGE = """<!doctype html>
     width: 24px; padding: 0; line-height: 1;
   }
   .toggle[aria-expanded="true"] .chev { transform: rotate(90deg); }
-  .chev { display: inline-block; transition: transform .12s; }
+  .chev { display: inline-block; font-size: 1.35em; transition: transform .12s; }
   .name { font-weight: 600; }
   .col-check { text-align: center; }
   .check { font-weight: 700; }
@@ -120,13 +136,11 @@ PAGE = """<!doctype html>
   <p class="subtitle">NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis.</p>
   <div class="controls">
     <input id="q" type="search" placeholder="Search names, ids, and descriptions" aria-label="Search">
-    <select id="relevance" aria-label="NAMs relevance"><option value="">All NAMs relevance</option></select>
-    <select id="type" aria-label="Resource type"><option value="">All resource types</option></select>
   </div>
   <p class="count" id="count"></p>
   <div class="table-wrap">
   <table>
-    <thead><tr><th></th>__HEADERS__</tr></thead>
+    <thead><tr><th></th>__HEADERS__</tr><tr class="filters" id="filters"></tr></thead>
     <tbody id="rows"></tbody>
   </table>
   </div>
@@ -136,9 +150,11 @@ const DATA = __DATA__;
 const COLUMNS = __COLUMNS__;
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const link = u => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>` : `<span class="none">Not recorded</span>`;
-const chips = a => a && a.length ? a.map(x => `<span class="chip">${esc(x)}</span>`).join("") : `<span class="none">Not recorded</span>`;
-const text = v => v ? esc(v) : `<span class="none">Not recorded</span>`;
+// Shown for an empty value, such as a field not yet evaluated or recorded.
+const DASH = `<span class="none" aria-label="Not recorded">&ndash;</span>`;
+const link = u => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>` : DASH;
+const chips = a => a && a.length ? a.map(x => `<span class="chip">${esc(x)}</span>`).join("") : DASH;
+const text = v => v ? esc(v) : DASH;
 
 function cell(r, [f, heading, display]) {
   const v = r[f];
@@ -146,7 +162,7 @@ function cell(r, [f, heading, display]) {
   if (display === "check") return v ? `<span class="check" role="img" aria-label="Yes">&#10003;</span>` : "";
   if (display === "clamp") return v ? `<span class="clamp">${esc(v)}</span>` : text(v);
   if (display === "issue") {
-    if (!v) return `<span class="none" aria-label="No issue yet">&ndash;</span>`;
+    if (!v) return DASH;
     return `<a href="${esc(v)}" target="_blank" rel="noopener">#${esc(v.split("/").pop())}</a>`;
   }
   return Array.isArray(v) ? chips(v) : text(v);
@@ -183,23 +199,84 @@ function detail(r) {
   </dl>`;
 }
 
-function fillSelect(el, key) {
-  [...new Set(DATA.map(r => r[key]).filter(Boolean))].sort().forEach(v => {
-    const n = DATA.filter(r => r[key] === v).length;
-    el.insertAdjacentHTML("beforeend", `<option value="${esc(v)}">${esc(v)} (${n})</option>`);
+// Labels for a "present" filter, by column display.
+const PRESENT_LABELS = {
+  check: ["\u2713", "No \u2713"],
+  issue: ["Has issue", "No issue"],
+  clamp: ["Recorded", "Not recorded"],
+  text: ["Recorded", "Not recorded"],
+};
+const MISSING = "__missing__";
+// What the filters call an empty value, by field.
+const MISSING_LABEL = { holds_nams: "Not yet evaluated" };
+
+// Sort order for fields whose values are not ordered alphabetically.
+const RANK = {
+  priority: ["high", "medium", "low"],
+  holds_nams: ["primary", "secondary", "unclear", "none"],
+};
+let sortField = "name", sortDir = 1;
+
+function sortKey(r, f) {
+  const v = r[f];
+  if (!has(v)) return null;
+  if (RANK[f]) { const i = RANK[f].indexOf(v); return i < 0 ? RANK[f].length : i; }
+  if (typeof v === "boolean") return v ? 0 : 1;
+  if (f === "discussion_issue") return Number(String(v).split("/").pop());
+  return String(v).toLowerCase();
+}
+
+function compare(a, b) {
+  const x = sortKey(a, sortField), y = sortKey(b, sortField);
+  if (x === null || y === null) return (x === null) - (y === null);  // empty values last
+  return (x < y ? -1 : x > y ? 1 : 0) * sortDir || a.name.localeCompare(b.name);
+}
+
+function showSort() {
+  document.querySelectorAll("button.sort").forEach(b => {
+    const on = b.dataset.field === sortField;
+    b.closest("th").setAttribute("aria-sort", on ? (sortDir > 0 ? "ascending" : "descending") : "none");
+    b.querySelector(".arrow").textContent = on ? (sortDir > 0 ? "\u25B2" : "\u25BC") : "";
+  });
+}
+const count = pred => DATA.filter(pred).length;
+const has = v => Array.isArray(v) ? v.length > 0 : Boolean(v);
+
+function filterControl([f, heading, display, filter]) {
+  if (!filter) return "";
+  let options = "";
+  if (filter === "values") {
+    const values = [...new Set(DATA.map(r => r[f]).filter(has))].sort();
+    options = values.map(v => `<option value="${esc(v)}">${esc(v)} (${count(r => r[f] === v)})</option>`).join("");
+    const missing = count(r => !has(r[f]));
+    if (missing) options += `<option value="${MISSING}">${MISSING_LABEL[f] || "Not recorded"} (${missing})</option>`;
+  } else {
+    const [yes, no] = PRESENT_LABELS[display] || PRESENT_LABELS.text;
+    options = `<option value="yes">${yes} (${count(r => has(r[f]))})</option>` +
+              `<option value="no">${no} (${count(r => !has(r[f]))})</option>`;
+  }
+  return `<select data-field="${f}" data-filter="${filter}" aria-label="Filter ${esc(heading)}"><option value="">All</option>${options}</select>`;
+}
+
+document.getElementById("filters").innerHTML = "<th></th>" + COLUMNS.map(c => `<th>${filterControl(c)}</th>`).join("");
+const q = document.getElementById("q");
+const selects = [...document.querySelectorAll("#filters select")];
+
+function matches(r) {
+  return selects.every(s => {
+    if (!s.value) return true;
+    const v = r[s.dataset.field];
+    if (s.dataset.filter === "present") return has(v) === (s.value === "yes");
+    return s.value === MISSING ? !has(v) : v === s.value;
   });
 }
 
-const q = document.getElementById("q"), rel = document.getElementById("relevance"), typ = document.getElementById("type");
-fillSelect(rel, "nams_relevance");
-fillSelect(typ, "resource_type");
-
 function render() {
   const term = q.value.trim().toLowerCase();
-  const shown = DATA.filter(r =>
-    (!rel.value || r.nams_relevance === rel.value) &&
-    (!typ.value || r.resource_type === typ.value) &&
-    (!term || [r.id, r.name, r.description].some(v => (v || "").toLowerCase().includes(term))));
+  const shown = DATA.filter(r => matches(r) &&
+    (!term || [r.id, r.name, r.description].some(v => (v || "").toLowerCase().includes(term))))
+    .sort(compare);
+  showSort();
   document.getElementById("count").textContent = `${shown.length} of ${DATA.length} resources`;
   document.getElementById("rows").innerHTML = shown.map((r, i) => `
     <tr class="summary" data-i="${i}">
@@ -219,7 +296,12 @@ document.getElementById("rows").addEventListener("click", e => {
   btn.setAttribute("aria-expanded", String(!open));
   d.hidden = open;
 });
-[q, rel, typ].forEach(el => el.addEventListener("input", render));
+[q, ...selects].forEach(el => el.addEventListener("input", render));
+document.querySelectorAll("button.sort").forEach(b => b.addEventListener("click", () => {
+  sortDir = b.dataset.field === sortField ? -sortDir : 1;
+  sortField = b.dataset.field;
+  render();
+}));
 render();
 </script>
 </body>
@@ -250,7 +332,9 @@ def main(argv=None):
     rows.sort(key=lambda r: r["name"].lower())
 
     headers = "".join(
-        f'<th class="col-{display}">{heading}</th>' for _, heading, display in COLUMNS
+        f'<th class="col-{display}" aria-sort="none"><button class="sort" data-field="{field}">'
+        f'{heading}<span class="arrow" aria-hidden="true"></span></button></th>'
+        for field, heading, display, _ in COLUMNS
     )
     page = (
         PAGE.replace("__HEADERS__", headers)
