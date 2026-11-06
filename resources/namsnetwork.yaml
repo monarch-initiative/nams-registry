@@ -12,6 +12,53 @@ resource_type: KnowledgeGraph
 domain_areas:
 - toxicology
 - chemistry and biochemistry
+holds_nams: primary
+relevance_note: >-
+  NAMs are its records. Its catalogue lists 542 NAMs: 374 in vitro, 131 in
+  silico, 19 in chemico, 15 ex vivo and 3 in vitro/in silico. Each record
+  gives a type, a toxicity endpoint, an organ, cell types and a development
+  status: 335 under development, 121 under validation and 86 accepted for
+  regulatory use. It also gives a guideline or strategy, and the EU
+  regulations the NAM applies to. Filters link NAMs to substances,
+  methods and biomarkers, and AOP-Wiki AOPs and Key Events. The catalogue is
+  aimed at chemical and nanomaterial safety assessment: the most common
+  endpoint is acute inhalation toxicity, and the most common organ is the
+  lung (281 NAMs). The list and its filters are public through a JSON API at
+  https://api.nams.network, which scripts/fetch_namsnetwork.py reads. A
+  NAM's full record needs a logged-in account.
+curation_model:
+- maintainers
+dismech_integration: >-
+  None. DisMech has no tooling for it, and no DisMech content mentions it.
+  Checked against dismech commit 1019485f6e8.
+supporting_scripts:
+- name: fetch_namsnetwork.py
+  repository: https://github.com/monarch-initiative/nams-registry
+  path: scripts/fetch_namsnetwork.py
+  command: uv run python scripts/fetch_namsnetwork.py
+  description: >-
+    Fetches the public NAM list and filter facets from the NAMs.network API,
+    and rebuilds the links from NAMs to substances, methods and biomarkers,
+    biological endpoints, and AOP-Wiki AOPs and Key Events.
+priority: high
+priority_rationale: >-
+  It is one of the few resources that hold NAMs as structured records, each
+  with a type, an endpoint, an organ and a development status, and its list
+  is public through an API. Its links to AOP-Wiki AOPs and Key Events connect
+  it to the AOP-Wiki methods work (#5): in the 2026-11-06 fetch, 16 NAMs link
+  to an AOP and 67 to a Key Event. Its scope is narrower than DisMech's. It
+  covers toxicity endpoints for chemical and nanomaterial regulation, not
+  disease, so its value to DisMech is mainly in the methods it describes.
+extraction_effort: low
+effort_rationale: >-
+  The NAMs are structured records accessible through a public API, making
+  extraction straightforward. Scripts like scripts/fetch_namsnetwork.py can
+  automate the retrieval of the data.
+expectations: >-
+  I expect to find detailed information on various NAMs, including their type,
+  toxicity endpoint, organ, cell types, development status, guidelines or
+  strategies, and relevant EU regulations. The data should be well-structured
+  and easily retrievable via the API.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/20
 activity_status: active
 creation_date: '2026-11-05'
