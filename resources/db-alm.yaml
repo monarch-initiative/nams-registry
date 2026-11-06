@@ -17,7 +17,6 @@ resource_type: DataSource
 domain_areas:
 - toxicology
 - biomedical
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by/4.0/

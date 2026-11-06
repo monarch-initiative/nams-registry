@@ -26,7 +26,6 @@ domain_areas:
 - pathways
 - chemistry and biochemistry
 - adverse outcome pathways
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by-sa/4.0/

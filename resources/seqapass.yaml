@@ -19,7 +19,6 @@ domain_areas:
 - protein structure
 - genomics
 - molecular evolution
-nams_relevance: undecided
 activity_status: active
 license:
   label: U.S. Government Work (public domain)

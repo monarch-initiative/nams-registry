@@ -27,7 +27,6 @@ domain_areas:
 - biomedical
 - environment
 - environmental exposure
-nams_relevance: undecided
 activity_status: active
 license:
   label: U.S. Government Work (public domain)

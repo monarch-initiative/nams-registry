@@ -23,7 +23,6 @@ domain_areas:
 - environment
 - machine learning
 - information technology
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://opensource.org/licenses/MIT

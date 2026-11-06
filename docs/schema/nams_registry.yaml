@@ -495,29 +495,26 @@ enums:
       toxicology:
         text: toxicology
         description: The study of the adverse effects of chemicals on living organisms.
-  NAMsRelevanceEnum:
-    name: NAMsRelevanceEnum
-    definition_uri: https://w3id.org/monarch-initiative/nams-registry/NAMsRelevanceEnum
-    description: How a resource relates to NAMs.
+  HoldsNAMsEnum:
+    name: HoldsNAMsEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/HoldsNAMsEnum
+    description: Whether a resource holds NAMs, and whether they are its primary content.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     permissible_values:
-      holds_nams:
-        text: holds_nams
-        description: 'The resource holds NAMs or records produced with them: methods,
-          models, cell lines, or assay data.'
-      points_to_nams:
-        text: points_to_nams
-        description: The resource holds no NAMs itself but helps find them, by listing,
-          surveying, or citing NAMs held elsewhere, such as a landscape analysis or
-          a catalog.
-      nams_adjacent:
-        text: nams_adjacent
-        description: The resource supports work with NAMs but neither holds nor points
-          to them, such as reference in vivo data used to benchmark NAMs or chemical
-          identity data.
-      undecided:
-        text: undecided
-        description: The resource has not yet been reviewed.
+      primary:
+        text: primary
+        description: NAMs, or records produced with them such as methods, models,
+          cell lines, or assay data, are the resource's primary content.
+      secondary:
+        text: secondary
+        description: The resource holds NAMs, but they are not its primary content.
+      none:
+        text: none
+        description: The resource holds no NAMs.
+      unclear:
+        text: unclear
+        description: The resource was evaluated, but whether it holds NAMs could not
+          be decided. Explain why in relevance_note.
   CurationModelEnum:
     name: CurationModelEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/CurationModelEnum
@@ -545,7 +542,8 @@ enums:
   PriorityEnum:
     name: PriorityEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/PriorityEnum
-    description: How much a resource adds, and so how soon it is worth working on.
+    description: 'Extraction priority: how much a resource adds, and so how soon it
+      is worth extracting content from.'
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     permissible_values:
       high:
@@ -663,23 +661,23 @@ slots:
     - Resource
     range: DomainAreaEnum
     multivalued: true
-  nams_relevance:
-    name: nams_relevance
-    definition_uri: https://w3id.org/monarch-initiative/nams-registry/nams_relevance
-    description: Whether the resource holds NAMs itself, helps find NAMs held elsewhere,
-      or only supports work with them. Use undecided until the resource has been reviewed.
+  holds_nams:
+    name: holds_nams
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/holds_nams
+    description: Whether the resource holds NAMs, and whether they are its primary
+      content. Leave it out until the resource has been evaluated.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
-    slot_uri: nams_registry:nams_relevance
+    slot_uri: nams_registry:holds_nams
     owner: Resource
     domain_of:
     - Resource
-    range: NAMsRelevanceEnum
-    required: true
+    range: HoldsNAMsEnum
   relevance_note:
     name: relevance_note
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/relevance_note
-    description: Why the resource was given its nams_relevance value, e.g. "Holds
-      in vivo animal study data used to benchmark NAMs; holds no NAMs itself."
+    description: Why the resource was given its holds_nams value, e.g. "Holds the
+      measurement methods for key events, but its primary content is adverse outcome
+      pathways."
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:relevance_note
     owner: Resource
@@ -714,10 +712,11 @@ slots:
   priority:
     name: priority
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/priority
-    description: How much the resource adds, and so how soon it is worth working on.
-      Set it once that has been investigated. A resource that repackages another one
-      can still add value, for example through a new format, integration with other
-      data, or easier access, so repackaging alone does not make a resource low priority.
+    description: 'Extraction priority: how much the resource adds, and so how soon
+      it is worth extracting content from. Set it once that has been investigated.
+      A resource that repackages another one can still add value, for example through
+      a new format, integration with other data, or easier access, so repackaging
+      alone does not make a resource low priority.'
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:priority
     owner: Resource
@@ -1025,7 +1024,7 @@ classes:
     - repository
     - resource_type
     - domain_areas
-    - nams_relevance
+    - holds_nams
     - relevance_note
     - curation_model
     - dismech_integration
@@ -1117,6 +1116,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T18:57:50'
-source_file_size: 18223
+source_file_date: '2026-11-05T19:41:48'
+source_file_size: 18131
 

@@ -13,7 +13,6 @@ domain_areas:
 - environment
 - pathways
 - adverse outcome pathways
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://www.epa.gov/healthresearch/adverse-outcome-pathway-database-aop-db

@@ -24,7 +24,6 @@ domain_areas:
 - proteomics
 - rare disease
 - biomedical
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://www.hipsci.org/

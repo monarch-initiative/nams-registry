@@ -16,8 +16,8 @@ lists every resource in the registry.
 There are two kinds of change, each with its own kind of issue. Make
 each change on a branch and open a pull request that refers to the issue.
 
-- **Updating a record.** A change to one resource, such as setting its
-  NAMs relevance or priority, is made in that resource's file,
+- **Updating a record.** A change to one resource, such as recording
+  whether it holds NAMs or setting its priority, is made in that resource's file,
   `resources/<id>.yaml`. Each resource has a review issue, labelled
   `resource-review`, where it is discussed; the resource table links to it.
 - **Changing the schema.** A change to what the registry records, such as

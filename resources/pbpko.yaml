@@ -8,7 +8,6 @@ resource_type: Ontology
 domain_areas:
 - chemistry and biochemistry
 - pharmacology
-nams_relevance: undecided
 activity_status: active
 license:
   id: http://creativecommons.org/licenses/by/3.0/

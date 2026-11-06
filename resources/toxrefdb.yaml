@@ -14,7 +14,6 @@ domain_areas:
 - toxicology
 - chemistry and biochemistry
 - public health
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://creativecommons.org/publicdomain/zero/1.0/

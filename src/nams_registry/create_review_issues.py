@@ -2,8 +2,9 @@
 
 Each issue is the discussion thread for one resource. Its URL is written
 to the resource's ``discussion_issue`` field, which the resource table
-links to. An existing issue whose title ends with the resource's id in
-parentheses is reused, so running this again does not open duplicates.
+links to. Each issue body ends with a hidden marker naming the resource's
+id; an existing labelled issue with that marker is reused, so running this
+again does not open duplicates.
 
 Requires the GitHub CLI (``gh``), logged in with permission to open
 issues in the repository. Use ``--dry-run`` to see what would be done.
@@ -14,6 +15,7 @@ import datetime
 import glob
 import json
 import os
+import re
 import subprocess
 import time
 
@@ -24,20 +26,29 @@ LABEL = "resource-review"
 LABEL_COLOR = "1d76db"
 LABEL_DESCRIPTION = "Discussion of one resource in the registry"
 SITE = "https://monarch-initiative.github.io/nams-registry/resources/"
+MARKER = re.compile(r"<!-- nams-registry: (\S+) -->")
 
 BODY = """This issue is the discussion thread for **{name}** (`{id}`) in the NAMs registry.
 
 - Registry entry: [resources/{id}.yaml](https://github.com/{repository}/blob/main/resources/{id}.yaml)
 - Homepage: {homepage}
-{source_line}
+
+**Current classification** (as of {today}; the registry entry is the up-to-date record)
+
+- Holds NAMs: {holds_nams}
+- Priority: {priority}
+
 Use this issue to discuss:
 
-- **NAMs relevance:** does the resource hold NAMs, help find NAMs held elsewhere, or only support work with them? (`holds_nams`, `points_to_nams`, `nams_adjacent`, or `undecided`)
-- **Curation model:** who creates the resource's content?
+- **Holds NAMs:** does the resource hold NAMs, and are they its primary content? (`primary`, `secondary`, `none`, or `unclear`). Explain the choice in `relevance_note`.
 - **DisMech integration:** has any of its content been incorporated into DisMech, or does DisMech have tooling for it?
-- **Priority:** what does the resource add beyond other resources? (`high`, `medium`, or `low`, and why)
+- **Priority:** choose a level for extraction priority (`high`, `medium`, or `low`). Explain the choice in `priority_rationale`.
 
 Decisions are recorded by editing the entry's YAML file in a pull request that refers to this issue.
+
+If this resource needs information the registry has no field for, open a separate issue labelled `schema-change`.
+
+<!-- nams-registry: {id} -->
 """
 
 
@@ -51,22 +62,20 @@ def gh(*args):
 
 def title_for(resource):
     """Return the issue title for a resource."""
-    return f"Comments and edits on {resource['name']} ({resource['id']})"
+    return f"Comments and edits on {resource['name']}"
 
 
 def body_for(resource):
     """Return the issue body for a resource."""
-    imports = resource.get("imported_from") or []
-    source_line = "".join(
-        f"- Imported from: [{i['source']} `{i['source_id']}`]({i['source_url']})\n"
-        for i in imports if i.get("source_url")
-    )
+    priority = resource.get("priority")
     return BODY.format(
         name=resource["name"],
         id=resource["id"],
         repository=REPOSITORY,
         homepage=resource.get("homepage_url") or "not recorded",
-        source_line=source_line,
+        today=datetime.date.today().isoformat(),
+        holds_nams=f"`{resource['holds_nams']}`" if resource.get("holds_nams") else "not yet evaluated",
+        priority=f"`{priority}`" if priority else "not set",
     )
 
 
@@ -74,13 +83,13 @@ def existing_issues():
     """Map resource id to the URL of its review issue, for issues already open or closed."""
     issues = json.loads(gh(
         "issue", "list", "--repo", REPOSITORY, "--label", LABEL, "--state", "all",
-        "--limit", "1000", "--json", "title,url",
+        "--limit", "1000", "--json", "body,url",
     ))
     found = {}
     for issue in issues:
-        title = issue["title"]
-        if title.endswith(")") and "(" in title:
-            found[title[title.rindex("(") + 1:-1]] = issue["url"]
+        marker = MARKER.search(issue["body"] or "")
+        if marker:
+            found[marker.group(1)] = issue["url"]
     return found
 
 

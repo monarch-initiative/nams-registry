@@ -23,7 +23,6 @@ domain_areas:
 - drug discovery
 - high-throughput screening
 - public health
-nams_relevance: undecided
 activity_status: active
 license:
   label: U.S. Government Work (public domain)

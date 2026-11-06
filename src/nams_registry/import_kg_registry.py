@@ -4,8 +4,8 @@ Each Resource page in a local KG-Registry checkout whose ``collection``
 includes ``nams`` becomes one file, ``resources/<id>.yaml``. Fields that
 the NAMs registry does not keep are dropped, KG-Registry's ``category``
 and ``domains`` become ``resource_type`` and ``domain_areas``, and every
-entry starts as ``nams_relevance: undecided`` with an ``imported_from``
-record naming the KG-Registry commit.
+entry gets an ``imported_from`` record naming the KG-Registry commit.
+``holds_nams`` is left out until the resource has been evaluated.
 
 Existing files are skipped unless ``--overwrite`` is given, so that
 curation done after an import is not lost.
@@ -65,7 +65,6 @@ def convert(page, commit, today):
         entry["resource_type"] = page["category"]
     if page.get("domains"):
         entry["domain_areas"] = page["domains"]
-    entry["nams_relevance"] = "undecided"
     for f in ("activity_status", "use_instead"):
         if page.get(f):
             entry[f] = page[f]

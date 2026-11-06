@@ -48,7 +48,7 @@ classes:
       - repository
       - resource_type
       - domain_areas
-      - nams_relevance
+      - holds_nams
       - relevance_note
       - curation_model
       - dismech_integration
@@ -159,17 +159,16 @@ slots:
     description: >-
       The domains the resource covers, such as toxicology. Imported from
       the KG-Registry domains.
-  nams_relevance:
-    range: NAMsRelevanceEnum
-    required: true
+  holds_nams:
+    range: HoldsNAMsEnum
     description: >-
-      Whether the resource holds NAMs itself, helps find NAMs held
-      elsewhere, or only supports work with them. Use undecided until the
-      resource has been reviewed.
+      Whether the resource holds NAMs, and whether they are its primary
+      content. Leave it out until the resource has been evaluated.
   relevance_note:
     description: >-
-      Why the resource was given its nams_relevance value, e.g. "Holds in
-      vivo animal study data used to benchmark NAMs; holds no NAMs itself."
+      Why the resource was given its holds_nams value, e.g. "Holds the
+      measurement methods for key events, but its primary content is
+      adverse outcome pathways."
   curation_model:
     range: CurationModelEnum
     multivalued: true
@@ -185,11 +184,12 @@ slots:
   priority:
     range: PriorityEnum
     description: >-
-      How much the resource adds, and so how soon it is worth working on.
-      Set it once that has been investigated. A resource that repackages
-      another one can still add value, for example through a new format,
-      integration with other data, or easier access, so repackaging alone
-      does not make a resource low priority.
+      Extraction priority: how much the resource adds, and so how soon it
+      is worth extracting content from. Set it once that has been
+      investigated. A resource that repackages another one can still add
+      value, for example through a new format, integration with other data,
+      or easier access, so repackaging alone does not make a resource low
+      priority.
   priority_rationale:
     description: >-
       Why the resource was given its priority, based on what was found
@@ -450,25 +450,22 @@ enums:
       toxicology:
         description: >-
           The study of the adverse effects of chemicals on living organisms.
-  NAMsRelevanceEnum:
-    description: How a resource relates to NAMs.
+  HoldsNAMsEnum:
+    description: Whether a resource holds NAMs, and whether they are its primary content.
     permissible_values:
-      holds_nams:
+      primary:
         description: >-
-          The resource holds NAMs or records produced with them: methods,
-          models, cell lines, or assay data.
-      points_to_nams:
+          NAMs, or records produced with them such as methods, models, cell
+          lines, or assay data, are the resource's primary content.
+      secondary:
         description: >-
-          The resource holds no NAMs itself but helps find them, by listing,
-          surveying, or citing NAMs held elsewhere, such as a landscape
-          analysis or a catalog.
-      nams_adjacent:
+          The resource holds NAMs, but they are not its primary content.
+      none:
+        description: The resource holds no NAMs.
+      unclear:
         description: >-
-          The resource supports work with NAMs but neither holds nor points
-          to them, such as reference in vivo data used to benchmark NAMs or
-          chemical identity data.
-      undecided:
-        description: The resource has not yet been reviewed.
+          The resource was evaluated, but whether it holds NAMs could not be
+          decided. Explain why in relevance_note.
   CurationModelEnum:
     description: Who creates a resource's content.
     permissible_values:
@@ -490,7 +487,9 @@ enums:
       aggregated:
         description: The content is copied from other resources.
   PriorityEnum:
-    description: How much a resource adds, and so how soon it is worth working on.
+    description: >-
+      Extraction priority: how much a resource adds, and so how soon it is
+      worth extracting content from.
     permissible_values:
       high:
       medium:

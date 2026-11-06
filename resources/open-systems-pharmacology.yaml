@@ -17,7 +17,6 @@ domain_areas:
 - biomedical
 - software
 - information technology
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://github.com/Open-Systems-Pharmacology/Suite/blob/master/LICENSE

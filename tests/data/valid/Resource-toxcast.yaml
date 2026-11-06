@@ -17,7 +17,6 @@ domain_areas:
   - biomedical
   - drug discovery
   - high-throughput screening
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://www.epa.gov/privacy/privacy-and-security-notice

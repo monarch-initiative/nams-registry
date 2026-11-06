@@ -17,7 +17,6 @@ domain_areas:
 - toxicology
 - chemistry and biochemistry
 - cheminformatics
-nams_relevance: undecided
 activity_status: inactive
 license:
   id: https://creativecommons.org/licenses/by/4.0/

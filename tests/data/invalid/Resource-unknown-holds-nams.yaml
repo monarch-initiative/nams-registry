@@ -1,0 +1,5 @@
+# Invalid: holds_nams takes only primary, secondary, none, or unclear.
+---
+id: toxcast
+name: ToxCast
+holds_nams: maybe

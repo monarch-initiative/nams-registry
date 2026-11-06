@@ -7,7 +7,7 @@ resource_type: DataSource
 domain_areas:
   - toxicology
   - adverse outcome pathways
-nams_relevance: points_to_nams
+holds_nams: secondary
 priority: medium
 curation_model:
   - community

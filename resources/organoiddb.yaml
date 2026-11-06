@@ -20,7 +20,6 @@ domain_areas:
 - biological systems
 - single-cell analysis
 - anatomy and development
-nams_relevance: undecided
 activity_status: active
 license:
   id: http://www.inbirg.com/organoid_db/

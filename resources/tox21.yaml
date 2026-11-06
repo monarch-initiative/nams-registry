@@ -19,7 +19,6 @@ domain_areas:
 - environment
 - drug discovery
 - high-throughput screening
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://www.usa.gov/government-works

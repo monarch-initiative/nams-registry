@@ -19,7 +19,6 @@ domain_areas:
 - chemistry and biochemistry
 - cheminformatics
 - environment
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://qsartoolbox.org/license-agreement/

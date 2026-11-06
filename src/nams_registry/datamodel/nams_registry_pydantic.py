@@ -284,25 +284,25 @@ class DomainAreaEnum(str, Enum):
     """
 
 
-class NAMsRelevanceEnum(str, Enum):
+class HoldsNAMsEnum(str, Enum):
     """
-    How a resource relates to NAMs.
+    Whether a resource holds NAMs, and whether they are its primary content.
     """
-    holds_nams = "holds_nams"
+    primary = "primary"
     """
-    The resource holds NAMs or records produced with them: methods, models, cell lines, or assay data.
+    NAMs, or records produced with them such as methods, models, cell lines, or assay data, are the resource's primary content.
     """
-    points_to_nams = "points_to_nams"
+    secondary = "secondary"
     """
-    The resource holds no NAMs itself but helps find them, by listing, surveying, or citing NAMs held elsewhere, such as a landscape analysis or a catalog.
+    The resource holds NAMs, but they are not its primary content.
     """
-    nams_adjacent = "nams_adjacent"
+    none = "none"
     """
-    The resource supports work with NAMs but neither holds nor points to them, such as reference in vivo data used to benchmark NAMs or chemical identity data.
+    The resource holds no NAMs.
     """
-    undecided = "undecided"
+    unclear = "unclear"
     """
-    The resource has not yet been reviewed.
+    The resource was evaluated, but whether it holds NAMs could not be decided. Explain why in relevance_note.
     """
 
 
@@ -334,7 +334,7 @@ class CurationModelEnum(str, Enum):
 
 class PriorityEnum(str, Enum):
     """
-    How much a resource adds, and so how soon it is worth working on.
+    Extraction priority: how much a resource adds, and so how soon it is worth extracting content from.
     """
     high = "high"
     medium = "medium"
@@ -376,11 +376,11 @@ class Resource(NamedThing):
     repository: Optional[str] = Field(default=None, description="""The main version control repository for the resource, if it has one.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     resource_type: Optional[ResourceTypeEnum] = Field(default=None, description="""What form the resource takes, such as a data source or a knowledge graph. Imported from the KG-Registry category.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     domain_areas: Optional[list[DomainAreaEnum]] = Field(default=None, description="""The domains the resource covers, such as toxicology. Imported from the KG-Registry domains.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
-    nams_relevance: NAMsRelevanceEnum = Field(default=..., description="""Whether the resource holds NAMs itself, helps find NAMs held elsewhere, or only supports work with them. Use undecided until the resource has been reviewed.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
-    relevance_note: Optional[str] = Field(default=None, description="""Why the resource was given its nams_relevance value, e.g. \"Holds in vivo animal study data used to benchmark NAMs; holds no NAMs itself.\"""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    holds_nams: Optional[HoldsNAMsEnum] = Field(default=None, description="""Whether the resource holds NAMs, and whether they are its primary content. Leave it out until the resource has been evaluated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    relevance_note: Optional[str] = Field(default=None, description="""Why the resource was given its holds_nams value, e.g. \"Holds the measurement methods for key events, but its primary content is adverse outcome pathways.\"""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     curation_model: Optional[list[CurationModelEnum]] = Field(default=None, description="""Who creates the resource's content, as the resource works today. Use more than one value when the resource mixes them.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     dismech_integration: Optional[str] = Field(default=None, description="""The resource's current state in DisMech: whether any of its content has been incorporated into DisMech, and whether DisMech has tooling for it, such as a script or skill. Records what exists, not what the resource could offer. Free text for now.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
-    priority: Optional[PriorityEnum] = Field(default=None, description="""How much the resource adds, and so how soon it is worth working on. Set it once that has been investigated. A resource that repackages another one can still add value, for example through a new format, integration with other data, or easier access, so repackaging alone does not make a resource low priority.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    priority: Optional[PriorityEnum] = Field(default=None, description="""Extraction priority: how much the resource adds, and so how soon it is worth extracting content from. Set it once that has been investigated. A resource that repackages another one can still add value, for example through a new format, integration with other data, or easier access, so repackaging alone does not make a resource low priority.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     priority_rationale: Optional[str] = Field(default=None, description="""Why the resource was given its priority, based on what was found about what it adds. For a resource that repackages another, say what it adds beyond the original, or that nothing was found.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     discussion_issue: Optional[str] = Field(default=None, description="""The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2. Set by `just create-review-issues`.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     activity_status: Optional[ActivityStatusEnum] = Field(default=None, description="""The status of the resource itself.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })

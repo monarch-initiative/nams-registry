@@ -22,7 +22,7 @@ domain_areas:
 - adverse outcome pathways
 - chemistry and biochemistry
 - environment
-nams_relevance: holds_nams
+holds_nams: primary
 priority: high
 activity_status: active
 license:

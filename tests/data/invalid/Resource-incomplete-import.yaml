@@ -2,6 +2,5 @@
 ---
 id: toxcast
 name: ToxCast
-nams_relevance: undecided
 imported_from:
   - source: kg_registry

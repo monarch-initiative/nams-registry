@@ -18,7 +18,6 @@ domain_areas:
 - biomedical
 - clinical trials
 - clinical
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://hpscreg.eu/terms

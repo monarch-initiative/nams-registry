@@ -20,7 +20,6 @@ domain_areas:
 - pharmacology
 - genomics
 - gene expression profiling
-nams_relevance: undecided
 activity_status: inactive
 license:
   id: https://creativecommons.org/licenses/by-sa/2.1/jp/

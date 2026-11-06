@@ -15,7 +15,6 @@ homepage_url: https://tsar.jrc.ec.europa.eu/
 resource_type: DataSource
 domain_areas:
 - toxicology
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://commission.europa.eu/legal-notice_en

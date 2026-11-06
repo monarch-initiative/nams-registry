@@ -10,7 +10,6 @@ description: >-
 resource_type: Report
 domain_areas:
   - biomedical
-nams_relevance: undecided
 dismech_integration: >-
   Tooling: `just complement-arie-parse` turns the dashboard's data download
   into tables (scripts/complement_arie_landscape.py). Content: none

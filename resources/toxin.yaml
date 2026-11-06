@@ -10,7 +10,6 @@ domain_areas:
 - biomedical
 - toxicology
 - systems biology
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by/4.0/

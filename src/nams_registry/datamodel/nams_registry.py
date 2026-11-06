@@ -137,12 +137,12 @@ class Resource(NamedThing):
 
     id: Union[str, ResourceId] = None
     name: str = None
-    nams_relevance: Union[str, "NAMsRelevanceEnum"] = None
     synonyms: Optional[Union[str, list[str]]] = empty_list()
     homepage_url: Optional[Union[str, URI]] = None
     repository: Optional[Union[str, URI]] = None
     resource_type: Optional[Union[str, "ResourceTypeEnum"]] = None
     domain_areas: Optional[Union[Union[str, "DomainAreaEnum"], list[Union[str, "DomainAreaEnum"]]]] = empty_list()
+    holds_nams: Optional[Union[str, "HoldsNAMsEnum"]] = None
     relevance_note: Optional[str] = None
     curation_model: Optional[Union[Union[str, "CurationModelEnum"], list[Union[str, "CurationModelEnum"]]]] = empty_list()
     dismech_integration: Optional[str] = None
@@ -163,11 +163,6 @@ class Resource(NamedThing):
         if not isinstance(self.id, ResourceId):
             self.id = ResourceId(self.id)
 
-        if self._is_empty(self.nams_relevance):
-            self.MissingRequiredField("nams_relevance")
-        if not isinstance(self.nams_relevance, NAMsRelevanceEnum):
-            self.nams_relevance = NAMsRelevanceEnum(self.nams_relevance)
-
         if not isinstance(self.synonyms, list):
             self.synonyms = [self.synonyms] if self.synonyms is not None else []
         self.synonyms = [v if isinstance(v, str) else str(v) for v in self.synonyms]
@@ -184,6 +179,9 @@ class Resource(NamedThing):
         if not isinstance(self.domain_areas, list):
             self.domain_areas = [self.domain_areas] if self.domain_areas is not None else []
         self.domain_areas = [v if isinstance(v, DomainAreaEnum) else DomainAreaEnum(v) for v in self.domain_areas]
+
+        if self.holds_nams is not None and not isinstance(self.holds_nams, HoldsNAMsEnum):
+            self.holds_nams = HoldsNAMsEnum(self.holds_nams)
 
         if self.relevance_note is not None and not isinstance(self.relevance_note, str):
             self.relevance_note = str(self.relevance_note)
@@ -529,26 +527,26 @@ class DomainAreaEnum(EnumDefinitionImpl):
                 text="systems biology",
                 description="""The computational and mathematical analysis of complex biological systems and their interactions."""))
 
-class NAMsRelevanceEnum(EnumDefinitionImpl):
+class HoldsNAMsEnum(EnumDefinitionImpl):
     """
-    How a resource relates to NAMs.
+    Whether a resource holds NAMs, and whether they are its primary content.
     """
-    holds_nams = PermissibleValue(
-        text="holds_nams",
-        description="""The resource holds NAMs or records produced with them: methods, models, cell lines, or assay data.""")
-    points_to_nams = PermissibleValue(
-        text="points_to_nams",
-        description="""The resource holds no NAMs itself but helps find them, by listing, surveying, or citing NAMs held elsewhere, such as a landscape analysis or a catalog.""")
-    nams_adjacent = PermissibleValue(
-        text="nams_adjacent",
-        description="""The resource supports work with NAMs but neither holds nor points to them, such as reference in vivo data used to benchmark NAMs or chemical identity data.""")
-    undecided = PermissibleValue(
-        text="undecided",
-        description="The resource has not yet been reviewed.")
+    primary = PermissibleValue(
+        text="primary",
+        description="""NAMs, or records produced with them such as methods, models, cell lines, or assay data, are the resource's primary content.""")
+    secondary = PermissibleValue(
+        text="secondary",
+        description="The resource holds NAMs, but they are not its primary content.")
+    none = PermissibleValue(
+        text="none",
+        description="The resource holds no NAMs.")
+    unclear = PermissibleValue(
+        text="unclear",
+        description="""The resource was evaluated, but whether it holds NAMs could not be decided. Explain why in relevance_note.""")
 
     _defn = EnumDefinition(
-        name="NAMsRelevanceEnum",
-        description="How a resource relates to NAMs.",
+        name="HoldsNAMsEnum",
+        description="Whether a resource holds NAMs, and whether they are its primary content.",
     )
 
 class CurationModelEnum(EnumDefinitionImpl):
@@ -578,7 +576,7 @@ class CurationModelEnum(EnumDefinitionImpl):
 
 class PriorityEnum(EnumDefinitionImpl):
     """
-    How much a resource adds, and so how soon it is worth working on.
+    Extraction priority: how much a resource adds, and so how soon it is worth extracting content from.
     """
     high = PermissibleValue(text="high")
     medium = PermissibleValue(text="medium")
@@ -586,7 +584,7 @@ class PriorityEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="PriorityEnum",
-        description="How much a resource adds, and so how soon it is worth working on.",
+        description="Extraction priority: how much a resource adds, and so how soon it is worth extracting content from.",
     )
 
 class SourceRegistryEnum(EnumDefinitionImpl):
@@ -631,8 +629,8 @@ slots.resource_type = Slot(uri=NAMS_REGISTRY.resource_type, name="resource_type"
 slots.domain_areas = Slot(uri=NAMS_REGISTRY.domain_areas, name="domain_areas", curie=NAMS_REGISTRY.curie('domain_areas'),
                    model_uri=NAMS_REGISTRY.domain_areas, domain=None, range=Optional[Union[Union[str, "DomainAreaEnum"], list[Union[str, "DomainAreaEnum"]]]])
 
-slots.nams_relevance = Slot(uri=NAMS_REGISTRY.nams_relevance, name="nams_relevance", curie=NAMS_REGISTRY.curie('nams_relevance'),
-                   model_uri=NAMS_REGISTRY.nams_relevance, domain=None, range=Union[str, "NAMsRelevanceEnum"])
+slots.holds_nams = Slot(uri=NAMS_REGISTRY.holds_nams, name="holds_nams", curie=NAMS_REGISTRY.curie('holds_nams'),
+                   model_uri=NAMS_REGISTRY.holds_nams, domain=None, range=Optional[Union[str, "HoldsNAMsEnum"]])
 
 slots.relevance_note = Slot(uri=NAMS_REGISTRY.relevance_note, name="relevance_note", curie=NAMS_REGISTRY.curie('relevance_note'),
                    model_uri=NAMS_REGISTRY.relevance_note, domain=None, range=Optional[str])

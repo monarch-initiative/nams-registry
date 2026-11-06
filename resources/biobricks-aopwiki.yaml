@@ -8,7 +8,6 @@ resource_type: KnowledgeGraph
 domain_areas:
 - toxicology
 - adverse outcome pathways
-nams_relevance: undecided
 activity_status: active
 license:
   id: https://aopwiki.org/
