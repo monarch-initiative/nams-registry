@@ -348,6 +348,21 @@
 
 
 
+      Resource : effort_rationale
+
+      Resource : expectations
+
+      Resource : extraction_effort
+
+
+
+
+
+        Resource --&gt; "0..1" ExtractionEffortEnum : extraction_effort
+        click ExtractionEffortEnum href "../ExtractionEffortEnum/"
+
+
+
       Resource : holds_nams
 
 
@@ -527,6 +542,24 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../extraction_effort/">extraction_effort</a></td>
+<td>0..1 <br/> <a href="../ExtractionEffortEnum/">ExtractionEffortEnum</a></td>
+<td>The estimated effort to ready the resource for incorporation: deciding what t...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../effort_rationale/">effort_rationale</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Why the resource was given its extraction_effort, for example its format, its...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../expectations/">expectations</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>What is expected to be found in the resource, written before content is extra...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../discussion_issue/">discussion_issue</a></td>
 <td>0..1 <br/> <a href="../Uri/">Uri</a></td>
 <td>The GitHub issue where the resource is discussed, e</td>
@@ -659,6 +692,9 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_integration</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority_rationale</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extraction_effort</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">effort_rationale</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">expectations</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discussion_issue</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">activity_status</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">use_instead</span>
@@ -791,6 +827,40 @@
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Why the resource was given its priority, based on what was found</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">about what it adds. For a resource that repackages another, say what it adds</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">beyond the original, or that nothing was found.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">extraction_effort</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extraction_effort</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">estimated</span><span class="nv"> </span><span class="s">effort</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">ready</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">incorporation:</span><span class="nv"> </span><span class="s">deciding</span>
+<span class="w">      </span><span class="s">what</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">extract</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">getting</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">usable</span><span class="nv"> </span><span class="s">form.</span><span class="nv"> </span><span class="s">Independent</span>
+<span class="w">      </span><span class="s">of</span><span class="nv"> </span><span class="s">priority,</span><span class="nv"> </span><span class="s">which</span><span class="nv"> </span><span class="s">records</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">much</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">adds.</span><span class="nv"> </span><span class="s">Set</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">once</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">resource</span>
+<span class="w">      </span><span class="s">has</span><span class="nv"> </span><span class="s">been</span><span class="nv"> </span><span class="s">looked</span><span class="nv"> </span><span class="s">at.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExtractionEffortEnum</span>
+<span class="w">  </span><span class="nt">effort_rationale</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">effort_rationale</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Why the resource was given its extraction_effort, for example its</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">format, its access, existing tooling, or decisions still to be made about what</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to extract.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">expectations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">expectations</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">What is expected to be found in the resource, written before content</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">is extracted from it, e.g. "A classification of NAMs by model type, and a list</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">of biomedical databases scored for FAIRness."</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>

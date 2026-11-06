@@ -53,6 +53,10 @@
          <lastmod>2026-11-06</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/ExtractionEffortEnum/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/elements/Float/</loc>
          <lastmod>2026-11-06</lastmod>
     </url>
@@ -170,6 +174,18 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/elements/domain_areas/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/effort_rationale/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/expectations/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/extraction_effort/</loc>
          <lastmod>2026-11-06</lastmod>
     </url>
     <url>
