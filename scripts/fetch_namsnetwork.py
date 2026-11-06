@@ -73,8 +73,10 @@ def get_json(path, query=None, retries=3, pause=1.0):
             with urllib.request.urlopen(request, timeout=60) as response:
                 return json.load(response)
         except urllib.error.HTTPError as error:
-            # 429 and 5xx may pass; anything else will not.
-            if error.code != 429 and error.code < 500 or attempt == retries:
+            # Retry only what may pass on a later attempt: rate limiting (429)
+            # and server errors (5xx).
+            retryable = error.code == 429 or error.code >= 500
+            if not retryable or attempt == retries:
                 raise
         except urllib.error.URLError:
             if attempt == retries:
@@ -107,6 +109,7 @@ def main():
 
     filters = get_json("data_models/get_filters/")
     (args.output / "filters.json").write_text(json.dumps(filters, indent=1, ensure_ascii=False))
+    time.sleep(args.pause)
 
     rows, count = fetch_list({}, args.pause)
     if len(rows) != count:
