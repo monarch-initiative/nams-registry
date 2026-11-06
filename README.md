@@ -13,21 +13,32 @@ lists every resource in the registry.
 
 ## Making changes
 
-There are two kinds of change, each with its own kind of issue. Make
-each change on a branch and open a pull request that refers to the issue.
+A change is made to a record, to the schema, or to both:
 
-- **Updating a record.** A change to one resource, such as recording
-  whether it holds NAMs or setting its priority, is made in that resource's file,
-  `resources/<id>.yaml`. Each resource has a review issue, labelled
-  `resource-review`, where it is discussed; the resource table links to it.
-- **Changing the schema.** A change to what the registry records, such as
-  adding a record count, is made in
-  `src/nams_registry/schema/nams_registry.yaml`. Discuss it first in an
-  issue labelled `schema-change`, since it affects every resource. Once
-  the schema change is merged, filling in the new field for a resource is
-  a record update.
+- **A record** describes one resource, in `resources/<id>.yaml`. Each
+  resource has a review issue, labelled `resource-review`, where it is
+  discussed; the resource table links to it.
+- **The schema**, `src/nams_registry/schema/nams_registry.yaml`, sets
+  what every record can hold.
 
-Run `just test` before opening a pull request.
+In practice the two tend to change together, because it is the content
+that drives the schema. Reviewing a resource often turns up something
+the registry has no field for, and the new field is added in the same
+pull request as the record that needs it. When that happens:
+
+- Make the schema change in its own commit, ahead of the record changes
+  that use it, since it affects every resource. Include the files it
+  regenerates: `just test` regenerates the Python datamodel, and
+  `just gen-doc` the copy in `docs/schema/`.
+- Refer to the resource's review issue in the record commits and in the
+  pull request.
+
+A schema change that needs discussion before anyone builds on it, or
+that no single resource prompted, can have its own issue, labelled
+`schema-change`.
+
+Make each change on a branch, and run `just test` before opening a pull
+request.
 
 ## Repository Structure
 
