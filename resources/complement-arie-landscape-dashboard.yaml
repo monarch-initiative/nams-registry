@@ -2,20 +2,17 @@ id: complement-arie-landscape-dashboard
 name: Complement-ARIE Landscape Analysis Tableau Public Dashboard
 synonyms:
 - Complement-ARIE Landscape Analysis dashboard
-description: >-
-  The interactive Tableau Public dashboard of the NIH Common Fund
-  Complement-ARIE Landscape Analysis, which publishes that report's
-  paper-level results. It has three tabs. "Explore Questions" shows the
-  generative-AI (Claude v2) answers to 19 questions for each paper. "Explore
-  Categories" shows the papers by NAM keyword category (in vitro, in silico,
-  in chemico, general methods). "Reference List" gives each paper's
-  bibliographic details, and it is the report's Appendix D. The "Q&A-Question
-  Details" data download from Explore Questions has 30,241 rows, one per
-  paper and question, covering 3,051 citation keys. 2,737 of those keys trace
-  to a single paper with answers, and most of those papers have a PMID or a
-  DOI. The answers are summaries that point a reader to a paper; they are not
-  evidence in themselves. First published 18 December 2023; last republished
-  8 May 2024 (workbook revision 1.9).
+description: The interactive Tableau Public dashboard of the NIH Common Fund Complement-ARIE
+  Landscape Analysis, which publishes that report's paper-level results. It has three
+  tabs. "Explore Questions" shows the generative-AI (Claude v2) answers to 19 questions
+  for each paper. "Explore Categories" shows the papers by NAM keyword category (in
+  vitro, in silico, in chemico, general methods). "Reference List" gives each paper's
+  bibliographic details, and it is the report's Appendix D. The "Q&A-Question Details"
+  data download from Explore Questions has 30,241 rows, one per paper and question,
+  covering 3,051 citation keys. 2,737 of those keys trace to a single paper with answers,
+  and most of those papers have a PMID or a DOI. The answers are summaries that point
+  a reader to a paper; they are not evidence in themselves. First published 18 December
+  2023; last republished 8 May 2024 (workbook revision 1.9).
 homepage_url: https://public.tableau.com/app/profile/complement.arie/viz/Complement-ARIELandscapeAnalysis_17029296896540/ExploreQuestions
 resource_type: Report
 domain_areas:
@@ -24,46 +21,40 @@ domain_areas:
 - machine learning
 - chemistry and biochemistry
 holds_nams: secondary
-relevance_note: >-
-  Each record is a paper about a NAM, with free-text answers describing the
-  method, tissues, cell types, diseases, validation and limitations. The NAMs
-  themselves are not named or identified as records. Turning them into
-  structured records needs parsing, entity matching (for example to MONDO,
-  CL and UBERON) and a check against each paper.
+relevance_note: Each record is a paper about a NAM, with free-text answers describing
+  the method, tissues, cell types, diseases, validation and limitations. The NAMs
+  themselves are not named or identified as records. Turning them into structured
+  records needs parsing, entity matching (for example to MONDO, CL and UBERON) and
+  a check against each paper.
 curation_model:
 - maintainers
 - automated
-dismech_integration: >-
-  Tooling: `just complement-arie-parse` (scripts/complement_arie_landscape.py,
-  tested in tests/test_complement_arie_landscape.py) parses the "Q&A-Question
-  Details" download into papers.tsv, answers.jsonl and questions.tsv. The
-  download is about 128 MB and is not committed. It is pinned by sha256 in
-  data/complement-arie/MANIFEST.yaml (downloaded 2026-10-30). The parser and
-  its handling of the download's edge cases are described in
-  docs/reports/complement-arie-landscape-analysis-2026-10-30.md, added in
-  dismech PR #16039. Content: none incorporated into kb/. The report lists
-  candidate uses: disease-to-model leads, cell and tissue annotation, model
-  limitations and validation. Checked against dismech commit 4bce5b015a9.
+dismech_integration: 'Tooling: `just complement-arie-parse` (scripts/complement_arie_landscape.py,
+  tested in tests/test_complement_arie_landscape.py) parses the "Q&A-Question Details"
+  download into papers.tsv, answers.jsonl and questions.tsv. The download is about
+  128 MB and is not committed. It is pinned by sha256 in data/complement-arie/MANIFEST.yaml
+  (downloaded 2026-10-30). The parser and its handling of the download''s edge cases
+  are described in docs/reports/complement-arie-landscape-analysis-2026-10-30.md,
+  added in dismech PR #16039. Content: none incorporated into kb/. The report lists
+  candidate uses: disease-to-model leads, cell and tissue annotation, model limitations
+  and validation. Checked against dismech commit 4bce5b015a9.'
 priority: high
-priority_rationale: >-
-  Its content should be reviewed first. It is the only machine-readable form
-  of the Landscape Analysis: about 2,700 NAM papers, nearly all with a PMID or
-  DOI, each described in the same 19-question form. DisMech can already parse
-  it. Its 1,572 disease answers and its tissue and cell-type answers are leads
-  to experimental models for DisMech entries. Each lead still needs the paper
-  itself checked, since the answers were model-generated.
+priority_rationale: 'Its content should be reviewed first. It is the only machine-readable
+  form of the Landscape Analysis: about 2,700 NAM papers, nearly all with a PMID or
+  DOI, each described in the same 19-question form. DisMech can already parse it.
+  Its 1,572 disease answers and its tissue and cell-type answers are leads to experimental
+  models for DisMech entries. Each lead still needs the paper itself checked, since
+  the answers were model-generated.'
 extraction_effort: medium
-effort_rationale: >-
-  The dashboard's data download is medium effort to extract from, as it is a
-  large TSV/JSONL dataset that needs parsing and handling of edge cases. The
-  parser scripts and tests facilitate this process, but it still requires
-  careful processing to ensure accurate extraction of NAM-related information.
-expectations: >-
-  This literature in this dashboard has already been selected and processed
-  for the Complement-ARIE Landscape Analysis. It is expected to provide
-  structured answers to the 19 questions for each NAM paper, which can guide
-  the extraction and organization of NAM-related information for further use
-  in the registry.
+effort_rationale: The dashboard's data download is medium effort to extract from,
+  as it is a large TSV/JSONL dataset that needs parsing and handling of edge cases.
+  The parser scripts and tests facilitate this process, but it still requires careful
+  processing to ensure accurate extraction of NAM-related information.
+expectations: This literature in this dashboard has already been selected and processed
+  for the Complement-ARIE Landscape Analysis. It is expected to provide structured
+  answers to the 19 questions for each NAM paper, which can guide the extraction and
+  organization of NAM-related information for further use in the registry.
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/37
 activity_status: active
 creation_date: '2026-11-05'
 last_modified_date: '2026-11-05'
