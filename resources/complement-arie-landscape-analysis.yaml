@@ -1,0 +1,74 @@
+id: complement-arie-landscape-analysis
+name: Complement-ARIE Landscape Analysis Report
+synonyms:
+- 'Landscape Analysis Report 2024: New Approach Methodologies in Biomedical Research'
+- Complement-ARIE Landscape Analysis
+description: >-
+  A landscape analysis of new approach methodologies (NAMs) in biomedical
+  research, carried out for the NIH Common Fund Complement Animal Research In
+  Experimentation (Complement-ARIE) program by NICEATM, Inotiv (ILS) and ICF
+  and dated 29 February 2024. It surveys in vitro, in silico and in chemico
+  approaches. PubMed, Web of Science and Scopus searches (October 2023) were
+  screened with clustering and active machine learning down to 2,938 relevant
+  papers, mostly published 2023. Claude v2 then answered 19 questions about
+  each of the 2,735 papers whose full text it could process. The questions
+  cover the method, its validation and limitations, the tissues, cell types
+  and diseases examined, and its regulatory, ethical, economic and workforce
+  aspects. The report classifies the papers with a keyword list of NAM
+  categories under four model types: in vitro, in silico, in chemico and
+  general methods (Appendix E). It summarizes coverage and gaps for each model
+  type. It also scores 28 of 260 identified biomedical databases with a
+  29-question FAIR rubric (Appendices G and H), and it closes with
+  recommendations. The per-paper answers and the reference list are published
+  in the companion Tableau dashboard (complement-arie-landscape-dashboard), not
+  in the report.
+homepage_url: https://commonfund.nih.gov/complementarie/strategicplanning/landscape-analysis
+resource_type: Report
+domain_areas:
+- biomedical
+- cell biology
+- machine learning
+- chemistry and biochemistry
+holds_nams: secondary
+relevance_note: >-
+  The report is about NAMs, but it holds them only as prose, figures and
+  counts. It does not list them as records. Its structured content is the
+  NAM keyword classification (Appendix E), the generative-AI prompts
+  (Appendix F) and the FAIR scores of 28 databases (Appendix G). The papers
+  and their per-paper answers are in the companion dashboard.
+curation_model:
+- maintainers
+- automated
+dismech_integration: >-
+  Tooling: none for the report itself. DisMech has a parser for the companion
+  dashboard's data download (see complement-arie-landscape-dashboard), and
+  docs/reports/complement-arie-landscape-analysis-2026-10-30.md says the PDF
+  was not read for that work. Content: none incorporated into kb/. The
+  Complement-ARIE mention in kb/disorders/Rheumatoid_Arthritis.yaml comes
+  from the separate Challenge prize winners, not this report. Checked against
+  dismech commit 4bce5b015a9.
+priority: high
+priority_rationale: >-
+  Its content should be reviewed first. Its NAM classification (Appendix E)
+  and its 19 questions offer a ready-made scheme for sorting NAMs in this
+  registry and in DisMech. Its FAIR review names 28 biomedical databases, any
+  of which could be checked for this registry. It is also the methods record
+  for the dashboard: it explains how the papers were chosen and how the
+  answers were generated, which is needed to judge how far the dashboard's
+  answers can be trusted.
+extraction_effort: medium
+effort_rationale: >-
+  The report itself is medium effort to extract from, as it is a PDF with
+  structured appendices. The companion dashboard's data download is handled
+  separately and is not part of this extraction effort.
+expectations: This report is expected to provide a structured overview of NIH's
+  baseline assessment of NAMs from 2024. The breakdown and prompts used might inform
+  some of the classification schemes we may also adopt in this registry.
+activity_status: active
+publications:
+- id: https://commonfund.nih.gov/sites/commonfund/files/Complement-ARIE-Landscape-Analysis-29-Feb-2024-508.pdf
+  title: 'Landscape Analysis Report 2024: New Approach Methodologies in Biomedical Research'
+  year: '2024'
+  preferred: true
+creation_date: '2026-11-05'
+last_modified_date: '2026-11-05'
