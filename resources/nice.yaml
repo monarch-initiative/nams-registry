@@ -19,7 +19,7 @@ synonyms:
 - Integrated Chemical Environment
 - NIH Integrated Chemical Environment
 homepage_url: https://ice.ntp.niehs.nih.gov/
-resource_type: DataSource
+resource_type: Aggregator
 domain_areas:
 - chemistry and biochemistry
 - toxicology
@@ -27,6 +27,46 @@ domain_areas:
 - biomedical
 - environment
 - environmental exposure
+holds_nams: primary
+relevance_note: >-
+  NICE exists to develop and evaluate NAMs, and NAM records make up most of
+  its 19 data sets. These include in vitro and in chemico results for skin
+  sensitization, skin irritation and corrosion, eye irritation, endocrine
+  activity and genotoxicity; ToxCast and Tox21 high-throughput screening
+  data; and in silico predictions from OPERA, CATMoS, CERAPP, CoMPARA, the
+  AR and ER pathway models, and SEEM3. In vivo and human reference data,
+  such as the LLNA, Draize, rat acute toxicity, cancer bioassay and DART
+  guideline studies, are held alongside them so the NAMs can be evaluated
+  against them.
+curation_model:
+- maintainers
+- aggregated
+dismech_integration: >-
+  No NICE content has been extracted into DisMech, and DisMech has no tooling
+  for it. The Contact Dermatitis entry records the SARA-ICE model, which was
+  trained on data drawn from NICE. Checked against dismech commit
+  ecaad77e5e9.
+priority: medium
+priority_rationale: >-
+  NICE adds nine reference data sets that NICEATM curates, which pair NAM
+  results with in vivo or human reference data, and its own curation and
+  annotation of the ToxCast and Tox21 data. Most of its content by volume is
+  copied unchanged from resources that have their own entries, such as OPERA
+  and httk.
+expectations: >-
+  The content found only in NICE is the reference data NICEATM curates:
+  sensitization, skin irritation and corrosion, eye irritation, endocrine,
+  acute oral, dermal and inhalation toxicity, cancer, and DART. Each pairs
+  NAM results, where there are any, with in vivo or human reference data.
+  NICE also adds its own curation to the ToxCast and Tox21 data (hit-call
+  flags, and annotations of each assay's mechanistic target and mode of
+  action mapped to OBO ontologies), and shows CATMoS, CERAPP and CoMPARA
+  predictions. Its OPERA predictions and measured httk ADME values are copied
+  unchanged, so get those from the opera and httk entries. The data sets are
+  listed at https://ice.ntp.niehs.nih.gov/DATASETDESCRIPTION, where most can
+  be downloaded as spreadsheets. All but the chemical use and taxonomy data
+  sets can be queried through the REST API at
+  https://ice.ntp.niehs.nih.gov/api/v1/search.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/21
 activity_status: active
 license:
@@ -75,7 +115,7 @@ publications:
   year: '2022'
   doi: 10.3389/ftox.2022.987848
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-06'
 imported_from:
 - source: kg_registry
   source_id: nice
