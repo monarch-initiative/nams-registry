@@ -19,6 +19,7 @@ domain_areas:
 - environment
 - software
 - information technology
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/17
 activity_status: active
 license:
   id: https://opensource.org/licenses/MIT

@@ -15,6 +15,7 @@ domain_areas:
 - adverse outcome pathways
 holds_nams: secondary
 priority: medium
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/5
 activity_status: active
 license:
   id: https://aopwiki.org/

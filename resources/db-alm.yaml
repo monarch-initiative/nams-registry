@@ -17,6 +17,7 @@ resource_type: DataSource
 domain_areas:
 - toxicology
 - biomedical
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/12
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by/4.0/

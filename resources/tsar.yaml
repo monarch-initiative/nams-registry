@@ -15,6 +15,7 @@ homepage_url: https://tsar.jrc.ec.europa.eu/
 resource_type: DataSource
 domain_areas:
 - toxicology
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/34
 activity_status: active
 license:
   id: https://commission.europa.eu/legal-notice_en

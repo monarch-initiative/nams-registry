@@ -20,6 +20,7 @@ domain_areas:
 - pharmacology
 - genomics
 - gene expression profiling
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/24
 activity_status: inactive
 license:
   id: https://creativecommons.org/licenses/by-sa/2.1/jp/

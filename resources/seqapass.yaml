@@ -19,6 +19,7 @@ domain_areas:
 - protein structure
 - genomics
 - molecular evolution
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/28
 activity_status: active
 license:
   label: U.S. Government Work (public domain)

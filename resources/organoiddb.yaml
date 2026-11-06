@@ -20,6 +20,7 @@ domain_areas:
 - biological systems
 - single-cell analysis
 - anatomy and development
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/26
 activity_status: active
 license:
   id: http://www.inbirg.com/organoid_db/

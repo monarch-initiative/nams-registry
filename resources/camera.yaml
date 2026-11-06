@@ -24,6 +24,7 @@ domain_areas:
 - environment
 holds_nams: primary
 priority: high
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/10
 activity_status: active
 license:
   id: https://www.usa.gov/government-works

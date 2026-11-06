@@ -17,6 +17,7 @@ domain_areas:
 - toxicology
 - chemistry and biochemistry
 - cheminformatics
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/18
 activity_status: inactive
 license:
   id: https://creativecommons.org/licenses/by/4.0/

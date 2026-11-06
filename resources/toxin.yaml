@@ -10,6 +10,7 @@ domain_areas:
 - biomedical
 - toxicology
 - systems biology
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/31
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by/4.0/

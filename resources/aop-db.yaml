@@ -13,6 +13,7 @@ domain_areas:
 - environment
 - pathways
 - adverse outcome pathways
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/4
 activity_status: active
 license:
   id: https://www.epa.gov/healthresearch/adverse-outcome-pathway-database-aop-db

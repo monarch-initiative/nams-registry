@@ -23,6 +23,7 @@ domain_areas:
 - environment
 - machine learning
 - information technology
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/25
 activity_status: active
 license:
   id: https://opensource.org/licenses/MIT

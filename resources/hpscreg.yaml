@@ -18,6 +18,7 @@ domain_areas:
 - biomedical
 - clinical trials
 - clinical
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/16
 activity_status: active
 license:
   id: https://hpscreg.eu/terms

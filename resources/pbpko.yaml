@@ -8,6 +8,7 @@ resource_type: Ontology
 domain_areas:
 - chemistry and biochemistry
 - pharmacology
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/27
 activity_status: active
 license:
   id: http://creativecommons.org/licenses/by/3.0/

@@ -19,6 +19,7 @@ domain_areas:
 - chemistry and biochemistry
 - environment
 - biomedical
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/13
 activity_status: active
 license:
   id: https://creativecommons.org/publicdomain/zero/1.0/

@@ -23,6 +23,7 @@ domain_areas:
 - drug discovery
 - high-throughput screening
 - public health
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/11
 activity_status: active
 license:
   label: U.S. Government Work (public domain)

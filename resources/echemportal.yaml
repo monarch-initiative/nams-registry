@@ -19,6 +19,7 @@ domain_areas:
 - chemistry and biochemistry
 - environment
 - public health
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/14
 activity_status: active
 license:
   id: https://www.echemportal.org/echemportal/page/12

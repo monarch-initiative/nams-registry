@@ -23,6 +23,7 @@ domain_areas:
 - toxicology
 - pharmacology
 - anatomy and development
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/19
 activity_status: inactive
 license:
   id: https://doi.org/10.1039/c9lc01047e

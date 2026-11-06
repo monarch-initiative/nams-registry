@@ -26,6 +26,7 @@ domain_areas:
 - pathways
 - chemistry and biochemistry
 - adverse outcome pathways
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/6
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by-sa/4.0/

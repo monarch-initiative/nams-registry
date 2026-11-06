@@ -27,6 +27,7 @@ domain_areas:
 - biomedical
 - environment
 - environmental exposure
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/21
 activity_status: active
 license:
   label: U.S. Government Work (public domain)

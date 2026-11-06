@@ -17,6 +17,7 @@ domain_areas:
 - biomedical
 - software
 - information technology
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/23
 activity_status: active
 license:
   id: https://github.com/Open-Systems-Pharmacology/Suite/blob/master/LICENSE

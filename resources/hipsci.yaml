@@ -24,6 +24,7 @@ domain_areas:
 - proteomics
 - rare disease
 - biomedical
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/15
 activity_status: active
 license:
   id: https://www.hipsci.org/

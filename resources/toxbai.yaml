@@ -24,6 +24,7 @@ domain_areas:
 - machine learning
 - information technology
 - chemistry and biochemistry
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/30
 activity_status: active
 license:
   id: http://toxbai.com/
