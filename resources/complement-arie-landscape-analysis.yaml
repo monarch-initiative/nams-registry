@@ -41,8 +41,10 @@ dismech_integration: 'Tooling: none for the report itself. DisMech has a parser 
   not read for that work. Content: none incorporated into kb/. The Complement-ARIE
   mention in kb/disorders/Rheumatoid_Arthritis.yaml comes from the separate Challenge
   prize winners, not this report. Checked against dismech commit 4bce5b015a9.'
-priority: high
-priority_rationale: 'Its content should be reviewed first. Its NAM classification
+priority: medium
+priority_rationale: 'It is best looked at together with its dashboard
+  (complement-arie-landscape-dashboard): some understanding of the analysis may
+  help decide the most effective strategy for using the two. Its NAM classification
   (Appendix E) and its 19 questions offer a ready-made scheme for sorting NAMs in
   this registry and in DisMech. Its FAIR review names 28 biomedical databases, any
   of which could be checked for this registry. It is also the methods record for the

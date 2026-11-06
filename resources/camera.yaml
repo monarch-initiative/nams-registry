@@ -23,7 +23,7 @@ domain_areas:
 - chemistry and biochemistry
 - environment
 holds_nams: primary
-priority: high
+priority: medium
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/10
 activity_status: active
 license:

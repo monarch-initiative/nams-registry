@@ -38,8 +38,10 @@ dismech_integration: 'Tooling: `just complement-arie-parse` (scripts/complement_
   added in dismech PR #16039. Content: none incorporated into kb/. The report lists
   candidate uses: disease-to-model leads, cell and tissue annotation, model limitations
   and validation. Checked against dismech commit 4bce5b015a9.'
-priority: high
-priority_rationale: 'Its content should be reviewed first. It is the only machine-readable
+priority: medium
+priority_rationale: 'It is best looked at together with the report
+  (complement-arie-landscape-analysis): some understanding of the analysis may
+  help decide the most effective strategy for using the dashboard. It is the only machine-readable
   form of the Landscape Analysis: about 2,700 NAM papers, nearly all with a PMID or
   DOI, each described in the same 19-question form. DisMech can already parse it.
   Its 1,572 disease answers and its tissue and cell-type answers are leads to experimental
