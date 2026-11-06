@@ -196,6 +196,7 @@ function detail(r) {
     ${r.priority_rationale ? `<dt>Priority rationale</dt><dd>${esc(r.priority_rationale)}</dd>` : ""}
     <dt>Extraction effort</dt><dd>${text(r.extraction_effort)}</dd>
     ${r.effort_rationale ? `<dt>Effort rationale</dt><dd>${esc(r.effort_rationale)}</dd>` : ""}
+    ${r.expectations ? `<dt>Expectations</dt><dd>${esc(r.expectations)}</dd>` : ""}
     <dt>Publications</dt><dd>${pubs ? `<ul class="pubs">${pubs}</ul>` : text("")}</dd>
     <dt>Imported from</dt><dd>${imp || text("")}</dd>
   </dl>`;

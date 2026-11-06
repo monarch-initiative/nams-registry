@@ -150,6 +150,7 @@ class Resource(NamedThing):
     priority_rationale: Optional[str] = None
     extraction_effort: Optional[Union[str, "ExtractionEffortEnum"]] = None
     effort_rationale: Optional[str] = None
+    expectations: Optional[str] = None
     discussion_issue: Optional[Union[str, URI]] = None
     activity_status: Optional[Union[str, "ActivityStatusEnum"]] = None
     use_instead: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = empty_list()
@@ -206,6 +207,9 @@ class Resource(NamedThing):
 
         if self.effort_rationale is not None and not isinstance(self.effort_rationale, str):
             self.effort_rationale = str(self.effort_rationale)
+
+        if self.expectations is not None and not isinstance(self.expectations, str):
+            self.expectations = str(self.expectations)
 
         if self.discussion_issue is not None and not isinstance(self.discussion_issue, URI):
             self.discussion_issue = URI(self.discussion_issue)
@@ -674,6 +678,9 @@ slots.extraction_effort = Slot(uri=NAMS_REGISTRY.extraction_effort, name="extrac
 
 slots.effort_rationale = Slot(uri=NAMS_REGISTRY.effort_rationale, name="effort_rationale", curie=NAMS_REGISTRY.curie('effort_rationale'),
                    model_uri=NAMS_REGISTRY.effort_rationale, domain=None, range=Optional[str])
+
+slots.expectations = Slot(uri=NAMS_REGISTRY.expectations, name="expectations", curie=NAMS_REGISTRY.curie('expectations'),
+                   model_uri=NAMS_REGISTRY.expectations, domain=None, range=Optional[str])
 
 slots.discussion_issue = Slot(uri=NAMS_REGISTRY.discussion_issue, name="discussion_issue", curie=NAMS_REGISTRY.curie('discussion_issue'),
                    model_uri=NAMS_REGISTRY.discussion_issue, domain=None, range=Optional[Union[str, URI]],

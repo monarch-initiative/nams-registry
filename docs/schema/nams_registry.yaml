@@ -773,6 +773,18 @@ slots:
     domain_of:
     - Resource
     range: string
+  expectations:
+    name: expectations
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/expectations
+    description: What is expected to be found in the resource, written before content
+      is extracted from it, e.g. "A classification of NAMs by model type, and a list
+      of biomedical databases scored for FAIRness."
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:expectations
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
   discussion_issue:
     name: discussion_issue
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/discussion_issue
@@ -1070,6 +1082,7 @@ classes:
     - priority_rationale
     - extraction_effort
     - effort_rationale
+    - expectations
     - discussion_issue
     - activity_status
     - use_instead
@@ -1156,6 +1169,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T20:27:20'
-source_file_size: 18995
+source_file_date: '2026-11-05T20:32:01'
+source_file_size: 19264
 

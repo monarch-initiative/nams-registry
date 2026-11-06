@@ -56,6 +56,7 @@ classes:
       - priority_rationale
       - extraction_effort
       - effort_rationale
+      - expectations
       - discussion_issue
       - activity_status
       - use_instead
@@ -209,6 +210,11 @@ slots:
       Why the resource was given its extraction_effort, for example its
       format, its access, existing tooling, or decisions still to be made
       about what to extract.
+  expectations:
+    description: >-
+      What is expected to be found in the resource, written before content
+      is extracted from it, e.g. "A classification of NAMs by model type, and
+      a list of biomedical databases scored for FAIRness."
   discussion_issue:
     range: uri
     pattern: "^https://github\\.com/monarch-initiative/nams-registry/issues/\\d+$"
