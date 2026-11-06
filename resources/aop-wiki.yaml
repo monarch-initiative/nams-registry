@@ -14,7 +14,58 @@ domain_areas:
 - pathways
 - adverse outcome pathways
 holds_nams: secondary
+relevance_note: >-
+  Its primary content is adverse outcome pathways: AOPs, Key Events, Key Event
+  Relationships and stressors. It holds methods, including NAMs, in each Key
+  Event's "How it is Measured or Detected" section (measurement_method in the
+  aop-wiki-cli cache), which names the assays and methods used to measure the
+  event. That
+  section is free text written by contributors. It doesn't identify assays as
+  records or link them to assay registries.
+curation_model:
+- community
+dismech_integration: >-
+  Tooling: the aop-wiki skill queries the AOP-Wiki XML export through
+  aop-wiki-cli (github.com/gingin77/aop_wiki_cli), which downloads and parses
+  the XML outside DisMech. The mie-ker-capture and ker-evidence-triage skills
+  turn Key Events into verified causal edges and judge a KER's evidence.
+  scripts/aop_dismech_crosswalk.py maps any AOP's Key Events onto pathograph
+  nodes from the aop-wiki-cli cache; scripts/aop_parkinsonism_crosswalk.py is
+  its predecessor for the five parkinsonian AOPs. Content: no disorder entry
+  cites AOP-Wiki, since it isn't citable evidence and no schema slot can
+  reference a Key Event (dismech#10272). Four modules were curated against
+  AOP-Wiki and say so in their notes:
+  cardiac_camp_pka_calcium_handling, neuroinflammation_glial_activation,
+  nmda_receptor_hypofunction and xenobiotic_cardiac_channel_perturbation.
+  Project pages AOP_EMOD_ALIGNMENT, TDAR_AOP, AOP_40_SKIN_SENSITIZATION and
+  ESTROGEN_SIGNALLING compare AOPs with DisMech. Checked against dismech
+  commit 1019485f6e8.
 priority: medium
+priority_rationale: >-
+  As has been started in DisMech's AOP work, AOP-Wiki content is treated as a
+  hypothesis for curation, not as evidence. That work found three problems
+  with the evidence behind it. Most KERs have none: in the 2026-08-06
+  snapshot, 1,536 of 2,369 KERs (65%) hold only their endpoints and
+  identifiers, with no evidence text or references (dismech#10454). A KER's
+  weight-of-evidence grade doesn't show whether evidence is attached: some
+  KERs are graded High while their evidence sections are empty. And
+  references can be wrong: in AOP 552, 13 of 16 cited references have a DOI
+  that leads to a different paper from the one named (dismech#10773). The
+  methods can be extracted deterministically, but the list of methods is not
+  where most of the value lies. The value is in how each method relates to
+  the Key Event it measures, in the context of that event's AOPs, and in
+  comparing those relationships against DisMech pathographs. That comparison
+  could show which events DisMech already models as Pathograph nodes, and how
+  they are measured.
+extraction_effort: medium
+effort_rationale: >-
+  See the discussion in the priority rationale above for details on the
+  challenges and considerations in extracting NAM-related measurement methods
+  from the AOP-Wiki.
+expectations: Based on prior queries and the structure of the AOP-Wiki, I expect
+  to find "old school" methods (ie Western blot, ELISA assays), ToxCast assays,
+  and possibly some air-liquid interface methods. I don't expect to find many
+  organoid assays.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/5
 activity_status: active
 license:
