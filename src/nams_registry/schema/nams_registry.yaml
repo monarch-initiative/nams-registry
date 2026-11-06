@@ -52,6 +52,7 @@ classes:
       - relevance_note
       - curation_model
       - dismech_integration
+      - supporting_scripts
       - priority
       - priority_rationale
       - extraction_effort
@@ -107,6 +108,35 @@ classes:
         range: boolean
         description: >-
           Whether this is the publication to cite for the resource.
+
+  SupportingScript:
+    description: >-
+      A script, or a command of a larger tool, written to retrieve or parse
+      content from a resource. It can live in this repository or another one.
+    attributes:
+      name:
+        required: true
+        description: >-
+          A short label for the script, e.g. fetch_namsnetwork.py, or for a
+          command of a larger tool, e.g. aop-wiki-cli search-with-config
+          methods_nams.
+      repository:
+        range: uri
+        required: true
+        description: >-
+          The repository that houses the script, e.g.
+          https://github.com/monarch-initiative/nams-registry.
+      path:
+        description: >-
+          The file within the repository, e.g. scripts/fetch_namsnetwork.py.
+          For a command of a larger tool, the file that defines it or
+          configures it.
+      command:
+        description: >-
+          How to run it, e.g. uv run python scripts/fetch_namsnetwork.py. For
+          a command of a larger tool, the command and its arguments.
+      description:
+        description: What the script retrieves or does, in a sentence or two.
 
   ImportRecord:
     description: >-
@@ -184,6 +214,15 @@ slots:
       been incorporated into DisMech, and whether DisMech has tooling for
       it, such as a script or skill. Records what exists, not what the
       resource could offer. Free text for now.
+  supporting_scripts:
+    range: SupportingScript
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      Scripts written to retrieve or parse the resource's content, in this
+      repository or elsewhere. List only scripts that exist. DisMech tooling
+      that uses the resource without retrieving from it stays in
+      dismech_integration.
   priority:
     range: PriorityEnum
     description: >-

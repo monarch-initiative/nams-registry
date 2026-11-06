@@ -177,6 +177,14 @@ function pubUrl(id) {
 function detail(r) {
   const pubs = (r.publications || []).map(p =>
     `<li><a href="${esc(pubUrl(p.id))}" target="_blank" rel="noopener">${esc(p.title || p.id)}</a>${p.year ? " (" + esc(p.year) + ")" : ""}</li>`).join("");
+  const scripts = (r.supporting_scripts || []).map(s => {
+    const repo = String(s.repository || "").replace(/\/+$/, "");
+    const url = s.path ? `${repo}/blob/HEAD/${String(s.path).replace(/^\/+/, "")}` : repo;
+    return `<li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` +
+      ` in ${esc(repo.replace(/^https?:\/\/(www\.)?github\.com\//, ""))}` +
+      (s.command ? `<br><code>${esc(s.command)}</code>` : "") +
+      (s.description ? `<br>${esc(s.description)}` : "") + `</li>`;
+  }).join("");
   const imp = (r.imported_from || []).map(i =>
     `${esc(i.source)} <a href="${esc(i.source_url)}" target="_blank" rel="noopener">${esc(i.source_id)}</a>, commit ${esc(i.source_version || "?")}, ${esc(i.imported_on)}`).join("<br>");
   return `<dl>
@@ -192,6 +200,7 @@ function detail(r) {
     <dt>Curation model</dt><dd>${chips(r.curation_model)}</dd>
     ${r.relevance_note ? `<dt>Relevance note</dt><dd>${esc(r.relevance_note)}</dd>` : ""}
     ${r.dismech_integration ? `<dt>DisMech integration</dt><dd>${esc(r.dismech_integration)}</dd>` : ""}
+    ${scripts ? `<dt>Supporting scripts</dt><dd><ul class="pubs">${scripts}</ul></dd>` : ""}
     <dt>Priority</dt><dd>${text(r.priority)}</dd>
     ${r.priority_rationale ? `<dt>Priority rationale</dt><dd>${esc(r.priority_rationale)}</dd>` : ""}
     <dt>Extraction effort</dt><dd>${text(r.extraction_effort)}</dd>

@@ -146,6 +146,7 @@ class Resource(NamedThing):
     relevance_note: Optional[str] = None
     curation_model: Optional[Union[Union[str, "CurationModelEnum"], list[Union[str, "CurationModelEnum"]]]] = empty_list()
     dismech_integration: Optional[str] = None
+    supporting_scripts: Optional[Union[Union[dict, "SupportingScript"], list[Union[dict, "SupportingScript"]]]] = empty_list()
     priority: Optional[Union[str, "PriorityEnum"]] = None
     priority_rationale: Optional[str] = None
     extraction_effort: Optional[Union[str, "ExtractionEffortEnum"]] = None
@@ -195,6 +196,8 @@ class Resource(NamedThing):
 
         if self.dismech_integration is not None and not isinstance(self.dismech_integration, str):
             self.dismech_integration = str(self.dismech_integration)
+
+        self._normalize_inlined_as_list(slot_name="supporting_scripts", slot_type=SupportingScript, key_name="name", keyed=False)
 
         if self.priority is not None and not isinstance(self.priority, PriorityEnum):
             self.priority = PriorityEnum(self.priority)
@@ -308,6 +311,48 @@ class Publication(YAMLRoot):
 
         if self.preferred is not None and not isinstance(self.preferred, Bool):
             self.preferred = Bool(self.preferred)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SupportingScript(YAMLRoot):
+    """
+    A script, or a command of a larger tool, written to retrieve or parse content from a resource. It can live in this
+    repository or another one.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NAMS_REGISTRY["SupportingScript"]
+    class_class_curie: ClassVar[str] = "nams_registry:SupportingScript"
+    class_name: ClassVar[str] = "SupportingScript"
+    class_model_uri: ClassVar[URIRef] = NAMS_REGISTRY.SupportingScript
+
+    name: str = None
+    repository: Union[str, URI] = None
+    path: Optional[str] = None
+    command: Optional[str] = None
+    description: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self._is_empty(self.repository):
+            self.MissingRequiredField("repository")
+        if not isinstance(self.repository, URI):
+            self.repository = URI(self.repository)
+
+        if self.path is not None and not isinstance(self.path, str):
+            self.path = str(self.path)
+
+        if self.command is not None and not isinstance(self.command, str):
+            self.command = str(self.command)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -667,6 +712,9 @@ slots.curation_model = Slot(uri=NAMS_REGISTRY.curation_model, name="curation_mod
 slots.dismech_integration = Slot(uri=NAMS_REGISTRY.dismech_integration, name="dismech_integration", curie=NAMS_REGISTRY.curie('dismech_integration'),
                    model_uri=NAMS_REGISTRY.dismech_integration, domain=None, range=Optional[str])
 
+slots.supporting_scripts = Slot(uri=NAMS_REGISTRY.supporting_scripts, name="supporting_scripts", curie=NAMS_REGISTRY.curie('supporting_scripts'),
+                   model_uri=NAMS_REGISTRY.supporting_scripts, domain=None, range=Optional[Union[Union[dict, SupportingScript], list[Union[dict, SupportingScript]]]])
+
 slots.priority = Slot(uri=NAMS_REGISTRY.priority, name="priority", curie=NAMS_REGISTRY.curie('priority'),
                    model_uri=NAMS_REGISTRY.priority, domain=None, range=Optional[Union[str, "PriorityEnum"]])
 
@@ -749,3 +797,18 @@ slots.publication__doi = Slot(uri=NAMS_REGISTRY.doi, name="publication__doi", cu
 
 slots.publication__preferred = Slot(uri=NAMS_REGISTRY.preferred, name="publication__preferred", curie=NAMS_REGISTRY.curie('preferred'),
                    model_uri=NAMS_REGISTRY.publication__preferred, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.supportingScript__name = Slot(uri=NAMS_REGISTRY.name, name="supportingScript__name", curie=NAMS_REGISTRY.curie('name'),
+                   model_uri=NAMS_REGISTRY.supportingScript__name, domain=None, range=str)
+
+slots.supportingScript__repository = Slot(uri=NAMS_REGISTRY.repository, name="supportingScript__repository", curie=NAMS_REGISTRY.curie('repository'),
+                   model_uri=NAMS_REGISTRY.supportingScript__repository, domain=None, range=Union[str, URI])
+
+slots.supportingScript__path = Slot(uri=NAMS_REGISTRY.path, name="supportingScript__path", curie=NAMS_REGISTRY.curie('path'),
+                   model_uri=NAMS_REGISTRY.supportingScript__path, domain=None, range=Optional[str])
+
+slots.supportingScript__command = Slot(uri=NAMS_REGISTRY.command, name="supportingScript__command", curie=NAMS_REGISTRY.curie('command'),
+                   model_uri=NAMS_REGISTRY.supportingScript__command, domain=None, range=Optional[str])
+
+slots.supportingScript__description = Slot(uri=NAMS_REGISTRY.description, name="supportingScript__description", curie=NAMS_REGISTRY.curie('description'),
+                   model_uri=NAMS_REGISTRY.supportingScript__description, domain=None, range=Optional[str])

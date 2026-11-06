@@ -722,6 +722,21 @@ slots:
     domain_of:
     - Resource
     range: string
+  supporting_scripts:
+    name: supporting_scripts
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/supporting_scripts
+    description: Scripts written to retrieve or parse the resource's content, in this
+      repository or elsewhere. List only scripts that exist. DisMech tooling that
+      uses the resource without retrieving from it stays in dismech_integration.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:supporting_scripts
+    owner: Resource
+    domain_of:
+    - Resource
+    range: SupportingScript
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   priority:
     name: priority
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/priority
@@ -1044,6 +1059,61 @@ slots:
     domain_of:
     - Publication
     range: boolean
+  supportingScript__name:
+    name: supportingScript__name
+    description: A short label for the script, e.g. fetch_namsnetwork.py, or for a
+      command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:name
+    alias: name
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+    required: true
+  supportingScript__repository:
+    name: supportingScript__repository
+    description: The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:repository
+    alias: repository
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: uri
+    required: true
+  supportingScript__path:
+    name: supportingScript__path
+    description: The file within the repository, e.g. scripts/fetch_namsnetwork.py.
+      For a command of a larger tool, the file that defines it or configures it.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:path
+    alias: path
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+  supportingScript__command:
+    name: supportingScript__command
+    description: How to run it, e.g. uv run python scripts/fetch_namsnetwork.py. For
+      a command of a larger tool, the command and its arguments.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:command
+    alias: command
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+  supportingScript__description:
+    name: supportingScript__description
+    description: What the script retrieves or does, in a sentence or two.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:description
+    alias: description
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
 classes:
   NamedThing:
     name: NamedThing
@@ -1078,6 +1148,7 @@ classes:
     - relevance_note
     - curation_model
     - dismech_integration
+    - supporting_scripts
     - priority
     - priority_rationale
     - extraction_effort
@@ -1154,6 +1225,41 @@ classes:
         description: Whether this is the publication to cite for the resource.
         range: boolean
     class_uri: nams_registry:Publication
+  SupportingScript:
+    name: SupportingScript
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/SupportingScript
+    description: A script, or a command of a larger tool, written to retrieve or parse
+      content from a resource. It can live in this repository or another one.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slots:
+    - supportingScript__name
+    - supportingScript__repository
+    - supportingScript__path
+    - supportingScript__command
+    - supportingScript__description
+    attributes:
+      name:
+        name: name
+        description: A short label for the script, e.g. fetch_namsnetwork.py, or for
+          a command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.
+        required: true
+      repository:
+        name: repository
+        description: The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.
+        range: uri
+        required: true
+      path:
+        name: path
+        description: The file within the repository, e.g. scripts/fetch_namsnetwork.py.
+          For a command of a larger tool, the file that defines it or configures it.
+      command:
+        name: command
+        description: How to run it, e.g. uv run python scripts/fetch_namsnetwork.py.
+          For a command of a larger tool, the command and its arguments.
+      description:
+        name: description
+        description: What the script retrieves or does, in a sentence or two.
+    class_uri: nams_registry:SupportingScript
   ImportRecord:
     name: ImportRecord
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ImportRecord
@@ -1169,6 +1275,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T20:32:01'
-source_file_size: 19264
+source_file_date: '2026-11-05T22:22:24'
+source_file_size: 20788
 

@@ -370,8 +370,9 @@ class NamedThing(ConfiguredBaseModel):
 
     id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication'],
          'slot_uri': 'schema:identifier'} })
-    name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:name'} })
-    description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:description'} })
+    name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript'], 'slot_uri': 'schema:name'} })
+    description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript'],
+         'slot_uri': 'schema:description'} })
 
 
 class Resource(NamedThing):
@@ -382,13 +383,14 @@ class Resource(NamedThing):
 
     synonyms: Optional[list[str]] = Field(default=None, description="""Acronyms, abbreviations, and other alternate names for the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     homepage_url: Optional[str] = Field(default=None, description="""The primary URL of the resource, preferably the main page documenting it.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'schema:url'} })
-    repository: Optional[str] = Field(default=None, description="""The main version control repository for the resource, if it has one.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    repository: Optional[str] = Field(default=None, description="""The main version control repository for the resource, if it has one.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource', 'SupportingScript']} })
     resource_type: Optional[ResourceTypeEnum] = Field(default=None, description="""What form the resource takes, such as a data source or a knowledge graph. Imported from the KG-Registry category.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     domain_areas: Optional[list[DomainAreaEnum]] = Field(default=None, description="""The domains the resource covers, such as toxicology. Imported from the KG-Registry domains.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     holds_nams: Optional[HoldsNAMsEnum] = Field(default=None, description="""Whether the resource holds NAMs, and whether they are its primary content. Leave it out until the resource has been evaluated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     relevance_note: Optional[str] = Field(default=None, description="""Why the resource was given its holds_nams value, e.g. \"Holds the measurement methods for key events, but its primary content is adverse outcome pathways.\"""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     curation_model: Optional[list[CurationModelEnum]] = Field(default=None, description="""Who creates the resource's content, as the resource works today. Use more than one value when the resource mixes them.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     dismech_integration: Optional[str] = Field(default=None, description="""The resource's current state in DisMech: whether any of its content has been incorporated into DisMech, and whether DisMech has tooling for it, such as a script or skill. Records what exists, not what the resource could offer. Free text for now.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    supporting_scripts: Optional[list[SupportingScript]] = Field(default=None, description="""Scripts written to retrieve or parse the resource's content, in this repository or elsewhere. List only scripts that exist. DisMech tooling that uses the resource without retrieving from it stays in dismech_integration.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     priority: Optional[PriorityEnum] = Field(default=None, description="""Extraction priority: how much the resource adds, and so how soon it is worth extracting content from. Set it once that has been investigated. A resource that repackages another one can still add value, for example through a new format, integration with other data, or easier access, so repackaging alone does not make a resource low priority.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     priority_rationale: Optional[str] = Field(default=None, description="""Why the resource was given its priority, based on what was found about what it adds. For a resource that repackages another, say what it adds beyond the original, or that nothing was found.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     extraction_effort: Optional[ExtractionEffortEnum] = Field(default=None, description="""The estimated effort to ready the resource for incorporation: deciding what to extract from it and getting that content into a usable form. Independent of priority, which records how much the resource adds. Set it once the resource has been looked at.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
@@ -404,8 +406,9 @@ class Resource(NamedThing):
     imported_from: Optional[list[ImportRecord]] = Field(default=None, description="""The registries this entry's content was imported from. Leave empty for an entry curated directly in this registry.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'pav:importedFrom'} })
     id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication'],
          'slot_uri': 'schema:identifier'} })
-    name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:name'} })
-    description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:description'} })
+    name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript'], 'slot_uri': 'schema:name'} })
+    description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript'],
+         'slot_uri': 'schema:description'} })
 
     @field_validator('discussion_issue')
     def pattern_discussion_issue(cls, v):
@@ -459,6 +462,19 @@ class Publication(ConfiguredBaseModel):
         return v
 
 
+class SupportingScript(ConfiguredBaseModel):
+    """
+    A script, or a command of a larger tool, written to retrieve or parse content from a resource. It can live in this repository or another one.
+    """
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+
+    name: str = Field(default=..., description="""A short label for the script, e.g. fetch_namsnetwork.py, or for a command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript']} })
+    repository: str = Field(default=..., description="""The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource', 'SupportingScript']} })
+    path: Optional[str] = Field(default=None, description="""The file within the repository, e.g. scripts/fetch_namsnetwork.py. For a command of a larger tool, the file that defines it or configures it.""", json_schema_extra = { "linkml_meta": {'domain_of': ['SupportingScript']} })
+    command: Optional[str] = Field(default=None, description="""How to run it, e.g. uv run python scripts/fetch_namsnetwork.py. For a command of a larger tool, the command and its arguments.""", json_schema_extra = { "linkml_meta": {'domain_of': ['SupportingScript']} })
+    description: Optional[str] = Field(default=None, description="""What the script retrieves or does, in a sentence or two.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript']} })
+
+
 class ImportRecord(ConfiguredBaseModel):
     """
     A record of content imported into this registry entry from another registry.
@@ -478,4 +494,5 @@ NamedThing.model_rebuild()
 Resource.model_rebuild()
 LicenseInfo.model_rebuild()
 Publication.model_rebuild()
+SupportingScript.model_rebuild()
 ImportRecord.model_rebuild()
