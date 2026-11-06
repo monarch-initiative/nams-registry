@@ -40,6 +40,14 @@ dismech_integration: >-
   Project pages AOP_EMOD_ALIGNMENT, TDAR_AOP, AOP_40_SKIN_SENSITIZATION and
   ESTROGEN_SIGNALLING compare AOPs with DisMech. Checked against dismech
   commit 1019485f6e8.
+supporting_scripts:
+- name: aop-wiki-cli search-with-config methods_nams
+  repository: https://github.com/gingin77/aop_wiki_cli
+  path: src/aop_wiki_cli/configs/methods_nams.py
+  command: aop-wiki-cli --data-dir <dir> search-with-config methods_nams
+  description: >-
+    Searches each Key Event's measurement_method text for 33 NAM and assay
+    terms, such as organoid, ToxCast, air-liquid interface and ELISA.
 priority: medium
 priority_rationale: >-
   As has been started in DisMech's AOP work, AOP-Wiki content is treated as a
