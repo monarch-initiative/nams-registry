@@ -22,7 +22,8 @@ domain_areas:
 - adverse outcome pathways
 - chemistry and biochemistry
 - environment
-nams_relevance: undecided
+nams_relevance: holds_nams
+priority: high
 activity_status: active
 license:
   id: https://www.usa.gov/government-works

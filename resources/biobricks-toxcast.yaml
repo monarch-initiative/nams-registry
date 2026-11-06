@@ -10,6 +10,7 @@ domain_areas:
 - drug discovery
 - high-throughput screening
 nams_relevance: undecided
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/3
 activity_status: active
 license:
   id: https://www.epa.gov/privacy/privacy-and-security-notice

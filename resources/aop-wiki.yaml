@@ -13,7 +13,8 @@ domain_areas:
 - environment
 - pathways
 - adverse outcome pathways
-nams_relevance: undecided
+nams_relevance: points_to_nams
+priority: medium
 activity_status: active
 license:
   id: https://aopwiki.org/
