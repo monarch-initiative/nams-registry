@@ -129,6 +129,10 @@
          <lastmod>2026-11-06</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/SupportingScript/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/elements/Time/</loc>
          <lastmod>2026-11-06</lastmod>
     </url>
@@ -146,6 +150,10 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/elements/authors/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/command/</loc>
          <lastmod>2026-11-06</lastmod>
     </url>
     <url>
@@ -233,6 +241,10 @@
          <lastmod>2026-11-06</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/path/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/elements/preferred/</loc>
          <lastmod>2026-11-06</lastmod>
     </url>
@@ -274,6 +286,10 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/elements/source_version/</loc>
+         <lastmod>2026-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/elements/supporting_scripts/</loc>
          <lastmod>2026-11-06</lastmod>
     </url>
     <url>
