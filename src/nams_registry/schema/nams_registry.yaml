@@ -52,6 +52,9 @@ classes:
       - relevance_note
       - curation_model
       - dismech_integration
+      - priority
+      - priority_rationale
+      - discussion_issue
       - activity_status
       - use_instead
       - license
@@ -160,8 +163,9 @@ slots:
     range: NAMsRelevanceEnum
     required: true
     description: >-
-      Whether the resource holds NAMs itself or only supports work with
-      them. Use undecided until the resource has been reviewed.
+      Whether the resource holds NAMs itself, helps find NAMs held
+      elsewhere, or only supports work with them. Use undecided until the
+      resource has been reviewed.
   relevance_note:
     description: >-
       Why the resource was given its nams_relevance value, e.g. "Holds in
@@ -178,6 +182,26 @@ slots:
       been incorporated into DisMech, and whether DisMech has tooling for
       it, such as a script or skill. Records what exists, not what the
       resource could offer. Free text for now.
+  priority:
+    range: PriorityEnum
+    description: >-
+      How much the resource adds, and so how soon it is worth working on.
+      Set it once that has been investigated. A resource that repackages
+      another one can still add value, for example through a new format,
+      integration with other data, or easier access, so repackaging alone
+      does not make a resource low priority.
+  priority_rationale:
+    description: >-
+      Why the resource was given its priority, based on what was found
+      about what it adds. For a resource that repackages another, say what
+      it adds beyond the original, or that nothing was found.
+  discussion_issue:
+    range: uri
+    pattern: "^https://github\\.com/monarch-initiative/nams-registry/issues/\\d+$"
+    description: >-
+      The GitHub issue where the resource is discussed, e.g.
+      https://github.com/monarch-initiative/nams-registry/issues/2.
+      Set by `just create-review-issues`.
   activity_status:
     range: ActivityStatusEnum
     description: The status of the resource itself.
@@ -433,11 +457,16 @@ enums:
         description: >-
           The resource holds NAMs or records produced with them: methods,
           models, cell lines, or assay data.
+      points_to_nams:
+        description: >-
+          The resource holds no NAMs itself but helps find them, by listing,
+          surveying, or citing NAMs held elsewhere, such as a landscape
+          analysis or a catalog.
       nams_adjacent:
         description: >-
-          The resource supports work with NAMs but holds none itself, such as
-          reference in vivo data used to benchmark NAMs or chemical identity
-          data.
+          The resource supports work with NAMs but neither holds nor points
+          to them, such as reference in vivo data used to benchmark NAMs or
+          chemical identity data.
       undecided:
         description: The resource has not yet been reviewed.
   CurationModelEnum:
@@ -460,6 +489,12 @@ enums:
           repackaging another resource.
       aggregated:
         description: The content is copied from other resources.
+  PriorityEnum:
+    description: How much a resource adds, and so how soon it is worth working on.
+    permissible_values:
+      high:
+      medium:
+      low:
   SourceRegistryEnum:
     description: Registries that content can be imported from.
     permissible_values:

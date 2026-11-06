@@ -292,9 +292,13 @@ class NAMsRelevanceEnum(str, Enum):
     """
     The resource holds NAMs or records produced with them: methods, models, cell lines, or assay data.
     """
+    points_to_nams = "points_to_nams"
+    """
+    The resource holds no NAMs itself but helps find them, by listing, surveying, or citing NAMs held elsewhere, such as a landscape analysis or a catalog.
+    """
     nams_adjacent = "nams_adjacent"
     """
-    The resource supports work with NAMs but holds none itself, such as reference in vivo data used to benchmark NAMs or chemical identity data.
+    The resource supports work with NAMs but neither holds nor points to them, such as reference in vivo data used to benchmark NAMs or chemical identity data.
     """
     undecided = "undecided"
     """
@@ -326,6 +330,15 @@ class CurationModelEnum(str, Enum):
     """
     The content is copied from other resources.
     """
+
+
+class PriorityEnum(str, Enum):
+    """
+    How much a resource adds, and so how soon it is worth working on.
+    """
+    high = "high"
+    medium = "medium"
+    low = "low"
 
 
 class SourceRegistryEnum(str, Enum):
@@ -363,10 +376,13 @@ class Resource(NamedThing):
     repository: Optional[str] = Field(default=None, description="""The main version control repository for the resource, if it has one.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     resource_type: Optional[ResourceTypeEnum] = Field(default=None, description="""What form the resource takes, such as a data source or a knowledge graph. Imported from the KG-Registry category.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     domain_areas: Optional[list[DomainAreaEnum]] = Field(default=None, description="""The domains the resource covers, such as toxicology. Imported from the KG-Registry domains.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
-    nams_relevance: NAMsRelevanceEnum = Field(default=..., description="""Whether the resource holds NAMs itself or only supports work with them. Use undecided until the resource has been reviewed.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    nams_relevance: NAMsRelevanceEnum = Field(default=..., description="""Whether the resource holds NAMs itself, helps find NAMs held elsewhere, or only supports work with them. Use undecided until the resource has been reviewed.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     relevance_note: Optional[str] = Field(default=None, description="""Why the resource was given its nams_relevance value, e.g. \"Holds in vivo animal study data used to benchmark NAMs; holds no NAMs itself.\"""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     curation_model: Optional[list[CurationModelEnum]] = Field(default=None, description="""Who creates the resource's content, as the resource works today. Use more than one value when the resource mixes them.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     dismech_integration: Optional[str] = Field(default=None, description="""The resource's current state in DisMech: whether any of its content has been incorporated into DisMech, and whether DisMech has tooling for it, such as a script or skill. Records what exists, not what the resource could offer. Free text for now.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    priority: Optional[PriorityEnum] = Field(default=None, description="""How much the resource adds, and so how soon it is worth working on. Set it once that has been investigated. A resource that repackages another one can still add value, for example through a new format, integration with other data, or easier access, so repackaging alone does not make a resource low priority.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    priority_rationale: Optional[str] = Field(default=None, description="""Why the resource was given its priority, based on what was found about what it adds. For a resource that repackages another, say what it adds beyond the original, or that nothing was found.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    discussion_issue: Optional[str] = Field(default=None, description="""The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2. Set by `just create-review-issues`.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     activity_status: Optional[ActivityStatusEnum] = Field(default=None, description="""The status of the resource itself.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     use_instead: Optional[list[str]] = Field(default=None, description="""The ids of other registry resources to use in place of this one, for a resource that is no longer active and has a clear replacement.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     license: Optional[LicenseInfo] = Field(default=None, description="""The license of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'dcterms:license'} })
@@ -378,6 +394,19 @@ class Resource(NamedThing):
          'slot_uri': 'schema:identifier'} })
     name: str = Field(default=..., description="""The human-readable name of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:name'} })
     description: Optional[str] = Field(default=None, description="""A description of the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing'], 'slot_uri': 'schema:description'} })
+
+    @field_validator('discussion_issue')
+    def pattern_discussion_issue(cls, v):
+        pattern=re.compile(r"^https://github\.com/monarch-initiative/nams-registry/issues/\d+$")
+        if isinstance(v, list):
+            for element in v:
+                if isinstance(element, str) and not pattern.search(element):
+                    err_msg = f"Invalid discussion_issue format: {element}"
+                    raise ValueError(err_msg)
+        elif isinstance(v, str) and not pattern.search(v):
+            err_msg = f"Invalid discussion_issue format: {v}"
+            raise ValueError(err_msg)
+        return v
 
 
 class LicenseInfo(ConfiguredBaseModel):

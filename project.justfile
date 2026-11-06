@@ -18,3 +18,8 @@ validate-resources:
 [group('data')]
 build-table:
   uv run python -m nams_registry.build_table
+
+# Open a GitHub review issue for each resource without one, and record its URL
+[group('data')]
+create-review-issues *args:
+  uv run python -m nams_registry.create_review_issues {{args}}

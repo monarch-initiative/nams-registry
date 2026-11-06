@@ -505,10 +505,16 @@ enums:
         text: holds_nams
         description: 'The resource holds NAMs or records produced with them: methods,
           models, cell lines, or assay data.'
+      points_to_nams:
+        text: points_to_nams
+        description: The resource holds no NAMs itself but helps find them, by listing,
+          surveying, or citing NAMs held elsewhere, such as a landscape analysis or
+          a catalog.
       nams_adjacent:
         text: nams_adjacent
-        description: The resource supports work with NAMs but holds none itself, such
-          as reference in vivo data used to benchmark NAMs or chemical identity data.
+        description: The resource supports work with NAMs but neither holds nor points
+          to them, such as reference in vivo data used to benchmark NAMs or chemical
+          identity data.
       undecided:
         text: undecided
         description: The resource has not yet been reviewed.
@@ -536,6 +542,18 @@ enums:
       aggregated:
         text: aggregated
         description: The content is copied from other resources.
+  PriorityEnum:
+    name: PriorityEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/PriorityEnum
+    description: How much a resource adds, and so how soon it is worth working on.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      high:
+        text: high
+      medium:
+        text: medium
+      low:
+        text: low
   SourceRegistryEnum:
     name: SourceRegistryEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/SourceRegistryEnum
@@ -648,8 +666,8 @@ slots:
   nams_relevance:
     name: nams_relevance
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/nams_relevance
-    description: Whether the resource holds NAMs itself or only supports work with
-      them. Use undecided until the resource has been reviewed.
+    description: Whether the resource holds NAMs itself, helps find NAMs held elsewhere,
+      or only supports work with them. Use undecided until the resource has been reviewed.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:nams_relevance
     owner: Resource
@@ -693,6 +711,43 @@ slots:
     domain_of:
     - Resource
     range: string
+  priority:
+    name: priority
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/priority
+    description: How much the resource adds, and so how soon it is worth working on.
+      Set it once that has been investigated. A resource that repackages another one
+      can still add value, for example through a new format, integration with other
+      data, or easier access, so repackaging alone does not make a resource low priority.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:priority
+    owner: Resource
+    domain_of:
+    - Resource
+    range: PriorityEnum
+  priority_rationale:
+    name: priority_rationale
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/priority_rationale
+    description: Why the resource was given its priority, based on what was found
+      about what it adds. For a resource that repackages another, say what it adds
+      beyond the original, or that nothing was found.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:priority_rationale
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  discussion_issue:
+    name: discussion_issue
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/discussion_issue
+    description: The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2.
+      Set by `just create-review-issues`.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:discussion_issue
+    owner: Resource
+    domain_of:
+    - Resource
+    range: uri
+    pattern: ^https://github\.com/monarch-initiative/nams-registry/issues/\d+$
   activity_status:
     name: activity_status
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/activity_status
@@ -974,6 +1029,9 @@ classes:
     - relevance_note
     - curation_model
     - dismech_integration
+    - priority
+    - priority_rationale
+    - discussion_issue
     - activity_status
     - use_instead
     - license
@@ -1059,6 +1117,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T18:09:42'
-source_file_size: 16758
+source_file_date: '2026-11-05T18:57:50'
+source_file_size: 18223
 

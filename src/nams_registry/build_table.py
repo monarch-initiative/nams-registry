@@ -22,20 +22,25 @@ REPOSITORY = "https://github.com/monarch-initiative/nams-registry"
 #   text      the value, or tags for a field holding a list
 #   clamp     text cut to two lines; the full text is in the details
 #   check     a check mark when the value is true
-#   discuss   a link to the resource's GitHub issues
+#   issue     the number of the resource's review issue (discussion_issue),
+#             linked, or a dash if it has none
 # Everything else stays in the details that open below the row.
 COLUMNS = [
     ("name", "Name", "text"),
     ("nams_relevance", "NAMs relevance", "text"),
+    ("priority", "Priority", "text"),
     ("dismech_integration", "DisMech integration", "clamp"),
     ("is_tox", "is_tox", "check"),
-    ("id", "Discussion", "discuss"),
+    ("discussion_issue", "GH Issue", "issue"),
 ]
 
 
 def derived_fields(resource):
     """Fields computed for the table, not stored in the resource files."""
-    return {"is_tox": "toxicology" in (resource.get("domain_areas") or [])}
+    return {
+        "is_tox": "toxicology" in (resource.get("domain_areas") or []),
+        "record_url": f"{REPOSITORY}/blob/main/resources/{resource['id']}.yaml",
+    }
 
 PAGE = """<!doctype html>
 <html lang="en">
@@ -129,7 +134,6 @@ PAGE = """<!doctype html>
 <script>
 const DATA = __DATA__;
 const COLUMNS = __COLUMNS__;
-const REPOSITORY = __REPOSITORY__;
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const link = u => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>` : `<span class="none">Not recorded</span>`;
@@ -141,9 +145,9 @@ function cell(r, [f, heading, display]) {
   if (f === "name") return `<span class="name">${esc(v)}</span>`;
   if (display === "check") return v ? `<span class="check" role="img" aria-label="Yes">&#10003;</span>` : "";
   if (display === "clamp") return v ? `<span class="clamp">${esc(v)}</span>` : text(v);
-  if (display === "discuss") {
-    const q = encodeURIComponent(`is:issue "${v}"`);
-    return `<a href="${REPOSITORY}/issues?q=${q}" target="_blank" rel="noopener">Discuss</a>`;
+  if (display === "issue") {
+    if (!v) return `<span class="none" aria-label="No issue yet">&ndash;</span>`;
+    return `<a href="${esc(v)}" target="_blank" rel="noopener">#${esc(v.split("/").pop())}</a>`;
   }
   return Array.isArray(v) ? chips(v) : text(v);
 }
@@ -161,16 +165,19 @@ function detail(r) {
     `${esc(i.source)} <a href="${esc(i.source_url)}" target="_blank" rel="noopener">${esc(i.source_id)}</a>, commit ${esc(i.source_version || "?")}, ${esc(i.imported_on)}`).join("<br>");
   return `<dl>
     <dt>Id</dt><dd>${esc(r.id)}</dd>
+    <dt>Homepage</dt><dd>${link(r.homepage_url)}</dd>
     <dt>Description</dt><dd>${text(r.description)}</dd>
+    <dt>Registry record</dt><dd><a href="${esc(r.record_url)}" target="_blank" rel="noopener">resources/${esc(r.id)}.yaml</a></dd>
     <dt>Resource type</dt><dd>${text(r.resource_type)}</dd>
     <dt>Activity status</dt><dd>${text(r.activity_status)}</dd>
     <dt>Domain areas</dt><dd>${chips(r.domain_areas)}</dd>
-    <dt>Homepage</dt><dd>${link(r.homepage_url)}</dd>
     ${r.repository ? `<dt>Repository</dt><dd>${link(r.repository)}</dd>` : ""}
     <dt>License</dt><dd>${r.license ? (r.license.id ? `<a href="${esc(r.license.id)}" target="_blank" rel="noopener">${esc(r.license.label)}</a>` : esc(r.license.label)) : text("")}</dd>
     <dt>Curation model</dt><dd>${chips(r.curation_model)}</dd>
     ${r.relevance_note ? `<dt>Relevance note</dt><dd>${esc(r.relevance_note)}</dd>` : ""}
     ${r.dismech_integration ? `<dt>DisMech integration</dt><dd>${esc(r.dismech_integration)}</dd>` : ""}
+    <dt>Priority</dt><dd>${text(r.priority)}</dd>
+    ${r.priority_rationale ? `<dt>Priority rationale</dt><dd>${esc(r.priority_rationale)}</dd>` : ""}
     <dt>Publications</dt><dd>${pubs ? `<ul class="pubs">${pubs}</ul>` : text("")}</dd>
     <dt>Imported from</dt><dd>${imp || text("")}</dd>
   </dl>`;
@@ -248,7 +255,6 @@ def main(argv=None):
     page = (
         PAGE.replace("__HEADERS__", headers)
         .replace("__COLUMNS__", to_json(COLUMNS))
-        .replace("__REPOSITORY__", to_json(REPOSITORY))
         .replace("__DATA__", to_json(rows))
     )
     os.makedirs(os.path.dirname(args.output), exist_ok=True)

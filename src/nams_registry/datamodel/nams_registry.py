@@ -146,6 +146,9 @@ class Resource(NamedThing):
     relevance_note: Optional[str] = None
     curation_model: Optional[Union[Union[str, "CurationModelEnum"], list[Union[str, "CurationModelEnum"]]]] = empty_list()
     dismech_integration: Optional[str] = None
+    priority: Optional[Union[str, "PriorityEnum"]] = None
+    priority_rationale: Optional[str] = None
+    discussion_issue: Optional[Union[str, URI]] = None
     activity_status: Optional[Union[str, "ActivityStatusEnum"]] = None
     use_instead: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = empty_list()
     license: Optional[Union[dict, "LicenseInfo"]] = None
@@ -191,6 +194,15 @@ class Resource(NamedThing):
 
         if self.dismech_integration is not None and not isinstance(self.dismech_integration, str):
             self.dismech_integration = str(self.dismech_integration)
+
+        if self.priority is not None and not isinstance(self.priority, PriorityEnum):
+            self.priority = PriorityEnum(self.priority)
+
+        if self.priority_rationale is not None and not isinstance(self.priority_rationale, str):
+            self.priority_rationale = str(self.priority_rationale)
+
+        if self.discussion_issue is not None and not isinstance(self.discussion_issue, URI):
+            self.discussion_issue = URI(self.discussion_issue)
 
         if self.activity_status is not None and not isinstance(self.activity_status, ActivityStatusEnum):
             self.activity_status = ActivityStatusEnum(self.activity_status)
@@ -524,9 +536,12 @@ class NAMsRelevanceEnum(EnumDefinitionImpl):
     holds_nams = PermissibleValue(
         text="holds_nams",
         description="""The resource holds NAMs or records produced with them: methods, models, cell lines, or assay data.""")
+    points_to_nams = PermissibleValue(
+        text="points_to_nams",
+        description="""The resource holds no NAMs itself but helps find them, by listing, surveying, or citing NAMs held elsewhere, such as a landscape analysis or a catalog.""")
     nams_adjacent = PermissibleValue(
         text="nams_adjacent",
-        description="""The resource supports work with NAMs but holds none itself, such as reference in vivo data used to benchmark NAMs or chemical identity data.""")
+        description="""The resource supports work with NAMs but neither holds nor points to them, such as reference in vivo data used to benchmark NAMs or chemical identity data.""")
     undecided = PermissibleValue(
         text="undecided",
         description="The resource has not yet been reviewed.")
@@ -559,6 +574,19 @@ class CurationModelEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="CurationModelEnum",
         description="Who creates a resource's content.",
+    )
+
+class PriorityEnum(EnumDefinitionImpl):
+    """
+    How much a resource adds, and so how soon it is worth working on.
+    """
+    high = PermissibleValue(text="high")
+    medium = PermissibleValue(text="medium")
+    low = PermissibleValue(text="low")
+
+    _defn = EnumDefinition(
+        name="PriorityEnum",
+        description="How much a resource adds, and so how soon it is worth working on.",
     )
 
 class SourceRegistryEnum(EnumDefinitionImpl):
@@ -614,6 +642,16 @@ slots.curation_model = Slot(uri=NAMS_REGISTRY.curation_model, name="curation_mod
 
 slots.dismech_integration = Slot(uri=NAMS_REGISTRY.dismech_integration, name="dismech_integration", curie=NAMS_REGISTRY.curie('dismech_integration'),
                    model_uri=NAMS_REGISTRY.dismech_integration, domain=None, range=Optional[str])
+
+slots.priority = Slot(uri=NAMS_REGISTRY.priority, name="priority", curie=NAMS_REGISTRY.curie('priority'),
+                   model_uri=NAMS_REGISTRY.priority, domain=None, range=Optional[Union[str, "PriorityEnum"]])
+
+slots.priority_rationale = Slot(uri=NAMS_REGISTRY.priority_rationale, name="priority_rationale", curie=NAMS_REGISTRY.curie('priority_rationale'),
+                   model_uri=NAMS_REGISTRY.priority_rationale, domain=None, range=Optional[str])
+
+slots.discussion_issue = Slot(uri=NAMS_REGISTRY.discussion_issue, name="discussion_issue", curie=NAMS_REGISTRY.curie('discussion_issue'),
+                   model_uri=NAMS_REGISTRY.discussion_issue, domain=None, range=Optional[Union[str, URI]],
+                   pattern=re.compile(r'^https://github\.com/monarch-initiative/nams-registry/issues/\d+$'))
 
 slots.activity_status = Slot(uri=NAMS_REGISTRY.activity_status, name="activity_status", curie=NAMS_REGISTRY.curie('activity_status'),
                    model_uri=NAMS_REGISTRY.activity_status, domain=None, range=Optional[Union[str, "ActivityStatusEnum"]])

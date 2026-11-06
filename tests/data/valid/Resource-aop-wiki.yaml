@@ -7,10 +7,8 @@ resource_type: DataSource
 domain_areas:
   - toxicology
   - adverse outcome pathways
-nams_relevance: nams_adjacent
-relevance_note: >-
-  Organizes the mechanistic knowledge that NAMs are designed to measure, but
-  holds no NAMs itself.
+nams_relevance: points_to_nams
+priority: medium
 curation_model:
   - community
 activity_status: active
