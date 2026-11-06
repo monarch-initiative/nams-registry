@@ -8,12 +8,34 @@ This is a repository of NAM and NAM-adjacent sources collected in support of a N
 
 [https://monarch-initiative.github.io/nams-registry](https://monarch-initiative.github.io/nams-registry)
 
+The [resource table](https://monarch-initiative.github.io/nams-registry/resources/)
+lists every resource in the registry.
+
+## Making changes
+
+There are two kinds of change, each with its own kind of issue. Make
+each change on a branch and open a pull request that refers to the issue.
+
+- **Updating a record.** A change to one resource, such as setting its
+  NAMs relevance or priority, is made in that resource's file,
+  `resources/<id>.yaml`. Each resource has a review issue, labelled
+  `resource-review`, where it is discussed; the resource table links to it.
+- **Changing the schema.** A change to what the registry records, such as
+  adding a record count, is made in
+  `src/nams_registry/schema/nams_registry.yaml`. Discuss it first in an
+  issue labelled `schema-change`, since it affects every resource. Once
+  the schema change is merged, filling in the new field for a resource is
+  a record update.
+
+Run `just test` before opening a pull request.
+
 ## Repository Structure
 
 * [docs/](docs/) - mkdocs-managed documentation
   * [elements/](docs/elements/) - generated schema documentation
 * [examples/](examples/) - Examples of using the schema
 * [project/](project/) - project files (these files are auto-generated, do not edit)
+* [resources/](resources/) - one file per resource in the registry (edit these)
 * [src/](src/) - source files (edit these)
   * [nams_registry](src/nams_registry)
     * [schema/](src/nams_registry/schema) -- LinkML schema
