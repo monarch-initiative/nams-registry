@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://monarch-initiative.github.io/nams-registry/elements/nams_relevance/">
+        <link rel="canonical" href="https://monarch-initiative.github.io/nams-registry/elements/HoldsNAMsEnum/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: nams_relevance - nams-registry</title>
+        <title>Enum: HoldsNAMsEnum - nams-registry</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-nams_relevance" class="md-skip">
+        <a href="#enum-holdsnamsenum" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: nams_relevance
+              Enum: HoldsNAMsEnum
             
           </span>
         </div>
@@ -392,10 +392,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
+        Permissible Values
       
     </span>
   </a>
@@ -403,30 +403,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
+  <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties
+        Slots
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#type-and-range" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Type and Range
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -455,17 +438,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mappings
-      
-    </span>
-  </a>
   
 </li>
       
@@ -501,63 +473,54 @@
   
 
 
-<h1 id="slot-nams_relevance">Slot: nams_relevance</h1>
-<p><em>Whether the resource holds NAMs itself or only supports work with them. Use undecided until the resource has been reviewed.</em></p>
+<h1 id="enum-holdsnamsenum">Enum: HoldsNAMsEnum</h1>
+<p><em>Whether a resource holds NAMs, and whether they are its primary content.</em></p>
 <div>
-<p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/nams_relevance">nams_registry:nams_relevance</a></p>
-<!-- no inheritance hierarchy -->
-<h2 id="applicable-classes">Applicable Classes</h2>
+<p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/HoldsNAMsEnum">nams_registry:HoldsNAMsEnum</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>primary</td>
+<td>None</td>
+<td>NAMs, or records produced with them such as methods, models, cell lines, or a...</td>
+</tr>
+<tr>
+<td>secondary</td>
+<td>None</td>
+<td>The resource holds NAMs, but they are not its primary content</td>
+</tr>
+<tr>
+<td>none</td>
+<td>None</td>
+<td>The resource holds no NAMs</td>
+</tr>
+<tr>
+<td>unclear</td>
+<td>None</td>
+<td>The resource was evaluated, but whether it holds NAMs could not be decided</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
-<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Resource/">Resource</a></td>
-<td>A source of NAMs or NAMs-adjacent information</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h2 id="properties">Properties</h2>
-<h3 id="type-and-range">Type and Range</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Range</td>
-<td><a href="../NAMsRelevanceEnum/">NAMsRelevanceEnum</a></td>
-</tr>
-<tr>
-<td>Domain Of</td>
-<td><a href="../Resource/">Resource</a></td>
-</tr>
-<tr>
-<td>### Cardinality and Requirements</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Required</td>
-<td>Yes</td>
+<td><a href="../holds_nams/">holds_nams</a></td>
+<td>Whether the resource holds NAMs, and whether they are its primary content</td>
 </tr>
 </tbody>
 </table>
@@ -566,36 +529,27 @@
 <ul>
 <li>from schema: <a href="https://w3id.org/monarch-initiative/nams-registry">https://w3id.org/monarch-initiative/nams-registry</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>nams_registry:nams_relevance</td>
-</tr>
-<tr>
-<td>native</td>
-<td>nams_registry:nams_relevance</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nams_relevance</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether the resource holds NAMs itself or only supports work with them.</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Use undecided until the resource has been reviewed.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HoldsNAMsEnum</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether a resource holds NAMs, and whether they are its primary content.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMsRelevanceEnum</span>
-<span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">permissible_values</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">primary</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">primary</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMs, or records produced with them such as methods, models, cell</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">lines, or assay data, are the resource's primary content.</span>
+<span class="w">  </span><span class="nt">secondary</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secondary</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource holds NAMs, but they are not its primary content.</span>
+<span class="w">  </span><span class="nt">none</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">none</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource holds no NAMs.</span>
+<span class="w">  </span><span class="nt">unclear</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unclear</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource was evaluated, but whether it holds NAMs could not be</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">decided. Explain why in relevance_note.</span>
 </code></pre></div>
 </details>
 </div>

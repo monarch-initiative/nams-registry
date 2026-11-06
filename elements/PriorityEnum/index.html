@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://monarch-initiative.github.io/nams-registry/elements/NAMsRelevanceEnum/">
+        <link rel="canonical" href="https://monarch-initiative.github.io/nams-registry/elements/PriorityEnum/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Enum: NAMsRelevanceEnum - nams-registry</title>
+        <title>Enum: PriorityEnum - nams-registry</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-namsrelevanceenum" class="md-skip">
+        <a href="#enum-priorityenum" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: NAMsRelevanceEnum
+              Enum: PriorityEnum
             
           </span>
         </div>
@@ -473,10 +473,10 @@
   
 
 
-<h1 id="enum-namsrelevanceenum">Enum: NAMsRelevanceEnum</h1>
-<p><em>How a resource relates to NAMs.</em></p>
+<h1 id="enum-priorityenum">Enum: PriorityEnum</h1>
+<p><em>Extraction priority: how much a resource adds, and so how soon it is worth extracting content from.</em></p>
 <div>
-<p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/NAMsRelevanceEnum">nams_registry:NAMsRelevanceEnum</a></p>
+<p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/PriorityEnum">nams_registry:PriorityEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -488,19 +488,19 @@
 </thead>
 <tbody>
 <tr>
-<td>holds_nams</td>
+<td>high</td>
 <td>None</td>
-<td>The resource holds NAMs or records produced with them: methods, models, cell ...</td>
+<td></td>
 </tr>
 <tr>
-<td>nams_adjacent</td>
+<td>medium</td>
 <td>None</td>
-<td>The resource supports work with NAMs but holds none itself, such as reference...</td>
+<td></td>
 </tr>
 <tr>
-<td>undecided</td>
+<td>low</td>
 <td>None</td>
-<td>The resource has not yet been reviewed</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -514,8 +514,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../nams_relevance/">nams_relevance</a></td>
-<td>Whether the resource holds NAMs itself or only supports work with them</td>
+<td><a href="../priority/">priority</a></td>
+<td>Extraction priority: how much the resource adds, and so how soon it is worth ...</td>
 </tr>
 </tbody>
 </table>
@@ -526,22 +526,18 @@
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMsRelevanceEnum</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">How a resource relates to NAMs.</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PriorityEnum</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Extraction</span><span class="nv"> </span><span class="s">priority:</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">much</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">adds,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">soon</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span>
+<span class="w">  </span><span class="s">worth</span><span class="nv"> </span><span class="s">extracting</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">from.'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">permissible_values</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">holds_nams</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">holds_nams</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">holds</span><span class="nv"> </span><span class="s">NAMs</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">records</span><span class="nv"> </span><span class="s">produced</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">them:</span><span class="nv"> </span><span class="s">methods,</span>
-<span class="w">      </span><span class="s">models,</span><span class="nv"> </span><span class="s">cell</span><span class="nv"> </span><span class="s">lines,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">assay</span><span class="nv"> </span><span class="s">data.'</span>
-<span class="w">  </span><span class="nt">nams_adjacent</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nams_adjacent</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource supports work with NAMs but holds none itself, such</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">as reference in vivo data used to benchmark NAMs or chemical identity data.</span>
-<span class="w">  </span><span class="nt">undecided</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">undecided</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource has not yet been reviewed.</span>
+<span class="w">  </span><span class="nt">high</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high</span>
+<span class="w">  </span><span class="nt">medium</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">  </span><span class="nt">low</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">low</span>
 </code></pre></div>
 </details>
 </div>

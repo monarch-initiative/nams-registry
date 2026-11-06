@@ -333,6 +333,8 @@
 
       Resource : description
 
+      Resource : discussion_issue
+
       Resource : dismech_integration
 
       Resource : domain_areas
@@ -343,6 +345,17 @@
 
         Resource --&gt; "*" DomainAreaEnum : domain_areas
         click DomainAreaEnum href "../DomainAreaEnum/"
+
+
+
+      Resource : holds_nams
+
+
+
+
+
+        Resource --&gt; "0..1" HoldsNAMsEnum : holds_nams
+        click HoldsNAMsEnum href "../HoldsNAMsEnum/"
 
 
 
@@ -376,16 +389,18 @@
 
       Resource : name
 
-      Resource : nams_relevance
+      Resource : priority
 
 
 
 
 
-        Resource --&gt; "1" NAMsRelevanceEnum : nams_relevance
-        click NAMsRelevanceEnum href "../NAMsRelevanceEnum/"
+        Resource --&gt; "0..1" PriorityEnum : priority
+        click PriorityEnum href "../PriorityEnum/"
 
 
+
+      Resource : priority_rationale
 
       Resource : publications
 
@@ -476,15 +491,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nams_relevance/">nams_relevance</a></td>
-<td>1 <br/> <a href="../NAMsRelevanceEnum/">NAMsRelevanceEnum</a></td>
-<td>Whether the resource holds NAMs itself or only supports work with them</td>
+<td><a href="../holds_nams/">holds_nams</a></td>
+<td>0..1 <br/> <a href="../HoldsNAMsEnum/">HoldsNAMsEnum</a></td>
+<td>Whether the resource holds NAMs, and whether they are its primary content</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../relevance_note/">relevance_note</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Why the resource was given its nams_relevance value, e</td>
+<td>Why the resource was given its holds_nams value, e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -497,6 +512,24 @@
 <td><a href="../dismech_integration/">dismech_integration</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The resource's current state in DisMech: whether any of its content has been ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../priority/">priority</a></td>
+<td>0..1 <br/> <a href="../PriorityEnum/">PriorityEnum</a></td>
+<td>Extraction priority: how much the resource adds, and so how soon it is worth ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../priority_rationale/">priority_rationale</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Why the resource was given its priority, based on what was found about what i...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../discussion_issue/">discussion_issue</a></td>
+<td>0..1 <br/> <a href="../Uri/">Uri</a></td>
+<td>The GitHub issue where the resource is discussed, e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -620,10 +653,13 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource_type</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">domain_areas</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nams_relevance</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">holds_nams</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">relevance_note</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curation_model</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_integration</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority_rationale</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discussion_issue</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">activity_status</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">use_instead</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license</span>
@@ -693,21 +729,21 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DomainAreaEnum</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">nams_relevance</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nams_relevance</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether the resource holds NAMs itself or only supports work with</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">them. Use undecided until the resource has been reviewed.</span>
+<span class="w">  </span><span class="nt">holds_nams</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">holds_nams</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether the resource holds NAMs, and whether they are its primary</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">content. Leave it out until the resource has been evaluated.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMsRelevanceEnum</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HoldsNAMsEnum</span>
 <span class="w">  </span><span class="nt">relevance_note</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">relevance_note</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Why the resource was given its nams_relevance value, e.g. "Holds</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">in vivo animal study data used to benchmark NAMs; holds no NAMs itself."</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Why the resource was given its holds_nams value, e.g. "Holds the</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">measurement methods for key events, but its primary content is adverse outcome</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">pathways."</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
@@ -737,6 +773,41 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">priority</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Extraction</span><span class="nv"> </span><span class="s">priority:</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">much</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">adds,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">soon</span>
+<span class="w">      </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">worth</span><span class="nv"> </span><span class="s">extracting</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">from.</span><span class="nv"> </span><span class="s">Set</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">once</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">been</span><span class="nv"> </span><span class="s">investigated.</span>
+<span class="w">      </span><span class="s">A</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">repackages</span><span class="nv"> </span><span class="s">another</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">still</span><span class="nv"> </span><span class="s">add</span><span class="nv"> </span><span class="s">value,</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">example</span><span class="nv"> </span><span class="s">through</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">new</span><span class="nv"> </span><span class="s">format,</span><span class="nv"> </span><span class="s">integration</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">other</span><span class="nv"> </span><span class="s">data,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">easier</span><span class="nv"> </span><span class="s">access,</span><span class="nv"> </span><span class="s">so</span><span class="nv"> </span><span class="s">repackaging</span>
+<span class="w">      </span><span class="s">alone</span><span class="nv"> </span><span class="s">does</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">make</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">low</span><span class="nv"> </span><span class="s">priority.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PriorityEnum</span>
+<span class="w">  </span><span class="nt">priority_rationale</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority_rationale</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Why the resource was given its priority, based on what was found</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">about what it adds. For a resource that repackages another, say what it adds</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">beyond the original, or that nothing was found.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">discussion_issue</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discussion_issue</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Set by `just create-review-issues`.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri</span>
+<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^https://github\.com/monarch-initiative/nams-registry/issues/\d+$</span>
 <span class="w">  </span><span class="nt">activity_status</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">activity_status</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The status of the resource itself.</span>
