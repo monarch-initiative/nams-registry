@@ -12,6 +12,7 @@ issues in the repository. Use ``--dry-run`` to see what would be done.
 
 import argparse
 import datetime
+import functools
 import glob
 import json
 import os
@@ -62,14 +63,22 @@ def gh(*args):
     return result.stdout
 
 
+@functools.cache
 def byline():
     """Return the line that opens each issue, marking it as written by Claude Code.
 
     It names the person the issue is written for, taken from git's
-    user.name, rather than an @-mention, so it sends no notification.
+    user.name, rather than an @-mention, so it sends no notification. The
+    name is read once per run, folded onto one line, and escaped so that
+    Markdown or HTML in it cannot change the issue's formatting or its
+    hidden marker. Without git or a user.name, the line names no one.
     """
-    result = subprocess.run(["git", "config", "user.name"], capture_output=True, text=True)
-    name = result.stdout.strip()
+    try:
+        result = subprocess.run(["git", "config", "user.name"], capture_output=True, text=True)
+        name = result.stdout if result.returncode == 0 else ""
+    except OSError:
+        name = ""
+    name = re.sub(r"([\\`*_\[\]<>~])", r"\\\1", " ".join(name.split()))
     for_whom = f" for {name}" if name else ""
     return f"🤖 *Written by [Claude Code](https://claude.com/claude-code){for_whom}.*"
 
