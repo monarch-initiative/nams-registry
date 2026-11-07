@@ -28,7 +28,9 @@ LABEL_DESCRIPTION = "Discussion of one resource in the registry"
 SITE = "https://monarch-initiative.github.io/nams-registry/resources/"
 MARKER = re.compile(r"<!-- nams-registry: (\S+) -->")
 
-BODY = """This issue is the discussion thread for **{name}** (`{id}`) in the NAMs registry.
+BODY = """{byline}
+
+This issue is the discussion thread for **{name}** (`{id}`) in the NAMs registry.
 
 - Registry entry: [resources/{id}.yaml](https://github.com/{repository}/blob/main/resources/{id}.yaml)
 - Homepage: {homepage}
@@ -60,6 +62,18 @@ def gh(*args):
     return result.stdout
 
 
+def byline():
+    """Return the line that opens each issue, marking it as written by Claude Code.
+
+    It names the person the issue is written for, taken from git's
+    user.name, rather than an @-mention, so it sends no notification.
+    """
+    result = subprocess.run(["git", "config", "user.name"], capture_output=True, text=True)
+    name = result.stdout.strip()
+    for_whom = f" for {name}" if name else ""
+    return f"🤖 *Written by [Claude Code](https://claude.com/claude-code){for_whom}.*"
+
+
 def title_for(resource):
     """Return the issue title for a resource."""
     return f"Comments and edits on {resource['name']}"
@@ -69,6 +83,7 @@ def body_for(resource):
     """Return the issue body for a resource."""
     priority = resource.get("priority")
     return BODY.format(
+        byline=byline(),
         name=resource["name"],
         id=resource["id"],
         repository=REPOSITORY,
