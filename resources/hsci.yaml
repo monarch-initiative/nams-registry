@@ -1,0 +1,21 @@
+id: hsci
+name: Harvard Stem Cell Institute (HSCI)
+description: The Harvard Stem Cell Institute (HSCI) is a research network of
+  stem cell scientists at Harvard University and its affiliated hospitals. It
+  was founded in 2004 by Doug Melton and David Scadden. Its research is organized
+  into disease programs and cross-cutting themes, such as fibrosis and aging. It
+  runs shared core facilities for its members, including an iPS Core Facility
+  for deriving and distributing induced pluripotent stem cell lines, a Center
+  for Stem Cell Bioinformatics that pairs the Harvard Chan Bioinformatics Core
+  with the Stem Cell Commons data platform, and a Center for Human Cell Therapy.
+  The research page describes these programs and the work done in them.
+synonyms:
+- HSCI
+homepage_url: https://www.hsci.harvard.edu/research
+resource_type: Organization
+domain_areas:
+- cell biology
+- biomedical
+activity_status: active
+creation_date: '2026-11-07'
+last_modified_date: '2026-11-07'
