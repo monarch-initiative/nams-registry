@@ -404,6 +404,17 @@
 
       Resource : name
 
+      Resource : part_of
+
+
+
+
+
+        Resource --&gt; "*" Resource : part_of
+        click Resource href "../Resource/"
+
+
+
       Resource : priority
 
 
@@ -507,7 +518,7 @@
 <tr>
 <td><a href="../resource_type/">resource_type</a></td>
 <td>0..1 <br/> <a href="../ResourceTypeEnum/">ResourceTypeEnum</a></td>
-<td>What form the resource takes, such as a data source or a knowledge graph</td>
+<td>What form the resource takes, such as a data source or a knowledge graph, or,...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -595,6 +606,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../part_of/">part_of</a></td>
+<td>* <br/> <a href="./">Resource</a></td>
+<td>The ids of the registry Organization entries this resource belongs to, such a...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../license/">license</a></td>
 <td>0..1 <br/> <a href="../LicenseInfo/">LicenseInfo</a></td>
 <td>The license of the resource</td>
@@ -661,6 +678,12 @@
 <td>range</td>
 <td><a href="./">Resource</a></td>
 </tr>
+<tr>
+<td><a href="./">Resource</a></td>
+<td><a href="../part_of/">part_of</a></td>
+<td>range</td>
+<td><a href="./">Resource</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -716,6 +739,7 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discussion_issue</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">activity_status</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">use_instead</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publications</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">creation_date</span>
@@ -766,7 +790,8 @@
 <span class="w">  </span><span class="nt">resource_type</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource_type</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">What form the resource takes, such as a data source or a knowledge</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">graph. Imported from the KG-Registry category.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">graph, or, for an organization covered as a whole, Organization. Imported from</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">the KG-Registry category.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
@@ -924,6 +949,19 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">use_instead</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The ids of other registry resources to use in place of this one,</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">for a resource that is no longer active and has a clear replacement.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">part_of</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">part_of</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The ids of the registry Organization entries this resource belongs</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to, such as a database to the institute that runs it, or a core facility to</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">its university. Set it on the part, not on the organization; an organization's</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">parts are the entries that name it.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
