@@ -428,7 +428,8 @@ class ActivityStatusEnum(EnumDefinitionImpl):
 
 class ResourceTypeEnum(EnumDefinitionImpl):
     """
-    What form a resource takes. The KG-Registry Resource categories, plus Report.
+    What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report
+    and Organization.
     """
     DataSource = PermissibleValue(
         text="DataSource",
@@ -448,10 +449,13 @@ class ResourceTypeEnum(EnumDefinitionImpl):
     Report = PermissibleValue(
         text="Report",
         description="""A report that surveys NAMs or sets out how a method is to be used, such as a landscape analysis, a review article, or an OECD Test Guideline. A primary research paper is not a report. Not one of the KG-Registry categories.""")
+    Organization = PermissibleValue(
+        text="Organization",
+        description="""An organization, such as a research institute or a company, whose research or product pages are covered as a whole, not one data product it publishes. A data product the organization publishes, such as a database, can have an entry of its own. Not one of the KG-Registry categories; KG-Registry uses Organization only for contacts.""")
 
     _defn = EnumDefinition(
         name="ResourceTypeEnum",
-        description="What form a resource takes. The KG-Registry Resource categories, plus Report.",
+        description="""What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report and Organization.""",
     )
 
 class DomainAreaEnum(EnumDefinitionImpl):

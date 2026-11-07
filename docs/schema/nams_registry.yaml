@@ -329,8 +329,8 @@ enums:
   ResourceTypeEnum:
     name: ResourceTypeEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ResourceTypeEnum
-    description: What form a resource takes. The KG-Registry Resource categories,
-      plus Report.
+    description: What form a resource takes, or, for an Organization, who it is. The
+      KG-Registry Resource categories, plus Report and Organization.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     permissible_values:
       DataSource:
@@ -357,6 +357,13 @@ enums:
         description: A report that surveys NAMs or sets out how a method is to be
           used, such as a landscape analysis, a review article, or an OECD Test Guideline.
           A primary research paper is not a report. Not one of the KG-Registry categories.
+      Organization:
+        text: Organization
+        description: An organization, such as a research institute or a company, whose
+          research or product pages are covered as a whole, not one data product it
+          publishes. A data product the organization publishes, such as a database,
+          can have an entry of its own. Not one of the KG-Registry categories; KG-Registry
+          uses Organization only for contacts.
   DomainAreaEnum:
     name: DomainAreaEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/DomainAreaEnum
@@ -655,7 +662,8 @@ slots:
     name: resource_type
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/resource_type
     description: What form the resource takes, such as a data source or a knowledge
-      graph. Imported from the KG-Registry category.
+      graph, or, for an organization covered as a whole, Organization. Imported from
+      the KG-Registry category.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:resource_type
     owner: Resource
@@ -1275,6 +1283,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-05T22:22:24'
-source_file_size: 20788
+source_file_date: '2026-11-07T15:50:07'
+source_file_size: 21341
 

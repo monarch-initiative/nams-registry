@@ -122,7 +122,7 @@ class ActivityStatusEnum(str, Enum):
 
 class ResourceTypeEnum(str, Enum):
     """
-    What form a resource takes. The KG-Registry Resource categories, plus Report.
+    What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report and Organization.
     """
     DataSource = "DataSource"
     """
@@ -147,6 +147,10 @@ class ResourceTypeEnum(str, Enum):
     Report = "Report"
     """
     A report that surveys NAMs or sets out how a method is to be used, such as a landscape analysis, a review article, or an OECD Test Guideline. A primary research paper is not a report. Not one of the KG-Registry categories.
+    """
+    Organization = "Organization"
+    """
+    An organization, such as a research institute or a company, whose research or product pages are covered as a whole, not one data product it publishes. A data product the organization publishes, such as a database, can have an entry of its own. Not one of the KG-Registry categories; KG-Registry uses Organization only for contacts.
     """
 
 
@@ -384,7 +388,7 @@ class Resource(NamedThing):
     synonyms: Optional[list[str]] = Field(default=None, description="""Acronyms, abbreviations, and other alternate names for the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     homepage_url: Optional[str] = Field(default=None, description="""The primary URL of the resource, preferably the main page documenting it.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'schema:url'} })
     repository: Optional[str] = Field(default=None, description="""The main version control repository for the resource, if it has one.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource', 'SupportingScript']} })
-    resource_type: Optional[ResourceTypeEnum] = Field(default=None, description="""What form the resource takes, such as a data source or a knowledge graph. Imported from the KG-Registry category.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
+    resource_type: Optional[ResourceTypeEnum] = Field(default=None, description="""What form the resource takes, such as a data source or a knowledge graph, or, for an organization covered as a whole, Organization. Imported from the KG-Registry category.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     domain_areas: Optional[list[DomainAreaEnum]] = Field(default=None, description="""The domains the resource covers, such as toxicology. Imported from the KG-Registry domains.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     holds_nams: Optional[HoldsNAMsEnum] = Field(default=None, description="""Whether the resource holds NAMs, and whether they are its primary content. Leave it out until the resource has been evaluated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     relevance_note: Optional[str] = Field(default=None, description="""Why the resource was given its holds_nams value, e.g. \"Holds the measurement methods for key events, but its primary content is adverse outcome pathways.\"""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
