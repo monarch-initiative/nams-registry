@@ -1,0 +1,28 @@
+id: stem-cell-commons
+name: Stem Cell Commons
+description: Stem Cell Commons was the data repository and analysis platform of
+  the HSCI Center for Stem Cell Bioinformatics, developed for the Harvard Stem
+  Cell Institute by the Park and Gehlenborg labs at the HMS Department of
+  Biomedical Informatics, the Harvard Chan Bioinformatics Core, and the Hide Lab
+  at the University of Sheffield. It held stem cell-related transcriptomics and
+  epigenomics data sets (over 200 on one page of the Center's website, over 300
+  on another), with ISA-Tab metadata, FastQC, ChIP-seq peak calling and RNA-seq
+  quantification workflows, and the Integrative Genomics Viewer. In 2017 it was
+  moving to a new version built on the Refinery Platform and hosted on Amazon
+  Web Services. Its public site, https://hsci.stemcellcommons.org, no longer
+  resolves (checked 2026-11-07), and stemcellcommons.org now serves an unrelated
+  site. The Center's website, the homepage here, is still up, but its latest
+  news is from May 2017.
+homepage_url: https://stemcellcommons.github.io/cscb-website/stem-cell-commons
+repository: https://github.com/stemcellcommons/stemcellcommons
+resource_type: DataSource
+domain_areas:
+- cell biology
+- gene expression profiling
+- epigenomics
+- biomedical
+activity_status: unresponsive
+part_of:
+- hsci
+creation_date: '2026-11-07'
+last_modified_date: '2026-11-07'
