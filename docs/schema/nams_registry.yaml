@@ -842,6 +842,20 @@ slots:
     - Resource
     range: Resource
     multivalued: true
+  part_of:
+    name: part_of
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/part_of
+    description: The ids of the registry Organization entries this resource belongs
+      to, such as a database to the institute that runs it, or a core facility to
+      its university. Set it on the part, not on the organization; an organization's
+      parts are the entries that name it.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:part_of
+    owner: Resource
+    domain_of:
+    - Resource
+    range: Resource
+    multivalued: true
   license:
     name: license
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/license
@@ -1165,6 +1179,7 @@ classes:
     - discussion_issue
     - activity_status
     - use_instead
+    - part_of
     - license
     - publications
     - creation_date
@@ -1283,6 +1298,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-07T15:50:07'
-source_file_size: 21341
+source_file_date: '2026-11-07T15:50:22'
+source_file_size: 21712
 

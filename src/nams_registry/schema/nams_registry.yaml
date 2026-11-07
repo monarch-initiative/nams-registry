@@ -61,6 +61,7 @@ classes:
       - discussion_issue
       - activity_status
       - use_instead
+      - part_of
       - license
       - publications
       - creation_date
@@ -271,6 +272,14 @@ slots:
     description: >-
       The ids of other registry resources to use in place of this one, for a
       resource that is no longer active and has a clear replacement.
+  part_of:
+    range: Resource
+    multivalued: true
+    description: >-
+      The ids of the registry Organization entries this resource belongs
+      to, such as a database to the institute that runs it, or a core
+      facility to its university. Set it on the part, not on the
+      organization; an organization's parts are the entries that name it.
   license:
     range: LicenseInfo
     inlined: true

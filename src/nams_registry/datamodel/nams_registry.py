@@ -155,6 +155,7 @@ class Resource(NamedThing):
     discussion_issue: Optional[Union[str, URI]] = None
     activity_status: Optional[Union[str, "ActivityStatusEnum"]] = None
     use_instead: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = empty_list()
+    part_of: Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]] = empty_list()
     license: Optional[Union[dict, "LicenseInfo"]] = None
     publications: Optional[Union[dict[Union[str, PublicationId], Union[dict, "Publication"]], list[Union[dict, "Publication"]]]] = empty_dict()
     creation_date: Optional[Union[str, XSDDate]] = None
@@ -223,6 +224,10 @@ class Resource(NamedThing):
         if not isinstance(self.use_instead, list):
             self.use_instead = [self.use_instead] if self.use_instead is not None else []
         self.use_instead = [v if isinstance(v, ResourceId) else ResourceId(v) for v in self.use_instead]
+
+        if not isinstance(self.part_of, list):
+            self.part_of = [self.part_of] if self.part_of is not None else []
+        self.part_of = [v if isinstance(v, ResourceId) else ResourceId(v) for v in self.part_of]
 
         if self.license is not None and not isinstance(self.license, LicenseInfo):
             self.license = LicenseInfo(**as_dict(self.license))
@@ -743,6 +748,9 @@ slots.activity_status = Slot(uri=NAMS_REGISTRY.activity_status, name="activity_s
 
 slots.use_instead = Slot(uri=NAMS_REGISTRY.use_instead, name="use_instead", curie=NAMS_REGISTRY.curie('use_instead'),
                    model_uri=NAMS_REGISTRY.use_instead, domain=None, range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]])
+
+slots.part_of = Slot(uri=NAMS_REGISTRY.part_of, name="part_of", curie=NAMS_REGISTRY.curie('part_of'),
+                   model_uri=NAMS_REGISTRY.part_of, domain=None, range=Optional[Union[Union[str, ResourceId], list[Union[str, ResourceId]]]])
 
 slots.license = Slot(uri=DCTERMS.license, name="license", curie=DCTERMS.curie('license'),
                    model_uri=NAMS_REGISTRY.license, domain=None, range=Optional[Union[dict, LicenseInfo]])

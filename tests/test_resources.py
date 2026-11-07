@@ -30,3 +30,18 @@ def test_resource_file_name_matches_id(filepath):
     with open(filepath) as fh:
         instance = yaml.safe_load(fh)
     assert instance["id"] == Path(filepath).stem
+
+
+RESOURCES = {Path(p).stem: yaml.safe_load(open(p)) for p in RESOURCE_FILES}
+
+
+@pytest.mark.parametrize("filepath", RESOURCE_FILES, ids=lambda p: Path(p).stem)
+def test_part_of_names_an_organization(filepath):
+    """Test that each part_of id is a registry entry of type Organization."""
+    with open(filepath) as fh:
+        instance = yaml.safe_load(fh)
+    for parent in instance.get("part_of", []):
+        assert parent in RESOURCES, f"part_of names unknown id {parent}"
+        assert RESOURCES[parent].get("resource_type") == "Organization", (
+            f"part_of names {parent}, which is not an Organization"
+        )
