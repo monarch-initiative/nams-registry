@@ -1,0 +1,74 @@
+id: stemcell-organoids
+name: STEMCELL Technologies - Organoids
+description: >-
+  The organoid pages of the STEMCELL Technologies website. STEMCELL is a
+  commercial supplier of cell culture media, kits and cells, and the
+  exclusive commercial supplier of media for the organoid technology
+  licensed by Hubrecht Organoid Technology (HUB). The Organoid Research hub
+  page links to sections for intestinal, liver, neural and pulmonary
+  organoids, each with an overview and tabs for webinars, wallcharts,
+  interviews, protocols, training, posters and publications, and to an
+  Organoids in Drug Discovery section. Product pages for the media, kits and
+  cryopreserved or fresh organoids describe each system, with data figures,
+  protocols and publication lists. Products cover intestinal, colonic,
+  liver, pancreatic, kidney, cerebral, forebrain, midbrain, spinal cord,
+  choroid plexus, blood vessel, airway, nasal, alveolar, branching lung and
+  endometrial organoids, organoid-derived monolayers, and airway epithelium
+  at the air-liquid interface.
+synonyms:
+- STEMCELL Technologies Organoid Research
+homepage_url: https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+resource_type: DataSource
+domain_areas:
+- cell biology
+- anatomy and development
+- drug discovery
+- toxicology
+- biomedical
+holds_nams: primary
+relevance_note: >-
+  Organoid systems, which are NAMs, are what the pages describe, but only as
+  prose: there is no API and no downloadable data. 46 systems were extracted
+  from 412 pages read on 2026-11-06 and recorded in nams/, each linked back
+  to this resource. 34 are organoids, 5 are organoid-derived monolayers, 4
+  are air-liquid interface cultures, 2 are co-cultures and 1 is an
+  assembloid. 18 start from
+  adult tissue, 16 from pluripotent stem cells and 6 from tumors. Each NAM
+  record gives what the system is used for and its limitations, with the
+  pages they came from. The limitations come mostly from FAQs, protocol
+  notes, webinar summaries and the Nature Research Round Table, and are
+  thin for some systems (spinal cord, choroid plexus, hPSC colon, gastric,
+  retinal). Five systems (gastric, retinal and two pan-tumor entries) appear
+  only in webinars or citations and have no STEMCELL product. The
+  per-organ publication lists stop at about 2018 and give no DOIs or PMIDs;
+  product pages carry newer publications.
+curation_model:
+- maintainers
+dismech_integration: >-
+  None. DisMech has no tooling for it. One DisMech entry names a STEMCELL
+  product: the cerebral organoid experimental model in
+  kb/disorders/Bachmann-Bupp_Syndrome.yaml gives "STEMdiff cerebral organoid
+  differentiation" as its culture_system. Checked against dismech commit
+  67b29f2c545.
+supporting_scripts:
+- name: fetch_stemcell_organoids.py
+  repository: https://github.com/monarch-initiative/nams-registry
+  path: scripts/fetch_stemcell_organoids.py
+  command: uv run python scripts/fetch_stemcell_organoids.py
+  description: >-
+    Crawls the organoid pages of stemcell.com from the Organoid Research hub
+    page, following links whose paths name an organoid, organ or organoid
+    product line, and saves each page as HTML and as plain text.
+extraction_effort: high
+effort_rationale: >-
+  Everything is prose spread across product pages, protocols, FAQs and
+  webinar summaries, so extraction meant reading the pages and deciding
+  where one organoid system ends and the next begins. Many webinars and
+  wallcharts are behind registration forms and were not read. Catalog
+  numbers for some products are only in the page HTML.
+activity_status: active
+license:
+  id: https://www.stemcell.com/terms-and-conditions-general
+  label: Copyright STEMCELL Technologies (all rights reserved)
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'
