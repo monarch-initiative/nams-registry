@@ -68,6 +68,8 @@ effort_rationale: >-
   numbers for some products are only in the page HTML.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/50
 activity_status: active
+part_of:
+- stemcell-technologies
 license:
   label: Copyright STEMCELL Technologies, all rights reserved; no website terms of use published
 creation_date: '2026-11-06'

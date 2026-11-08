@@ -1,0 +1,23 @@
+id: stemcell-technologies
+name: STEMCELL Technologies
+description: >-
+  STEMCELL Technologies is a biotechnology company that supplies cell
+  culture media, cell separation technologies, instruments, accessory
+  products and educational resources for stem cell, immunology, cancer,
+  regenerative medicine and cellular therapy research. It was launched in
+  1993 by its founder and CEO, Dr. Allen Eaves, to supply standardized
+  culture media for hematopoietic stem cells, and is based in Vancouver,
+  Canada, with offices in other countries. It is the exclusive commercial
+  supplier of media for the organoid technology licensed by Hubrecht
+  Organoid Technology (HUB). Its organoid product and technical resource
+  pages have their own entry, stemcell-organoids.
+synonyms:
+- STEMCELL
+homepage_url: https://www.stemcell.com/about-us
+resource_type: Organization
+domain_areas:
+- cell biology
+- biomedical
+activity_status: active
+creation_date: '2026-11-07'
+last_modified_date: '2026-11-07'
