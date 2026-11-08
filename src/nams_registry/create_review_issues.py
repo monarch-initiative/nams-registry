@@ -125,18 +125,53 @@ def ensure_label():
            "--color", LABEL_COLOR, "--description", LABEL_DESCRIPTION)
 
 
-def with_issue(resource, url, today):
-    """Return the resource with discussion_issue set, keeping its field order."""
-    updated = {}
-    for key, value in resource.items():
-        if key in ("discussion_issue",):
-            continue
-        if key == "activity_status":
-            updated["discussion_issue"] = url
-        updated[key] = value
-    updated.setdefault("discussion_issue", url)
-    updated["last_modified_date"] = today
-    return updated
+TOP_LEVEL_KEY = re.compile(r"^([A-Za-z_][\w-]*):")
+
+
+def top_level_field(lines, key):
+    """Return the (start, end) line span of a top-level field, or None.
+
+    The span covers the key's line and any indented or list lines that
+    continue its value.
+    """
+    for start, line in enumerate(lines):
+        match = TOP_LEVEL_KEY.match(line)
+        if match and match.group(1) == key:
+            end = start + 1
+            while end < len(lines) and not TOP_LEVEL_KEY.match(lines[end]):
+                end += 1
+            return start, end
+    return None
+
+
+def with_issue(text, url, today):
+    """Return the resource file's text with discussion_issue and last_modified_date set.
+
+    The file is edited as text, not loaded and dumped again, so every other
+    line keeps its wrapping and quoting and the diff shows only these two
+    fields. discussion_issue replaces an existing (empty) field in place;
+    otherwise it goes before activity_status, or at the end if there is
+    none, which is where the registry's entries keep it.
+    """
+    lines = text.splitlines(keepends=True)
+    if lines and not lines[-1].endswith("\n"):
+        lines[-1] += "\n"
+    issue_line = f"discussion_issue: {url}\n"
+    date_line = f"last_modified_date: '{today}'\n"
+
+    span = top_level_field(lines, "discussion_issue")
+    if span:
+        lines[span[0]:span[1]] = [issue_line]
+    else:
+        status = top_level_field(lines, "activity_status")
+        lines.insert(status[0] if status else len(lines), issue_line)
+
+    span = top_level_field(lines, "last_modified_date")
+    if span:
+        lines[span[0]:span[1]] = [date_line]
+    else:
+        lines.append(date_line)
+    return "".join(lines)
 
 
 def main(argv=None):
@@ -155,7 +190,8 @@ def main(argv=None):
     opened, linked, skipped = 0, 0, 0
     for path in sorted(glob.glob(os.path.join(args.resources, "*.yaml"))):
         with open(path) as fh:
-            resource = yaml.safe_load(fh)
+            text = fh.read()
+        resource = yaml.safe_load(text)
         if args.only and resource["id"] != args.only:
             continue
         if resource.get("discussion_issue"):
@@ -183,7 +219,7 @@ def main(argv=None):
         else:
             linked += 1
         with open(path, "w") as fh:
-            yaml.safe_dump(with_issue(resource, url, today), fh, sort_keys=False, allow_unicode=True)
+            fh.write(with_issue(text, url, today))
 
     if args.dry_run:
         print("Dry run: nothing was opened or written.")

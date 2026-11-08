@@ -67,3 +67,83 @@ def test_body_starts_with_byline(monkeypatch):
     body = create_review_issues.body_for({"name": "X", "id": "x"})
     assert body.startswith("🤖 *Written by")
     assert create_review_issues.MARKER.search(body).group(1) == "x"
+
+
+# with_issue edits the file as text, so only the two fields it sets change.
+
+import difflib
+from pathlib import Path
+
+import yaml
+
+URL = "https://github.com/monarch-initiative/nams-registry/issues/99"
+TODAY = "2026-11-08"
+
+ENTRY = """id: x
+name: X
+description: A description long enough that PyYAML would wrap it at a different column
+  from the one this file was written with, which is what used to fill the diff.
+domain_areas:
+- toxicology
+activity_status: active
+creation_date: '2026-11-01'
+last_modified_date: '2026-11-01'
+"""
+
+
+def changed_lines(before, after):
+    """Return the lines removed and added between two texts."""
+    diff = difflib.unified_diff(before.splitlines(), after.splitlines(), lineterm="", n=0)
+    return [line for line in diff if line[:1] in "+-" and line[:3] not in ("+++", "---")]
+
+
+def test_with_issue_changes_only_its_two_fields():
+    after = create_review_issues.with_issue(ENTRY, URL, TODAY)
+    assert changed_lines(ENTRY, after) == [
+        f"+discussion_issue: {URL}",
+        "-last_modified_date: '2026-11-01'",
+        f"+last_modified_date: '{TODAY}'",
+    ]
+
+
+def test_with_issue_goes_before_activity_status():
+    lines = create_review_issues.with_issue(ENTRY, URL, TODAY).splitlines()
+    assert lines[lines.index("activity_status: active") - 1] == f"discussion_issue: {URL}"
+
+
+def test_with_issue_parses_to_the_expected_values():
+    before = yaml.safe_load(ENTRY)
+    after = yaml.safe_load(create_review_issues.with_issue(ENTRY, URL, TODAY))
+    assert after == {**before, "discussion_issue": URL, "last_modified_date": TODAY}
+
+
+def test_with_issue_replaces_an_empty_field():
+    text = ENTRY.replace("activity_status", "discussion_issue:\nactivity_status")
+    after = create_review_issues.with_issue(text, URL, TODAY)
+    assert after.count("discussion_issue") == 1
+    assert yaml.safe_load(after)["discussion_issue"] == URL
+
+
+def test_with_issue_appends_missing_fields():
+    text = "id: x\nname: X"  # no activity_status, no last_modified_date, no final newline
+    after = create_review_issues.with_issue(text, URL, TODAY)
+    assert after == f"id: x\nname: X\ndiscussion_issue: {URL}\nlast_modified_date: '{TODAY}'\n"
+
+
+@pytest.mark.parametrize(
+    "path", sorted(Path(__file__).parent.parent.joinpath("resources").glob("*.yaml")), ids=lambda p: p.stem
+)
+def test_with_issue_on_each_registry_entry(path):
+    """On every entry, at most the two fields change, and nothing else moves."""
+    text = path.read_text()
+    # Start from the entry as it was before it had an issue.
+    span = create_review_issues.top_level_field(text.splitlines(keepends=True), "discussion_issue")
+    if span:
+        lines = text.splitlines(keepends=True)
+        del lines[span[0]:span[1]]
+        text = "".join(lines)
+    after = create_review_issues.with_issue(text, URL, TODAY)
+    changed = changed_lines(text, after)
+    assert [line for line in changed if not line[1:].startswith(("discussion_issue:", "last_modified_date:"))] == []
+    before, parsed = yaml.safe_load(text), yaml.safe_load(after)
+    assert parsed == {**before, "discussion_issue": URL, "last_modified_date": TODAY}
