@@ -55,7 +55,7 @@ supporting_scripts:
     Renders the NICE Data Sets page in headless Chrome and parses its table
     into one record per data set, lists the assay names the REST API accepts,
     downloads the data set files under a size limit, and tallies the assay,
-    species and reference columns of each spreadsheet.
+    species, reference and data type columns of each spreadsheet.
 priority: medium
 priority_rationale: >-
   NICE adds nine reference data sets that NICEATM curates, which pair NAM

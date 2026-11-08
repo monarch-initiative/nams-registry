@@ -43,6 +43,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -68,10 +69,17 @@ def render(path, channel, settle_seconds):
     from playwright.sync_api import sync_playwright
 
     playwright = sync_playwright().start()
-    browser = playwright.chromium.launch(channel=channel, headless=True)
-    page = browser.new_page(user_agent=USER_AGENT)
-    page.goto(BASE + path, wait_until="load", timeout=90_000)
-    page.wait_for_timeout(settle_seconds * 1000)
+    browser = None
+    try:
+        browser = playwright.chromium.launch(channel=channel, headless=True)
+        page = browser.new_page(user_agent=USER_AGENT)
+        page.goto(BASE + path, wait_until="load", timeout=90_000)
+        page.wait_for_timeout(settle_seconds * 1000)
+    except Exception:
+        if browser:
+            browser.close()
+        playwright.stop()
+        raise
     return playwright, browser, page
 
 
@@ -129,28 +137,70 @@ def assays(out):
     print(f"assays: {len(names)} assay names", file=sys.stderr)
 
 
+def advertised_size(url):
+    """Return the Content-Length a HEAD request reports, or None if it can't be had."""
+    try:
+        with urllib.request.urlopen(request(url, "HEAD"), timeout=60) as response:
+            length = response.headers.get("Content-Length")
+    except (urllib.error.HTTPError, urllib.error.URLError):
+        return None
+    return int(length) if length and length.isdigit() else None
+
+
+def fetch_capped(url, path, limit):
+    """Stream url to path, stopping once more than limit bytes arrive.
+
+    Returns the number of bytes written, or None if the limit was passed, in
+    which case the partial file is removed.
+    """
+    partial = path.with_name(path.name + ".part")
+    written = 0
+    with urllib.request.urlopen(request(url), timeout=600) as response, partial.open("wb") as handle:
+        while chunk := response.read(1 << 20):
+            written += len(chunk)
+            if written > limit:
+                break
+            handle.write(chunk)
+    if written > limit:
+        partial.unlink()
+        return None
+    partial.replace(path)
+    return written
+
+
 def download(out, max_mb, pause):
-    """Download each data set file no larger than max_mb."""
+    """Download each data set file no larger than max_mb.
+
+    The size a HEAD request reports is checked first, so a large file is
+    skipped without downloading any of it. The limit is also enforced while
+    downloading, for a server that reports no size.
+    """
     datasets = json.loads((out / "datasets.json").read_text())
     target = out / "downloads"
     target.mkdir(exist_ok=True)
+    limit = int(max_mb * 1_000_000)
     skipped = []
     for dataset in datasets:
         url = dataset["download_url"]
         if not url:
             continue
-        name = url.rsplit("/", 1)[1]
-        with urllib.request.urlopen(request(url, "HEAD"), timeout=60) as response:
-            size = int(response.headers.get("Content-Length") or 0)
-        if size > max_mb * 1_000_000:
+        name = Path(urllib.parse.urlparse(url).path).name
+        if not name:
+            print(f"download: skipped {url} (no file name in the URL)", file=sys.stderr)
+            continue
+        size = advertised_size(url)
+        if size is not None and size > limit:
             skipped.append({"file": name, "megabytes": round(size / 1_000_000, 1)})
             continue
-        with urllib.request.urlopen(request(url), timeout=600) as response:
-            (target / name).write_bytes(response.read())
-        print(f"download: {name} ({size / 1_000_000:.1f} MB)", file=sys.stderr)
+        written = fetch_capped(url, target / name, limit)
+        if written is None:
+            skipped.append({"file": name, "megabytes": None})
+            continue
+        print(f"download: {name} ({written / 1_000_000:.1f} MB)", file=sys.stderr)
         time.sleep(pause)
     for item in skipped:
-        print(f"download: skipped {item['file']} ({item['megabytes']} MB, over --max-mb)", file=sys.stderr)
+        size = f"{item['megabytes']} MB" if item["megabytes"] is not None else "size not reported"
+        print(f"download: skipped {item['file']} ({size}, over --max-mb)", file=sys.stderr)
     return skipped
 
 
