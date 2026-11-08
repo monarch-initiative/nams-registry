@@ -126,19 +126,23 @@ def ensure_label():
 
 
 TOP_LEVEL_KEY = re.compile(r"^([A-Za-z_][\w-]*):")
+# A line that continues a field's value: indented, or a list item at column
+# 0, and not blank or a comment.
+CONTINUATION = re.compile(r"^(?:[ \t]+(?!#)\S|- |-$)")
 
 
 def top_level_field(lines, key):
     """Return the (start, end) line span of a top-level field, or None.
 
-    The span covers the key's line and any indented or list lines that
-    continue its value.
+    The span covers the key's line and the indented or list ("- ") lines
+    that continue its value. A blank line, a comment or the next top-level
+    key ends it, so replacing the span never removes them.
     """
     for start, line in enumerate(lines):
         match = TOP_LEVEL_KEY.match(line)
         if match and match.group(1) == key:
             end = start + 1
-            while end < len(lines) and not TOP_LEVEL_KEY.match(lines[end]):
+            while end < len(lines) and CONTINUATION.match(lines[end]):
                 end += 1
             return start, end
     return None
@@ -149,9 +153,10 @@ def with_issue(text, url, today):
 
     The file is edited as text, not loaded and dumped again, so every other
     line keeps its wrapping and quoting and the diff shows only these two
-    fields. discussion_issue replaces an existing (empty) field in place;
-    otherwise it goes before activity_status, or at the end if there is
-    none, which is where the registry's entries keep it.
+    fields. An existing discussion_issue field is replaced in place,
+    whatever its value (main() calls this only when the field is missing or
+    empty). Otherwise discussion_issue goes before activity_status, or at
+    the end if there is none, which is where the registry's entries keep it.
     """
     lines = text.splitlines(keepends=True)
     if lines and not lines[-1].endswith("\n"):

@@ -1,8 +1,12 @@
-"""Tests for the review issue byline."""
+"""Tests for create_review_issues: the issue byline and the file edit."""
 
+import difflib
+import re
 import subprocess
+from pathlib import Path
 
 import pytest
+import yaml
 
 from nams_registry import create_review_issues
 
@@ -71,11 +75,6 @@ def test_body_starts_with_byline(monkeypatch):
 
 # with_issue edits the file as text, so only the two fields it sets change.
 
-import difflib
-from pathlib import Path
-
-import yaml
-
 URL = "https://github.com/monarch-initiative/nams-registry/issues/99"
 TODAY = "2026-11-08"
 
@@ -135,15 +134,35 @@ def test_with_issue_appends_missing_fields():
 )
 def test_with_issue_on_each_registry_entry(path):
     """On every entry, at most the two fields change, and nothing else moves."""
-    text = path.read_text()
-    # Start from the entry as it was before it had an issue.
-    span = create_review_issues.top_level_field(text.splitlines(keepends=True), "discussion_issue")
-    if span:
-        lines = text.splitlines(keepends=True)
-        del lines[span[0]:span[1]]
-        text = "".join(lines)
+    # Start from the entry as it was before it had an issue. The line is
+    # removed here with a plain pattern, not top_level_field, so a bug in
+    # that helper can't also shape the test's starting point.
+    text = re.sub(r"(?m)^discussion_issue:.*\n", "", path.read_text())
     after = create_review_issues.with_issue(text, URL, TODAY)
     changed = changed_lines(text, after)
     assert [line for line in changed if not line[1:].startswith(("discussion_issue:", "last_modified_date:"))] == []
     before, parsed = yaml.safe_load(text), yaml.safe_load(after)
     assert parsed == {**before, "discussion_issue": URL, "last_modified_date": TODAY}
+
+
+def test_with_issue_keeps_blank_lines_and_comments():
+    text = ENTRY.replace(
+        "last_modified_date: '2026-11-01'\n",
+        "last_modified_date: '2026-11-01'\n\n# reviewed in the November batch\n",
+    ).replace("activity_status", "discussion_issue:\n  # filled in by create-review-issues\nactivity_status")
+    after = create_review_issues.with_issue(text, URL, TODAY)
+    assert "\n\n# reviewed in the November batch\n" in after
+    assert "  # filled in by create-review-issues\n" in after
+    assert changed_lines(text, after) == [
+        "-discussion_issue:",
+        f"+discussion_issue: {URL}",
+        "-last_modified_date: '2026-11-01'",
+        f"+last_modified_date: '{TODAY}'",
+    ]
+
+
+def test_top_level_field_spans_list_and_indented_lines():
+    lines = ENTRY.splitlines(keepends=True)
+    assert create_review_issues.top_level_field(lines, "domain_areas") == (4, 6)
+    assert create_review_issues.top_level_field(lines, "description") == (2, 4)
+    assert create_review_issues.top_level_field(lines, "missing") is None
