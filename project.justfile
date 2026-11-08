@@ -14,6 +14,11 @@ import-kg-registry *args:
 validate-resources:
   uv run linkml-validate -s {{source_schema_path}} -C Resource resources/*.yaml
 
+# Link the NAMO schema from a local checkout (NAMO_DIR or ../namo), or download the ref in pyproject.toml
+[group('model development')]
+namo:
+  uv run python scripts/link_namo.py
+
 # Build the resource table page, docs/resources/index.html
 [group('data')]
 build-table:

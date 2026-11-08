@@ -57,6 +57,9 @@ jobs:
       - name: Install dependencies
         run: uv sync --dev --no-progress
 
+      - name: Fetch the NAMO schema
+        run: uv run python scripts/link_namo.py
+
       - name: Build documentation
         run: |
           just gen-doc
