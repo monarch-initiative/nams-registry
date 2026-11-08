@@ -20,6 +20,7 @@ domain_areas:
 - toxicology
 - cheminformatics
 - machine learning
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/55
 activity_status: active
 license:
   id: https://creativecommons.org/licenses/by/4.0/

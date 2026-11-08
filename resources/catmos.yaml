@@ -19,6 +19,7 @@ domain_areas:
 - toxicology
 - cheminformatics
 - machine learning
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/53
 activity_status: active
 publications:
 - id: https://doi.org/10.1289/EHP8495
