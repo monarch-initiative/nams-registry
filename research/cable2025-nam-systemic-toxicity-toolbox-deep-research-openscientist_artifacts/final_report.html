@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OpenScientist Report</title>
+  <style>
+/* OpenScientist Report — print-ready CSS */
+
+/* Page setup */
+@page {
+  size: letter;
+  margin: 2.5cm 2cm 2.5cm 2cm;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    color: #999;
+  }
+
+  @top-right {
+    content: "OpenScientist Report";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 8pt;
+    font-style: italic;
+    color: #999;
+  }
+}
+
+/* Title page: no headers/footers */
+@page title {
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* Body */
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.report {
+  padding: 0;
+}
+
+/* Headings */
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24pt;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  page: title;
+  border-bottom: 3px solid #2c3e50;
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16pt;
+  font-weight: 600;
+  color: #34495e;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13pt;
+  font-weight: 600;
+  color: #5d6d7e;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 600;
+  color: #5d6d7e;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+/* Paragraphs */
+p {
+  margin: 0.6em 0;
+  text-align: justify;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Links */
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Bold and italic */
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* Figures — auto-numbered */
+figure {
+  margin: 1.5em auto;
+  text-align: center;
+  page-break-inside: avoid;
+  max-width: 100%;
+  counter-increment: figure;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9.5pt;
+  color: #555;
+  margin-top: 0.5em;
+  font-style: italic;
+  text-align: center;
+}
+
+figcaption::before {
+  content: "Figure " counter(figure) ". ";
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 10pt;
+  page-break-inside: avoid;
+}
+
+thead th {
+  background-color: #34495e;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 2px solid #2c3e50;
+}
+
+tbody td {
+  padding: 6px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+  background-color: #eef2f7;
+}
+
+/* Code */
+code {
+  font-family: "DejaVu Sans Mono", "Courier New", monospace;
+  font-size: 9.5pt;
+  background-color: #f5f5f5;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  overflow-x: auto;
+  font-size: 9pt;
+  line-height: 1.4;
+  page-break-inside: avoid;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #2980b9;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: #555;
+  background-color: #f8f9fa;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2em 0;
+}
+
+/* PubMed badges */
+.pubmed-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px 1px 4px;
+  margin: 0 2px;
+  background-color: #e8f4f8;
+  border: 1px solid #326599;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #326599;
+  font-size: 0.85em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pubmed-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+/* Attribution footer */
+.attribution {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9pt;
+  font-style: italic;
+  color: #95a5a6;
+}
+
+  </style>
+</head>
+<body>
+  <article class="report">
+<h1 id="review-advancing-systemic-toxicity-risk-assessment-evaluation-of-a-nam-based-toolbox-approach">Review: "Advancing systemic toxicity risk assessment: Evaluation of a NAM-based toolbox approach"</h1>
+<p><strong>Paper reviewed:</strong> Cable S, Baltazar MT, Bunglawala F, Carmichael P, Contreas L, Dent M, Houghton J, Kukic P, Malcomber S, Nicol B, Przybylak K, Punt A, Reynolds G, Reynolds J, Scott S, Tang D, Middleton A. <em>Toxicological Sciences</em> 204(1):79–95 (2024/2025). DOI: 10.1093/toxsci/kfae159 (<a href="https://pubmed.ncbi.nlm.nih.gov/39693112/" rel="noopener noreferrer" title="Visit PubMed page for PMID 39693112" class="pubmed-badge" style="display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" class="pubmed-icon" style="display:inline !important;width:14px;height:14px;min-width:14px;min-height:14px;flex-shrink:0;vertical-align:middle;margin-right:3px;"><rect x="1" y="1" width="14" height="14" rx="2" fill="#326599"/><text x="8" y="12" text-anchor="middle" style="font-size:11px;font-weight:bold;font-family:Arial,sans-serif;fill:white;">P</text></svg>39693112</a>; PMC11879040). Open access.</p>
+<p><strong>Scope of this review:</strong> All content below is extracted from <em>this paper's</em> main text and its description of supplementary tables (notably Table S3b, Table 1, Table 4), unless explicitly flagged as an <em>external/cited source</em>. Where the paper attributes a method to earlier work (e.g. Middleton et al. 2022, Hatherell et al. 2020, Moxon et al. 2020, Reynolds et al. 2020), that is noted so the reader can distinguish what this paper newly did from what it reused.</p>
+<hr />
+<h2 id="1-summary-answer-to-the-research-question">1. Summary (answer to the research question)</h2>
+<p>The paper evaluates a "systemic-safety toolbox" — a New Approach Methodology (NAM) workflow for conducting <strong>animal-free systemic toxicity risk assessment</strong> of consumer-product chemicals. The toolbox pairs <strong>two modules</strong>: (i) an <strong>exposure module</strong> of physiologically based kinetic (PBK) models that predict internal exposure (plasma <strong>Cmax</strong>), and (ii) a <strong>bioactivity module</strong> of three complementary in vitro/in chemico platforms that give broad, largely mechanism-agnostic coverage of toxicity modes of action. Their outputs are integrated into a <strong>bioactivity:exposure ratio (BER)</strong> — an analogue of a margin of internal exposure — which is compared to PBK-level-specific thresholds to classify an exposure scenario as "low risk" or "uncertain risk." Across 38 new chemicals and 70 consumer exposure scenarios, the workflow was <strong>protective of human health in &gt;90%</strong> of high-risk scenarios and was <strong>more conservative than in vivo PoDs in 22/24</strong> comparable cases. The authors recommend using the toolbox as <strong>Tier 1 of a tiered, iterative NGRA framework</strong>, combining specific and nonspecific assays and never in isolation.</p>
+<hr />
+<h2 id="2-task-1-specific-methods-and-models-used">2. Task 1 — Specific methods and models used</h2>
+<h3 id="21-exposure-module-internal-dose">2.1 Exposure module (internal dose)</h3>
+<ul>
+<li><strong>PBK modeling software:</strong> <strong>GastroPlus 9.8</strong> (Simulations Plus, Lancaster, CA), simulating <strong>oral, dermal, and IV</strong> routes. Output metric = <strong>maximum total plasma concentration (Cmax)</strong>.</li>
+<li><strong>PBK input parameters:</strong> logP (octanol–water partition), water solubility, fraction unbound in plasma (f_up), blood:plasma ratio (Rbp), hepatic intrinsic clearance (Cl_int), MDCK permeability (P_app), pKa, and intestinal absorption / skin penetration as applicable.</li>
+<li><strong>Tiered PBK parameterization</strong> (framework from Moxon et al. 2020):</li>
+<li><strong>L1 – in silico only:</strong> parameters from <strong>ADMET Predictor</strong> (in silico).</li>
+<li><strong>L2 – in silico + in vitro:</strong> ≥1 parameter from in vitro measurement.</li>
+<li><strong>L3 – in silico + in vitro + clinical:</strong> model calibrated to human clinical data (from distinct scenarios; L3 Cmax is still a prediction, not a measurement).</li>
+<li><strong>Reverse dosimetry</strong> used to convert in vitro PoDs to administered-equivalent doses for comparison against in vivo PoDs.</li>
+<li><strong>In silico acute-tox predictor (recommended for Tier 0 problem formulation):</strong> <strong>CATMoS / CatMOS</strong> (Collaborative Acute Toxicity Modelling Suite; Mansouri et al. 2021 — <em>external cited tool</em>).</li>
+</ul>
+<h3 id="22-bioactivity-module-three-platforms">2.2 Bioactivity module (three platforms)</h3>
+<ol>
+<li><strong>In vitro Pharmacological Profiling (IPP)</strong> — <strong>63 targets</strong> with known safety liabilities, tested in <strong>binding, enzymatic, coactivator-recruitment, and luciferase</strong> assays (full list: Table S3b). 44 targets linked to in vivo adverse drug reactions (Bowes et al. 2012); <strong>19 added</strong> for developmental-toxicity coverage. Two-stage PoD: (a) <strong>screening</strong> at a fixed 10 or 100 µM (2 replicates); (b) targets with &gt;50% inhibition/stimulation followed up with <strong>concentration–response</strong> → <strong>EC50 / IC50 / AC50</strong>. (Three targets dropped as unavailable: mineralocorticoid receptor NR3C2, RARγ, and the AhR assay.)</li>
+<li><strong>High-Throughput Transcriptomics (HTTr)</strong> — <strong>TempO-Seq</strong> (BioSpyder lysis kit; BioClavis sequencing), <strong>version 2 human whole-transcriptome panel</strong>, in <strong>HepG2, HepaRG, and MCF7</strong> cells; 24 h, <strong>7 concentrations</strong>. Analysis with <strong>BMDExpress2</strong> (probe-level benchmark concentrations BMD/BMDL/BMDU, <strong>benchmark response = 10%</strong>; <strong>Reactome</strong> pathway enrichment → mean pathway BMDL) <strong>and BIFROST</strong> (Bayesian "global PoD" = minimum effect concentration across all genes).</li>
+<li><strong>Cell Stress Panel (CSP)</strong> — expanded panel (Hatherell et al. 2020; Middleton et al. 2022) in <strong>HepG2</strong>, 24 h, <strong>8 concentrations</strong>, 3 biological + 2 technical replicates. PoD = <strong>CSP global PoD via BIFROST</strong>. Measures stress biomarkers including <strong>AhR activation, oxidative stress/GSH, and metabolism-related gene transcription</strong>.</li>
+<li><strong>Concentration-range setting:</strong> cytotoxicity via <strong>cellular ATP</strong> and <strong>LDH release</strong> in HepG2, HepaRG, MCF7; max dose = min(solubility limit, cytotoxic concentration).</li>
+</ol>
+<h3 id="23-integration-decision-and-performance">2.3 Integration, decision, and performance</h3>
+<ul>
+<li><strong>PoD estimation tools:</strong> BMDExpress2 and BIFROST.</li>
+<li><strong>BER = (minimum PoD across platforms) / Cmax.</strong> One BER per PBK level.</li>
+<li><strong>Decision thresholds</strong> (Table 1; from a Bayesian model of PBK prediction error over 8 benchmark scenarios, Middleton 2022): <strong>L1 = 110, L2 = 11, L3 = 2.5.</strong> BER above threshold → "low risk"; below → "uncertain risk" (escalate).</li>
+<li><strong>Performance metrics:</strong> <strong>protectiveness</strong> = H_U/(H_U+H_L) (high-risk scenarios correctly flagged as uncertain) and <strong>utility</strong> = L_L/(L_L+L_U) (low-risk scenarios correctly called low-risk).</li>
+<li><strong>Benchmarking:</strong> NAM PoD vs. traditional in vivo PoD (typically subchronic 90-day repeat-dose studies, or human data), using reverse dosimetry.</li>
+</ul>
+<hr />
+<h2 id="3-task-2-recommendations-for-how-methodsmodels-should-be-combined">3. Task 2 — Recommendations for how methods/models should be combined</h2>
+<ol>
+<li><strong>Take the minimum PoD across all bioactivity platforms</strong> (IPP IC50/AC50; CSP BIFROST global PoD; HTTr per-cell-line minimum pathway BMDL and HTTr per-cell-line BIFROST global PoD) to form the most conservative overall PoD, then compute BER = minPoD/Cmax and apply the <strong>PBK-level-specific threshold</strong>.</li>
+<li><strong>Minimal effective combination:</strong> the full four-component toolbox gives the most conservative PoD (<strong>96% protectiveness / 29% utility</strong> at the highest available PBK level), but the <strong>identical 96%/29% is achievable from IPP + HTTr-BIFROST global PoD</strong> alone (Table 3). Protectiveness is dominated by the broad <strong>HTTr BIFROST global PoD</strong> — combinations lacking it drop to ~61–74% protectiveness (while gaining utility to 54–62%); the HTTr-BMD minimum-pathway PoD adds conservatism without ever lowering protectiveness.</li>
+<li><strong>Combine specific (targeted) and nonspecific (broad) evidence.</strong> Broad HTTr/CSP platforms make protective decisions agnostic of mode of action in most cases; targeted IPP assays cover specific molecular liabilities. The <strong>warfarin</strong> case shows the risk when a <em>specific</em> target (VKORC1) is absent: toolbox PoDs (13.6–259 µM) far exceeded Cmax (0.6–6 µM), misclassifying it as low risk, whereas a VKORC1 assay (literature IC50 24.7 nM–4 µM) would give BER ≪ 1 and flag uncertain risk.</li>
+<li><strong>Embed in a tiered, iterative NGRA framework (Fig. 1), never in isolation.</strong> Tier 0 problem formulation uses historical data + in silico tools (e.g., <strong>CATMoS</strong> acute-tox predictions) to judge whether the toolbox is appropriate; Tier 1 is the toolbox/BER; <strong>"uncertain risk" escalates to Tier 2</strong> higher-tier, case-by-case models. A disagreement between an in silico acute-tox alert and the NAM output should trigger a mode-of-action evaluation and bespoke assays.</li>
+<li><strong>Stay within the defined context of use:</strong> systemic toxicity only. Genotoxicity, carcinogenicity, developmental/reproductive toxicity, and sensitization are explicitly <strong>out of scope</strong> and must be addressed by other methods (e.g., trimellitic anhydride's respiratory-sensitization risk).</li>
+<li><strong>Strengthen the exposure module:</strong> redefine <strong>L2 to require a minimal ADME set</strong> — hepatic intrinsic clearance, fraction unbound, blood:plasma ratio, plus route-specific absorption (dermal/intestinal) — because early-tier decisions will increasingly rely on in vitro (L2) rather than clinical (L3) data. (Would require recalculating BER thresholds.)</li>
+<li><strong>Improve utility by distinguishing adaptive bioactivity from adversity</strong> — annotate biomarkers (e.g., GSH, metabolism genes may be non-adverse) and resolve gene-level vs pathway-level transcriptomic PoD debates. Low utility was often driven by HTTr BIFROST PoDs.</li>
+</ol>
+<hr />
+<h2 id="4-task-3-biological-entityprocess-method-associations">4. Task 3 — Biological entity/process ↔ method associations</h2>
+<table>
+<thead>
+<tr>
+<th>Biological entity / process</th>
+<th>Method / platform (as reported)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>63 pharmacological safety targets (GPCRs, ion channels, enzymes, nuclear receptors, transporters; 44 ADR targets of Bowes 2012 + 19 developmental-tox targets) — full list in §4.2 below</td>
+<td><strong>IPP</strong> — binding, enzymatic, coactivator-recruitment, luciferase assays → EC50/IC50/AC50</td>
+</tr>
+<tr>
+<td>Carbonic anhydrase II (topiramate secondary target)</td>
+<td><strong>IPP</strong> (detected; drove BER &lt; L2 threshold)</td>
+</tr>
+<tr>
+<td>Genome-wide transcriptional response; <strong>Reactome</strong> pathway perturbation</td>
+<td><strong>HTTr</strong> — TempO-Seq v2 in HepG2/HepaRG/MCF7 → BMDExpress2 (pathway BMDL) + BIFROST (global PoD)</td>
+</tr>
+<tr>
+<td>Aryl hydrocarbon receptor (AhR) activation</td>
+<td><strong>Cell Stress Panel</strong> (endpoint; replaced the discontinued IPP AhR assay)</td>
+</tr>
+<tr>
+<td>Oxidative stress / glutathione (GSH); metabolism-related gene transcription</td>
+<td><strong>Cell Stress Panel</strong> (HepG2)</td>
+</tr>
+<tr>
+<td>Cytotoxicity (ATP depletion, LDH release) — for range-finding</td>
+<td>HepG2 / HepaRG / MCF7 cytotoxicity assays</td>
+</tr>
+<tr>
+<td>Internal exposure / ADME (logP, solubility, f_up, Rbp, Cl_int, MDCK P_app, pKa, absorption) → plasma Cmax</td>
+<td><strong>PBK model (GastroPlus)</strong> + <strong>ADMET Predictor</strong> (in silico parameters)</td>
+</tr>
+<tr>
+<td>Acute toxic potency (Tier 0 alert)</td>
+<td><strong>CATMoS</strong> in silico suite (<em>external cited tool</em>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-per-chemical-mode-of-action-detection-table-4">4.1 Per-chemical mode-of-action detection (Table 4)</h3>
+<p>The paper's Table 4 maps each high-risk chemical's known MoA to whether the toolbox detected it:</p>
+<p><strong>MoA detected → protective</strong> (targets present in the IPP panel unless noted):
+cetirizine → <strong>histamine H1 receptor</strong>; dexamethasone → <strong>glucocorticoid receptor</strong>; fenbuconazole &amp; ketoconazole → <strong>aromatase (steroid/ergosterol biosynthesis)</strong>; ibuprofen, paracetamol &amp; furosemide(secondary) → <strong>COX-1/COX-2</strong>; metoclopramide → <strong>dopamine D2 receptor</strong>; verapamil → <strong>calcium channel</strong>.</p>
+<p><strong>MoA NOT detected but BER still protective</strong> (nonspecific HTTr bioactivity rescued the decision):
+azathioprine → purine-mimic DNA-synthesis inhibition (metabolism-limited); benzocaine → <strong>methaemoglobin formation</strong>; chlorpyrifos → <strong>acetylcholinesterase</strong> (metabolism-driven); cyclophosphamide → DNA damage (metabolism-driven); digoxin → <strong>Na⁺/K⁺-ATPase</strong>; glibenclamide → <strong>K_ATP channel</strong>; hydralazine → <strong>Ca²⁺ flux</strong>; metformin → gluconeogenesis (energy markers respond only at conc &gt; exposure); topiramate → <strong>GABA-receptor subunit</strong>; furosemide(primary) → <strong>Na-K-Cl transporter</strong>.</p>
+<p><strong>Not protective</strong> (MoA missed <em>and</em> misclassified low-risk): trimellitic anhydride → serum-IgE/respiratory sensitization (out of scope); warfarin → <strong>VKORC1</strong>/anticoagulation.</p>
+<h3 id="42-full-ipp-target-panel-verbatim-from-supplementary-table-s3b">4.2 Full IPP target panel (verbatim from supplementary Table S3b)</h3>
+<p>The 63 targets (tested as 76 assay wells; nuclear receptors run as agonist + antagonist pairs) group as:
+- <strong>Aminergic / neurotransmitter GPCRs:</strong> 5-HT receptors HTR1A, HTR1B, HTR2A, HTR2B, HTR3A; adrenergic ADRA1A, ADRA2A, ADRB1, ADRB2; dopamine DRD1, DRD2; muscarinic CHRM1, CHRM2, CHRM3; nicotinic CHRNA4; histamine HRH1, HRH2; opioid OPRK1, OPRM1, OPRD1; adenosine ADORA2A; cannabinoid CNR1, CNR2; cholecystokinin CCKAR; endothelin EDNRA; vasopressin AVPR1A; angiotensin AGTR1.
+- <strong>Monoamine transporters:</strong> SLC6A2 (NET), SLC6A3 (DAT), SLC6A4 (SERT).
+- <strong>Ion channels:</strong> CACNA1C (L-type Ca²⁺, DHP site), KCNQ1, SCN5A (Naᵥ1.5, site 2), KCNH2/<strong>hERG</strong> ([³H]-dofetilide), GRIN1 (NMDA), GABRA1A (GABA-A α1 benzodiazepine site).
+- <strong>Enzymes:</strong> ACHE, PDE3A, PDE4D, PTGS1 (COX-1), PTGS2 (COX-2), LCK, ACE2, CA2 (carbonic anhydrase II), MAOA.
+- <strong>Nuclear receptors (coactivator recruitment; agonist &amp; antagonist):</strong> AR, NR3C1 (GR), NR1I3 (CAR), PPARA, PPARD, PPARG, NR1I2 (PXR), PGR, VDR, ESR1, ESR2, RARA, RARG*, RXRA, RXRB, THRA, THRB, NR3C2 (MR)*.
+- <strong>Other:</strong> Tubulin.
+- <em>*NR3C2 (MR) and RARG marked "assay unavailable by the end of the study" — matches the main-text note.</em></p>
+<p>This confirms why classic receptor pharmacology is detected (H1, GR, D2, COX-1/2, L-type Ca channel, aromatase via steroid pathway) whereas <strong>Na⁺/K⁺-ATPase, K_ATP, Na-K-Cl cotransporter, and VKORC1 are genuinely absent</strong> from the panel. Note the nuance: GABA-A α1 (GABRA1A) <em>is</em> in the panel, yet topiramate's subunit-specific effect was still not detected.</p>
+<p><strong>Documented coverage gaps (entity NOT measured by any toolbox assay):</strong>
+- <strong>VKORC1 / vitamin-K epoxide reductase</strong> — warfarin's specific mechanism (toolbox not protective here).
+- <strong>GABA-receptor subunit</strong> — topiramate's primary target (subunit absent from IPP).
+- <strong>Methaemoglobin formation</strong> — benzocaine (no biomarker in any assay).
+- <strong>Ion-flux / ion-movement targets</strong> — hydralazine, glibenclamide (relevant targets absent).
+- <strong>DNA-reactive metabolites</strong> — cyclophosphamide, azathioprine (require metabolic competency; not in CSP biomarkers — but still highly active in HTTr, giving protective BERs).
+- <strong>Mineralocorticoid receptor NR3C2 and RARγ</strong> — removed (assays no longer available).
+- <strong>Immune markers (serum IgE), respiratory sensitization</strong> — trimellitic anhydride (out of systemic-toxicity scope).</p>
+<hr />
+<h2 id="4b-quantitative-performance-and-benchmarking-added-iteration-2">4b. Quantitative performance and benchmarking (added Iteration 2)</h2>
+<p><strong>Benchmark set &amp; coverage:</strong> 38 chemicals, <strong>70 scenarios (46 high-risk, 24 low-risk)</strong>; routes = <strong>49 oral, 13 dermal, 6 IV, 2 inhalation</strong>; use classes = 21 medicinal, 9 cosmetic, 5 agricultural, 3 food, 1 occupational. 2 chemicals L1-only (1,2-octanediol, panthenol); 47 PBK models calibrated to clinical data (L3) but only 3 of these were low-risk.</p>
+<p><strong>Protectiveness / utility by PBK level:</strong>
+- <strong>L1</strong> (threshold 110): 93% protectiveness, 8% utility
+- <strong>L2</strong> (threshold 11; most likely future scenario): <strong>43/46</strong> high-risk flagged uncertain = <strong>93% protectiveness</strong>; 6/22 low-risk correct = <strong>27% utility</strong>
+- <strong>L3</strong> (threshold 2.5): <strong>98% protectiveness</strong> (warfarin upper therapeutic dose reclassified)
+- Only <strong>trimellitic anhydride</strong> and <strong>warfarin</strong> were high-risk scenarios misclassified as low-risk.</p>
+<p><strong>NAM vs traditional in vivo (same early-tier logic):</strong> In vivo PoDs (subchronic/chronic NOAEL/NOEL) available for only <strong>25</strong> chemicals. Minimum NAM PoD was more conservative (lower) than traditional in nearly all cases (exceptions <strong>aspartame, fenbuconazole</strong>, &lt;5-fold). <strong>Pearson r = 0.8</strong> (plasma-concentration basis) and <strong>0.57</strong> after reverse-dosimetry to external dose. On the shared subset with an assumed <strong>MoS &gt; 100</strong> threshold: traditional data → <strong>97% protectiveness / 42% utility</strong>; toolbox → <strong>96% / 32%</strong>. (No in vivo NOAEL existed for warfarin given rodent potency.) Note: this comparison does not apply the interspecies/assessment factors normally used with animal data.</p>
+<p><strong>Chemical-space characterization methods:</strong> unbiased two-step stratified sampling from ~2,500 structures (to avoid the pilot's selection bias); physicochemical range MW 100.12–780.9 g/mol, predicted S logP −2.32 to 5.99; <strong>ToxPrint chemotypes via ChemoTyper</strong> (Yang et al. 2015 — <em>external method</em>) — 572/729 chemotypes represented across sets (181 in the 38 test chemicals), top chemotypes <code>ring:aromatic_benzene</code> and <code>bond:C=O_carbonyl_generic</code>; <strong>CPCat</strong> cosmetics list used as a human-exposure reference set. On-target = on-toxicity examples: <strong>digoxin</strong> (Na⁺/K⁺-ATPase→cardiotoxicity), <strong>warfarin</strong> (VKORC1/coagulation), <strong>ibuprofen</strong> (COX-1/COX-2→gastric effects).</p>
+<h2 id="5-supported-vs-refuted-claims-as-evaluated-by-the-paper">5. Supported vs refuted claims (as evaluated by the paper)</h2>
+<p><strong>Supported by the paper's data:</strong>
+- The NAM toolbox is protective in <strong>&gt;90%</strong> of high-risk scenarios and comparable in conservatism to in vivo data (<strong>NAM PoD more conservative in 22/24</strong> comparisons).
+- Protective decisions are generally possible <strong>without identifying the mechanism of action</strong> (9/10 undetected-MoA high-risk scenarios still protective).
+- A <strong>reduced platform set (IPP + HTTr-BIFROST)</strong> matches full-toolbox protectiveness/utility.</p>
+<p><strong>Limitations the paper itself raises (refuted "stand-alone sufficiency"):</strong>
+- <strong>Low utility:</strong> many low-risk scenarios flagged "uncertain risk" because the workflow does not yet distinguish adaptive from adverse bioactivity.
+- <strong>Specific-mechanism blind spots:</strong> warfarin misclassified (missing VKORC1 assay); the toolbox is <strong>not sufficient in isolation</strong>.
+- <strong>Metabolic competency</strong> limited (metabolite-driven toxicity under-detected in CSP).
+- <strong>L3 performance skewed</strong> (few low-risk scenarios had clinical data); conclusions on human-kinetic impact on utility cannot be drawn.
+- <strong>Chemical space</strong> not fully covered; more chemicals of shared MoA/structure needed to make class-level conclusions.</p>
+<hr />
+<h2 id="6-provenance-and-limitations-of-this-review">6. Provenance and limitations of this review</h2>
+<p>This review is built from the paper's <strong>Europe PMC full text</strong> (main text + the four embedded Tables 1–4) <strong>and its actual supplementary workbook</strong> (<code>toxsci-24-0360-File009.xlsx</code>, containing sheets S1 risk classification, S2a–c PBK parameters/clinical data/Cmax, S3a PoD summary, <strong>S3b IPP screening %</strong> — the source of the verbatim 63-target panel in §4.2, S3c IPP dose-response/PoD, S4 observations, S5 in-vivo PoD selection, S6 chemical details). Numerical thresholds, cell lines, concentrations, platform permutations, per-chemical MoA detection, and the BER/PoD logic are quoted directly from the paper and its supplement.</p>
+<p><strong>What could NOT be sourced from this paper:</strong> the individual <strong>CSP biomarker roster</strong> is not enumerated in this paper or its supplement — it resides in the cited methods papers (Hatherell et al. 2020; Middleton et al. 2022, <em>external sources</em>). This paper names only selected CSP endpoints in its main text (AhR activation, GSH/oxidative stress, metabolism-related gene transcription). External tools/sources referenced above (Bowes et al. 2012 ADR panel; ChemoTyper/ToxPrint, Yang 2015; CPCat; CATMoS, Mansouri 2021; Moxon et al. 2020 PBK tiering) are flagged as such and kept distinct from this paper's own reporting.</p>
+<hr />
+<p><em>Prepared as a methods/recommendation/entity-association extraction of Cable et al. (2024), Toxicological Sciences.</em></p>
+  </article>
+  <footer class="attribution">
+    Generated by OpenScientist &mdash; Scientific Hypothesis Agent for Novel Discovery
+  </footer>
+</body>
+</html>

@@ -104,8 +104,7 @@ are committed. When you add a term or a reference, run `just validate-terms`
 or `just validate-references` (they use the network), then commit what they
 add to the caches. `conf/oak_config.yaml` says where each ontology is looked
 up. `just search-term`, `just term-info` and `just fetch-reference` help find
-and read terms and references. The setup follows
-[mechmaker](https://github.com/monarch-initiative/mechmaker)'s.
+and read terms and references.
 
 ## Repository Structure
 

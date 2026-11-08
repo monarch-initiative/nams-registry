@@ -1,7 +1,5 @@
 # Where linkml-term-validator looks up each ontology, keyed by CURIE prefix.
-# `just validate-terms` and `just validate-references` use it; the format
-# follows mechmaker's conf/oak_config.yaml
-# (https://github.com/monarch-initiative/mechmaker).
+# `just validate-terms` and `just validate-references` use it.
 #
 #   sqlite:obo:<name>   A prebuilt SQLite file from the OBO Foundry, downloaded
 #                       once into ~/.data/oaklib, then used offline.
