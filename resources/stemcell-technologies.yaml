@@ -18,6 +18,7 @@ resource_type: Organization
 domain_areas:
 - cell biology
 - biomedical
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/51
 activity_status: active
 creation_date: '2026-11-07'
 last_modified_date: '2026-11-07'
