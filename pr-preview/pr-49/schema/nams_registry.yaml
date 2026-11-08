@@ -1,0 +1,1303 @@
+name: nams-registry
+description: 'This is a repository of NAM and NAM-adjacent sources collected in support
+  of a NAMs landscape analysis.
+
+
+  Sources are not limited to data repositories and knowledge bases. They
+
+  also include reports, such as landscape analyses, reviews, and OECD Test
+
+  Guidelines. Primary research papers are not included.'
+title: nams-registry
+see_also:
+- https://monarch-initiative.github.io/nams-registry
+id: https://w3id.org/monarch-initiative/nams-registry
+imports:
+- linkml:types
+license: MIT
+prefixes:
+  nams_registry:
+    prefix_prefix: nams_registry
+    prefix_reference: https://w3id.org/monarch-initiative/nams-registry/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
+  dcterms:
+    prefix_prefix: dcterms
+    prefix_reference: http://purl.org/dc/terms/
+  pav:
+    prefix_prefix: pav
+    prefix_reference: http://purl.org/pav/
+default_prefix: nams_registry
+default_range: string
+types:
+  string:
+    name: string
+    definition_uri: https://w3id.org/linkml/String
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string. If you are authoring schemas in LinkML YAML, the type is referenced
+      with the lower case "string".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    definition_uri: https://w3id.org/linkml/Integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    definition_uri: https://w3id.org/linkml/Boolean
+    description: A binary (true or false) value
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "boolean".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    definition_uri: https://w3id.org/linkml/Float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    definition_uri: https://w3id.org/linkml/Double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    definition_uri: https://w3id.org/linkml/Decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "decimal".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    definition_uri: https://w3id.org/linkml/Time
+    description: A time object represents a (local) time of day, independent of any
+      particular day
+    notes:
+    - URI is dateTime because OWL reasoners do not work with straight date or time
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "time".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:Time
+    base: XSDTime
+    uri: xsd:time
+    repr: str
+  date:
+    name: date
+    definition_uri: https://w3id.org/linkml/Date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "date".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:Date
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    definition_uri: https://w3id.org/linkml/Datetime
+    description: The combination of a date and time
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "datetime".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+    - schema:DateTime
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    definition_uri: https://w3id.org/linkml/DateOrDatetime
+    description: Either a date or a datetime
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "date_or_datetime".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    definition_uri: https://w3id.org/linkml/Uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  curie:
+    name: curie
+    definition_uri: https://w3id.org/linkml/Curie
+    conforms_to: https://www.w3.org/TR/curie/
+    description: a compact URI
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "curie".
+    comments:
+    - in RDF serializations this MUST be expanded to a URI
+    - in non-RDF serializations MAY be serialized as the compact representation
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: Curie
+    uri: xsd:string
+    repr: str
+  uri:
+    name: uri
+    definition_uri: https://w3id.org/linkml/Uri
+    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
+    description: a complete URI
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uri".
+    comments:
+    - in RDF serializations a slot with range of uri is treated as a literal or type
+      xsd:anyURI unless it is an identifier or a reference to an identifier, in which
+      case it is translated directly to a node
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    close_mappings:
+    - schema:URL
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    definition_uri: https://w3id.org/linkml/Ncname
+    description: Prefix part of CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "ncname".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    definition_uri: https://w3id.org/linkml/Objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "objectidentifier".
+    comments:
+    - Used for inheritance and type checking
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    definition_uri: https://w3id.org/linkml/Nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "nodeidentifier".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+  jsonpointer:
+    name: jsonpointer
+    definition_uri: https://w3id.org/linkml/Jsonpointer
+    conforms_to: https://datatracker.ietf.org/doc/html/rfc6901
+    description: A string encoding a JSON Pointer. The value of the string MUST conform
+      to JSON Point syntax and SHOULD dereference to a valid object within the current
+      instance document when encoded in tree form.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "jsonpointer".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+    repr: str
+  jsonpath:
+    name: jsonpath
+    definition_uri: https://w3id.org/linkml/Jsonpath
+    conforms_to: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+    description: A string encoding a JSON Path. The value of the string MUST conform
+      to JSON Point syntax and SHOULD dereference to zero or more valid objects within
+      the current instance document when encoded in tree form.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "jsonpath".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+    repr: str
+  sparqlpath:
+    name: sparqlpath
+    definition_uri: https://w3id.org/linkml/Sparqlpath
+    conforms_to: https://www.w3.org/TR/sparql11-query/#propertypaths
+    description: A string encoding a SPARQL Property Path. The value of the string
+      MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects
+      within the current instance document when encoded as RDF.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "sparqlpath".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+    repr: str
+enums:
+  ActivityStatusEnum:
+    name: ActivityStatusEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/ActivityStatusEnum
+    description: The status of a resource. The same values as KG-Registry, which follow
+      OBO Foundry.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      active:
+        text: active
+        description: The resource is active and available.
+      inactive:
+        text: inactive
+        description: The resource is inactive. Its availability may vary.
+      orphaned:
+        text: orphaned
+        description: The resource is not actively maintained. Its availability may
+          vary.
+      unresponsive:
+        text: unresponsive
+        description: The resource is no longer accessible. Only its metadata is available.
+      unknown:
+        text: unknown
+        description: The status of the resource is unknown.
+  ResourceTypeEnum:
+    name: ResourceTypeEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/ResourceTypeEnum
+    description: What form a resource takes, or, for an Organization, who it is. The
+      KG-Registry Resource categories, plus Report and Organization.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      DataSource:
+        text: DataSource
+        description: A data source.
+      KnowledgeGraph:
+        text: KnowledgeGraph
+        description: A heterogeneous collection of data represented as nodes (entities)
+          and edges (relationships) between them.
+      Aggregator:
+        text: Aggregator
+        description: An aggregator of data sources. It may be a data source itself,
+          and its content may change in the process of aggregation.
+      Ontology:
+        text: Ontology
+        description: A formal representation of the concepts in a domain and the relationships
+          between them.
+      DataModel:
+        text: DataModel
+        description: A formal representation of the concepts and relationships in
+          a domain that defines how data is structured.
+      Report:
+        text: Report
+        description: A report that surveys NAMs or sets out how a method is to be
+          used, such as a landscape analysis, a review article, or an OECD Test Guideline.
+          A primary research paper is not a report. Not one of the KG-Registry categories.
+      Organization:
+        text: Organization
+        description: An organization, such as a research institute or a company, whose
+          research or product pages are covered as a whole, not one data product it
+          publishes. A data product the organization publishes, such as a database,
+          can have an entry of its own. Not one of the KG-Registry categories; KG-Registry
+          uses Organization only for contacts.
+  DomainAreaEnum:
+    name: DomainAreaEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/DomainAreaEnum
+    description: Domains a resource covers. Taken from the KG-Registry domains used
+      by its NAMs resources; add a value here when a new resource needs one.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      adverse outcome pathways:
+        text: adverse outcome pathways
+        description: Adverse outcome pathways linking molecular initiating events
+          to adverse outcomes.
+      anatomy and development:
+        text: anatomy and development
+        description: The anatomy and development of organisms, including their structure,
+          morphology, and developmental biology.
+      biological systems:
+        text: biological systems
+        description: The biological sciences broadly, including cellular and molecular
+          biology and other biological disciplines not better described by a more
+          specific domain.
+      biomedical:
+        text: biomedical
+        description: The biomedical sciences broadly, spanning the study of biological
+          systems in the context of health and disease. Use a more specific domain
+          (e.g., clinical) where one applies.
+      cell biology:
+        text: cell biology
+        description: Cells and cell types, including cell lines, cell markers, and
+          subcellular structures.
+      cheminformatics:
+        text: cheminformatics
+        description: Computational representation, identification, and classification
+          of chemical structures.
+      chemistry and biochemistry:
+        text: chemistry and biochemistry
+        description: The chemical and biochemical sciences, including the structure,
+          properties, and reactions of chemical compounds.
+      clinical:
+        text: clinical
+        description: The clinical sciences concerned with the care of patients, including
+          clinical trials, patient data, and diagnosis and treatment of disease.
+      clinical trials:
+        text: clinical trials
+        description: Clinical trials, including trial registries and the data standards
+          used to report them.
+      drug discovery:
+        text: drug discovery
+        description: The process of identifying and developing new candidate medications,
+          including target identification, validation, and compound screening.
+      drug interactions:
+        text: drug interactions
+        description: Interactions between drugs and between drugs and foods or natural
+          products.
+      ecology:
+        text: ecology
+        description: The interactions of organisms with each other and their environment,
+          including ecological networks.
+      environment:
+        text: environment
+        description: The environment and ecosystems, including ecology and environmental
+          health.
+      environmental exposure:
+        text: environmental exposure
+        description: Exposure of people and organisms to environmental agents and
+          the health effects of those exposures.
+      epigenomics:
+        text: epigenomics
+        description: Genome-wide chromatin state and organization, including chromatin
+          conformation and regulatory element annotation.
+      gene expression profiling:
+        text: gene expression profiling
+        description: Measurement of gene expression across tissues, cells, and conditions,
+          including transcriptomic signatures.
+      genetic variation:
+        text: genetic variation
+        description: Germline and somatic genetic variants, including their frequencies,
+          effects, and clinical interpretation.
+      genomics:
+        text: genomics
+        description: The study of genomes, including genome structure, evolution,
+          function, mapping, and editing.
+      high-throughput screening:
+        text: high-throughput screening
+        description: Large-scale screening of chemical or genetic perturbations, including
+          cell line sensitivity and perturbation profiling.
+      information technology:
+        text: information technology
+        description: The information technology and informatics sciences, including
+          software, computational methods, simulation and modeling, and digital health
+          technologies.
+      machine learning:
+        text: machine learning
+        description: Machine learning and artificial intelligence, including AI-ready
+          data and models.
+      molecular evolution:
+        text: molecular evolution
+        description: The evolution of genes and proteins, including orthology, gene
+          families, and comparative analysis.
+      pathways:
+        text: pathways
+        description: Biological pathways, including metabolic, signaling, and regulatory
+          networks that control cellular processes.
+      pharmacology:
+        text: pharmacology
+        description: The study of how drugs interact with biological systems, including
+          drug discovery, development, and therapeutic uses.
+      protein structure:
+        text: protein structure
+        description: The three-dimensional structure of proteins, whether determined
+          experimentally or predicted.
+      proteomics:
+        text: proteomics
+        description: The large-scale study of proteins, their structures, functions,
+          and interactions.
+      public health:
+        text: public health
+        description: The science of protecting and improving the health of people
+          and their communities, including epidemiology, population health, and the
+          social determinants of health.
+      rare disease:
+        text: rare disease
+        description: Rare diseases, including rare Mendelian and other genetic disorders,
+          their phenotypes, genes, and treatments.
+      single-cell analysis:
+        text: single-cell analysis
+        description: Data and methods that measure molecules in individual cells,
+          including single-cell and spatial atlases.
+      software:
+        text: software
+        description: Software, including package registries, software supply chains,
+          and vulnerabilities.
+      systems biology:
+        text: systems biology
+        description: The computational and mathematical analysis of complex biological
+          systems and their interactions.
+      toxicology:
+        text: toxicology
+        description: The study of the adverse effects of chemicals on living organisms.
+  HoldsNAMsEnum:
+    name: HoldsNAMsEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/HoldsNAMsEnum
+    description: Whether a resource holds NAMs, and whether they are its primary content.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      primary:
+        text: primary
+        description: NAMs, or records produced with them such as methods, models,
+          cell lines, or assay data, are the resource's primary content.
+      secondary:
+        text: secondary
+        description: The resource holds NAMs, but they are not its primary content.
+      none:
+        text: none
+        description: The resource holds no NAMs.
+      unclear:
+        text: unclear
+        description: The resource was evaluated, but whether it holds NAMs could not
+          be decided. Explain why in relevance_note.
+  CurationModelEnum:
+    name: CurationModelEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/CurationModelEnum
+    description: Who creates a resource's content.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      maintainers:
+        text: maintainers
+        description: The resource's own team creates or curates the content, e.g.
+          the ToxCast assay annotations curated by EPA.
+      community:
+        text: community
+        description: Open contributors create the content, wiki-style, e.g. AOP-Wiki.
+      depositors:
+        text: depositors
+        description: Authors or labs submit records about their own work, e.g. model
+          submissions to BioModels.
+      automated:
+        text: automated
+        description: A pipeline generates or transforms the content, e.g. BioBricks
+          repackaging another resource.
+      aggregated:
+        text: aggregated
+        description: The content is copied from other resources.
+  PriorityEnum:
+    name: PriorityEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/PriorityEnum
+    description: 'Extraction priority: how much a resource adds, and so how soon it
+      is worth extracting content from.'
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      high:
+        text: high
+      medium:
+        text: medium
+      low:
+        text: low
+  ExtractionEffortEnum:
+    name: ExtractionEffortEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/ExtractionEffortEnum
+    description: The estimated effort to ready a resource for incorporation. The levels
+      are left loose for now; effort_rationale carries the detail.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      high:
+        text: high
+      medium:
+        text: medium
+      low:
+        text: low
+  SourceRegistryEnum:
+    name: SourceRegistryEnum
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/SourceRegistryEnum
+    description: Registries that content can be imported from.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    permissible_values:
+      kg_registry:
+        text: kg_registry
+        description: KG-Registry, the Knowledge Graph Hub registry.
+        meaning: https://kghub.org/kg-registry/
+slots:
+  id:
+    name: id
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/id
+    description: The identifier of an entity within the registry. Use the KG-Registry
+      id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use
+      oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - schema:identifier
+    slot_uri: schema:identifier
+    identifier: true
+    owner: NamedThing
+    domain_of:
+    - NamedThing
+    range: string
+    required: true
+  name:
+    name: name
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/name
+    description: The human-readable name of the resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - schema:name
+    slot_uri: schema:name
+    owner: NamedThing
+    domain_of:
+    - NamedThing
+    range: string
+    required: true
+  description:
+    name: description
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/description
+    description: A description of the resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - schema:description
+    slot_uri: schema:description
+    owner: NamedThing
+    domain_of:
+    - NamedThing
+    range: string
+  homepage_url:
+    name: homepage_url
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/homepage_url
+    description: The primary URL of the resource, preferably the main page documenting
+      it.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - schema:url
+    slot_uri: schema:url
+    owner: Resource
+    domain_of:
+    - Resource
+    range: uri
+  synonyms:
+    name: synonyms
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/synonyms
+    description: Acronyms, abbreviations, and other alternate names for the resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:synonyms
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+    multivalued: true
+  repository:
+    name: repository
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/repository
+    description: The main version control repository for the resource, if it has one.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:repository
+    owner: Resource
+    domain_of:
+    - Resource
+    range: uri
+  resource_type:
+    name: resource_type
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/resource_type
+    description: What form the resource takes, such as a data source or a knowledge
+      graph, or, for an organization covered as a whole, Organization. Imported from
+      the KG-Registry category.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:resource_type
+    owner: Resource
+    domain_of:
+    - Resource
+    range: ResourceTypeEnum
+  domain_areas:
+    name: domain_areas
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/domain_areas
+    description: The domains the resource covers, such as toxicology. Imported from
+      the KG-Registry domains.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:domain_areas
+    owner: Resource
+    domain_of:
+    - Resource
+    range: DomainAreaEnum
+    multivalued: true
+  holds_nams:
+    name: holds_nams
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/holds_nams
+    description: Whether the resource holds NAMs, and whether they are its primary
+      content. Leave it out until the resource has been evaluated.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:holds_nams
+    owner: Resource
+    domain_of:
+    - Resource
+    range: HoldsNAMsEnum
+  relevance_note:
+    name: relevance_note
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/relevance_note
+    description: Why the resource was given its holds_nams value, e.g. "Holds the
+      measurement methods for key events, but its primary content is adverse outcome
+      pathways."
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:relevance_note
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  curation_model:
+    name: curation_model
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/curation_model
+    description: Who creates the resource's content, as the resource works today.
+      Use more than one value when the resource mixes them.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:curation_model
+    owner: Resource
+    domain_of:
+    - Resource
+    range: CurationModelEnum
+    multivalued: true
+  dismech_integration:
+    name: dismech_integration
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/dismech_integration
+    description: 'The resource''s current state in DisMech: whether any of its content
+      has been incorporated into DisMech, and whether DisMech has tooling for it,
+      such as a script or skill. Records what exists, not what the resource could
+      offer. Free text for now.'
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:dismech_integration
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  supporting_scripts:
+    name: supporting_scripts
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/supporting_scripts
+    description: Scripts written to retrieve or parse the resource's content, in this
+      repository or elsewhere. List only scripts that exist. DisMech tooling that
+      uses the resource without retrieving from it stays in dismech_integration.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:supporting_scripts
+    owner: Resource
+    domain_of:
+    - Resource
+    range: SupportingScript
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  priority:
+    name: priority
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/priority
+    description: 'Extraction priority: how much the resource adds, and so how soon
+      it is worth extracting content from. Set it once that has been investigated.
+      A resource that repackages another one can still add value, for example through
+      a new format, integration with other data, or easier access, so repackaging
+      alone does not make a resource low priority.'
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:priority
+    owner: Resource
+    domain_of:
+    - Resource
+    range: PriorityEnum
+  priority_rationale:
+    name: priority_rationale
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/priority_rationale
+    description: Why the resource was given its priority, based on what was found
+      about what it adds. For a resource that repackages another, say what it adds
+      beyond the original, or that nothing was found.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:priority_rationale
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  extraction_effort:
+    name: extraction_effort
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/extraction_effort
+    description: 'The estimated effort to ready the resource for incorporation: deciding
+      what to extract from it and getting that content into a usable form. Independent
+      of priority, which records how much the resource adds. Set it once the resource
+      has been looked at.'
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:extraction_effort
+    owner: Resource
+    domain_of:
+    - Resource
+    range: ExtractionEffortEnum
+  effort_rationale:
+    name: effort_rationale
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/effort_rationale
+    description: Why the resource was given its extraction_effort, for example its
+      format, its access, existing tooling, or decisions still to be made about what
+      to extract.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:effort_rationale
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  expectations:
+    name: expectations
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/expectations
+    description: What is expected to be found in the resource, written before content
+      is extracted from it, e.g. "A classification of NAMs by model type, and a list
+      of biomedical databases scored for FAIRness."
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:expectations
+    owner: Resource
+    domain_of:
+    - Resource
+    range: string
+  discussion_issue:
+    name: discussion_issue
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/discussion_issue
+    description: The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2.
+      Set by `just create-review-issues`.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:discussion_issue
+    owner: Resource
+    domain_of:
+    - Resource
+    range: uri
+    pattern: ^https://github\.com/monarch-initiative/nams-registry/issues/\d+$
+  activity_status:
+    name: activity_status
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/activity_status
+    description: The status of the resource itself.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:activity_status
+    owner: Resource
+    domain_of:
+    - Resource
+    range: ActivityStatusEnum
+  use_instead:
+    name: use_instead
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/use_instead
+    description: The ids of other registry resources to use in place of this one,
+      for a resource that is no longer active and has a clear replacement.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:use_instead
+    owner: Resource
+    domain_of:
+    - Resource
+    range: Resource
+    multivalued: true
+  part_of:
+    name: part_of
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/part_of
+    description: The ids of the registry Organization entries this resource belongs
+      to, such as a database to the institute that runs it, or a core facility to
+      its university. Set it on the part, not on the organization; an organization's
+      parts are the entries that name it.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:part_of
+    owner: Resource
+    domain_of:
+    - Resource
+    range: Resource
+    multivalued: true
+  license:
+    name: license
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/license
+    description: The license of the resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - dcterms:license
+    slot_uri: dcterms:license
+    owner: Resource
+    domain_of:
+    - Resource
+    range: LicenseInfo
+    inlined: true
+    inlined_as_list: true
+  publications:
+    name: publications
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/publications
+    description: For a Report, the publications the report consists of. For any other
+      resource, publications that describe the resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:publications
+    owner: Resource
+    domain_of:
+    - Resource
+    range: Publication
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  creation_date:
+    name: creation_date
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/creation_date
+    description: The date this registry entry was created, not the date the resource
+      was created. For an entry imported from another registry, the date of the import.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - dcterms:created
+    slot_uri: dcterms:created
+    owner: Resource
+    domain_of:
+    - Resource
+    range: date
+  last_modified_date:
+    name: last_modified_date
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/last_modified_date
+    description: The date this registry entry was last changed, not the date the resource
+      was last updated.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - dcterms:modified
+    slot_uri: dcterms:modified
+    owner: Resource
+    domain_of:
+    - Resource
+    range: date
+  imported_from:
+    name: imported_from
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/imported_from
+    description: The registries this entry's content was imported from. Leave empty
+      for an entry curated directly in this registry.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - pav:importedFrom
+    slot_uri: pav:importedFrom
+    owner: Resource
+    domain_of:
+    - Resource
+    range: ImportRecord
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  source:
+    name: source
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/source
+    description: The registry the content was imported from.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:source
+    owner: ImportRecord
+    domain_of:
+    - ImportRecord
+    range: SourceRegistryEnum
+    required: true
+  source_id:
+    name: source_id
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/source_id
+    description: The resource's identifier in the source registry, e.g. toxcast.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:source_id
+    owner: ImportRecord
+    domain_of:
+    - ImportRecord
+    range: string
+    required: true
+  source_url:
+    name: source_url
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/source_url
+    description: The URL of the resource's page in the source registry.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - pav:sourceAccessedAt
+    slot_uri: pav:sourceAccessedAt
+    owner: ImportRecord
+    domain_of:
+    - ImportRecord
+    range: uri
+  source_version:
+    name: source_version
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/source_version
+    description: The version of the source registry the content was copied from. For
+      a registry kept in git, such as KG-Registry, the commit hash.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:source_version
+    owner: ImportRecord
+    domain_of:
+    - ImportRecord
+    range: string
+  imported_on:
+    name: imported_on
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/imported_on
+    description: The date the content was imported.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    mappings:
+    - pav:importedOn
+    slot_uri: pav:importedOn
+    owner: ImportRecord
+    domain_of:
+    - ImportRecord
+    range: date
+    required: true
+  licenseInfo__id:
+    name: licenseInfo__id
+    description: A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/.
+      Leave it out when there is none, as for a US government work.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:id
+    alias: id
+    owner: LicenseInfo
+    domain_of:
+    - LicenseInfo
+    range: uri
+  licenseInfo__label:
+    name: licenseInfo__label
+    description: The name of the license.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:label
+    alias: label
+    owner: LicenseInfo
+    domain_of:
+    - LicenseInfo
+    range: string
+    required: true
+  publication__id:
+    name: publication__id
+    description: A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3)
+      or a PMID.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:id
+    identifier: true
+    alias: id
+    owner: Publication
+    domain_of:
+    - Publication
+    range: uriorcurie
+    required: true
+  publication__title:
+    name: publication__title
+    description: The title of the publication.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:title
+    alias: title
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+  publication__authors:
+    name: publication__authors
+    description: The authors, e.g. Mortensen HM.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:authors
+    alias: authors
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    multivalued: true
+  publication__journal:
+    name: publication__journal
+    description: The journal the publication appeared in.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:journal
+    alias: journal
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+  publication__year:
+    name: publication__year
+    description: The year of publication, e.g. '2021'.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:year
+    alias: year
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    pattern: ^\d{4}$
+  publication__doi:
+    name: publication__doi
+    description: The DOI, without a prefix.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:doi
+    alias: doi
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+  publication__preferred:
+    name: publication__preferred
+    description: Whether this is the publication to cite for the resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:preferred
+    alias: preferred
+    owner: Publication
+    domain_of:
+    - Publication
+    range: boolean
+  supportingScript__name:
+    name: supportingScript__name
+    description: A short label for the script, e.g. fetch_namsnetwork.py, or for a
+      command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:name
+    alias: name
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+    required: true
+  supportingScript__repository:
+    name: supportingScript__repository
+    description: The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:repository
+    alias: repository
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: uri
+    required: true
+  supportingScript__path:
+    name: supportingScript__path
+    description: The file within the repository, e.g. scripts/fetch_namsnetwork.py.
+      For a command of a larger tool, the file that defines it or configures it.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:path
+    alias: path
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+  supportingScript__command:
+    name: supportingScript__command
+    description: How to run it, e.g. uv run python scripts/fetch_namsnetwork.py. For
+      a command of a larger tool, the command and its arguments.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:command
+    alias: command
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+  supportingScript__description:
+    name: supportingScript__description
+    description: What the script retrieves or does, in a sentence or two.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slot_uri: nams_registry:description
+    alias: description
+    owner: SupportingScript
+    domain_of:
+    - SupportingScript
+    range: string
+classes:
+  NamedThing:
+    name: NamedThing
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/NamedThing
+    description: A generic grouping for any identifiable entity
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    exact_mappings:
+    - schema:Thing
+    slots:
+    - id
+    - name
+    - description
+    class_uri: schema:Thing
+  Resource:
+    name: Resource
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/Resource
+    description: A source of NAMs or NAMs-adjacent information. This includes data
+      resources, such as databases, repositories, catalogs, and portals, and reports,
+      such as landscape analyses, reviews, and OECD Test Guidelines.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    is_a: NamedThing
+    slots:
+    - id
+    - name
+    - description
+    - synonyms
+    - homepage_url
+    - repository
+    - resource_type
+    - domain_areas
+    - holds_nams
+    - relevance_note
+    - curation_model
+    - dismech_integration
+    - supporting_scripts
+    - priority
+    - priority_rationale
+    - extraction_effort
+    - effort_rationale
+    - expectations
+    - discussion_issue
+    - activity_status
+    - use_instead
+    - part_of
+    - license
+    - publications
+    - creation_date
+    - last_modified_date
+    - imported_from
+    class_uri: nams_registry:Resource
+  LicenseInfo:
+    name: LicenseInfo
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/LicenseInfo
+    description: A license for a resource.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slots:
+    - licenseInfo__id
+    - licenseInfo__label
+    attributes:
+      id:
+        name: id
+        description: A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/.
+          Leave it out when there is none, as for a US government work.
+        range: uri
+      label:
+        name: label
+        description: The name of the license.
+        required: true
+    class_uri: nams_registry:LicenseInfo
+  Publication:
+    name: Publication
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/Publication
+    description: A publication. The same structure as a KG-Registry Publication.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slots:
+    - publication__id
+    - publication__title
+    - publication__authors
+    - publication__journal
+    - publication__year
+    - publication__doi
+    - publication__preferred
+    attributes:
+      id:
+        name: id
+        description: A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3)
+          or a PMID.
+        identifier: true
+        range: uriorcurie
+        required: true
+      title:
+        name: title
+        description: The title of the publication.
+      authors:
+        name: authors
+        description: The authors, e.g. Mortensen HM.
+        multivalued: true
+      journal:
+        name: journal
+        description: The journal the publication appeared in.
+      year:
+        name: year
+        description: The year of publication, e.g. '2021'.
+        pattern: ^\d{4}$
+      doi:
+        name: doi
+        description: The DOI, without a prefix.
+      preferred:
+        name: preferred
+        description: Whether this is the publication to cite for the resource.
+        range: boolean
+    class_uri: nams_registry:Publication
+  SupportingScript:
+    name: SupportingScript
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/SupportingScript
+    description: A script, or a command of a larger tool, written to retrieve or parse
+      content from a resource. It can live in this repository or another one.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slots:
+    - supportingScript__name
+    - supportingScript__repository
+    - supportingScript__path
+    - supportingScript__command
+    - supportingScript__description
+    attributes:
+      name:
+        name: name
+        description: A short label for the script, e.g. fetch_namsnetwork.py, or for
+          a command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.
+        required: true
+      repository:
+        name: repository
+        description: The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.
+        range: uri
+        required: true
+      path:
+        name: path
+        description: The file within the repository, e.g. scripts/fetch_namsnetwork.py.
+          For a command of a larger tool, the file that defines it or configures it.
+      command:
+        name: command
+        description: How to run it, e.g. uv run python scripts/fetch_namsnetwork.py.
+          For a command of a larger tool, the command and its arguments.
+      description:
+        name: description
+        description: What the script retrieves or does, in a sentence or two.
+    class_uri: nams_registry:SupportingScript
+  ImportRecord:
+    name: ImportRecord
+    definition_uri: https://w3id.org/monarch-initiative/nams-registry/ImportRecord
+    description: A record of content imported into this registry entry from another
+      registry.
+    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    slots:
+    - source
+    - source_id
+    - source_url
+    - source_version
+    - imported_on
+    class_uri: nams_registry:ImportRecord
+metamodel_version: 1.12.0
+source_file: nams_registry.yaml
+source_file_date: '2026-11-08T03:25:43'
+source_file_size: 21712
+
