@@ -1,0 +1,7 @@
+model:
+  id: kidney-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Kidney organoids from human pluripotent stem cells
+  three_d_architecture: MINI_KIDNEY
+source_resources:
+- resource: stemcell-organoids

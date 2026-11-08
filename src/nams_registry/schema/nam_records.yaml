@@ -1,0 +1,135 @@
+---
+id: https://w3id.org/monarch-initiative/nams-registry/nam_records
+name: nam_records
+title: NAM records
+description: |-
+  Individual NAMs extracted from the resources in the nams-registry, one
+  file per NAM in nams/. Each record holds the NAM as an unmodified NAMO
+  model (https://github.com/monarch-initiative/namo), plus what NAMO does
+  not hold: where the NAM was found, what it is used for, and its
+  limitations.
+license: MIT
+
+prefixes:
+  nams_registry: https://w3id.org/monarch-initiative/nams-registry/
+  linkml: https://w3id.org/linkml/
+  namo: https://w3id.org/monarch-initiative/namo/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: nams_registry
+default_range: string
+
+imports:
+  - linkml:types
+  # NAMO, from the namo repository; scripts/link_namo.py puts it in place
+  # (gitignored). It is never committed here.
+  - namo
+
+classes:
+
+  NAMRecord:
+    tree_root: true
+    description: >-
+      One NAM, as a NAMO model with what the registry adds around it: where
+      the NAM was found, what it is used for, and its limitations. The file in
+      nams/ is named after the model's id.
+    slots:
+      - model
+      - synonyms
+      - species
+      - applications
+      - limitations
+      - source_resources
+      - creation_date
+      - last_modified_date
+
+  NAMStatement:
+    description: One thing a NAM is used for, or one of its limitations.
+    attributes:
+      description:
+        required: true
+      source_urls:
+        range: uri
+        multivalued: true
+        description: The pages the statement was taken from.
+      supporting_references:
+        range: uriorcurie
+        multivalued: true
+        description: >-
+          Publications the source page cites for the statement, e.g.
+          doi:10.1038/nm.3201.
+
+  SourceRecord:
+    description: A registry resource a NAM was found in.
+    attributes:
+      resource:
+        required: true
+        description: The id of the resource in resources/, e.g. stemcell-organoids.
+      source_urls:
+        range: uri
+        multivalued: true
+        description: The resource's pages that describe the NAM.
+      products:
+        range: Product
+        multivalued: true
+        inlined_as_list: true
+        description: Products the resource sells for the NAM, for a vendor.
+      accessed_on:
+        range: date
+
+  Product:
+    attributes:
+      name:
+        required: true
+      catalog_number:
+      url:
+        range: uri
+
+slots:
+  model:
+    range: ModelSystem
+    required: true
+    inlined: true
+    description: >-
+      The NAM as a NAMO model. Its type names the NAMO class, e.g. Organoid,
+      and its id identifies the NAM, naming the organ, the format if it is
+      not an organoid, and the cell source, e.g.
+      kidney-organoid-pluripotent-stem-cell.
+  species:
+    range: OrganismTaxon
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      The species the cells come from. NAMO records species only for animal
+      models; move this into the model if NAMO adds it.
+  applications:
+    range: NAMStatement
+    multivalued: true
+    inlined_as_list: true
+    description: What the NAM is used for. Move into the model if NAMO adds it.
+  limitations:
+    range: NAMStatement
+    multivalued: true
+    inlined_as_list: true
+    description: The NAM's limitations. Move into the model if NAMO adds it.
+  source_resources:
+    range: SourceRecord
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  synonyms:
+    multivalued: true
+    description: >-
+      Other names for the same NAM, as used in the literature or by its
+      sources, e.g. "enteroids" for adult intestinal organoids. A vendor's
+      product, kit or brand name for the NAM is not a synonym; it goes in the
+      product list of the resource it was found in (source_resources >
+      products). Broader or narrower terms are not synonyms either. Move into
+      the model if NAMO adds it.
+  creation_date:
+    range: date
+    slot_uri: dcterms:created
+    description: The date this record was created.
+  last_modified_date:
+    range: date
+    slot_uri: dcterms:modified
+    description: The date this record was last changed.

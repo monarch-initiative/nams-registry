@@ -18,8 +18,24 @@ A change is made to a record, to the schema, or to both:
 - **A record** describes one resource, in `resources/<id>.yaml`. Each
   resource has a review issue, labelled `resource-review`, where it is
   discussed; the resource table links to it.
+- **A NAM record** describes one NAM extracted from those resources, such
+  as an organoid system, in `nams/<id>.yaml`. Its `model` is the NAM as an
+  unmodified [NAMO](https://github.com/monarch-initiative/namo) model, whose
+  `type` names the NAMO class, such as `Organoid`. Around it the record
+  holds what NAMO does not: the resources the NAM was found in
+  (`source_resources`), what it is used for and its limitations, each with
+  the pages it was taken from.
 - **The schema**, `src/nams_registry/schema/nams_registry.yaml`, sets
-  what every record can hold.
+  what every record can hold. NAM records have a separate schema,
+  `nam_records.yaml`, which imports NAMO; the two schemas do not import
+  each other. NAMO's schema is kept only in the
+  [namo repository](https://github.com/monarch-initiative/namo), never here:
+  `just namo` links it from a local NAMO checkout (`NAMO_DIR`, or `../namo`)
+  or, without one, downloads it from GitHub at the NAMO commit set in
+  `pyproject.toml` (`[tool.nams-registry.namo]`), or at `NAMO_REF`. The
+  tests do this themselves.
+  Where a NAM needs something NAMO lacks, prefer proposing it in NAMO over
+  adding it here.
 
 In practice the two tend to change together, because it is the content
 that drives the schema. Reviewing a resource often turns up something
@@ -47,6 +63,7 @@ request.
 * [examples/](examples/) - Examples of using the schema
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [resources/](resources/) - one file per resource in the registry (edit these)
+* [nams/](nams/) - one file per NAM extracted from the resources (edit these)
 * [src/](src/) - source files (edit these)
   * [nams_registry](src/nams_registry)
     * [schema/](src/nams_registry/schema) -- LinkML schema

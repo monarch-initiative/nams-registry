@@ -1,0 +1,4 @@
+model:
+  id: kidney-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Kidney organoids from human pluripotent stem cells

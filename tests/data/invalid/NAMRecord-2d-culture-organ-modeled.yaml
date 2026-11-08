@@ -1,0 +1,9 @@
+model:
+  id: liver-organoid-derived-monolayer-adult-tissue
+  type: TwoDCellCulture
+  name: Liver organoid-derived monolayers
+  organ_modeled:
+    id: UBERON:0002107
+    name: liver
+source_resources:
+- resource: stemcell-organoids

@@ -14,6 +14,11 @@ import-kg-registry *args:
 validate-resources:
   uv run linkml-validate -s {{source_schema_path}} -C Resource resources/*.yaml
 
+# Validate every NAM file in nams/, the record and its NAMO model
+[group('data')]
+validate-nams:
+  uv run pytest -q tests/test_resources.py -k nam_file_is_valid
+
 # Link the NAMO schema from a local checkout (NAMO_DIR or ../namo), or download the ref in pyproject.toml
 [group('model development')]
 namo:
