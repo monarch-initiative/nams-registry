@@ -50,6 +50,13 @@ dismech_integration: >-
   kb/disorders/Bachmann-Bupp_Syndrome.yaml gives "STEMdiff cerebral organoid
   differentiation" as its culture_system. Checked against dismech commit
   67b29f2c545.
+priority: high
+priority_rationale: >-
+  The pages describe individual NAMs, each with what it is used for and
+  where it falls short: 46 organoid, organoid-derived monolayer, air-liquid
+  interface and co-culture systems, now extracted to nams/, the first NAM
+  records in the registry. They cover only the systems STEMCELL sells, and
+  the limitations are thin for some of them.
 supporting_scripts:
 - name: fetch_stemcell_organoids.py
   repository: https://github.com/monarch-initiative/nams-registry
