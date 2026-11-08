@@ -66,6 +66,7 @@ effort_rationale: >-
   where one organoid system ends and the next begins. Many webinars and
   wallcharts are behind registration forms and were not read. Catalog
   numbers for some products are only in the page HTML.
+discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/50
 activity_status: active
 license:
   label: Copyright STEMCELL Technologies, all rights reserved; no website terms of use published
