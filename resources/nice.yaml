@@ -46,6 +46,16 @@ dismech_integration: >-
   for it. The Contact Dermatitis entry records the SARA-ICE model, which was
   trained on data drawn from NICE. Checked against dismech commit
   ecaad77e5e9.
+supporting_scripts:
+- name: fetch_nice.py
+  repository: https://github.com/monarch-initiative/nams-registry
+  path: scripts/fetch_nice.py
+  command: uv run scripts/fetch_nice.py
+  description: >-
+    Renders the NICE Data Sets page in headless Chrome and parses its table
+    into one record per data set, lists the assay names the REST API accepts,
+    downloads the data set files under a size limit, and tallies the assay,
+    species and reference columns of each spreadsheet.
 priority: medium
 priority_rationale: >-
   NICE adds nine reference data sets that NICEATM curates, which pair NAM
@@ -115,7 +125,7 @@ publications:
   year: '2022'
   doi: 10.3389/ftox.2022.987848
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-06'
+last_modified_date: '2026-11-07'
 imported_from:
 - source: kg_registry
   source_id: nice
