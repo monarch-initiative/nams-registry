@@ -6,7 +6,8 @@ starts from the Organoid Research hub page and the organoid product list,
 and follows links on www.stemcell.com whose paths name an organoid, an organ,
 or an organoid product line (IntestiCult, HepatiCult, PneumaCult, STEMdiff,
 and so on). Pages in other languages, account pages, search results and
-media files are skipped.
+media files are skipped, and so is any URL the site's robots.txt disallows;
+a Crawl-delay there, if longer than --pause, is used instead.
 
 Writes, into the output directory:
 
@@ -15,8 +16,9 @@ Writes, into the output directory:
   the URL on the first line. Pages with the same canonical URL are written
   once.
 - ``manifest.json``: the fetch time, and for each URL fetched its file, its
-  canonical URL and title, or the error; plus the links still queued when
-  the page limit was reached.
+  canonical URL and title, or the error; the URLs skipped because
+  robots.txt disallows them; and the links still queued when the page limit
+  was reached.
 
 Requests are made one at a time with a pause between them. The 2026-11-06
 run read 400 pages from the crawl and about 30 more queued organoid pages,
@@ -37,6 +39,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import urllib.robotparser
 from pathlib import Path
 
 SITE = "www.stemcell.com"
@@ -121,6 +124,13 @@ def fetch(url):
         return response.read().decode("utf-8", "ignore")
 
 
+def robots():
+    """Read the site's robots.txt, fetched with this script's user agent."""
+    parser = urllib.robotparser.RobotFileParser()
+    parser.parse(fetch(f"https://{SITE}/robots.txt").splitlines())
+    return parser
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--output", type=Path, default=Path("tmp/stemcell_organoids"))
@@ -132,17 +142,22 @@ def main():
     html_dir.mkdir(parents=True, exist_ok=True)
     text_dir.mkdir(parents=True, exist_ok=True)
 
-    queue, seen, pages, canonical_seen = list(SEEDS), set(), {}, set()
+    rules = robots()
+    pause = max(args.pause, rules.crawl_delay(USER_AGENT) or 0)
+    queue, seen, pages, canonical_seen, disallowed = list(SEEDS), set(), {}, set(), []
     while queue and len(seen) < args.max_pages:
         url = queue.pop(0)
         if url in seen:
             continue
         seen.add(url)
+        if not rules.can_fetch(USER_AGENT, url):
+            disallowed.append(url)
+            continue
         try:
             page = fetch(url)
         except (urllib.error.URLError, TimeoutError) as err:
             pages[url] = {"error": str(err)}
-            time.sleep(args.pause)
+            time.sleep(pause)
             continue
         name = hashlib.md5(url.encode()).hexdigest()[:12] + ".html"
         (html_dir / name).write_text(page)
@@ -163,7 +178,7 @@ def main():
             if link not in seen and link not in queue:
                 queue.append(link)
         print(f"{len(seen)}\t{url}", file=sys.stderr)
-        time.sleep(args.pause)
+        time.sleep(pause)
 
     manifest = {
         "fetched_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -171,6 +186,7 @@ def main():
         "pages_fetched": len(seen),
         "unique_pages": len(canonical_seen),
         "pages": pages,
+        "disallowed_by_robots_txt": disallowed,
         "queued_not_fetched": queue,
     }
     (args.output / "manifest.json").write_text(json.dumps(manifest, indent=1))

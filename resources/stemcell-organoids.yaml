@@ -68,7 +68,6 @@ effort_rationale: >-
   numbers for some products are only in the page HTML.
 activity_status: active
 license:
-  id: https://www.stemcell.com/terms-and-conditions-general
-  label: Copyright STEMCELL Technologies (all rights reserved)
+  label: Copyright STEMCELL Technologies, all rights reserved; no website terms of use published
 creation_date: '2026-11-06'
-last_modified_date: '2026-11-06'
+last_modified_date: '2026-11-07'
