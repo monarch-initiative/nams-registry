@@ -1,0 +1,76 @@
+model:
+  id: choroid-plexus-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Choroid plexus organoids from human pluripotent stem cells
+  description: Organoids patterned to the choroid plexus, the brain epithelium that forms the blood–cerebrospinal
+    fluid barrier. Cysts are TTR+ and CLIC6+, and the fluid in them contains clusterin, a CSF marker.
+    The kit's source protocol won a 3Rs Prize.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001886
+    name: choroid plexus
+  cell_types:
+  - id: CL:0000706
+    name: choroid plexus epithelial cell
+  - id: CL:0000065
+    name: ependymal cell
+  - id: CL:0000540
+    name: neuron
+  cell_source: pluripotent stem cells
+  differentiation_method: 'Five-stage protocol based on Pellegrini et al. (2020): embryoid body formation,
+    expansion of neuroepithelia, patterning to choroid plexus-like epithelium, then epithelial maturation.'
+  culture_system: Organoids are generated in 30 days; culture beyond 40 days uses the Choroid Plexus Organoid
+    Maturation Kit. Mature organoids form translucent cysts lined by cuboidal ependymal-like epithelium
+    and filled with CSF-like fluid.
+  references:
+  - id: doi:10.1126/science.aaz5626
+    title: Human CNS barrier-forming organoids with cerebrospinal fluid production
+    authors:
+    - Laura Pellegrini
+    - Claudia Bonfio
+    - Jessica Chadwick
+    - Farida Begum
+    - Mark Skehel
+    - Madeline A. Lancaster
+    journal: Science
+    year: 2020
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Studying CNS permeability for drug distribution: the epithelium is a selectively permeable
+    barrier.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-differentiation-kit.html
+  - https://www.stemcell.com/modeling-brain-barrier-permeability-and-csf-secretion-with-choroid-plexus-organoids.html
+  supporting_references:
+  - doi:10.1126/science.aaz5626
+- description: Producing and extracting CSF-like fluid (by syringe from the cysts) for neural biomarker
+    discovery.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-differentiation-kit.html
+limitations:
+- description: Organoids also contain bundles of MAP2+ neurons outside the ependymal epithelium, so they
+    are not pure choroid plexus tissue.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-differentiation-kit.html
+- description: Has no blood vessels, so the blood side of the blood–CSF barrier is not modelled. Implied
+    by the general lack of vasculature in organoids; the site states no choroid-plexus-specific limitations.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-differentiation-kit.html
+  - https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-maturation-kit.html
+  - https://www.stemcell.com/modeling-brain-barrier-permeability-and-csf-secretion-with-choroid-plexus-organoids.html
+  products:
+  - name: STEMdiff Choroid Plexus Organoid Differentiation Kit
+    catalog_number: 100-0824
+    url: https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-differentiation-kit.html
+  - name: STEMdiff Choroid Plexus Organoid Maturation Kit
+    catalog_number: 100-0825
+    url: https://www.stemcell.com/products/stemdiff-choroid-plexus-organoid-maturation-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

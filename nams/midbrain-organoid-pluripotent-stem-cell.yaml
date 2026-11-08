@@ -1,0 +1,120 @@
+model:
+  id: midbrain-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Midbrain organoids from human pluripotent stem cells
+  description: Guided organoids representing the developing human midbrain, used to study dopaminergic
+    neurons. Organoids are uniform in size across cell lines and express tyrosine hydroxylase; GFAP rises
+    by day 100.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001891
+    name: midbrain
+  cell_types:
+  - id: CL:0000700
+    name: dopaminergic neuron
+  - id: CL:0000127
+    name: astrocyte
+  cell_source: pluripotent stem cells
+  differentiation_method: Directed differentiation adapted from Pasca's protocols. hPSCs form organoids
+    in AggreWell800 over 6 days, then grow in suspension and are patterned to the midbrain (FOXA2, LMX1A,
+    EN1 floor-plate markers by day 25; NURR1, TH, GIRK2, PITX3 dopaminergic markers by day 50).
+  culture_system: Matrix-free, serum-free suspension culture; organoids generated in 43 days, 200 or more
+    per kit with AggreWell800. Maintained beyond 50 days with the Neural Organoid Maintenance Kit. Also
+    sold as fresh, pre-formed organoids from iPSC line SCTi003-A at day 42–49 or day 90–97.
+  references:
+  - id: doi:10.1016/j.stem.2016.07.005
+    title: Midbrain-like Organoids from Human Pluripotent Stem Cells Contain Functional Dopaminergic and
+      Neuromelanin-Producing Neurons
+    authors:
+    - Junghyun Jo
+    - Yixin Xiao
+    - Alfred Xuyang Sun
+    - Engin Cukuroglu
+    - Hoang-Dai Tran
+    - Jonathan Göke
+    - Zi Ying Tan
+    - Tzuen Yih Saw
+    - Cheng-Peow Tan
+    - Hidayat Lokman
+    - Younghwan Lee
+    - Donghoon Kim
+    - Han Seok Ko
+    - Seong-Oh Kim
+    - Jae Hyeon Park
+    - Nam-Joon Cho
+    - Thomas M. Hyde
+    - Joel E. Kleinman
+    - Joo Heon Shin
+    - Daniel R. Weinberger
+    - Eng King Tan
+    - Hyunsoo Shawn Je
+    - Huck-Hui Ng
+    journal: Cell Stem Cell
+    year: 2016
+synonyms:
+- midbrain neural organoids
+- guided midbrain organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Parkinson's disease modelling, recapitulating dopaminergic neuron vulnerability, alpha-synuclein
+    pathology and mitochondrial dysfunction.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  supporting_references:
+  - doi:10.1038/s41531-024-00799-8
+- description: Co-culture with hPSC-derived microglia to study microglia–neuron interactions and neuroinflammation
+    in Parkinson's disease.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-midbrain-organoid-differentiation-kit.html
+- description: 'Neurotoxicity and functional assays on MEA: day-125 organoids showed treatment-dependent
+    activity changes after one hour of 4-aminopyridine or rotenone.'
+  source_urls:
+  - https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+- description: Predictive assays and high-throughput phenotypic screening in long-term culture.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-midbrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+- description: Single-cell phenotyping of midbrain organoids by automated high-content imaging and single-cell
+    flow cytometry, for Parkinson's disease and therapeutic discovery.
+  source_urls:
+  - https://www.stemcell.com/single-cell-phenotyping-of-neurons-and-midbrain-organoids.html
+limitations:
+- description: Represents the developing (fetal) midbrain; adult-like maturation remains unsolved for
+    neural organoids, which matters for late-onset disease such as Parkinson's.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-midbrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: Lacks vasculature, and microglia must be added by co-culture.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  - https://www.stemcell.com/products/stemdiff-midbrain-organoid-differentiation-kit.html
+- description: 'The ready-made organoids carry licence terms: no clinical or therapeutic use, no commercialization,
+    and no screening of compounds, antibodies, proteins or peptides except for target discovery, target
+    validation or assay development.'
+  source_urls:
+  - https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+- description: The ready-made organoids come from a single healthy-control iPSC line (SCTi003-A) and are
+    shipped fresh, with delivery times that vary with supply.
+  source_urls:
+  - https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-midbrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  products:
+  - name: STEMdiff Midbrain Organoid Differentiation Kit
+    catalog_number: 100-1096
+    url: https://www.stemcell.com/products/stemdiff-midbrain-organoid-differentiation-kit.html
+  - name: Human iPSC-Derived Midbrain Organoids
+    catalog_number: 200-0790
+    url: https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+  - name: STEMdiff Neural Organoid Maintenance Kit
+    catalog_number: 100-0120
+    url: https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

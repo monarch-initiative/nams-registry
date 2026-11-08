@@ -1,0 +1,214 @@
+model:
+  id: airway-organoid-apical-in-adult-tissue
+  type: Organoid
+  name: Apical-in airway organoids from primary human bronchial epithelial cells
+  description: A three-dimensional organotypic culture of the large airway epithelium grown from primary
+    human bronchial epithelial cells in a Matrigel dome. Fully differentiated organoids have a centralized
+    lumen surrounded by a polarized airway epithelial layer with ciliated and goblet cells, so the apical
+    surface and cilia face inward into the lumen. The same cellular differentiation (extensive mucociliary
+    differentiation to a pseudostratified epithelium) is obtained as in air-liquid interface culture,
+    but in a matrix-embedded spheroid format that does not need cell culture inserts.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002185
+    name: bronchus
+  cell_types:
+  - id: CL:0002633
+    name: respiratory basal cell
+  - id: CL:0000067
+    name: ciliated epithelial cell
+  - id: CL:0002370
+    name: respiratory tract goblet cell
+  cell_source: adult tissue
+  differentiation_method: Primary human bronchial epithelial cells (HBECs) are first expanded in 2D adherent
+    culture in PneumaCult-Ex Plus or PneumaCult-NGEx Medium and passaged at 50 - 60% confluence. Expanded
+    HBECs are embedded in Matrigel domes and cultured 4 - 7 days in PneumaCult Airway Organoid Seeding
+    Medium, which yields spheroids composed of basal cells with no lumen and no apparent polarity. Switching
+    to PneumaCult Airway Organoid Differentiation Medium for a further 21 - 28 days produces organoids
+    with a central lumen and a polarized epithelium containing ciliated and goblet cells.
+  culture_system: 50 uL domes of 90% Corning Matrigel GFR (phenol red-free, LDEV-free, 356231) plus 10%
+    seeding medium in 24-well non-tissue-culture-treated plates; 2 x 10^3 HBECs per dome at passage 3
+    (4000 at P4, 6000 at P5), 500 - 750 uL medium per well with changes every 2 days. 400 - 600 organoids
+    per dome after the seeding phase. Total time in culture is donor- and passage-dependent, roughly 25
+    - 35 days; differentiated organoids are about 100 um across and approximately 40 - 50% of cells are
+    ciliated.
+  references:
+  - id: doi:10.1073/pnas.0906850106
+    title: Basal cells as stem cells of the mouse trachea and human airway epithelium
+    authors:
+    - Jason R. Rock
+    - Mark W. Onaitis
+    - Emma L. Rawlins
+    - Yun Lu
+    - Cheryl P. Clark
+    - Yan Xue
+    - Scott H. Randell
+    - Brigid L. M. Hogan
+    journal: Proceedings of the National Academy of Sciences
+    year: 2009
+  - id: doi:10.1016/j.biomaterials.2016.10.046
+    title: Human airway organoid engineering as a step toward lung regeneration and disease modeling
+    authors:
+    - Qi Tan
+    - Kyoung Moo Choi
+    - Delphine Sicard
+    - Daniel J. Tschumperlin
+    journal: Biomaterials
+    year: 2017
+  - id: doi:10.1038/nm.3201
+    title: A functional CFTR assay using primary cystic fibrosis intestinal organoids
+    authors:
+    - Johanna F Dekkers
+    - Caroline L Wiegerinck
+    - Hugo R de Jonge
+    - Inez Bronsveld
+    - Hettie M Janssens
+    - Karin M de Winter-de Groot
+    - Arianne M Brandsma
+    - Nienke W M de Jong
+    - Marcel J C Bijvelds
+    - Bob J Scholte
+    - Edward E S Nieuwenhuis
+    - Stieneke van den Brink
+    - Hans Clevers
+    - Cornelis K van der Ent
+    - Sabine Middendorp
+    - Jeffrey M Beekman
+    journal: Nature Medicine
+    year: 2013
+synonyms:
+- bronchospheres
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+applications:
+- description: Forskolin-induced swelling (FIS) assay of CFTR channel function. Organoids are treated
+    for 6 hours with 20 uM amiloride (ENaC inhibitor), 10 uM forskolin (adenylyl cyclase activator) and
+    25 uM genistein (CFTR potentiator) in Krebs-Ringer bicarbonate buffer; chloride efflux into the lumen
+    draws in water and the organoid swells, measured as percent increase in surface area from time 0 by
+    bright-field imaging. Swelling is lost in organoids from cystic fibrosis donors and re-established
+    after treatment with the CFTR corrector VX-809, so the assay reads out both baseline CFTR function
+    and modulator rescue.
+  source_urls:
+  - https://www.stemcell.com/fis-of-airway-organoids-protocol.html
+  - https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+  supporting_references:
+  - doi:10.1038/nm.3201
+  - doi:10.3791/55159
+- description: Higher-throughput pre-screening of CFTR modulator drugs, including rare CFTR genotypes
+    that are not eligible for approved modulator therapies, using high-content microscopy of swelling
+    across many wells within several weeks.
+  source_urls:
+  - https://www.stemcell.com/fis-of-airway-organoids-protocol.html
+  supporting_references:
+  - doi:10.3791/55159
+- description: Modeling lung disease, drug screening for efficacy and toxicity, and studying the functions
+    of the airway epithelium.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+- description: Studying host-pathogen interactions in the airway; the page cites work using airway epithelial
+    cultures to study susceptibility to enterovirus D68, rhinovirus and influenza virus.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  supporting_references:
+  - doi:10.1038/s41467-025-57094-0
+- description: 'Nasal organoid CFTR theratyping: cryopreserved human nasal epithelial cells expanded in
+    PneumaCult-NGEx and differentiated with the Airway Organoid Kit form organoids with mature polarity
+    and functional CFTR, swelling 70 - 100% on amiloride/forskolin/genistein treatment from passage 3
+    to 6.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-ngex-medium.html
+  supporting_references:
+  - doi:10.3390/cells14231914
+limitations:
+- description: 'The apical surface faces into the lumen and is therefore not directly accessible for adding
+    pathogens, compounds or aerosols. Implied by the existence of the separate apical-out medium and stated
+    on the nasal organoid protocol page: in traditional apical-in organoids the apical surface faces inward
+    and is less accessible for experimental manipulation.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-apical-out-nasal-organoids.html
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: Not formulated to generate apical-out organoids; polarity is driven by the presence of
+    a matrix such as Matrigel, so this format gives apical-in organoids only.
+  source_urls:
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: Developed only in 24-well flat-bottom plates; a 96-well high-throughput workflow was still
+    under development by the manufacturer's R&D team at the time of the page.
+  source_urls:
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: Not optimized for distal/alveolar (ATII) cells or for small airway cells. Small airway
+    epithelial cells were untested in-house and organoids grown from them might shift toward a large airway
+    epithelial phenotype.
+  source_urls:
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: Depends on Matrigel, with a single validated lot/type (Corning GFR 356231) specified. Beyond
+    day 28 of differentiation the Matrigel dome may lose integrity and the lumen may overfill with mucus;
+    in-house cultures were kept for about 6 weeks.
+  source_urls:
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: 'Yield and quality depend on donor and passage: early-passage (P2 - P3) HBECs give the
+    most optimal morphology, seeding density must be re-optimized at each later passage, and the number
+    of fully differentiated organoids falls relative to the seeding phase and varies between cultures.
+    Cryopreserved HBECs must be passaged at least once before seeding or they may underperform.'
+  source_urls:
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: For nasal organoids made with this kit, organoid-forming efficiency was stable at 20 -
+    35% through early and mid passages but fell below 10% after passage 7, and swelling fell to about
+    40% at P7 (one donor, 3 technical replicates).
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-ngex-medium.html
+- description: 'The FIS readout is indirect: it measures water transport across the epithelium rather
+    than current. Ussing chambers measure transepithelial ion currents and give a direct functional evaluation
+    of CFTR, so the two are described as complementary, with FIS used as the high-throughput pre-screen.'
+  source_urls:
+  - https://www.stemcell.com/fis-of-airway-organoids-protocol.html
+  supporting_references:
+  - doi:10.1152/ajplung.1994.266.4.l405
+- description: Swelling has not been characterized beyond an 8-hour incubation, and swelling plateaus
+    after about 6 hours.
+  source_urls:
+  - https://www.stemcell.com/fis-of-airway-organoids-protocol.html
+- description: 'Licence restriction: the medium was developed under a licence to intellectual property
+    owned by Hubrecht Organoid Technology (HUB) and is sold for research use only. Purchase does not include
+    the right to use it for drug screening aiming for commercial gain, equipment validation, biobanking
+    or other commercial purposes; a further HUB licence is required.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+- description: Epithelium only; no immune, stromal or endothelial compartment is included in the kit.
+    The overview page notes that bronchospheres can be formed without co-culture, whereas bronchioalveolar
+    spheres and alveolospheres currently require co-culture with fibroblasts or endothelial cells.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+  - https://www.stemcell.com/fis-of-airway-organoids-protocol.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+  - https://www.stemcell.com/products/brands/pneumacult-airway-epithelial-culture.html
+  products:
+  - name: PneumaCult Airway Organoid Kit
+    catalog_number: '05060'
+    url: https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  - name: PneumaCult Airway Organoid Basal Medium
+    catalog_number: '05061'
+    url: https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  - name: PneumaCult Airway Organoid Seeding Supplement
+    catalog_number: '05062'
+    url: https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  - name: PneumaCult Airway Organoid Differentiation Supplement
+    catalog_number: '05063'
+    url: https://www.stemcell.com/products/pneumacult-airway-organoid-kit.html
+  - name: PneumaCult-Ex Plus Medium (2D expansion)
+    catalog_number: '05040'
+    url: https://www.stemcell.com/products/pneumacult-ex-plus-medium.html
+  - name: PneumaCult-NGEx Medium (2D expansion)
+    catalog_number: 100-1505
+    url: https://www.stemcell.com/products/pneumacult-ngex-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

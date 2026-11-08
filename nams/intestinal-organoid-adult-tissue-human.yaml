@@ -1,0 +1,288 @@
+model:
+  id: intestinal-organoid-adult-tissue-human
+  type: Organoid
+  name: Human intestinal organoids from adult intestinal crypts (expansion-phase)
+  description: 'Three-dimensional cultures of adult human intestinal epithelium in which a polarized epithelial
+    layer encloses a functional lumen, with maturing organoids forming protruding buds resembling in vivo
+    crypts. Organoids contain the known cell types of the adult intestinal epithelium with a self-propagating
+    stem cell niche, intra- and intercellular signaling, and functional transport into and out of the
+    lumen. Cultures can be established from patient biopsies, expanded long-term, cryopreserved as biobanks,
+    genome-edited, and further differentiated in 3D or as 2D monolayers / ALI cultures with IntestiCult
+    Organoid Differentiation Medium (Human, Cat #100-0214).'
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000160
+    name: intestine
+  cell_types:
+  - id: CL:0002250
+    name: intestinal crypt stem cell
+  - id: CL:0009010
+    name: transit amplifying cell
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0000510
+    name: paneth cell
+  - id: CL:0000164
+    name: enteroendocrine cell
+  cell_source: adult tissue
+  differentiation_method: 'Intestinal crypts (or sorted LGR5+ single stem cells) are isolated from fresh
+    human colonic or small intestinal biopsies or surgical samples by mincing and incubation in Gentle
+    Cell Dissociation Reagent, then filtered and embedded in extracellular matrix. The crypts self-organize
+    into organoids in a complete medium (IntestiCult Organoid Growth Medium (Human), Cat #06010, or the
+    serum- and conditioned medium-free IntestiCult-SF, Cat #100-0340) that mimics the crypt-base niche
+    with EGF, Wnt/R-spondin agonism and BMP inhibition. The pages state organoids are generated from crypts
+    in one week; primary cultures from biopsies that break into single cells need about 3 weeks.'
+  culture_system: 50 uL domes of 50% Matrigel (Corning GFR, phenol red-free) in 24-well plates, submerged
+    in complete medium, medium changed every 2-3 days, passaged by mechanical fragmentation every 6-12
+    days (1000 fragments per dome gives 150-200 mature organoids). Growth is also supported in Geltrex
+    and Cultrex Type 1 and Type 2 basement membrane extracts. Organoids are primarily cystic in IntestiCult
+    OGM; figures show organoids from colonic biopsy fully mature after 10-14 days.
+  references:
+  - id: doi:10.1038/nature07935
+    title: Single Lgr5 stem cells build crypt-villus structures in vitro without a mesenchymal niche
+    authors:
+    - Toshiro Sato
+    - Robert G. Vries
+    - Hugo J. Snippert
+    - Marc van de Wetering
+    - Nick Barker
+    - Daniel E. Stange
+    - Johan H. van Es
+    - Arie Abo
+    - Pekka Kujala
+    - Peter J. Peters
+    - Hans Clevers
+    journal: Nature
+    year: 2009
+  - id: doi:10.1053/j.gastro.2011.07.050
+    title: Long-term Expansion of Epithelial Organoids From Human Colon, Adenoma, Adenocarcinoma, and
+      Barrett's Epithelium
+    authors:
+    - Toshiro Sato
+    - Daniel E. Stange
+    - Marc Ferrante
+    - Robert G.J. Vries
+    - Johan H. van Es
+    - Stieneke van den Brink
+    - Winan J. van Houdt
+    - Apollo Pronk
+    - Joost van Gorp
+    - Peter D. Siersema
+    - Hans Clevers
+    journal: Gastroenterology
+    year: 2011
+  - id: doi:10.1038/nm.2470
+    title: Isolation and in vitro expansion of human colonic stem cells
+    authors:
+    - Peter Jung
+    - Toshiro Sato
+    - Anna Merlos-Suárez
+    - Francisco M Barriga
+    - Mar Iglesias
+    - David Rossell
+    - Herbert Auer
+    - Mercedes Gallardo
+    - Maria A Blasco
+    - Elena Sancho
+    - Hans Clevers
+    - Eduard Batlle
+    journal: Nature Medicine
+    year: 2011
+  - id: doi:10.1038/nature06196
+    title: Identification of stem cells in small intestine and colon by marker gene Lgr5
+    authors:
+    - Nick Barker
+    - Johan H. van Es
+    - Jeroen Kuipers
+    - Pekka Kujala
+    - Maaike van den Born
+    - Miranda Cozijnsen
+    - Andrea Haegebarth
+    - Jeroen Korving
+    - Harry Begthel
+    - Peter J. Peters
+    - Hans Clevers
+    journal: Nature
+    year: 2007
+synonyms:
+- enteroids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Forskolin-induced swelling (FIS) assay as a functional readout of CFTR channel activity:
+    forskolin raises cAMP, opening CFTR, and chloride efflux draws water into the lumen so organoids swell;
+    swelling is quantified from brightfield images (organoid area) over 80-120 minutes, usually in Krebs-Ringer
+    bicarbonate buffer, with 10 uM forskolin and optional CFTR inhibitors (50 uM CFTR-inh-172 or GlyH-101)
+    as controls. Used to benchmark normal CFTR function and to evaluate CFTR modulators/correctors; organoids
+    from donors carrying CFTR mutations show diminished or absent swelling. In one STEMCELL figure 5 uM
+    forskolin increased organoid area 33.5 +/- 3.8% versus 7.5 +/- 0.8% for DMSO.'
+  source_urls:
+  - https://www.stemcell.com/forskolin-induced-swelling-of-human-intestinal-organoids-grown-in-intesticult.html
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  supporting_references:
+  - doi:10.1038/nm.3201
+  - doi:10.3791/55159
+- description: 'Drug-induced gastrointestinal toxicity testing as a new approach methodology (NAM): organoids
+    are seeded at ~100-120 fragments per 10 uL dome in 96-well plates, grown 2-4 days, then exposed to
+    test compounds for 2-5 days with daily medium/treatment refresh, and viability read by Promega CellTiter-Glo
+    3D luminescence plus well imaging. The pages state a shorter growth phase with a 5-day treatment captures
+    growth inhibition while a longer growth phase with shorter treatment highlights acute toxicity.'
+  source_urls:
+  - https://www.stemcell.com/intestinal-toxicity-testing-organoid-protocol.html
+  supporting_references:
+  - doi:10.1126/science.aao2774
+  - doi:10.1042/bcj20170780
+- description: 'Intestinal cytotoxicity testing offered as a contract assay, presented as detecting toxicity
+    that Caco-2 cells miss: fully grown organoids treated with colchicine showed higher toxicity whereas
+    Caco-2 cells showed no sensitivity to colchicine.'
+  source_urls:
+  - https://www.stemcell.com/services/contract-assay-services/organoid-assays/intestinal-services
+- description: CRISPR-Cas9 genome editing of organoid-derived cells by electroporation of ArciTect Cas9/sgRNA
+    ribonucleoprotein, validated on colon and small intestinal lines by knockout of B2M read out as loss
+    of surface MHC class I by flow cytometry (4D-Nucleofector DS-138 or Neon 1600 V, 20 ms, 2 pulses).
+    Used to build human in vitro disease models and study organ development.
+  source_urls:
+  - https://www.stemcell.com/crispr-cas9-genome-editing-of-intestinal-organoids-using-arcitect-and-intesticult.html
+- description: Modeling intestinal disease, including microvillus inclusion disease from MYO5B-mutant
+    patient organoids (which led to identification of syntaxin 3 as a contributor), intestinal inflammation
+    and ulcerative colitis, and congenital pediatric diarrhea / transmembrane cargo transport defects.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+  - https://www.stemcell.com/nature-research-round-table-modeling-congenital-pediatric-diarrhea-in-intestinal-enteroids.html
+  supporting_references:
+  - doi:10.1053/j.gastro.2014.04.002
+  - doi:10.1136/gutjnl-2016-312609
+- description: Host-microbe and enteric infection modeling, including introduction of live bacteria into
+    the organoid lumen by microinjection to model apical-side interactions, and infection with viruses
+    (rotavirus, SARS-CoV-2) and the protozoan parasite Cryptosporidium.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+  - https://www.stemcell.com/modeling-host-microbe-interactions-using-human-intestinal-organoids.html
+  - https://www.stemcell.com/human-intestinal-organoids-to-study-the-rare-gut-endocrine-cells.html
+  supporting_references:
+  - doi:10.1128/iai.02561-14
+  - doi:10.1038/mi.2014.72
+  - doi:10.1016/j.antiviral.2015.09.010
+- description: Nutrient transport, nutrient sensing and incretin hormone secretion studies; the pages
+    present organoids as the first in vitro model allowing simultaneous study of transport in absorptive
+    enterocytes, gut hormone secretion by enteroendocrine cells, and intracellular signaling in all intestinal
+    epithelial cell types, including organoids from transporter-knockout mice.
+  source_urls:
+  - https://www.stemcell.com/organoid-profiles-tamara-zietek.html
+  supporting_references:
+  - doi:10.1038/srep16831
+- description: 'Cryopreservation and biobanking of patient-derived lines: organoids are fragmented, frozen
+    in CryoStor CS10 and stored in liquid nitrogen at -135 C, stable for at least 6 months, supporting
+    cryopreserved libraries for preclinical drug efficacy screening. Intestinal organoid biobanks are
+    cited as having enabled colon cancer and cystic fibrosis research.'
+  source_urls:
+  - https://www.stemcell.com/how-to-cryopreserve-intestinal-organoids.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  supporting_references:
+  - doi:10.1016/j.cell.2015.03.053
+  - doi:10.1016/j.stem.2020.01.019
+- description: 'Use as the biological component of microphysiological systems: the MIMETAS OrganoReady
+    Colon Organoid platform grows IntestiCult-supported colon organoid tubules in a collagen-1 matrix
+    in microfluidic plates, with apical (Ezrin) and basolateral (integrin-beta-4) access and polarized,
+    modulatable P-glycoprotein activity; afatinib exposure for 72 h produced dose-dependent decreases
+    in TEER and viability and increased LDH release.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+limitations:
+- description: The organoid is a closed luminal compartment with an inward-facing apical surface, which
+    restricts access to the site of nutrient absorption, drug uptake, microbial interaction and barrier
+    regulation; monolayer and ALI formats exist specifically to overcome this.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: 'Epithelium only: the pages state that isolating the epithelium is an advantage for specificity
+    but a limitation for studying interactions with other autologous or foreign cells, and that tissue-stem-cell-derived
+    organoids are composed mainly of epithelial cell types, generally lacking blood vessels and immune
+    cells and not fully replicating in vivo tissue complexity.'
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: Extruded cells and cellular debris accumulate in the lumen over time, causing a decline
+    in culture viability even with appropriate growth factors, so cultures must be passaged periodically;
+    overgrown organoids with dark lumens give poor post-thaw viability.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+  - https://www.stemcell.com/how-to-cryopreserve-intestinal-organoids.html
+- description: 'Organoids grown in expansion medium are primarily cystic and biased to an immature, proliferative
+    phenotype: IntestiCult OGM cultures are enriched for Ki-67+ cells with few goblet cells (MUC2), enterocytes
+    (KRT20) or enteroendocrine cells (CHGA); IntestiCult-SF organoids likewise display a primarily "immature"
+    phenotype (OLFM4, Ki67) with only some mature features. First-generation differentiation medium conversely
+    eliminates the stem cell population, limiting proliferation and restricting some assay types.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - https://www.stemcell.com/products/intesticult-sf-organoid-growth-medium-human.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: 'Donor-to-donor variability is substantial and passaging capacity is donor-dependent: cultures
+    have been maintained past passage 25 in house but organoids may undergo subtle phenotype shifts over
+    time and prolonged passaging "should be treated with caution"; principal component analysis of three
+    donors showed differences between cultures were primarily due to donor variability rather than medium.
+    Organoid growth also differs by intestinal region (for example the colon has no Paneth cells), but
+    donor variation is large enough that no region can be generalized as higher yielding.'
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+  - https://www.stemcell.com/products/intesticult-sf-organoid-growth-medium-human.html
+- description: Organoid size and density materially affect drug-testing results, because larger organoids
+    contain more differentiated cells and smaller ones are more proliferative; both must be standardized
+    for consistent results. Heterogeneity within a well and between donors presents challenges for experimental
+    reproducibility and data analysis.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: In 3D format compounds are applied to the basolateral side; where a drug's mechanism makes
+    the apical side the relevant route of exposure, a monolayer format is more appropriate.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: 'Tissue access constrains the model: biopsies must be fresh (taken within 24 hours) because
+    frozen samples have low viability and are not recommended; ~5 mg of tissue (typically 3-5 mm biopsies)
+    is suggested. Interviewees add that culture is still expensive, that access to human tissue and ethical
+    issues can be limiting, and that no agreed control or "gold standard" for organoid culture yet exists.'
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+  - https://www.stemcell.com/organoid-profiles-tamara-zietek.html
+- description: 'Licence restriction on the medium rather than the biology: the product is sold for research
+    use only, and purchase does not include the right to use it for drug screening aiming for commercial
+    gain, equipment validation, biobanking, or other commercial purposes without a further licence from
+    Hubrecht Organoid Technology (HUB).'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+- description: Medium composition is not physiological in every respect; STEMCELL states that because
+    in vitro systems cannot continuously replenish factors, slightly elevated insulin and glucose concentrations
+    are used, balancing physiological realism against in vitro viability.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  - https://www.stemcell.com/products/intesticult-sf-organoid-growth-medium-human.html
+  - https://www.stemcell.com/products/brands/intesticult-intestinal-organoid-media.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+  - https://www.stemcell.com/intestinal-organoid-culture-lp.html
+  products:
+  - name: IntestiCult Organoid Growth Medium (Human)
+    catalog_number: '06010'
+    url: https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  - name: IntestiCult-SF Organoid Growth Medium (Human)
+    catalog_number: 100-0340
+    url: https://www.stemcell.com/products/intesticult-sf-organoid-growth-medium-human.html
+  - name: Organoid Culture Plates (24-well / 96-well)
+    catalog_number: 200-0561 / 200-0562
+    url: https://www.stemcell.com/products/organoid-culture-plates.html
+  - name: Gentle Cell Dissociation Reagent
+    catalog_number: '07174'
+    url: https://www.stemcell.com/products/gentle-cell-dissociation-reagent.html
+  - name: CryoStor CS10
+    catalog_number: 07930
+    url: https://www.stemcell.com/products/cryostor-cs10.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

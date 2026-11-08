@@ -1,0 +1,333 @@
+model:
+  id: liver-organoid-adult-tissue
+  type: Organoid
+  name: Liver organoids from adult liver tissue
+  description: Three-dimensional cultures of a spherical monolayer epithelium grown from stem and progenitor
+    cells isolated from adult liver ductal tissue. In growth medium they are proliferating hepatic progenitor/ductal
+    organoids that express KI67, EPCAM, HNF4A and SOX9 and can be expanded with "potential for indefinite
+    culture" (STEMCELL maintains human cultures to passage 14 - 15). After differentiation, human organoids
+    downregulate LGR5, KRT19, KRT7 and SOX9, upregulate ALB, CYP3A4, ASGR1, SERPINA1, UGT1A1, GSTA1, SLC2A2,
+    G6PC, CYP27A1, BAAT and OTC, and secrete albumin, produce bile acids and urea, and show CYP3A4 activity.
+    Mouse organoids show polygonal morphology, binucleation, MRP4 localized to the organoid exterior (basolateral
+    surface distal from the lumen), and express PROM1, AXIN2, SOX9, CD44, KRT19, HNF1B, HNF4A and AFP.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002107
+    name: liver
+  cell_types:
+  - id: CL:0002195
+    name: hepatic stem cell
+  - id: CL:0000068
+    name: duct epithelial cell
+  - id: CL:1000488
+    name: cholangiocyte
+  - id: CL:0000182
+    name: hepatocyte
+  cell_source: adult tissue
+  differentiation_method: Fresh or cryopreserved liver tissue is enzymatically digested and the ductal
+    material (or single cells derived from it) is seeded in extracellular matrix; outgrowth is driven
+    by HepatiCult Organoid Initiation Medium (human) or HepatiCult Organoid Growth Medium, which expand
+    EPCAM+ bile duct-derived bipotent progenitors as a proliferating, ductal/progenitor-phenotype epithelium
+    (LGR5, AXIN2, SOX9, KRT19, KRT7, HNF4A). After 2 - 3 passages in Growth Medium, human cultures can
+    be switched to HepatiCult Organoid Differentiation Medium, which withdraws proliferative signals and
+    matures the organoids toward hepatocyte-like cells over ~10 - 15 days. For mouse, STEMCELL supplies
+    only a growth medium; the pages state mouse hepatic progenitor organoids are "primed for downstream
+    differentiation" using published differentiation media rather than a STEMCELL product.
+  culture_system: Corning Matrigel domes (typically 30 - 40 uL, 24-well plates) for routine culture; dilute
+    Matrigel suspension in ultra-low-adherence 6-well plates on an orbital shaker (80 rpm) or in 100 mL
+    spinner flasks (33 rpm) for scale-up; 6 uL domes or Matrigel layers in 96-well plates (or 96-/24-well
+    Organoid Culture Plates) for screening. Human organoids are passaged as 30 - 100 um fragments every
+    7 - 10 days in domes, 4 - 7 days in dilute Matrigel suspension, and every 10 - 12 days when passaged
+    as single cells (5,000 - 15,000 live cells per dome, with Y-27632). Mouse hepatic progenitor organoids
+    are ready for passage in 4 - 7 days (domes) or 3 - 6 days (dilute suspension) and appear within 4
+    - 5 days of initiation. Organoids can be cryopreserved as fragments at any stage.
+  references:
+  - id: doi:10.1038/nature11826
+    title: In vitro expansion of single Lgr5+ liver stem cells induced by Wnt-driven regeneration
+    authors:
+    - Meritxell Huch
+    - Craig Dorrell
+    - Sylvia F. Boj
+    - Johan H. van Es
+    - Vivian S. W. Li
+    - Marc van de Wetering
+    - Toshiro Sato
+    - Karien Hamer
+    - Nobuo Sasaki
+    - Milton J. Finegold
+    - Annelise Haft
+    - Robert G. Vries
+    - Markus Grompe
+    - Hans Clevers
+    journal: Nature
+    year: 2013
+  - id: doi:10.1016/j.cell.2014.11.050
+    title: Long-Term Culture of Genome-Stable Bipotent Stem Cells from Adult Human Liver
+    authors:
+    - Meritxell Huch
+    - Helmuth Gehart
+    - Ruben van Boxtel
+    - Karien Hamer
+    - Francis Blokzijl
+    - Monique M.A. Verstegen
+    - Ewa Ellis
+    - Martien van Wenum
+    - Sabine A. Fuchs
+    - Joep de Ligt
+    - Marc van de Wetering
+    - Nobuo Sasaki
+    - Susanne J. Boers
+    - Hans Kemperman
+    - Jeroen de Jonge
+    - Jan N.M. Ijzermans
+    - Edward E.S. Nieuwenhuis
+    - Ruurdtje Hoekstra
+    - Stephen Strom
+    - Robert R.G. Vries
+    - Luc J.W. van der Laan
+    - Edwin Cuppen
+    - Hans Clevers
+    journal: Cell
+    year: 2015
+  - id: doi:10.1038/nprot.2016.097
+    title: Culture and establishment of self-renewing human and mouse adult liver and pancreas 3D organoids
+      and their genetic manipulation
+    authors:
+    - Laura Broutier
+    - Amanda Andersson-Rolf
+    - Christopher J Hindley
+    - Sylvia F Boj
+    - Hans Clevers
+    - Bon-Kyoung Koo
+    - Meritxell Huch
+    journal: Nature Protocols
+    year: 2016
+  - id: doi:10.1038/srep22154
+    title: Generation and characterization of rat liver stem cell lines and their engraftment in a rat
+      model of liver failure
+    authors:
+    - Ewart W. Kuijk
+    - Shauna Rasmussen
+    - Francis Blokzijl
+    - Meritxell Huch
+    - Helmuth Gehart
+    - Pim Toonen
+    - Harry Begthel
+    - Hans Clevers
+    - Aron M. Geurts
+    - Edwin Cuppen
+    journal: Scientific Reports
+    year: 2016
+  - id: doi:10.1016/j.scr.2014.07.006
+    title: The organoid-initiating cells in mouse pancreas and liver are phenotypically and functionally
+      similar
+    authors:
+    - Craig Dorrell
+    - Branden Tarlow
+    - Yuhan Wang
+    - Pamela S. Canaday
+    - Annelise Haft
+    - Jonathan Schug
+    - Philip R. Streeter
+    - Milton J. Finegold
+    - Lincoln T. Shenje
+    - Klaus H. Kaestner
+    - Markus Grompe
+    journal: Stem Cell Research
+    year: 2014
+synonyms:
+- mini-livers
+- hepatic progenitor organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+- id: NCBITaxon:9823
+  name: Sus scrofa
+applications:
+- description: Hepatotoxicity and cytotoxicity screening of compounds in 96-well format, with CellTiter-Glo
+    3D viability readouts and IC50 determination; STEMCELL reports differentiated human organoids were
+    more sensitive to ketoconazole-, troglitazone- and rifampicin-induced hepatotoxicity than undifferentiated
+    organoids, HepG2 cells or primary human hepatocytes. The same workflow supports chronic toxicity testing
+    with differentiation for up to 5 weeks and dosing for up to 4 weeks.
+  source_urls:
+  - https://www.stemcell.com/performing-toxicity-screening-hepaticult-organoids.html
+  - https://www.stemcell.com/human-liver-organoid-faqs.html
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  supporting_references:
+  - doi:10.1007/s00204-020-02763-w
+- description: Measurement of CYP3A4 activity as a functional readout of drug metabolism, by P450-Glo
+    (Luciferin-IPA) luminescence or by LC-MS quantification of 1'-hydroxy midazolam formed from midazolam
+    over 24 h; CYP2C9 (tolbutamide to OH-tolbutamide) and CYP2D6 (dextromethorphan to dextrorphan) activity
+    are also detectable. Activity increases with time in differentiation medium and is induced by calcitriol
+    and inhibited by ketoconazole in a dose-dependent manner.
+  source_urls:
+  - https://www.stemcell.com/how-to-detect-cyp-activity-in-human-hepatic-organoids.html
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+- description: 'Quantification of secreted and intracellular albumin (ELISA or MSD R-PLEX) as a functional
+    marker of hepatic maturation, and as a toxicity endpoint: troglitazone, ketoconazole, rifampicin and
+    acetaminophen at high concentrations reduced accumulated secreted albumin alongside reduced viability.'
+  source_urls:
+  - https://www.stemcell.com/how-to-detect-albumin-production-in-human-hepatic-organoids.html
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+- description: CRISPR-Cas9 gene editing of liver organoids by electroporation of Cas9 ribonucleoprotein
+    into single cells dissociated from organoids, replated in Matrigel domes with growth medium plus CloneR2;
+    editing efficiency read 7 - 10 days later by T7 endonuclease I assay or flow cytometry (demonstrated
+    for B2M knockout across four healthy donor lines).
+  source_urls:
+  - https://www.stemcell.com/crispr-cas9-genome-editing-of-liver-organoids-using-arcitect-and-hepaticult.html
+- description: Disease modelling of inherited liver disease from patient biopsies; the overview page cites
+    confirmation of alpha-1-antitrypsin deficiency and Alagille syndrome pathogenesis in human liver organoids,
+    and of copper storage disease in canine hepatic organoids.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+  supporting_references:
+  - doi:10.1016/j.cell.2014.11.050
+  - doi:10.1016/j.stemcr.2015.09.002
+- description: Study of liver regeneration, hepatic stem/progenitor cell biology and cellular plasticity
+    after injury, including long-term expansion of liver cells that retain physiological features and
+    establish cellular polarity and ECM remodelling.
+  source_urls:
+  - https://www.stemcell.com/organoid-profiles-luigi-aloia.html
+  - https://www.stemcell.com/nature-research-round-table-liver-organoids-for-the-study-of-liver-regeneration-and-disease.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+  supporting_references:
+  - doi:10.1038/nature11826
+- description: 'Liver cancer research, including cholangiocarcinoma: product pages cite patient-derived
+    organoid work on HSF1 as a target in intrahepatic cholangiocarcinoma and primary liver cancer organoid
+    cultures for disease modelling and drug screening.'
+  source_urls:
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  - https://www.stemcell.com/products/brands/hepaticult-organoid-culture-media.html
+  supporting_references:
+  - doi:10.1038/nm.4438
+  - doi:10.1186/s13046-024-03177-7
+- description: 'Reduction of animal use: mouse organoid culture is presented as enabling in vitro characterization
+    of the hepatic epithelium that "reduces the need for animal use", and cryopreserved mouse hepatic
+    organoids remove the need for access to fresh mouse tissue and for duct isolation.'
+  source_urls:
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/mouse-hepatic-organoids.html
+limitations:
+- description: Contains only the hepatic epithelium. STEMCELL states it has not looked for non-parenchymal
+    cells (sinusoidal, stellate, Kupffer cells) in human hepatic organoids, and the overview notes the
+    liver in vivo also contains Kupffer, stromal, stellate and endothelial cells arranged into vasculature
+    and biliary tree.
+  source_urls:
+  - https://www.stemcell.com/human-liver-organoid-faqs.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+- description: Only the epithelial compartment of liver disease can be modelled; Dr. Meritxell Huch states
+    the pathogenesis of liver and pancreatic disease cannot yet be modelled in full and that mouse models
+    are still needed to mimic the fibrosis and inflammation that occur in these diseases.
+  source_urls:
+  - https://www.stemcell.com/organoid-profiles-meritxell-huch.html
+- description: Incomplete hepatocyte function after differentiation. The overview states current differentiation
+    protocols yield organoids of which 30-50% fulfil hepatic characteristics, and that these organoids
+    resemble primary hepatocytes but lack the complete functional repertoire of that target cell type
+    - a drawback shared with hPSC-to-hepatocyte differentiation.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+- description: 'In expansion medium the organoids are ductal/progenitor rather than hepatocyte-like: albumin
+    expression is minimal in growth medium, and unlike intestinal organoids liver organoids do not undergo
+    spontaneous differentiation during maintenance, so a separate differentiation step is required.'
+  source_urls:
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+- description: 'Hepatocyte versus cholangiocyte identity after differentiation is not resolved: ductal
+    markers are still expressed in differentiation medium (at lower levels than in growth medium), and
+    STEMCELL states further characterization is needed to comment on hepatocyte vs cholangiocyte fate
+    on a per-organoid or per-cell level.'
+  source_urls:
+  - https://www.stemcell.com/human-liver-organoid-faqs.html
+- description: Donor-to-donor and well-to-well variability. Organoids initiated from different donors
+    show morphological heterogeneity; organoid size in growth medium is variable and depends on fragment
+    size (30 - 100 um fragments and reversible strainers are recommended to standardize it); differentiation
+    parameters, seeding density and albumin/CYP3A4 output must be optimized per donor, and albumin levels
+    increase in a donor- and time-dependent manner.
+  source_urls:
+  - https://www.stemcell.com/human-liver-organoid-faqs.html
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  - https://www.stemcell.com/how-to-detect-albumin-production-in-human-hepatic-organoids.html
+- description: 'Organoid yield from tissue is not predictable: yield is not correlated with tissue sample
+    size, "more tissue does not necessarily mean more wells", it depends on digestion efficiency, and
+    not every cell or fragment develops into an organoid, so high seeding densities are needed. STEMCELL''s
+    own experience is based on 16 human biopsy samples.'
+  source_urls:
+  - https://www.stemcell.com/human-liver-organoid-faqs.html
+- description: Dependence on Corning Matrigel as the matrix for domes, suspension and monolayer coating.
+    Interviewees name the design of chemically defined matrices as an outstanding need, and a STEMCELL-hosted
+    talk covers engineering organoids using ECM from decellularized tissue.
+  source_urls:
+  - https://www.stemcell.com/organoid-profiles-luigi-aloia.html
+  - https://www.stemcell.com/lscn-2022-engineering-organoids-using-ecm-from-decellularized-tissue.html
+  - https://www.stemcell.com/liver-organoid-suspension-culture.html
+- description: 'The lumen is enclosed and the culture degenerates if the passage window is missed: organoids
+    must be passaged "before the lumen turns dark and collapses". Dome handling is also position-dependent
+    - only the 8 central wells of a 24-well plate are recommended, as edge wells are slanted and domes
+    flatten.'
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-single-cell-culture.html
+  - https://www.stemcell.com/recovering-cryopreserved-liver-organoids.html
+  - https://www.stemcell.com/mouse-hepatic-progenitor-organoid-culture-supplementary-protocols.html
+- description: Proliferative organoids harvested from Matrigel for CYP assays tend to fragment, and the
+    resulting fragments show CYP activity only in a donor-specific manner.
+  source_urls:
+  - https://www.stemcell.com/how-to-detect-cyp-activity-in-human-hepatic-organoids.html
+- description: 'Licence restriction: the HepatiCult media and cryopreserved Mouse Hepatic Organoids are
+    sold for research use only under a licence to intellectual property owned by Hubrecht Organoid Technology
+    (HUB). Purchase does not include the right to use them for drug screening aiming for commercial gain,
+    equipment validation, biobanking or other commercial purposes; a further licence from HUB is required.'
+  source_urls:
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/mouse-hepatic-organoids.html
+- description: 'Mouse organoids are hepatic progenitors with only low expression of mature cell-type genes:
+    RNA-seq of organoids in HepatiCult (Mouse) shows markers of hepatic stem and progenitor cells and
+    "low levels of genes associated with mature hepatic cell types, including cholangiocytes and hepatocytes";
+    maturation requires a published differentiation medium that is not a STEMCELL product.'
+  source_urls:
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-mouse.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  - https://www.stemcell.com/products/hepaticult-organoid-initiation-medium-human.html
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-human.html
+  - https://www.stemcell.com/products/hepaticult-organoid-differentiation-medium-human.html
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/mouse-hepatic-organoids.html
+  - https://www.stemcell.com/products/brands/hepaticult-organoid-culture-media.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+  - https://www.stemcell.com/human-liver-organoid-faqs.html
+  - https://www.stemcell.com/liver-organoid-suspension-culture.html
+  - https://www.stemcell.com/liver-organoid-single-cell-culture.html
+  - https://www.stemcell.com/cryopreserving-liver-organoids.html
+  - https://www.stemcell.com/recovering-cryopreserved-liver-organoids.html
+  - https://www.stemcell.com/cryopreserving-hepatic-tissue-for-organoid-culture.html
+  - https://www.stemcell.com/mouse-hepatic-progenitor-organoid-culture-supplementary-protocols.html
+  products:
+  - name: HepatiCult Organoid Kit (Human)
+    catalog_number: 100-0386
+    url: https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+  - name: HepatiCult Organoid Initiation Medium (Human)
+    catalog_number: 100-0384
+    url: https://www.stemcell.com/products/hepaticult-organoid-initiation-medium-human.html
+  - name: HepatiCult Organoid Growth Medium (Human)
+    catalog_number: 100-0385
+    url: https://www.stemcell.com/products/hepaticult-organoid-growth-medium-human.html
+  - name: HepatiCult Organoid Differentiation Medium (Human)
+    catalog_number: 100-0383
+    url: https://www.stemcell.com/products/hepaticult-organoid-differentiation-medium-human.html
+  - name: HepatiCult Organoid Growth Medium (Mouse)
+    catalog_number: '06030'
+    url: https://www.stemcell.com/products/hepaticult-organoid-growth-medium-mouse.html
+  - name: Mouse Hepatic Organoids (cryopreserved mouse hepatic progenitor organoids)
+    catalog_number: '70932'
+    url: https://www.stemcell.com/products/mouse-hepatic-organoids.html
+  - name: Organoid Culture Plates
+    catalog_number: 200-0561
+    url: https://www.stemcell.com/products/organoid-culture-plates.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

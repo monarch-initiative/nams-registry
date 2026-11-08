@@ -1,0 +1,79 @@
+model:
+  id: intestinal-organoid-differentiated-3d-adult-tissue-human
+  type: Organoid
+  name: Differentiated human intestinal organoids (3D)
+  description: 'A differentiated 3D state of the adult-tissue human intestinal organoid. In differentiation
+    medium organoids develop a thickened epithelium with pronounced budded morphology and contain physiologically
+    relevant proportions of differentiated and stem cell populations, recapitulating the diversity of
+    the crypt-villus axis: a small number of Ki-67+ proliferative cells with more physiological proportions
+    of goblet cells (MUC2), enterocytes (KRT20) and chromogranin A-positive enteroendocrine cells, compared
+    with the proliferation-enriched expansion state.'
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000160
+    name: intestine
+  cell_types:
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0000164
+    name: enteroendocrine cell
+  - id: CL:0002250
+    name: intestinal crypt stem cell
+  cell_source: adult tissue
+  differentiation_method: 'Human intestinal organoids derived from crypts and expanded in IntestiCult
+    Organoid Growth Medium (Human, Cat #06010) or IntestiCult-SF are switched into IntestiCult Organoid
+    Differentiation Medium (Human, Cat #100-0214) for further differentiation in three dimensions. Organoid
+    lines are recommended for use up to passage 15.'
+  culture_system: Continued 3D Matrigel dome culture in differentiation medium; figures compare organoids
+    imaged on day 5 of expansion versus day 5 of differentiation.
+synonyms:
+- differentiated intestinal organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Studying development and function of the intestinal epithelium, modeling intestinal diseases,
+    compound screening and regenerative therapy approaches with a more physiological balance of mature
+    and stem cell populations.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+- description: 'CFTR functional studies: differentiated organoids swell on forskolin treatment to a degree
+    comparable with organoids grown in expansion medium, making them suitable for forskolin-induced swelling
+    assays.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+limitations:
+- description: Differentiation in first-generation differentiation medium tends to eliminate the stem
+    cell population, which limits proliferation and restricts some assay types; cultures are described
+    as intended for endpoint assays.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: 'Requires separate upstream expansion: IntestiCult Organoid Growth Medium (Human) is needed
+    for initiation and expansion before differentiation, so the workflow has distinct expansion and differentiation
+    phases.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+- description: Still a closed-lumen 3D structure; the differentiation medium's stated purpose includes
+    allowing easy apical access only by transitioning organoids into monolayer or ALI cultures.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+- description: Research-use-only HUB licence restriction applies, excluding commercial drug screening,
+    equipment validation and biobanking without a further licence.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - https://www.stemcell.com/products/intesticult-sf-organoid-growth-medium-human.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  products:
+  - name: IntestiCult Organoid Differentiation Medium (Human)
+    catalog_number: 100-0214
+    url: https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

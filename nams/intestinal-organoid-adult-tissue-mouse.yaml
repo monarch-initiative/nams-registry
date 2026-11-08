@@ -1,0 +1,180 @@
+model:
+  id: intestinal-organoid-adult-tissue-mouse
+  type: Organoid
+  name: Mouse intestinal organoids from adult crypts
+  description: Three-dimensional cultures of adult mouse intestinal epithelium with a polarized epithelium
+    containing all of the known cell types of the adult intestinal epithelium, a central lumen, budding
+    crypt-like domains, a self-propagating stem cell niche, and functional transport into and out of the
+    lumen. Used for both small and large intestinal epithelium and associated stem cell dynamics, and
+    available as a cryopreserved product for standardized experimental starting material.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000160
+    name: intestine
+  cell_types:
+  - id: CL:0002250
+    name: intestinal crypt stem cell
+  - id: CL:0000510
+    name: paneth cell
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0000164
+    name: enteroendocrine cell
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0009010
+    name: transit amplifying cell
+  cell_source: adult tissue
+  differentiation_method: 'Mouse small intestine or colon is harvested, the mesentery removed, and crypts
+    released and fractionated; crypt-enriched fractions are identified microscopically, counted, and resuspended
+    in undiluted Matrigel with IntestiCult Organoid Growth Medium (Mouse, Cat #06005), a defined serum-free
+    medium. Organoids form in less than one week. Cryopreserved Mouse Intestinal Organoids (Cat #70931;
+    200 organoids per vial from C57BL/6 small intestine, frozen in CryoStor CS10) allow cultures to be
+    established without isolating crypts from primary tissue.'
+  culture_system: Matrigel domes (150 uL Matrigel plus 150 uL medium per passage aliquot) in multiwell
+    plates on pre-warmed plates with ice-cold Matrigel; crypts plated at three densities; passaged at
+    a 1:6 split after 7-10 days, not above 200 organoids per well.
+  references:
+  - id: doi:10.1038/nature07935
+    title: Single Lgr5 stem cells build crypt-villus structures in vitro without a mesenchymal niche
+    authors:
+    - Toshiro Sato
+    - Robert G. Vries
+    - Hugo J. Snippert
+    - Marc van de Wetering
+    - Nick Barker
+    - Daniel E. Stange
+    - Johan H. van Es
+    - Arie Abo
+    - Pekka Kujala
+    - Peter J. Peters
+    - Hans Clevers
+    journal: Nature
+    year: 2009
+  - id: doi:10.1038/cddis.2014.183
+    title: Ex vivo culture of intestinal crypt organoids as a model system for assessing cell death induction
+      in intestinal epithelial cells and enteropathy
+    authors:
+    - T Grabinger
+    - L Luks
+    - F Kostadinova
+    - C Zimberlin
+    - J P Medema
+    - M Leist
+    - T Brunner
+    journal: Cell Death & Disease
+    year: 2014
+  - id: doi:10.1038/nm.2695
+    title: Functional engraftment of colon epithelium expanded in vitro from a single adult Lgr5+ stem
+      cell
+    authors:
+    - Shiro Yui
+    - Tetsuya Nakamura
+    - Toshiro Sato
+    - Yasuhiro Nemoto
+    - Tomohiro Mizutani
+    - Xiu Zheng
+    - Shizuko Ichinose
+    - Takashi Nagaishi
+    - Ryuichi Okamoto
+    - Kiichiro Tsuchiya
+    - Hans Clevers
+    - Mamoru Watanabe
+    journal: Nature Medicine
+    year: 2012
+synonyms:
+- mouse intestinal epithelial organoids
+species:
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: Studying development and function of normal and tumorigenic intestinal epithelium, modeling
+    intestinal disease, and investigating stem cell properties and regenerative therapy approaches; listed
+    research fields for the cryopreserved organoids include epithelial cell biology, cancer, cystic fibrosis,
+    microbiomics, intestinal immunology, and bacterial or viral pathogenesis.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/mouse-intestinal-organoids.html
+- description: Toxicity testing presented as a way to supplement data without sacrificing additional animals;
+    flavopiridol intestinal epithelial toxicity was assessed by cell viability, total organoid area, and
+    organoid morphology measured as degree of branching. A 96-well viability assay for mouse small intestinal
+    organoids after cytotoxic compound treatment was presented at SOT 2017.
+  source_urls:
+  - https://www.stemcell.com/services/contract-assay-services/organoid-assays/intestinal-services
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-organoids/scientific-posters.html
+- description: 'Genetic studies using organoids from existing knockout mice, presented as faster than
+    making a knockout strain: organoids from knockout mice give an intestinal culture with complete gene
+    knockout and no off-target effects, used to identify transporters involved in gut hormone secretion
+    or substrate transport and to observe knockout effects on intestinal morphology. Mechanistic work
+    on IL-22-driven intestinal regeneration identified intestinal stem cells, not Paneth cells, as the
+    targets.'
+  source_urls:
+  - https://www.stemcell.com/organoid-profiles-tamara-zietek.html
+  - https://www.stemcell.com/organoid-profiles-caroline-lindemans.html
+  supporting_references:
+  - doi:10.1038/nature16460
+- description: 'Cancer mechanism studies: Apc-deficient mouse intestinal organoids show constitutively
+    active WNT signaling and are tumorigenic when injected into nude mice, and have been used to dissect
+    MAPK and WNT interactions in tumor progression.'
+  source_urls:
+  - https://www.stemcell.com/intestinal-organoid-culture-lp.html
+  supporting_references:
+  - doi:10.1038/nature09637
+limitations:
+- description: 'Mouse rather than human: the pages'' framing throughout is that animal-derived models
+    have limited relevance to human physiology, and mouse organoids are offered as a way to supplement
+    data rather than as the human-relevant system.'
+  source_urls:
+  - https://www.stemcell.com/products/brands/intesticult-intestinal-organoid-media.html
+  - https://www.stemcell.com/services/contract-assay-services/organoid-assays/intestinal-services
+- description: High cell turnover makes derived 2D cultures fragile; mouse small intestinal organoids
+    in particular are described as very challenging for monolayer work and colon-derived organoids are
+    recommended instead.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: 'Seeding density is a narrow window: too dense and organoids do not receive enough nutrients
+    from the medium, too sparse and the organoids themselves do not produce enough factors for proper
+    expansion, so crypts should be plated at three different densities. Crypts that touch and stick to
+    the well surface will differentiate, so pre-warmed plates and ice-cold Matrigel are critical.'
+  source_urls:
+  - https://www.stemcell.com/critical-steps-for-culturing-mouse-intestinal-organoids.html
+- description: 'Luminal debris accumulates: cultures must be passaged at a 1:6 split after 7-10 days to
+    avoid overgrowth and excessive accumulation of debris within the organoid lumen. Large multi-layered
+    fragments carried through crypt isolation contain no stem cells and will not form organoids.'
+  source_urls:
+  - https://www.stemcell.com/how-to-establish-mouse-intestinal-organoid-culture.html
+- description: 'Cryopreservation constraints: whole organoids should not be frozen as intact structures
+    because they break down and fragments die during thawing with loss of stem cell components; consecutive
+    freeze-thaw cycles are not recommended, organoids should be passaged at least twice before refreezing,
+    and long-term storage at -80 C is not recommended (stability ~6 months at -135 C).'
+  source_urls:
+  - https://www.stemcell.com/how-to-cryopreserve-intestinal-organoids.html
+  - https://www.stemcell.com/how-to-thaw-intestinal-organoids.html
+- description: Research-use-only HUB licence restriction applies to both the medium and the cryopreserved
+    organoids, excluding commercial drug screening, equipment validation and biobanking without a further
+    licence.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/mouse-intestinal-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/mouse-intestinal-organoids.html
+  - https://www.stemcell.com/how-to-establish-mouse-intestinal-organoid-culture.html
+  - https://www.stemcell.com/how-to-passage-mouse-intestinal-organoids.html
+  - https://www.stemcell.com/critical-steps-for-culturing-mouse-intestinal-organoids.html
+  - https://www.stemcell.com/intestinal-epithelial-organoid-culture-with-intesticult-organoid-growth-medium-mouse-lp.html
+  products:
+  - name: IntestiCult Organoid Growth Medium (Mouse)
+    catalog_number: '06005'
+    url: https://www.stemcell.com/products/intesticult-organoid-growth-medium-mouse.html
+  - name: Mouse Intestinal Organoids (cryopreserved)
+    catalog_number: '70931'
+    url: https://www.stemcell.com/products/mouse-intestinal-organoids.html
+  - name: CryoStor CS10
+    catalog_number: 07930
+    url: https://www.stemcell.com/products/cryostor-cs10.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

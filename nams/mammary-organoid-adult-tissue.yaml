@@ -1,0 +1,133 @@
+model:
+  id: mammary-organoid-adult-tissue
+  type: Organoid
+  name: Mammary organoids (multilineage and luminal) from adult tissue
+  description: Hormone-responsive mammary organoids from mouse or human primary mammary epithelium that
+    keep estrogen receptor (ER) and progesterone receptor (PR) expression, described as the key markers
+    that earlier 3D culture systems failed to keep consistently. Mouse organoids derived after EpiCult
+    Plus expansion express luminal keratin 8 and basal keratin 14.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001911
+    name: mammary gland
+  cell_types:
+  - id: CL:0002326
+    name: luminal epithelial cell of mammary gland
+  - id: CL:0002324
+    name: basal-myoepithelial cell of mammary gland
+  - id: CL:4033058
+    name: luminal hormone-sensing cell of mammary gland
+  cell_source: adult tissue
+  differentiation_method: Primary mammary epithelial cells are differentiated into multilineage or luminal
+    organoids in MammoCult Organoid Kits (serum- and phenol red-free, modular; separate human and mouse
+    kits). Alternatively, mouse mammary epithelial cells can first be expanded in 2D in EpiCult Plus Medium
+    and then differentiated as organoids.
+  culture_system: 3D culture in a reconstituted basement membrane matrix such as Matrigel (general description
+    in the mammary review); no timings given in the corpus.
+  references:
+  - id: doi:10.1016/j.cell.2017.11.010
+    title: A Living Biobank of Breast Cancer Organoids Captures Disease Heterogeneity
+    authors:
+    - Norman Sachs
+    - Joep de Ligt
+    - Oded Kopper
+    - Ewa Gogola
+    - Gergana Bounova
+    - Fleur Weeber
+    - Anjali Vanita Balgobind
+    - Karin Wind
+    - Ana Gracanin
+    - Harry Begthel
+    - Jeroen Korving
+    - Ruben van Boxtel
+    - Alexandra Alves Duarte
+    - Daphne Lelieveld
+    - Arne van Hoeck
+    - Robert Frans Ernst
+    - Francis Blokzijl
+    - Isaac Johannes Nijman
+    - Marlous Hoogstraat
+    - Marieke van de Ven
+    - David Anthony Egan
+    - Vittoria Zinzalla
+    - Jurgen Moll
+    - Sylvia Fernandez Boj
+    - Emile Eugene Voest
+    - Lodewyk Wessels
+    - Paul Joannes van Diest
+    - Sven Rottenberg
+    - Robert Gerhardus Jacob Vries
+    - Edwin Cuppen
+    - Hans Clevers
+    journal: Cell
+    year: 2017
+  - id: doi:10.1242/dev.145045
+    title: Derivation of a robust mouse mammary organoid system for studying tissue dynamics
+    authors:
+    - Paul R. Jamieson
+    - Johanna F. Dekkers
+    - Anne C. Rios
+    - Nai Yang Fu
+    - Geoffrey J. Lindeman
+    - Jane E. Visvader
+    journal: Development
+    year: 2017
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: 'Hormone-responsive mammary biology using organoids that keep ER and PR expression (markers
+    listed: ER and PR for hormone-responsive luminal cells, MUC1 for luminal cells, smooth muscle actin
+    for basal cells).'
+  source_urls:
+  - https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  - https://www.stemcell.com/performing-icc-staining-epithelial-organoids.html
+- description: Modeling human mammary epithelial lineages in patient-derived organoid cultures (AACR 2025
+    poster title) and expanding mouse mammary epithelial stem cells in serum-free organoid growth (AACR
+    2022 poster title).
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/mammary-research/scientific-posters.html
+- description: Growing mammary epithelial cells in a more physiologically relevant format than the mammosphere
+    assay, whose spheres often do not recapitulate the morphology of the parental tissue.
+  source_urls:
+  - https://www.stemcell.com/mammary-stem-cells-and-breast-cancer.html
+  supporting_references:
+  - doi:10.1016/j.cell.2017.11.010
+  - doi:10.1242/dev.145045
+limitations:
+- description: 'Open challenges stated in the mammary review: standardizing protocols to improve reproducibility
+    between labs, propagating the stem cells long-term with a normal karyotype, and keeping tumours so
+    that they recapitulate their in vivo counterparts.'
+  source_urls:
+  - https://www.stemcell.com/mammary-stem-cells-and-breast-cancer.html
+- description: Historically, 3D mammary cultures did not consistently produce organoids expressing ER
+    and PR; ER+ cells and ER+ tumour cells do not grow in commonly used mammary media. MammoCult Organoid
+    Kits are presented as the fix, but no comparative data are in the corpus.
+  source_urls:
+  - https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  - https://www.stemcell.com/mammary-stem-cells-and-breast-cancer.html
+- description: Culture variability, which the defined serum-free formulation is said to reduce (implied
+    limitation of serum-containing alternatives).
+  source_urls:
+  - https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  - https://www.stemcell.com/mammary-stem-cells-and-breast-cancer.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/mammary-research/scientific-posters.html
+  - https://www.stemcell.com/products/epicult-plus-medium.html
+  - https://www.stemcell.com/performing-icc-staining-epithelial-organoids.html
+  products:
+  - name: MammoCult Organoid Kit (Human)
+    url: https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  - name: MammoCult Organoid Kit (Mouse)
+    url: https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  - name: EpiCult Plus Medium (upstream expansion only; mouse mammary organoids shown)
+    catalog_number: '06070'
+    url: https://www.stemcell.com/products/epicult-plus-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

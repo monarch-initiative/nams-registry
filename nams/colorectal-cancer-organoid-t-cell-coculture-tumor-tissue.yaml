@@ -1,0 +1,132 @@
+model:
+  id: colorectal-cancer-organoid-t-cell-coculture-tumor-tissue
+  type: CoCulture
+  name: Colorectal cancer organoid and T cell co-culture
+  description: A co-culture model for immuno-oncology in which colorectal cancer patient-derived organoids
+    and autologous or allogeneic T cells are maintained in a single blended medium. STEMCELL reports that
+    the 50:50 blend of IntestiCult Organoid Growth Medium (Human) and ImmunoCult-XF T Cell Expansion Medium
+    supported organoid viability without adverse impact on T cell viability and functionality, with the
+    blend producing the highest Caspase-3/7 signal in co-culture (indicating T cell-mediated apoptosis
+    of organoids) and high IFN-gamma secretion relative to 100% IntestiCult.
+  models:
+  - biological_system_modeled: UBERON:0012652
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  - id: CL:0000084
+    name: T cell
+  - id: CL:0000542
+    name: lymphocyte
+  cell_source: tumor tissue
+  culture_conditions: Colorectal cancer patient-derived organoids are established and expanded as Wnt-independent
+    tumoroids (IntestiCult OGM Human Basal Medium) and grown 1-2 days after passage; T cells are isolated
+    from PBMCs or whole blood with EasySep/RosetteSep kits (or paired tumor-infiltrating lymphocytes are
+    used) and grown 1-2 days in ImmunoCult-XF T Cell Expansion Medium. The two are combined in a 50:50
+    blend of IntestiCult (complete or basal medium depending on whether organoids are cancer-derived)
+    and ImmunoCult-XF, with 50 uL cold Matrigel per 950 uL of co-culture medium. 96-well plates, 100 uL
+    per well containing 1700 organoids and 50,000 T cells in the 50:50 medium blend with 5% Matrigel;
+    timepoints typically day 0, 3 and 5.
+  references:
+  - id: doi:10.1016/j.cell.2018.07.009
+    title: Generation of Tumor-Reactive T Cells by Co-culture of Peripheral Blood Lymphocytes and Tumor
+      Organoids
+    authors:
+    - Krijn K. Dijkstra
+    - Chiara M. Cattaneo
+    - Fleur Weeber
+    - Myriam Chalabi
+    - Joris van de Haar
+    - Lorenzo F. Fanchi
+    - Maarten Slagter
+    - Daphne L. van der Velden
+    - Sovann Kaing
+    - Sander Kelderman
+    - Nienke van Rooij
+    - Monique E. van Leerdam
+    - Annekatrien Depla
+    - Egbert F. Smit
+    - Koen J. Hartemink
+    - Rosa de Groot
+    - Monika C. Wolkers
+    - Norman Sachs
+    - Petur Snaebjornsson
+    - Kim Monkhorst
+    - John Haanen
+    - Hans Clevers
+    - Ton N. Schumacher
+    - Emile E. Voest
+    journal: Cell
+    year: 2018
+  - id: doi:10.1038/s41575-019-0255-2
+    title: Organoid models of gastrointestinal cancers in basic and translational research
+    authors:
+    - Harry Cheuk Hay Lau
+    - Onno Kranenburg
+    - Haipeng Xiao
+    - Jun Yu
+    journal: Nature Reviews Gastroenterology & Hepatology
+    year: 2020
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Measuring T cell-mediated killing of tumor organoids: organoid viability over time by
+    CellTiter-Glo 3D, T cell viability by GloCell Fixable Viability Dye Red 780 and flow cytometry, apoptosis
+    by Caspase-3/7 activity flow cytometry (with staurosporine as a positive control), and T cell activity
+    by IFN-gamma ELISA at co-culture endpoint.'
+  source_urls:
+  - https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+- description: Evaluating novel immuno-oncology therapeutics, patient-specific therapeutic evaluation
+    and disease mechanisms; in the reported model TIL reactivity to CRC patient-derived organoids relies
+    on endogenously processed and presented peptide rather than exogenous peptide loading.
+  source_urls:
+  - https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+  supporting_references:
+  - doi:10.1016/j.cell.2018.07.009
+limitations:
+- description: 'The central difficulty the model addresses is itself a limitation: optimal culture conditions
+    exist separately for patient-derived organoids and for T cells, and identifying conditions that preserve
+    viability and function of both cell types in the same medium remains a challenge.'
+  source_urls:
+  - https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+- description: 'Medium composition changes the readout: 100% IntestiCult gave lower IFN-gamma secretion
+    than the 50:50 blend, so results depend on the blend ratio chosen.'
+  source_urls:
+  - https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+- description: 'Antigen specificity is undefined: the TIL reactivity in this model is described as undefined
+    and most likely directed to neoantigens originating from somatic mutations in the tumor DNA.'
+  source_urls:
+  - https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+- description: 'Only two cell compartments: the epithelial-immune co-culture does not address the stromal,
+    microbiological and endothelial compartments, and the corpus notes that interaction between stromal,
+    immunological, microbiological and epithelial compartments "cannot be addressed at this point and
+    remains a major challenge to mimic in in vitro systems".'
+  source_urls:
+  - https://www.stemcell.com/organoid-profiles-maartje-van-der-heijden.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+  products:
+  - name: IntestiCult Organoid Growth Medium (Human)
+    catalog_number: '06010'
+    url: https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  - name: IntestiCult OGM Human Basal Medium
+    catalog_number: 100-0190
+    url: https://www.stemcell.com/products/intesticult-ogm-human-basal-medium.html
+  - name: ImmunoCult-XF T Cell Expansion Medium
+    catalog_number: '10981'
+    url: https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+  - name: Human IFN-gamma ELISA Kit
+    catalog_number: '02003'
+    url: https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+  - name: Caspase-3/7 Activity Flow Cytometry Kit, Green
+    catalog_number: 100-0923
+    url: https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+  - name: GloCell Fixable Viability Dye Red 780
+    catalog_number: '75007'
+    url: https://www.stemcell.com/co-culture-colorectal-organoids-and-t-cells.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

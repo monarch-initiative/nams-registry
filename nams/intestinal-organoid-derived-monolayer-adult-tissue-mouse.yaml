@@ -1,0 +1,77 @@
+model:
+  id: intestinal-organoid-derived-monolayer-adult-tissue-mouse
+  type: TwoDCellCulture
+  name: Mouse intestinal organoid-derived monolayers
+  description: Two-dimensional polarized monolayers derived from mouse intestinal organoids, giving access
+    to the apical surface. Immunofluorescence of mouse colon-derived monolayers shows apical villin, E-cadherin
+    at adherens junctions, and basolaterally positioned nuclei, matching the human monolayer staining
+    pattern.
+  models:
+  - biological_system_modeled: UBERON:0000160
+  cell_types:
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0002250
+    name: intestinal crypt stem cell
+  cell_source: adult tissue
+  culture_conditions: Mouse intestinal organoids maintained in IntestiCult Organoid Growth Medium (Mouse)
+    are transitioned into IntestiCult Organoid Growth Medium (Human) for at least one passage, which keeps
+    them more proliferative and less differentiated so they establish a monolayer more efficiently, then
+    dissociated and seeded onto dilute Matrigel in IntestiCult Monolayer Growth Medium (Human) = IntestiCult
+    OGM Human plus 10 uM Y-27632. Monolayers differentiate to model the intestinal epithelium within 7
+    days. Organoids should be at least passage 1, not P0 or straight from tissue. Dilute Matrigel-coated
+    (2%, or 5% to improve attachment) Transwell inserts, glass coverslips, or culture plates; 100% confluency
+    generally in 2-3 days; Y-27632 retained for the whole protocol.
+species:
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: Assays requiring apical access, including apical cell surface receptor studies, interaction
+    with commensal or pathogenic microorganisms, and modeling effects of beneficial or harmful compounds
+    in intestinal contents.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: 'Downstream assays on fully confluent monolayers: TEER, FITC-dextran permeability, Ussing
+    chamber analysis, and immunocytochemistry staining; the page states any established cell-culture assay
+    can be applied to intestinal monolayers.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+limitations:
+- description: Mouse monolayers are more fragile than human monolayers because of higher cell turnover
+    and may be difficult to grow for more than a few days; they can be difficult to maintain past a few
+    days even with optimized conditions.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: Mouse small intestinal organoids are very challenging for monolayers due to high cell turnover
+    and may not hold together after a few days; colon-derived organoids are recommended instead.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: 'The workflow requires a species-mismatched medium: mouse organoids and monolayers are
+    grown in the human expansion medium, which contains serum that helps mouse cells adhere; the human
+    differentiation medium is not suitable for mouse cultures and the serum-free IntestiCult Plus is not
+    optimal for this step. STEMCELL also states it has no data that routinely passaging mouse organoids
+    in the human medium improves 2D monolayer formation.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Optimal seeding density varies significantly with organoid passage number and other source
+    variables and must be optimized per sample; higher seeding densities are generally recommended.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  products:
+  - name: IntestiCult Organoid Growth Medium (Human) (used for mouse monolayers)
+    catalog_number: '06010'
+    url: https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  - name: IntestiCult Organoid Growth Medium (Mouse)
+    catalog_number: '06005'
+    url: https://www.stemcell.com/products/intesticult-organoid-growth-medium-mouse.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

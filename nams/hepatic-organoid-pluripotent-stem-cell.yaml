@@ -1,0 +1,210 @@
+model:
+  id: hepatic-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Hepatic organoids from human pluripotent stem cells
+  description: Liver organoids generated from hPSC-derived hepatic cells rather than from donor liver
+    tissue. Proliferating organoids express EPCAM, KI67, CK19, SOX9 and the fetal serum protein AFP; after
+    differentiation they express ALB, A1AT, HNF4A, ASGR1, CYP3A4, CPS1, BSEP, and (per RNA-seq) genes
+    for phase 1 and 2 drug metabolism (CYP2B6, CYP2C9, CYP3A4, UGT1A1, GSTA1), glucose metabolism (SLC2A2,
+    GYS1, G6PC), lipid and cholesterol metabolism (FASN, PLIN2, NR1H3), bile acid synthesis (CYP27A1,
+    BAAT) and urea synthesis (OTC, ARG1), with reduced AFP. Retained KRT19 and E-cadherin expression is
+    described as indicating a hepatobiliary phenotype. ALB, ASGR1 and CYP3A4 expression after differentiation
+    is reported as comparable to primary human hepatocytes. A pre-made cryopreserved version (Human iPSC-Derived
+    Hepatic Organoids, from healthy control iPSC lines such as SCTi003-A) is sold.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002107
+    name: liver
+  cell_types:
+  - id: CL:0000068
+    name: duct epithelial cell
+  cell_source: pluripotent stem cells
+  differentiation_method: hPSCs maintained in mTeSR1, mTeSR Plus or eTeSR are first differentiated in
+    2D to hepatic progenitors (HPs, ~day 10) or hepatocyte-like cells (HLCs, ~day 21) with the STEMdiff
+    Hepatocyte Kit. HLCs (recommended) or HPs are then mechanically dissociated and replated as fragments
+    in Matrigel domes in STEMdiff Hepatic Organoid Growth Medium, giving confluent organoid cultures in
+    7 - 14 days. After at least one passage, cultures are switched to STEMdiff Hepatic Organoid Differentiation
+    Medium for maturation (gene-expression data reported at day 19 of differentiation; immunofluorescence
+    at day 10).
+  culture_system: Matrigel domes for establishment and expansion, passaged as fragments every 6 - 8 days
+    (6 - 10 days post-thaw for the cryopreserved product); organoids can be cryopreserved as fragments
+    with high post-thaw recovery and expanded for at least 9 - 10 passages. Adaptable to 96- and 384-well
+    plate assays, suspension cultures, genome editing and 2D organoid-derived monolayers.
+  references:
+  - id: doi:10.1016/j.celrep.2017.11.005
+    title: Massive and Reproducible Production of Liver Buds Entirely from Human Pluripotent Stem Cells
+    authors:
+    - Takanori Takebe
+    - Keisuke Sekine
+    - Masaki Kimura
+    - Emi Yoshizawa
+    - Satoru Ayano
+    - Masaru Koido
+    - Shizuka Funayama
+    - Noriko Nakanishi
+    - Tomoko Hisai
+    - Tatsuya Kobayashi
+    - Toshiharu Kasai
+    - Rina Kitada
+    - Akira Mori
+    - Hiroaki Ayabe
+    - Yoko Ejiri
+    - Naoki Amimoto
+    - Yosuke Yamazaki
+    - Shimpei Ogawa
+    - Momotaro Ishikawa
+    - Yasujiro Kiyota
+    - Yasuhiko Sato
+    - Kohei Nozawa
+    - Satoshi Okamoto
+    - Yasuharu Ueno
+    - Hideki Taniguchi
+    journal: Cell Reports
+    year: 2017
+  - id: doi:10.1038/nature12271
+    title: Vascularized and functional human liver from an iPSC-derived organ bud transplant
+    authors:
+    - Takanori Takebe
+    - Keisuke Sekine
+    - Masahiro Enomura
+    - Hiroyuki Koike
+    - Masaki Kimura
+    - Takunori Ogaeri
+    - Ran-Ran Zhang
+    - Yasuharu Ueno
+    - Yun-Wen Zheng
+    - Naoto Koike
+    - Shinsuke Aoyama
+    - Yasuhisa Adachi
+    - Hideki Taniguchi
+    journal: Nature
+    year: 2013
+  - id: doi:10.1038/ncomms10243
+    title: Genetically engineering self-organization of human pluripotent stem cells into a liver bud-like
+      tissue using Gata6
+    authors:
+    - Patrick Guye
+    - Mohammad R. Ebrahimkhani
+    - Nathan Kipniss
+    - Jeremy J. Velazquez
+    - Eldi Schoenfeld
+    - Samira Kiani
+    - Linda G. Griffith
+    - Ron Weiss
+    journal: Nature Communications
+    year: 2016
+  - id: doi:10.1053/j.gastro.2020.10.002
+    title: High-Fidelity Drug-Induced Liver Injury Screen Using Human Pluripotent Stem Cell–Derived Organoids
+    authors:
+    - Tadahiro Shinozawa
+    - Masaki Kimura
+    - Yuqi Cai
+    - Norikazu Saiki
+    - Yosuke Yoneyama
+    - Rie Ouchi
+    - Hiroyuki Koike
+    - Mari Maezawa
+    - Ran-Ran Zhang
+    - Andrew Dunn
+    - Autumn Ferguson
+    - Shodai Togo
+    - Kyle Lewis
+    - Wendy L. Thompson
+    - Akihiro Asai
+    - Takanori Takebe
+    journal: Gastroenterology
+    year: 2021
+synonyms:
+- hPSC-derived hepatic organoids
+- hPSC-derived liver organoids
+- HLC-derived organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Assessment of drug-induced liver injury (DILI) and hepatotoxicity, and evaluation of human-specific
+    metabolic profiles, in a 3D system; the hepatotoxicity screening protocol (96-well, CellTiter-Glo
+    3D, IC50) explicitly supports hPSC-derived hepatic organoids as an alternative to tissue-derived ones.
+  source_urls:
+  - https://www.stemcell.com/products/human-ipsc-derived-hepatic-organoids.html
+  - https://www.stemcell.com/performing-toxicity-screening-hepaticult-organoids.html
+- description: CYP3A4 and other CYP activity assays (LC-MS or luminescence) and albumin production assays
+    as functional readouts of hepatic phenotype, supporting ADME/DMPK and compound evaluation.
+  source_urls:
+  - https://www.stemcell.com/how-to-detect-cyp-activity-in-human-hepatic-organoids.html
+  - https://www.stemcell.com/how-to-detect-albumin-production-in-human-hepatic-organoids.html
+- description: Assays modelling drug toxicity, CYP3A4 modulation and cholestasis, presented in an ISSCR
+    2025 webinar on STEMdiff Hepatic Organoid Media.
+  source_urls:
+  - https://www.stemcell.com/isscr-2025-advancing-organoid-models-for-intestinal-and-hepatic-research.html
+- description: Developmental biology and disease modelling of the liver, and genome editing, without needing
+    primary human liver tissue sourcing.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - https://www.stemcell.com/products/human-ipsc-derived-hepatic-organoids.html
+limitations:
+- description: 'Fetal/immature starting phenotype: proliferating organoids express the fetal serum protein
+    marker AFP, which is only reduced (not eliminated) on differentiation, and some organoid regions retain
+    hepatic progenitor/ductal markers AFP and CK19 after differentiation.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+- description: 'Establishment efficiency depends on the starting cell stage: Growth Medium supports significantly
+    more efficient organoid establishment from HLCs than from HPs (p < 0.0001), which is why HLCs are
+    the recommended input.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+- description: The overview page states that hepatic organoids differentiated from hPSCs share the drawback
+    of lacking the complete functional repertoire of primary hepatocytes, and that hiPSC-derived cells
+    are exposed to genetic modification through reprogramming factors and commonly exhibit genomic instability,
+    particularly in long-term cultures - a caveat adult tissue-derived stem cells avoid.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/hepatic-research/overview.html
+  supporting_references:
+  - doi:10.1242/dev.118570
+- description: Epithelial only - no immune, stromal or vascular compartment is described, and the general
+    organoid review states organoids lack blood vessels and immune cells and do not fully replicate in
+    vivo tissue complexity.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: 'Multi-week workflow before assays: 2D hepatocyte differentiation takes 10 (HP) to 21 (HLC)
+    days, organoid establishment a further 7 - 14 days, then at least one passage before differentiation,
+    which itself runs ~10 - 19 days.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - https://www.stemcell.com/products/human-ipsc-derived-hepatic-organoids.html
+- description: Both the media and the cryopreserved organoids are research use only and not intended for
+    human or animal diagnostic or therapeutic uses; the cryopreserved organoids are available only in
+    select territories. Unlike the HepatiCult products, consent has been given for both academic and commercial
+    use of the iPSC-derived organoid product and no HUB licence statement is given.
+  source_urls:
+  - https://www.stemcell.com/products/human-ipsc-derived-hepatic-organoids.html
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - https://www.stemcell.com/products/human-ipsc-derived-hepatic-organoids.html
+  - https://www.stemcell.com/isscr-2025-advancing-organoid-models-for-intestinal-and-hepatic-research.html
+  - https://www.stemcell.com/isscr-in-vitro-tissue-modeling-innovations-hepatic-alveolar-and-intestinal-organoids.html
+  - https://www.stemcell.com/performing-toxicity-screening-hepaticult-organoids.html
+  - https://www.stemcell.com/how-to-detect-cyp-activity-in-human-hepatic-organoids.html
+  - https://www.stemcell.com/how-to-detect-albumin-production-in-human-hepatic-organoids.html
+  products:
+  - name: STEMdiff Hepatic Organoid Media
+    url: https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - name: STEMdiff Hepatic Organoid Growth Medium
+    catalog_number: 100-1773
+    url: https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - name: STEMdiff Hepatic Organoid Differentiation Medium
+    catalog_number: 100-1774
+    url: https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - name: STEMdiff Hepatocyte Kit
+    catalog_number: 100-0520
+    url: https://www.stemcell.com/products/stemdiff-hepatic-organoid-media.html
+  - name: Human iPSC-Derived Hepatic Organoids
+    catalog_number: 200-1110
+    url: https://www.stemcell.com/products/human-ipsc-derived-hepatic-organoids.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

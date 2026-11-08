@@ -1,0 +1,75 @@
+model:
+  id: intestinal-organoid-derived-monolayer-pluripotent-stem-cell
+  type: TwoDCellCulture
+  name: Monolayers from hPSC-derived intestinal organoids
+  description: Two-dimensional monolayers generated from hPSC-derived intestinal organoids to expose the
+    apical surface. Immunofluorescence shows apical villin, E-cadherin at adherens junctions and basolateral
+    nuclei comparable to monolayers from primary human intestinal organoids, and the format works in both
+    standard 24-well plates and 24-well Transwell plates.
+  models:
+  - biological_system_modeled: UBERON:0000160
+  cell_types:
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0002563
+    name: intestinal epithelial cell
+  cell_source: pluripotent stem cells
+  culture_conditions: 'hPSC-derived intestinal organoids maintained and expanded in STEMdiff Intestinal
+    Organoid Growth Medium are dissociated (Gentle Cell Dissociation Reagent then 0.05% Trypsin-EDTA)
+    and seeded onto diluted Matrigel in IntestiCult Monolayer Growth Medium (IntestiCult ODM Human, Cat
+    #100-0214, plus organoid supplement plus Y-27632), forming a confluent monolayer that differentiates
+    to model the intestinal epithelium within 7 days. Y-27632 is required for the duration of the culture.
+    2% (or 5%) Matrigel-coated Costar 6.5 mm or 12 mm Transwell inserts, glass coverslips, or standard
+    tissue-culture plates; starting from 2-3 wells of organoids grown 7-10 days in 50 uL 100% Matrigel
+    domes; full medium changes every 2-3 days; confluent and viable for at least 3 weeks.'
+synonyms:
+- PSC-derived intestinal monolayers
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Assays needing apical access: apical cell surface receptors, interaction with commensal
+    or pathogenic microorganisms, and modeling effects of beneficial or harmful compounds in intestinal
+    contents.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-monolayers-from-hpsc-derived-organoids-using-intesticult.html
+- description: 'Barrier and transport measurement: Transwell membrane inserts enable measurement of active
+    and passive transport across the epithelial layer and electrical barrier function (TEER) assays; glass
+    coverslips enable high-quality imaging.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-monolayers-from-hpsc-derived-organoids-using-intesticult.html
+limitations:
+- description: 'Requires a different medium from the 3D culture: even organoids maintained in STEMdiff
+    Intestinal Organoid Growth Medium need IntestiCult Monolayer Growth Medium to grow as a monolayer,
+    and Y-27632 must be supplemented throughout.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-monolayers-from-hpsc-derived-organoids-using-intesticult.html
+- description: 'Attachment is less direct than for primary organoids: hPSC-derived organoids tend to attach
+    as small organoid-like clumps and then expand outward, so confluence can take longer; some hPSC lines
+    work better than others and seeding density must be optimized per line, sometimes with a higher (5%
+    rather than 2%) Matrigel coating.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-monolayers-from-hpsc-derived-organoids-using-intesticult.html
+- description: IntestiCult Plus is explicitly not recommended for organoid-monolayer establishment or
+    for hPSC-derived organoids; this protocol with IntestiCult ODM is the recommended route.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Inherits the fetal-like maturity of the parent hPSC-derived organoid, since the starting
+    material is the hPSC-derived organoid culture.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-monolayers-from-hpsc-derived-organoids-using-intesticult.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  products:
+  - name: IntestiCult Organoid Differentiation Medium (Human)
+    catalog_number: 100-0214
+    url: https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - name: STEMdiff Intestinal Organoid Kit
+    catalog_number: '05140'
+    url: https://www.stemcell.com/products/stemdiff-intestinal-organoid-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

@@ -1,0 +1,44 @@
+model:
+  id: fallopian-tube-organoid-adult-tissue
+  type: Organoid
+  name: Human fallopian tube organoids
+  description: Multilineage human fallopian tube organoids grown in GyneCult Fallopian Tube Organoid Medium.
+    The ICC protocol lists markers for ciliated cells (FOXJ1, acetylated tubulin), secretory cells (PAX8,
+    OVGP1) and epithelium (EpCAM).
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0003889
+    name: fallopian tube
+  cell_types:
+  - id: CL:4030007
+    name: fallopian tube multiciliated epithelial cell
+  - id: CL:4030006
+    name: fallopian tube secretory epithelial cell
+  - id: CL:0000066
+    name: epithelial cell
+  cell_source: adult tissue
+  differentiation_method: Expansion and differentiation of primary human fallopian tube epithelium in
+    a serum-free medium in which sex steroids can be adjusted (GyneCult Fallopian Tube Organoid Medium).
+    No protocol details are in the corpus.
+  culture_system: Not described in the corpus beyond "serum-free" and "sex steroid-modular".
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Characterizing ciliated and secretory lineages by whole-mount immunocytochemistry (FOXJ1,
+    acetylated tubulin, PAX8, OVGP1, EpCAM).
+  source_urls:
+  - https://www.stemcell.com/performing-icc-staining-epithelial-organoids.html
+limitations: []
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/performing-icc-staining-epithelial-organoids.html
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+  - https://www.stemcell.com/nature-research-round-table-organoids-as-an-enabling-technology-for-precision-cancer-medicine.html
+  products:
+  - name: GyneCult Fallopian Tube Organoid Medium
+    url: https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

@@ -1,0 +1,134 @@
+model:
+  id: colon-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: hPSC-derived human colonic organoids
+  description: Colon (large intestinal) organoids differentiated from hiPSCs, distinct from the small
+    intestinal organoids generated from the same kit. They express colon-specific markers including the
+    colonic transcription factor SATB2, alpha-carbonic anhydrases CA2 and CA4, goblet cell markers MUC2
+    and colon-specific MUC5B, and posterior HOX genes (HOXA10, HOXA13, HOXD13), with downregulation of
+    the anterior fore/midgut HOX markers seen in small intestinal organoids from the same lines. Like
+    hPSC-derived small intestinal organoids they comprise a polarized epithelial monolayer around a hollow
+    lumen with an associated mesenchymal population.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001155
+    name: colon
+  cell_types:
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0011108
+    name: colon epithelial cell
+  - id: CL:0008019
+    name: mesenchymal cell
+  cell_source: pluripotent stem cells
+  differentiation_method: 'Human iPSCs are taken through a four-stage process from definitive endoderm
+    to posterior hindgut endoderm and then to colonic organoids via transient BMP signaling. Mid/hindgut
+    spheroids are generated with the STEMdiff Intestinal Organoid Kit (Cat #05140) and harvested on day
+    7/8, embedded at 70-100 spheroids per ~100% Matrigel dome, and cultured in a human colonic organoid
+    (HCO) growth medium spiked with 100 ng/mL recombinant BMP2 for the first 3 days, then without BMP2.'
+  culture_system: ~100% Matrigel domes in 24-well plates, 0.5 mL HCO growth medium per well, medium changed
+    three times per week, passaged into fresh Matrigel every 10-14 days at ~80-100 organoids per dome;
+    cultures are fully established by the end of the third passage.
+  references:
+  - id: doi:10.1016/j.stem.2017.05.020
+    title: Differentiation of Human Pluripotent Stem Cells into Colonic Organoids via Transient Activation
+      of BMP Signaling
+    authors:
+    - Jorge O. Múnera
+    - Nambirajan Sundaram
+    - Scott A. Rankin
+    - David Hill
+    - Carey Watson
+    - Maxime Mahe
+    - Jefferson E. Vallance
+    - Noah F. Shroyer
+    - Katie L. Sinagoga
+    - Adrian Zarzoso-Lacoste
+    - Jonathan R. Hudson
+    - Jonathan C. Howell
+    - Praneet Chatuvedi
+    - Jason R. Spence
+    - John M. Shannon
+    - Aaron M. Zorn
+    - Michael A. Helmrath
+    - James M. Wells
+    journal: Cell Stem Cell
+    year: 2017
+  - id: doi:10.1038/nm.4355
+    title: Colonic organoids derived from human induced pluripotent stem cells for modeling colorectal
+      cancer and drug testing
+    authors:
+    - Miguel Crespo
+    - Eduardo Vilar
+    - Su-Yi Tsai
+    - Kyle Chang
+    - Sadaf Amin
+    - Tara Srinivasan
+    - Tuo Zhang
+    - Nina H Pipalia
+    - Huanhuan Joyce Chen
+    - Mavee Witherspoon
+    - Miriam Gordillo
+    - Jenny Zhaoying Xiang
+    - Frederick R Maxfield
+    - Steven Lipkin
+    - Todd Evans
+    - Shuibing Chen
+    journal: Nature Medicine
+    year: 2017
+synonyms:
+- human colonic organoids
+- HCOs
+- large intestinal organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Studying large intestine cell biology, modeling diseases such as colorectal cancer, and
+    cytotoxicity screening of novel therapeutics in drug discovery, offered as an alternative to immortalized
+    cell lines and animal models that do not represent tumor biology complexity.
+  source_urls:
+  - https://www.stemcell.com/differentiate-colon-organoids.html
+  supporting_references:
+  - doi:10.1038/nm.4355
+  - doi:10.1038/s41598-020-63151-z
+limitations:
+- description: Growth declines with extended passaging; the protocol notes a decline in culture growth
+    rate after multiple passages, attributed to reduced mesenchymal and stem cell populations.
+  source_urls:
+  - https://www.stemcell.com/differentiate-colon-organoids.html
+- description: ESC/hPSC-derived colon organoid systems are prone to fibroblast overgrowth; IntestiCult
+    Plus can support them but STEMCELL recommends the STEMdiff Intestinal Organoid Kit route instead.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: The HCO growth medium is assembled by the user from individual components rather than supplied
+    as a complete colon-specific differentiation medium; STEMCELL states that for primary patient-derived
+    organoids IntestiCult Plus covers both small intestine and colon, while for hPSC-derived systems only
+    a publicly available adaptation protocol is offered.
+  source_urls:
+  - https://www.stemcell.com/differentiate-colon-organoids.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Shares the fetal-like maturity limitation of hPSC-derived intestinal organoids, since it
+    uses the same upstream mid/hindgut spheroid route.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/differentiate-colon-organoids.html
+  products:
+  - name: STEMdiff Intestinal Organoid Kit
+    catalog_number: '05140'
+    url: https://www.stemcell.com/products/stemdiff-intestinal-organoid-kit.html
+  - name: Human Recombinant BMP2
+    catalog_number: '78004'
+    url: https://www.stemcell.com/products/stemdiff-intestinal-organoid-kit.html
+  - name: Human Recombinant EGF
+    catalog_number: '78006'
+    url: https://www.stemcell.com/products/human-recombinant-egf.html
+  - name: NeuroCult SM1 Neuronal Supplement
+    catalog_number: '05711'
+    url: https://www.stemcell.com/differentiate-colon-organoids.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

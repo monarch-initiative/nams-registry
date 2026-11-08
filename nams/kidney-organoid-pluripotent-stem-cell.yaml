@@ -1,0 +1,180 @@
+model:
+  id: kidney-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Kidney organoids from human pluripotent stem cells
+  description: hPSC-derived organoids that model the developing nephron, forming convoluted tubular structures
+    with nephron-like segmentation and containing podocytes (podocalyxin), proximal tubules (lotus tetragonolobus
+    lectin), distal tubules (E-cadherin), plus an associated endothelium (CD31) and mesenchyme (vimentin,
+    MEIS1/2/3). STEMCELL reports high-efficiency generation from both ES (H1, H9) and iPS (WLS-1C, STiPS-M001)
+    lines and lower experimental variability than home-made medium.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002113
+    name: kidney
+  cell_types:
+  - id: CL:0000653
+    name: podocyte
+  - id: CL:0002306
+    name: epithelial cell of proximal tubule
+  - id: CL:1000849
+    name: kidney distal convoluted tubule epithelial cell
+  - id: CL:0000115
+    name: endothelial cell
+  - id: CL:0008019
+    name: mesenchymal cell
+  - id: CL:0000324
+    name: metanephric mesenchyme stem cell
+  cell_source: pluripotent stem cells
+  differentiation_method: A two-stage directed differentiation. hPSCs (previously in mTeSR1, or mTeSR
+    Plus provided mTeSR1 is used for the first three days) are plated and overlaid with Corning Matrigel
+    to form cavitated spheroids. On day 0 the medium is switched from mTeSR1 to the STEMdiff Kidney Organoid
+    Kit, and over 18 days the cells progress through late primitive streak, intermediate mesoderm and
+    metanephric mesenchyme stages to self-organize into kidney organoids. Gene expression shifts from
+    pluripotency (day 0) to mesoderm (day 1.5 - 4) to intermediate mesoderm/metanephric mesenchyme (day
+    4 - 12), with podocyte, proximal and distal tubule, mesenchyme and endothelium markers appearing from
+    day 14.
+  culture_system: Adherent culture with a Matrigel overlay, in 96- and 384-well plates (organoid number
+    per 96-well is quantified on day 18); reproducible in high-throughput formats. The ICC protocol stains
+    organoids whole-mount in 96-well plates.
+  references:
+  - id: doi:10.1038/ncb2894
+    title: Directing human embryonic stem cell differentiation towards a renal lineage generates a self-organizing
+      kidney
+    authors:
+    - M. Takasato
+    - P. X. Er
+    - M. Becroft
+    - J. M. Vanslambrouck
+    - E. G. Stanley
+    - A. G. Elefanty
+    - M. H. Little
+    journal: Nature Cell Biology
+    year: 2014
+  - id: doi:10.1016/j.stem.2018.04.022
+    title: High-Throughput Screening Enhances Kidney Organoid Differentiation from Human Pluripotent Stem
+      Cells and Enables Automated Multidimensional Phenotyping
+    authors:
+    - Stefan M. Czerniecki
+    - Nelly M. Cruz
+    - Jennifer L. Harder
+    - Rajasree Menon
+    - James Annis
+    - Edgar A. Otto
+    - Ramila E. Gulieva
+    - Laura V. Islas
+    - Yong Kyun Kim
+    - Linh M. Tran
+    - Timothy J. Martins
+    - Jeffrey W. Pippin
+    - Hongxia Fu
+    - Matthias Kretzler
+    - Stuart J. Shankland
+    - Jonathan Himmelfarb
+    - Randall T. Moon
+    - Neal Paragas
+    - Benjamin S. Freedman
+    journal: Cell Stem Cell
+    year: 2018
+synonyms:
+- PSC-derived kidney organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Phenotypic high-throughput screening of nephrotoxic compounds; the kit is tested for compatibility
+    with such assays, and a STEMCELL scientific poster covers high-throughput-compatible differentiation
+    of hPSC lines to kidney organoids for nephrotoxic drug screening.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  - https://www.stemcell.com/scientific-resources/areas-of-interest/drug-discovery-solutions-and-in-vitro-models/cell-sourcing-and-in-vitro-models/organoids-in-drug-discovery/scientific-posters.html
+- description: 'Nephrotoxicity dose-response testing: the drug-discovery review cites a kidney organoid-based
+    384-well platform that predicted cisplatin-induced nephrotoxic effects dose-dependently using a luminescence
+    cell-viability assay with biomarker expression analysis. The CRISPR webinar describes cisplatin and
+    gentamicin assays plus dextran uptake as the functional tests that work well in these organoids.'
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+  supporting_references:
+  - doi:10.1016/j.stem.2018.04.022
+- description: 'Genetic disease modelling with CRISPR-Cas9: PKD1-/- and PKD2-/- knockouts (made by NHEJ)
+    in hPSCs give organoids that form large cysts in suspension culture while unmodified controls do not,
+    with cyst size driven mainly by fluid accumulation and partly by proliferation. Dr. Freedman reports
+    the same phenotype across multiple guide RNAs and clones as evidence against off-target causes.'
+  source_urls:
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+- description: Kidney developmental biology and disease modelling generally, and immunocytochemical phenotyping
+    of renal epithelial, endothelial and mesenchymal markers to compare experimental conditions, including
+    presence or absence of a drug or pathogen.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  - https://www.stemcell.com/performing-immunocytochemical-staining-of-psc-derived-kidney-organoids.html
+- description: 'Infectious disease research: a STEMCELL ISSCR showcase covers organoid applications in
+    infectious disease and nephrotoxicity, and the drug-discovery review cites kidney organoids used in
+    SARS-CoV-2 studies, including neutralization of infection by a soluble ACE2 variant.'
+  source_urls:
+  - https://www.stemcell.com/isscr-innovation-showcase-applications-of-organoid-and-organotypic-cultures-in-infectious-diseases-nephrotoxicity-and-highly-relevant-cell-based-assay.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  supporting_references:
+  - doi:10.1681/asn.2020101537
+limitations:
+- description: No functional vasculature or filtration. Dr. Freedman states the endothelial cells in the
+    organoids do not form bona fide glomeruli even though they lie adjacent to podocytes, "so there is
+    clearly something missing"; it is not clear how achievable a bona fide vasculature is in organoids,
+    and he suspects it may have to be solved in vivo first.
+  source_urls:
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+- description: 'The tubules cannot be perfused: they have no obvious inlets and outlets, so achieving
+    filtration with microfluidics is not expected to be easy without an integrated vasculature.'
+  source_urls:
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+- description: 'Models the developing nephron rather than the mature kidney: the kit is described as generating
+    organoids that model the developing nephron and progress through embryonic intermediate mesoderm/metanephric
+    mesenchyme stages, with marker expression only beginning by day 14 of an 18-day protocol.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+- description: 'Limited functional readout repertoire: asked about functional tests, Dr. Freedman says
+    nephrotoxicity and dextran uptake work well so his group focuses on those, and that others they tried
+    were not published "because they haven''t worked".'
+  source_urls:
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+- description: 'Matrigel dependence: differentiation starts from hPSCs overlaid with Corning Matrigel,
+    and the webinar names examining a range of natural and synthetic matrices as an open question, noting
+    matrix choice affects cyst formation.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+- description: 'Antibody and imaging artifacts complicate phenotyping: the PC2 antibody used gives background
+    that persists in PKD2-/- mutants where the protein is absent by Western blot, so staining alone is
+    not conclusive.'
+  source_urls:
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+- description: 'Input-medium constraint: the kit is optimized for hPSCs previously cultured in mTeSR1,
+    and mTeSR Plus-maintained hPSCs are only compatible if mTeSR1 is used for the first three days of
+    the protocol.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+- description: Research use only and not intended for human or animal diagnostic or therapeutic uses.
+    No HUB licence restriction is stated for this kit.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  - https://www.stemcell.com/performing-immunocytochemical-staining-of-psc-derived-kidney-organoids.html
+  - https://www.stemcell.com/re-creating-disease-with-kidney-organoids-and-crispr-1.html
+  - https://www.stemcell.com/isscr-innovation-showcase-applications-of-organoid-and-organotypic-cultures-in-infectious-diseases-nephrotoxicity-and-highly-relevant-cell-based-assay.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  products:
+  - name: STEMdiff Kidney Organoid Kit
+    catalog_number: '05160'
+    url: https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  - name: mTeSR1
+    catalog_number: '85850'
+    url: https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  - name: mTeSR Plus
+    catalog_number: 100-0276
+    url: https://www.stemcell.com/products/stemdiff-kidney-organoid-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

@@ -1,0 +1,75 @@
+model:
+  id: gastric-organoid-adult-tissue
+  type: Organoid
+  name: Gastric organoids from adult tissue
+  description: Gastric organoids from adult stomach stem cells. They appear in a 2014 webinar by Dr. Meritxell
+    Huch on gastric, hepatic, pancreatic and intestinal organoids, and in a citation, but STEMCELL does
+    not sell a gastric medium.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000945
+    name: stomach
+  cell_types:
+  - id: CL:0002183
+    name: stem cell of gastric gland
+  cell_source: adult tissue
+  differentiation_method: Not described in the corpus; Lgr5+ stomach stem cells build long-lived gastric
+    units in vitro (Barker 2010, cited).
+  culture_system: Not described in the corpus.
+  references:
+  - id: doi:10.1016/j.stem.2009.11.013
+    title: Lgr5+ve Stem Cells Drive Self-Renewal in the Stomach and Build Long-Lived Gastric Units In
+      Vitro
+    authors:
+    - Nick Barker
+    - Meritxell Huch
+    - Pekka Kujala
+    - Marc van de Wetering
+    - Hugo J. Snippert
+    - Johan H. van Es
+    - Toshiro Sato
+    - Daniel E. Stange
+    - Harry Begthel
+    - Maaike van den Born
+    - Esther Danenberg
+    - Stieneke van den Brink
+    - Jeroen Korving
+    - Arie Abo
+    - Peter J. Peters
+    - Nick Wright
+    - Richard Poulsom
+    - Hans Clevers
+    journal: Cell Stem Cell
+    year: 2010
+synonyms:
+- gastric units
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: Disease modeling, stem cell biology and clinical applications (generic webinar description
+    covering gastric organoids).
+  source_urls:
+  - https://www.stemcell.com/from-stem-cells-to-organoids-modeling-the-gastrointestinal-tract.html
+- description: 'Modeling preneoplasia: gastric organoids with inactivated TP53, a common early event in
+    gastric cancer, were created to model the earliest events of human tumour initiation (podcast science
+    round-up; cell source not stated).'
+  source_urls:
+  - https://www.stemcell.com/mammalian-lung-emma-rawlins.html
+limitations:
+- description: 'Not supported by STEMCELL''s intestinal medium: "IntestiCult Plus does not currently support
+    gastric organoids... Gastric organoids need something a bit different than what is currently in IntestiCult
+    Plus."'
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/from-stem-cells-to-organoids-modeling-the-gastrointestinal-tract.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  - https://www.stemcell.com/organoid-profiles-meritxell-huch.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

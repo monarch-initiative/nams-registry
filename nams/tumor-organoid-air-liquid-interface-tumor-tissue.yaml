@@ -1,0 +1,32 @@
+model:
+  id: tumor-organoid-air-liquid-interface-tumor-tissue
+  type: TwoDCellCulture
+  name: Patient tumor organoids cultured at the air-liquid interface
+  description: Patient tumour organoids cultured at the air-liquid interface to study tumour microenvironments,
+    presented by Dr. Calvin Kuo (Stanford) at the 2019 Nature Research Round Table.
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  cell_source: tumor tissue
+  culture_conditions: Not described in the corpus. Air-liquid interface culture of patient tumour organoids
+    (no details given).
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Studying tumour microenvironments in patient tumour organoids.
+  source_urls:
+  - https://www.stemcell.com/nature-research-round-table-organoid-modeling-of-stem-cells-and-disease-microenvironments.html
+limitations:
+- description: Shares the tumour-organoid limitation that scaling up enough organoids to screen drug response
+    takes about 4-6 weeks, which Kuo says needs to be much shorter to affect patient care.
+  source_urls:
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/nature-research-round-table-organoid-modeling-of-stem-cells-and-disease-microenvironments.html
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

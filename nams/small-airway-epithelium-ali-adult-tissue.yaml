@@ -1,0 +1,120 @@
+model:
+  id: small-airway-epithelium-ali-adult-tissue
+  type: TwoDCellCulture
+  name: Small airway epithelium at the air-liquid interface
+  description: A regionally specific model of the human small airway. HSAECs differentiated in PneumaCult-ALI-S
+    form a thin cuboidal epithelial layer, distinct from the pseudostratified epithelium that bronchial
+    cells form in PneumaCult-ALI, with approximately 5 - 10% basal cells, approximately 60 - 80% ciliated
+    cells and approximately 5 - 10% club cells. Small airway markers SCGB1A1 (club cells) and SCGB3A2
+    are detected at higher levels than in HSAECs cultured in PneumaCult-ALI or in HBECs in either medium,
+    and SCGB3A2 is undetectable in HBECs.
+  models:
+  - biological_system_modeled: UBERON:0002186
+  cell_types:
+  - id: CL:0002633
+    name: respiratory basal cell
+  - id: CL:0000067
+    name: ciliated epithelial cell
+  - id: CL:0000158
+    name: club cell
+  - id: CL:4052031
+    name: respiratory airway secretory cell
+  cell_source: adult tissue
+  culture_conditions: 'Human small airway epithelial cells (HSAECs) are expanded in submerged 2D culture
+    in PneumaCult-Ex Plus or PneumaCult-NGEx Medium, seeded on permeable inserts with expansion medium
+    in both chambers, and air-lifted at confluence by removing medium from both chambers and adding PneumaCult-ALI-S
+    Medium to the basal chamber only. A fully differentiated cuboidal epithelium forms after roughly four
+    to five weeks (21+ days of ALI culture). 0.4 um pore polyester membrane inserts (Costar 6.5 mm #38024
+    or 12 mm #38023); HTS Transwell-96 #100-0419 for 96-well high-throughput screening. Maintained in-house
+    for at least 6 months; no mucus washing step is required for the ALI-S protocol.'
+  references:
+  - id: doi:10.1038/s41598-020-69948-2
+    title: Development of a miniaturized 96-Transwell air–liquid interface human small airway epithelial
+      model
+    authors:
+    - Teresa Bluhmki
+    - Sarah Bitzer
+    - Julia Anna Gindele
+    - Eva Schruf
+    - Tobias Kiechle
+    - Megan Webster
+    - Jürgen Schymeinsky
+    - Robert Ries
+    - Florian Gantner
+    - Daniel Bischoff
+    - James Garnett
+    - Ralf Heilker
+    journal: Scientific Reports
+    year: 2020
+synonyms:
+- small airway ALI culture
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Modeling the small airway specifically, with regional specificity assessed by H&E cross-section
+    histology for epithelial thickness, immunocytochemistry for region-specific markers, and qPCR for
+    regional gene expression.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-ali-s-medium.html
+  - https://www.stemcell.com/air-liquid-interface-faqs.html
+- description: High-throughput screening in a miniaturized 96-Transwell small airway model.
+  source_urls:
+  - https://www.stemcell.com/air-liquid-interface-faqs.html
+  - https://www.stemcell.com/products/pneumacult-ali-s-medium.html
+  supporting_references:
+  - doi:10.1038/s41598-020-69948-2
+- description: Basic respiratory research, toxicity studies and drug development; the product page also
+    cites use in CFTR modulator and SARS-CoV-2 infectivity studies.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-ali-s-medium.html
+  supporting_references:
+  - doi:10.3390/ijms26115306
+  - doi:10.1016/j.ebiom.2024.105437
+limitations:
+- description: 'Media are not interchangeable with the large airway model: to generate representative
+    cultures the manufacturer recommends differentiating HBECs in PneumaCult-ALI and HSAECs in PneumaCult-ALI-S,
+    and HSAECs cultured in PneumaCult-ALI show lower small airway marker expression.'
+  source_urls:
+  - https://www.stemcell.com/air-liquid-interface-faqs.html
+  - https://www.stemcell.com/products/pneumacult-ali-s-medium.html
+- description: 'Narrower passage window than the bronchial model: best results with early passage (P3)
+    HSAECs, mid-passages (P4/P5) are only generally acceptable, and a differentiation assay should not
+    be started after P5/P6.'
+  source_urls:
+  - https://www.stemcell.com/air-liquid-interface-faqs.html
+- description: Slower to differentiate than the large airway ALI model (four to five weeks), with donor
+    variability expected.
+  source_urls:
+  - https://www.stemcell.com/air-liquid-interface-faqs.html
+- description: Small airway cells are not supported by the airway organoid kit, which is optimized for
+    large airway cells, so there is no validated organoid counterpart for this region; small airway organoids
+    grown in that kit might shift toward a large airway phenotype.
+  source_urls:
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+- description: 'Shares the general ALI limitations: not passageable, epithelium only, and limited for
+    high-throughput scales except in the miniaturized 96-well format.'
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-ali-s-medium.html
+  - https://www.stemcell.com/air-liquid-interface-faqs.html
+  - https://www.stemcell.com/products/brands/pneumacult-airway-epithelial-culture.html
+  products:
+  - name: PneumaCult-ALI-S Medium
+    catalog_number: '05050'
+    url: https://www.stemcell.com/products/pneumacult-ali-s-medium.html
+  - name: PneumaCult-Ex Plus Medium
+    catalog_number: '05040'
+    url: https://www.stemcell.com/products/pneumacult-ex-plus-medium.html
+  - name: PneumaCult-NGEx Medium
+    catalog_number: 100-1505
+    url: https://www.stemcell.com/products/pneumacult-ngex-medium.html
+  - name: HTS Transwell-96, 0.4 um Pore Polyester Membrane Inserts
+    catalog_number: 100-0419
+    url: https://www.stemcell.com/products/hts-transwell-96-0-4-m-pore-polyester-membrane-inserts.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

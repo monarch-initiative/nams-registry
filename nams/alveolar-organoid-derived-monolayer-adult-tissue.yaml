@@ -1,0 +1,83 @@
+model:
+  id: alveolar-organoid-derived-monolayer-adult-tissue
+  type: TwoDCellCulture
+  name: Alveolar monolayers at the air-liquid interface derived from ATII organoids
+  description: A two-dimensional, apically accessible alveolar culture generated from expansion-phase
+    ATII organoids. Plating organoid-derived single cells on ECM-coated inserts and air-lifting them gives
+    a monolayer that retains the ATII marker HT2-280 while significantly increasing the ATI marker HT1-56
+    relative to organoid culture. ALI conditions hold ATII marker expression more stably over time than
+    continued submerged culture. The format exists to give access to the apical surface, which the dome
+    organoid format does not provide.
+  models:
+  - biological_system_modeled: UBERON:0002299
+  cell_types:
+  - id: CL:0002063
+    name: pulmonary alveolar type 2 cell
+  - id: CL:0002062
+    name: pulmonary alveolar type 1 cell
+  cell_source: adult tissue
+  culture_conditions: 'Primary isolated or cryopreserved human ATII cells are first expanded as organoids
+    in PneumaCult AvOE Medium for 10 days. Single cells are then harvested from the expansion-phase organoids
+    (about one dome per insert) and seeded at 30,000 cells per insert onto cell culture inserts coated
+    with two extracellular matrices, then expanded 3 - 4 days in PneumaCult AvOE Seeding Medium. Once
+    confluent the apical medium is removed to air-lift the culture, and cells are collected for assay
+    on day 7 (3 days at ALI) or kept up to about 10 further days. Permeable cell culture inserts (CELLTREAT
+    0.4 um polyethylene membrane inserts #100-1027 or Costar 6.5 mm Transwell 0.4 um polyester inserts
+    #38024) in 24-well format, coated with 100 uL of 100 ug/mL Collagen III then 100 uL of 10 ug/mL Biolaminin
+    332; 500 uL medium basolateral, up to 200 uL apical before air-lift. Coated plates can be stored up
+    to 4 weeks.'
+synonyms:
+- alveolar monolayers
+- alveolar type 2 cultures at the air-liquid interface
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Apically accessible alveolar assays and co-culture, disease modeling, and drug screening
+    and discovery that need a prolonged ATII phenotype on an open surface.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+- description: Phenotyping ATII-to-ATI differentiation by immunocytochemistry on the membrane (HT2-280,
+    RAGE/AGER, GPRC5a, pro-SPC) and by flow cytometry (HT2-280, HT1-56) of dissociated cells.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+limitations:
+- description: 'Short usable window: ideal conditions are 7 days on inserts with 3 days at ALI; cultures
+    can be maintained up to 14 days (10 days at ALI) only with minimal, not zero, loss of ATII markers,
+    and extended submerged culture drifts toward ATI (HT2-280 down, RAGE up).'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+- description: 'Air-lifting gave no measurable advantage over submerged culture at day 7 in marker terms:
+    there were no differences between 3-day ALI and always-submerged cultures in HT2-280 or HT1-56 expression.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+- description: Requires a two-ECM insert coating (Collagen III plus Biolaminin 332) and consumes roughly
+    one organoid dome per insert, so it is dependent on an upstream organoid expansion step.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+- description: Epithelium only; no endothelium, fibroblasts or alveolar macrophages, so the alveolar-capillary
+    gas exchange barrier is not reconstituted. Implied by the protocol, which describes the system as
+    a basis for future co-cultures.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  products:
+  - name: PneumaCult Alveolar Organoid Expansion (AvOE) Medium
+    catalog_number: 100-0847
+    url: https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  - name: Corning Matrigel Growth Factor Reduced (GFR) Basement Membrane Matrix, Phenol Red-free
+    catalog_number: '356231'
+    url: https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  - name: Costar 6.5 mm Transwell, 0.4 um Pore Polyester Membrane Inserts
+    catalog_number: '38024'
+    url: https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

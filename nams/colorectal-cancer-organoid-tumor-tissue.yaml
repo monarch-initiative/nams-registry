@@ -1,0 +1,204 @@
+model:
+  id: colorectal-cancer-organoid-tumor-tissue
+  type: Organoid
+  name: Colorectal cancer-derived organoids (tumoroids)
+  description: Patient-derived tumor organoids from colorectal cancer tissue, presented as retaining the
+    tissue architecture, cellular heterogeneity and morphology of the original tumor and the characteristics
+    of the tumor of origin. Confocal imaging of organoids from four donors shows donor-specific differences,
+    some with polarization and hollow lumens and others as denser structures lacking distinct epithelial
+    polarization. The protocol was developed in collaboration with Hubrecht Organoid Technology.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0012652
+    name: colorectum
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  cell_source: tumor tissue
+  differentiation_method: 'Colorectal tumor biopsy tissue is washed in ice-cold PBS, minced with sterile
+    scissors into ~5 mm pieces and digested in Gentle Cell Dissociation Reagent at 37 C with rocking for
+    60 minutes, then triturated in ice-cold DMEM with 1% BSA and passed through a 70 um strainer before
+    plating in Matrigel. Growth uses a Wnt-free formulation: IntestiCult OGM Human Basal Medium (Cat #100-0190)
+    mixed 1:1 with DMEM/F-12 with 15 mM HEPES, or IntestiCult Plus Basal Medium alone. The Wnt-free formulation
+    selects against Wnt-dependent normal intestinal cells so they do not contaminate the tumoroid culture.'
+  culture_system: Matrigel domes in pre-warmed tissue culture-treated 24-well plates (or 24-well Organoid
+    Culture Plates, which need no pre-warming); medium replaced every 2 days and cultures passaged every
+    6-12 days.
+  references:
+  - id: doi:10.1053/j.gastro.2011.07.050
+    title: Long-term Expansion of Epithelial Organoids From Human Colon, Adenoma, Adenocarcinoma, and
+      Barrett's Epithelium
+    authors:
+    - Toshiro Sato
+    - Daniel E. Stange
+    - Marc Ferrante
+    - Robert G.J. Vries
+    - Johan H. van Es
+    - Stieneke van den Brink
+    - Winan J. van Houdt
+    - Apollo Pronk
+    - Joost van Gorp
+    - Peter D. Siersema
+    - Hans Clevers
+    journal: Gastroenterology
+    year: 2011
+  - id: doi:10.1016/j.stem.2016.04.003
+    title: A Colorectal Tumor Organoid Library Demonstrates Progressive Loss of Niche Factor Requirements
+      during Tumorigenesis
+    authors:
+    - Masayuki Fujii
+    - Mariko Shimokawa
+    - Shoichi Date
+    - Ai Takano
+    - Mami Matano
+    - Kosaku Nanki
+    - Yuki Ohta
+    - Kohta Toshimitsu
+    - Yoshihiro Nakazato
+    - Kenta Kawasaki
+    - Toshio Uraoka
+    - Toshiaki Watanabe
+    - Takanori Kanai
+    - Toshiro Sato
+    journal: Cell Stem Cell
+    year: 2016
+  - id: doi:10.1016/j.cell.2015.03.053
+    title: Prospective Derivation of a Living Organoid Biobank of Colorectal Cancer Patients
+    authors:
+    - Marc van de Wetering
+    - Hayley E. Francies
+    - Joshua M. Francis
+    - Gergana Bounova
+    - Francesco Iorio
+    - Apollo Pronk
+    - Winan van Houdt
+    - Joost van Gorp
+    - Amaro Taylor-Weiner
+    - Lennart Kester
+    - Anne McLaren-Douglas
+    - Joyce Blokker
+    - Sridevi Jaksani
+    - Sina Bartfeld
+    - Richard Volckman
+    - Peter van Sluis
+    - Vivian S.W. Li
+    - Sara Seepo
+    - Chandra Sekhar Pedamallu
+    - Kristian Cibulskis
+    - Scott L. Carter
+    - Aaron McKenna
+    - Michael S. Lawrence
+    - Lee Lichtenstein
+    - Chip Stewart
+    - Jan Koster
+    - Rogier Versteeg
+    - Alexander van Oudenaarden
+    - Julio Saez-Rodriguez
+    - Robert G.J. Vries
+    - Gad Getz
+    - Lodewyk Wessels
+    - Michael R. Stratton
+    - Ultan McDermott
+    - Matthew Meyerson
+    - Mathew J. Garnett
+    - Hans Clevers
+    journal: Cell
+    year: 2015
+synonyms:
+- cancer-derived intestinal organoids
+- CRC organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Dose-dependent drug sensitivity testing: CRC organoids from four donors were treated with
+    increasing concentrations of 5-FU, flavopiridol, gefitinib or irinotecan for 5 days alongside organoids
+    from a healthy colon donor, with viability read on day 7 by CellTiter-Glo.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-ogm-human-basal-medium.html
+- description: Studying cancer biology, disease progression, affected signaling pathways and the niche
+    requirements of the tumor; also preclinical high-throughput drug screening, target validation and
+    predictive toxicology as part of new approach methodologies.
+  source_urls:
+  - https://www.stemcell.com/culturing-intestinal-cancer-derived-organoids.html
+  - https://www.stemcell.com/culturing-cancer-derived-organoids-using-intesticult-organoid-growth-medium-human.html
+  supporting_references:
+  - doi:10.1016/j.stem.2016.04.003
+- description: Predicting patient-specific treatment outcomes; the drug discovery review states patient-derived
+    tumor organoids predicted treatment response in more than 80% of metastatic colorectal cancer patients
+    treated with irinotecan-based chemotherapy (accuracy 80%), that patient-derived rectal cancer organoids
+    predicted chemoradiation response using organoid size as the readout (accuracy 84.43%, sensitivity
+    78.01%, specificity 91.97%), and that organoids from metastatic gastrointestinal cancers predicted
+    response to targeted agents or chemotherapy in clinical trials (sensitivity 100%, specificity 93%).
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  supporting_references:
+  - doi:10.1126/scitranslmed.aay2574
+  - doi:10.1016/j.stem.2019.10.010
+  - doi:10.1126/science.aao2774
+- description: Paired healthy/tumor comparison from the same patient, enabling evaluation of the disease
+    state while controlling for the donor's genetic background, and correlation of organoid phenotype
+    with specific mutation combinations (APC, KRAS, SMAD4, TP53); CRISPR/Cas9 editing of normal human
+    intestinal organoids has also been used to model the adenoma-carcinoma sequence.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/intestinal-research/mini-review.html
+  supporting_references:
+  - doi:10.1038/nature14415
+  - doi:10.1038/nm.3802
+- description: Supporting immune co-culture systems, enabling study of tumor-T cell interactions for immunotherapy
+    research, and activating and expanding tumor-reactive T cell populations.
+  source_urls:
+  - https://www.stemcell.com/culturing-cancer-derived-organoids-using-intesticult-organoid-growth-medium-human.html
+  - https://www.stemcell.com/culturing-intestinal-cancer-derived-organoids.html
+  supporting_references:
+  - doi:10.1016/j.cell.2018.07.009
+limitations:
+- description: 'Restricted to Wnt-independent tumors: tumors that do not carry an activating mutation
+    of the Wnt pathway cannot be maintained as organoids using this method.'
+  source_urls:
+  - https://www.stemcell.com/culturing-cancer-derived-organoids-using-intesticult-organoid-growth-medium-human.html
+- description: Cancer heterogeneity means a single medium composition does not fit all samples; because
+    some colon cancers carry Wnt pathway mutations, the medium composition required may differ from what
+    is currently known and from what the standard human medium was designed for.
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: 'Processing is harder than for healthy tissue: tumor biopsies are generally tougher and
+    may need physical breaking up with a scalpel or razor and longer Gentle Cell Dissociation Reagent
+    incubation than the standard protocol specifies.'
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: 'Morphology and differentiation are limited and donor dependent: CRC organoids in IntestiCult
+    Plus Basal Medium are dense and lack a defined single-cell columnar epithelium, with MUC2 present
+    but no identifiable goblet cells or other specialized cell types; across donors some lines are polarized
+    with hollow lumens while others are dense and unpolarized.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+  - https://www.stemcell.com/products/intesticult-ogm-human-basal-medium.html
+- description: 'Slow establishment from single cells: primary colon cancer organoids seeded as single
+    cells need ROCK inhibitor until established and take longer to reach maturity than cultures seeded
+    as fragments.'
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: Research-use-only HUB licence restriction applies, excluding commercial drug screening,
+    equipment validation and biobanking without a further licence.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-ogm-human-basal-medium.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-ogm-human-basal-medium.html
+  - https://www.stemcell.com/culturing-cancer-derived-organoids-using-intesticult-organoid-growth-medium-human.html
+  - https://www.stemcell.com/culturing-intestinal-cancer-derived-organoids.html
+  products:
+  - name: IntestiCult OGM Human Basal Medium
+    catalog_number: 100-0190
+    url: https://www.stemcell.com/products/intesticult-ogm-human-basal-medium.html
+  - name: IntestiCult Plus Organoid Growth Medium
+    catalog_number: 100-1677
+    url: https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+  - name: 70 um Reversible Strainer, Small
+    catalog_number: '27216'
+    url: https://www.stemcell.com/culturing-intestinal-cancer-derived-organoids.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

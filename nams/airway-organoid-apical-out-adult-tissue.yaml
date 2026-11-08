@@ -1,0 +1,130 @@
+model:
+  id: airway-organoid-apical-out-adult-tissue
+  type: Organoid
+  name: Apical-out airway organoids from primary human airway epithelial cells
+  description: A Matrigel-free, polarity-inverted 3D airway epithelial model. Organoids have a cell-dense
+    core of basal cells and an outer epithelium presenting ciliated cells on the outward-facing surface,
+    with ZO-1 tight junctions at the apical (outer) side, so the apical surface is directly exposed to
+    the medium. Gene expression shows upregulated FOXJ1 and TUBB4B (above ALI cultures for those markers)
+    and expression of ACE2 and TMPRSS2. The Secretory Medium variant adds goblet cells (MUC5AC) to the
+    basal/ciliated composition, and responds to IL-13 with further goblet cell differentiation.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002185
+    name: bronchus
+  cell_types:
+  - id: CL:0002633
+    name: respiratory basal cell
+  - id: CL:0000067
+    name: ciliated epithelial cell
+  - id: CL:0002370
+    name: respiratory tract goblet cell
+  - id: CL:4052031
+    name: respiratory airway secretory cell
+  cell_source: adult tissue
+  differentiation_method: Human bronchial or airway epithelial cells (HBECs/HAECs) are expanded in 2D
+    in PneumaCult-NGEx or PneumaCult-Ex Plus Medium, then seeded into AggreWell 400 microwell plates in
+    PneumaCult Apical-Out Airway Organoid Medium and allowed to aggregate. Cells expanded in NGEx stay
+    in the AggreWell plate for the full 15 days; cells expanded in Ex Plus are dislodged after 1 - 6 days
+    (donor-dependent) and transferred to a flat-bottom plate for 9 - 14 days of differentiation. The absence
+    of extracellular matrix inverts polarity so that differentiated ciliated cells face outward. Adding
+    the Secretory Supplement (PneumaCult Apical-Out Airway Organoid Secretory Medium) promotes goblet/secretory
+    cell development.
+  culture_system: 'Matrigel-free suspension aggregates: AggreWell 400 24-well plates (Catalog #34415)
+    pre-treated with Anti-Adherence Rinsing Solution, then suspension in 24-well flat-bottom plates; no
+    cell culture inserts. Assay-ready by day 15. Organoids average 62 cells each (95% CI 6.77) with consistent
+    diameters across donors; almost all display beating cilia and move in suspension. Scaling from the
+    24-well to the 6-well AggreWell 400 format gave about 3x more organoids per well with similar ciliated-cell
+    proportion and size distribution.'
+  references:
+  - id: doi:10.1016/j.virusres.2026.199734
+    title: Innate airway responses shape permissiveness to human respiratory syncytial virus
+    authors:
+    - Laura L.A. van Dijk
+    - Laurine C. Rijsbergen
+    - Alexander C. Havelaar
+    - Yvette den Hartog
+    - Rosanne W. Koutstaal
+    - Kevin Groen
+    - Rory D. de Vries
+    - Rik L. de Swart
+    journal: Virus Research
+    year: 2026
+synonyms:
+- apical-out airway organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Respiratory virus infection modeling with direct apical access. Day-15 organoids were infected
+    with influenza A, influenza B and rhinovirus A-16; viral load in supernatant was followed by qPCR
+    at 24-hour intervals and cytopathogenic effect was scored, distinguishing high CPE for IAV and IBV
+    from moderate CPE for RV-A16.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+- description: Antiviral compound testing. Organoids infected with enterovirus D68 were treated with itraconazole,
+    which cut viral RNA roughly two orders of magnitude and partly rescued viability, or with rupintrivir,
+    which completely inhibited viral replication and almost completely rescued viability (ATP/RFU readout
+    at 72 h post-infection).
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+- description: Modeling respiratory infection by SARS-CoV-2, supported by expression of the entry factors
+    ACE2 and TMPRSS2 alongside ciliated-cell acetylated tubulin.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+- description: High-throughput drug screening and toxicity studies, enabled by the insert-free, Matrigel-free
+    format, homogeneous organoid size and easy organoid recovery for downstream analysis.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-medium.html
+- description: 'Modeling cytokine-driven goblet cell hyperplasia: in the Secretory Medium, adding 5 ng/mL
+    IL-13 increased the proportion of organoids with two or more MUC5AC-positive goblet cells (49.49%
+    +/- 8.26% versus 17.33% +/- 1.69% without IL-13) while still allowing ciliogenesis.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-medium.html
+limitations:
+- description: 'Goblet cells are scarce in the standard Apical-Out medium: 61.49% +/- 13.5% of organoids
+    lacked MUC5AC expression entirely, which is why the separate Secretory Medium/Supplement exists.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-medium.html
+- description: 'Donor-to-donor variability: the optimal AggreWell-to-suspension transition time for Ex
+    Plus-expanded cells is donor-specific, and one of three donors showed a decrease in organoid-forming
+    efficiency and ciliated-cell percentage.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-medium.html
+- description: 'Small and simple: organoids comprise on average 62 cells, and are epithelium only - no
+    immune, stromal, endothelial or microbial compartment is part of the system.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+- description: 'Infection itself damages the model: EV-D68 infection caused a sharp decline in organoid
+    viability, so infection endpoints are constrained by that time window.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-medium.html
+  - https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-supplement.html
+  - https://www.stemcell.com/products/pneumacult-ngex-medium.html
+  - https://www.stemcell.com/faqs-on-human-airway-organoid-cultures.html
+  products:
+  - name: PneumaCult Apical-Out Airway Organoid Medium
+    catalog_number: 100-0620
+    url: https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-medium.html
+  - name: PneumaCult Apical-Out Airway Organoid Secretory Medium
+    catalog_number: 100-2078
+    url: https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-medium.html
+  - name: PneumaCult Apical-Out Airway Organoid Secretory Supplement
+    catalog_number: 100-2181
+    url: https://www.stemcell.com/products/pneumacult-apical-out-airway-organoid-secretory-supplement.html
+  - name: AggreWell 400 24-well microwell plate
+    catalog_number: '34415'
+    url: https://www.stemcell.com/products/aggrewell400.html
+  - name: PneumaCult-NGEx Medium (2D expansion)
+    catalog_number: 100-1505
+    url: https://www.stemcell.com/products/pneumacult-ngex-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

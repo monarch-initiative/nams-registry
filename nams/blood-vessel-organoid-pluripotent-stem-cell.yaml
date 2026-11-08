@@ -1,0 +1,91 @@
+model:
+  id: blood-vessel-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: hPSC-derived blood vessel organoids
+  description: 3D blood vessel organoids differentiated from human ESCs or iPSCs, containing CD31+/CD34+/CD144+/KDR+
+    endothelial cells and PDGFR-beta+/CD146+/SMA+/NG-2+ pericytes with tight endothelial-pericyte contacts,
+    a defined vessel lumen and a collagen IV basement membrane. Endothelial cells were 42.92 +/- 3.97%
+    CD31+ and pericytes 43.10 +/- 3.31% CD140b+ across five mTeSR1-maintained lines (n = 3-4).
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:8410081
+    name: blood microvessel
+  cell_types:
+  - id: CL:0000115
+    name: endothelial cell
+  - id: CL:0000669
+    name: pericyte
+  cell_source: pluripotent stem cells
+  differentiation_method: hPSCs maintained in mTeSR1 or mTeSR Plus are seeded as single cells in ultra-low
+    attachment 6-well plates in Aggregation Medium; after 1-2 days they are switched to Mesoderm Medium
+    for 3 days, then on day 4-5 to Vascular Induction Medium for 2 days. The aggregates are then embedded
+    in a collagen-Matrigel sandwich, where they sprout and mature into vascular networks in Blood Vessel
+    Organoid Maturation Medium.
+  culture_system: Aggregates in ultra-low attachment plates, then a collagen-Matrigel sandwich for 5 days
+    of sprouting; free-floating organoids can be collected at day 15 for downstream assays; 3D vasculature
+    shown after 22 days in maturation medium under free-floating conditions. The kit can be scaled to
+    a 96-well format.
+synonyms:
+- vascular organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Modeling diabetic vasculopathy: under diabetic conditions the organoids show increased
+    collagen IV basement-membrane thickness, which was reduced by DAPT and forskolin but not by SB431542,
+    Y-27632 or CHIR99021 (n = 100 vessels per condition).'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+- description: 'Modeling arteriovenous malformation (AVM): blood vessel organoids generated from iPSCs
+    reprogrammed from AVM patient skin samples were treated with thalidomide, U0126 and rapamycin, which
+    reduced CD31 and alpha-SMA expression (publication listed on the product page).'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+  supporting_references:
+  - doi:10.3390/cells14141081
+- description: Tissue repair and regeneration studies and in vitro modeling of vascular disease using
+    organoids with functional microvessels (webinar by Dr. Reiner Wimmer, Roche).
+  source_urls:
+  - https://www.stemcell.com/modeling-the-structural-and-functional-features-of-blood-vasculature-with-blood-vessel-organoids.html
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+- description: 'Drug discovery, drug testing and toxicity assays in a 96-well high-throughput format (product
+    application tags: Functional Assay, Toxicity Assay).'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+limitations:
+- description: 'Licence restriction: sold for research use only under a non-transferable, limited-use
+    licence from IMBA (Austrian Academy of Sciences); purchase excludes commercial use, including providing
+    services or collaborating with a for-profit entity for purposes other than research (for example,
+    drug development activities). Commercial use needs a licence from IMBA.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-maturation-medium.html
+- description: Contains vascular cells only (endothelial cells and pericytes); no parenchymal tissue,
+    immune cells or perfusion/flow. The flow limit is implied by the AVM publication on the product page,
+    which says future studies should refine the model with microfluidic systems to replicate AVM pathology
+    more efficiently.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+  supporting_references:
+  - doi:10.3390/cells14141081
+- description: Depends on Matrigel (collagen-Matrigel sandwich) during sprouting; the product page notes
+    that home-made media need serum screening and labour-intensive protocol optimization, which implies
+    variability in non-kit protocols.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-maturation-medium.html
+  - https://www.stemcell.com/modeling-the-structural-and-functional-features-of-blood-vasculature-with-blood-vessel-organoids.html
+  products:
+  - name: STEMdiff Blood Vessel Organoid Kit
+    catalog_number: 100-0651
+    url: https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-kit.html
+  - name: STEMdiff Blood Vessel Organoid Maturation Medium
+    catalog_number: 100-0658
+    url: https://www.stemcell.com/products/stemdiff-blood-vessel-organoid-maturation-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

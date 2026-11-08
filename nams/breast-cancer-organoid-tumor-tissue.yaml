@@ -1,0 +1,43 @@
+model:
+  id: breast-cancer-organoid-tumor-tissue
+  type: Organoid
+  name: Breast cancer organoids (luminal and triple-negative)
+  description: Breast cancer organoid lines, luminal and triple-negative, which the MammoCult Organoid
+    Kit webinar presents as compatible with the kits' media for breast cancer research.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001911
+    name: mammary gland
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  cell_source: tumor tissue
+  differentiation_method: Not described; the webinar says only that MammoCult Organoid Kit media are compatible
+    with these lines.
+  culture_system: Not described in the corpus.
+synonyms:
+- breast cancer organoid lines
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Breast cancer research with luminal and triple-negative breast cancer organoid lines.
+  source_urls:
+  - https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+limitations:
+- description: Human breast tumours are hard to grow in vitro; those that grow are usually ER-negative
+    and come only from the most aggressive tumours. Whether organoid conditions maintain tumours so that
+    they recapitulate their in vivo counterparts is named as an open challenge.
+  source_urls:
+  - https://www.stemcell.com/mammary-stem-cells-and-breast-cancer.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  - https://www.stemcell.com/mammary-stem-cells-and-breast-cancer.html
+  products:
+  - name: MammoCult Organoid Kit (Human)
+    url: https://www.stemcell.com/culturing-mouse-and-human-mammary-organoids-with-mammocult.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

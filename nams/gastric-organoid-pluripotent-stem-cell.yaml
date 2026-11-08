@@ -1,0 +1,68 @@
+model:
+  id: gastric-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: hPSC-derived gastric organoids
+  description: Human gastric organoids differentiated from pluripotent stem cells, presented in a 2017
+    webinar by Dr. James Wells and cited on the organoid-research landing page (McCracken 2014).
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000945
+    name: stomach
+  cell_source: pluripotent stem cells
+  differentiation_method: Directed differentiation of hPSCs into gastric organoids (Wells lab); Wnt/beta-catenin
+    promotes gastric fundus specification (McCracken 2017, cited). No protocol is in the corpus.
+  culture_system: Not described in the corpus.
+  references:
+  - id: doi:10.1038/nature13863
+    title: Modelling human development and disease in pluripotent stem-cell-derived gastric organoids
+    authors:
+    - Kyle W. McCracken
+    - Emily M. Catá
+    - Calyn M. Crawford
+    - Katie L. Sinagoga
+    - Michael Schumacher
+    - Briana E. Rockich
+    - Yu-Hwai Tsai
+    - Christopher N. Mayhew
+    - Jason R. Spence
+    - Yana Zavros
+    - James M. Wells
+    journal: Nature
+    year: 2014
+  - id: doi:10.1038/nature21021
+    title: Wnt/β-catenin promotes gastric fundus specification in mice and humans
+    authors:
+    - Kyle W. McCracken
+    - Eitaro Aihara
+    - Baptiste Martin
+    - Calyn M. Crawford
+    - Taylor Broda
+    - Julie Treguier
+    - Xinghao Zhang
+    - John M. Shannon
+    - Marshall H. Montrose
+    - James M. Wells
+    journal: Nature
+    year: 2017
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Modeling gastric infection with Helicobacter pylori.
+  source_urls:
+  - https://www.stemcell.com/modeling-human-gastrointestinal-development-and-disease-using-pluripotent-stem-cells.html
+- description: Modeling human stomach development and disease.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+  supporting_references:
+  - doi:10.1038/nature13863
+limitations: []
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/modeling-human-gastrointestinal-development-and-disease-using-pluripotent-stem-cells.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+  - https://www.stemcell.com/organoid-expert-panel.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

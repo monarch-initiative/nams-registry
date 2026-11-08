@@ -1,0 +1,121 @@
+model:
+  id: alveolar-organoid-adult-tissue
+  type: Organoid
+  name: Alveolar (ATII/ATI) organoids from primary human alveolar epithelial cells
+  description: A 3D model of the human alveolar (gas-exchange) region grown from primary ATII cells. ATII
+    organoids self-renew, keep the ATII phenotype (HT2-280, SP-C) over long-term passaging, and retain
+    the lineage potential to make ATI cells; differentiation in AvOD medium converts them to ATI-marker-expressing
+    organoids. The system works without stromal or feeder cell support, which the pages present as addressing
+    the usual requirement for stromal support in distal lung culture. Organoids express the SARS-CoV-2
+    entry factors ACE2 and (donor-dependently) TMPRSS2.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002299
+    name: alveolus of lung
+  cell_types:
+  - id: CL:0002063
+    name: pulmonary alveolar type 2 cell
+  - id: CL:0002062
+    name: pulmonary alveolar type 1 cell
+  cell_source: adult tissue
+  differentiation_method: Freshly isolated or cryopreserved primary human alveolar epithelial type II
+    (ATII) cells are seeded as single cells in PneumaCult Alveolar Organoid Expansion (AvOE) Seeding Medium;
+    after a full medium change on day 2 - 3 they are expanded in PneumaCult AvOE Medium to mature ATII
+    organoids. Switching to PneumaCult Alveolar Organoid Differentiation (AvOD) Medium for 10 more days
+    drives in-dome differentiation to alveolar epithelial type I (ATI) cells with over 85% purity, with
+    down-regulation of ATII markers (HT2-280, pro-SPC) and up-regulation of ATI markers (RAGE/AGER, HT1-56,
+    GPRC5a).
+  culture_system: Matrix domes (approximately 160 cells seeded per dome) in a two-stage, three-component
+    serum-free medium system. Organoid-forming efficiency around 27.5% in the example dome (44 organoids
+    from 160 cells); over 10,000-fold cumulative expansion within 10 passages; organoids can be cryopreserved
+    as single cells at any passage and re-initiated for biobanking.
+  references:
+  - id: doi:10.1172/jci68782
+    title: Type 2 alveolar cells are stem cells in adult lung
+    authors:
+    - Christina E. Barkauskas
+    - Michael J. Cronce
+    - Craig R. Rackley
+    - Emily J. Bowie
+    - Douglas R. Keene
+    - Barry R. Stripp
+    - Scott H. Randell
+    - Paul W. Noble
+    - Brigid L.M. Hogan
+    journal: Journal of Clinical Investigation
+    year: 2013
+synonyms:
+- alveolar organoids
+- ATII organoids
+- ATI organoids
+- alveolospheres
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Alveolar biology research - studying ATII cell function, self-renewal and the ATII-to-ATI
+    transition in a reproducible culture system that prolongs the ATII phenotype, which is otherwise lost
+    by spontaneous differentiation to ATI.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+- description: Infectious disease studies of the distal lung, including respiratory virus work supported
+    by ACE2 and TMPRSS2 expression.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+- description: Drug screening and discovery, and co-culture and disease modeling applications that need
+    a prolonged ATII phenotype.
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+- description: 'Biobanking of donor alveolar cells: organoids can be cryopreserved at early or late passage
+    and retain expansion potential after thawing, reducing the need to repeatedly source donor tissue.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+limitations:
+- description: Organoid-forming efficiency is modest and donor-dependent (about 27.5% in the worked example;
+    efficiency compared across three donors).
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+- description: 'ATII identity declines with passaging: HT2-280 expression falls over passages (compared
+    against a 50%-of-starting dashed line in the data), and TMPRSS2 expression is donor-dependent even
+    though ACE2 is expressed in all donors and conditions.'
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+- description: Epithelium only, cultured without stromal or feeder cells, so endothelium, fibroblasts,
+    alveolar macrophages and the gas-exchange barrier with capillaries are not reconstituted. Implied
+    by the product claim that type 2 cells maintain phenotype "without support from stromal or feeder
+    cells".
+  source_urls:
+  - https://www.stemcell.com/isscr-in-vitro-tissue-modeling-innovations-hepatic-alveolar-and-intestinal-organoids.html
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+- description: Standard dome format gives no access to the apical surface and no air interface; the separate
+    organoid-derived monolayer/ALI protocol exists to provide that. Implied by the protocol's stated purpose,
+    "to facilitate air-liquid-interface (ALI) culture and enable easy access to the apical surface".
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+- description: 'The field-level limitation the overview page gives for distal lung: ALI culture does not
+    work for the distal airway, likely because of the higher complexity of the alveolar stem cell niche
+    and the requirement for stromal cell support, and alveolospheres have generally only been formed in
+    co-culture with fibroblasts or endothelial cells.'
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  - https://www.stemcell.com/how-to-generate-alveolar-monolayers-from-atii-organoids.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+  - https://www.stemcell.com/isscr-in-vitro-tissue-modeling-innovations-hepatic-alveolar-and-intestinal-organoids.html
+  products:
+  - name: PneumaCult Alveolar Organoid Media
+    url: https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  - name: PneumaCult Alveolar Organoid Expansion (AvOE) Medium
+    catalog_number: 100-0847
+    url: https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  - name: PneumaCult Alveolar Organoid Differentiation (AvOD) Medium
+    catalog_number: 100-0861
+    url: https://www.stemcell.com/products/pneumacult-alveolar-organoid-media.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

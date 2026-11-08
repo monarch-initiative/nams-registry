@@ -1,0 +1,261 @@
+model:
+  id: cerebral-organoid-unguided-pluripotent-stem-cell
+  type: Organoid
+  name: Unguided (unpatterned) cerebral organoids from human pluripotent stem cells
+  description: Self-organized hPSC-derived neural organoids with several brain regions in one organoid,
+    including forebrain-type (FOXG1+) tissue. Cortical-like regions contain a ventricular zone (PAX6+/SOX2+/Ki-67+),
+    an outer subventricular zone (Ki-67+/p-Vimentin+), an intermediate zone (TBR2+) and a cortical plate
+    (CTIP2+/MAP2+/TBR1+), arranged around pseudo-ventricles in orientations like those seen in vivo. Bulk
+    transcriptomes cluster with published cerebral organoids (Luo et al. 2016), and day 91 organoids show
+    synchronous calcium activity.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000955
+    name: brain
+  cell_types:
+  - id: CL:0011020
+    name: neural progenitor cell
+  - id: CL:0000681
+    name: radial glial cell
+  - id: CL:0000540
+    name: neuron
+  - id: CL:0000127
+    name: astrocyte
+  - id: CL:0000128
+    name: oligodendrocyte
+  cell_source: pluripotent stem cells
+  differentiation_method: hESC or hiPSC are aggregated into embryoid bodies (9,000 cells/well in 96-well
+    round-bottom ultra-low attachment plates, days 0-5), induced to neuroepithelium (days 5-7), embedded
+    in Matrigel droplets to expand neuroepithelial buds (days 7-10), and then matured on an orbital shaker
+    (day 10 onward). No exogenous patterning factors are added, so the buds self-organize into several
+    brain regions within one organoid. The STEMdiff kit is based on the formulation published by Lancaster
+    et al. (2013, 2014).
+  culture_system: Four-stage protocol. Embryoid bodies form in 96-well ultra-low attachment plates, induction
+    takes place in 24-well ultra-low attachment plates, and each EB is embedded in a 15 uL Matrigel droplet
+    on an Organoid Embedding Sheet. Organoids then grow in suspension in 6-well ultra-low adherent plates
+    on an orbital shaker, with full medium changes every 3-4 days. Organoids reach about 3-5 mm by day
+    40, when cortical layering is typically seen. Culture beyond day 40 (reported to more than 365 days)
+    uses the Maturation Kit. The pages also describe a liquid Matrigel option.
+  references:
+  - id: doi:10.1038/nature12517
+    title: Cerebral organoids model human brain development and microcephaly
+    authors:
+    - Madeline A. Lancaster
+    - Magdalena Renner
+    - Carol-Anne Martin
+    - Daniel Wenzel
+    - Louise S. Bicknell
+    - Matthew E. Hurles
+    - Tessa Homfray
+    - Josef M. Penninger
+    - Andrew P. Jackson
+    - Juergen A. Knoblich
+    journal: Nature
+    year: 2013
+  - id: doi:10.1126/science.1247125
+    title: 'Organogenesis in a dish: Modeling development and disease using organoid technologies'
+    authors:
+    - Madeline A. Lancaster
+    - Juergen A. Knoblich
+    journal: Science
+    year: 2014
+  - id: doi:10.1038/nprot.2014.158
+    title: Generation of cerebral organoids from human pluripotent stem cells
+    authors:
+    - Madeline A Lancaster
+    - Juergen A Knoblich
+    journal: Nature Protocols
+    year: 2014
+synonyms:
+- cerebral organoids
+- unguided organoids
+- unpatterned neural organoids
+- mini-brains
+- whole-brain organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Modeling microcephaly. Organoids from patient-derived iPSCs were smaller, like the reduced
+    brain size seen in patients.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  - https://www.stemcell.com/madeline-lancaster.html
+  supporting_references:
+  - doi:10.1038/nature12517
+- description: Gene-edited disease modeling. CRISPR-Cas9 editing of CDK5RAP2 in hPSCs gave clonal lines
+    whose cerebral organoids were smaller and had neuronal development defects like those reported by
+    Lancaster et al.
+  source_urls:
+  - https://www.stemcell.com/crispr-cas9-gene-editing-of-cerebral-organoids-to-model-microcephaly.html
+  supporting_references:
+  - doi:10.1038/nature12517
+- description: Modeling Tuberous Sclerosis Complex, which revealed excessive proliferation of caudal late
+    interneuron progenitors (Knoblich webinar presenting preprint data).
+  source_urls:
+  - https://www.stemcell.com/cerebral-organoids-as-3d-stem-cell-derived-models-of-tuberous-sclerosis-complex.html
+- description: Neurotropic virus infection. Examples are Zika virus-induced microcephaly (preferential
+    infection of neural progenitors, impaired neurogenesis, reduced growth), human cytomegalovirus-induced
+    microcephaly, and Nipah virus CNS infection in high-containment (Risk Group 4) settings, as a NAM
+    to support medical countermeasure development.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  - https://www.stemcell.com/stemcell-journal-club-cerebral-organoids-for-human-specific-infection-modeling.html
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  supporting_references:
+  - doi:10.1128/jvi.01070-25
+- description: Modeling West Nile virus encephalitis. A publication listed on the Maturation Kit page
+    reports a cerebral organoid model with innate immunocompetency.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-maturation-kit.html
+  supporting_references:
+  - doi:10.1038/s41467-026-70281-x
+- description: Seizure liability and anti-seizure drug testing on a 3D high-density CMOS multi-electrode
+    array (4,096 pillar electrodes). Field potentials are recorded from day 60 or older organoids at baseline,
+    after the convulsant 4-aminopyridine (100 uM), and after 4-AP plus valproic acid (1 mM). Pages report
+    that changes can be detected with as few as 3 technical replicates and in single organoids, and that
+    organoids respond dose-dependently to pro-convulsant and anti-epileptic compounds.
+  source_urls:
+  - https://www.stemcell.com/measuring-neuronal-activity-in-hpsc-derived-cerebral-organoids-on-high-density-multi-electrode-arrays.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  supporting_references:
+  - doi:10.1016/j.bbrep.2021.101148
+  - doi:10.3389/fnins.2019.00677
+- description: Transcriptomic profiling of drug- or toxin-induced neurotoxicity, for example tetrodotoxin-induced
+    changes in ion channel, synaptic signaling and neuronal survival genes.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  supporting_references:
+  - doi:10.3390/md21110588
+- description: Developmental neurotoxicity of environmental exposures, for example polypropylene nanoplastics
+    (publication listed on the Maturation Kit page).
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-maturation-kit.html
+  supporting_references:
+  - doi:10.1186/s12951-025-03561-1
+- description: Testing therapeutic candidates in patient-derived organoids. A mitochondrial complex I
+    modulator (C273) reduced Abeta and p-Tau in iPSC-derived cerebral organoids from patients with sporadic
+    Alzheimer's disease (publication listed on the Cerebral Organoid Kit page).
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-kit.html
+  supporting_references:
+  - doi:10.1038/s44386-026-00072-3
+- description: 'Basic and comparative studies of human brain development: neural stem cell fate decisions,
+    neurogenesis, neuronal migration, candidate genes for human brain expansion, and cross-species comparisons.'
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster.html
+  - https://www.stemcell.com/nature-research-round-table-progress-and-challenges-in-organoid-models-of-human-brain-development.html
+- description: Studying interactions between brain regions within one organoid and modeling spontaneous
+    neurodevelopment. Also used as a platform to derive new or modified organoid models, for example choroid
+    plexus organoids.
+  source_urls:
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  supporting_references:
+  - doi:10.1126/science.aaz5626
+- description: Single-cell analysis. Papain dissociation of 25-100-day-old organoids gives more than 95%
+    viability and more than 1,000,000 viable cells per day-50 organoid, for scRNA-seq or flow cytometry.
+    Public scRNA-seq data from day-50 STEMdiff cerebral organoids are on GEO (GSE218457).
+  source_urls:
+  - https://www.stemcell.com/how-to-dissociate-3d-neural-organoids-into-single-cell-suspension.html
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-kit.html
+  - https://www.stemcell.com/scrnaseq-data-visualization-for-neural-organoids
+- description: 'Cryosectioning and immunofluorescence of cytoarchitecture: progenitor zones, pseudo-ventricles
+    and cortical layer markers.'
+  source_urls:
+  - https://www.stemcell.com/cerebral-organoid-cryosectioning-immunofluorescence.html
+limitations:
+- description: Models only early, roughly first-trimester brain development. Later developmental events
+    are poorly modeled.
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster.html
+- description: The tissue is fetal-like, so neurodegenerative and age-related diseases are hard to model.
+    Diseases that need long-term protein accumulation (e.g. Alzheimer's, Parkinson's) may not be modeled
+    easily. Reaching adult-like maturation is still an open research problem.
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: No vasculature. Endothelial cells are not seen spontaneously, and co-cultured HUVECs, fibroblasts
+    or meningeal fibroblasts overtook the cultures and disrupted organoid growth. Organoids also lack
+    sensory input and output, which functional network development needs.
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster.html
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+- description: Size is limited because nutrients cannot diffuse to the centre (typically 3-5 mm). By day
+    40 the centre is very dense and dark, and older or larger organoids may have necrotic centres that
+    shear easily during cryosectioning.
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+  - https://www.stemcell.com/cerebral-organoid-cryosectioning-immunofluorescence.html
+  - https://www.stemcell.com/neural-organoid-culture.html
+- description: 'Variability. The largest source is batch-to-batch, more than organoid-to-organoid. The
+    recommended design is 4-5 organoids per batch across 4-5 biological replicates. Unguided organoids
+    are heterogeneous, with mixed regional identities, and 3D cultures are harder to master and analyze
+    than 2D cultures. Some organoids form improperly: they show clear cysts and stay under 1 mm by day
+    40.'
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  - https://www.stemcell.com/neural-organoid-culture.html
+- description: Functional readouts are hard. Organoids are large, spherical and heterogeneous, which couples
+    them poorly to planar MEA plates and makes network activity hard to measure robustly. The recommended
+    minimum culture period for electrically active organoids is 60 days. Guided organoids are described
+    as having more mature electrophysiological properties than unguided ones.
+  source_urls:
+  - https://www.stemcell.com/measuring-neuronal-activity-in-hpsc-derived-cerebral-organoids-on-high-density-multi-electrode-arrays.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: Glia arrive late and are incompletely characterized. Astrocytes appear after about day
+    60 and peak after day 100. Oligodendrocytes are seen, but whether they myelinate axons is unknown.
+    Microglia and other immune cells are absent, since organoids generally lack blood vessels and immune
+    cells.
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: 'Requires Matrigel embedding (or liquid Matrigel), an orbital shaker for maturation, and
+    long culture times: 40+ days for cortical layering and 60+ days for electrical activity.'
+  source_urls:
+  - https://www.stemcell.com/neural-organoid-culture.html
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  - https://www.stemcell.com/measuring-neuronal-activity-in-hpsc-derived-cerebral-organoids-on-high-density-multi-electrode-arrays.html
+- description: Complex organoids can be made only from hPSCs. Primary neural stem and progenitor cells
+    from brain dissociates are too fate-restricted to form the layered structure.
+  source_urls:
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+- description: 'Licence restriction. The Cerebral Organoid Kit and Maturation Kit are sold under a non-transferable,
+    limited-use licence to IMBA intellectual property, for research use only. Commercial use is excluded:
+    manufacturing, resale, providing services, or for-profit collaboration beyond research (e.g. drug
+    development activities). Commercial use needs a licence from IMBA.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-maturation-kit.html
+- description: Brain organoids are not a replacement for animal experiments. Knoblich frames them as a
+    way to make animal work more targeted and possibly reduce it. Translating findings to the clinic needs
+    validation and complementary systems, and ethical considerations grow as complexity and activity increase.
+  source_urls:
+  - https://www.stemcell.com/jurgen-knoblich-talks-organoids.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-cerebral-organoid-maturation-kit.html
+  - https://www.stemcell.com/neural-organoid-culture.html
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  - https://www.stemcell.com/madeline-lancaster-on-brain-organoids-modeling-human-brain-development-in-a-dish.html
+  - https://www.stemcell.com/madeline-lancaster.html
+  - https://www.stemcell.com/measuring-neuronal-activity-in-hpsc-derived-cerebral-organoids-on-high-density-multi-electrode-arrays.html
+  products:
+  - name: STEMdiff Cerebral Organoid Kit
+    catalog_number: 08570
+    url: https://www.stemcell.com/products/stemdiff-cerebral-organoid-kit.html
+  - name: STEMdiff Cerebral Organoid Maturation Kit
+    catalog_number: 08571
+    url: https://www.stemcell.com/products/stemdiff-cerebral-organoid-maturation-kit.html
+  - name: Organoid Embedding Sheet
+    catalog_number: 08579
+    url: https://www.stemcell.com/products/organoid-embedding-sheet.html
+  - name: BrainPhys Neuronal Medium (used in the HD-MEA recording medium)
+    catalog_number: 05790
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

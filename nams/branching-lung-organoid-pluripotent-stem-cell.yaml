@@ -1,0 +1,160 @@
+model:
+  id: branching-lung-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Branching lung organoids from human pluripotent stem cells
+  description: 'An hPSC-derived organoid that recapitulates airway branching morphogenesis and proximo-distal
+    specification. Organoids develop proximal and distal-like branching airway epithelial structures expressing
+    EPCAM, NKX2.1, SOX2, SOX9, MUC1 and P63, with pro-surfactant protein B- and C-expressing alveolar
+    type II-like cells, luminal MUC1, and surrounding VIM-expressing mesenchyme. NKX2.1 and its surface
+    surrogate CPM are maintained in long-term culture (day 67), and the cells are lung-specified: NKX2.1
+    is expressed without the thyroid marker PAX8 or the forebrain marker FOXG1. With extended culture,
+    maturity markers ABCA3, SFTPC and SFTPB increase.'
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002048
+    name: lung
+  cell_types:
+  - id: CL:0002368
+    name: respiratory tract epithelial cell
+  - id: CL:0008019
+    name: mesenchymal cell
+  cell_source: pluripotent stem cells
+  differentiation_method: 'Human ES and iPS cells maintained in mTeSR1 or mTeSR Plus are taken through
+    four stages: (1) definitive endoderm by day 3, (2) anterior foregut endoderm, with buds released from
+    the monolayer during days 3 - 6, (3) suspension of those buds to form ventralized lung bud organoids,
+    days 6 - 14, and (4) embedding of the lung bud organoids in a Matrigel sandwich to mature into branching
+    lung organoids. Beyond 28 days in the Matrigel sandwich, the STEMdiff Branching Lung Organoid Maturation
+    Kit is used for extended culture.'
+  culture_system: Monolayer differentiation, then suspension culture of lung bud organoids, then a Matrigel
+    sandwich for stage 4; serum-free throughout, with a cryopreservable intermediate stage. Branching
+    tips keep growing and branching to day 101 and cultures have been assessed to day 105.
+  references:
+  - id: doi:10.7554/elife.05098
+    title: In vitro generation of human pluripotent stem cell derived lung organoids
+    authors:
+    - Briana R Dye
+    - David R Hill
+    - Michael AH Ferguson
+    - Yu-Hwai Tsai
+    - Melinda S Nagy
+    - Rachel Dyal
+    - James M Wells
+    - Christopher N Mayhew
+    - Roy Nattiv
+    - Ophir D Klein
+    - Eric S White
+    - Gail H Deutsch
+    - Jason R Spence
+    journal: eLife
+    year: 2015
+  - id: doi:10.7554/elife.19732
+    title: A bioengineered niche promotes in vivo engraftment and maturation of pluripotent stem cell
+      derived human lung organoids
+    authors:
+    - Briana R Dye
+    - Priya H Dedhia
+    - Alyssa J Miller
+    - Melinda S Nagy
+    - Eric S White
+    - Lonnie D Shea
+    - Jason R Spence
+    journal: eLife
+    year: 2016
+  - id: doi:10.1016/j.stemcr.2015.11.010
+    title: Directed Induction of Functional Multi-ciliated Cells in Proximal Airway Epithelial Spheroids
+      from Human Pluripotent Stem Cells
+    authors:
+    - Satoshi Konishi
+    - Shimpei Gotoh
+    - Kazuhiro Tateishi
+    - Yuki Yamamoto
+    - Yohei Korogi
+    - Tadao Nagasaki
+    - Hisako Matsumoto
+    - Shigeo Muro
+    - Toyohiro Hirai
+    - Isao Ito
+    - Sachiko Tsukita
+    - Michiaki Mishima
+    journal: Stem Cell Reports
+    year: 2016
+synonyms:
+- branching lung organoids
+- lung bud organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Modeling human lung development, specifically airway branching morphogenesis and proximal-distal
+    patterning of the airway epithelium.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+- description: Disease modeling and genome editing in a lung context (the kit lists genome editing as
+    an application and is used with ES and multiple iPSC lines, including iPSCs derived from peripheral
+    blood endothelial progenitor cells and from PBMCs).
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-maturation-kit.html
+- description: Respiratory infectious disease modeling, supported by expression of the SARS-CoV-2 entry
+    proteins ACE2 and TMPRSS2 at day 63.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+- description: Drug discovery and toxicity testing, and transplantation research, listed as the kit's
+    areas of interest.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+- description: Patient-specific modeling of lung disease such as cystic fibrosis using hPSC-derived lung
+    epithelial cells, overcoming the limited availability of patient primary cells.
+  source_urls:
+  - https://www.stemcell.com/making-lung-cells-from-pluripotent-stem-cells-disease-modeling-and-future-therapies.html
+limitations:
+- description: 'Developmentally immature: the model expresses "distal-like" and "alveolar type II-like"
+    markers, and more mature lung markers (SFTPC, SFTPB, ABCA3) only increase with culture beyond 28 days
+    in the Matrigel sandwich, requiring a separate maturation kit.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-maturation-kit.html
+- description: 'Very long timeline: branching organoids are assessed at days 42 - 67 and matured to day
+    101 - 105, against 15 - 35 days for the primary-cell airway organoid formats.'
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+- description: Matrigel-dependent (a Matrigel sandwich for the whole branching stage) and tied to specific
+    upstream maintenance media (optimized for cells maintained in mTeSR1 or mTeSR Plus).
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+- description: hPSC-derived lung and intestinal organoids are characterized in the field as models of
+    human fetal tissue, which the pulmonary organoid publication list cites directly.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/publications.html
+  supporting_references:
+  - doi:10.1016/j.ydbio.2016.06.006
+- description: 'Field-level limitation stated on the overview page: precise control of lung differentiation
+    and branching morphogenesis of stem cells remains a challenge, and unresolved issues for lung organoid
+    culture include maintaining genetic stability and physiological function over time and developing
+    high-throughput screening platforms.'
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+  - https://www.stemcell.com/organoid-profiles-qi-tan.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+  - https://www.stemcell.com/products/stemdiff-branching-lung-organoid-maturation-kit.html
+  - https://www.stemcell.com/products/stemdiff-lung-progenitor-kit.html
+  - https://www.stemcell.com/hpsc-derived-lung-models-as-tools-for-respiratory-research.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+  products:
+  - name: STEMdiff Branching Lung Organoid Kit
+    catalog_number: 100-0195
+    url: https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+  - name: STEMdiff Branching Lung Organoid Maturation Kit
+    catalog_number: 100-0528
+    url: https://www.stemcell.com/products/stemdiff-branching-lung-organoid-maturation-kit.html
+  - name: STEMdiff Lung Progenitor Kit
+    url: https://www.stemcell.com/products/stemdiff-lung-progenitor-kit.html
+  - name: mTeSR1
+    catalog_number: '85850'
+    url: https://www.stemcell.com/products/stemdiff-branching-lung-organoid-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

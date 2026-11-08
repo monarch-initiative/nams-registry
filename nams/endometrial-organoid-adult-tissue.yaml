@@ -1,0 +1,79 @@
+model:
+  id: endometrial-organoid-adult-tissue
+  type: Organoid
+  name: Human endometrial organoids
+  description: Hormone-responsive organoids of the human endometrial epithelium that keep PAX8+SOX9+ stem
+    cell niches, differentiate into PAEP-secreting secretory cells in response to hormones, and keep ciliated
+    cells (acetylated tubulin). STEMCELL presents them for modeling the menstrual cycle, endometrial pathologies
+    such as endometriosis, and early implantation.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001295
+    name: endometrium
+  cell_types:
+  - id: CL:0000066
+    name: epithelial cell
+  - id: CL:4030040
+    name: endometrial multiciliated epithelial cell
+  - id: CL:0009084
+    name: glandular epithelial cell of endometrium
+  cell_source: adult tissue
+  differentiation_method: Primary endometrial epithelial cells from tissue (proliferative or secretory
+    phase), endometriosis lesions or menstrual effluent are seeded in Matrigel domes in GyneCult Endometrial
+    Organoid Medium (serum-, phenol red- and sex steroid hormone-free). Estrogen and/or progesterone are
+    added at set concentrations to model menstrual-cycle phases (e.g. 0.2 nM E2 early proliferative; 1
+    nM E2 late proliferative; 0.2 nM E2 + 4 nM P4 early secretory; 0.5 nM E2 + 40 nM P4 late secretory).
+  culture_system: Matrigel domes (4000 cells per 20 uL dome, up to 3 domes per well of a 24-well non-treated
+    plate), submerged in 500 uL medium with 0.2 nM estrogen; full medium change every 3-4 days; passage
+    at day 10. Lumens visible by day 7; cilia beating may be seen by days 10-12. Expansion shown over
+    5 passages (8-10 days each) with at least 10 cumulative doublings.
+synonyms:
+- EOs
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Modeling menstrual-cycle phases in vitro by varying estrogen and progesterone, read out
+    by PAEP secretion, PAX8/SOX9 staining and ciliated-cell markers over a 14-day four-phase protocol.
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+- description: Modeling endometriosis using organoids derived from endometriosis lesions (images courtesy
+    of Dr. Thomas Andrieu, University of Bern).
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+- description: 'Non-invasive sampling: organoids can be derived from menstrual effluent and from epithelial-sparse
+    samples.'
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+- description: Modeling early implantation processes (stated as a product advantage; no data shown).
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+- description: Characterization by whole-mount immunocytochemistry of epithelial organoids (generic protocol
+    linked from the product page).
+  source_urls:
+  - https://www.stemcell.com/performing-icc-staining-epithelial-organoids.html
+limitations:
+- description: 'Epithelium only: the workflow selects epithelial organoids, and stromal (elongated) cells
+    seen at passage 1 in epithelial-sparse samples are lost on subculture, so endometrial stroma, immune
+    cells and vasculature are absent (implied by Figure 3 on the product page).'
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+- description: Depends on Matrigel domes, and estrogen must be added for routine passaging; hormone levels
+    are set by the user rather than produced by the system.
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+- description: 'Donor-to-donor variability in starting material: epithelial-sparse samples give no epithelial
+    organoids at passage 1 and need subculture before they expand.'
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+  products:
+  - name: GyneCult Endometrial Organoid Medium
+    catalog_number: 100-2147
+    url: https://www.stemcell.com/products/gynecult-endometrial-organoid-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

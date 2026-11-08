@@ -1,0 +1,68 @@
+model:
+  id: liver-organoid-derived-monolayer-adult-tissue
+  type: TwoDCellCulture
+  name: Hepatic organoid-derived monolayers
+  description: A two-dimensional epithelial monolayer generated from dissociated liver organoids. STEMCELL
+    presents it as a distinct format that gives more experimental flexibility and less interference from
+    the extracellular matrix than dome-embedded organoids, and that, on Transwell inserts, allows different
+    treatments to be applied to the apical and basolateral compartments separately.
+  models:
+  - biological_system_modeled: UBERON:0002107
+  cell_source: adult tissue
+  culture_conditions: Established human liver organoids expanded in HepatiCult Organoid Growth Medium
+    are dissociated to a single-cell suspension with TrypLE and vigorous trituration, then reseeded on
+    a dilute (1:50, 2%) Matrigel-coated surface in HepatiCult Organoid Initiation Medium. Costar 6.5 mm
+    Transwell inserts with 0.4 um polyester membranes (recommended; 1.5 x 10^5 cells per insert at the
+    recommended density, 100 uL upper and 500 uL lower chamber) or wells of a 24-well tissue-culture-treated
+    plate (4.5 x 10^5 cells/well). Monolayers reach 100% confluence in 2 - 3 days with full medium changes
+    every 2 - 3 days, and remain viable for at least 10 days.
+synonyms:
+- 3D organoid-derived hepatic monolayers
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Disease-modelling applications requiring access to both sides of the hepatic epithelium:
+    growth on Transwell inserts enables different treatments in each compartment.'
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-monolayer.html
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-human.html
+- description: Assays that need reduced extracellular-matrix interference, run once the monolayer is confluent;
+    RNA can be isolated from organoid-derived epithelial monolayers using a dedicated protocol.
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-monolayer.html
+  - https://www.stemcell.com/isolate-rna-from-epithelial-organoids.html
+limitations:
+- description: 'Finite usable window: monolayers remain viable for at least 10 days, but multi-layering
+    of cells may be observed if confluent monolayers are maintained longer.'
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-monolayer.html
+- description: The format loses the 3D architecture and enclosed lumen of the organoid, and STEMCELL's
+    hepatic functional characterization (albumin secretion, CYP3A4 activity, bile acid and urea production)
+    is reported for differentiated 3D organoids, not for monolayers; the monolayer protocol uses Initiation
+    Medium and gives no functional maturation data. Implied by the absence of any functional data on the
+    monolayer page.
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-monolayer.html
+  - https://www.stemcell.com/products/hepaticult-organoid-kit-human.html
+- description: Still matrix-dependent (Matrigel coating) and still under the HUB research-use-only licence
+    that applies to the HepatiCult media used to make it.
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-monolayer.html
+  - https://www.stemcell.com/products/hepaticult-organoid-initiation-medium-human.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/liver-organoid-monolayer.html
+  - https://www.stemcell.com/products/hepaticult-organoid-growth-medium-human.html
+  - https://www.stemcell.com/isolate-rna-from-epithelial-organoids.html
+  products:
+  - name: HepatiCult Organoid Initiation Medium (Human)
+    catalog_number: 100-0384
+    url: https://www.stemcell.com/products/hepaticult-organoid-initiation-medium-human.html
+  - name: Costar 6.5 mm Transwell, 0.4 um Pore Polyester Membrane Inserts
+    catalog_number: '38024'
+    url: https://www.stemcell.com/liver-organoid-monolayer.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

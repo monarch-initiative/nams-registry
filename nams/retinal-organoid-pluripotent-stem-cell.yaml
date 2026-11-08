@@ -1,0 +1,69 @@
+model:
+  id: retinal-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Retinal organoids (optic cup) from pluripotent stem cells
+  description: Retinal organoids appear in an LSCN 2022 workshop talk by Dr. Rachael Pearson and in literature
+    citations (the landing page names "optic cup" among tissues with organoid systems). STEMCELL lists
+    no retinal organoid product.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000966
+    name: retina
+  cell_types:
+  - id: CL:0000210
+    name: photoreceptor cell
+  - id: CL:0002586
+    name: retinal pigment epithelial cell
+  cell_source: pluripotent stem cells
+  differentiation_method: Self-organizing optic-cup morphogenesis in 3D culture (Eiraku 2011, cited);
+    neuroepithelial culture from hESCs with conversion to retinal pigment epithelium (Zhu 2013, listed
+    under "Retinal Spheroids"). No protocol or product is in the corpus.
+  culture_system: Not described in the corpus.
+  references:
+  - id: doi:10.1038/nature09941
+    title: Self-organizing optic-cup morphogenesis in three-dimensional culture
+    authors:
+    - Mototsugu Eiraku
+    - Nozomu Takata
+    - Hiroki Ishibashi
+    - Masako Kawada
+    - Eriko Sakakura
+    - Satoru Okuda
+    - Kiyotoshi Sekiguchi
+    - Taiji Adachi
+    - Yoshiki Sasai
+    journal: Nature
+    year: 2011
+  - id: doi:10.1371/journal.pone.0054552
+    title: Three-Dimensional Neuroepithelial Culture from Human Embryonic Stem Cells and Its Use for Quantitative
+      Conversion to Retinal Pigment Epithelium
+    authors:
+    - Yu Zhu
+    - Madalena Carido
+    - Andrea Meinhardt
+    - Thomas Kurth
+    - Mike O. Karl
+    - Marius Ader
+    - Elly M. Tanaka
+    journal: PLoS ONE
+    year: 2013
+synonyms:
+- retinal spheroids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Developing photoreceptor replacement therapy for advanced retinal degeneration, the leading
+    cause of untreatable blindness in the developed world.
+  source_urls:
+  - https://www.stemcell.com/lscn-2022-using-organoids-for-retinal-repair.html
+limitations: []
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/lscn-2022-using-organoids-for-retinal-repair.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/publications.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

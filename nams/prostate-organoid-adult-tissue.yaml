@@ -1,0 +1,133 @@
+model:
+  id: prostate-organoid-adult-tissue
+  type: Organoid
+  name: Prostate organoids from adult tissue
+  description: Human and mouse prostate organoids with a cell-dense core of keratin 8+, androgen receptor+
+    luminal cells, lined on the outside by keratin 14+ basal cells. A publication listed on STEMCELL product
+    pages describes a FACS-free method for growing mouse prostate organoids that respond strongly to androgens.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002367
+    name: prostate gland
+  cell_types:
+  - id: CL:0002340
+    name: luminal cell of prostate epithelium
+  - id: CL:0002341
+    name: basal cell of prostate epithelium
+  cell_source: adult tissue
+  differentiation_method: Freshly dissociated human prostate cells are expanded in EpiCult Plus Medium
+    for 5 days, then seeded into a human prostate organoid medium for another 11 days. Mouse prostate
+    epithelial cells expanded in EpiCult Plus can likewise be differentiated as organoids. STEMCELL also
+    lists ProstaCult Organoid Medium (Human) and ProstaCult Organoid Medium (Mouse) in poster titles.
+  culture_system: 3D organoid culture after 2D expansion (timings above for human). No matrix or plate
+    details are given.
+  references:
+  - id: doi:10.1016/j.cell.2014.08.017
+    title: Identification of Multipotent Luminal Progenitor Cells in Human Prostate Organoid Cultures
+    authors:
+    - Wouter R. Karthaus
+    - Phillip J. Iaquinta
+    - Jarno Drost
+    - Ana Gracanin
+    - Ruben van Boxtel
+    - John Wongvipat
+    - Catherine M. Dowling
+    - Dong Gao
+    - Harry Begthel
+    - Norman Sachs
+    - Robert G.J. Vries
+    - Edwin Cuppen
+    - Yu Chen
+    - Charles L. Sawyers
+    - Hans C. Clevers
+    journal: Cell
+    year: 2014
+  - id: doi:10.1016/j.cell.2014.08.016
+    title: Organoid Cultures Derived from Patients with Advanced Prostate Cancer
+    authors:
+    - Dong Gao
+    - Ian Vela
+    - Andrea Sboner
+    - Phillip J. Iaquinta
+    - Wouter R. Karthaus
+    - Anuradha Gopalan
+    - Catherine Dowling
+    - Jackline N. Wanjala
+    - Eva A. Undvall
+    - Vivek K. Arora
+    - John Wongvipat
+    - Myriam Kossai
+    - Sinan Ramazanoglu
+    - Luendreo P. Barboza
+    - Wei Di
+    - Zhen Cao
+    - Qi Fan Zhang
+    - Inna Sirota
+    - Leili Ran
+    - Theresa Y. MacDonald
+    - Himisha Beltran
+    - Juan-Miguel Mosquera
+    - Karim A. Touijer
+    - Peter T. Scardino
+    - Vincent P. Laudone
+    - Kristen R. Curtis
+    - Dana E. Rathkopf
+    - Michael J. Morris
+    - Daniel C. Danila
+    - Susan F. Slovin
+    - Stephen B. Solomon
+    - James A. Eastham
+    - Ping Chi
+    - Brett Carver
+    - Mark A. Rubin
+    - Howard I. Scher
+    - Hans Clevers
+    - Charles L. Sawyers
+    - Yu Chen
+    journal: Cell
+    year: 2014
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: 'Modeling the androgen response of the normal prostate: organoids express the androgen
+    receptor, which most other in vitro prostate models lack (from the abstract of a publication listed
+    on the EGF and bFGF product pages).'
+  source_urls:
+  - https://www.stemcell.com/products/human-recombinant-egf.html
+  - https://www.stemcell.com/products/epicult-plus-medium.html
+  supporting_references:
+  - doi:10.1016/j.mex.2022.101843
+- description: Expanding human prostate organoid-forming cells upstream in EpiCult Plus before organoid
+    differentiation; expanding prostate organoids (poster title "Expansion of Prostate Organoids ProstaCult
+    Organoid Medium (Human)").
+  source_urls:
+  - https://www.stemcell.com/products/epicult-plus-medium.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/prostate-research/scientific-posters.html
+limitations:
+- description: Earlier mouse prostate epithelial purification methods for organoid culture needed flow
+    cytometry, and so specialized instruments and expertise (from the listed MethodsX abstract).
+  source_urls:
+  - https://www.stemcell.com/products/human-recombinant-egf.html
+  supporting_references:
+  - doi:10.1016/j.mex.2022.101843
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/epicult-plus-medium.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/prostate-research/scientific-posters.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+  - https://www.stemcell.com/performing-icc-staining-epithelial-organoids.html
+  products:
+  - name: ProstaCult Organoid Medium (Human)
+    url: https://www.stemcell.com/technical-resources/area-of-interest/prostate-research/scientific-posters.html
+  - name: ProstaCult Organoid Medium (Mouse)
+    url: https://www.stemcell.com/technical-resources/area-of-interest/prostate-research/scientific-posters.html
+  - name: EpiCult Plus Medium (upstream expansion)
+    catalog_number: '06070'
+    url: https://www.stemcell.com/products/epicult-plus-medium.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-06'

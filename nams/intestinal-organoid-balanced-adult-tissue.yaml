@@ -1,0 +1,151 @@
+model:
+  id: intestinal-organoid-balanced-adult-tissue
+  type: Organoid
+  name: Intestinal organoids with balanced stem and differentiated populations
+  description: A next-generation adult-tissue intestinal organoid in which expansion and differentiation
+    occur at the same time, giving organoids with complex budded, crypt-like morphology and subtle but
+    consistent morphological differences between intestinal regions. Robust LGR5+ stem cell expansion
+    is maintained alongside Paneth, enteroendocrine, enterochromaffin, goblet and tuft cells and more
+    mature enterocyte lineages; single-cell RNA sequencing (NCBI GEO GSE308421) showed increased goblet
+    and enteroendocrine lineages and more mature enterocytes versus first-generation expansion medium.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000160
+    name: intestine
+  cell_types:
+  - id: CL:0002250
+    name: intestinal crypt stem cell
+  - id: CL:0009010
+    name: transit amplifying cell
+  - id: CL:0000510
+    name: paneth cell
+  - id: CL:0000164
+    name: enteroendocrine cell
+  - id: CL:0000577
+    name: type EC enteroendocrine cell
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0002204
+    name: tuft cell
+  - id: CL:0000682
+    name: M cell of gut
+  - id: CL:0000584
+    name: enterocyte
+  cell_source: adult tissue
+  differentiation_method: 'Crypts, intestinal fragments or single LGR5+ cells from intestinal tissue are
+    seeded in IntestiCult Plus Organoid Growth Medium (Cat #100-1677), a serum- and conditioned medium-free
+    formulation that supports simultaneous expansion and differentiation in a single system; a two-phase
+    schedule is used (2 days in "Start" medium at 5X supplement, then "Balance" medium at 1X supplement,
+    typically 5 more days). The medium can be adapted Wnt-free for small intestinal differentiation or
+    for Wnt-independent colorectal cancer organoids; rare cell types can be enriched with added factors
+    (RANKL or TNF-alpha for M cells, DAPT/gamma-secretase inhibition for goblet cells, MEK plus gamma-secretase
+    inhibition for enteroendocrine cells).'
+  culture_system: '50 uL Matrigel domes, or 96-well and 24-well Organoid Culture Plates (Cat #200-0562
+    / 200-0561), or 5% Matrigel dilute suspension; passaged when organoids are fully matured at 5-8 days.
+    Reported split ratio 1:10 every 7 days, with consistent morphology and growth over 35 passages (245
+    days).'
+  references:
+  - id: doi:10.1152/ajpcell.00108.2016
+    title: TNF-α augments RANKL-dependent intestinal M cell differentiation in enteroid cultures
+    authors:
+    - Megan B. Wood
+    - Daniel Rios
+    - Ifor R. Williams
+    journal: American Journal of Physiology-Cell Physiology
+    year: 2016
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+applications:
+- description: 'Functional drug transport and barrier assays: rhodamine 123 added to the surrounding medium
+    accumulates in the lumen of duodenal and ileal organoids, and uptake is partially inhibited by 100
+    uM of the P-glycoprotein inhibitor verapamil; FITC-dextran is used as a control. Uptake was greater
+    and less diffuse than in organoids from first-generation expansion medium. Transporters beyond P-gp
+    reported as examined include BCRP, MRP2, OAT and SLC family transporters.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: 'Drug metabolism: duodenal and ileal organoids robustly express CYP3A4; activity is induced
+    by calcitriol or rifampicin and inhibited by ketoconazole, measured with the Promega P450-Glo CYP3A4
+    assay.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+- description: Dose-dependent drug toxicity and viability screening across duodenum, ileum and colon organoids
+    from multiple donors (CellTiter-Glo 3D), reproducible enough to detect donor-specific differences
+    in drug response such as those seen with gefitinib.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+- description: 'Cystic fibrosis disease modeling and modulator response: healthy ileal and colonic organoids
+    swell on 10 uM forskolin, organoids from a CF donor carrying the F508 deletion are non-responsive,
+    and Trikafta treatment partially restores forskolin-induced swelling.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+- description: Expansion of Wnt-independent colorectal cancer organoids, including organoids from subcutaneous
+    PDX tumors, using IntestiCult Plus Basal Medium alone.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: 'Extension of adult-tissue organoid culture to rat: lines were established from duodenum,
+    jejunum, ileum, proximal and distal colon of Sprague Dawley rats, which the page states previously
+    published and first-generation IntestiCult formulations had been unable to establish and passage.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+limitations:
+- description: Not recommended for organoid-derived monolayer establishment or for hPSC-derived organoids;
+    the recommended route for monolayers is IntestiCult Organoid Differentiation Medium.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Not suitable for mouse monolayer workflows because its serum-free formulation does not
+    support the cell adhesion mouse cells need; the first-generation serum-containing human expansion
+    medium is recommended instead.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Does not currently support gastric organoids or cancerous tissue from other GI regions
+    such as pancreas; STEMCELL states gastric organoids need different conditions.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Supports hPSC/ESC-derived colon organoids but with fibroblast overgrowth problems, since
+    fibroblasts also grow well in this medium; the STEMdiff Intestinal Organoid Kit is recommended instead
+    for ESC-derived systems.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: 'Induced rare cell types can destabilize the culture: M cells differentiate very fast with
+    RANKL or TNF-alpha and can overtake the culture and reduce viability if not controlled; excessive
+    DAPT dosing for goblet cell enrichment also affects viability.'
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Wnt-independent colorectal cancer organoids grown in IntestiCult Plus Basal Medium are
+    dense and lack a defined single-cell columnar epithelium; MUC2 is present but without identifiable
+    goblet cells or other specialized cell types.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+- description: Not recommended for microphysiological system (MPS) platforms; first-generation expansion
+    and differentiation media are recommended there because they support better cell adhesion.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Research-use-only HUB licence restriction applies, excluding commercial drug screening,
+    equipment validation and biobanking without a further licence.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+  - https://www.stemcell.com/intesticult-plus-martin-stahl-hidden-variable-webinar.html
+  - https://www.stemcell.com/isscr-2025-advancing-organoid-models-for-intestinal-and-hepatic-research.html
+  - https://www.stemcell.com/products/brands/intesticult-intestinal-organoid-media.html
+  products:
+  - name: IntestiCult Plus Organoid Growth Medium
+    catalog_number: 100-1677
+    url: https://www.stemcell.com/products/intesticult-plus-organoid-growth-media.html
+  - name: Organoid Culture Plates (24-well / 96-well)
+    catalog_number: 200-0561 / 200-0562
+    url: https://www.stemcell.com/products/organoid-culture-plates.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

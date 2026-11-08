@@ -1,0 +1,139 @@
+model:
+  id: airway-epithelium-macrophage-coculture-ali-adult-tissue
+  type: CoCulture
+  name: Airway epithelial-macrophage co-culture at the air-liquid interface for RSV infection
+  description: A co-culture that adds a recruited-macrophage compartment to the bronchial ALI model to
+    study the epithelial-immune interaction during respiratory syncytial virus infection. The epithelium
+    and macrophages share medium but not contact, so only paracrine signalling is modelled. Readouts include
+    GFP fluorescence from replicating RSV, TEER for epithelial barrier integrity, ELISA of secreted cytokines
+    (TNF-alpha, IL-10, IL-12p70) and flow cytometry of harvested macrophages (CD206, CD80, CCR7, DC-SIGN,
+    CD14, viability). The protocol is based on Ronaghan et al. 2022.
+  models:
+  - biological_system_modeled: UBERON:0002185
+  cell_types:
+  - id: CL:0002633
+    name: respiratory basal cell
+  - id: CL:0000067
+    name: ciliated epithelial cell
+  - id: CL:0002370
+    name: respiratory tract goblet cell
+  - id: CL:0000235
+    name: macrophage
+  cell_source: adult tissue
+  culture_conditions: 'Two arms are prepared separately and combined. Primary human bronchial epithelial
+    cells are expanded in PneumaCult-Ex Plus and differentiated at the air-liquid interface in PneumaCult-ALI
+    Medium on Transwell inserts for 4 weeks. In parallel, monocytes isolated from leukapheresis samples
+    with the EasySep Human Monocyte Isolation Kit are differentiated to M0 macrophages over 6 days in
+    ImmunoCult-SF Macrophage Medium with 50 ng/mL M-CSF, with M1 activation (M-CSF plus 50 ng/mL IFN-gamma
+    and 10 ng/mL LPS) or M2a activation (M-CSF plus 10 ng/mL IL-4) from day 4. On day 6 the inserts carrying
+    differentiated HBECs are placed on top of the submerged macrophages. Non-contact, paracrine co-culture
+    in 24-well format: Costar 6.5 mm Transwell 0.4 um polyester inserts carrying the ALI epithelium suspended
+    over macrophages in the basolateral well, each in its own medium. RSV (RSV-GFP) is added apically
+    for 2 hours at a defined MOI, the inoculum is removed, cultures are returned to ALI and assessed up
+    to 72 hours post-infection.'
+  references:
+  - id: doi:10.1371/journal.pone.0276013
+    title: M1-like, but not M0- or M2-like, macrophages, reduce RSV infection of primary bronchial epithelial
+      cells in a media-dependent fashion
+    authors:
+    - Natalie J. Ronaghan
+    - Mandy Soo
+    - Uriel Pena
+    - Marisa Tellis
+    - Wenming Duan
+    - Nooshin Tabatabaei-Zavareh
+    - Philipp Kramer
+    - Juan Hou
+    - Theo J. Moraes
+    journal: PLOS ONE
+    year: 2022
+  - id: doi:10.1128/cmr.00010-16
+    title: 'Respiratory Syncytial Virus: Infection, Detection, and New Options for Prevention and Treatment'
+    authors:
+    - Cameron Griffiths
+    - Steven J. Drews
+    - David J. Marchant
+    journal: Clinical Microbiology Reviews
+    year: 2017
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Testing how macrophage polarization state affects RSV infection of the airway epithelium:
+    at 0.15 MOI, co-culture with M1 macrophages decreased RSV infection as measured by GFP fluorescence
+    at 72 hours post-infection, whereas M0 and M2a did not.'
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  supporting_references:
+  - doi:10.1371/journal.pone.0276013
+- description: 'Separating virus-mediated from host-immune-mediated damage: the protocol notes that in
+    vitro RSV infects primary nasal and bronchial epithelial cells without damaging the monolayer or changing
+    its barrier function, suggesting in vivo damage is a combination of viral and host-immune pathology,
+    which the co-culture is designed to dissect.'
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+- description: More broadly, co-culturing airway/lung/alveolar organoid and ALI models with immune cells
+    to investigate host immune responses to respiratory tract infection, and antiviral compound screening
+    in airway-immune co-cultures.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/scientific-posters.html
+limitations:
+- description: 'Non-contact by design: macrophages and epithelium are separated by the insert membrane
+    and only paracrine signalling is modelled, so adhesion, transmigration and direct cell-cell interaction
+    are not.'
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+- description: Models only the recruited, blood monocyte-derived macrophage population; the protocol notes
+    the lung also contains yolk sac-derived tissue-resident alveolar macrophages, which this system does
+    not provide.
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+- description: 'Media-dependent effect: the underlying publication reports that the M1 reduction of RSV
+    infection occurs "in a media-dependent fashion", and each macrophage state is maintained in its own
+    cytokine-containing medium during co-culture.'
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  supporting_references:
+  - doi:10.1371/journal.pone.0276013
+- description: MOI must be re-determined per donor and timeline by counting bronchial epithelial cells
+    per insert before starting co-cultures, and the assessed window is short (up to 72 hours post-infection).
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+- description: 'Readout artefact to avoid: harvesting M2a macrophages with ACCUTASE causes loss of M2a
+    markers, so EDTA must be used instead for that subset.'
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  supporting_references:
+  - doi:10.1016/j.jim.2015.08.001
+- description: Long lead time, since it inherits the 4-week ALI differentiation plus a 6-day macrophage
+    differentiation, and it carries the other ALI limitations (not passageable, no stroma, endothelium
+    or microbiome).
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/overview.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/pulmonary-organoids/scientific-posters.html
+  products:
+  - name: PneumaCult-ALI Medium
+    catalog_number: '05001'
+    url: https://www.stemcell.com/products/pneumacult-ali-medium.html
+  - name: PneumaCult-Ex Plus Medium
+    catalog_number: '05040'
+    url: https://www.stemcell.com/products/pneumacult-ex-plus-medium.html
+  - name: ImmunoCult-SF Macrophage Medium
+    catalog_number: '10961'
+    url: https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  - name: EasySep Human Monocyte Isolation Kit
+    catalog_number: '19359'
+    url: https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  - name: Costar 6.5 mm Transwell, 0.4 um Pore Polyester Membrane Inserts
+    catalog_number: '38024'
+    url: https://www.stemcell.com/airway-immune-cell-coculture-rsv-infection-protocol.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

@@ -1,0 +1,116 @@
+model:
+  id: forebrain-ventral-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Ventral forebrain organoids from human pluripotent stem cells
+  description: Guided, brain-region-specific organoids representing the early developing human ventral
+    forebrain, used to study inhibitory interneurons. NKX2.1 is high by day 25; somatostatin-positive
+    GABAergic interneurons are rare at day 50 and observable by day 75. Organoids are of similar size
+    across 11 cell lines.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0000204
+    name: ventral part of telencephalon
+  cell_types:
+  - id: CL:0011020
+    name: neural progenitor cell
+  - id: CL:0011005
+    name: GABAergic interneuron
+  cell_source: pluripotent stem cells
+  differentiation_method: Directed differentiation with timed small-molecule patterning, adapted from
+    Pasca's protocols (Birey et al. 2017). hPSCs form embryoid bodies in AggreWell800 over 6 days, then
+    grow in suspension and are patterned to the early developing ventral subpallium (FOXG1+, NKX2.1+,
+    medial ganglionic eminence and GABAergic markers).
+  culture_system: Matrix-free, serum-free suspension culture with fusion-free media. Organoids are generated
+    in 43 days; 200 or more consistently sized organoids per kit with AggreWell800. Culture beyond 50
+    days uses the STEMdiff Neural Organoid Maintenance Kit.
+  references:
+  - id: doi:10.1038/nature22330
+    title: Assembly of functionally integrated human forebrain spheroids
+    authors:
+    - Fikri Birey
+    - Jimena Andersen
+    - Christopher D. Makinson
+    - Saiful Islam
+    - Wu Wei
+    - Nina Huber
+    - H. Christina Fan
+    - Kimberly R. Cordes Metzler
+    - Georgia Panagiotakos
+    - Nicholas Thom
+    - Nancy A. O’Rourke
+    - Lars M. Steinmetz
+    - Jonathan A. Bernstein
+    - Joachim Hallmayer
+    - John R. Huguenard
+    - Sergiu P. Paşca
+    journal: Nature
+    year: 2017
+  - id: doi:10.1038/s41596-018-0032-7
+    title: Generation and assembly of human brain region–specific three-dimensional cultures
+    authors:
+    - Steven A. Sloan
+    - Jimena Andersen
+    - Anca M. Pașca
+    - Fikri Birey
+    - Sergiu P. Pașca
+    journal: Nature Protocols
+    year: 2018
+synonyms:
+- ventral forebrain organoids
+- VFO
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Studying inhibitory (GABAergic) interneurons in a 3D system, including their specification
+    from medial ganglionic eminence-like progenitors.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+- description: Fusing with dorsal forebrain organoids to make assembloids for interneuron migration and
+    circuit integration (see the assembloid entry). GFP-labelled ventral organoids allow migrating interneurons
+    to be traced by live imaging.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/how-to-generate-assembloids-from-hpsc-derived-dorsal-and-ventral-forebrain-organoid-co-cultures.html
+  supporting_references:
+  - doi:10.1038/nature22330
+- description: scRNA-seq characterization of ventral cell populations; day-50 data can be explored in
+    STEMCELL's single-cell visualization tool for neural organoids.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/single-cell-characterization-of-dorsal-and-ventral-forebrain-organoid-models.html
+- description: Longitudinal disease-phenotype studies, using reproducible morphology between lines and
+    organoids.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+limitations:
+- description: Represents early developing (fetal) ventral subpallium. Somatostatin-positive interneurons
+    are rare at day 50 and appear only by day 75, so interneuron subtype studies need long cultures.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+- description: Day 50 ventral forebrain organoids showed no network bursting on MEA over 4 weeks, unlike
+    dorsal forebrain organoids, so they are less suited to network-activity readouts on their own.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+- description: Patterning restricts fate to one region; interactions with other regions need assembloids.
+    Achieving adult-like maturation remains unsolved for neural organoids.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: Lacks vasculature and immune cells (microglia must be added by co-culture).
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  products:
+  - name: STEMdiff Ventral Forebrain Organoid Differentiation Kit
+    catalog_number: 08630
+    url: https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+  - name: STEMdiff Neural Organoid Maintenance Kit
+    catalog_number: 100-0120
+    url: https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

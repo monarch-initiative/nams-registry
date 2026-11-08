@@ -1,0 +1,201 @@
+model:
+  id: tumor-organoid-tumor-tissue
+  type: Organoid
+  name: Patient-derived tumor organoids (general, pan-cancer)
+  description: Organoid lines grown from patients' tumours and banked to make cancer models that reflect
+    the disease more accurately than cell lines. The site presents them for predicting patient drug response
+    (precision medicine), drug screening and immune co-culture.
+  three_d_architecture: ORGANOID
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  cell_source: tumor tissue
+  differentiation_method: Organoids derived from patient tumour biopsies or resections and expanded in
+    tissue-specific organoid media; can be banked as living biobanks (e.g. HUB Biobank). Tissue-specific
+    protocols belong to the organ groups.
+  culture_system: Usually matrix-embedded domes; assay formats listed for organoids generally include
+    dome-embedded, suspension, air-liquid interface, 96/384-well and organ-on-a-chip. About 4-6 weeks
+    is considered sufficient to scale up enough organoids to screen for drug response.
+  references:
+  - id: doi:10.1016/j.cell.2015.03.053
+    title: Prospective Derivation of a Living Organoid Biobank of Colorectal Cancer Patients
+    authors:
+    - Marc van de Wetering
+    - Hayley E. Francies
+    - Joshua M. Francis
+    - Gergana Bounova
+    - Francesco Iorio
+    - Apollo Pronk
+    - Winan van Houdt
+    - Joost van Gorp
+    - Amaro Taylor-Weiner
+    - Lennart Kester
+    - Anne McLaren-Douglas
+    - Joyce Blokker
+    - Sridevi Jaksani
+    - Sina Bartfeld
+    - Richard Volckman
+    - Peter van Sluis
+    - Vivian S.W. Li
+    - Sara Seepo
+    - Chandra Sekhar Pedamallu
+    - Kristian Cibulskis
+    - Scott L. Carter
+    - Aaron McKenna
+    - Michael S. Lawrence
+    - Lee Lichtenstein
+    - Chip Stewart
+    - Jan Koster
+    - Rogier Versteeg
+    - Alexander van Oudenaarden
+    - Julio Saez-Rodriguez
+    - Robert G.J. Vries
+    - Gad Getz
+    - Lodewyk Wessels
+    - Michael R. Stratton
+    - Ultan McDermott
+    - Matthew Meyerson
+    - Mathew J. Garnett
+    - Hans Clevers
+    journal: Cell
+    year: 2015
+  - id: doi:10.1126/science.aao2774
+    title: Patient-derived organoids model treatment response of metastatic gastrointestinal cancers
+    authors:
+    - Georgios Vlachogiannis
+    - Somaieh Hedayat
+    - Alexandra Vatsiou
+    - Yann Jamin
+    - Javier Fernández-Mateos
+    - Khurum Khan
+    - Andrea Lampis
+    - Katherine Eason
+    - Ian Huntingford
+    - Rosemary Burke
+    - Mihaela Rata
+    - Dow-Mu Koh
+    - Nina Tunariu
+    - David Collins
+    - Sanna Hulkki-Wilson
+    - Chanthirika Ragulan
+    - Inmaculada Spiteri
+    - Sing Yu Moorcraft
+    - Ian Chau
+    - Sheela Rao
+    - David Watkins
+    - Nicos Fotiadis
+    - Maria Bali
+    - Mahnaz Darvish-Damavandi
+    - Hazel Lote
+    - Zakaria Eltahir
+    - Elizabeth C. Smyth
+    - Ruwaida Begum
+    - Paul A. Clarke
+    - Jens C. Hahne
+    - Mitchell Dowsett
+    - Johann de Bono
+    - Paul Workman
+    - Anguraj Sadanandam
+    - Matteo Fassan
+    - Owen J. Sansom
+    - Suzanne Eccles
+    - Naureen Starling
+    - Chiara Braconi
+    - Andrea Sottoriva
+    - Simon P. Robinson
+    - David Cunningham
+    - Nicola Valeri
+    journal: Science
+    year: 2018
+synonyms:
+- cancer-derived organoids
+- tumor organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Banking well-documented tumour organoid lines for worldwide research use, and investigating
+    how well organoid cultures represent the sampled tumours and how this changes over time (Garnett,
+    Wellcome Sanger).
+  source_urls:
+  - https://www.stemcell.com/nature-research-round-table-organoids-as-an-enabling-technology-for-precision-cancer-medicine.html
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+- description: Screening patient drug responses in vitro before treatment to guide care and predict outcomes
+    in cancer.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+  supporting_references:
+  - doi:10.1016/j.cell.2015.03.053
+- description: 'Predicting clinical response: PDOs from metastatic gastrointestinal cancers predicted
+    patient response to targeted agents or chemotherapy (sensitivity 100%, specificity 93%); rectal cancer
+    PDOs predicted chemoradiation response from organoid size (accuracy 84.43%, sensitivity 78.01%, specificity
+    91.97%); metastatic colorectal PDOs predicted irinotecan response (accuracy 80%).'
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  supporting_references:
+  - doi:10.1126/science.aao2774
+  - doi:10.1016/j.stem.2019.10.010
+  - doi:10.1126/scitranslmed.aay2574
+- description: Co-culture of patient-derived cancer organoids with immune cells to study immune evasion
+    and design immunotherapies (e.g. generating tumour-reactive T cells).
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  supporting_references:
+  - doi:10.1016/j.cell.2018.07.009
+- description: 'Drug repurposing and patient stratification: screening existing compounds, including ones
+    that failed earlier, on PDOs from different donors to find patient subgroups that respond.'
+  source_urls:
+  - https://www.stemcell.com/stem-cell-based-models-in-drug-discovery.html
+- description: Studying cancers for which cell lines are hard or impossible to establish.
+  source_urls:
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+limitations:
+- description: 'Selection at derivation: "the point of derivation is where there is the largest selective
+    pressure", so lines may drift from the sampled tumour over time (Garnett).'
+  source_urls:
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+- description: 'Too slow for many clinical decisions: about 4-6 weeks to scale up enough organoids for
+    a drug screen, which needs to be much shorter to affect patient care (Kuo).'
+  source_urls:
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+- description: 'Sensitive to culture conditions: one quarter of the EGF concentration in a cancer-derived
+    organoid culture can give "a totally different culture" within months (Garnett); protocol variability
+    and batch-to-batch variability of materials limit comparison across labs.'
+  source_urls:
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+- description: 'Clinical validity not yet established for cancers with a standard of care: observational
+    trials are ongoing, and "it will be years before the statistical evidence is strong enough to suggest
+    a change" (Clevers).'
+  source_urls:
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+- description: 'Lack of tumour microenvironment: organoids generally lack blood vessels and immune cells;
+    co-culture or organ-on-chip is needed. Co-cultures must be designed carefully ("It''s naive to think
+    that you can mix two things together and have a complex system that is more representative." - Garnett).'
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+- description: Heterogeneity in size and morphology within a well and between donors complicates reproducibility
+    and analysis.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: Ethical and legal issues when tissue was collected with unclear consent; biobanks with
+    documented consent are recommended.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: 'Licence restriction when grown in HUB-licensed media: purchase excludes use for drug screening
+    for commercial gain, equipment validation, biobanking or other commercial purposes without a further
+    HUB licence.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/nature-research-round-table-organoids-as-an-enabling-technology-for-precision-cancer-medicine.html
+  - https://www.stemcell.com/nature-research-roundtable-organoid-applications
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research.html
+  - https://www.stemcell.com/patient-derived-organoids-for-drug-screening-and-development.html
+  - https://www.stemcell.com/stem-cell-based-models-in-drug-discovery.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

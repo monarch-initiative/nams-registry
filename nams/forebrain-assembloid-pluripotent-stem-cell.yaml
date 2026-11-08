@@ -1,0 +1,115 @@
+model:
+  id: forebrain-assembloid-pluripotent-stem-cell
+  type: CoCulture
+  name: Dorsal–ventral forebrain assembloids from human pluripotent stem cells
+  description: Two region-patterned neural organoids fused into one functionally integrated system. Interneurons
+    migrate from the ventral into the dorsal part, typically 5–7 days after merging, which is the readout
+    of functional integration.
+  models:
+  - biological_system_modeled: UBERON:0001890
+  cell_types:
+  - id: CL:0000679
+    name: glutamatergic neuron
+  - id: CL:0011005
+    name: GABAergic interneuron
+  - id: CL:0011020
+    name: neural progenitor cell
+  cell_source: pluripotent stem cells
+  culture_conditions: One dorsal forebrain organoid and one ventral forebrain organoid, each 30–100 days
+    old, are placed together in a well of an ultra-low-attachment 96-well round-bottom plate and merge
+    over 24–72 hours. Suspension co-culture in Neural Organoid Basal Medium 2 + Supplement A (plus Supplement
+    C for organoids aged 30–43 days), with half-medium changes every 2–3 days. Cultured up to 24 days
+    after fusion in the cited work.
+  references:
+  - id: doi:10.1038/nature22330
+    title: Assembly of functionally integrated human forebrain spheroids
+    authors:
+    - Fikri Birey
+    - Jimena Andersen
+    - Christopher D. Makinson
+    - Saiful Islam
+    - Wu Wei
+    - Nina Huber
+    - H. Christina Fan
+    - Kimberly R. Cordes Metzler
+    - Georgia Panagiotakos
+    - Nicholas Thom
+    - Nancy A. O’Rourke
+    - Lars M. Steinmetz
+    - Jonathan A. Bernstein
+    - Joachim Hallmayer
+    - John R. Huguenard
+    - Sergiu P. Paşca
+    journal: Nature
+    year: 2017
+  - id: doi:10.1038/s41596-018-0032-7
+    title: Generation and assembly of human brain region–specific three-dimensional cultures
+    authors:
+    - Steven A. Sloan
+    - Jimena Andersen
+    - Anca M. Pașca
+    - Fikri Birey
+    - Sergiu P. Pașca
+    journal: Nature Protocols
+    year: 2018
+synonyms:
+- forebrain assembloids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Studying interneuron migration from ventral to dorsal forebrain and neural circuit connectivity;
+    a GFP reporter line in one organoid confirms the origin of migrating cells.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-assembloids-from-hpsc-derived-dorsal-and-ventral-forebrain-organoid-co-cultures.html
+  supporting_references:
+  - doi:10.1038/nature22330
+- description: Studying interactions between brain regions, neuro-immune interactions and synaptic integration,
+    processes hard to study in vivo or in 2D; combined with electrophysiology, single-cell and spatial
+    transcriptomics, and functional imaging.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: 'Therapeutic testing in Timothy syndrome: antisense oligonucleotides rescued phenotypes
+    in patient-derived cortical organoids and forebrain assembloids.'
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  supporting_references:
+  - doi:10.1038/s41586-024-07310-6
+- description: Live imaging of interneuron migration, with clearer signal in BrainPhys Imaging Optimized
+    Medium.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+  supporting_references:
+  - doi:10.1038/s41467-020-19275-x
+limitations:
+- description: Needs two organoid types grown in parallel for at least 30 days before assembly, and the
+    optimal organoid age depends on the downstream assay and must be determined by the user.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-assembloids-from-hpsc-derived-dorsal-and-ventral-forebrain-organoid-co-cultures.html
+- description: Assembled one pair per well, which limits throughput; merging is checked by eye and can
+    take up to 72 hours. Implied by the protocol.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-assembloids-from-hpsc-derived-dorsal-and-ventral-forebrain-organoid-co-cultures.html
+- description: 'Shares the limits of its parts: fetal-stage maturity, and no vasculature or microglia
+    unless added.'
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-assembloids-from-hpsc-derived-dorsal-and-ventral-forebrain-organoid-co-cultures.html
+  - https://www.stemcell.com/building-brain-organoids-and-assembloids-to-study-human-development-and-disease.html
+  products:
+  - name: STEMdiff Dorsal Forebrain Organoid Differentiation Kit
+    catalog_number: 08620
+    url: https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+  - name: STEMdiff Ventral Forebrain Organoid Differentiation Kit
+    catalog_number: 08630
+    url: https://www.stemcell.com/products/stemdiff-ventral-forebrain-organoid-differentiation-kit.html
+  - name: STEMdiff Neural Organoid Maintenance Kit
+    catalog_number: 100-0120
+    url: https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

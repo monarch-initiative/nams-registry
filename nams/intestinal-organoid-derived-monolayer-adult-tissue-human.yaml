@@ -1,0 +1,121 @@
+model:
+  id: intestinal-organoid-derived-monolayer-adult-tissue-human
+  type: TwoDCellCulture
+  name: Human intestinal organoid-derived monolayers (submerged 2D)
+  description: A two-dimensional, polarized epithelial monolayer generated from dissociated intestinal
+    organoids, created specifically to expose the apical surface that is inaccessible in 3D organoids.
+    Villin staining along the apical edge indicates polarization and E-cadherin indicates adherens junctions.
+    Compared with Caco-2 cultures the monolayers show greater barrier integrity, higher expression of
+    key differentiation markers, and morphology more representative of the in vivo intestine.
+  models:
+  - biological_system_modeled: UBERON:0000160
+  cell_types:
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0000164
+    name: enteroendocrine cell
+  - id: CL:0002250
+    name: intestinal crypt stem cell
+  cell_source: adult tissue
+  culture_conditions: Human intestinal organoids expanded in IntestiCult Plus or IntestiCult Organoid
+    Growth Medium (Human) are harvested with Gentle Cell Dissociation Reagent, dissociated to single cells
+    or small fragments with 0.05% Trypsin-EDTA at 37 C for 5-10 minutes, and seeded onto dilute matrix
+    in IntestiCult Monolayer Growth Medium (IntestiCult ODM basal medium plus organoid supplement plus
+    10 uM Y-27632), where they form a confluent monolayer and differentiate to model the intestinal epithelium.
+    Organoids should be no more than passage 15. Suspension culture can be used upstream to generate the
+    larger organoid numbers needed for many monolayers. Cultureware coated with 2% Matrigel (1 uL Matrigel
+    per 49 uL cold D-PBS, 37 C for at least 1 hour); Costar 6.5 mm or 12 mm Transwell inserts are recommended,
+    or glass coverslips for imaging, or standard tissue-culture plates; defined matrices (collagen I,
+    collagen IV, Vitronectin XF) can substitute with further optimization. Full medium changes every 2-3
+    days; confluency usually within 2-3 days and monolayers remain confluent and viable for at least 3
+    weeks.
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: 'Barrier permeability assay on Transwell inserts: TEER measurement plus apical-to-basolateral
+    FITC-dextran flux (100 uL apical / 600 uL basolateral for 6.5 mm 24-well Transwells; 50 uL / 200 uL
+    for 96-well), with a FITC-dextran standard curve for normalization. Used to assess novel therapeutic
+    targets and host-pathogen interactions. TEER readings are typically taken 7 days after seeding, and
+    have been collected consistently between 2 days and 12 weeks post-seeding.'
+  source_urls:
+  - https://www.stemcell.com/organoid-monolayer-barrier-permeability-assay.html
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: 'CFTR electrophysiology by Ussing chamber: submerged organoid-derived monolayers showed
+    significantly greater CFTR activation by IBMX/forskolin and greater inhibition by CFTR inhibitor-172
+    than Caco-2 cultures (p < 0.001 for both), indicating increased sensitivity to CFTR modulation.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+- description: 'Studies requiring apical access: apical cell surface receptor activity, interaction with
+    commensal or pathogenic microorganisms, microbial pathogenesis, and the effects of dietary or pharmaceutical
+    compounds present in intestinal contents. Monolayers on glass coverslips enable high-resolution imaging
+    of cellular morphology and protein localization.'
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: 'Intestinal barrier integrity testing for drug safety, presented as detecting disruption
+    Caco-2 cells miss: organoid-derived monolayers detected colchicine-induced barrier disruption by both
+    FITC-dextran and Lucifer Yellow permeability, which was not detected in Caco-2 cells.'
+  source_urls:
+  - https://www.stemcell.com/services/contract-assay-services/organoid-assays/intestinal-services
+- description: Co-culture with innate immune cells to recapitulate host immune responses to enteric pathogens.
+  source_urls:
+  - https://www.stemcell.com/dissecting-host-immune-response-in-organoid-co-cultures.html
+  supporting_references:
+  - doi:10.1038/srep45270
+  - doi:10.1128/mbio.00944-22
+limitations:
+- description: Differentiated monolayers are intended for endpoint assays, and can be maintained for at
+    least 3 weeks with regular medium changes rather than indefinitely.
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: Attachment efficiency falls steadily with organoid passage number, attributed to cells
+    gradually shifting gene expression until they lose the ability to differentiate and attach; passage
+    15 is the recommended ceiling, though this is donor dependent and some donors become problematic earlier.
+    Poor attachment can be partly countered by seeding more cells or raising Matrigel coating to 5-10%.
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: Monolayers grow more slowly and are less proliferative than 3D organoids, which can influence
+    how drugs behave, especially compounds targeting dividing cells, adding another variable; for this
+    reason STEMCELL does not use monolayers for routine toxicity testing.
+  source_urls:
+  - https://www.stemcell.com/the-hidden-variable-in-your-intestinal-organoids-faq.html
+- description: Y-27632 (ROCK inhibitor) is needed through monolayer establishment to keep cells alive
+    as single cells, since most cells would become apoptotic without it, and it continues to slow anoikis
+    after confluence; its presence is therefore a non-physiological component of the system.
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: 'Practical failure modes: if there is no cell attachment after 2-3 days, no proliferation,
+    or the monolayer begins to fall apart, the culture is unlikely to be recoverable and must be restarted.
+    A buoyant mucus layer from goblet cells can prevent the organoid pellet settling during dissociation,
+    requiring repeated resuspension and centrifugation.'
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+- description: Standard tissue culture plates are usable but Transwell inserts give better adhesion and
+    faster confluence, and cells polarize and mature better on inserts than on a culture plate (stated
+    for the mouse protocol).
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-mouse-intestinal-organoid-derived-monolayers-using-intesticult.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+  - https://www.stemcell.com/organoid-monolayer-barrier-permeability-assay.html
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+  products:
+  - name: IntestiCult Organoid Differentiation Medium (Human)
+    catalog_number: 100-0214
+    url: https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - name: Costar 6.5 mm Transwell inserts
+    catalog_number: '38024'
+    url: https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+  - name: Costar 12 mm Transwell inserts
+    catalog_number: '38023'
+    url: https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+  - name: Y-27632 (Dihydrochloride)
+    url: https://www.stemcell.com/products/intesticult-organoid-growth-medium-human.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

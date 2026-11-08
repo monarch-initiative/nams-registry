@@ -1,0 +1,163 @@
+model:
+  id: forebrain-dorsal-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Dorsal forebrain (cortical) organoids from human pluripotent stem cells
+  description: Guided, brain-region-specific organoids representing the early developing human dorsal
+    forebrain. Organoids are spherical and of similar size across 11 cell lines. Day 25 and day 50 organoids
+    have several cortical-like regions of radially arranged PAX6+ cells surrounded by MAP2+ neurons. With
+    longer culture (100-200 days), deep-layer neurons (CTIP2, TBR1) separate further from upper-layer
+    neurons (SATB2). Day 50 organoids develop network bursting on MEA.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0014740
+    name: dorsal pallium
+  cell_types:
+  - id: CL:0011020
+    name: neural progenitor cell
+  - id: CL:0000681
+    name: radial glial cell
+  - id: CL:0000679
+    name: glutamatergic neuron
+  cell_source: pluripotent stem cells
+  differentiation_method: Directed differentiation with precisely timed small-molecule patterning factors,
+    adapted from Pasca's protocols (Birey et al. 2017). hPSCs form embryoid bodies in AggreWell800 microwells
+    over 6 days, then grow in suspension and are patterned to the early developing dorsal pallium (FOXG1+,
+    PAX6+ progenitors, cortical and glutamatergic neuron genes).
+  culture_system: Matrix-free, serum-free suspension culture. Organoids are generated in 43 days, and
+    the fusion-free media need no orbital shaking. With AggreWell800, a kit yields 200 or more consistently
+    sized organoids. Culture beyond 50 days uses the STEMdiff Neural Organoid Maintenance Kit, and organoids
+    have been shown out to days 100-200.
+  references:
+  - id: doi:10.1038/nature22330
+    title: Assembly of functionally integrated human forebrain spheroids
+    authors:
+    - Fikri Birey
+    - Jimena Andersen
+    - Christopher D. Makinson
+    - Saiful Islam
+    - Wu Wei
+    - Nina Huber
+    - H. Christina Fan
+    - Kimberly R. Cordes Metzler
+    - Georgia Panagiotakos
+    - Nicholas Thom
+    - Nancy A. O’Rourke
+    - Lars M. Steinmetz
+    - Jonathan A. Bernstein
+    - Joachim Hallmayer
+    - John R. Huguenard
+    - Sergiu P. Paşca
+    journal: Nature
+    year: 2017
+  - id: doi:10.1038/s41596-018-0032-7
+    title: Generation and assembly of human brain region–specific three-dimensional cultures
+    authors:
+    - Steven A. Sloan
+    - Jimena Andersen
+    - Anca M. Pașca
+    - Fikri Birey
+    - Sergiu P. Pașca
+    journal: Nature Protocols
+    year: 2018
+synonyms:
+- dorsal forebrain organoids
+- DFO
+- cortical organoids
+- cortical spheroids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: MEA electrophysiology. Day 50 organoids on a 96-well MEA (Axion Maestro) show rising mean
+    firing rate and network bursting over 4 weeks. They can also be recorded on 3D high-density MEAs with
+    further optimization.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/measuring-neuronal-activity-in-hpsc-derived-cerebral-organoids-on-high-density-multi-electrode-arrays.html
+- description: Modeling idiopathic autism spectrum disorder. Guided forebrain organoids from patients
+    showed an accelerated cell cycle, more synapses, and FOXG1-driven overproduction of GABAergic neurons
+    compared with organoids from unaffected relatives.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  supporting_references:
+  - doi:10.1016/j.cell.2015.06.034
+- description: Therapeutic testing in Timothy syndrome. Antisense oligonucleotides rescued electrophysiological,
+    molecular and cellular phenotypes in patient-derived cortical organoids and forebrain assembloids,
+    with in vivo validation in transplanted organoids.
+  source_urls:
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  supporting_references:
+  - doi:10.1038/s41586-024-07310-6
+- description: Detecting disease phenotypes and running longitudinal or high-throughput studies, using
+    reproducible morphology across lines. Hundreds of organoids per batch can be made with AggreWell.
+  source_urls:
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+- description: Long-term experiments for neurodegeneration research, biomarker discovery and toxicity
+    assays, using the Neural Organoid Maintenance Kit.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+- description: Proteomic disease modeling, e.g. a PACS1 syndrome variant in developing cortical organoids
+    (publication listed on the product page).
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+  supporting_references:
+  - doi:10.1016/j.isci.2026.117566
+- description: Building assembloids with ventral forebrain organoids (interneuron migration) and co-cultures
+    with hPSC-derived microglia (neuroinflammation). See the separate assembloid and microglia co-culture
+    entries.
+  source_urls:
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+- description: scRNA-seq characterization of cell composition. Public day-50 dataset GSE218457 can be
+    compared with published protocols in STEMCELL's visualization tool.
+  source_urls:
+  - https://www.stemcell.com/single-cell-characterization-of-dorsal-and-ventral-forebrain-organoid-models.html
+  - https://www.stemcell.com/scrnaseq-data-visualization-for-neural-organoids
+limitations:
+- description: Represents the early developing dorsal pallium (fetal-stage tissue). Upper- and deep-layer
+    neuron separation develops only after 100-200 days in culture, and adult-like maturation remains unsolved
+    for neural organoids generally.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: Patterning restricts fate to one brain region. Implied by the model-choice page, which
+    credits unpatterned organoids (not patterned ones) with rich cellular and structural diversity and
+    multiple brain regions. Interactions between regions need assembloids.
+  source_urls:
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+- description: Lacks blood vessels and immune cells (microglia must be added by co-culture). Organoids
+    do not fully replicate in vivo tissue complexity.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: In the published (control) formulation, organoids fuse when cultured without orbital shaking,
+    which reduces yield. The STEMdiff expansion medium is reported to prevent this.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+- description: Recording on 3D high-density MEAs is described as possible only "with further optimization".
+    The validated HD-MEA protocol uses unguided cerebral organoids.
+  source_urls:
+  - https://www.stemcell.com/measuring-neuronal-activity-in-hpsc-derived-cerebral-organoids-on-high-density-multi-electrode-arrays.html
+- description: Neural organoids in general vary in structure and lack standardized protocols. Insufficient
+    glial support and long maturation times make consistent activity measurement difficult.
+  source_urls:
+  - https://www.stemcell.com/measuring-activity-in-hpsc-derived-neural-organoids-for-disease-modeling-and-drug-discovery.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+  - https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+  products:
+  - name: STEMdiff Dorsal Forebrain Organoid Differentiation Kit
+    catalog_number: 08620
+    url: https://www.stemcell.com/products/stemdiff-dorsal-forebrain-organoid-differentiation-kit.html
+  - name: STEMdiff Neural Organoid Maintenance Kit
+    catalog_number: 100-0120
+    url: https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+  - name: AggreWell800
+    url: https://www.stemcell.com/products/aggrewell800.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

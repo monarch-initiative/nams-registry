@@ -1,0 +1,105 @@
+model:
+  id: spinal-cord-organoid-pluripotent-stem-cell
+  type: Organoid
+  name: Spinal cord organoids from human pluripotent stem cells
+  description: Guided organoids representing the developing human cervical spinal cord, used to study
+    motor neurons. Day 30 organoids are electrically active on MEA.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0002726
+    name: cervical spinal cord
+  cell_types:
+  - id: CL:0000100
+    name: motor neuron
+  - id: CL:0000127
+    name: astrocyte
+  - id: CL:0011020
+    name: neural progenitor cell
+  cell_source: pluripotent stem cells
+  differentiation_method: Directed differentiation adapted from Pasca's protocols (Andersen 2020; Yoon
+    2018). hPSCs form organoids in AggreWell800 over 6 days, then grow in suspension and are patterned
+    to cervical spinal cord (OLIG2 motor neuron progenitors by day 19; ISL1, HB9, CHAT, FOXP1 motor neurons
+    and CHX10 interneurons by day 30; GFAP astrocytes from day 75).
+  culture_system: Matrix-free, serum-free suspension culture; organoids generated in 43 days, up to 300
+    per kit with AggreWell800. Maintained beyond 50 days with the Neural Organoid Maintenance Kit.
+  references:
+  - id: doi:10.1016/j.cell.2020.11.017
+    title: Generation of Functional Human 3D Cortico-Motor Assembloids
+    authors:
+    - Jimena Andersen
+    - Omer Revah
+    - Yuki Miura
+    - Nicholas Thom
+    - Neal D. Amin
+    - Kevin W. Kelley
+    - Mandeep Singh
+    - Xiaoyu Chen
+    - Mayuri Vijay Thete
+    - Elisabeth M. Walczak
+    - Hannes Vogel
+    - H. Christina Fan
+    - Sergiu P. Paşca
+    journal: Cell
+    year: 2020
+  - id: doi:10.1038/s41592-018-0255-0
+    title: Reliability of human cortical organoid generation
+    authors:
+    - Se-Jin Yoon
+    - Lubayna S. Elahi
+    - Anca M. Pașca
+    - Rebecca M. Marton
+    - Aaron Gordon
+    - Omer Revah
+    - Yuki Miura
+    - Elisabeth M. Walczak
+    - Gwendolyn M. Holdgate
+    - H. Christina Fan
+    - John R. Huguenard
+    - Daniel H. Geschwind
+    - Sergiu P. Pașca
+    journal: Nature Methods
+    year: 2018
+synonyms:
+- spinal cord organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Studying motor neurons in a functional 3D system, including MEA recording from day 30.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-spinal-cord-organoid-differentiation-kit.html
+- description: Building cortico-motor assembloids with cortical organoids (and muscle) to study connections
+    between brain regions.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-spinal-cord-organoid-differentiation-kit.html
+  - https://www.stemcell.com/how-to-choose-your-neural-organoid-model-system.html
+  supporting_references:
+  - doi:10.1016/j.cell.2020.11.017
+- description: Predictive assays, high-throughput phenotypic screening and neurotoxicity assays in long-term
+    culture.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-spinal-cord-organoid-differentiation-kit.html
+limitations:
+- description: Represents the developing (fetal) cervical spinal cord; adult-like maturation remains unsolved
+    for neural organoids.
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-spinal-cord-organoid-differentiation-kit.html
+  - https://www.stemcell.com/technical-resources/area-of-interest/organoid-research/neural-organoids/overview.html
+- description: Lacks vasculature and immune cells. The site states no limitations specific to spinal cord
+    organoids.
+  source_urls:
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/stemdiff-spinal-cord-organoid-differentiation-kit.html
+  products:
+  - name: STEMdiff Spinal Cord Organoid Differentiation Kit
+    catalog_number: 100-1524
+    url: https://www.stemcell.com/products/stemdiff-spinal-cord-organoid-differentiation-kit.html
+  - name: STEMdiff Neural Organoid Maintenance Kit
+    catalog_number: 100-0120
+    url: https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

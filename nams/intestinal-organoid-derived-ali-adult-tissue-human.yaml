@@ -1,0 +1,76 @@
+model:
+  id: intestinal-organoid-derived-ali-adult-tissue-human
+  type: TwoDCellCulture
+  name: Human intestinal organoid-derived air-liquid interface (ALI) cultures
+  description: An air-exposed intestinal epithelial culture that drives differentiation further than submerged
+    monolayers. RT-qPCR shows progenitor markers LGR5 and AXIN2 significantly reduced and enterocyte (KRT20),
+    goblet (MUC2) and enteroendocrine (CHGA) markers significantly increased relative to undifferentiated
+    organoids, with a further reduction in AXIN2 and further increases in KRT20, MUC2 and CHGA compared
+    with submerged monolayers. Cross-sections show an increased proportion of goblet cells and extracellular
+    mucus.
+  models:
+  - biological_system_modeled: UBERON:0000160
+  cell_types:
+  - id: CL:0000160
+    name: goblet cell
+  - id: CL:0000584
+    name: enterocyte
+  - id: CL:0000164
+    name: enteroendocrine cell
+  cell_source: adult tissue
+  culture_conditions: An established human intestinal organoid-derived monolayer on a Transwell insert,
+    100% confluent for at least 4 days, is switched to an air-liquid interface by removing medium from
+    both chambers, refilling only the basolateral chamber with IntestiCult Monolayer Growth Medium and
+    leaving the apical chamber empty. Full medium changes in the lower chamber every 2-3 days; differentiation
+    for at least 1 week, maintainable for 2 weeks or longer. Transwell inserts only (required for ALI),
+    apical chamber air-exposed, basolateral chamber medium-fed. Excess apical mucus can be rinsed with
+    100 uL D-PBS, though retaining mucus may better represent intestinal physiology.
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: Permeability assays and infectious disease studies where apical access matters; ALI is
+    used specifically to increase differentiation of the epithelial layer, yielding a significant increase
+    in secretory and other differentiated cell types.
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: 'Modeling the mucus-bearing intestinal surface: ALI cultures secrete an extracellular mucus
+    layer that submerged monolayers show less of.'
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+limitations:
+- description: Further differentiation comes at the expense of stem cells and transit-amplifying cells,
+    so the proliferative compartment is lost.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: ALI monolayers show a loosening of tight junctions due to further brush border differentiation
+    and therefore lower TEER values than submerged organoid-derived monolayers (though both are higher
+    than Caco-2).
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+- description: Requires Transwell inserts, so the format cannot be scaled in ordinary plates, and inherits
+    the monolayer system's passage-15 ceiling and attachment constraints.
+  source_urls:
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+- description: The secreted mucus layer dehydrates and may not be visible unless the apical chamber is
+    rinsed and rehydrated with PBS; 2D submerged and ALI monolayers are both meant for endpoint assays
+    and are maintainable for at least 3 weeks.
+  source_urls:
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+  - https://www.stemcell.com/human-intestinal-organoid-faqs.html
+  products:
+  - name: IntestiCult Organoid Differentiation Medium (Human)
+    catalog_number: 100-0214
+    url: https://www.stemcell.com/products/intesticult-organoid-differentiation-medium-human.html
+  - name: Costar 6.5 mm / 12 mm Transwell inserts
+    catalog_number: 38024 / 38023
+    url: https://www.stemcell.com/how-to-generate-human-intestinal-organoid-derived-monolayers-using-intesticult.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'

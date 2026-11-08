@@ -1,0 +1,190 @@
+model:
+  id: pancreatic-tumor-organoid-tumor-tissue
+  type: Organoid
+  name: Pancreatic ductal adenocarcinoma (PDAC) organoids
+  description: Long-term, genetically stable cultures of pancreatic tumour epithelium derived from normal
+    or diseased donor tissue. PDAC organoid lines can be maintained and expanded in PancreaCult Organoid
+    Growth Medium (Human) for at least 10 passages and retain the somatic SNPs and indels in oncogenic
+    driver and tumour suppressor genes of the parent line after 5 passages (whole-exome sequencing; in
+    one line TP53 reads were undetectable, indicating gene deletion). Lines differ from one another in
+    GATA6 expression, morphology and chemotherapy response.
+  three_d_architecture: ORGANOID
+  organ_modeled:
+    id: UBERON:0001264
+    name: pancreas
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  - id: CL:0002079
+    name: pancreatic ductal cell
+  cell_source: tumor tissue
+  differentiation_method: Organoids are established from dissociated primary PDAC tissue or from cryopreserved
+    PDAC cells in PancreaCult Organoid Initiation Medium (Human) and maintained in PancreaCult Organoid
+    Growth Medium (Human); pre-established PDAC lines can be transferred directly into Growth Medium.
+    Expansion of some lines required reduced (5%) oxygen. Removing EGF from the medium depletes normal
+    cells, since KRAS-activated tumour organoids keep growing without EGF for at least 2 passages while
+    normal ductal organoids do not. Mouse carcinoma organoids are grown in PancreaCult Organoid Growth
+    Medium (Mouse) from ducts isolated from KPC mice (Kras+/LSL-G12D; Trp53+/LSL-R172H; Pdx1-Cre), retaining
+    the activated KRAS genotype in culture.
+  culture_system: Matrigel domes (40 uL, 24-well) for expansion, with a recommended 1:1 pre-passaging
+    step using GCDR digestion 5 - 7 days into culture to remove shed cells and normalize organoid size
+    (target 50 - 200 um fragments). For drug screens, 300 organoids per well of a 96-well plate (or per
+    384-well) as 2% Matrigel pre-coated layer cultures (recommended) or 6 uL domes; 3 days of drug exposure
+    with daily medium changes, readout 24 h after the last treatment (72 h total).
+  references:
+  - id: doi:10.1016/j.cell.2014.12.021
+    title: Organoid Models of Human and Mouse Ductal Pancreatic Cancer
+    authors:
+    - Sylvia F. Boj
+    - Chang-Il Hwang
+    - Lindsey A. Baker
+    - Iok In Christine Chio
+    - Dannielle D. Engle
+    - Vincenzo Corbo
+    - Myrthe Jager
+    - Mariano Ponz-Sarvise
+    - Hervé Tiriac
+    - Mona S. Spector
+    - Ana Gracanin
+    - Tobiloba Oni
+    - Kenneth H. Yu
+    - Ruben van Boxtel
+    - Meritxell Huch
+    - Keith D. Rivera
+    - John P. Wilson
+    - Michael E. Feigin
+    - Daniel Öhlund
+    - Abram Handly-Santana
+    - Christine M. Ardito-Abraham
+    - Michael Ludwig
+    - Ela Elyada
+    - Brinda Alagesan
+    - Giulia Biffi
+    - Georgi N. Yordanov
+    - Bethany Delcuze
+    - Brianna Creighton
+    - Kevin Wright
+    - Youngkyu Park
+    - Folkert H.M. Morsink
+    - I. Quintus Molenaar
+    - Inne H. Borel Rinkes
+    - Edwin Cuppen
+    - Yuan Hao
+    - Ying Jin
+    - Isaac J. Nijman
+    - Christine Iacobuzio-Donahue
+    - Steven D. Leach
+    - Darryl J. Pappin
+    - Molly Hammell
+    - David S. Klimstra
+    - Olca Basturk
+    - Ralph H. Hruban
+    - George Johan Offerhaus
+    - Robert G.J. Vries
+    - Hans Clevers
+    - David A. Tuveson
+    journal: Cell
+    year: 2015
+  - id: doi:10.1016/j.trecan.2016.03.004
+    title: Modeling Pancreatic Cancer with Organoids
+    authors:
+    - Lindsey A. Baker
+    - Hervé Tiriac
+    - Hans Clevers
+    - David A. Tuveson
+    journal: Trends in Cancer
+    year: 2016
+  - id: doi:10.1016/j.celrep.2017.09.093
+    title: Duct- and Acinar-Derived Pancreatic Ductal Adenocarcinomas Show Distinct Tumor Progression
+      and Marker Expression
+    authors:
+    - Rute M.M. Ferreira
+    - Rocio Sancho
+    - Hendrik A. Messal
+    - Emma Nye
+    - Bradley Spencer-Dene
+    - Richard K. Stone
+    - Gordon Stamp
+    - Ian Rosewell
+    - Alberto Quaglia
+    - Axel Behrens
+    journal: Cell Reports
+    year: 2017
+synonyms:
+- PDAC organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: Efficacy and toxicity testing of candidate therapeutics with dose-response curves and IC50
+    values; STEMCELL shows line-specific differences in response to irinotecan and 5-fluorouracil in both
+    layer and dome formats, in 96-well and 384-well plates.
+  source_urls:
+  - https://www.stemcell.com/drug-screening-with-human-pancreatic-organoid-cultures.html
+  - https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+- description: 'Precision medicine: the protocol page states patient-derived PDAC organoids have been
+    shown to predict chemotherapy sensitivity in pancreatic cancer patients, making them a model for advancing
+    precision medicine.'
+  source_urls:
+  - https://www.stemcell.com/drug-screening-with-human-pancreatic-organoid-cultures.html
+- description: Pancreatic cancer biology, including KRAS-driven metabolic reprogramming, marker discovery
+    and modelling of pancreatic carcinomas from genetically engineered KPC mice.
+  source_urls:
+  - https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+  - https://www.stemcell.com/products/pancreacult-organoid-growth-medium-mouse.html
+  supporting_references:
+  - doi:10.1158/2159-8290.cd-19-0297
+  - doi:10.1111/cas.16152
+  - doi:10.1016/j.cell.2019.03.010
+limitations:
+- description: Tumour epithelium only - no stroma, immune or vascular compartment is described, although
+    the cited work makes clear the tumour microenvironment contributes cytokines in vivo; the cited cholangiocarcinoma/PDAC
+    studies pair organoids with separate cancer-associated fibroblast cultures rather than co-culturing
+    them.
+  source_urls:
+  - https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+  - https://www.stemcell.com/improving-drug-discovery-with-organoids.html
+- description: 'Culture health degrades within a passage: after 5 - 7 days PDAC organoids often show an
+    accumulation of shed cells and become variable in size, so a 1:1 pre-passaging step is recommended
+    before drug assays.'
+  source_urls:
+  - https://www.stemcell.com/drug-screening-with-human-pancreatic-organoid-cultures.html
+- description: 'Assay conditions are not transferable between lines or compounds: drug efficacies and
+    toxicities vary widely with the drug, its delivery and the organoid line (normal or diseased), so
+    dilution ranges and exposure times must be optimized empirically, and daily medium changes are needed
+    to limit drug degradation and culture decline.'
+  source_urls:
+  - https://www.stemcell.com/drug-screening-with-human-pancreatic-organoid-cultures.html
+- description: 'Some lines need non-standard conditions: one PDAC line''s expansion was facilitated by
+    reduced (5%) oxygen culture and maintenance in the absence of EGF.'
+  source_urls:
+  - https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+- description: 'Licence restriction: PancreaCult media are research use only under the HUB licence, and
+    purchase does not include the right to use them for drug screening aiming for commercial gain, equipment
+    validation or biobanking - a direct constraint on the commercial precision-medicine and screening
+    uses the pages describe.'
+  source_urls:
+  - https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+source_resources:
+- resource: stemcell-organoids
+  source_urls:
+  - https://www.stemcell.com/drug-screening-with-human-pancreatic-organoid-cultures.html
+  - https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+  - https://www.stemcell.com/products/pancreacult-organoid-growth-medium-mouse.html
+  - https://www.stemcell.com/products/brands/pancreacult-pancreatic-culture.html
+  - https://www.stemcell.com/patient-derived-organoids-for-drug-screening-and-development.html
+  products:
+  - name: PancreaCult Organoid Initiation Medium (Human)
+    catalog_number: 100-0820
+    url: https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+  - name: PancreaCult Organoid Growth Medium (Human)
+    catalog_number: 100-0781
+    url: https://www.stemcell.com/products/pancreacult-organoid-media-human.html
+  - name: PancreaCult Organoid Growth Medium (Mouse)
+    catalog_number: '06040'
+    url: https://www.stemcell.com/products/pancreacult-organoid-growth-medium-mouse.html
+  accessed_on: '2026-11-06'
+creation_date: '2026-11-06'
+last_modified_date: '2026-11-07'
