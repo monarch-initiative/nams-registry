@@ -1,0 +1,108 @@
+id: compara
+name: CoMPARA (Collaborative Modeling Project for Androgen Receptor Activity)
+description: CoMPARA (Collaborative Modeling Project for Androgen Receptor Activity) is a
+  set of consensus models that predict androgen receptor (AR) binding, agonist and antagonist
+  activity. The U.S. EPA led it in support of the Endocrine Disruptor Screening Program, following
+  CERAPP. Its chemical list extended CERAPP's with further chemicals of interest and simulated
+  ToxCast metabolites, to 55,450 structures. Twenty-five international groups contributed
+  91 models, built on a common training set of 1,746 chemicals compiled from 11 ToxCast and
+  Tox21 high-throughput in vitro assays and evaluated against curated literature data. The
+  consensus models averaged about 80% predictive accuracy on the evaluation set. They are
+  implemented in OPERA, which was used to screen about 875,000 chemicals in DSSTox, and those
+  predictions are available on the CompTox Chemicals Dashboard and NICE. EPA's figshare holds
+  the project's training, prediction and evaluation sets and its individual and consensus
+  models.
+synonyms:
+- Collaborative Modeling Project for Androgen Receptor Activity
+homepage_url: https://epa.figshare.com/articles/dataset/CoMPARA_Collaborative_Modeling_Project_for_Androgen_Receptor_Activity_COMPARA_Data_Data_Associated_with_Publication/10321994
+resource_type: DataSource
+domain_areas:
+- toxicology
+- cheminformatics
+- machine learning
+activity_status: active
+license:
+  id: https://creativecommons.org/licenses/by/4.0/
+  label: CC BY 4.0
+publications:
+- id: https://doi.org/10.1289/EHP5580
+  title: 'CoMPARA: Collaborative Modeling Project for Androgen Receptor Activity'
+  authors:
+  - Kamel Mansouri
+  - Nicole Kleinstreuer
+  - Ahmed M. Abdelaziz
+  - Domenico Alberga
+  - Vinicius M. Alves
+  - Patrik L. Andersson
+  - Carolina H. Andrade
+  - Fang Bai
+  - Ilya Balabin
+  - Davide Ballabio
+  - Emilio Benfenati
+  - Barun Bhhatarai
+  - Scott Boyer
+  - Jingwen Chen
+  - Viviana Consonni
+  - Sherif Farag
+  - Denis Fourches
+  - Alfonso T. García-Sosa
+  - Paola Gramatica
+  - Francesca Grisoni
+  - Chris M. Grulke
+  - Huixiao Hong
+  - Dragos Horvath
+  - Xin Hu
+  - Ruili Huang
+  - Nina Jeliazkova
+  - Jiazhong Li
+  - Xuehua Li
+  - Huanxiang Liu
+  - Serena Manganelli
+  - Giuseppe F. Mangiatordi
+  - Uko Maran
+  - Gilles Marcou
+  - Todd Martin
+  - Eugene Muratov
+  - Dac-Trung Nguyen
+  - Orazio Nicolotti
+  - Nikolai G. Nikolov
+  - Ulf Norinder
+  - Ester Papa
+  - Michel Petitjean
+  - Geven Piir
+  - Pavel Pogodin
+  - Vladimir Poroikov
+  - Xianliang Qiao
+  - Ann M. Richard
+  - Alessandra Roncaglioni
+  - Patricia Ruiz
+  - Chetan Rupakheti
+  - Sugunadevi Sakkiah
+  - Alessandro Sangion
+  - Karl-Werner Schramm
+  - Chandrabose Selvaraj
+  - Imran Shah
+  - Sulev Sild
+  - Lixia Sun
+  - Olivier Taboureau
+  - Yun Tang
+  - Igor V. Tetko
+  - Roberto Todeschini
+  - Weida Tong
+  - Daniela Trisciuzzi
+  - Alexander Tropsha
+  - George Van Den Driessche
+  - Alexandre Varnek
+  - Zhongyu Wang
+  - Eva B. Wedebye
+  - Antony J. Williams
+  - Hongbin Xie
+  - Alexey V. Zakharov
+  - Ziye Zheng
+  - Richard S. Judson
+  journal: Environmental Health Perspectives
+  year: '2020'
+  doi: 10.1289/EHP5580
+  preferred: true
+creation_date: '2026-11-07'
+last_modified_date: '2026-11-07'

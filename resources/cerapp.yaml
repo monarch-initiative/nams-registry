@@ -1,0 +1,75 @@
+id: cerapp
+name: CERAPP (Collaborative Estrogen Receptor Activity Prediction Project)
+description: CERAPP (Collaborative Estrogen Receptor Activity Prediction Project) is a set
+  of consensus models that predict estrogen receptor (ER) binding, agonist and antagonist
+  activity. The U.S. EPA led it in support of the Endocrine Disruptor Screening Program. Seventeen
+  groups in the United States and Europe built 40 categorical and 8 continuous QSAR and docking
+  models, mostly on a common training set of 1,677 chemical structures provided by the EPA,
+  and the models were evaluated on 7,522 chemicals curated from the literature. The models
+  were weighted by their accuracy into consensus predictions for a common set of 32,464 chemicals.
+  The consensus models are implemented in OPERA, and the predictions are available through
+  NICE. EPA's figshare holds the project's training, evaluation and prediction sets and the
+  individual models.
+synonyms:
+- Collaborative Estrogen Receptor Activity Prediction Project
+homepage_url: https://epa.figshare.com/articles/dataset/CERAPP-_Collaborative_Estrogen_Receptor_Activity_Prediction_Project_Data_Associated_with_Publication/6062722
+resource_type: DataSource
+domain_areas:
+- toxicology
+- cheminformatics
+- machine learning
+activity_status: active
+license:
+  id: https://creativecommons.org/publicdomain/zero/1.0/
+  label: CC0 1.0 Universal
+publications:
+- id: https://doi.org/10.1289/ehp.1510267
+  title: 'CERAPP: Collaborative Estrogen Receptor Activity Prediction Project'
+  authors:
+  - Kamel Mansouri
+  - Ahmed Abdelaziz
+  - Aleksandra Rybacka
+  - Alessandra Roncaglioni
+  - Alexander Tropsha
+  - Alexandre Varnek
+  - Alexey Zakharov
+  - Andrew Worth
+  - Ann M. Richard
+  - Christopher M. Grulke
+  - Daniela Trisciuzzi
+  - Denis Fourches
+  - Dragos Horvath
+  - Emilio Benfenati
+  - Eugene Muratov
+  - Eva Bay Wedebye
+  - Francesca Grisoni
+  - Giuseppe F. Mangiatordi
+  - Giuseppina M. Incisivo
+  - Huixiao Hong
+  - Hui W. Ng
+  - Igor V. Tetko
+  - Ilya Balabin
+  - Jayaram Kancherla
+  - Jie Shen
+  - Julien Burton
+  - Marc Nicklaus
+  - Matteo Cassotti
+  - Nikolai G. Nikolov
+  - Orazio Nicolotti
+  - Patrik L. Andersson
+  - Qingda Zang
+  - Regina Politi
+  - Richard D. Beger
+  - Roberto Todeschini
+  - Ruili Huang
+  - Sherif Farag
+  - Sine A. Rosenberg
+  - Svetoslav Slavov
+  - Xin Hu
+  - Richard S. Judson
+  journal: Environmental Health Perspectives
+  year: '2016'
+  doi: 10.1289/ehp.1510267
+  preferred: true
+creation_date: '2026-11-07'
+last_modified_date: '2026-11-07'

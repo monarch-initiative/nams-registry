@@ -1,0 +1,147 @@
+id: catmos
+name: CATMoS (Collaborative Acute Toxicity Modeling Suite)
+description: 'CATMoS (Collaborative Acute Toxicity Modeling Suite) is a set of consensus QSAR
+  models that predict rat acute oral systemic toxicity without animal testing. It came from
+  an international project organized by the ICCVAM Acute Toxicity Workgroup with NICEATM and
+  the U.S. EPA: 35 research groups submitted 139 models, built and evaluated on an acute oral
+  toxicity inventory of 11,992 chemicals, and the models were combined into consensus models.
+  CATMoS predicts five end points used in regulatory hazard classification: the LD50 value,
+  the four U.S. EPA hazard categories, the five GHS hazard categories, very toxic chemicals
+  (LD50 of 50 mg/kg or less) and nontoxic chemicals (LD50 above 2,000 mg/kg). The consensus
+  models are implemented in OPERA, which can make predictions for new chemicals, and predictions
+  for more than 800,000 chemicals are available through NICE. The project page provides the
+  training, validation and prediction-set chemical files.'
+synonyms:
+- Collaborative Acute Toxicity Modeling Suite
+homepage_url: https://ntp.niehs.nih.gov/go/tox-models
+resource_type: DataSource
+domain_areas:
+- toxicology
+- cheminformatics
+- machine learning
+activity_status: active
+publications:
+- id: https://doi.org/10.1289/EHP8495
+  title: 'CATMoS: Collaborative Acute Toxicity Modeling Suite'
+  authors:
+  - Kamel Mansouri
+  - Agnes L. Karmaus
+  - Jeremy Fitzpatrick
+  - Grace Patlewicz
+  - Prachi Pradeep
+  - Domenico Alberga
+  - Nathalie Alepee
+  - Timothy E.H. Allen
+  - Dave Allen
+  - Vinicius M. Alves
+  - Carolina H. Andrade
+  - Tyler R. Auernhammer
+  - Davide Ballabio
+  - Shannon Bell
+  - Emilio Benfenati
+  - Sudin Bhattacharya
+  - Joyce V. Bastos
+  - Stephen Boyd
+  - J.B. Brown
+  - Stephen J. Capuzzi
+  - Yaroslav Chushak
+  - Heather Ciallella
+  - Alex M. Clark
+  - Viviana Consonni
+  - Pankaj R. Daga
+  - Sean Ekins
+  - Sherif Farag
+  - Maxim Fedorov
+  - Denis Fourches
+  - Domenico Gadaleta
+  - Feng Gao
+  - Jeffery M. Gearhart
+  - Garett Goh
+  - Jonathan M. Goodman
+  - Francesca Grisoni
+  - Christopher M. Grulke
+  - Thomas Hartung
+  - Matthew Hirn
+  - Pavel Karpov
+  - Alexandru Korotcov
+  - Giovanna J. Lavado
+  - Michael Lawless
+  - Xinhao Li
+  - Thomas Luechtefeld
+  - Filippo Lunghini
+  - Giuseppe F. Mangiatordi
+  - Gilles Marcou
+  - Dan Marsh
+  - Todd Martin
+  - Andrea Mauri
+  - Eugene N. Muratov
+  - Glenn J. Myatt
+  - Dac-Trung Nguyen
+  - Orazio Nicolotti
+  - Reine Note
+  - Paritosh Pande
+  - Amanda K. Parks
+  - Tyler Peryea
+  - Ahsan H. Polash
+  - Robert Rallo
+  - Alessandra Roncaglioni
+  - Craig Rowlands
+  - Patricia Ruiz
+  - Daniel P. Russo
+  - Ahmed Sayed
+  - Risa Sayre
+  - Timothy Sheils
+  - Charles Siegel
+  - Arthur C. Silva
+  - Anton Simeonov
+  - Sergey Sosnin
+  - Noel Southall
+  - Judy Strickland
+  - Yun Tang
+  - Brian Teppen
+  - Igor V. Tetko
+  - Dennis Thomas
+  - Valery Tkachenko
+  - Roberto Todeschini
+  - Cosimo Toma
+  - Ignacio Tripodi
+  - Daniela Trisciuzzi
+  - Alexander Tropsha
+  - Alexandre Varnek
+  - Kristijan Vukovic
+  - Zhongyu Wang
+  - Liguo Wang
+  - Katrina M. Waters
+  - Andrew J. Wedlake
+  - Sanjeeva J. Wijeyesakere
+  - Dan Wilson
+  - Zijun Xiao
+  - Hongbin Yang
+  - Gergely Zahoranszky-Kohalmi
+  - Alexey V. Zakharov
+  - Fagen F. Zhang
+  - Zhen Zhang
+  - Tongan Zhao
+  - Hao Zhu
+  - Kimberley M. Zorn
+  - Warren Casey
+  - Nicole C. Kleinstreuer
+  journal: Environmental Health Perspectives
+  year: '2021'
+  doi: 10.1289/EHP8495
+  preferred: true
+- id: https://doi.org/10.1016/j.comtox.2018.08.002
+  title: 'Predictive models for acute oral systemic toxicity: A workshop to bridge the gap
+    from research to regulation'
+  authors:
+  - Nicole C. Kleinstreuer
+  - Agnes L. Karmaus
+  - Kamel Mansouri
+  - David G. Allen
+  - Jeremy M. Fitzpatrick
+  - Grace Patlewicz
+  journal: Computational Toxicology
+  year: '2018'
+  doi: 10.1016/j.comtox.2018.08.002
+creation_date: '2026-11-07'
+last_modified_date: '2026-11-07'
