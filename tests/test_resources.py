@@ -6,7 +6,8 @@ from pathlib import Path
 
 import pytest
 import yaml
-from linkml.validator import validate
+from linkml.validator import Validator, validate
+from linkml.validator.plugins import JsonschemaValidationPlugin
 from linkml_runtime.utils.schemaview import SchemaView
 
 from nams_registry.datamodel import MAIN_SCHEMA_PATH, NAM_SCHEMA_PATH
@@ -107,3 +108,78 @@ def test_nam_source_resources_exist(filepath):
         if s["resource"] not in RESOURCE_IDS
     ]
     assert not missing, f"unknown resources: {missing}"
+
+
+STUBS_DIR = Path(__file__).parent.parent / "stubs"
+
+STUB_FILES = sorted(glob.glob(os.path.join(STUBS_DIR, "*", "*.yaml")))
+
+
+def load_stubs():
+    stubs = {}
+    for path in STUB_FILES:
+        with open(path) as fh:
+            stubs[Path(path)] = yaml.safe_load(fh)
+    return stubs
+
+
+def test_stub_files_are_valid():
+    """Test that every stub in stubs/<resource>/ validates as a NAMStub.
+
+    The stubs are checked together, with one validator, because there are
+    hundreds of them and loading the schema once per file is slow.
+    """
+    validator = Validator(
+        str(NAM_SCHEMA_PATH),
+        validation_plugins=[JsonschemaValidationPlugin(closed=True)],
+    )
+    failures = {}
+    for path, stub in load_stubs().items():
+        report = validator.validate(stub, "NAMStub")
+        if report.results:
+            failures[path.name] = [r.message for r in report.results]
+    assert not failures, failures
+
+
+def test_stub_files_are_named_and_placed():
+    """Test that each stub is named after its id, in its resource's folder,
+    and that the resource is a file in resources/."""
+    wrong = []
+    for path, stub in load_stubs().items():
+        if stub["id"] != path.stem:
+            wrong.append(f"{path.name}: id is {stub['id']}")
+        if stub["resource"] != path.parent.name:
+            wrong.append(f"{path.name}: resource {stub['resource']} but in {path.parent.name}/")
+        if stub["resource"] not in RESOURCE_IDS:
+            wrong.append(f"{path.name}: unknown resource {stub['resource']}")
+    assert not wrong, wrong
+
+
+def test_stub_proposed_classes_are_namo_classes():
+    """Test that a stub's proposed NAMO class is one a model can have."""
+    view = SchemaView(str(NAM_SCHEMA_PATH))
+    concrete = {c for c in MODEL_CLASSES if not view.get_class(c).abstract}
+    wrong = {
+        path.name: stub["proposed_namo_class"]
+        for path, stub in load_stubs().items()
+        if stub.get("proposed_namo_class") not in (None, *concrete)
+    }
+    assert not wrong, wrong
+
+
+def test_curated_nams_have_no_stub():
+    """Test that no stub names a source page a NAM record in nams/ names.
+
+    A curated NAM's stub is removed by rerunning its resource's stub script.
+    """
+    curated = set()
+    for path in NAM_FILES:
+        with open(path) as fh:
+            for source in yaml.safe_load(fh).get("source_resources", []):
+                curated.update(source.get("source_urls", []))
+    both = {
+        path.name: sorted(curated.intersection(stub.get("source_urls", [])))
+        for path, stub in load_stubs().items()
+        if curated.intersection(stub.get("source_urls", []))
+    }
+    assert not both, both
