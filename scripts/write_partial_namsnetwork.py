@@ -8,10 +8,10 @@ partial-nams/namsnetwork/.
 
 NAMs.network lists some NAMs more than once, once per endpoint; records whose
 names match, ignoring case, spaces and punctuation, are merged into one
-partial record. A NAM that already has a full record in nams/, i.e. a NAM
-record whose source_urls include one of its NAMs.network pages, gets no
-partial record. Partial records are rewritten on each run, and those of NAMs
-no longer listed or since given a full record are removed.
+partial record. A NAM with a NAM record in nams/, i.e. one whose
+source_urls include one of its NAMs.network pages, gets no partial record.
+Partial records are rewritten on each run, and those of NAMs no longer listed,
+or now named by a NAM record, are removed.
 
 The NAMO class is proposed only when the method type and the NAM's name make
 it clear, e.g. "co-culture" in an in vitro NAM's name. NAMO has no class for

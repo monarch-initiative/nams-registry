@@ -52,8 +52,8 @@ supporting_scripts:
   description: >-
     Writes a partial record for each NAM in the catalogue fetched by
     fetch_namsnetwork.py into partial-nams/namsnetwork/, merging the records
-    the catalogue lists more than once, and skipping NAMs that already have
-    a full record in nams/.
+    the catalogue lists more than once, and skipping NAMs that have a NAM
+    record in nams/.
 priority: high
 priority_rationale: >-
   It is one of the few resources that hold NAMs as structured records, each
