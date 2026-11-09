@@ -51,14 +51,14 @@ USER_AGENT = "nams-registry (https://github.com/monarch-initiative/nams-registry
 # be rebuilt by filtering. The value of each is the field in a facet entry
 # that holds its label. Facets already in each row (nam_type, organ,
 # cell_type, endpoint, dev_status, guideline_strategy, regulations) and
-# nam_name (one value per NAM) are left out.
+# nam_name (one value per NAM) are left out. So are biological_endpoint and
+# conv_mat: the list ignores them as filters and returns every NAM, which
+# would link each of their values to all 542 (the 2026-11-09 fetch).
 LINKED_FACETS = {
     "substance_name": "name",
     "method_biomarker": "name",
-    "biological_endpoint": "name",
     "aop": "code",
     "key_event": "code",
-    "conv_mat": "name",
 }
 
 
