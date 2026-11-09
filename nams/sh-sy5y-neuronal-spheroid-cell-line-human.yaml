@@ -1,0 +1,197 @@
+model:
+  id: sh-sy5y-neuronal-spheroid-cell-line-human
+  # PROVISIONAL typing, pending issue #58. NAMO has no Spheroid class, so the
+  # architecture is carried by three_d_architecture below; Organoid would be
+  # wrong, since a scaffold-free aggregate self-assembles without organ-like
+  # structure and Organoid would force an organ_modeled value the source
+  # cannot support. NAMO also has no cell-line subclass under
+  # ThreeDCellCulture, so this arm cannot record passage_range or
+  # authentication_method even though the paired monolayer could; that
+  # asymmetry is what issue #58 asks about.
+  type: ThreeDCellCulture
+  name: Differentiated SH-SY5Y neuronal spheroid
+  description: >-
+    A scaffold-free spheroid of SH-SY5Y human neuroblastoma cells (ATCC
+    HTB-11), self-aggregated by forced flotation and then differentiated to a
+    neuronal phenotype with retinoic acid followed by phorbol 12-myristate
+    13-acetate. The companion record
+    sh-sy5y-neuronal-monolayer-cell-line-human is the same line under the same
+    differentiation protocol in the conventional flat format, and the pair is
+    the point: exposed to bisphenol A and five analogues, the spheroid was the
+    less sensitive format on viability and the two moved in opposite
+    directions on the same reactive-oxygen-species readout at the same
+    concentrations and times. This format also carries a washout arm the
+    monolayer does not, and the source study's conclusion is that it is "a
+    suitable candidate to perform more reliable in vitro neurotoxicity tests".
+    Recorded in the registry from the primary paper, Sendra et al. 2024
+    (doi:10.1016/j.tox.2023.153715), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  biological_organization_level: CELLULAR_NEIGHBORHOOD
+  spatial_context: >-
+    A free-floating spherical aggregate of about 9,000 cells, with cell-cell
+    contact in three dimensions and a diffusion path from the medium to the
+    core. Some of its endpoints are properties of the aggregate rather than of
+    any cell: projected area and gross morphology report whether the structure
+    is holding together at all, which has no counterpart in a monolayer. There
+    is still no vasculature, no non-neuronal cell type and no circuit
+    architecture, and the aggregate is not organised like any region of the
+    nervous system.
+  complexity_level: MODERATE
+  cell_types:
+  - id: CL:0000540
+    name: neuron
+  cell_source: >-
+    The SH-SY5Y immortalised human cell line, ATCC HTB-11, a thrice-subcloned
+    derivative of the SK-N-SH neuroblastoma line, differentiated to a neuronal
+    phenotype in culture.
+  three_d_architecture: SPHEROID
+  matrix_composition: >-
+    None. The spheroid is scaffold-free and self-aggregated; there is no
+    extracellular matrix or hydrogel. Methylcellulose (4% Methocel A4M) is
+    present as a medium thickener to drive forced flotation, not as a matrix
+    the cells attach to or remodel.
+  culture_conditions: >-
+    DMEM/F12 with 10% fetal bovine serum, penicillin/streptomycin and 0.2%
+    amphotericin, 37 degrees C, 5% CO2. Formed by forced flotation at 9,000
+    cells per spheroid in 4% Methocel A4M in low-adhesion U-bottom 96-well
+    plates, one spheroid per well. Differentiated with retinoic acid at 5
+    micromolar for two days, then phorbol 12-myristate 13-acetate at 80
+    nanomolar for two days. Differentiation confirmed by
+    anti-beta-III-tubulin immunofluorescence with DAPI counterstain. Medium
+    replaced every 48 hours during exposure and during washout. Spheroids are
+    disaggregated before MTT, and with collagenase/TrypLE before flow
+    cytometry.
+  references:
+  - id: doi:10.1016/j.tox.2023.153715
+    title: 'Are the BPA analogues an alternative to classical BPA? Comparison between
+      2D and alternative 3D in vitro neuron model to assess cytotoxic and genotoxic
+      effects.'
+    authors:
+    - Sendra M
+    - Cavia-Saiz M
+    - Múñiz P
+    journal: Toxicology
+    year: 2024
+    url: https://doi.org/10.1016/j.tox.2023.153715
+synonyms:
+- SH-SY5Y 3D model
+- SH-SY5Y spheroid
+- differentiated SH-SY5Y spheroid
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Neurotoxicity testing in a format whose dose-response is not simply the
+    monolayer's. In the source study the spheroid was the less sensitive format
+    on viability, by more than 60% at 24 hours and by 20-30% at 96 hours
+    depending on the analogue, so a threshold set in a monolayer does not
+    transfer.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    Reversibility testing by washout, which is what this format adds over a
+    monolayer. After 96 hours of exposure and then 96 hours in clean medium,
+    the source study reports recovery of viability in most arms, with
+    structural recovery only at lower doses.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    A structural endpoint that a monolayer cannot provide. Projected area and
+    gross morphology report loss of aggregate integrity, and in the source
+    study that endpoint behaved differently from viability in the same arm,
+    which is the main reason to run both.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+limitations:
+- description: >-
+    A tumour-derived line standing in for a neuron, exactly as in the paired
+    monolayer record. The source study states it: the line "derives from a
+    tumour and therefore contains genetic peculiarities that can, potentially,
+    alter the expected response of the cells". Three-dimensionality does not
+    change the genome.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    Lower sensitivity is not by itself evidence of better prediction. At 24
+    hours some arms showed viability above control by MTT (about 120-135%),
+    which in an aggregate with a diffusion gradient is as readily a metabolic
+    or dye-access effect as a real increase in cell number. Treating the
+    spheroid as the more physiological format on the strength of a smaller
+    response needs an external anchor the source study does not have.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    The reactive-oxygen-species comparison against the paired monolayer is
+    confounded by the readout. This format is read by fluorescence microscopy
+    as mean intensity over the spheroid area; the monolayer is read by flow
+    cytometry as the percentage of the population positive for the dye. Those
+    are different quantities on different instruments, so the reported
+    direction difference between the formats is not attributable to the cells
+    alone. The viability endpoint carries no such confound: both formats use
+    MTT.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    Recovery is dissociated between endpoints, so a single statement about
+    reversibility is not available from this format. In the source study
+    "Although cell viability was recovered in most cases, the spheroids could
+    not maintain their morphology." Only two of six analogues recovered
+    projected area relative to controls, and the highest concentrations of
+    three others disintegrated. The authors read it as replication and
+    proliferation recovering while the machinery maintaining morphology does
+    not. Note also that the abstract and conclusions state the recovery more
+    strongly than the results section supports.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    No mechanism is identified by any endpoint here. The source study reports
+    no pathway involvement: nothing in it measures mitochondrial function, and
+    it does not report NRF2, KEAP1 or antioxidant-response involvement. The
+    cell-cycle endpoint is also the sole basis for the study's genotoxicity
+    claim, with no comet, micronucleus or DNA-damage-marker assay run, and it
+    was measured at 1 micromolar only, below the 2.5-160 micromolar range used
+    for every other endpoint, so it cannot be read alongside those
+    dose-responses.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    No internal oxygen or nutrient gradient is characterised, and no hypoxic
+    or necrotic core is reported or excluded. Since a diffusion gradient is the
+    main mechanistic candidate for this format's lower sensitivity, that gap
+    bears directly on how the 2D-versus-3D difference should be interpreted.
+source_resources:
+# PLACEHOLDER, pending a nams-registry decision, and matching the placeholder
+# in PR #57 so that one fix resolves both. This NAM was found in a primary
+# research paper, which cannot be a resources/ entry: the schema description
+# says "Primary research papers are not included" and ResourceTypeEnum.Report
+# says "A primary research paper is not a report." But source_resources is
+# required and tests/test_resources.py::test_nam_source_resources_exist
+# requires every resource to be a file stem in resources/, so something has to
+# go here. No claim is made that these endpoints appear in ToxCast; they do
+# not. This is an academic study with no registry resource of its own. The
+# paper and its special issue are recorded in the model description and
+# references above instead.
+- resource: toxcast
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  accessed_on: '2026-11-09'
+creation_date: '2026-11-09'
+last_modified_date: '2026-11-09'
