@@ -110,23 +110,24 @@ def test_nam_source_resources_exist(filepath):
     assert not missing, f"unknown resources: {missing}"
 
 
-STUBS_DIR = Path(__file__).parent.parent / "stubs"
+PARTIAL_DIR = Path(__file__).parent.parent / "partial-nams"
 
-STUB_FILES = sorted(glob.glob(os.path.join(STUBS_DIR, "*", "*.yaml")))
+PARTIAL_FILES = sorted(glob.glob(os.path.join(PARTIAL_DIR, "*", "*.yaml")))
 
 
-def load_stubs():
-    stubs = {}
-    for path in STUB_FILES:
+def load_partials():
+    partials = {}
+    for path in PARTIAL_FILES:
         with open(path) as fh:
-            stubs[Path(path)] = yaml.safe_load(fh)
-    return stubs
+            partials[Path(path)] = yaml.safe_load(fh)
+    return partials
 
 
-def test_stub_files_are_valid():
-    """Test that every stub in stubs/<resource>/ validates as a NAMStub.
+def test_partial_files_are_valid():
+    """Test that every partial record in partial-nams/<resource>/ validates
+    as a PartialNAMRecord.
 
-    The stubs are checked together, with one validator, because there are
+    The partial records are checked together, with one validator, because there are
     hundreds of them and loading the schema once per file is slow.
     """
     validator = Validator(
@@ -134,52 +135,54 @@ def test_stub_files_are_valid():
         validation_plugins=[JsonschemaValidationPlugin(closed=True)],
     )
     failures = {}
-    for path, stub in load_stubs().items():
-        report = validator.validate(stub, "NAMStub")
+    for path, partial in load_partials().items():
+        report = validator.validate(partial, "PartialNAMRecord")
         if report.results:
             failures[path.name] = [r.message for r in report.results]
     assert not failures, failures
 
 
-def test_stub_files_are_named_and_placed():
-    """Test that each stub is named after its id, in its resource's folder,
+def test_partial_files_are_named_and_placed():
+    """Test that each partial record is named after its id, in its resource's folder,
     and that the resource is a file in resources/."""
     wrong = []
-    for path, stub in load_stubs().items():
-        if stub["id"] != path.stem:
-            wrong.append(f"{path.name}: id is {stub['id']}")
-        if stub["resource"] != path.parent.name:
-            wrong.append(f"{path.name}: resource {stub['resource']} but in {path.parent.name}/")
-        if stub["resource"] not in RESOURCE_IDS:
-            wrong.append(f"{path.name}: unknown resource {stub['resource']}")
+    for path, partial in load_partials().items():
+        if partial["id"] != path.stem:
+            wrong.append(f"{path.name}: id is {partial['id']}")
+        if partial["resource"] != path.parent.name:
+            wrong.append(f"{path.name}: resource {partial['resource']} but in {path.parent.name}/")
+        if partial["resource"] not in RESOURCE_IDS:
+            wrong.append(f"{path.name}: unknown resource {partial['resource']}")
     assert not wrong, wrong
 
 
-def test_stub_proposed_classes_are_namo_classes():
-    """Test that a stub's proposed NAMO class is one a model can have."""
+def test_partial_proposed_classes_are_namo_classes():
+    """Test that a partial record's proposed NAMO class is one a model can have."""
     view = SchemaView(str(NAM_SCHEMA_PATH))
     concrete = {c for c in MODEL_CLASSES if not view.get_class(c).abstract}
     wrong = {
-        path.name: stub["proposed_namo_class"]
-        for path, stub in load_stubs().items()
-        if stub.get("proposed_namo_class") not in (None, *concrete)
+        path.name: partial["proposed_namo_class"]
+        for path, partial in load_partials().items()
+        if partial.get("proposed_namo_class") not in (None, *concrete)
     }
     assert not wrong, wrong
 
 
-def test_curated_nams_have_no_stub():
-    """Test that no stub names a source page a NAM record in nams/ names.
+def test_full_records_have_no_partial():
+    """Test that no partial record names a source page a NAM record in
+    nams/ names.
 
-    A curated NAM's stub is removed by rerunning its resource's stub script.
+    A NAM's partial record is removed by rerunning its resource's script
+    once the NAM has a full record.
     """
-    curated = set()
+    recorded = set()
     for path in NAM_FILES:
         with open(path) as fh:
             for source in yaml.safe_load(fh).get("source_resources", []):
-                curated.update(source.get("source_urls", []))
+                recorded.update(source.get("source_urls", []))
     both = {
-        path.name: sorted(curated.intersection(stub.get("source_urls", [])))
-        for path, stub in load_stubs().items()
-        if curated.intersection(stub.get("source_urls", []))
+        path.name: sorted(recorded.intersection(partial.get("source_urls", [])))
+        for path, partial in load_partials().items()
+        if recorded.intersection(partial.get("source_urls", []))
     }
     assert not both, both

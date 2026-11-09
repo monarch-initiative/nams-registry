@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
-"""Write a stub for each NAM in the NAMs.network catalogue.
+"""Write a partial record for each NAM in the NAMs.network catalogue.
 
 Reads the public catalogue that scripts/fetch_namsnetwork.py writes
-(``nams.json``) and writes one NAMStub (see
-src/nams_registry/schema/nam_records.yaml) per NAM into stubs/namsnetwork/.
+(``nams.json``) and writes one PartialNAMRecord (see
+src/nams_registry/schema/nam_records.yaml) per NAM into
+partial-nams/namsnetwork/.
 
 NAMs.network lists some NAMs more than once, once per endpoint; records whose
-names match, ignoring case, spaces and punctuation, are merged into one stub.
-A NAM already curated in nams/, i.e. a NAM record whose source_urls include
-one of the stub's NAMs.network pages, gets no stub. Stubs are rewritten on
-each run, and stubs of NAMs no longer listed or since curated are removed.
+names match, ignoring case, spaces and punctuation, are merged into one
+partial record. A NAM that already has a full record in nams/, i.e. a NAM
+record whose source_urls include one of its NAMs.network pages, gets no
+partial record. Partial records are rewritten on each run, and those of NAMs
+no longer listed or since given a full record are removed.
 
 The NAMO class is proposed only when the method type and the NAM's name make
 it clear, e.g. "co-culture" in an in vitro NAM's name. NAMO has no class for
 in chemico or ex vivo methods.
 
     uv run python scripts/fetch_namsnetwork.py
-    uv run python scripts/stub_namsnetwork.py
-    uv run python scripts/stub_namsnetwork.py --catalogue tmp/namsnetwork/nams.json --accessed-on 2026-11-09
+    uv run python scripts/write_partial_namsnetwork.py
+    uv run python scripts/write_partial_namsnetwork.py --catalogue tmp/namsnetwork/nams.json --accessed-on 2026-11-09
 """
 
 import argparse
@@ -53,8 +55,9 @@ CLASS_PATTERNS = {
 }
 
 
-# Misspellings in the NAMs.network catalogue, corrected in the stubs: whole
-# words in any text, and whole values. Kept here, not in the stub files, so
+# Misspellings in the NAMs.network catalogue, corrected in the partial
+# records: whole words in any text, and whole values. Kept here, not in the
+# partial record files, so
 # they survive a rerun. Report new ones to NAMs.network as well.
 WORD_CORRECTIONS = {
     "hormons": "hormone",
@@ -118,7 +121,7 @@ def single(rows, field):
     return values[0] if values else None
 
 
-def curated_pages():
+def recorded_pages():
     """The NAMs.network pages that NAM records in nams/ already name."""
     pages = set()
     for path in (ROOT / "nams").glob("*.yaml"):
@@ -129,12 +132,12 @@ def curated_pages():
     return pages
 
 
-def build_stub(rows, accessed_on):
+def build_partial(rows, accessed_on):
     rows = sorted(rows, key=lambda r: r["qsar_id"])
     name = clean(rows[0]["name"])
     method_type = single(rows, "nam_type")
     linked = lambda facet: lambda r: [v["label"] for v in r["linked"].get(facet, []) if v.get("label")]
-    stub = {
+    partial = {
         "id": None,  # set by the caller once ids are deduplicated
         "name": name,
         "resource": RESOURCE,
@@ -154,13 +157,13 @@ def build_stub(rows, accessed_on):
         "aops": [f"aop:{v}" for v in union(rows, linked("aop"))],
         "key_events": [f"aop.events:{v}" for v in union(rows, linked("key_event"))],
     }
-    return {k: v for k, v in stub.items() if k == "id" or v not in (None, [])}
+    return {k: v for k, v in partial.items() if k == "id" or v not in (None, [])}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--catalogue", type=Path, default=ROOT / "tmp/namsnetwork/nams.json", help="nams.json from fetch_namsnetwork.py (default: tmp/namsnetwork/nams.json)")
-    parser.add_argument("--output", type=Path, default=ROOT / "stubs" / RESOURCE, help="Directory to write the stubs into (default: stubs/namsnetwork)")
+    parser.add_argument("--output", type=Path, default=ROOT / "partial-nams" / RESOURCE, help="Directory to write the partial records into (default: partial-nams/namsnetwork)")
     parser.add_argument("--accessed-on", help="The date the catalogue was fetched (default: the fetched_at date in manifest.json beside the catalogue)")
     args = parser.parse_args()
 
@@ -174,41 +177,41 @@ def main():
     for row in json.loads(args.catalogue.read_text()):
         groups.setdefault(merge_key(row["name"]), []).append(row)
 
-    curated = curated_pages()
-    stubs, skipped = [], 0
+    recorded = recorded_pages()
+    partials, skipped = [], 0
     for rows in groups.values():
-        stub = build_stub(rows, accessed_on)
-        if curated.intersection(stub["source_urls"]):
+        partial = build_partial(rows, accessed_on)
+        if recorded.intersection(partial["source_urls"]):
             skipped += 1
             continue
-        stubs.append(stub)
+        partials.append(partial)
 
     # Ids from names; a name that slugs the same as another's gets its first
     # NAMs.network id appended.
-    stubs.sort(key=lambda s: int(s["source_ids"][0]))
+    partials.sort(key=lambda s: int(s["source_ids"][0]))
     taken = {}
-    for stub in stubs:
-        stub_id = slug(stub["name"])
-        if stub_id in taken:
-            stub_id = f"{stub_id}-{stub['source_ids'][0]}"
-        taken[stub_id] = stub
-        stub["id"] = stub_id
+    for partial in partials:
+        record_id = slug(partial["name"])
+        if record_id in taken:
+            record_id = f"{record_id}-{partial['source_ids'][0]}"
+        taken[record_id] = partial
+        partial["id"] = record_id
 
     args.output.mkdir(parents=True, exist_ok=True)
     written = set()
-    for stub in stubs:
-        path = args.output / f"{stub['id']}.yaml"
-        path.write_text(yaml.safe_dump(stub, sort_keys=False, allow_unicode=True, width=88))
+    for partial in partials:
+        path = args.output / f"{partial['id']}.yaml"
+        path.write_text(yaml.safe_dump(partial, sort_keys=False, allow_unicode=True, width=88))
         written.add(path.name)
     removed = [p for p in args.output.glob("*.yaml") if p.name not in written]
     for path in removed:
         path.unlink()
 
     classes = {}
-    for stub in stubs:
-        key = stub.get("proposed_namo_class", f"none ({stub['method_type']})")
+    for partial in partials:
+        key = partial.get("proposed_namo_class", f"none ({partial['method_type']})")
         classes[key] = classes.get(key, 0) + 1
-    print(json.dumps({"stubs": len(stubs), "already_curated": skipped, "removed": len(removed), "proposed_namo_class": dict(sorted(classes.items(), key=lambda kv: -kv[1]))}, indent=1), file=sys.stderr)
+    print(json.dumps({"partial_records": len(partials), "have_full_record": skipped, "removed": len(removed), "proposed_namo_class": dict(sorted(classes.items(), key=lambda kv: -kv[1]))}, indent=1), file=sys.stderr)
 
 
 if __name__ == "__main__":
