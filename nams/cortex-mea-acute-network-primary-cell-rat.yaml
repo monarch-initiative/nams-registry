@@ -1,0 +1,123 @@
+model:
+  id: cortex-mea-acute-network-primary-cell-rat
+  type: TwoDCellCulture
+  name: MEA acute network function assay (AcN) in dissociated rat cortical cultures
+  description: >-
+    Dissociated cortical cells from postnatal day 0 rats, plated on multi-well
+    microelectrode arrays and grown until the culture has a mature,
+    spontaneously active network. Network electrical activity is then recorded
+    during a 40-minute chemical exposure on day in vitro (DIV) 13 or 15,
+    yielding a concentration-response for acute perturbation of function in an
+    already-formed network. The companion record
+    cortex-mea-network-formation-primary-cell-rat uses the same preparation but
+    exposes it throughout network development instead; across 243 chemicals
+    screened in both, the two agree on selective activity 70.3% of the time.
+    Recorded in the registry from the primary paper, Martin et al. 2024
+    (doi:10.1016/j.tox.2024.153842), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  biological_organization_level: CELLULAR_NEIGHBORHOOD
+  spatial_context: >-
+    A two-dimensional cortical culture on a planar grid of extracellular
+    electrodes. The measured quantity is emergent: spontaneous spiking and
+    bursting synchronised across the electrodes of one well, rather than any
+    single cell's property. There is no cortical layering, no vasculature and
+    no intact circuit architecture.
+  complexity_level: MODERATE
+  cell_types:
+  - id: CL:0000540
+    name: neuron
+  cell_source: >-
+    Primary cells dissociated from the cerebral cortex of postnatal day 0
+    Sprague-Dawley rats.
+  substrate_type: planar multi-well microelectrode array
+  references:
+  - id: doi:10.1016/j.tox.2024.153842
+    title: 'Chemical effects on neural network activity: Comparison of acute versus
+      network formation exposure in microelectrode array assays.'
+    authors:
+    - Martin MM
+    - Carpenter AF
+    - Shafer TJ
+    - Paul Friedman K
+    - Carstens KE
+    journal: Toxicology
+    year: 2024
+synonyms:
+- MEA acute network function assay
+- AcN
+- acute network function assay
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+applications:
+- description: >-
+    Screening and prioritisation for neurotoxicity hazard in data-poor
+    chemicals, where no in vivo neurotoxicity study exists.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Grouping chemicals by shared mode of action. Of the two MEA assays, the
+    acute assay "was more informative for identifying chemicals with a shared
+    mode of action", and the two captured different bioactivity fingerprints.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Hazard identification at scale. 243 chemicals have been screened in this
+    assay and in the network formation assay, with 70.3% concordance for
+    selective activity once activity inferred to be cytotoxic is excluded.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+limitations:
+- description: >-
+    The endpoint does not identify a mechanism. A hit records that something
+    perturbed network activity during the exposure, in either direction,
+    without saying what was perturbed or why. Attributing a mode of action
+    needs the chemical's own pharmacology, not this readout.
+- description: >-
+    A 40-minute exposure of an already-formed network carries no information
+    about developmental exposure, which is what the paired network formation
+    assay is for. Most of the disagreement between the two assays is chemicals
+    that "altered selective activity in the AcN but not NFA", so an acute hit
+    should not be read as a developmental neurotoxicity hit.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Activity has to be separated from cell death before it means anything. The
+    assay's "selective activity" call is defined by excluding activity inferred
+    to be cytotoxic, and the concordance figure applies only after that
+    exclusion.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Rat cells, not human. Any inference to human neurotoxicity crosses a
+    species boundary, and the assay offers no internal control for it.
+- description: >-
+    The source publication is indexed as abstract-only here, so the culture's
+    cell composition is not itemised beyond "dissociated rat cortical cells".
+    The glial fraction of such a preparation is not recorded, and only neuron
+    is bound above.
+source_resources:
+# PLACEHOLDER, pending a nams-registry decision. This NAM was found in a primary
+# research paper, which cannot be a resources/ entry: ResourceTypeEnum.Report says
+# "A primary research paper is not a report." But source_resources is required and
+# tests/test_resources.py::test_nam_source_resources_exist requires every resource
+# to be a file stem in resources/, so something has to go here. The paper and its
+# special issue are recorded in the model description above instead. ToxCast is the
+# likely home for the EPA MEA endpoints; that was NOT confirmed against invitrodb.
+- resource: toxcast
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  accessed_on: '2026-11-08'
+creation_date: '2026-11-08'
+last_modified_date: '2026-11-08'
