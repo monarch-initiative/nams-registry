@@ -1,0 +1,31 @@
+id: spheroid-scaffold-culture-alvetex-mono-culture-human
+name: 'Spheroid scaffold culture: Alvetex® mono-culture human epithelial lung carcinoma (A549)'
+resource: namsnetwork
+source_ids:
+- '136'
+- '240'
+source_urls:
+- https://nams.network/details/136
+- https://nams.network/details/240
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: ThreeDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Lung
+cell_lines:
+- A549
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+substances:
+- benzene
+methods_biomarkers:
+- Annexin-V/PI
+- Comet assay
+- IL-8

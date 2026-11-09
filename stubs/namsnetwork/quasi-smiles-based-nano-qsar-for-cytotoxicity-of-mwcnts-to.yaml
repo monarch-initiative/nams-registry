@@ -1,0 +1,23 @@
+id: quasi-smiles-based-nano-qsar-for-cytotoxicity-of-mwcnts-to
+name: Quasi-SMILES-based nano-QSAR for cytotoxicity of MWCNTs to human lung cells
+resource: namsnetwork
+source_ids:
+- '539'
+source_urls:
+- https://nams.network/details/539
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: QSARModel
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Multi-walled carbon nanotubes (MWCNTs)

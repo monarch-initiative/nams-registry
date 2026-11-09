@@ -1,0 +1,24 @@
+id: skinethic-reconstructed-human-epidermis-model
+name: SkinEthicTM Reconstructed Human Epidermis model
+resource: namsnetwork
+source_ids:
+- '125'
+source_urls:
+- https://nams.network/details/125
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: ThreeDCellCulture
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin irritation in vitro
+organs:
+- Skin
+guidelines:
+- OECD TG 439
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- US EPA TSCA

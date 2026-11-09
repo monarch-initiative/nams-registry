@@ -1,0 +1,27 @@
+id: interleukin-8-reporter-gene-assay-il-8-luc-assay
+name: Interleukin-8 Reporter Gene Assay (IL-8 Luc assay)
+resource: namsnetwork
+source_ids:
+- '143'
+source_urls:
+- https://nams.network/details/143
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin sensitisation in vitro/in chemico
+organs:
+- Skin
+guidelines:
+- OECD TG 442E
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- US EPA TSCA
+aops:
+- aop:40
+key_events:
+- aop.events:398

@@ -1,0 +1,31 @@
+id: organoid-bronchosphere-human
+name: Organoid bronchosphere human
+resource: namsnetwork
+source_ids:
+- '140'
+- '244'
+source_urls:
+- https://nams.network/details/140
+- https://nams.network/details/244
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: Organoid
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Lung
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+methods_biomarkers:
+- DNAI1
+- FOXJ1
+- ITGA6
+- MUC5AC
+- MUC5B
+- p63
+- POLR2A

@@ -1,0 +1,26 @@
+id: toxtree-module-a-decision-tree-for-estimating-skin
+name: 'Toxtree Module: A decision tree for estimating skin irritation and corrosion potential'
+resource: namsnetwork
+source_ids:
+- '152'
+- '303'
+source_urls:
+- https://nams.network/details/152
+- https://nams.network/details/303
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: QSARModel
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin corrosion in vitro
+- Skin irritation in vitro
+organs:
+- Skin
+guidelines:
+- OECD GD 203
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003

@@ -1,0 +1,35 @@
+id: organoid-lung-bud-human
+name: Organoid lung bud human
+resource: namsnetwork
+source_ids:
+- '146'
+- '251'
+source_urls:
+- https://nams.network/details/146
+- https://nams.network/details/251
+accessed_on: '2026-11-09'
+method_type: ex vivo
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Embryo
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+methods_biomarkers:
+- ACTA2 (alpha-SMA)
+- COL1A1
+- COL3A1
+- FN1
+- FOXA2
+- FOXJ1
+- MUC5AC / MUC5B
+- NKX2-1 (TTF-1)
+- SCGB1A1 (CC10)
+- SFTPC
+- SOX2
+- SOX9

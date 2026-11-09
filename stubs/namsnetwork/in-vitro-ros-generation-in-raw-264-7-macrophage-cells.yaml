@@ -1,0 +1,27 @@
+id: in-vitro-ros-generation-in-raw-264-7-macrophage-cells
+name: In vitro ROS generation in RAW 264.7 macrophage cells
+resource: namsnetwork
+source_ids:
+- '4'
+source_urls:
+- https://nams.network/details/4
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Toxicity in vitro
+organs:
+- Other
+guidelines:
+- ISO/TS 19006:2016(E)
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008

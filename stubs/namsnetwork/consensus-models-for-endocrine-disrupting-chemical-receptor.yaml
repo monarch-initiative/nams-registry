@@ -1,0 +1,19 @@
+id: consensus-models-for-endocrine-disrupting-chemical-receptor
+name: Consensus models for endocrine-disrupting chemical receptor binding (PXR)
+resource: namsnetwork
+source_ids:
+- '512'
+source_urls:
+- https://nams.network/details/512
+accessed_on: '2026-11-09'
+method_type: in silico
+development_status: Under validation NAMs
+endpoints:
+- Endocrine disruption
+organs:
+- Endocrine system
+guidelines:
+- OECD QSAR Framework
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012

@@ -1,0 +1,23 @@
+id: multi-scale-in-vivo-in-vitro-computational-framework
+name: Multi-scale in vivo-in vitro-computational framework linking CNT physicochemical properties
+  to lung pathology and atherosclerosis
+resource: namsnetwork
+source_ids:
+- '544'
+source_urls:
+- https://nams.network/details/544
+accessed_on: '2026-11-09'
+method_type: in silico
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Multi-walled carbon nanotubes (MWCNTs)

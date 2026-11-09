@@ -1,0 +1,31 @@
+id: tri-culture-model-tri-culture-human-lung-epithelial-cell
+name: 'Tri-culture model: tri-culture human lung epithelial cell line (H441)/ endothelial
+  cell line (ISO-HAS-1)/ macrophages (THP-1)'
+resource: namsnetwork
+source_ids:
+- '44'
+- '265'
+source_urls:
+- https://nams.network/details/44
+- https://nams.network/details/265
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: CoCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Repeated dose toxicity
+organs:
+- Lung
+cell_lines:
+- THP-1
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+methods_biomarkers:
+- MTS
+- TER
+aops:
+- aop:173

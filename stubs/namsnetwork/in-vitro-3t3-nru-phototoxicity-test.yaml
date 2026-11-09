@@ -1,0 +1,19 @@
+id: in-vitro-3t3-nru-phototoxicity-test
+name: In vitro 3T3 NRU phototoxicity test
+resource: namsnetwork
+source_ids:
+- '117'
+source_urls:
+- https://nams.network/details/117
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Phototoxicity
+organs:
+- Skin/Eye
+guidelines:
+- OECD TG 432
+regulations:
+- (EU) 528/2012
+- (EC) 1223/2009

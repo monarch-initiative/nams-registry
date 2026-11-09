@@ -1,0 +1,37 @@
+id: secondary-genotoxicity-testing-by-using-in-vitro-methods
+name: Secondary genotoxicity testing by using in vitro methods based on conditioned media
+  or co-cultures
+resource: namsnetwork
+source_ids:
+- '440'
+source_urls:
+- https://nams.network/details/440
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: CoCulture
+development_status: Under development NAMs
+endpoints:
+- Mutagenicity/Genotoxicity
+organs:
+- Other
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Iron(II,III) oxide (Fe3O4)
+- Iron(III) oxide (Fe2O3)
+- Nickel (Ni)
+- Nickel oxide (NiO)
+methods_biomarkers:
+- Comet assay
+- IL-8
+- TNF-alpha

@@ -1,0 +1,20 @@
+id: dynamic-nanoparticle-digestion-simulator-dnds
+name: Dynamic Nanoparticle Digestion Simulator (DNDS)
+resource: namsnetwork
+source_ids:
+- '426'
+source_urls:
+- https://nams.network/details/426
+accessed_on: '2026-11-09'
+method_type: in chemico
+development_status: Under development NAMs
+endpoints:
+- Gastrointestinal digestion
+organs:
+- Gastrointestinal system
+regulations:
+- (EC) 2015/2283
+substances:
+- Silver (Ag)
+methods_biomarkers:
+- nanoparticle digestion simulator (NDS)

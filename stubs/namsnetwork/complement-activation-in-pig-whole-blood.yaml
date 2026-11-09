@@ -1,0 +1,34 @@
+id: complement-activation-in-pig-whole-blood
+name: Complement activation in pig whole blood
+resource: namsnetwork
+source_ids:
+- '378'
+source_urls:
+- https://nams.network/details/378
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Immunotoxicity/Developmental immunotoxicity/Allergenicity
+organs:
+- Immune system
+regulations:
+- (EU) 528/2012
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Carboxylated polystyrene
+- PEGylated doxorubicin-encapsulated liposomes
+- Sulfated polystyrene
+methods_biomarkers:
+- C3a
+- C3bc
+- C5a
+- sC5b-9
+- TxB2

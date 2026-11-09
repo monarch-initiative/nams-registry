@@ -1,0 +1,39 @@
+id: an-in-vitro-alveolar-macrophage-assay-for-predicting-the
+name: An in vitro alveolar macrophage assay for predicting the short‑term inhalation toxicity
+  of nanomaterials
+resource: namsnetwork
+source_ids:
+- '167'
+- '384'
+source_urls:
+- https://nams.network/details/167
+- https://nams.network/details/384
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Toxicity in vitro
+- Acute toxicity inhalation
+organs:
+- Lung
+cell_lines:
+- NR8383
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Aluminium-doped cerium dioxide (Al-doped CeO2)
+- Barium sulfate (BaSO4)
+- Cerium dioxide (CeO2)
+- Graphite
+- Iron(III) oxide (Fe2O3)
+- Silicon dioxide (SiO2)
+- Titanium dioxide (TiO2)
+- Zinc oxide (ZnO)
+- Zirconium dioxide (ZrO2)
+methods_biomarkers:
+- LDH
+- TNF-alpha

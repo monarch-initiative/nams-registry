@@ -1,0 +1,24 @@
+id: postimplantation-rat-whole-embryo-culture-assay-an-in-vitro
+name: Postimplantation Rat Whole-Embryo Culture Assay - an In Vitro Test for Embryotoxicity
+resource: namsnetwork
+source_ids:
+- '400'
+source_urls:
+- https://nams.network/details/400
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under validation NAMs
+endpoints:
+- Reproductive toxicity/Developmental toxicity/Endocrine disruption
+organs:
+- Other
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 429/2008
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008

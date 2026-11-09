@@ -1,0 +1,23 @@
+id: air-liquid-interface-mono-culture-human-epithelial-lung-203
+name: 'Air-Liquid Interface: mono-culture human epithelial lung carcinoma (A549) for ethylbenzene
+  vapor exposure'
+resource: namsnetwork
+source_ids:
+- '203'
+source_urls:
+- https://nams.network/details/203
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: TwoDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Toxicity in vitro
+organs:
+- Lung
+cell_lines:
+- A549
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008

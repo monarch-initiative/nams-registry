@@ -1,0 +1,30 @@
+id: intestinal-transport-caco-2-monoculture
+name: 'Intestinal Transport: Caco-2 monoculture'
+resource: namsnetwork
+source_ids:
+- '316'
+source_urls:
+- https://nams.network/details/316
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: TwoDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Toxicokinetics
+organs:
+- Gastrointestinal system
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Zinc oxide (ZnO)
+methods_biomarkers:
+- DCFH-DA-DA
+- LDH

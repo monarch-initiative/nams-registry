@@ -1,0 +1,20 @@
+id: epics-previously-named-est-1000-skin-irritation-test
+name: epiCS (previously named EST-1000) Skin Irritation Test
+resource: namsnetwork
+source_ids:
+- '336'
+source_urls:
+- https://nams.network/details/336
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin irritation in vitro
+organs:
+- Skin
+guidelines:
+- OECD TG 439
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009

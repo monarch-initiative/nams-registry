@@ -1,0 +1,46 @@
+id: nano-qsar-model-for-prediction-of-acute-lung-cytotoxicity
+name: Nano-QSAR model for prediction of acute lung cytotoxicity of metal oxide nanoparticles
+  for BEAS-2B cell line
+resource: namsnetwork
+source_ids:
+- '522'
+source_urls:
+- https://nams.network/details/522
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: QSARModel
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Aluminium oxide (Al2O3)
+- Antimony(III) oxide (Sb2O3)
+- Bismuth(III) oxide (Bi2O3)
+- Cerium(IV) oxide (CeO2)
+- Chromium(III) oxide (Cr2O3)
+- Cobalt(II,III) oxide (Co3O4)
+- Gadolinium(III) oxide (Gd2O3)
+- Hafnium(IV) oxide (HfO2)
+- Indium(III) oxide (In2O3)
+- Iron(III) oxide (Fe2O3)
+- Lanthanum(III) oxide (La2O3)
+- Manganese(III) oxide (Mn2O3)
+- Nickel(II) oxide (NiO)
+- Silicon dioxide (SiO2)
+- Tin(IV) oxide (SnO2)
+- Titanium dioxide (TiO2)
+- Tungsten(VI) oxide (WO3)
+- Ytterbium(III) oxide (Yb2O3)
+- Yttrium(III) oxide (Y2O3)
+- Zinc oxide (ZnO)
+- Zirconium dioxide (ZrO2)
+methods_biomarkers:
+- CCK-8

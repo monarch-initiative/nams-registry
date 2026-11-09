@@ -1,0 +1,23 @@
+id: cell-transformation-assay-in-vitro-on-the-bhas-42-cells
+name: Cell Transformation Assay in vitro on the Bhas 42 cells
+resource: namsnetwork
+source_ids:
+- '389'
+source_urls:
+- https://nams.network/details/389
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Carcinogenicity
+organs:
+- Other
+guidelines:
+- OECD GD 231
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- US EPA TSCA

@@ -1,0 +1,28 @@
+id: air-liquid-interface-monoculture-of-human-lung-epithelial
+name: 'Air Liquid Interface: monoculture of human lung epithelial (NCI-H441) cell line'
+resource: namsnetwork
+source_ids:
+- '156'
+- '347'
+source_urls:
+- https://nams.network/details/156
+- https://nams.network/details/347
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: TwoDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Toxicity in vitro
+- Acute toxicity inhalation
+organs:
+- Lung
+guidelines:
+- SOP PATROLS 3103
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Engineered nanomaterials (ENMs)

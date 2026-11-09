@@ -1,0 +1,24 @@
+id: mppd-pbpk-qivive-framework-for-nicotine-aerosols-ali-pod-to
+name: MPPD-PBPK QIVIVE framework for nicotine aerosols - ALI POD-to-HEC reverse dosimetry
+  and plasma PK prediction
+resource: namsnetwork
+source_ids:
+- '533'
+source_urls:
+- https://nams.network/details/533
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: PBPKModel
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Nicotine

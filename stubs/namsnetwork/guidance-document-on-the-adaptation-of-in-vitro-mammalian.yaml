@@ -1,0 +1,38 @@
+id: guidance-document-on-the-adaptation-of-in-vitro-mammalian
+name: Guidance Document on the Adaptation of In Vitro Mammalian Cell Based Genotoxicity TGs
+  for Testing of Manufactured Nanomaterials
+resource: namsnetwork
+source_ids:
+- '437'
+source_urls:
+- https://nams.network/details/437
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under validation NAMs
+endpoints:
+- Mutagenicity/Genotoxicity
+organs:
+- Other
+guidelines:
+- Project 4.95 OECD Working TG 2021
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Barium sulfate (BaSO4)
+- Cerium dioxide (CeO2)
+- Gold (Au)
+- Silicon dioxide (SiO2)
+- Silver (Ag)
+methods_biomarkers:
+- cytokinesis-block proliferation index (CBPI)
+- Micronucleus test

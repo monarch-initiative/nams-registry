@@ -1,0 +1,27 @@
+id: quantitative-reverse-transcription-polymerase-chain
+name: Quantitative reverse transcription polymerase chain reaction (RT-qPCR) with Hepatocarcinoma
+  PCR Array plates (Bio-Rad 10034966)
+resource: namsnetwork
+source_ids:
+- '248'
+source_urls:
+- https://nams.network/details/248
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Carcinogenicity
+organs:
+- Liver
+guidelines:
+- SOP PATROLS 4301
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Engineered nanomaterials (ENMs)
+methods_biomarkers:
+- not available

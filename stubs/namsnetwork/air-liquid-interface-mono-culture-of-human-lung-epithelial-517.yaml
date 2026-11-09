@@ -1,0 +1,28 @@
+id: air-liquid-interface-mono-culture-of-human-lung-epithelial-517
+name: 'Air Liquid Interface: mono-culture of human lung epithelial cells (lung normal 16HBE14o)'
+resource: namsnetwork
+source_ids:
+- '517'
+source_urls:
+- https://nams.network/details/517
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: TwoDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+cell_lines:
+- 16HBE14o-
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Diesel exhaust particles (DEP)
+methods_biomarkers:
+- IL-8
+- MTT

@@ -1,0 +1,26 @@
+id: neuronal-like-cells-derived-from-human-umibilical-cord
+name: Neuronal-like cells derived from human umibilical cord lining membranes mesenchymal
+  stem cells as a tool for the neurotoxicity and developmental neurotoxicity testing
+resource: namsnetwork
+source_ids:
+- '393'
+- '461'
+source_urls:
+- https://nams.network/details/393
+- https://nams.network/details/461
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Developmental neurotoxicity
+- Repeated dose toxicity
+organs:
+- Central nervous system
+regulations:
+- (EU) 528/2012
+substances:
+- Iron(II,III) oxide (Fe3O4)
+methods_biomarkers:
+- ATP concentration Evaluation (CellTiter-Glo® 3D Assay)
+- Caspase-Glo® 3/7 Assay
+- CytoTox-Glo™ Cytotoxicity Assay

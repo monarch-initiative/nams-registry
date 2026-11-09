@@ -1,0 +1,22 @@
+id: cell-transformation-assay-in-vitro-on-syrian-hamster
+name: Cell Transformation Assay in vitro on Syrian hamster embryonic (SHE) cells at pH 6.7
+resource: namsnetwork
+source_ids:
+- '131'
+source_urls:
+- https://nams.network/details/131
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Carcinogenicity
+organs:
+- Other
+guidelines:
+- OECD GD 214
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003

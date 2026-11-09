@@ -1,0 +1,22 @@
+id: defined-approaches-on-skin-sensitisation-2-out-of-3
+name: 'Defined Approaches on Skin Sensitisation: 2 out of 3'
+resource: namsnetwork
+source_ids:
+- '304'
+source_urls:
+- https://nams.network/details/304
+accessed_on: '2026-11-09'
+method_type: in vitro/in silico
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin sensitisation in vitro/in chemico
+organs:
+- Skin
+guidelines:
+- OECD TG 497
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003

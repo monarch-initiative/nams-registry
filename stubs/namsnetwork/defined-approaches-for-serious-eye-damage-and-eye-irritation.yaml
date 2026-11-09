@@ -1,0 +1,22 @@
+id: defined-approaches-for-serious-eye-damage-and-eye-irritation
+name: Defined Approaches for Serious Eye Damage and Eye Irritation
+resource: namsnetwork
+source_ids:
+- '325'
+source_urls:
+- https://nams.network/details/325
+accessed_on: '2026-11-09'
+method_type: in vitro/in silico
+development_status: Regulatory accepted NAMs
+endpoints:
+- Serious eye damage/eye irritation in vitro
+organs:
+- Eye
+guidelines:
+- OECD TG 467
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003

@@ -1,0 +1,21 @@
+id: interaction-between-nanoparticles-and-food-proteins-albumin
+name: Interaction between nanoparticles and food proteins (albumin, casein, and zein)
+resource: namsnetwork
+source_ids:
+- '419'
+source_urls:
+- https://nams.network/details/419
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Toxicokinetics
+organs:
+- Gastrointestinal system
+regulations:
+- (EU) 2015/2283
+substances:
+- Zinc oxide (ZnO)
+methods_biomarkers:
+- DCFH-DA-DA
+- LDH

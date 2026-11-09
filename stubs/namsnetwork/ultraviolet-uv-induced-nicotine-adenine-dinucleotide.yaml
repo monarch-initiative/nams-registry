@@ -1,0 +1,19 @@
+id: ultraviolet-uv-induced-nicotine-adenine-dinucleotide
+name: Ultraviolet (UV)-induced nicotine adenine dinucleotide hydrogen (NADH) oxidation
+resource: namsnetwork
+source_ids:
+- '250'
+source_urls:
+- https://nams.network/details/250
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Phototoxicity
+organs:
+- Other
+guidelines:
+- ISO 20814:2019
+regulations:
+- (EU) 528/2012
+- (EC) 1223/2009

@@ -1,0 +1,26 @@
+id: complement-activation-ch50-test
+name: Complement activation (CH50) test
+resource: namsnetwork
+source_ids:
+- '84'
+source_urls:
+- https://nams.network/details/84
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Immunotoxicity/Developmental immunotoxicity/Allergenicity
+organs:
+- Immune system
+regulations:
+- (EU) 528/2012
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Iron (Fe)

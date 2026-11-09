@@ -1,0 +1,44 @@
+id: dynamic-time-dose-property-response-nano-qsar-for
+name: Dynamic time-dose-property/response Nano-QSAR for inhalation toxicity for DNA damage
+  for BAL
+resource: namsnetwork
+source_ids:
+- '524'
+source_urls:
+- https://nams.network/details/524
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: QSARModel
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+substances:
+- Carbon black (CB)
+- Cobalt ferrite (CoFe2O4)
+- Cobalt(II,III) oxide (Co3O4)
+- Cobalt(III) oxide (Co2O3)
+- DQ12 (quartz)
+- Graphene oxide (GO)
+- Halloysite (Al2Si2O5(OH)4)
+- Hematite (Fe2O3)
+- Magnetite (Fe3O4)
+- Multi-walled carbon nanotube (MWCNT)
+- Nanoclay
+- Nickel ferrite (NiFe2O4)
+- Nickel zinc ferrite (NiZnFe3O8)
+- Reduced graphene oxide (rGO)
+- Silicon oxide (SiOx)
+- Single-walled carbon nanotube (SWCNTs)
+- Titanium dioxide (TiO2)
+- Zinc ferrite (ZnFe2O4)
+- Zinc oxide (ZnO)
+methods_biomarkers:
+- Comet assay

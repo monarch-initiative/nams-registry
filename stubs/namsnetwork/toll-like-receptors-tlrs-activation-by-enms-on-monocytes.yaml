@@ -1,0 +1,44 @@
+id: toll-like-receptors-tlrs-activation-by-enms-on-monocytes
+name: Toll-like receptors (TLRs) activation by ENMs on monocytes
+resource: namsnetwork
+source_ids:
+- '199'
+- '219'
+source_urls:
+- https://nams.network/details/199
+- https://nams.network/details/219
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Repeated dose toxicity
+- Immunotoxicity/Developmental immunotoxicity/Allergenicity
+organs:
+- Lung
+regulations:
+- (EU) 528/2012
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Aluminium hydrooxide oxide (AlOOH)
+- Copper oxide (CuO)
+- Iron(II,III) oxide (Fe3O4)
+- Silver oxide (Ag2O)
+- Titanium dioxide (TiO2)
+- Zinc oxide (ZnO)
+- Aluminium(Al)
+- Copper(Cu)
+- Iron (Fe)
+- Silver (Ag)
+- Titanium (Ti)
+- Zinc(ZN)
+methods_biomarkers:
+- TLR-4
+- TLR-6
+- MTT

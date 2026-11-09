@@ -1,0 +1,29 @@
+id: derek-nexus
+name: DEREk Nexus
+resource: namsnetwork
+source_ids:
+- '43'
+- '164'
+- '315'
+source_urls:
+- https://nams.network/details/43
+- https://nams.network/details/164
+- https://nams.network/details/315
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: QSARModel
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin corrosion in vitro
+- Serious eye damage/eye irritation in vitro
+- Skin irritation in vitro
+organs:
+- Eye
+guidelines:
+- OECD GD 263
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003

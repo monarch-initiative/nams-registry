@@ -1,0 +1,34 @@
+id: in-vitro-mammalian-cell-gene-mutation-tests-using-the-hprt
+name: In Vitro Mammalian Cell Gene Mutation Tests using the Hprt and xprt genes
+resource: namsnetwork
+source_ids:
+- '444'
+source_urls:
+- https://nams.network/details/444
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Mutagenicity/Genotoxicity
+organs:
+- Other
+guidelines:
+- OECD TG 476
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+- US EPA TSCA
+substances:
+- Multi-walled carbon nanotubes (MWCNTs)
+methods_biomarkers:
+- Chromosome aberration test
+- Micronucleus test

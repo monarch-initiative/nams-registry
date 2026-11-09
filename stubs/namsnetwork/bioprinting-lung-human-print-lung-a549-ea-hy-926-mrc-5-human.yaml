@@ -1,0 +1,26 @@
+id: bioprinting-lung-human-print-lung-a549-ea-hy-926-mrc-5-human
+name: Bioprinting lung human (Print lung A549/EA.hy 926/MRC-5-human)
+resource: namsnetwork
+source_ids:
+- '159'
+- '260'
+source_urls:
+- https://nams.network/details/159
+- https://nams.network/details/260
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Lung
+cell_lines:
+- EA.hy926
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+methods_biomarkers:
+- not available

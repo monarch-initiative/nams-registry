@@ -1,0 +1,41 @@
+id: air-liquid-interface-bi-culture-lung-epithelial-calu-3
+name: 'Air Liquid Interface: bi-culture: lung epithelial (Calu-3)/ macrophages derived from
+  monocytes'
+resource: namsnetwork
+source_ids:
+- '28'
+- '175'
+source_urls:
+- https://nams.network/details/28
+- https://nams.network/details/175
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: CoCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Lung
+cell_lines:
+- Calu-3
+guidelines:
+- SOP PATROLS 3603
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+substances:
+- DQ12 (quartz)
+- Titanium dioxide (TiO2)
+methods_biomarkers:
+- IL-10
+- IL-1beta
+- IL-6
+- IL-8
+- LDH
+- MTT
+- TER
+- TNF-alpha
+- WST-1

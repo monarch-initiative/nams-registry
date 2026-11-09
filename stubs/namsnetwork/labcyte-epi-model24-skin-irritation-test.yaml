@@ -1,0 +1,23 @@
+id: labcyte-epi-model24-skin-irritation-test
+name: LabCyte EPI-MODEL24 Skin Irritation Test
+resource: namsnetwork
+source_ids:
+- '338'
+source_urls:
+- https://nams.network/details/338
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Skin irritation in vitro
+organs:
+- Skin
+guidelines:
+- OECD TG 439
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- US EPA TSCA

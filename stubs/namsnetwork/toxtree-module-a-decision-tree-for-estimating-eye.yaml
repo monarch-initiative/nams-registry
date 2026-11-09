@@ -1,0 +1,23 @@
+id: toxtree-module-a-decision-tree-for-estimating-eye
+name: 'Toxtree Module: A decision tree for estimating eye irritation and corrosion potential'
+resource: namsnetwork
+source_ids:
+- '322'
+source_urls:
+- https://nams.network/details/322
+accessed_on: '2026-11-09'
+method_type: in silico
+proposed_namo_class: QSARModel
+development_status: Regulatory accepted NAMs
+endpoints:
+- Serious eye damage/eye irritation in vitro
+organs:
+- Eye
+guidelines:
+- OECD GD 263
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003

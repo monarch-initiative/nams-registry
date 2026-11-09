@@ -1,0 +1,19 @@
+id: skin-absorption-in-vitro-method
+name: 'Skin Absorption: In Vitro Method'
+resource: namsnetwork
+source_ids:
+- '391'
+source_urls:
+- https://nams.network/details/391
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Regulatory accepted NAMs
+endpoints:
+- Dermal absorption
+organs:
+- Skin
+guidelines:
+- OECD TG 428
+regulations:
+- (EC) 1223/2009
+- US EPA TSCA

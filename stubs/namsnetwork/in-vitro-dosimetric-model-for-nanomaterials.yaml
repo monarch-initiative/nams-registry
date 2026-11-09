@@ -1,0 +1,26 @@
+id: in-vitro-dosimetric-model-for-nanomaterials
+name: In Vitro Dosimetric model for nanomaterials
+resource: namsnetwork
+source_ids:
+- '368'
+source_urls:
+- https://nams.network/details/368
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under development NAMs
+endpoints:
+- Toxicokinetics
+organs:
+- Other
+guidelines:
+- SOP PATROLS 6205
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008

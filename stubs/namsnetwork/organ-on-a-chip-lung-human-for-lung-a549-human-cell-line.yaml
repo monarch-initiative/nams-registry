@@ -1,0 +1,25 @@
+id: organ-on-a-chip-lung-human-for-lung-a549-human-cell-line
+name: Organ-on-a-chip lung human for lung A549 human cell line
+resource: namsnetwork
+source_ids:
+- '153'
+source_urls:
+- https://nams.network/details/153
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: OrganOnChip
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+organs:
+- Lung
+cell_lines:
+- A549
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+methods_biomarkers:
+- calcein-AM/Propidium iodide
+- MTT

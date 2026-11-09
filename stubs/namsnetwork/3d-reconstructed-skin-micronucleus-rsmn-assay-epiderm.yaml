@@ -1,0 +1,33 @@
+id: 3d-reconstructed-skin-micronucleus-rsmn-assay-epiderm
+name: 3D reconstructed skin micronucleus (RSMN) assay (EpiDermTM)
+resource: namsnetwork
+source_ids:
+- '432'
+source_urls:
+- https://nams.network/details/432
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: ThreeDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Mutagenicity/Genotoxicity
+organs:
+- Skin
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008
+substances:
+- Silicon dioxide (SiO2)
+methods_biomarkers:
+- Micronucleus test
+- reconstructed skinMicronucleus test(RSMN)
+- relative population doubling (RPD)

@@ -1,0 +1,28 @@
+id: mono-culture-human-lung-epithelial-cells-a549
+name: 'Mono-culture: human lung epithelial cells (A549)'
+resource: namsnetwork
+source_ids:
+- '37'
+- '454'
+source_urls:
+- https://nams.network/details/37
+- https://nams.network/details/454
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: TwoDCellCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Lung
+guidelines:
+- SOP PATROLS 3101
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+- (EC) 1831/2003
+methods_biomarkers:
+- Trypan blueassay

@@ -14,18 +14,23 @@ domain_areas:
 - chemistry and biochemistry
 holds_nams: primary
 relevance_note: >-
-  NAMs are its records. Its catalogue lists 542 NAMs: 374 in vitro, 131 in
-  silico, 19 in chemico, 15 ex vivo and 3 in vitro/in silico. Each record
+  NAMs are its records. Its catalogue has 542 records, but lists some NAMs
+  more than once, once per endpoint, so it holds 452 NAMs: 298 in vitro, 126
+  in silico, 17 in chemico, 8 ex vivo and 3 in vitro/in silico. Each record
   gives a type, a toxicity endpoint, an organ, cell types and a development
-  status: 335 under development, 121 under validation and 86 accepted for
-  regulatory use. It also gives a guideline or strategy, and the EU
-  regulations the NAM applies to. Filters link NAMs to substances,
+  status: 253 NAMs are under development, 121 under validation and 78
+  accepted for regulatory use. It also gives a guideline or strategy, and
+  the EU regulations the NAM applies to. Filters link NAMs to substances,
   methods and biomarkers, and AOP-Wiki AOPs and Key Events. The catalogue is
   aimed at chemical and nanomaterial safety assessment: the most common
   endpoint is acute inhalation toxicity, and the most common organ is the
-  lung (281 NAMs). The list and its filters are public through a JSON API at
-  https://api.nams.network, which scripts/fetch_namsnetwork.py reads. A
-  NAM's full record needs a logged-in account.
+  lung (205 NAMs). The list and its filters are public through a JSON API at
+  https://api.nams.network, which scripts/fetch_namsnetwork.py reads, and
+  scripts/stub_namsnetwork.py turns into a stub per NAM in
+  stubs/namsnetwork/. A NAM's full record needs a free, logged-in account.
+  It adds a description, publications, cell types with species, measures,
+  limitations and, for in silico NAMs, the model's algorithm and training
+  data, but the site states no terms for reusing it.
 curation_model:
 - maintainers
 dismech_integration: >-
@@ -39,13 +44,22 @@ supporting_scripts:
   description: >-
     Fetches the public NAM list and filter facets from the NAMs.network API,
     and rebuilds the links from NAMs to substances, methods and biomarkers,
-    biological endpoints, and AOP-Wiki AOPs and Key Events.
+    and AOP-Wiki AOPs and Key Events.
+- name: stub_namsnetwork.py
+  repository: https://github.com/monarch-initiative/nams-registry
+  path: scripts/stub_namsnetwork.py
+  command: uv run python scripts/stub_namsnetwork.py
+  description: >-
+    Writes a stub for each NAM in the catalogue fetched by
+    fetch_namsnetwork.py into stubs/namsnetwork/, merging the records the
+    catalogue lists more than once, and skipping NAMs already curated in
+    nams/.
 priority: high
 priority_rationale: >-
   It is one of the few resources that hold NAMs as structured records, each
   with a type, an endpoint, an organ and a development status, and its list
   is public through an API. Its links to AOP-Wiki AOPs and Key Events connect
-  it to the AOP-Wiki methods work (#5): in the 2026-11-06 fetch, 16 NAMs link
+  it to the AOP-Wiki methods work (#5): in the 2026-11-09 fetch, 14 NAMs link
   to an AOP and 67 to a Key Event. Its scope is narrower than DisMech's. It
   covers toxicity endpoints for chemical and nanomaterial regulation, not
   disease, so its value to DisMech is mainly in the methods it describes.
@@ -62,7 +76,7 @@ expectations: >-
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/20
 activity_status: active
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-09'
 imported_from:
 - source: kg_registry
   source_id: namsnetwork

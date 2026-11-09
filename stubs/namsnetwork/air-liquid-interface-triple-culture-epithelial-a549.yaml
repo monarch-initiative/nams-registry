@@ -1,0 +1,35 @@
+id: air-liquid-interface-triple-culture-epithelial-a549
+name: 'Air Liquid Interface: triple-culture: epithelial (A549)/ peripheral blood monocyte-derived
+  dendritic/ macrophage cells'
+resource: namsnetwork
+source_ids:
+- '5'
+- '161'
+source_urls:
+- https://nams.network/details/5
+- https://nams.network/details/161
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: CoCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Toxicity in vitro
+organs:
+- Lung
+cell_lines:
+- A549
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+substances:
+- Silver (Ag)
+- Silver nitrate (AgNO3)
+methods_biomarkers:
+- HO-1
+- IL-8
+- LDH
+- SOD-1
+- TNF-alpha

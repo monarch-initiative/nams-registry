@@ -1,0 +1,24 @@
+id: thyroid-hormone-disruption-measurement-of-proliferation-of
+name: 'Thyroid hormone disruption: Measurement of proliferation of rat pituitary-derived cell
+  line GH3'
+resource: namsnetwork
+source_ids:
+- '352'
+source_urls:
+- https://nams.network/details/352
+accessed_on: '2026-11-09'
+method_type: in vitro
+development_status: Under validation NAMs
+endpoints:
+- Endocrine disruption
+organs:
+- Endocrine system
+regulations:
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EU) 2015/2283
+- (EC) 1852/2001
+- (EC) 258/97
+- (EU) 1169/2011
+- (EC) 1333/2008
+- (EC) 1331/2008

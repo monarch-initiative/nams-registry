@@ -1,0 +1,35 @@
+id: triple-co-culture-of-lung-human-cells-triple-culture
+name: 'Triple co-culture of lung human cells: triple-culture epithelial cells (16HBE14o-)/monocyte-derived
+  macrophages/monocyte-derived dendritic cells'
+resource: namsnetwork
+source_ids:
+- '41'
+- '264'
+source_urls:
+- https://nams.network/details/41
+- https://nams.network/details/264
+accessed_on: '2026-11-09'
+method_type: in vitro
+proposed_namo_class: CoCulture
+development_status: Under development NAMs
+endpoints:
+- Acute toxicity inhalation
+- Repeated dose toxicity
+organs:
+- Lung
+cell_lines:
+- 16HBE14o-
+regulations:
+- (EC) 1907/2006
+- (EU) 528/2012
+- (EC) 1223/2009
+- (EC) 429/2008
+substances:
+- Multi-walled carbon nanotubes (MWCNTs)
+- Single-walled carbon nanotubes (SWCNTs)
+- Single-walled nanotubes (SWCNTs)
+methods_biomarkers:
+- GSH
+- IL-8
+- LDH
+- TNF-alpha
