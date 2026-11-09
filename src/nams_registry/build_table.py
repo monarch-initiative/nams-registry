@@ -1,7 +1,8 @@
-"""Build the registry's browse page from resources/, nams/ and stubs/.
+"""Build the registry's browse page from resources/, nams/ and partial-nams/.
 
 The page has four tabs: all records, resources (resources/*.yaml), NAM
-records (nams/*.yaml) and NAM stubs (stubs/<resource>/*.yaml). Each tab
+records (nams/*.yaml) and partial NAM records
+(partial-nams/<resource>/*.yaml). Each tab
 lists one row per record; clicking a row shows the rest of the record's
 details below it. The data is embedded in the page, so it needs no server.
 `just build-table` runs this, as does `just gen-doc`, before MkDocs
@@ -35,7 +36,7 @@ REPOSITORY = "https://github.com/monarch-initiative/nams-registry"
 # Clicking a column heading sorts by that column, ascending then descending.
 # Everything else stays in the details that open below the row.
 TABS = [
-    ("all", "All records", ["resource", "nam", "stub"], [
+    ("all", "All records", ["resource", "nam", "partial"], [
         ("name", "Name", "text", None),
         ("kind_label", "Kind", "badge", "values"),
         ("type", "Type or NAMO class", "text", "values"),
@@ -56,7 +57,7 @@ TABS = [
         ("species", "Species", "text", "values"),
         ("sources", "Found in", "text", "values"),
     ]),
-    ("stubs", "NAM Stubs", ["stub"], [
+    ("partial", "Partial NAM records", ["partial"], [
         ("name", "Name", "text", None),
         ("type", "Proposed NAMO class", "text", "values"),
         ("method_type", "Method type", "text", "values"),
@@ -66,7 +67,7 @@ TABS = [
     ]),
 ]
 
-KIND_LABELS = {"resource": "Resource", "nam": "NAM", "stub": "NAM stub"}
+KIND_LABELS = {"resource": "Resource", "nam": "NAM", "partial": "Partial NAM record"}
 
 
 def record_link(path):
@@ -111,14 +112,14 @@ def nam_row(record, resource_names):
     }
 
 
-def stub_row(stub, resource_names):
-    """A NAM stub, with the fields computed for the table."""
+def partial_row(partial, resource_names):
+    """A partial NAM record, with the fields computed for the table."""
     return {
-        **stub,
-        "kind": "stub",
-        "type": stub.get("proposed_namo_class"),
-        **found_in([stub["resource"]], resource_names),
-        **record_link(f"stubs/{stub['resource']}/{stub['id']}.yaml"),
+        **partial,
+        "kind": "partial",
+        "type": partial.get("proposed_namo_class"),
+        **found_in([partial["resource"]], resource_names),
+        **record_link(f"partial-nams/{partial['resource']}/{partial['id']}.yaml"),
     }
 
 
@@ -134,7 +135,7 @@ PAGE = """<!doctype html>
     --row-hover: #f3f5f9; --detail-bg: #f9fafc; --accent: #2f5fb3;
     --chip-bg: #eef2f8; --banner-bg: #2f4a8f; --banner-fg: #ffffff; --banner-muted: #d6def0;
     --tab-on-bg: #2f4a8f; --tab-on-fg: #ffffff; --badge-bg: #e6e9ef; --badge-fg: #2b3240;
-    --stub-bg: #fdf1dc; --stub-fg: #7a4b00;
+    --partial-bg: #fdf1dc; --partial-fg: #7a4b00;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -142,7 +143,7 @@ PAGE = """<!doctype html>
       --row-hover: #1b2028; --detail-bg: #181c23; --accent: #8fb3ff;
       --chip-bg: #232a35; --banner-bg: #1c2a4d; --banner-fg: #eef2fb; --banner-muted: #a9b6d3;
       --tab-on-bg: #8fb3ff; --tab-on-fg: #0f1420; --badge-bg: #2a303a; --badge-fg: #dde2ea;
-      --stub-bg: #3a2c12; --stub-fg: #f3c77a;
+      --partial-bg: #3a2c12; --partial-fg: #f3c77a;
     }
   }
   * { box-sizing: border-box; }
@@ -219,9 +220,9 @@ PAGE = """<!doctype html>
     display: inline-block; background: var(--badge-bg); color: var(--badge-fg); border-radius: 4px;
     padding: 1px 8px; font-size: 13px; font-weight: 600; white-space: nowrap;
   }
-  .badge.stub { background: var(--stub-bg); color: var(--stub-fg); }
+  .badge.partial { background: var(--partial-bg); color: var(--partial-fg); }
   .callout {
-    background: var(--stub-bg); color: var(--stub-fg); border-radius: 6px;
+    background: var(--partial-bg); color: var(--partial-fg); border-radius: 6px;
     padding: 8px 12px; margin: 0 0 12px; font-size: 14px;
   }
   a { color: var(--accent); }
@@ -263,14 +264,14 @@ const TABS = __TABS__;
 
 // What each tab says above its table.
 const NOTES = {
-  all: "Every record in the registry: the resources reviewed, the NAMs curated from them, and the NAMs found in them but not yet curated (stubs).",
+  all: "Every record in the registry: the resources reviewed, the NAMs recorded from them, and partial records of NAMs whose full records can't yet be held here.",
   resources: "Sources of NAMs, and of data about them, each reviewed for what it holds.",
   nams: "NAMs curated from the resources, each as a NAMO model. Species, applications and limitations are held beside the model until NAMO covers them.",
-  stubs: "NAMs found in a resource but not yet curated. A stub holds only what its resource gives publicly, in the resource's own terms; curating a NAM replaces its stub with a NAM record.",
+  partial: "NAMs recorded only in part. A partial record holds only what its resource gives publicly, in the resource's own terms, until a full NAM record can be written; the full record then replaces it.",
 };
 const NOUNS = {
   all: ["record", "records"], resources: ["resource", "resources"],
-  nams: ["NAM", "NAMs"], stubs: ["NAM stub", "NAM stubs"],
+  nams: ["NAM", "NAMs"], partial: ["partial NAM record", "partial NAM records"],
 };
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -308,7 +309,7 @@ function cell(r, [f, heading, display]) {
   if (f === "name") return `<span class="name">${esc(v)}</span>`;
   if (display === "check") return v ? `<span class="check" role="img" aria-label="Yes">&#10003;</span>` : "";
   if (display === "clamp") return v ? `<span class="clamp">${esc(v)}</span>` : text(v);
-  if (display === "badge") return v ? `<span class="badge${r.kind === "stub" ? " stub" : ""}">${esc(v)}</span>` : DASH;
+  if (display === "badge") return v ? `<span class="badge${r.kind === "partial" ? " partial" : ""}">${esc(v)}</span>` : DASH;
   if (display === "issue") return v ? a(v, "#" + String(v).split("/").pop()) : DASH;
   return Array.isArray(v) ? chips(v) : text(v);
 }
@@ -330,7 +331,7 @@ function detailResource(r) {
   const imp = (r.imported_from || []).map(i =>
     `${esc(i.source)} ${a(i.source_url, i.source_id)}, commit ${esc(i.source_version || "?")}, ${esc(i.imported_on)}`).join("<br>");
   const found = DATA.filter(x => x.kind !== "resource" && x.source_resource_ids.includes(r.id));
-  const nams = found.filter(x => x.kind === "nam").length, stubs = found.length - nams;
+  const nams = found.filter(x => x.kind === "nam").length, partials = found.length - nams;
   return `<dl>
     ${row("Id", esc(r.id))}
     ${row("Homepage", link(r.homepage_url))}
@@ -339,7 +340,7 @@ function detailResource(r) {
     ${row("Resource type", text(r.resource_type))}
     ${row("Activity status", text(r.activity_status))}
     ${row("Domain areas", chips(r.domain_areas))}
-    ${found.length ? row("NAMs from it", `${nams} NAM record${nams === 1 ? "" : "s"}, ${stubs} stub${stubs === 1 ? "" : "s"}`) : ""}
+    ${found.length ? row("NAMs from it", `${nams} NAM record${nams === 1 ? "" : "s"}, ${partials} partial record${partials === 1 ? "" : "s"}`) : ""}
     ${r.repository ? row("Repository", link(r.repository)) : ""}
     ${row("License", r.license ? (r.license.id ? a(r.license.id, r.license.label) : esc(r.license.label)) : DASH)}
     ${row("Curation model", chips(r.curation_model))}
@@ -402,10 +403,10 @@ function detailNam(r) {
   </dl>`;
 }
 
-function detailStub(r) {
+function detailPartial(r) {
   const source = r.sources[0];
   const pages = (r.source_urls || []).map(u => `<li>${a(u)}</li>`).join("");
-  return `<p class="callout">Not yet curated. This stub holds only what ${esc(source)} gives publicly: it has no description, species, references, applications or limitations.</p>
+  return `<p class="callout">A partial record. It holds only what ${esc(source)} gives publicly: it has no description, species, references, applications or limitations.</p>
   <dl>
     ${row("Id", esc(r.id))}
     ${recordRow(r)}
@@ -426,7 +427,7 @@ function detailStub(r) {
   </dl>`;
 }
 
-const DETAIL = { resource: detailResource, nam: detailNam, stub: detailStub };
+const DETAIL = { resource: detailResource, nam: detailNam, partial: detailPartial };
 
 // Labels for a "present" filter, by column display.
 const PRESENT_LABELS = {
@@ -443,7 +444,7 @@ const MISSING_LABEL = { holds_nams: "Not yet evaluated", type: "None" };
 const RANK = {
   priority: ["high", "medium", "low"],
   holds_nams: ["primary", "secondary", "unclear", "none"],
-  kind_label: ["Resource", "NAM", "NAM stub"],
+  kind_label: ["Resource", "NAM", "Partial NAM record"],
 };
 
 let tab = null, sortField = "name", sortDir = 1;
@@ -532,7 +533,7 @@ function showTab(key) {
   };
   tab = TABS.find(t => t[0] === key) || TABS[0];
   // A tab opens as it was left; the first time, All records is grouped by
-  // kind (resources, then NAMs, then stubs) and the others sorted by name.
+  // kind (resources, then NAMs, then partial records) and the others sorted by name.
   const state = STATE[tab[0]] || {
     q: "", sortField: tab[0] === "all" ? "kind_label" : "name", sortDir: 1, filters: {},
   };
@@ -570,7 +571,7 @@ window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
 
 const n = k => DATA.filter(r => r.kind === k).length;
 document.getElementById("summary").textContent =
-  `${DATA.length} records: ${n("resource")} resources, ${n("nam")} NAMs, ${n("stub")} NAM stubs`;
+  `${DATA.length} records: ${n("resource")} resources, ${n("nam")} NAMs, ${n("partial")} partial NAM records`;
 
 document.getElementById("rows").addEventListener("click", e => {
   if (e.target.closest("a")) return;
@@ -608,7 +609,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--resources", default="resources", help="Directory of resource files (default: resources)")
     parser.add_argument("--nams", default="nams", help="Directory of NAM records (default: nams)")
-    parser.add_argument("--stubs", default="stubs", help="Directory of NAM stubs, one folder per resource (default: stubs)")
+    parser.add_argument("--partial-nams", default="partial-nams", help="Directory of partial NAM records, one folder per resource (default: partial-nams)")
     parser.add_argument(
         "--output", default="docs/resources/index.html",
         help="Page to write (default: docs/resources/index.html)",
@@ -619,7 +620,7 @@ def main(argv=None):
     names = {r["id"]: r["name"] for r in resources}
     rows = [resource_row(r) for r in resources]
     rows += [nam_row(r, names) for r in load(os.path.join(args.nams, "*.yaml"))]
-    rows += [stub_row(s, names) for s in load(os.path.join(args.stubs, "*", "*.yaml"))]
+    rows += [partial_row(p, names) for p in load(os.path.join(args.partial_nams, "*", "*.yaml"))]
     for r in rows:
         r["kind_label"] = KIND_LABELS[r["kind"]]
     rows.sort(key=lambda r: r["name"].lower())
@@ -633,7 +634,7 @@ def main(argv=None):
     with open(args.output, "w") as fh:
         fh.write(page)
     counts = {k: sum(r["kind"] == k for r in rows) for k in KIND_LABELS}
-    print(f"Wrote {counts['resource']} resources, {counts['nam']} NAM records and {counts['stub']} NAM stubs to {args.output}")
+    print(f"Wrote {counts['resource']} resources, {counts['nam']} NAM records and {counts['partial']} partial NAM records to {args.output}")
 
 
 if __name__ == "__main__":
