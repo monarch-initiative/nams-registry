@@ -1,6 +1,6 @@
 id: air-liquid-interface-mono-culture-human-bronchial-223
 name: 'Air Liquid Interface: mono-culture human bronchial epithelial (BEAS-2B) for NIST 1648
-  particlen exposure'
+  particle exposure'
 resource: namsnetwork
 source_ids:
 - '223'

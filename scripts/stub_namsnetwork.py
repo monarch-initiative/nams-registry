@@ -53,9 +53,30 @@ CLASS_PATTERNS = {
 }
 
 
+# Misspellings in the NAMs.network catalogue, corrected in the stubs: whole
+# words in any text, and whole values. Kept here, not in the stub files, so
+# they survive a rerun. Report new ones to NAMs.network as well.
+WORD_CORRECTIONS = {
+    "hormons": "hormone",
+    "particlen": "particle",
+    "relsease": "release",
+    "stategy": "strategy",
+}
+VALUE_CORRECTIONS = {
+    # Regulation (EU) 2015/2283 on novel foods, which the catalogue mostly
+    # writes correctly; these spellings have no title or link in its records.
+    "(EC) 2015/2283": "(EU) 2015/2283",
+    "(EU) 2283/2015": "(EU) 2015/2283",
+}
+WORD_PATTERN = re.compile(r"\b(" + "|".join(WORD_CORRECTIONS) + r")\b")
+
+
 def clean(text):
-    """Collapse whitespace, including non-breaking spaces."""
-    return " ".join(text.split()) if text else text
+    """Collapse whitespace, including non-breaking spaces, and correct known misspellings."""
+    if not text:
+        return text
+    text = WORD_PATTERN.sub(lambda m: WORD_CORRECTIONS[m.group(1)], " ".join(text.split()))
+    return VALUE_CORRECTIONS.get(text, text)
 
 
 def merge_key(name):

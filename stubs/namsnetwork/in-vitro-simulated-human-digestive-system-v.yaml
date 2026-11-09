@@ -13,10 +13,10 @@ endpoints:
 organs:
 - Gastrointestinal system
 regulations:
-- (EC) 2015/2283
+- (EU) 2015/2283
 substances:
 - ovalbumin nanoparticles
 methods_biomarkers:
-- CLA relsease
+- CLA release
 - Macroscopic appearance
 - Released soluble peptides
