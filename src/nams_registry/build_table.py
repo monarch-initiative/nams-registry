@@ -266,8 +266,8 @@ const TABS = __TABS__;
 const NOTES = {
   all: "Every record in the registry: the resources reviewed, the NAMs recorded from them, and partial records of NAMs whose full records can't yet be held here.",
   resources: "Sources of NAMs, and of data about them, each reviewed for what it holds.",
-  nams: "NAMs curated from the resources, each as a NAMO model. Species, applications and limitations are held beside the model until NAMO covers them.",
-  partial: "NAMs recorded only in part. A partial record holds only what its resource gives publicly, in the resource's own terms, until a full NAM record can be written; the full record then replaces it.",
+  nams: "NAMs recorded in full from the resources, each as a NAMO model. Species, applications and limitations are held beside the model until NAMO covers them.",
+  partial: "NAMs recorded only in part. A partial record holds only what its resource gives publicly, in the resource's own terms, because the registry can't hold that resource's full records. It reflects what the resource allows, not how far the NAM has been curated.",
 };
 const NOUNS = {
   all: ["record", "records"], resources: ["resource", "resources"],

@@ -170,10 +170,10 @@ def test_partial_proposed_classes_are_namo_classes():
 
 def test_full_records_have_no_partial():
     """Test that no partial record names a source page a NAM record in
-    nams/ names.
+    nams/ names, since a NAM has one or the other.
 
-    A NAM's partial record is removed by rerunning its resource's script
-    once the NAM has a full record.
+    Rerunning the resource's script drops the partial record of a NAM that
+    a NAM record names.
     """
     recorded = set()
     for path in NAM_FILES:
