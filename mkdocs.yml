@@ -61,7 +61,7 @@ watch:
 
 nav:
   - Home: index.md
-  - Resources: resources/index.html
+  - Browse records: resources/index.html
   - Schema: elements/index.md
   - About: about.md
 

@@ -8,8 +8,10 @@ This is a repository of NAM and NAM-adjacent sources collected in support of a N
 
 [https://monarch-initiative.github.io/nams-registry](https://monarch-initiative.github.io/nams-registry)
 
-The [resource table](https://monarch-initiative.github.io/nams-registry/resources/)
-lists every resource in the registry.
+The [registry browser](https://monarch-initiative.github.io/nams-registry/resources/)
+lists every record in the registry, with a tab each for resources, NAM
+records and NAM stubs. `just build-table` rebuilds it, and the docs
+deployment does so on every push to main.
 
 ## Making changes
 
@@ -17,7 +19,7 @@ A change is made to a record, to the schema, or to both:
 
 - **A record** describes one resource, in `resources/<id>.yaml`. Each
   resource has a review issue, labelled `resource-review`, where it is
-  discussed; the resource table links to it.
+  discussed; the registry browser links to it.
 - **A NAM record** describes one NAM extracted from those resources, such
   as an organoid system, in `nams/<id>.yaml`. Its `model` is the NAM as an
   unmodified [NAMO](https://github.com/monarch-initiative/namo) model, whose

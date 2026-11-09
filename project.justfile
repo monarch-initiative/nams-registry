@@ -24,7 +24,7 @@ validate-nams:
 namo:
   uv run python scripts/link_namo.py
 
-# Build the resource table page, docs/resources/index.html
+# Build the registry browser (resources, NAM records and NAM stubs), docs/resources/index.html
 [group('data')]
 build-table:
   uv run python -m nams_registry.build_table
