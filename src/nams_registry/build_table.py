@@ -73,13 +73,21 @@ def record_link(path):
     return {"record_path": path, "record_url": f"{REPOSITORY}/blob/main/{path}"}
 
 
+def found_in(resource_ids, resource_names):
+    """The resources a NAM was found in: their ids, to match on, and names, to show."""
+    return {
+        "source_resource_ids": resource_ids,
+        "sources": [resource_names.get(i, i) for i in resource_ids],
+    }
+
+
 def resource_row(resource):
     """A resource, with the fields computed for the table."""
     return {
         **resource,
         "kind": "resource",
         "type": resource.get("resource_type"),
-        "sources": [],
+        **found_in([], {}),
         "is_tox": "toxicology" in (resource.get("domain_areas") or []),
         **record_link(f"resources/{resource['id']}.yaml"),
     }
@@ -96,7 +104,7 @@ def nam_row(record, resource_names):
         "type": model.get("type"),
         "organ": (model.get("organ_modeled") or {}).get("name"),
         "species": [s.get("name") or s["id"] for s in record.get("species") or []],
-        "sources": [resource_names.get(s["resource"], s["resource"]) for s in record.get("source_resources") or []],
+        **found_in([s["resource"] for s in record.get("source_resources") or []], resource_names),
         "synonyms": record.get("synonyms") or [],
         "record": record,
         **record_link(f"nams/{model['id']}.yaml"),
@@ -109,7 +117,7 @@ def stub_row(stub, resource_names):
         **stub,
         "kind": "stub",
         "type": stub.get("proposed_namo_class"),
-        "sources": [resource_names.get(stub["resource"], stub["resource"])],
+        **found_in([stub["resource"]], resource_names),
         **record_link(f"stubs/{stub['resource']}/{stub['id']}.yaml"),
     }
 
@@ -282,7 +290,7 @@ const label = k => LABELS[k] || k.charAt(0).toUpperCase() + k.slice(1).replace(/
 function curieUrl(id) {
   const s = String(id);
   const obo = s.match(/^(CL|UBERON|NCBITaxon|GO|HP|MONDO|CHEBI):(.+)$/);
-  if (obo) return `http://purl.obolibrary.org/obo/${obo[1]}_${obo[2]}`;
+  if (obo) return `https://purl.obolibrary.org/obo/${obo[1]}_${obo[2]}`;
   if (s.startsWith("doi:")) return "https://doi.org/" + s.slice(4);
   if (s.startsWith("PMID:")) return "https://pubmed.ncbi.nlm.nih.gov/" + s.slice(5);
   if (s.startsWith("aop:")) return "https://aopwiki.org/aops/" + s.slice(4);
@@ -321,7 +329,7 @@ function detailResource(r) {
   }).join("");
   const imp = (r.imported_from || []).map(i =>
     `${esc(i.source)} ${a(i.source_url, i.source_id)}, commit ${esc(i.source_version || "?")}, ${esc(i.imported_on)}`).join("<br>");
-  const found = DATA.filter(x => x.kind !== "resource" && x.sources.includes(r.name));
+  const found = DATA.filter(x => x.kind !== "resource" && x.source_resource_ids.includes(r.id));
   const nams = found.filter(x => x.kind === "nam").length, stubs = found.length - nams;
   return `<dl>
     ${row("Id", esc(r.id))}
@@ -438,7 +446,9 @@ const RANK = {
   kind_label: ["Resource", "NAM", "NAM stub"],
 };
 
-let tab = TABS[0], sortField = "name", sortDir = 1;
+let tab = null, sortField = "name", sortDir = 1;
+// Each tab's search, filters and sort, kept while another tab is open.
+const STATE = {};
 const tabRows = t => DATA.filter(r => t[2].includes(r.kind));
 const holds = (v, value) => Array.isArray(v) ? v.includes(value) : v === value;
 
@@ -463,7 +473,9 @@ function filterControl(rows, [f, heading, display, filter]) {
   const count = pred => rows.filter(pred).length;
   let options = "";
   if (filter === "values") {
-    const order = (x, y) => RANK[f] ? RANK[f].indexOf(x) - RANK[f].indexOf(y) : String(x).localeCompare(String(y));
+    // Ranked values in their rank, then any value the rank does not list.
+    const rank = v => { const i = RANK[f].indexOf(v); return i < 0 ? RANK[f].length : i; };
+    const order = (x, y) => (RANK[f] && rank(x) - rank(y)) || String(x).localeCompare(String(y));
     const values = [...new Set(rows.flatMap(r => [].concat(r[f] ?? [])).filter(has))].sort(order);
     options = values.map(v => `<option value="${esc(v)}">${esc(v)} (${count(r => holds(r[f], v))})</option>`).join("");
     const missing = count(r => !has(r[f]));
@@ -514,9 +526,18 @@ function render() {
 }
 
 function showTab(key) {
+  if (tab) STATE[tab[0]] = {
+    q: q.value, sortField, sortDir,
+    filters: Object.fromEntries(selects.map(s => [s.dataset.field, s.value])),
+  };
   tab = TABS.find(t => t[0] === key) || TABS[0];
-  // All records opens grouped by kind: resources, then NAMs, then stubs.
-  sortField = tab[0] === "all" ? "kind_label" : "name"; sortDir = 1; q.value = "";
+  // A tab opens as it was left; the first time, All records is grouped by
+  // kind (resources, then NAMs, then stubs) and the others sorted by name.
+  const state = STATE[tab[0]] || {
+    q: "", sortField: tab[0] === "all" ? "kind_label" : "name", sortDir: 1, filters: {},
+  };
+  ({ sortField, sortDir } = state);
+  q.value = state.q;
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === tab[0])));
   document.getElementById("note").textContent = NOTES[tab[0]];
   q.placeholder = `Filter ${tab[0] === "all" ? "all records" : tab[1]}`;
@@ -525,7 +546,10 @@ function showTab(key) {
     `<th class="col-${display}" aria-sort="none"><button class="sort" data-field="${f}">${esc(heading)}<span class="arrow" aria-hidden="true"></span></button></th>`).join("");
   document.getElementById("filters").innerHTML = "<th></th>" + columns.map(c => `<th>${filterControl(rows, c)}</th>`).join("");
   selects = [...document.querySelectorAll("#filters select")];
-  selects.forEach(el => el.addEventListener("input", render));
+  selects.forEach(el => {
+    el.value = state.filters[el.dataset.field] || "";
+    el.addEventListener("input", render);
+  });
   document.querySelectorAll("button.sort").forEach(b => b.addEventListener("click", () => {
     sortDir = b.dataset.field === sortField ? -sortDir : 1;
     sortField = b.dataset.field;

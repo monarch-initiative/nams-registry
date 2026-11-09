@@ -44,5 +44,6 @@ def test_page_lists_resources_nams_and_stubs(tmp_path):
     assert len(kinds["nam"]) == len(list((ROOT / "nams").glob("*.yaml")))
     (stub,) = kinds["stub"]
     assert stub["sources"] == ["NAMs Network"]
+    assert stub["source_resource_ids"] == ["namsnetwork"]
     assert stub["record_path"] == "stubs/namsnetwork/example-stub.yaml"
     assert all(r["kind_label"] for r in rows)
