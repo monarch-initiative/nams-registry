@@ -62,7 +62,6 @@ jobs:
 
       - name: Build documentation
         run: |
-          just build-table
           just gen-doc
           uv run mkdocs build -d site
           touch site/.nojekyll

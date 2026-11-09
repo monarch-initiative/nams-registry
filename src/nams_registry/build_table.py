@@ -4,8 +4,8 @@ The page has four tabs: all records, resources (resources/*.yaml), NAM
 records (nams/*.yaml) and NAM stubs (stubs/<resource>/*.yaml). Each tab
 lists one row per record; clicking a row shows the rest of the record's
 details below it. The data is embedded in the page, so it needs no server.
-`just build-table` runs this, and the docs deployment rebuilds it before
-MkDocs publishes the page at /resources/.
+`just build-table` runs this, as does `just gen-doc`, before MkDocs
+publishes the page at /resources/.
 
 To change a tab's columns, edit TABS below.
 """
