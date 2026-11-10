@@ -9,13 +9,40 @@ domain_areas:
 - toxicology
 - drug discovery
 - high-throughput screening
+holds_nams: none
+relevance_note: >-
+  Tox21's assays are NAMs, but this resource holds none of them, and none of
+  their results. The Tox21 part of the knowledge graph (stages/tox21.rml.ttl
+  in biobricks-okg) reads three tables, tox21.parquet,
+  tox21_aggregated.parquet and tox21lib.parquet, and maps each to chemical
+  nodes only: a CAS registry number (CHEMINF:000446) from the CAS column,
+  with a label from SAMPLE_NAME for the first table. There are no assays,
+  endpoints, activity calls or descriptions of the test system. The brick
+  the tables come from, biobricks-ai/tox21 (pinned at commit 4f060e7 in the
+  graph's .bb/dependencies.txt), was listed in an identifiers-org-graph
+  audit on 2026-07-23 but no longer exists on GitHub, and has no Wayback
+  Machine copy. Other BioBricks bricks touching Tox21
+  (biobricks-ai/tox21-qhts-data, the 2014 Tox21 Data Challenge set, and
+  biobricks-ai/epa-toxcast-tox21-summary-files, an invitrodb v3.4 summary)
+  hold assay names or curve fits but no test-system descriptions either.
+  For the assays, use tox21.
+curation_model:
+- automated
+dismech_integration: >-
+  None. Nothing in DisMech mentions BioBricks. DisMech has tooling for Tox21
+  assay endpoints, with their annotations, through the EPA CTX API rather
+  than BioBricks: the epa-ctx-api skill, src/dismech/toxcast_assays.py and
+  just toxcast-coverage cover ToxCast and Tox21 together
+  (data/toxcast/MANIFEST.yaml), with the analysis in projects/TOXCAST.md
+  (dismech#12858). No Tox21 endpoint is recorded in kb/. Checked against
+  dismech commit 05ed74fe230.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/9
 activity_status: active
 license:
   id: https://www.usa.gov/government-works
   label: U.S. Government Work (public domain)
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-10'
 imported_from:
 - source: kg_registry
   source_id: biobricks-tox21
