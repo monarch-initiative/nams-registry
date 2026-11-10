@@ -1,7 +1,8 @@
 id: biobricks-ice
 name: BioBricks ICE
 description: BioBricks ICE (Integrated Chemical Environment) is an open knowledge
-  graph for cheminformatics and chemical safety data from EPA's CompTox database.
+  graph for cheminformatics and chemical safety data from ICE, the Integrated
+  Chemical Environment run by NICEATM at NTP/NIEHS (now NICE).
 homepage_url: https://github.com/biobricks-ai/biobricks-okg
 repository: https://github.com/biobricks-ai/biobricks-okg
 resource_type: KnowledgeGraph
@@ -9,13 +10,39 @@ domain_areas:
 - chemistry and biochemistry
 - toxicology
 - cheminformatics
+holds_nams: primary
+relevance_note: >-
+  The brick (github.com/biobricks-ai/ice) copies ICE's downloads into
+  Parquet: its curated in vitro, in chemico and in silico data sets with the
+  in vivo reference data they are evaluated against, ICE's cHTS data from
+  invitrodb v3.4, and the MOA workbooks annotating each ToxCast and Tox21
+  assay. The knowledge graph (stages/ice.rml.ttl in biobricks-okg) keeps
+  results for the ADME, DART, endocrine and cHTS data sets but only assay
+  names and chemicals for skin sensitization, skin and eye irritation, acute
+  toxicity and cancer. For each cHTS assay it keeps ICE's Species, Tissue,
+  Invitro Assay Format, Assay Source and Entrez gene, and its mechanistic
+  target and mode of action mapped to NCI Metathesaurus ids. Invitro Assay
+  Format names the test system, e.g. "cell line(T47D)", "primary cell(...)"
+  or "cell-free(...)". The content is a pre-2025 snapshot: ICE's files were
+  downloaded in 2022 and 2023, before ICE 4.2 moved its target annotations to
+  GO and other OBO terms. Since commit 721c978 (2024-04-18) the brick's
+  csv2parquet.py writes every sheet of a workbook to the same file, so a
+  rebuild keeps only the last sheet of each; the graph pins the brick at
+  f247c13, before that change. For current content, use nice.
+curation_model:
+- automated
+dismech_integration: >-
+  None. Nothing in DisMech mentions BioBricks, and DisMech has no tooling for
+  ICE. The only ICE-related content is the SARA-ICE computational model in
+  kb/disorders/Contact_Dermatitis.yaml, which NICEATM and Unilever built on
+  ICE data. Checked against dismech commit 05ed74fe230.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/8
 activity_status: active
 license:
   id: https://opensource.org/licenses/MIT
   label: MIT License
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-10'
 imported_from:
 - source: kg_registry
   source_id: biobricks-ice
