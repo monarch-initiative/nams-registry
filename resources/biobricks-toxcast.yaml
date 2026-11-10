@@ -9,13 +9,41 @@ domain_areas:
 - toxicology
 - drug discovery
 - high-throughput screening
+holds_nams: secondary
+relevance_note: >-
+  Holds ToxCast results, which come from NAMs: EPA calls ToxCast "one of the
+  largest and most impactful public repositories of targeted in vitro NAMs
+  for toxicology" (Feshuk et al. 2023, doi:10.3389/ftox.2023.1275980),
+  though neither ToxCast nor BioBricks labels any record a NAM. It doesn't
+  describe the NAMs themselves. The brick (github.com/biobricks-ai/toxcast)
+  is one table, invitrodb.parquet, built from the invitrodb v4.3 mc5-6
+  winning-model summary: 3,527,285 rows by 65 columns of chemical ids,
+  endpoint id and name (aeid, aenm), curve-fit values, hit calls and flags.
+  Its download script notes that EPA's INVITRODB_SUMMARY.zip holds assay
+  annotations, but the build keeps only the mc5-6 CSV, so the fields that
+  describe the test system (organism, tissue, cell_format, cell_short_name,
+  assay_format_type, timepoint_hr and the rest of invitrodb's assay table)
+  are dropped. The knowledge graph's mapping (stages/toxcast.rml.ttl in
+  biobricks-okg) carries six columns: aeid, aenm, chnm, casn,
+  dsstox_substance_id and hitc. The only trace of the model is the endpoint
+  name, e.g. TOX21_ERa_LUC_VM7_Agonist, from which a cell line can sometimes
+  be read by convention. For descriptions of the models, use toxcast.
+curation_model:
+- automated
+dismech_integration: >-
+  None. Nothing in DisMech mentions BioBricks. DisMech has tooling for
+  ToxCast itself, through the EPA CTX API rather than BioBricks: the
+  epa-ctx-api skill, src/dismech/toxcast_assays.py, just toxcast-refresh and
+  just toxcast-coverage (scripts/toxcast_pathograph_coverage.py), with the
+  analysis in projects/TOXCAST.md (dismech#12858). No ToxCast endpoint is
+  recorded in kb/. Checked against dismech commit 593397f3a88.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/3
 activity_status: active
 license:
   id: https://www.epa.gov/privacy/privacy-and-security-notice
   label: EPA Data Usage & Privacy Notice (public domain / open government data)
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-10'
 imported_from:
 - source: kg_registry
   source_id: biobricks-toxcast
