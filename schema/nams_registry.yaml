@@ -1298,6 +1298,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-10T23:16:05'
+source_file_date: '2026-11-10T23:30:11'
 source_file_size: 21712
 
