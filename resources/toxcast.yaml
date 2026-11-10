@@ -13,13 +13,65 @@ domain_areas:
 - biomedical
 - drug discovery
 - high-throughput screening
+holds_nams: primary
+relevance_note: >-
+  EPA calls ToxCast "one of the largest and most impactful public
+  repositories of targeted in vitro NAMs for toxicology" (Feshuk et al. 2023,
+  doi:10.3389/ftox.2023.1275980), though no record is labelled a NAM. The
+  assay annotations for invitrodb v4.3 (August 2025), published as
+  assay_annotations_invitrodb_v4_3_AUG2025.xlsx in EPA's Clowder space,
+  describe 742 assays from 31 sources and their 1,647 endpoints, with each
+  assay's test system: cell_format (cell-free 415, cell line 165,
+  tissue-based cell-free 112, primary cell 24, and others), cell_short_name
+  (60 distinct cell lines or types over 207 assays), cell_free_component_source,
+  organism with NCBI taxon id, tissue, cell_growth_mode, and OECD GD211-style
+  prose such as experimental_system. Values are EPA's own vocabulary, not
+  ontology terms. assay_target_mappings_invitrodb_v4_3_AUG2025.xlsx maps
+  1,174 endpoints to 575 genes, and 225 endpoints to 39 AOP-Wiki Key Events
+  across 37 AOPs.
+curation_model:
+- maintainers
+dismech_integration: >-
+  Tooling, no content. DisMech reads ToxCast and Tox21 assay-endpoint
+  annotations through the EPA CTX API: the epa-ctx-api skill,
+  src/dismech/toxcast_assays.py (just toxcast-refresh) and
+  scripts/toxcast_pathograph_coverage.py (just toxcast-coverage).
+  projects/TOXCAST.md measures how far endpoints reach into the pathograph by
+  shared gene and works through one THRB endpoint as an experimental_models
+  record, which is not committed (dismech#12858; chemical hit calls are
+  dismech#12682). No ToxCast endpoint is recorded in kb/. Checked against
+  dismech commit 05ed74fe230.
+supporting_scripts:
+- name: just toxcast-refresh
+  repository: https://github.com/monarch-initiative/dismech
+  path: src/dismech/toxcast_assays.py
+  command: just toxcast-refresh
+  description: >-
+    Fetches the annotation of every ToxCast and Tox21 assay endpoint from the
+    EPA CTX API and caches it under data/toxcast/. Needs a CTX_API_KEY.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/2
 activity_status: active
 license:
   id: https://www.epa.gov/privacy/privacy-and-security-notice
   label: EPA Data Usage & Privacy Notice (public domain / open government data)
+publications:
+- id: doi:10.3389/ftox.2023.1275980
+  title: 'The ToxCast pipeline: updates to curve-fitting approaches and database structure'
+  authors:
+  - Feshuk M
+  - Kolaczkowski L
+  - Dunham K
+  - Davidson-Fritz SE
+  - Carstens KE
+  - Brown J
+  - Judson RS
+  - Paul Friedman K
+  journal: Frontiers in Toxicology
+  year: '2023'
+  doi: 10.3389/ftox.2023.1275980
+  preferred: true
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-10'
 imported_from:
 - source: kg_registry
   source_id: toxcast
