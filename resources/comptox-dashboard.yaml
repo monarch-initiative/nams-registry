@@ -23,6 +23,28 @@ domain_areas:
 - drug discovery
 - high-throughput screening
 - public health
+holds_nams: secondary
+relevance_note: >-
+  Organized around chemicals, not methods: each chemical page is a set of
+  sections drawing on other EPA resources, and several hold NAM results.
+  These are ToxCast and Tox21 bioactivity (invitrodb v4.3 since Dashboard
+  2.9.0, 2026-10-15), ToxCast-based models, high-throughput transcriptomics
+  (HTTr, snapshot Jan-22) and phenotypic profiling (HTPP, U-2 OS cells,
+  snapshot Jul-22), httk toxicokinetics and IVIVE, GenRA read-across, and
+  OPERA property predictions. The rest is chemistry, conventional hazard
+  (ToxValDB, cancer, genotoxicity, skin and eye, GHS), exposure and use data,
+  and literature links. Nothing is labelled a NAM. Its assay-endpoint pages
+  show the invitrodb annotation fields that toxcast covers; HTTr, HTPP and
+  GenRA have no registry entries of their own.
+curation_model:
+- maintainers
+- aggregated
+dismech_integration: >-
+  Through its API only. DisMech's ToxCast tooling (the epa-ctx-api skill and
+  src/dismech/toxcast_assays.py) calls the CTX APIs, which EPA publishes as
+  the CompTox Chemicals Dashboard APIs; see toxcast. Nothing in kb/ cites the
+  Dashboard or a DTXSID, and nothing touches HTTr, HTPP or GenRA. Checked
+  against dismech commit 05ed74fe230.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/11
 activity_status: active
 license:
@@ -48,7 +70,7 @@ publications:
   doi: 10.1186/s13321-017-0247-6
   preferred: true
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-10'
 imported_from:
 - source: kg_registry
   source_id: comptox-dashboard
