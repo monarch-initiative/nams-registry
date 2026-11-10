@@ -8,13 +8,35 @@ resource_type: KnowledgeGraph
 domain_areas:
 - toxicology
 - adverse outcome pathways
+holds_nams: secondary
+relevance_note: >-
+  The same content as AOP-Wiki, two years older. The brick copied
+  AOPWikiRDF's own AOPWikiRDF.hdt and AOPWikiRDF-Genes.hdt files, so it adds
+  packaging rather than content. Its repository, biobricks-ai/aopwikirdf-kg,
+  no longer exists, but the graph is still served by FRINK at
+  https://apps.okn.us/biobricks-aopwiki/sparql. Queried on 2026-11-10, it
+  holds 493 AOPs, 1,469 Key Events and 2,060 Key Event Relationships, with
+  no record modified after 2024-11-16; AOPWikiRDF's 2026.08.15 release has
+  595, 1,595 and 2,360. NAMs appear as in AOP-Wiki, in the measurement-method
+  text (MMO_0000000) on 513 of the Key Events. FRINK hosts the other
+  BioBricks graphs too, but a cross-graph join on chemicals fails: this graph
+  uses https://identifiers.org/cas/ IRIs and biobricks-ice uses
+  http://identifiers.org/cas/.
+curation_model:
+- automated
+dismech_integration: >-
+  None. Nothing in DisMech mentions BioBricks, FRINK or AOPWikiRDF. DisMech's
+  AOP-Wiki tooling reads the AOP-Wiki XML export through aop-wiki-cli; see
+  aop-wiki. Checked against dismech commit 05ed74fe230.
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/7
-activity_status: active
+activity_status: orphaned
+use_instead:
+- aopwiki-rdf
 license:
   id: https://aopwiki.org/
   label: Varies
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-10'
 imported_from:
 - source: kg_registry
   source_id: biobricks-aopwiki
