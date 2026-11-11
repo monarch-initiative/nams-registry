@@ -33,3 +33,28 @@ build-table:
 [group('data')]
 create-review-issues *args:
   uv run python -m nams_registry.create_review_issues {{args}}
+
+# Check NAM records' ontology terms against their NAMO enums (looks up and caches new terms; commit cache/)
+[group('data')]
+validate-terms *files:
+  uv run python -m nams_registry.check_records terms {{files}}
+
+# Check each reference resolves and each title given is its own (fetches new ones; commit references_cache/)
+[group('data')]
+validate-references *files:
+  uv run python -m nams_registry.check_records references {{files}}
+
+# Fetch a reference into references_cache/ and show it, e.g. `just fetch-reference doi:10.1038/nm.3201`
+[group('data')]
+fetch-reference ref:
+  uv run linkml-reference-validator lookup {{ref}} --config .linkml-reference-validator.yaml
+
+# Search an ontology for a term, e.g. `just search-term sqlite:obo:cl "goblet cell"`
+[group('data')]
+search-term adapter query:
+  uv run runoak -i {{adapter}} search "{{query}}"
+
+# Show a term, e.g. `just term-info sqlite:obo:uberon UBERON:0002048`
+[group('data')]
+term-info adapter curie:
+  uv run runoak -i {{adapter}} info {{curie}}

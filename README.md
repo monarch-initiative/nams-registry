@@ -58,6 +58,26 @@ that no single resource prompted, can have its own issue, labelled
 Make each change on a branch, and run `just test` before opening a pull
 request.
 
+## Checking terms and references
+
+`just test` also checks, without the network, that:
+
+- each ontology term in a NAM record exists, sits under the root of the
+  NAMO enum it is bound to (e.g. a cell type under CL `cell`), and carries
+  the ontology's own label, using
+  [linkml-term-validator](https://github.com/linkml/linkml-term-validator);
+- each reference a NAM record or resource cites resolves, and each title
+  given is the reference's own, using
+  [linkml-reference-validator](https://github.com/linkml/linkml-reference-validator).
+
+These checks read the lookups kept in `cache/` and `references_cache/`, which
+are committed. When you add a term or a reference, run `just validate-terms`
+or `just validate-references` (they use the network), then commit what they
+add to the caches. `conf/oak_config.yaml` says where each ontology is looked
+up. `just search-term`, `just term-info` and `just fetch-reference` help find
+and read terms and references. The setup follows
+[mechmaker](https://github.com/monarch-initiative/mechmaker)'s.
+
 ## Repository Structure
 
 * [docs/](docs/) - mkdocs-managed documentation
