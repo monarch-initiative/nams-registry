@@ -69,20 +69,6 @@ skip = [
   "src/nams_registry/datamodel/nams_registry.py",
 ]
 
-# Reminder: words have to be lowercased for the ignore-words-list
-ignore-words-list = "linke"
+# Domain words codespell would otherwise flag, one per line.
+ignore-words = ".codespell-ignore-words.txt"
 quiet-level = 3
-
-# Ref.: https://github.com/crate-ci/typos (spell checker)
-[tool.typos.default.extend-words]
-linke = "linke"
-
-[tool.typos.files]
-extend-exclude = [
-  "LICENSE",
-  "uv.lock",
-  "pyproject.toml",
-  "project/*",
-  "src/nams_registry/datamodel/nams_registry_pydantic.py",
-  "src/nams_registry/datamodel/nams_registry.py",
-]
