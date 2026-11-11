@@ -45,7 +45,10 @@ fallback-version = "0.0.0"
 # The NAMO branch, tag or commit downloaded when there is no local NAMO
 # checkout (see scripts/link_namo.py). The NAMO_REF environment variable
 # overrides it.
-ref = "ec7a5fe9e322240eb10f94f5f801976ee914902c"
+# The head of namo#29, which binds NAMO's ontology enums with reachable_from;
+# before it, no enum could be checked against its ontology. Move this to the
+# merge commit on main once #29 is merged.
+ref = "26b97bdb68533a7ced837403a85c4f856ece34f9"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
