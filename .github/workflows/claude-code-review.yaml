@@ -16,11 +16,12 @@ permissions: {}
 jobs:
   claude-review:
     # Draft PRs are reviewed when they are marked ready. PRs from forks
-    # cannot read the token, so they are skipped. To review a PR again,
-    # re-run this job from the PR's checks.
+    # and from Dependabot cannot read the token, so they are skipped. To
+    # review a PR again, re-run this job from the PR's checks.
     if: >-
       github.event.pull_request.draft == false &&
-      github.event.pull_request.head.repo.full_name == github.repository
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
 
     runs-on: ubuntu-latest
     permissions:
@@ -72,4 +73,8 @@ jobs:
             nothing, say so in one line.
 
           claude_args: |
-            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
+            --allowedTools
+              "mcp__github_inline_comment__create_inline_comment"
+              "Bash(gh pr comment:*)"
+              "Bash(gh pr diff:*)"
+              "Bash(gh pr view:*)"
