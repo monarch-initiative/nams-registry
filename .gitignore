@@ -148,3 +148,7 @@ dmypy.json
 
 # The NAMO schema, linked or downloaded by scripts/link_namo.py; never committed
 /src/nams_registry/schema/namo.yaml
+
+# Lock files the ontology and reference validators leave beside their caches
+/cache/**/*.lock
+/references_cache/**/*.lock

@@ -1,0 +1,14 @@
+# linkml-reference-validator settings, read by `just validate-references`
+# and the reference tests.
+validation:
+  # Each fetched reference is kept here. The cache is committed, so the
+  # tests check references without the network.
+  cache_dir: references_cache
+  # A reference whose prefix the validator does not know is an error, not a
+  # silent pass.
+  unknown_prefix_severity: ERROR
+  # The committed cache has been reviewed: use it as it is, and never
+  # re-fetch an entry only because the validator's extractor has changed.
+  trust_cached_entries: true
+  # Titles are checked against the abstract record; full text is not needed.
+  fetch_full_text: false
