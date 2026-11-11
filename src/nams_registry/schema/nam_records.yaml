@@ -187,6 +187,10 @@ slots:
     description: >-
       The species the cells come from. NAMO records species only for animal
       models; move this into the model if NAMO adds it.
+    bindings:
+      - binds_value_of: id
+        range: SpeciesEnum
+        obligation_level: REQUIRED
   applications:
     range: NAMStatement
     multivalued: true
