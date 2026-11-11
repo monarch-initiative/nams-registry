@@ -13,6 +13,11 @@ on:  # yamllint disable-line rule:truthy
 
 permissions: {}
 
+# A new push to a PR cancels the review still running on its last push.
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   claude-review:
     # Draft PRs are reviewed when they are marked ready. PRs from forks
@@ -60,7 +65,8 @@ jobs:
 
             Look for, in order of importance:
             1. Bugs: code that crashes or gives wrong output, and records
-               that would fail schema validation or `just test`.
+               that look like they would fail schema validation or
+               `just test` (CI runs the tests; you cannot).
             2. Record content: identifiers, ontology terms, URLs and
                references that are wrong or don't support what the record
                says.
