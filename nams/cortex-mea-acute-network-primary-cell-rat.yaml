@@ -115,5 +115,10 @@ source_resources:
 compared_with:
 - nam: cortex-mea-network-formation-primary-cell-rat
   reference: doi:10.1016/j.tox.2024.153842
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 457aa10b22261039b9751d4c6920d01598e8a9d5
+  assessed_on: '2026-11-12'
 creation_date: '2026-11-08'
 last_modified_date: '2026-11-12'
