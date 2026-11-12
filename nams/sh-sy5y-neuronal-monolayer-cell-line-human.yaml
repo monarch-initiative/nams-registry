@@ -1,0 +1,171 @@
+model:
+  id: sh-sy5y-neuronal-monolayer-cell-line-human
+  # PROVISIONAL typing, pending issue #58. NAMO's CellLineModel is
+  # definitionally exact for SH-SY5Y and would add passage_range and
+  # authentication_method, but it exists only under TwoDCellCulture, so the
+  # paired spheroid record could not be typed to match. Both arms are
+  # therefore typed by dimensionality, keeping the pair internally consistent
+  # and carrying the line's identity in cell_source instead. The slug tail
+  # -cell-line-human anticipates a cell_source vocabulary that does not exist
+  # yet; it is also issue #58.
+  type: TwoDCellCulture
+  name: Differentiated SH-SY5Y neuronal monolayer
+  description: >-
+    The conventional format for in vitro neurotoxicity testing in this line:
+    SH-SY5Y human neuroblastoma cells (ATCC HTB-11) plated on flat-bottom
+    plastic and differentiated to a neuronal phenotype with retinoic acid
+    followed by phorbol 12-myristate 13-acetate. In the source study it is the
+    comparator arm against the companion record
+    sh-sy5y-neuronal-spheroid-cell-line-human, which is the same line and the
+    same differentiation protocol grown as a scaffold-free spheroid. The pair
+    is informative because the two formats do not merely differ in potency:
+    exposed to bisphenol A and five analogues, the monolayer lost viability
+    while the spheroid did not, and the two moved in opposite directions on
+    the same reactive-oxygen-species readout at the same concentrations and
+    times. Recorded in the registry from the primary paper, Sendra et al. 2024
+    (doi:10.1016/j.tox.2023.153715), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    A single layer of cells on a flat plastic surface, every cell in direct
+    contact with the bulk medium. There is no diffusion gradient, no
+    extracellular matrix, no non-neuronal cell type and no circuit
+    architecture. Each cell is exposed to the nominal concentration directly,
+    which is the property that makes this format the more sensitive of the two
+    on viability.
+  complexity_level: LOW
+  cell_types:
+  - id: CL:0000540
+    name: neuron
+  cell_source: >-
+    The SH-SY5Y immortalised human cell line, ATCC HTB-11, a thrice-subcloned
+    derivative of the SK-N-SH neuroblastoma line, differentiated to a neuronal
+    phenotype in culture.
+  culture_conditions: >-
+    DMEM/F12 with 10% fetal bovine serum, penicillin/streptomycin and 0.2%
+    amphotericin, 37 degrees C, 5% CO2. 30,000 cells per well in flat-bottom
+    96-well plates. Differentiated with retinoic acid at 5 micromolar for two
+    days, then phorbol 12-myristate 13-acetate at 80 nanomolar for two days.
+    Differentiation confirmed by anti-beta-III-tubulin immunofluorescence with
+    DAPI counterstain. Medium replaced every 48 hours during exposure.
+  substrate_type: uncoated flat-bottom polystyrene 96-well plate
+  references:
+  - id: doi:10.1016/j.tox.2023.153715
+    title: 'Are the BPA analogues an alternative to classical BPA? Comparison between
+      2D and alternative 3D in vitro neuron model to assess cytotoxic and genotoxic
+      effects.'
+    authors:
+    - Sendra M
+    - Cavia-Saiz M
+    - Múñiz P
+    journal: Toxicology
+    year: 2024
+    url: https://doi.org/10.1016/j.tox.2023.153715
+synonyms:
+- SH-SY5Y 2D model
+- differentiated SH-SY5Y monolayer
+- SH-SY5Y monolayer culture
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Cytotoxicity screening and potency ranking of neurotoxicant candidates. In
+    the source study it separated six bisphenols over 2.5-160 micromolar at 24
+    and 96 hours, with viability falling to about 5% at the highest
+    concentrations of the most potent analogues.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    Comparator arm for judging whether a three-dimensional format changes the
+    answer. Used this way the monolayer is the thing being tested, not the test
+    system: the study's conclusion that the spheroid is "a suitable candidate
+    to perform more reliable in vitro neurotoxicity tests" rests entirely on
+    the contrast with this format.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    Distinguishing acute from chronic exposure in the same system, by reading
+    the same endpoints at 24 and at 96 hours. Both formats were more affected
+    at 96 hours, which is the finding that matters for a chemical with
+    continuous low-level consumer exposure.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+limitations:
+- description: >-
+    A tumour-derived line standing in for a neuron. The source study states the
+    problem itself: the line "derives from a tumour and therefore contains
+    genetic peculiarities that can, potentially, alter the expected response of
+    the cells". Differentiation with retinoic acid and phorbol ester produces a
+    neuronal phenotype, confirmed here only by beta-III-tubulin
+    immunoreactivity; it does not produce a neuron's genome.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    No non-neuronal cell type, and so no glial contribution to injury or to
+    protection. The source study notes that a cell line cannot "mimic
+    microenvironment perturbations or to test integrative processes", and that
+    the nervous system's energy metabolism, calcium homeostasis, electrical
+    activity and synaptogenesis are outside what this format reports.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    A viability or reactive-oxygen-species endpoint in this format identifies
+    no mechanism. The source study reports an increase in reactive oxygen
+    species without identifying a pathway: nothing in it measures
+    mitochondrial function, and it does not report NRF2, KEAP1 or
+    antioxidant-response involvement. A hit records that something happened,
+    not what.
+- description: >-
+    High-concentration reactive-oxygen-species readings invert, and the
+    inversion is an artefact of cell loss rather than a protective effect. In
+    the source study the monolayer's signal rose at intermediate
+    concentrations and then fell sharply at 80-160 micromolar, in the same
+    range where viability collapsed, so the dose-response is not monotonic and
+    cannot be read without the paired viability curve.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    When this format is compared with the paired spheroid record, the
+    reactive-oxygen-species comparison is confounded by the readout. The
+    monolayer is read by flow cytometry as the percentage of the population
+    positive for the dye; the spheroid is read by fluorescence microscopy as
+    mean intensity over the spheroid area. Those are different quantities on
+    different instruments, so the reported direction difference between the two
+    formats is not attributable to the cells alone. The viability endpoint
+    carries no such confound: both formats use MTT.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+- description: >-
+    No recovery arm. The source study ran its washout only in the spheroid
+    format, so this record says nothing about whether an injury it reports
+    persists after exposure stops.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153715
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153715
+  accessed_on: '2026-11-09'
+compared_with:
+- nam: sh-sy5y-neuronal-spheroid-cell-line-human
+  reference: doi:10.1016/j.tox.2023.153715
+creation_date: '2026-11-09'
+last_modified_date: '2026-11-12'
