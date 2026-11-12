@@ -1,0 +1,131 @@
+model:
+  id: cortex-mea-network-formation-primary-cell-rat
+  type: TwoDCellCulture
+  name: MEA network formation assay (NFA) in dissociated rat cortical cultures
+  description: >-
+    Dissociated cortical cells from postnatal day 0 rats, plated on multi-well
+    microelectrode arrays and exposed to a chemical continuously across network
+    development, from day in vitro (DIV) 0 through DIV12. Network electrical
+    activity is recorded at DIV5, 7, 9 and 12 and the time course reduced to an
+    estimated area under the curve, so the endpoint is the chemical's effect on
+    the network a culture builds rather than on a network it already has. This
+    is a developmental neurotoxicity assay. The companion record
+    cortex-mea-acute-network-primary-cell-rat uses the same preparation but
+    exposes a mature network for 40 minutes instead; across 243 chemicals
+    screened in both, the two agree on selective activity 70.3% of the time.
+    Recorded in the registry from the primary paper, Martin et al. 2024
+    (doi:10.1016/j.tox.2024.153842), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  biological_organization_level: CELLULAR_NEIGHBORHOOD
+  spatial_context: >-
+    A two-dimensional cortical culture on a planar grid of extracellular
+    electrodes, recorded repeatedly as it develops. The measured quantity is
+    emergent: spontaneous spiking and bursting synchronised across the
+    electrodes of one well, summarised over the development window. There is no
+    cortical layering, no vasculature and no intact circuit architecture, and
+    no in utero or placental compartment, so the exposure window is
+    developmental only in the sense of the culture's own maturation.
+  complexity_level: MODERATE
+  cell_types:
+  - id: CL:0000540
+    name: neuron
+  cell_source: >-
+    Primary cells dissociated from the cerebral cortex of postnatal day 0
+    Sprague-Dawley rats.
+  substrate_type: planar multi-well microelectrode array
+  references:
+  - id: doi:10.1016/j.tox.2024.153842
+    title: 'Chemical effects on neural network activity: Comparison of acute versus
+      network formation exposure in microelectrode array assays.'
+    authors:
+    - Martin MM
+    - Carpenter AF
+    - Shafer TJ
+    - Paul Friedman K
+    - Carstens KE
+    journal: Toxicology
+    year: 2024
+synonyms:
+- MEA network formation assay
+- NFA
+- network formation assay
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+applications:
+- description: >-
+    Screening and prioritisation for developmental neurotoxicity hazard in
+    data-poor chemicals, where no in vivo developmental neurotoxicity study
+    exists.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Addressing developmental exposure specifically. Of the two MEA assays, the
+    network formation assay "provided information relevant to developmental
+    exposure", and the two captured different bioactivity fingerprints.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Hazard identification at scale. 243 chemicals have been screened in this
+    assay and in the acute network function assay, with 70.3% concordance for
+    selective activity once activity inferred to be cytotoxic is excluded. The
+    network formation assay "detected more active chemicals when evaluating
+    activity associated with cytotoxicity", and its median potency values were
+    the lower of the two.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+limitations:
+- description: >-
+    The endpoint does not identify a mechanism. A hit records that something
+    perturbed the network a culture builds, in either direction, without saying
+    which developmental process was disturbed. Attributing a mode of action
+    needs the chemical's own pharmacology, not this readout.
+- description: >-
+    Cell death is a larger confound here than in the acute assay. The network
+    formation assay "detected more active chemicals when evaluating activity
+    associated with cytotoxicity", so the selective-activity call — activity
+    after excluding what is inferred to be cytotoxic — carries more of the
+    weight.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Lower median potency does not mean lower potency chemical by chemical.
+    Median potency values were lower than in the acute assay, "but
+    within-chemical potency values were not uniformly lower in the NFA than the
+    AcN", so a per-chemical potency cannot be predicted from the assay choice.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153842
+- description: >-
+    Rat cells, not human. Any inference to human developmental neurotoxicity
+    crosses a species boundary, and the assay offers no internal control for
+    it.
+- description: >-
+    The culture develops in a dish, so the exposure is not a maternal exposure.
+    There is no placental transfer, no maternal metabolism and no toxicokinetic
+    component; the concentration at the network is the concentration applied.
+- description: >-
+    The source publication is indexed as abstract-only here, so the culture's
+    cell composition is not itemised beyond "dissociated rat cortical cells".
+    The glial fraction of such a preparation is not recorded, and only neuron
+    is bound above.
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  accessed_on: '2026-11-08'
+compared_with:
+- nam: cortex-mea-acute-network-primary-cell-rat
+  reference: doi:10.1016/j.tox.2024.153842
+creation_date: '2026-11-08'
+last_modified_date: '2026-11-12'
