@@ -1,0 +1,100 @@
+model:
+  id: airway-sensitizer-biomarker-monocultures-cell-line
+  type: TwoDCellCulture
+  name: Compartment-resolved human airway monoculture biomarker panel (BEAS-2B, MRC-5, EA.hy926)
+  description: >-
+    Three human respiratory-tract cell lines cultured separately as 2D
+    monocultures — bronchial epithelial (BEAS-2B), lung fibroblast (MRC-5) and
+    endothelial (EA.hy926) — each exposed to low-molecular-weight (LMW)
+    respiratory sensitizers to read out compartment-specific danger signals of
+    chemical respiratory allergy. The panel resolves which cell type produces
+    which biomarker: pro-inflammatory cytokines (IL-8, IL-6, IL-1beta) across all
+    three compartments, loss of the MUC1 barrier protein in the bronchial
+    epithelium, and endothelial activation with increased ICAM-1 surface
+    expression. The same study ran a cell-free toxicant-mucin binding assay to
+    probe a direct toxicodynamic target (see limitations). It is the
+    cellular-scale counterpart of the reconstructed 3D tetraculture bronchial
+    model built from the same cell types (doi:10.1016/j.tox.2024.153756).
+  models:
+  - biological_system_modeled: UBERON:0001005
+  cell_types:
+  - id: CL:0002328
+    name: bronchial epithelial cell
+  - id: CL:0002553
+    name: fibroblast of lung
+  - id: CL:0000115
+    name: endothelial cell
+  cell_source: immortalized cell lines
+  culture_conditions: >-
+    Three immortalized human cell lines cultured separately as conventional 2D
+    monocultures and exposed to LMW respiratory sensitizers: bronchial epithelial
+    BEAS-2B, lung fibroblast MRC-5, and endothelial EA.hy926. Per-compartment
+    readouts are pro-inflammatory cytokine production (IL-8, IL-6, IL-1beta),
+    MUC1 expression in the bronchial cells, and ICAM-1 surface expression on the
+    endothelial cells. Media, passage and exposure protocol detail are not given
+    in the abstract (abstract-only record; no PMC full text).
+  references:
+  - id: doi:10.1016/j.tox.2024.153750
+    title: "Identification of toxicity-induced biomarkers in human non-immune airway cells exposed to respiratory sensitizers: A mechanistic approach"
+    authors:
+    - Artur Christian Garcia da Silva
+    - Sérgio de Morais Carvalho Filho
+    - Izadora Caroline Furtado de Mendonça
+    - Marize Campos Valadares
+    journal: Toxicology
+    year: 2024
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Mechanistic screening of low-molecular-weight respiratory sensitizers as a
+    New Approach Methodology for chemical respiratory allergy, which has no
+    validated preclinical test method. The panel reads compartment-resolved
+    danger-signal biomarkers — IL-8, IL-6 and IL-1beta across all three cell
+    types, loss of MUC1 in the bronchial epithelium, and increased endothelial
+    ICAM-1 — to locate the cellular and molecular key events of the chemical
+    respiratory allergy adverse outcome pathway for preclinical testing
+    strategies.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153750
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153750
+limitations:
+- description: >-
+    Separate monocultures: the cells are cultured in isolation, so the panel
+    omits the multicellular airway tissue context and the mucus barrier, and
+    cannot capture cross-compartment amplification (epithelial danger signals
+    acting on fibroblast and endothelium within one tissue). The companion
+    reconstructed 3D tetraculture of the same cell types
+    (doi:10.1016/j.tox.2024.153756) adds that tissue context.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153750
+- description: >-
+    The same study tested direct toxicodynamic binding of the sensitizers to
+    mucin, the main secreted mucus protein, in a cell-free assay. Some
+    sensitizers formed a toxicant-mucin complex, but the complex formation was
+    not a common feature across different chemical classes of allergens, so a
+    direct mucin-binding readout does not generalize and the cellular danger-signal
+    biomarkers remain necessary. That cell-free binding assay is an in-chemico
+    method NAMO has no class for, so it is not recorded as its own NAM.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153750
+- description: >-
+    Immortalized cell lines rather than primary or donor-matched airway cells,
+    and a record built from the abstract alone, so media, passage and exposure
+    detail are not captured.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153750
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153750
+  accessed_on: '2026-11-12'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: true
+  dismech_commit: a7c19ae41cf1de0dc199f268f4769a44291d3f23
+  assessed_on: '2026-11-12'
+creation_date: '2026-11-12'
+last_modified_date: '2026-11-12'
