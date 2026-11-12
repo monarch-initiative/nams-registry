@@ -1,5 +1,6 @@
-# A NAM found in a research paper, which came into the registry through
-# DisMech curation but is not in DisMech's graph.
+# A NAM found in a research paper, compared with another NAM in the same
+# study, which came into the registry through DisMech curation but is not
+# in DisMech's graph.
 model:
   id: cortex-mea-acute-network-primary-cell-rat
   type: TwoDCellCulture
@@ -21,6 +22,9 @@ source_resources:
     source_urls:
       - https://doi.org/10.1016/j.tox.2024.153842
     accessed_on: '2026-11-09'
+compared_with:
+  - nam: cortex-mea-network-formation-primary-cell-rat
+    reference: doi:10.1016/j.tox.2024.153842
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false

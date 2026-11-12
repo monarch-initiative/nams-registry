@@ -383,6 +383,9 @@ function detailNam(r) {
     ((s.source_urls || []).length ? `<br>${s.source_urls.map(u => a(u)).join("<br>")}` : "") +
     ((s.products || []).length ? `<br>Products: ${s.products.map(p => p.url ? a(p.url, p.name) : esc(p.name)).join(", ")}` : "") +
     `</li>`).join("");
+  const compared = (rec.compared_with || []).map(c =>
+    `<li>${esc(DATA.find(x => x.kind === "nam" && x.id === c.nam)?.name || c.nam)}` +
+    ` <span class="none">(${a(curieUrl(c.reference) || c.reference, c.reference)})</span></li>`).join("");
   const dm = rec.dismech_status;
   const dismech = dm ? [
     dm.processed_through_dismech ? "Came through DisMech curation" : "Did not come through DisMech curation",
@@ -403,6 +406,7 @@ function detailNam(r) {
     ${row("Applications", statements(rec.applications))}
     ${row("Limitations", statements(rec.limitations))}
     ${row("Found in", sources ? `<ul class="pubs">${sources}</ul>` : DASH)}
+    ${compared ? row("Compared with", `<ul class="pubs">${compared}</ul>`) : ""}
     ${dismech ? row("DisMech", dismech) : ""}
     ${rowIf("Created", rec.creation_date)}
     ${rowIf("Last modified", rec.last_modified_date)}

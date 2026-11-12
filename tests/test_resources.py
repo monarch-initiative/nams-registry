@@ -110,6 +110,33 @@ def test_nam_source_resources_exist(filepath):
     assert not missing, f"unknown resources: {missing}"
 
 
+def load_nam(nam_id):
+    with open(NAMS_DIR / f"{nam_id}.yaml") as fh:
+        return yaml.safe_load(fh)
+
+
+@pytest.mark.parametrize("filepath", NAM_FILES, ids=lambda p: Path(p).stem)
+def test_nam_comparisons_are_paired(filepath):
+    """Test that each record a NAM is compared with is another file in nams/,
+    and that it names this NAM back with the same paper."""
+    own_id = Path(filepath).stem
+    nam_ids = {Path(p).stem for p in NAM_FILES}
+    with open(filepath) as fh:
+        instance = yaml.safe_load(fh)
+    wrong = []
+    for comparison in instance.get("compared_with", []):
+        other = comparison["nam"]
+        if other == own_id:
+            wrong.append("compared with itself")
+        elif other not in nam_ids:
+            wrong.append(f"{other} is not a record in nams/")
+        elif {"nam": own_id, "reference": comparison["reference"]} not in (
+            load_nam(other).get("compared_with", [])
+        ):
+            wrong.append(f"{other} does not name {own_id} back with {comparison['reference']}")
+    assert not wrong, wrong
+
+
 PARTIAL_DIR = Path(__file__).parent.parent / "partial-nams"
 
 PARTIAL_FILES = sorted(glob.glob(os.path.join(PARTIAL_DIR, "*", "*.yaml")))

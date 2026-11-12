@@ -43,9 +43,29 @@ classes:
       - applications
       - limitations
       - source_resources
+      - compared_with
       - dismech_status
       - creation_date
       - last_modified_date
+
+  Comparison:
+    description: >-
+      Another NAM record this NAM was compared with head to head, and the
+      paper that made the comparison. It links two registry records through
+      a study, rather than describing either model, so it is the registry's,
+      not NAMO's.
+    attributes:
+      nam:
+        required: true
+        description: >-
+          The id of the other NAM record in nams/, e.g.
+          sh-sy5y-neuronal-spheroid-cell-line-human.
+      reference:
+        range: uriorcurie
+        required: true
+        description: >-
+          The paper that compared the two, as a CURIE, e.g.
+          doi:10.1016/j.tox.2023.153715.
 
   DismechStatus:
     description: >-
@@ -243,6 +263,14 @@ slots:
     multivalued: true
     inlined_as_list: true
     required: true
+  compared_with:
+    range: Comparison
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      The other NAM records this NAM was compared with in the same study,
+      where the comparison is part of what the study found. Record it on
+      both records of a pair.
   dismech_status:
     range: DismechStatus
     inlined: true
