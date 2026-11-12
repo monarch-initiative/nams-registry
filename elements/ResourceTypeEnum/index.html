@@ -474,7 +474,7 @@
 
 
 <h1 id="enum-resourcetypeenum">Enum: ResourceTypeEnum</h1>
-<p><em>What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report and Organization.</em></p>
+<p><em>What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report, Literature and Organization.</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/ResourceTypeEnum">nams_registry:ResourceTypeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
@@ -518,6 +518,11 @@
 <td>A report that surveys NAMs or sets out how a method is to be used, such as a ...</td>
 </tr>
 <tr>
+<td>Literature</td>
+<td>None</td>
+<td>The scientific literature as a whole, which describes NAMs that databases and...</td>
+</tr>
+<tr>
 <td>Organization</td>
 <td>None</td>
 <td>An organization, such as a research institute or a company, whose research or...</td>
@@ -548,7 +553,7 @@
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceTypeEnum</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">What form a resource takes, or, for an Organization, who it is. The KG-Registry</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Resource categories, plus Report and Organization.</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Resource categories, plus Report, Literature and Organization.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">permissible_values</span><span class="p">:</span>
@@ -576,6 +581,13 @@
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A report that surveys NAMs or sets out how a method is to be used,</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">such as a landscape analysis, a review article, or an OECD Test Guideline. A</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">primary research paper is not a report. Not one of the KG-Registry categories.</span>
+<span class="w">  </span><span class="nt">Literature</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Literature</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The scientific literature as a whole, which describes NAMs that databases</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">and catalogues may not hold, such as methods still in development or used in</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">a single study. The registry uses scientific-literature as a classification</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">label. Each individual paper is then stored as a citation on the NAM record.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">Not one of the KG-Registry categories.</span>
 <span class="w">  </span><span class="nt">Organization</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Organization</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An organization, such as a research institute or a company, whose</span>

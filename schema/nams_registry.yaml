@@ -7,7 +7,11 @@ description: 'This is a repository of NAM and NAM-adjacent sources collected in 
 
   also include reports, such as landscape analyses, reviews, and OECD Test
 
-  Guidelines. Primary research papers are not included.'
+  Guidelines, and the scientific literature as a whole. A primary research
+
+  paper is not a resource of its own: a NAM found in one names the
+
+  scientific-literature resource and cites the paper on its NAM record.'
 title: nams-registry
 see_also:
 - https://monarch-initiative.github.io/nams-registry
@@ -330,7 +334,7 @@ enums:
     name: ResourceTypeEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ResourceTypeEnum
     description: What form a resource takes, or, for an Organization, who it is. The
-      KG-Registry Resource categories, plus Report and Organization.
+      KG-Registry Resource categories, plus Report, Literature and Organization.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     permissible_values:
       DataSource:
@@ -357,6 +361,13 @@ enums:
         description: A report that surveys NAMs or sets out how a method is to be
           used, such as a landscape analysis, a review article, or an OECD Test Guideline.
           A primary research paper is not a report. Not one of the KG-Registry categories.
+      Literature:
+        text: Literature
+        description: The scientific literature as a whole, which describes NAMs that
+          databases and catalogues may not hold, such as methods still in development
+          or used in a single study. The registry uses scientific-literature as a
+          classification label. Each individual paper is then stored as a citation
+          on the NAM record. Not one of the KG-Registry categories.
       Organization:
         text: Organization
         description: An organization, such as a research institute or a company, whose
@@ -572,6 +583,10 @@ enums:
         text: medium
       low:
         text: low
+      not_applicable:
+        text: not_applicable
+        description: No single estimate fits the resource, e.g. the scientific literature,
+          where the effort depends on each paper. Say why in effort_rationale.
   SourceRegistryEnum:
     name: SourceRegistryEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/SourceRegistryEnum
@@ -1153,8 +1168,9 @@ classes:
     name: Resource
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/Resource
     description: A source of NAMs or NAMs-adjacent information. This includes data
-      resources, such as databases, repositories, catalogs, and portals, and reports,
-      such as landscape analyses, reviews, and OECD Test Guidelines.
+      resources, such as databases, repositories, catalogs, and portals; reports,
+      such as landscape analyses, reviews, and OECD Test Guidelines; and the scientific
+      literature as a whole.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     is_a: NamedThing
     slots:
@@ -1298,6 +1314,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-12T05:22:55'
-source_file_size: 21712
+source_file_date: '2026-11-12T18:59:15'
+source_file_size: 22586
 
