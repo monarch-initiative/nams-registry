@@ -27,7 +27,8 @@ A change is made to a record, to the schema, or to both:
   holds what NAMO does not: the resources the NAM was found in
   (`source_resources`), what it is used for and its limitations, each with
   the pages it was taken from. A NAM found in a research paper names the
-  `scientific-literature` resource, with the paper's DOI link in
+  `scientific-literature` resource, alongside any database or catalogue it
+  is also found in, with the paper's DOI link in
   `source_urls` and its citation in the model's `references`; a paper is
   not a resource of its own. Two NAMs compared head to head in one study
   name each other, and the paper, in `compared_with`. A NAM that came

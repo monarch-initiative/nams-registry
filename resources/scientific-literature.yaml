@@ -7,13 +7,14 @@ description: The published scientific literature as a whole, taken as one source
 resource_type: Literature
 priority: high
 priority_rationale: Databases and catalogues mostly hold NAMs that are already on
-  the way to approval and validation for industry use. Research papers describe NAMs
-  that are not in them, such as methods still in development or used in a single
-  study.
+  the way to approval and validation for industry use. The literature is searched in
+  addition to them, to find NAMs they don't hold, such as methods still in
+  development or used in a single study. The two overlap, as a NAM described in a paper
+  may also be held in a database or catalogue.
 extraction_effort: not_applicable
 effort_rationale: The effort depends on each paper, e.g. whether its full text is
   open and how fully it describes the method, so no single estimate fits.
-expectations: NAMs that databases and catalogues do not hold yet, described in
-  the research papers that develop or use them.
+expectations: NAMs described in the research papers that develop or use them,
+  including NAMs that no database or catalogue holds.
 creation_date: '2026-11-12'
 last_modified_date: '2026-11-12'
