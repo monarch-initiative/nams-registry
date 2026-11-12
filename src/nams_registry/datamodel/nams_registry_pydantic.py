@@ -75,7 +75,12 @@ linkml_meta = LinkMLMeta({'default_prefix': 'nams_registry',
                     'bases. They\n'
                     'also include reports, such as landscape analyses, reviews, '
                     'and OECD Test\n'
-                    'Guidelines. Primary research papers are not included.',
+                    'Guidelines, and the scientific literature as a whole. A '
+                    'primary research\n'
+                    'paper is not a resource of its own: a NAM found in one names '
+                    'the\n'
+                    'scientific-literature resource and cites the paper on its NAM '
+                    'record.',
      'id': 'https://w3id.org/monarch-initiative/nams-registry',
      'imports': ['linkml:types'],
      'license': 'MIT',
@@ -122,7 +127,7 @@ class ActivityStatusEnum(str, Enum):
 
 class ResourceTypeEnum(str, Enum):
     """
-    What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report and Organization.
+    What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report, Literature and Organization.
     """
     DataSource = "DataSource"
     """
@@ -147,6 +152,10 @@ class ResourceTypeEnum(str, Enum):
     Report = "Report"
     """
     A report that surveys NAMs or sets out how a method is to be used, such as a landscape analysis, a review article, or an OECD Test Guideline. A primary research paper is not a report. Not one of the KG-Registry categories.
+    """
+    Literature = "Literature"
+    """
+    The scientific literature as a whole, which describes NAMs that databases and catalogues do not hold, such as methods still in development or used in a single study. The registry has one such resource, scientific-literature. A single paper is not a resource: a NAM found in one cites it on the NAM record. Not one of the KG-Registry categories.
     """
     Organization = "Organization"
     """
@@ -352,6 +361,10 @@ class ExtractionEffortEnum(str, Enum):
     high = "high"
     medium = "medium"
     low = "low"
+    not_applicable = "not_applicable"
+    """
+    No single estimate fits the resource, e.g. the scientific literature, where the effort depends on each paper. Say why in effort_rationale.
+    """
 
 
 class SourceRegistryEnum(str, Enum):
@@ -381,7 +394,7 @@ class NamedThing(ConfiguredBaseModel):
 
 class Resource(NamedThing):
     """
-    A source of NAMs or NAMs-adjacent information. This includes data resources, such as databases, repositories, catalogs, and portals, and reports, such as landscape analyses, reviews, and OECD Test Guidelines.
+    A source of NAMs or NAMs-adjacent information. This includes data resources, such as databases, repositories, catalogs, and portals; reports, such as landscape analyses, reviews, and OECD Test Guidelines; and the scientific literature as a whole.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
 

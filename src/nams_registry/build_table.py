@@ -383,6 +383,11 @@ function detailNam(r) {
     ((s.source_urls || []).length ? `<br>${s.source_urls.map(u => a(u)).join("<br>")}` : "") +
     ((s.products || []).length ? `<br>Products: ${s.products.map(p => p.url ? a(p.url, p.name) : esc(p.name)).join(", ")}` : "") +
     `</li>`).join("");
+  const dm = rec.dismech_status;
+  const dismech = dm ? [
+    dm.processed_through_dismech ? "Came through DisMech curation" : "Did not come through DisMech curation",
+    dm.present_in_dismech ? "in the DisMech graph" : "not in the DisMech graph",
+  ].join("; ") + ` (${a("https://github.com/monarch-initiative/dismech/commit/" + dm.dismech_commit, "commit " + dm.dismech_commit.slice(0, 7))}, checked ${esc(dm.assessed_on)})` : "";
   return `<dl>
     ${row("Id", esc(r.id))}
     ${recordRow(r)}
@@ -398,6 +403,7 @@ function detailNam(r) {
     ${row("Applications", statements(rec.applications))}
     ${row("Limitations", statements(rec.limitations))}
     ${row("Found in", sources ? `<ul class="pubs">${sources}</ul>` : DASH)}
+    ${dismech ? row("DisMech", dismech) : ""}
     ${rowIf("Created", rec.creation_date)}
     ${rowIf("Last modified", rec.last_modified_date)}
   </dl>`;

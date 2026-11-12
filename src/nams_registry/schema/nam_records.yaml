@@ -43,8 +43,39 @@ classes:
       - applications
       - limitations
       - source_resources
+      - dismech_status
       - creation_date
       - last_modified_date
+
+  DismechStatus:
+    description: >-
+      Whether a NAM came into the registry through DisMech curation, and
+      whether DisMech's graph represents it, as of one DisMech commit.
+      DisMech is a route into the registry, not a source, so it is not
+      listed in source_resources. A NAM curated in DisMech need not be in
+      its graph, e.g. when its readout identifies no mechanism to attach it
+      to.
+    attributes:
+      processed_through_dismech:
+        range: boolean
+        required: true
+        description: The NAM came into the registry through DisMech curation.
+      present_in_dismech:
+        range: boolean
+        required: true
+        description: >-
+          The NAM is represented in the DisMech graph at dismech_commit. It
+          can change as DisMech changes.
+      dismech_commit:
+        required: true
+        pattern: "^[0-9a-f]{40}$"
+        description: >-
+          The full 40-character SHA of the DisMech commit the values were
+          checked against.
+      assessed_on:
+        range: date
+        required: true
+        description: The date the values were checked.
 
   PartialNAMRecord:
     description: >-
@@ -149,11 +180,17 @@ classes:
     attributes:
       resource:
         required: true
-        description: The id of the resource in resources/, e.g. stemcell-organoids.
+        description: >-
+          The id of the resource in resources/, e.g. stemcell-organoids. For
+          a NAM found in a research paper, scientific-literature.
       source_urls:
         range: uri
         multivalued: true
-        description: The resource's pages that describe the NAM.
+        description: >-
+          The resource's pages that describe the NAM. For
+          scientific-literature, the DOI link of each paper the NAM was found
+          in, e.g. https://doi.org/10.1016/j.tox.2024.153842; the paper's
+          full citation goes in the model's references.
       products:
         range: Product
         multivalued: true
@@ -206,6 +243,13 @@ slots:
     multivalued: true
     inlined_as_list: true
     required: true
+  dismech_status:
+    range: DismechStatus
+    inlined: true
+    description: >-
+      For a NAM that came through DisMech curation, whether DisMech's graph
+      represents it. Leave it out for a NAM that did not come through
+      DisMech.
   synonyms:
     multivalued: true
     description: >-

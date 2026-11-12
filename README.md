@@ -26,7 +26,11 @@ A change is made to a record, to the schema, or to both:
   `type` names the NAMO class, such as `Organoid`. Around it the record
   holds what NAMO does not: the resources the NAM was found in
   (`source_resources`), what it is used for and its limitations, each with
-  the pages it was taken from.
+  the pages it was taken from. A NAM found in a research paper names the
+  `scientific-literature` resource, with the paper's DOI link in
+  `source_urls` and its citation in the model's `references`; a paper is
+  not a resource of its own. A NAM that came through DisMech curation
+  records whether DisMech's graph represents it in `dismech_status`.
 - **The schema**, `src/nams_registry/schema/nams_registry.yaml`, sets
   what every record can hold. NAM records have a separate schema,
   `nam_records.yaml`, which imports NAMO; the two schemas do not import

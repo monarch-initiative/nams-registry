@@ -6,7 +6,9 @@
 #
 #   Sources are not limited to data repositories and knowledge bases. They
 #   also include reports, such as landscape analyses, reviews, and OECD Test
-#   Guidelines. Primary research papers are not included.
+#   Guidelines, and the scientific literature as a whole. A primary research
+#   paper is not a resource of its own: a NAM found in one names the
+#   scientific-literature resource and cites the paper on its NAM record.
 # license: MIT
 
 import dataclasses
@@ -126,7 +128,8 @@ class NamedThing(YAMLRoot):
 class Resource(NamedThing):
     """
     A source of NAMs or NAMs-adjacent information. This includes data resources, such as databases, repositories,
-    catalogs, and portals, and reports, such as landscape analyses, reviews, and OECD Test Guidelines.
+    catalogs, and portals; reports, such as landscape analyses, reviews, and OECD Test Guidelines; and the scientific
+    literature as a whole.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -433,8 +436,8 @@ class ActivityStatusEnum(EnumDefinitionImpl):
 
 class ResourceTypeEnum(EnumDefinitionImpl):
     """
-    What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report
-    and Organization.
+    What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report,
+    Literature and Organization.
     """
     DataSource = PermissibleValue(
         text="DataSource",
@@ -454,13 +457,16 @@ class ResourceTypeEnum(EnumDefinitionImpl):
     Report = PermissibleValue(
         text="Report",
         description="""A report that surveys NAMs or sets out how a method is to be used, such as a landscape analysis, a review article, or an OECD Test Guideline. A primary research paper is not a report. Not one of the KG-Registry categories.""")
+    Literature = PermissibleValue(
+        text="Literature",
+        description="""The scientific literature as a whole, which describes NAMs that databases and catalogues do not hold, such as methods still in development or used in a single study. The registry has one such resource, scientific-literature. A single paper is not a resource: a NAM found in one cites it on the NAM record. Not one of the KG-Registry categories.""")
     Organization = PermissibleValue(
         text="Organization",
         description="""An organization, such as a research institute or a company, whose research or product pages are covered as a whole, not one data product it publishes. A data product the organization publishes, such as a database, can have an entry of its own. Not one of the KG-Registry categories; KG-Registry uses Organization only for contacts.""")
 
     _defn = EnumDefinition(
         name="ResourceTypeEnum",
-        description="""What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report and Organization.""",
+        description="""What form a resource takes, or, for an Organization, who it is. The KG-Registry Resource categories, plus Report, Literature and Organization.""",
     )
 
 class DomainAreaEnum(EnumDefinitionImpl):
@@ -661,6 +667,9 @@ class ExtractionEffortEnum(EnumDefinitionImpl):
     high = PermissibleValue(text="high")
     medium = PermissibleValue(text="medium")
     low = PermissibleValue(text="low")
+    not_applicable = PermissibleValue(
+        text="not_applicable",
+        description="""No single estimate fits the resource, e.g. the scientific literature, where the effort depends on each paper. Say why in effort_rationale.""")
 
     _defn = EnumDefinition(
         name="ExtractionEffortEnum",

@@ -1,0 +1,12 @@
+# dismech_commit must be the full 40-character SHA, not an abbreviation.
+model:
+  id: cortex-mea-acute-network-primary-cell-rat
+  type: TwoDCellCulture
+  name: MEA acute network function assay (AcN) in dissociated rat cortical cultures
+source_resources:
+  - resource: scientific-literature
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 3f9c2a1
+  assessed_on: '2026-11-09'
