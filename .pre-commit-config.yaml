@@ -8,10 +8,13 @@ repos:
       - id: check-yaml
         # mkdocs.yml uses !!python/name tags unsupported by the safe YAML loader
         exclude: ^mkdocs\.yml$
+      # docs/schema/ is written by `just gen-doc`, and references_cache/ by
+      # linkml-reference-validator, so neither is edited by hand.
       - id: end-of-file-fixer
-        exclude: ^\.copier-answers\.yml$
+        exclude: ^(\.copier-answers\.yml|docs/schema/.*|references_cache/.*)$
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
+        exclude: ^references_cache/
 
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.38.0
