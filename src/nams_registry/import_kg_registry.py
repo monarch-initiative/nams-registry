@@ -45,7 +45,9 @@ def kg_registry_commit(kg_registry):
     """Return the short commit hash of the checkout, refusing a dirty tree."""
     status = subprocess.run(
         ["git", "-C", str(kg_registry), "status", "--porcelain"],
-        capture_output=True, text=True, check=True,
+        capture_output=True,
+        text=True,
+        check=True,
     ).stdout
     if status.strip():
         sys.exit(
@@ -54,7 +56,9 @@ def kg_registry_commit(kg_registry):
         )
     return subprocess.run(
         ["git", "-C", str(kg_registry), "rev-parse", "--short", "HEAD"],
-        capture_output=True, text=True, check=True,
+        capture_output=True,
+        text=True,
+        check=True,
     ).stdout.strip()
 
 
@@ -101,15 +105,20 @@ def main(argv=None):
     """Run the import."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument(
-        "--kg-registry", type=Path, default=Path("../kg-registry"),
+        "--kg-registry",
+        type=Path,
+        default=Path("../kg-registry"),
         help="Path to a local KG-Registry checkout (default: ../kg-registry)",
     )
     parser.add_argument(
-        "--output", type=Path, default=Path("resources"),
+        "--output",
+        type=Path,
+        default=Path("resources"),
         help="Directory for the resource files (default: resources)",
     )
     parser.add_argument(
-        "--overwrite", action="store_true",
+        "--overwrite",
+        action="store_true",
         help="Replace existing resource files, discarding any curation in them",
     )
     args = parser.parse_args(argv)
@@ -130,10 +139,14 @@ def main(argv=None):
             skipped.append(page["id"])
             continue
         with open(out, "w") as fh:
-            yaml.safe_dump(convert(page, commit, today), fh, sort_keys=False, allow_unicode=True)
+            yaml.safe_dump(
+                convert(page, commit, today), fh, sort_keys=False, allow_unicode=True
+            )
         written.append(page["id"])
 
-    print(f"KG-Registry commit {commit}: wrote {len(written)}, skipped {len(skipped)} existing")
+    print(
+        f"KG-Registry commit {commit}: wrote {len(written)}, skipped {len(skipped)} existing"
+    )
     for rid in skipped:
         print(f"  skipped {rid} (use --overwrite to replace)")
 

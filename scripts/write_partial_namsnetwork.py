@@ -43,7 +43,10 @@ CLASS_PATTERNS = {
     "in vitro": [
         ("Organoid", r"organoid|bronchosphere|alveolosphere|tracheosphere"),
         ("OrganOnChip", r"on[- ]a[- ]chip|organ[- ]on|lung[- ]on|\bchip\b"),
-        ("CoCulture", r"co-?culture|bi-culture|tri-culture|triple|tetra-culture|quadruple"),
+        (
+            "CoCulture",
+            r"co-?culture|bi-culture|tri-culture|triple|tetra-culture|quadruple",
+        ),
         ("ThreeDCellCulture", r"\b3d\b|spheroid|reconstructed human"),
         ("TwoDCellCulture", r"mono-?culture"),
     ],
@@ -78,7 +81,9 @@ def clean(text):
     """Collapse whitespace, including non-breaking spaces, and correct known misspellings."""
     if not text:
         return text
-    text = WORD_PATTERN.sub(lambda m: WORD_CORRECTIONS[m.group(1)], " ".join(text.split()))
+    text = WORD_PATTERN.sub(
+        lambda m: WORD_CORRECTIONS[m.group(1)], " ".join(text.split())
+    )
     return VALUE_CORRECTIONS.get(text, text)
 
 
@@ -136,7 +141,12 @@ def build_partial(rows, accessed_on):
     rows = sorted(rows, key=lambda r: r["qsar_id"])
     name = clean(rows[0]["name"])
     method_type = single(rows, "nam_type")
-    linked = lambda facet: lambda r: [v["label"] for v in r["linked"].get(facet, []) if v.get("label")]
+
+    def linked(facet):
+        return lambda r: [
+            v["label"] for v in r["linked"].get(facet, []) if v.get("label")
+        ]
+
     partial = {
         "id": None,  # set by the caller once ids are deduplicated
         "name": name,
@@ -162,9 +172,22 @@ def build_partial(rows, accessed_on):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("--catalogue", type=Path, default=ROOT / "tmp/namsnetwork/nams.json", help="nams.json from fetch_namsnetwork.py (default: tmp/namsnetwork/nams.json)")
-    parser.add_argument("--output", type=Path, default=ROOT / "partial-nams" / RESOURCE, help="Directory to write the partial records into (default: partial-nams/namsnetwork)")
-    parser.add_argument("--accessed-on", help="The date the catalogue was fetched (default: the fetched_at date in manifest.json beside the catalogue)")
+    parser.add_argument(
+        "--catalogue",
+        type=Path,
+        default=ROOT / "tmp/namsnetwork/nams.json",
+        help="nams.json from fetch_namsnetwork.py (default: tmp/namsnetwork/nams.json)",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=ROOT / "partial-nams" / RESOURCE,
+        help="Directory to write the partial records into (default: partial-nams/namsnetwork)",
+    )
+    parser.add_argument(
+        "--accessed-on",
+        help="The date the catalogue was fetched (default: the fetched_at date in manifest.json beside the catalogue)",
+    )
     args = parser.parse_args()
 
     accessed_on = args.accessed_on
@@ -201,7 +224,9 @@ def main():
     written = set()
     for partial in partials:
         path = args.output / f"{partial['id']}.yaml"
-        path.write_text(yaml.safe_dump(partial, sort_keys=False, allow_unicode=True, width=88))
+        path.write_text(
+            yaml.safe_dump(partial, sort_keys=False, allow_unicode=True, width=88)
+        )
         written.add(path.name)
     removed = [p for p in args.output.glob("*.yaml") if p.name not in written]
     for path in removed:
@@ -211,7 +236,20 @@ def main():
     for partial in partials:
         key = partial.get("proposed_namo_class", f"none ({partial['method_type']})")
         classes[key] = classes.get(key, 0) + 1
-    print(json.dumps({"partial_records": len(partials), "have_full_record": skipped, "removed": len(removed), "proposed_namo_class": dict(sorted(classes.items(), key=lambda kv: -kv[1]))}, indent=1), file=sys.stderr)
+    print(
+        json.dumps(
+            {
+                "partial_records": len(partials),
+                "have_full_record": skipped,
+                "removed": len(removed),
+                "proposed_namo_class": dict(
+                    sorted(classes.items(), key=lambda kv: -kv[1])
+                ),
+            },
+            indent=1,
+        ),
+        file=sys.stderr,
+    )
 
 
 if __name__ == "__main__":

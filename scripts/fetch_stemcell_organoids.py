@@ -81,7 +81,19 @@ class TextExtractor(html.parser.HTMLParser):
     def handle_starttag(self, tag, attrs):
         if tag in DROP_TAGS:
             self.skip += 1
-        if tag in {"p", "br", "li", "h1", "h2", "h3", "h4", "h5", "tr", "div", "section"}:
+        if tag in {
+            "p",
+            "br",
+            "li",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "tr",
+            "div",
+            "section",
+        }:
             self.parts.append("\n")
         if tag in {"h1", "h2", "h3", "h4"}:
             self.parts.append("#" * int(tag[1]) + " ")
@@ -103,7 +115,9 @@ def to_text(page):
     text = re.sub(r"[ \t\xa0]+", " ", "".join(parser.parts))
     lines = [line.strip() for line in text.splitlines()]
     return "\n".join(
-        line for line in lines if len(line) > 3 and line != "-" and not BOILERPLATE.search(line)
+        line
+        for line in lines
+        if len(line) > 3 and line != "-" and not BOILERPLATE.search(line)
     )
 
 
@@ -135,7 +149,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--output", type=Path, default=Path("tmp/stemcell_organoids"))
     parser.add_argument("--max-pages", type=int, default=600)
-    parser.add_argument("--pause", type=float, default=1.0, help="seconds between requests")
+    parser.add_argument(
+        "--pause", type=float, default=1.0, help="seconds between requests"
+    )
     args = parser.parse_args()
 
     html_dir, text_dir = args.output / "html", args.output / "text"
@@ -171,9 +187,13 @@ def main():
         }
         if canonical not in canonical_seen:
             canonical_seen.add(canonical)
-            stem = canonical.replace(f"https://{SITE}/", "").removesuffix(".html").lower()
+            stem = (
+                canonical.replace(f"https://{SITE}/", "").removesuffix(".html").lower()
+            )
             stem = re.sub(r"[^a-z0-9]+", "_", stem).strip("_")[:150]
-            (text_dir / f"{stem}.txt").write_text(f"URL: {canonical}\n{to_text(page)}\n")
+            (text_dir / f"{stem}.txt").write_text(
+                f"URL: {canonical}\n{to_text(page)}\n"
+            )
         for link in links(url, page):
             if link not in seen and link not in queue:
                 queue.append(link)
@@ -190,7 +210,9 @@ def main():
         "queued_not_fetched": queue,
     }
     (args.output / "manifest.json").write_text(json.dumps(manifest, indent=1))
-    print(f"{len(seen)} fetched, {len(canonical_seen)} unique, {len(queue)} left in queue")
+    print(
+        f"{len(seen)} fetched, {len(canonical_seen)} unique, {len(queue)} left in queue"
+    )
 
 
 if __name__ == "__main__":

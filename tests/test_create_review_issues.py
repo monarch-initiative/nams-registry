@@ -92,8 +92,12 @@ last_modified_date: '2026-11-01'
 
 def changed_lines(before, after):
     """Return the lines removed and added between two texts."""
-    diff = difflib.unified_diff(before.splitlines(), after.splitlines(), lineterm="", n=0)
-    return [line for line in diff if line[:1] in "+-" and line[:3] not in ("+++", "---")]
+    diff = difflib.unified_diff(
+        before.splitlines(), after.splitlines(), lineterm="", n=0
+    )
+    return [
+        line for line in diff if line[:1] in "+-" and line[:3] not in ("+++", "---")
+    ]
 
 
 def test_with_issue_changes_only_its_two_fields():
@@ -107,7 +111,9 @@ def test_with_issue_changes_only_its_two_fields():
 
 def test_with_issue_goes_before_activity_status():
     lines = create_review_issues.with_issue(ENTRY, URL, TODAY).splitlines()
-    assert lines[lines.index("activity_status: active") - 1] == f"discussion_issue: {URL}"
+    assert (
+        lines[lines.index("activity_status: active") - 1] == f"discussion_issue: {URL}"
+    )
 
 
 def test_with_issue_parses_to_the_expected_values():
@@ -124,13 +130,20 @@ def test_with_issue_replaces_an_empty_field():
 
 
 def test_with_issue_appends_missing_fields():
-    text = "id: x\nname: X"  # no activity_status, no last_modified_date, no final newline
+    text = (
+        "id: x\nname: X"  # no activity_status, no last_modified_date, no final newline
+    )
     after = create_review_issues.with_issue(text, URL, TODAY)
-    assert after == f"id: x\nname: X\ndiscussion_issue: {URL}\nlast_modified_date: '{TODAY}'\n"
+    assert (
+        after
+        == f"id: x\nname: X\ndiscussion_issue: {URL}\nlast_modified_date: '{TODAY}'\n"
+    )
 
 
 @pytest.mark.parametrize(
-    "path", sorted(Path(__file__).parent.parent.joinpath("resources").glob("*.yaml")), ids=lambda p: p.stem
+    "path",
+    sorted(Path(__file__).parent.parent.joinpath("resources").glob("*.yaml")),
+    ids=lambda p: p.stem,
 )
 def test_with_issue_on_each_registry_entry(path):
     """On every entry, at most the two fields change, and nothing else moves."""
@@ -140,7 +153,11 @@ def test_with_issue_on_each_registry_entry(path):
     text = re.sub(r"(?m)^discussion_issue:.*\n", "", path.read_text())
     after = create_review_issues.with_issue(text, URL, TODAY)
     changed = changed_lines(text, after)
-    assert [line for line in changed if not line[1:].startswith(("discussion_issue:", "last_modified_date:"))] == []
+    assert [
+        line
+        for line in changed
+        if not line[1:].startswith(("discussion_issue:", "last_modified_date:"))
+    ] == []
     before, parsed = yaml.safe_load(text), yaml.safe_load(after)
     assert parsed == {**before, "discussion_issue": URL, "last_modified_date": TODAY}
 
@@ -149,7 +166,10 @@ def test_with_issue_keeps_blank_lines_and_comments():
     text = ENTRY.replace(
         "last_modified_date: '2026-11-01'\n",
         "last_modified_date: '2026-11-01'\n\n# reviewed in the November batch\n",
-    ).replace("activity_status", "discussion_issue:\n  # filled in by create-review-issues\nactivity_status")
+    ).replace(
+        "activity_status",
+        "discussion_issue:\n  # filled in by create-review-issues\nactivity_status",
+    )
     after = create_review_issues.with_issue(text, URL, TODAY)
     assert "\n\n# reviewed in the November batch\n" in after
     assert "  # filled in by create-review-issues\n" in after

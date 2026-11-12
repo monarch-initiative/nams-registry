@@ -48,7 +48,9 @@ TERM_CACHE = REPO / "cache"
 REFERENCE_CONFIG = REPO / ".linkml-reference-validator.yaml"
 
 DOI_URL = re.compile(r"^https?://(?:dx\.)?doi\.org/(.+)$", re.IGNORECASE)
-PUBMED_URL = re.compile(r"^https?://(?:www\.)?(?:pubmed\.)?ncbi\.nlm\.nih\.gov/(?:pubmed/)?(\d+)/?$")
+PUBMED_URL = re.compile(
+    r"^https?://(?:www\.)?(?:pubmed\.)?ncbi\.nlm\.nih\.gov/(?:pubmed/)?(\d+)/?$"
+)
 
 
 @dataclass(frozen=True)
@@ -84,7 +86,11 @@ def term_validator(offline: bool):
     from linkml_term_validator.plugins import BindingValidationPlugin, DynamicEnumPlugin
 
     link_namo()
-    options = {"cache_dir": str(TERM_CACHE), "oak_config_path": str(OAK_CONFIG), "offline": offline}
+    options = {
+        "cache_dir": str(TERM_CACHE),
+        "oak_config_path": str(OAK_CONFIG),
+        "offline": offline,
+    }
     return Validator(
         schema=str(NAM_SCHEMA),
         validation_plugins=[
@@ -144,13 +150,23 @@ def citations(path: Path) -> Iterator[Citation]:
     record = load(path)
     model = record.get("model") or {}
     for i, ref in enumerate(model.get("references") or []):
-        yield Citation(f"model.references[{i}]", reference_id(ref["id"]), ref.get("title"))
+        yield Citation(
+            f"model.references[{i}]", reference_id(ref["id"]), ref.get("title")
+        )
     for section in ("applications", "limitations"):
         for i, statement in enumerate(record.get(section) or []):
             for j, ref in enumerate(statement.get("supporting_references") or []):
-                yield Citation(f"{section}[{i}].supporting_references[{j}]", reference_id(ref), None)
+                yield Citation(
+                    f"{section}[{i}].supporting_references[{j}]",
+                    reference_id(ref),
+                    None,
+                )
     for i, pub in enumerate(record.get("publications") or []):
-        yield Citation(f"publications[{i}]", reference_id(pub["id"], pub.get("doi")), pub.get("title"))
+        yield Citation(
+            f"publications[{i}]",
+            reference_id(pub["id"], pub.get("doi")),
+            pub.get("title"),
+        )
 
 
 @cache
@@ -171,18 +187,41 @@ def reference_problems(path: Path, offline: bool = False) -> list[Problem]:
     fetcher = validator.fetcher
     problems = []
     for c in citations(path):
-        if offline and not fetcher.get_cache_path(fetcher.normalize_reference_id(c.reference)).exists():
+        if (
+            offline
+            and not fetcher.get_cache_path(
+                fetcher.normalize_reference_id(c.reference)
+            ).exists()
+        ):
             problems.append(
-                Problem(path, c.where, f"{c.reference} is not in references_cache/; run `just validate-references`")
+                Problem(
+                    path,
+                    c.where,
+                    f"{c.reference} is not in references_cache/; run `just validate-references`",
+                )
             )
             continue
         if fetcher.fetch(c.reference) is None:
-            problems.append(Problem(path, c.where, f"{c.reference} could not be fetched; check the identifier"))
+            problems.append(
+                Problem(
+                    path,
+                    c.where,
+                    f"{c.reference} could not be fetched; check the identifier",
+                )
+            )
             continue
         if c.title:
-            result = validator.validate_title(c.reference, expected_title=c.title, path=c.where)
+            result = validator.validate_title(
+                c.reference, expected_title=c.title, path=c.where
+            )
             if not result.is_valid and not result.skipped:
-                problems.append(Problem(path, c.where, result.message or f"title does not match {c.reference}"))
+                problems.append(
+                    Problem(
+                        path,
+                        c.where,
+                        result.message or f"title does not match {c.reference}",
+                    )
+                )
     return problems
 
 
@@ -193,7 +232,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("check", choices=["terms", "references"])
     parser.add_argument("files", nargs="*", type=Path)
-    parser.add_argument("--offline", action="store_true", help="use only the committed caches")
+    parser.add_argument(
+        "--offline", action="store_true", help="use only the committed caches"
+    )
     args = parser.parse_args(argv)
 
     files = [f.resolve() for f in args.files]

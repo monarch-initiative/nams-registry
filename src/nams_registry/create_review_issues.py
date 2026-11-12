@@ -74,7 +74,9 @@ def byline():
     hidden marker. Without git or a user.name, the line names no one.
     """
     try:
-        result = subprocess.run(["git", "config", "user.name"], capture_output=True, text=True)
+        result = subprocess.run(
+            ["git", "config", "user.name"], capture_output=True, text=True
+        )
         name = result.stdout if result.returncode == 0 else ""
     except OSError:
         name = ""
@@ -98,17 +100,31 @@ def body_for(resource):
         repository=REPOSITORY,
         homepage=resource.get("homepage_url") or "not recorded",
         today=datetime.date.today().isoformat(),
-        holds_nams=f"`{resource['holds_nams']}`" if resource.get("holds_nams") else "not yet evaluated",
+        holds_nams=f"`{resource['holds_nams']}`"
+        if resource.get("holds_nams")
+        else "not yet evaluated",
         priority=f"`{priority}`" if priority else "not set",
     )
 
 
 def existing_issues():
     """Map resource id to the URL of its review issue, for issues already open or closed."""
-    issues = json.loads(gh(
-        "issue", "list", "--repo", REPOSITORY, "--label", LABEL, "--state", "all",
-        "--limit", "1000", "--json", "body,url",
-    ))
+    issues = json.loads(
+        gh(
+            "issue",
+            "list",
+            "--repo",
+            REPOSITORY,
+            "--label",
+            LABEL,
+            "--state",
+            "all",
+            "--limit",
+            "1000",
+            "--json",
+            "body,url",
+        )
+    )
     found = {}
     for issue in issues:
         marker = MARKER.search(issue["body"] or "")
@@ -119,10 +135,21 @@ def existing_issues():
 
 def ensure_label():
     """Create the review label if the repository does not have it."""
-    labels = json.loads(gh("label", "list", "--repo", REPOSITORY, "--limit", "1000", "--json", "name"))
+    labels = json.loads(
+        gh("label", "list", "--repo", REPOSITORY, "--limit", "1000", "--json", "name")
+    )
     if LABEL not in {label["name"] for label in labels}:
-        gh("label", "create", LABEL, "--repo", REPOSITORY,
-           "--color", LABEL_COLOR, "--description", LABEL_DESCRIPTION)
+        gh(
+            "label",
+            "create",
+            LABEL,
+            "--repo",
+            REPOSITORY,
+            "--color",
+            LABEL_COLOR,
+            "--description",
+            LABEL_DESCRIPTION,
+        )
 
 
 TOP_LEVEL_KEY = re.compile(r"^([A-Za-z_][\w-]*):")
@@ -166,14 +193,14 @@ def with_issue(text, url, today):
 
     span = top_level_field(lines, "discussion_issue")
     if span:
-        lines[span[0]:span[1]] = [issue_line]
+        lines[span[0] : span[1]] = [issue_line]
     else:
         status = top_level_field(lines, "activity_status")
         lines.insert(status[0] if status else len(lines), issue_line)
 
     span = top_level_field(lines, "last_modified_date")
     if span:
-        lines[span[0]:span[1]] = [date_line]
+        lines[span[0] : span[1]] = [date_line]
     else:
         lines.append(date_line)
     return "".join(lines)
@@ -182,9 +209,19 @@ def with_issue(text, url, today):
 def main(argv=None):
     """Open the missing issues and record their URLs."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--resources", default="resources", help="Directory of resource files (default: resources)")
-    parser.add_argument("--dry-run", action="store_true", help="Report what would be done without doing it")
-    parser.add_argument("--only", metavar="ID", help="Handle only the resource with this id")
+    parser.add_argument(
+        "--resources",
+        default="resources",
+        help="Directory of resource files (default: resources)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Report what would be done without doing it",
+    )
+    parser.add_argument(
+        "--only", metavar="ID", help="Handle only the resource with this id"
+    )
     args = parser.parse_args(argv)
 
     today = datetime.date.today().isoformat()
@@ -213,12 +250,18 @@ def main(argv=None):
         if not url:
             # The REST API, not `gh issue create`, which uses GraphQL and
             # has timed out on this repository.
-            url = json.loads(gh(
-                "api", f"repos/{REPOSITORY}/issues",
-                "-f", f"title={title_for(resource)}",
-                "-f", f"body={body_for(resource)}",
-                "-f", f"labels[]={LABEL}",
-            ))["html_url"]
+            url = json.loads(
+                gh(
+                    "api",
+                    f"repos/{REPOSITORY}/issues",
+                    "-f",
+                    f"title={title_for(resource)}",
+                    "-f",
+                    f"body={body_for(resource)}",
+                    "-f",
+                    f"labels[]={LABEL}",
+                )
+            )["html_url"]
             opened += 1
             time.sleep(1)  # stay well under GitHub's limit on creating content
         else:
@@ -229,7 +272,9 @@ def main(argv=None):
     if args.dry_run:
         print("Dry run: nothing was opened or written.")
     else:
-        print(f"Opened {opened}, linked {linked} existing, skipped {skipped} that already had an issue.")
+        print(
+            f"Opened {opened}, linked {linked} existing, skipped {skipped} that already had an issue."
+        )
 
 
 if __name__ == "__main__":

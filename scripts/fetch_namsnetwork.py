@@ -67,7 +67,9 @@ def get_json(path, query=None, retries=3, pause=1.0):
     url = f"{API}/{path.lstrip('/')}"
     if query:
         url += "?" + urllib.parse.urlencode(query)
-    request = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": USER_AGENT})
+    request = urllib.request.Request(
+        url, headers={"Accept": "application/json", "User-Agent": USER_AGENT}
+    )
     for attempt in range(1, retries + 1):
         try:
             with urllib.request.urlopen(request, timeout=60) as response:
@@ -99,28 +101,54 @@ def fetch_list(query, pause):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("--output", type=Path, default=Path("tmp/namsnetwork"), help="Directory to write into (default: tmp/namsnetwork, which git ignores)")
-    parser.add_argument("--pause", type=float, default=1.0, help="Seconds to wait between requests (default: 1.0)")
-    parser.add_argument("--facets", nargs="*", choices=sorted(LINKED_FACETS), default=sorted(LINKED_FACETS), help="Facets to rebuild links for (default: all)")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("tmp/namsnetwork"),
+        help="Directory to write into (default: tmp/namsnetwork, which git ignores)",
+    )
+    parser.add_argument(
+        "--pause",
+        type=float,
+        default=1.0,
+        help="Seconds to wait between requests (default: 1.0)",
+    )
+    parser.add_argument(
+        "--facets",
+        nargs="*",
+        choices=sorted(LINKED_FACETS),
+        default=sorted(LINKED_FACETS),
+        help="Facets to rebuild links for (default: all)",
+    )
     args = parser.parse_args()
 
     started = datetime.datetime.now(datetime.timezone.utc)
     args.output.mkdir(parents=True, exist_ok=True)
 
     filters = get_json("data_models/get_filters/")
-    (args.output / "filters.json").write_text(json.dumps(filters, indent=1, ensure_ascii=False))
+    (args.output / "filters.json").write_text(
+        json.dumps(filters, indent=1, ensure_ascii=False)
+    )
     time.sleep(args.pause)
 
     rows, count = fetch_list({}, args.pause)
     if len(rows) != count:
-        print(f"warning: the list reports {count} NAMs but {len(rows)} rows were returned", file=sys.stderr)
-    nams = {row["qsar_id"]: {**row, "linked": {facet: [] for facet in args.facets}} for row in rows}
+        print(
+            f"warning: the list reports {count} NAMs but {len(rows)} rows were returned",
+            file=sys.stderr,
+        )
+    nams = {
+        row["qsar_id"]: {**row, "linked": {facet: [] for facet in args.facets}}
+        for row in rows
+    }
     print(f"{len(nams)} NAMs listed", file=sys.stderr)
 
     failed, unknown = [], set()
     for facet in args.facets:
         label_field = LINKED_FACETS[facet]
-        values = [v for v in filters.get(facet, []) if v.get("id")]  # id 0 is the empty value
+        values = [
+            v for v in filters.get(facet, []) if v.get("id")
+        ]  # id 0 is the empty value
         for n, value in enumerate(values, 1):
             time.sleep(args.pause)
             try:
@@ -133,12 +161,16 @@ def main():
                 if nam is None:
                     unknown.add(row["qsar_id"])
                     continue
-                nam["linked"][facet].append({"id": value["id"], "label": value.get(label_field)})
+                nam["linked"][facet].append(
+                    {"id": value["id"], "label": value.get(label_field)}
+                )
             print(f"{facet}: {n}/{len(values)}", file=sys.stderr, end="\r")
         print(f"{facet}: {len(values)} values queried" + " " * 10, file=sys.stderr)
 
     records = sorted(nams.values(), key=lambda r: r["qsar_id"])
-    (args.output / "nams.json").write_text(json.dumps(records, indent=1, ensure_ascii=False))
+    (args.output / "nams.json").write_text(
+        json.dumps(records, indent=1, ensure_ascii=False)
+    )
     manifest = {
         "source": "https://nams.network/explore",
         "api": API,
@@ -146,13 +178,30 @@ def main():
         "nams_reported": count,
         "nams_fetched": len(records),
         "facets_linked": args.facets,
-        "facet_values": {facet: sum(1 for v in filters.get(facet, []) if v.get("id")) for facet in args.facets},
-        "nams_with_links": {facet: sum(1 for r in records if r["linked"][facet]) for facet in args.facets},
+        "facet_values": {
+            facet: sum(1 for v in filters.get(facet, []) if v.get("id"))
+            for facet in args.facets
+        },
+        "nams_with_links": {
+            facet: sum(1 for r in records if r["linked"][facet])
+            for facet in args.facets
+        },
         "failed_queries": failed,
         "qsar_ids_not_in_list": sorted(unknown),
     }
-    (args.output / "manifest.json").write_text(json.dumps(manifest, indent=1, ensure_ascii=False))
-    print(json.dumps({k: manifest[k] for k in ("nams_fetched", "nams_with_links", "failed_queries")}, indent=1), file=sys.stderr)
+    (args.output / "manifest.json").write_text(
+        json.dumps(manifest, indent=1, ensure_ascii=False)
+    )
+    print(
+        json.dumps(
+            {
+                k: manifest[k]
+                for k in ("nams_fetched", "nams_with_links", "failed_queries")
+            },
+            indent=1,
+        ),
+        file=sys.stderr,
+    )
     return 1 if failed else 0
 
 

@@ -36,35 +36,55 @@ REPOSITORY = "https://github.com/monarch-initiative/nams-registry"
 # Clicking a column heading sorts by that column, ascending then descending.
 # Everything else stays in the details that open below the row.
 TABS = [
-    ("all", "All records", ["resource", "nam", "partial"], [
-        ("name", "Name", "text", None),
-        ("kind_label", "Kind", "badge", "values"),
-        ("type", "Type or NAMO class", "text", "values"),
-        ("sources", "Found in", "text", "values"),
-    ]),
-    ("resources", "Resources", ["resource"], [
-        ("name", "Name", "text", None),
-        ("holds_nams", "Holds NAMs", "text", "values"),
-        ("priority", "Priority", "text", "values"),
-        ("dismech_integration", "DisMech integration", "clamp", "present"),
-        ("is_tox", "is_tox", "check", "present"),
-        ("discussion_issue", "GH Issue", "issue", "present"),
-    ]),
-    ("nams", "NAMs", ["nam"], [
-        ("name", "Name", "text", None),
-        ("type", "NAMO class", "text", "values"),
-        ("organ", "Organ", "text", "values"),
-        ("species", "Species", "text", "values"),
-        ("sources", "Found in", "text", "values"),
-    ]),
-    ("partial", "Partial NAM records", ["partial"], [
-        ("name", "Name", "text", None),
-        ("type", "Proposed NAMO class", "text", "values"),
-        ("method_type", "Method type", "text", "values"),
-        ("organs", "Organ", "text", "values"),
-        ("development_status", "Development status", "text", "values"),
-        ("sources", "Found in", "text", "values"),
-    ]),
+    (
+        "all",
+        "All records",
+        ["resource", "nam", "partial"],
+        [
+            ("name", "Name", "text", None),
+            ("kind_label", "Kind", "badge", "values"),
+            ("type", "Type or NAMO class", "text", "values"),
+            ("sources", "Found in", "text", "values"),
+        ],
+    ),
+    (
+        "resources",
+        "Resources",
+        ["resource"],
+        [
+            ("name", "Name", "text", None),
+            ("holds_nams", "Holds NAMs", "text", "values"),
+            ("priority", "Priority", "text", "values"),
+            ("dismech_integration", "DisMech integration", "clamp", "present"),
+            ("is_tox", "is_tox", "check", "present"),
+            ("discussion_issue", "GH Issue", "issue", "present"),
+        ],
+    ),
+    (
+        "nams",
+        "NAMs",
+        ["nam"],
+        [
+            ("name", "Name", "text", None),
+            ("type", "NAMO class", "text", "values"),
+            ("organ", "Organ", "text", "values"),
+            ("species", "Species", "text", "values"),
+            ("sources", "Found in", "text", "values"),
+        ],
+    ),
+    (
+        "partial",
+        "Partial NAM records",
+        ["partial"],
+        [
+            ("name", "Name", "text", None),
+            ("type", "Proposed NAMO class", "text", "values"),
+            ("method_type", "Method type", "text", "values"),
+            ("organs", "Organ", "text", "values"),
+            ("development_status", "Development status", "text", "values"),
+            ("sources", "Found in", "text", "values"),
+        ],
+    ),
 ]
 
 KIND_LABELS = {"resource": "Resource", "nam": "NAM", "partial": "Partial NAM record"}
@@ -105,7 +125,10 @@ def nam_row(record, resource_names):
         "type": model.get("type"),
         "organ": (model.get("organ_modeled") or {}).get("name"),
         "species": [s.get("name") or s["id"] for s in record.get("species") or []],
-        **found_in([s["resource"] for s in record.get("source_resources") or []], resource_names),
+        **found_in(
+            [s["resource"] for s in record.get("source_resources") or []],
+            resource_names,
+        ),
         "synonyms": record.get("synonyms") or [],
         "record": record,
         **record_link(f"nams/{model['id']}.yaml"),
@@ -617,11 +640,22 @@ def load(pattern):
 def main(argv=None):
     """Build the page."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--resources", default="resources", help="Directory of resource files (default: resources)")
-    parser.add_argument("--nams", default="nams", help="Directory of NAM records (default: nams)")
-    parser.add_argument("--partial-nams", default="partial-nams", help="Directory of partial NAM records, one folder per resource (default: partial-nams)")
     parser.add_argument(
-        "--output", default="docs/resources/index.html",
+        "--resources",
+        default="resources",
+        help="Directory of resource files (default: resources)",
+    )
+    parser.add_argument(
+        "--nams", default="nams", help="Directory of NAM records (default: nams)"
+    )
+    parser.add_argument(
+        "--partial-nams",
+        default="partial-nams",
+        help="Directory of partial NAM records, one folder per resource (default: partial-nams)",
+    )
+    parser.add_argument(
+        "--output",
+        default="docs/resources/index.html",
         help="Page to write (default: docs/resources/index.html)",
     )
     args = parser.parse_args(argv)
@@ -630,7 +664,10 @@ def main(argv=None):
     names = {r["id"]: r["name"] for r in resources}
     rows = [resource_row(r) for r in resources]
     rows += [nam_row(r, names) for r in load(os.path.join(args.nams, "*.yaml"))]
-    rows += [partial_row(p, names) for p in load(os.path.join(args.partial_nams, "*", "*.yaml"))]
+    rows += [
+        partial_row(p, names)
+        for p in load(os.path.join(args.partial_nams, "*", "*.yaml"))
+    ]
     for r in rows:
         r["kind_label"] = KIND_LABELS[r["kind"]]
     rows.sort(key=lambda r: r["name"].lower())
@@ -644,7 +681,9 @@ def main(argv=None):
     with open(args.output, "w") as fh:
         fh.write(page)
     counts = {k: sum(r["kind"] == k for r in rows) for k in KIND_LABELS}
-    print(f"Wrote {counts['resource']} resources, {counts['nam']} NAM records and {counts['partial']} partial NAM records to {args.output}")
+    print(
+        f"Wrote {counts['resource']} resources, {counts['nam']} NAM records and {counts['partial']} partial NAM records to {args.output}"
+    )
 
 
 if __name__ == "__main__":

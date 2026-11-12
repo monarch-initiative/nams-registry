@@ -44,7 +44,9 @@ def test_nam_terms(filepath):
     assert not problems, "\n".join(str(p) for p in problems)
 
 
-@pytest.mark.parametrize("filepath", NAM_FILES + RESOURCE_FILES, ids=lambda p: Path(p).stem)
+@pytest.mark.parametrize(
+    "filepath", NAM_FILES + RESOURCE_FILES, ids=lambda p: Path(p).stem
+)
 def test_references(filepath):
     """Each reference resolves, and each title given is the reference's own."""
     problems = reference_problems(Path(filepath), offline=True)

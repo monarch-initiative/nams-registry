@@ -57,7 +57,9 @@ TALLY_COLUMNS = ("assay", "species", "reference", "data type")
 
 
 def request(url, method="GET"):
-    return urllib.request.Request(url, method=method, headers={"User-Agent": USER_AGENT})
+    return urllib.request.Request(
+        url, method=method, headers={"User-Agent": USER_AGENT}
+    )
 
 
 def render(path, channel, settle_seconds):
@@ -109,30 +111,44 @@ def catalogue(out, channel, settle_seconds):
         if name_cell == "Toxicity Endpoint":  # the header row
             continue
         downloads = [href for text, href in row["links"] if text == "Download"]
-        datasets.append({
-            "name": name_cell.splitlines()[0].strip(),
-            "chemicals": parse_count(name_cell, "Chemicals"),
-            "endpoints": name_cell.splitlines()[2].strip() if len(name_cell.splitlines()) > 2 else None,
-            "records": parse_count(name_cell, "Records"),
-            "description": re.sub(r"\s*Learn more\.?$", "", description).strip(),
-            "retrieval": [line.strip() for line in retrieval.splitlines() if line.strip()],
-            "download_url": downloads[0] if downloads else None,
-            "version": version,
-        })
+        datasets.append(
+            {
+                "name": name_cell.splitlines()[0].strip(),
+                "chemicals": parse_count(name_cell, "Chemicals"),
+                "endpoints": name_cell.splitlines()[2].strip()
+                if len(name_cell.splitlines()) > 2
+                else None,
+                "records": parse_count(name_cell, "Records"),
+                "description": re.sub(r"\s*Learn more\.?$", "", description).strip(),
+                "retrieval": [
+                    line.strip() for line in retrieval.splitlines() if line.strip()
+                ],
+                "download_url": downloads[0] if downloads else None,
+                "version": version,
+            }
+        )
     if not datasets:
-        sys.exit("error: no data sets found on the Data Sets page; the page may not have finished rendering (try --settle 20)")
-    (out / "datasets.json").write_text(json.dumps(datasets, indent=1, ensure_ascii=False))
+        sys.exit(
+            "error: no data sets found on the Data Sets page; the page may not have finished rendering (try --settle 20)"
+        )
+    (out / "datasets.json").write_text(
+        json.dumps(datasets, indent=1, ensure_ascii=False)
+    )
     print(f"catalogue: {len(datasets)} data sets", file=sys.stderr)
     return datasets
 
 
 def assays(out):
     """Write the assay names the REST API lists in its usage text."""
-    with urllib.request.urlopen(request(BASE + "api/v1/search"), timeout=60) as response:
+    with urllib.request.urlopen(
+        request(BASE + "api/v1/search"), timeout=60
+    ) as response:
         text = response.read().decode("utf-8")
     if "Supported assay(s):" not in text:
         sys.exit("error: the API usage text no longer lists supported assays")
-    names = sorted(set(re.findall(r'"([^"]+)"', text.split("Supported assay(s):", 1)[1])))
+    names = sorted(
+        set(re.findall(r'"([^"]+)"', text.split("Supported assay(s):", 1)[1]))
+    )
     (out / "assays.json").write_text(json.dumps(names, indent=1, ensure_ascii=False))
     print(f"assays: {len(names)} assay names", file=sys.stderr)
 
@@ -155,7 +171,10 @@ def fetch_capped(url, path, limit):
     """
     partial = path.with_name(path.name + ".part")
     written = 0
-    with urllib.request.urlopen(request(url), timeout=600) as response, partial.open("wb") as handle:
+    with (
+        urllib.request.urlopen(request(url), timeout=600) as response,
+        partial.open("wb") as handle,
+    ):
         while chunk := response.read(1 << 20):
             written += len(chunk)
             if written > limit:
@@ -199,8 +218,14 @@ def download(out, max_mb, pause):
         print(f"download: {name} ({written / 1_000_000:.1f} MB)", file=sys.stderr)
         time.sleep(pause)
     for item in skipped:
-        size = f"{item['megabytes']} MB" if item["megabytes"] is not None else "size not reported"
-        print(f"download: skipped {item['file']} ({size}, over --max-mb)", file=sys.stderr)
+        size = (
+            f"{item['megabytes']} MB"
+            if item["megabytes"] is not None
+            else "size not reported"
+        )
+        print(
+            f"download: skipped {item['file']} ({size}, over --max-mb)", file=sys.stderr
+        )
     return skipped
 
 
@@ -216,30 +241,76 @@ def summarize(out):
             for column in frame.columns:
                 if any(key in str(column).lower() for key in TALLY_COLUMNS):
                     counts = frame[column].dropna().astype(str).value_counts()
-                    columns[str(column)] = {"distinct": len(counts), "top": counts.head(50).to_dict()}
-            sheets[sheet] = {"rows": len(frame), "columns": [str(c) for c in frame.columns], "tallies": columns}
+                    columns[str(column)] = {
+                        "distinct": len(counts),
+                        "top": counts.head(50).to_dict(),
+                    }
+            sheets[sheet] = {
+                "rows": len(frame),
+                "columns": [str(c) for c in frame.columns],
+                "tallies": columns,
+            }
         summary[path.name] = sheets
         print(f"summarize: {path.name}", file=sys.stderr)
-    (out / "summary.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False, default=int))
+    (out / "summary.json").write_text(
+        json.dumps(summary, indent=1, ensure_ascii=False, default=int)
+    )
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("steps", nargs="*", metavar="step", help=f"Steps to run: {', '.join(STEPS)} (default: all, in that order)")
-    parser.add_argument("--output", type=Path, default=Path("tmp/nice"), help="Directory to write into (default: tmp/nice, which git ignores)")
-    parser.add_argument("--max-mb", type=float, default=20, help="Skip data set files larger than this (default: 20; the cHTS file is about 190 MB)")
-    parser.add_argument("--pause", type=float, default=1.0, help="Seconds to wait between downloads (default: 1.0)")
-    parser.add_argument("--settle", type=int, default=10, help="Seconds to wait after the page loads for Vaadin to fill it (default: 10)")
-    parser.add_argument("--channel", default="chrome", help="Playwright browser channel (default: chrome, the installed Google Chrome)")
+    parser.add_argument(
+        "steps",
+        nargs="*",
+        metavar="step",
+        help=f"Steps to run: {', '.join(STEPS)} (default: all, in that order)",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path("tmp/nice"),
+        help="Directory to write into (default: tmp/nice, which git ignores)",
+    )
+    parser.add_argument(
+        "--max-mb",
+        type=float,
+        default=20,
+        help="Skip data set files larger than this (default: 20; the cHTS file is about 190 MB)",
+    )
+    parser.add_argument(
+        "--pause",
+        type=float,
+        default=1.0,
+        help="Seconds to wait between downloads (default: 1.0)",
+    )
+    parser.add_argument(
+        "--settle",
+        type=int,
+        default=10,
+        help="Seconds to wait after the page loads for Vaadin to fill it (default: 10)",
+    )
+    parser.add_argument(
+        "--channel",
+        default="chrome",
+        help="Playwright browser channel (default: chrome, the installed Google Chrome)",
+    )
     args = parser.parse_args()
     unknown = sorted(set(args.steps) - set(STEPS))
     if unknown:
-        parser.error(f"unknown step(s): {', '.join(unknown)}; choose from {', '.join(STEPS)}")
+        parser.error(
+            f"unknown step(s): {', '.join(unknown)}; choose from {', '.join(STEPS)}"
+        )
     # Run the chosen steps in pipeline order, whatever order they were given in.
     args.steps = [step for step in STEPS if step in args.steps] if args.steps else STEPS
 
     args.output.mkdir(parents=True, exist_ok=True)
-    manifest = {"fetched": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"), "base": BASE, "steps": args.steps}
+    manifest = {
+        "fetched": datetime.datetime.now(datetime.timezone.utc).isoformat(
+            timespec="seconds"
+        ),
+        "base": BASE,
+        "steps": args.steps,
+    }
     if "catalogue" in args.steps:
         manifest["datasets"] = len(catalogue(args.output, args.channel, args.settle))
     if "assays" in args.steps:

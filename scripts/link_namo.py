@@ -66,7 +66,9 @@ def warn_if_not_pinned(schema):
     try:
         head = subprocess.run(
             ["git", "-C", str(checkout), "rev-parse", "HEAD"],
-            capture_output=True, text=True, check=True,
+            capture_output=True,
+            text=True,
+            check=True,
         ).stdout.strip()
     except (OSError, subprocess.CalledProcessError):
         return

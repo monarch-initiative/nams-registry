@@ -133,7 +133,9 @@ def test_nam_comparisons_are_paired(filepath):
         elif {"nam": own_id, "reference": comparison["reference"]} not in (
             load_nam(other).get("compared_with", [])
         ):
-            wrong.append(f"{other} does not name {own_id} back with {comparison['reference']}")
+            wrong.append(
+                f"{other} does not name {own_id} back with {comparison['reference']}"
+            )
     assert not wrong, wrong
 
 
@@ -177,7 +179,9 @@ def test_partial_files_are_named_and_placed():
         if partial["id"] != path.stem:
             wrong.append(f"{path.name}: id is {partial['id']}")
         if partial["resource"] != path.parent.name:
-            wrong.append(f"{path.name}: resource {partial['resource']} but in {path.parent.name}/")
+            wrong.append(
+                f"{path.name}: resource {partial['resource']} but in {path.parent.name}/"
+            )
         if partial["resource"] not in RESOURCE_IDS:
             wrong.append(f"{path.name}: unknown resource {partial['resource']}")
     assert not wrong, wrong
