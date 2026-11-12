@@ -3,9 +3,9 @@ name: Preview documentation build
 on:  # yamllint disable-line rule:truthy
   pull_request:
     types:
-      - opened
-      - reopened
-      - synchronize
+    - opened
+    - reopened
+    - synchronize
 
 env:
   CLICOLOR: 1
@@ -31,44 +31,44 @@ jobs:
         pyversion: ["3.13"]
 
     steps:
-      # https://github.com/actions/checkout
-      - name: Checkout
-        uses: actions/checkout@v7.0.1
-        with:
-          fetch-depth: 0
+    # https://github.com/actions/checkout
+    - name: Checkout
+      uses: actions/checkout@v7.0.1
+      with:
+        fetch-depth: 0
 
-      # https://github.com/actions/setup-python
-      - name: Set up Python
-        uses: actions/setup-python@v7.1.0
-        with:
-          python-version: ${{ matrix.pyversion }}
-      # https://github.com/astral-sh/setup-uv
-      - name: Install uv
-        uses: astral-sh/setup-uv@v10.3.3
-        with:
-          python-version: ${{ matrix.pyversion }}
-          enable-cache: true
-          cache-dependency-glob: "uv.lock"
+    # https://github.com/actions/setup-python
+    - name: Set up Python
+      uses: actions/setup-python@v7.1.0
+      with:
+        python-version: ${{ matrix.pyversion }}
+    # https://github.com/astral-sh/setup-uv
+    - name: Install uv
+      uses: astral-sh/setup-uv@v10.3.3
+      with:
+        python-version: ${{ matrix.pyversion }}
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
 
-      - name: Install just
-        run: |
-          uv tool install rust-just
+    - name: Install just
+      run: |
+        uv tool install rust-just
 
-      - name: Install dependencies
-        run: uv sync --dev --no-progress
+    - name: Install dependencies
+      run: uv sync --dev --no-progress
 
-      - name: Fetch the NAMO schema
-        run: uv run python scripts/link_namo.py
+    - name: Fetch the NAMO schema
+      run: uv run python scripts/link_namo.py
 
-      - name: Build documentation
-        run: |
-          just gen-doc
-          uv run mkdocs build -d site
-          touch site/.nojekyll
+    - name: Build documentation
+      run: |
+        just gen-doc
+        uv run mkdocs build -d site
+        touch site/.nojekyll
 
-      # https://github.com/rossjrw/pr-preview-action
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1.8.2
-        with:
-          source-dir: site/
-          preview-branch: gh-pages
+    # https://github.com/rossjrw/pr-preview-action
+    - name: Deploy preview
+      uses: rossjrw/pr-preview-action@v1.8.2
+      with:
+        source-dir: site/
+        preview-branch: gh-pages

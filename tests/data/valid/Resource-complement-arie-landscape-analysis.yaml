@@ -9,15 +9,15 @@ description: >-
   3,000 papers.
 resource_type: Report
 domain_areas:
-  - biomedical
+- biomedical
 dismech_integration: >-
   Tooling: `just complement-arie-parse` turns the dashboard's data download
   into tables (scripts/complement_arie_landscape.py). Content: none
   incorporated into kb/ yet. Checked against dismech commit ecaad77e5e9.
 homepage_url: https://commonfund.nih.gov/sites/commonfund/files/Complement-ARIE-Landscape-Analysis-29-Feb-2024-508.pdf
 publications:
-  - id: https://commonfund.nih.gov/sites/commonfund/files/Complement-ARIE-Landscape-Analysis-29-Feb-2024-508.pdf
-    title: Complement-ARIE Landscape Analysis
-    year: '2024'
+- id: https://commonfund.nih.gov/sites/commonfund/files/Complement-ARIE-Landscape-Analysis-29-Feb-2024-508.pdf
+  title: Complement-ARIE Landscape Analysis
+  year: '2024'
 creation_date: '2026-11-05'
 last_modified_date: '2026-11-05'

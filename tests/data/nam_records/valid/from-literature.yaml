@@ -6,25 +6,25 @@ model:
   type: TwoDCellCulture
   name: MEA acute network function assay (AcN) in dissociated rat cortical cultures
   cell_types:
-    - id: CL:0000540
-      name: neuron
+  - id: CL:0000540
+    name: neuron
   references:
-    - id: doi:10.1016/j.tox.2024.153842
-      title: >-
-        Chemical effects on neural network activity: Comparison of acute
-        versus network formation exposure in microelectrode array assays.
-      year: 2024
+  - id: doi:10.1016/j.tox.2024.153842
+    title: >-
+      Chemical effects on neural network activity: Comparison of acute
+      versus network formation exposure in microelectrode array assays.
+    year: 2024
 species:
-  - id: NCBITaxon:10116
-    name: Rattus norvegicus
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
 source_resources:
-  - resource: scientific-literature
-    source_urls:
-      - https://doi.org/10.1016/j.tox.2024.153842
-    accessed_on: '2026-11-09'
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153842
+  accessed_on: '2026-11-09'
 compared_with:
-  - nam: cortex-mea-network-formation-primary-cell-rat
-    reference: doi:10.1016/j.tox.2024.153842
+- nam: cortex-mea-network-formation-primary-cell-rat
+  reference: doi:10.1016/j.tox.2024.153842
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false

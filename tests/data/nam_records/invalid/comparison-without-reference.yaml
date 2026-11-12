@@ -4,6 +4,6 @@ model:
   type: TwoDCellCulture
   name: MEA acute network function assay (AcN) in dissociated rat cortical cultures
 source_resources:
-  - resource: scientific-literature
+- resource: scientific-literature
 compared_with:
-  - nam: cortex-mea-network-formation-primary-cell-rat
+- nam: cortex-mea-network-formation-primary-cell-rat

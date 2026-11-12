@@ -5,12 +5,12 @@ name: AOP-Wiki
 homepage_url: https://aopwiki.org/
 resource_type: DataSource
 domain_areas:
-  - toxicology
-  - adverse outcome pathways
+- toxicology
+- adverse outcome pathways
 holds_nams: secondary
 priority: medium
 curation_model:
-  - community
+- community
 activity_status: active
 creation_date: '2026-11-05'
 last_modified_date: '2026-11-05'

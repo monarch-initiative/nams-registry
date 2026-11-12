@@ -3,4 +3,4 @@
 id: toxcast
 name: ToxCast
 imported_from:
-  - source: kg_registry
+- source: kg_registry

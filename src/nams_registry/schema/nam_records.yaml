@@ -23,10 +23,10 @@ default_prefix: nams_registry
 default_range: string
 
 imports:
-  - linkml:types
-  # NAMO, from the namo repository; scripts/link_namo.py puts it in place
-  # (gitignored). It is never committed here.
-  - namo
+- linkml:types
+# NAMO, from the namo repository; scripts/link_namo.py puts it in place
+# (gitignored). It is never committed here.
+- namo
 
 classes:
 
@@ -37,16 +37,16 @@ classes:
       the NAM was found, what it is used for, and its limitations. The file in
       nams/ is named after the model's id.
     slots:
-      - model
-      - synonyms
-      - species
-      - applications
-      - limitations
-      - source_resources
-      - compared_with
-      - dismech_status
-      - creation_date
-      - last_modified_date
+    - model
+    - synonyms
+    - species
+    - applications
+    - limitations
+    - source_resources
+    - compared_with
+    - dismech_status
+    - creation_date
+    - last_modified_date
 
   Comparison:
     description: >-
@@ -245,9 +245,9 @@ slots:
       The species the cells come from. NAMO records species only for animal
       models; move this into the model if NAMO adds it.
     bindings:
-      - binds_value_of: id
-        range: SpeciesEnum
-        obligation_level: REQUIRED
+    - binds_value_of: id
+      range: SpeciesEnum
+      obligation_level: REQUIRED
   applications:
     range: NAMStatement
     multivalued: true

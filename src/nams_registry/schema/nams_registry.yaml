@@ -12,7 +12,7 @@ description: |-
   scientific-literature resource and cites the paper on its NAM record.
 license: MIT
 see_also:
-  - https://monarch-initiative.github.io/nams-registry
+- https://monarch-initiative.github.io/nams-registry
 
 prefixes:
   nams_registry: https://w3id.org/monarch-initiative/nams-registry/
@@ -24,7 +24,7 @@ default_prefix: nams_registry
 default_range: string
 
 imports:
-  - linkml:types
+- linkml:types
 
 classes:
 
@@ -32,9 +32,9 @@ classes:
     description: >-
       A generic grouping for any identifiable entity
     slots:
-      - id
-      - name
-      - description
+    - id
+    - name
+    - description
     class_uri: schema:Thing
 
   Resource:
@@ -45,30 +45,30 @@ classes:
       reports, such as landscape analyses, reviews, and OECD Test
       Guidelines; and the scientific literature as a whole.
     slots:
-      - synonyms
-      - homepage_url
-      - repository
-      - resource_type
-      - domain_areas
-      - holds_nams
-      - relevance_note
-      - curation_model
-      - dismech_integration
-      - supporting_scripts
-      - priority
-      - priority_rationale
-      - extraction_effort
-      - effort_rationale
-      - expectations
-      - discussion_issue
-      - activity_status
-      - use_instead
-      - part_of
-      - license
-      - publications
-      - creation_date
-      - last_modified_date
-      - imported_from
+    - synonyms
+    - homepage_url
+    - repository
+    - resource_type
+    - domain_areas
+    - holds_nams
+    - relevance_note
+    - curation_model
+    - dismech_integration
+    - supporting_scripts
+    - priority
+    - priority_rationale
+    - extraction_effort
+    - effort_rationale
+    - expectations
+    - discussion_issue
+    - activity_status
+    - use_instead
+    - part_of
+    - license
+    - publications
+    - creation_date
+    - last_modified_date
+    - imported_from
 
   LicenseInfo:
     description: >-
@@ -146,11 +146,11 @@ classes:
       A record of content imported into this registry entry from another
       registry.
     slots:
-      - source
-      - source_id
-      - source_url
-      - source_version
-      - imported_on
+    - source
+    - source_id
+    - source_url
+    - source_version
+    - imported_on
 
 slots:
   id:
