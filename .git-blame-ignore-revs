@@ -1,0 +1,8 @@
+# Commits that only change formatting, for git blame to skip.
+# GitHub reads this file automatically. For local git blame, run once:
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+
+# Format the hand-written Python with ruff
+4d86df1867ea620223cdf1cfcb1b07f5297b3ca7
+# Use one list indentation in every YAML file
+cdd618f2dd7097b206cd03bb8df774f9e5797b64
