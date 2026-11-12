@@ -459,7 +459,7 @@ class ResourceTypeEnum(EnumDefinitionImpl):
         description="""A report that surveys NAMs or sets out how a method is to be used, such as a landscape analysis, a review article, or an OECD Test Guideline. A primary research paper is not a report. Not one of the KG-Registry categories.""")
     Literature = PermissibleValue(
         text="Literature",
-        description="""The scientific literature as a whole, which describes NAMs that databases and catalogues do not hold, such as methods still in development or used in a single study. The registry has one such resource, scientific-literature. A single paper is not a resource: a NAM found in one cites it on the NAM record. Not one of the KG-Registry categories.""")
+        description="""The scientific literature as a whole, which describes NAMs that databases and catalogues may not hold, such as methods still in development or used in a single study. The registry uses scientific-literature as a classification label. Each individual paper is then stored as a citation on the NAM record. Not one of the KG-Registry categories.""")
     Organization = PermissibleValue(
         text="Organization",
         description="""An organization, such as a research institute or a company, whose research or product pages are covered as a whole, not one data product it publishes. A data product the organization publishes, such as a database, can have an entry of its own. Not one of the KG-Registry categories; KG-Registry uses Organization only for contacts.""")

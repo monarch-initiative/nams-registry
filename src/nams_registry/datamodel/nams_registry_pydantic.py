@@ -155,7 +155,7 @@ class ResourceTypeEnum(str, Enum):
     """
     Literature = "Literature"
     """
-    The scientific literature as a whole, which describes NAMs that databases and catalogues do not hold, such as methods still in development or used in a single study. The registry has one such resource, scientific-literature. A single paper is not a resource: a NAM found in one cites it on the NAM record. Not one of the KG-Registry categories.
+    The scientific literature as a whole, which describes NAMs that databases and catalogues may not hold, such as methods still in development or used in a single study. The registry uses scientific-literature as a classification label. Each individual paper is then stored as a citation on the NAM record. Not one of the KG-Registry categories.
     """
     Organization = "Organization"
     """
