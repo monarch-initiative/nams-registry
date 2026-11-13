@@ -1,0 +1,78 @@
+# This full record supersedes the namsnetwork partial for EpiAirway cytotoxicity
+# (partial-nams/namsnetwork/air-liquid-interface-epiairway-cytotoxicity-model.yaml,
+# NAMs.network id 130): it names that page in source_resources, so
+# write_partial_namsnetwork.py drops the partial on its next run. The partial
+# file is deleted in this PR to reflect that end-state. It remains close to the
+# generic primary-cell ALI record (airway-epithelium-ali-large-airway-adult-tissue);
+# kept distinct as the MatTek reconstructed commercial tissue, matching how
+# NAMs.network tracks EpiAirway as its own entry.
+model:
+  id: airway-epithelium-epiairway-reconstructed-adult-tissue
+  type: TwoDCellCulture
+  name: EpiAirway™ reconstructed human airway tissue
+  description: >-
+    MatTek EpiAirway™, a reconstructed pseudostratified mucociliary human airway
+    epithelium differentiated at the air-liquid interface from primary
+    tracheobronchial cells. Used for whole-aerosol cytotoxicity testing (MTT)
+    and other inhalation-toxicology endpoints, with aerosol applied to the
+    apical (air) surface.
+  cell_types:
+  - id: CL:0002633
+    name: respiratory basal cell
+  - id: CL:0000067
+    name: ciliated epithelial cell
+  - id: CL:0002370
+    name: respiratory tract goblet cell
+  cell_source: adult tissue
+  culture_conditions: >-
+    Reconstructed human airway epithelium (MatTek EpiAirway™) at the air-liquid
+    interface. Whole aerosol is applied to the apical surface; viability is read
+    by MTT on the 3D tissue.
+  references:
+  - id: doi:10.1016/j.tox.2024.153801
+    title: In vitro toxicological evaluation of glo menthol and non-menthol heated tobacco products.
+    authors:
+    - Brian M. Keyser
+    - Robert Leverette
+    - Reagan McRae
+    - John Wertman
+    - Tom Shutsky
+    - Kristen Jordan
+    - Ken Szeliga
+    - Patrudu Makena
+    journal: Toxicology
+    year: 2024
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Whole-aerosol cytotoxicity testing of inhaled tobacco and nicotine products
+    at the air-liquid interface, read by MTT on the 3D reconstructed tissue.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153801
+  supporting_references:
+  - doi:10.1016/j.tox.2024.153801
+limitations:
+- description: >-
+    Epithelium only: no immune, stromal, endothelial or vascular compartment
+    and no microbiome.
+- description: >-
+    MTT viability is an apical cytotoxicity endpoint; it identifies no mechanism
+    of injury on its own.
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153801
+  accessed_on: '2026-11-13'
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/130
+  accessed_on: '2026-11-13'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: f0043ac2e79785b8b9e3ae2b56431b8051a53b45
+  assessed_on: '2026-11-13'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-13'
