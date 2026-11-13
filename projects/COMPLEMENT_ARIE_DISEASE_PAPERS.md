@@ -50,28 +50,40 @@ Steps 3 and 4 run in [DisMech](https://github.com/monarch-initiative/dismech).
 
 ## Screening
 
-Screening asks two questions, in order.
+Screening records what the abstract shows; it sets very few papers aside.
+Every kind of method or model a paper describes is kept, goes to DisMech,
+and gets a registry record, including:
 
-**1. Does the paper describe a NAM the registry should hold?** This is the
-only question that sets a paper aside. A paper is set aside when:
+- models of human biology: in vitro, in silico and in chemico;
+- bioanalytical assays, such as an assay that measures a drug in clinical
+  samples;
+- clinical and epidemiological methods;
+- animal models, which DisMech also collects;
+- ecotoxicology methods.
 
-- it describes no method, e.g. a clinical or epidemiological study;
-- its only models are animal models;
-- it is outside the registry's scope, e.g. ecotoxicology.
+The kinds an abstract shows are recorded in the review log's `method_kinds`,
+so that, for example, a paper whose abstract names only animal models can be
+found.
 
-Bioanalytical assays, such as an assay that measures a drug in clinical
-samples, are in scope as well as models of human biology (decided
-2026-11-13).
+A paper is set aside only when there is nothing to extract:
 
-**2. Does the paper have a DisMech anchor?** That is, does a model in it
-attach to a mechanism node in a DisMech disease entry or module? This never
-sets a paper aside. It decides whether the paper's NAMs go to the registry
-only, or to the registry and DisMech. A paper with no anchor is still
-processed, and the DisMech log records why no link was made.
+- it describes no method or model at all, e.g. an editorial or policy piece;
+- it can't be identified from its PMID or DOI.
 
-Screening both questions through one filter sets aside papers the registry
-should hold, as DisMech found for its *Toxicology* special issue
+Whether a paper has a DisMech anchor (a model in it attaches to a mechanism
+node in a DisMech disease entry or module) never sets it aside. A paper with
+no anchor is still processed, and the DisMech log records why no link was
+made. Screening for both repositories through one filter sets aside papers
+the registry should hold, as DisMech found for its *Toxicology* special issue
 ([dismech#16882](https://github.com/monarch-initiative/dismech/issues/16882)).
+
+Animal models fit the registry's schema already: a record's `model` is a
+NAMO `ModelSystem`, and NAMO's `AnimalModel` is one. Clinical,
+epidemiological and bioanalytical methods have no NAMO class yet, so their
+records are `deferred` until a `schema-change` issue settles how to hold
+them.
+
+(Decided 2026-11-13.)
 
 A disease answer on the dashboard does not mean the paper models the
 disease. In the first sample, the disease was variously modelled (midbrain
@@ -100,6 +112,7 @@ A paper not in the review log has not been looked at.
 | `pmid`, `doi`, `title` | From the dashboard download. Some papers keyed by a Web of Science accession have no PMID here but may have one in PubMed |
 | `screen` | Empty until screened; then `kept` or `set-aside` |
 | `screen_reason` | For `set-aside`, which reason in [Screening](#screening) applies |
+| `method_kinds` | The kinds of method or model the abstract shows, separated by `;`: `in-vitro`, `in-silico`, `in-chemico`, `bioanalytical`, `clinical`, `epidemiological`, `animal`, `ecotox` |
 | `dismech_issue` | The DisMech issue for a paper kept, e.g. `dismech#17401` |
 | `registry_outcome` | Empty until processed; then one of the values below |
 | `nam_ids` | The ids of the records in `nams/` the paper led to, separated by `;` |
