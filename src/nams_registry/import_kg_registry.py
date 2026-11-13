@@ -13,6 +13,7 @@ curation done after an import is not lost.
 
 import argparse
 import datetime
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -30,7 +31,11 @@ COPIED_FIELDS = [
     "homepage_url",
     "repository",
 ]
-PUBLICATION_FIELDS = ["id", "title", "authors", "journal", "year", "doi", "preferred"]
+# KG-Registry publication fields kept, in the order they are written. A
+# publication has the fields of NAMO's Reference; KG-Registry's doi is moved
+# into the id, and its preferred flag is dropped.
+PUBLICATION_FIELDS = ["id", "title", "authors", "journal", "year", "url"]
+DOI_URL = re.compile(r"^https?://(?:dx\.)?doi\.org/(.+)$")
 
 
 def read_front_matter(path):
@@ -62,6 +67,28 @@ def kg_registry_commit(kg_registry):
     ).stdout.strip()
 
 
+def convert_publication(publication):
+    """Convert a KG-Registry publication into a NAMs registry Publication.
+
+    The id becomes a doi: CURIE whenever the publication has a DOI, either
+    in KG-Registry's doi field or as a doi.org URL id, and the year becomes
+    an integer.
+    """
+    pub = {
+        k: publication[k]
+        for k in PUBLICATION_FIELDS
+        if publication.get(k) not in (None, "", [])
+    }
+    doi = publication.get("doi")
+    if not doi and (m := DOI_URL.match(str(pub.get("id", "")))):
+        doi = m.group(1)
+    if doi:
+        pub["id"] = f"doi:{doi}"
+    if "year" in pub:
+        pub["year"] = int(pub["year"])
+    return pub
+
+
 def convert(page, commit, today):
     """Convert one KG-Registry Resource page into a NAMs registry Resource."""
     entry = {f: page[f] for f in COPIED_FIELDS if page.get(f) not in (None, "", [])}
@@ -80,10 +107,7 @@ def convert(page, commit, today):
     if license_:
         entry["license"] = license_
 
-    publications = [
-        {k: p[k] for k in PUBLICATION_FIELDS if p.get(k) not in (None, "", [])}
-        for p in page.get("publications") or []
-    ]
+    publications = [convert_publication(p) for p in page.get("publications") or []]
     if publications:
         entry["publications"] = publications
 
