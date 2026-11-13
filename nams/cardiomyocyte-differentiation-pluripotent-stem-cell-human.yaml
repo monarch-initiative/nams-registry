@@ -1,0 +1,163 @@
+model:
+  id: cardiomyocyte-differentiation-pluripotent-stem-cell-human
+  type: TwoDCellCulture
+  name: ReproTracker cardiomyocyte differentiation biomarker assay
+  description: >-
+    The cardiac arm of ReproTracker, a commercial human iPSC biomarker assay
+    for teratogenic potential (Toxys). Human induced pluripotent stem cells
+    are differentiated towards cardiomyocytes over an adherent 10-day
+    protocol, with the test compound present from day 0 and renewed at each
+    medium change, and the differentiation is tracked by quantitative
+    expression of the mesodermal biomarker BMP4 and the cardiomyocyte-specific
+    biomarker MYH6. A concentration-dependent fall in biomarker expression
+    below the control threshold, at non-cytotoxic concentrations, classifies
+    the compound as a teratogen. Loss of beating is recorded as a secondary,
+    non-classifying endpoint. The companion records
+    hepatocyte-differentiation-pluripotent-stem-cell-human and
+    neural-rosette-differentiation-pluripotent-stem-cell-human run the same
+    cells and the same classification rule towards the other two germ layers;
+    the three are read together, and a compound is called a teratogen if any
+    one of them drops. Of the two compounds tested in the source study, this
+    arm was the most sensitive for both. Its effect concentrations are what
+    the coupled record pregnancy-whole-body-pbpk-human converts into human
+    equivalent doses. Recorded in the registry from the primary paper, Moreau
+    et al. 2023 (doi:10.1016/j.tox.2023.153684), in the Toxicology special
+    issue "New approach methodologies: from conceptual development to
+    regulatory application".
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    An adherent culture in a multi-well plate, differentiating from
+    pluripotency towards a single lineage. The measured quantity is the
+    population's transcript level for two marker genes, so the readout is
+    cell-identity acquisition rather than tissue architecture. There is no
+    chamber formation, no conduction system, no vasculature and no
+    non-cardiac cell type. Beating is observed but scored subjectively and
+    does not enter the classification.
+  complexity_level: LOW
+  cell_types:
+  - id: CL:0002248
+    name: pluripotent stem cell
+  - id: CL:0000746
+    name: cardiac muscle cell
+  cell_source: >-
+    Human induced pluripotent stem cells, differentiated towards
+    cardiomyocytes through an early mesoderm intermediate.
+  substrate_type: multi-well tissue culture plate
+  culture_conditions: >-
+    Compound added on day 0 in differentiation medium at 0.1% v/v final DMSO,
+    at five concentrations, and renewed at each medium change (days 2, 6 and
+    10). The top concentration comes from a prior AlamarBlue dose-finding in
+    undifferentiated hiPSCs: "The lowest concentration that induced
+    cytotoxicity (max 20-40%) in the dose finding was applied as the top
+    concentration for the differentiation experiment."
+  references:
+  - id: doi:10.1016/j.tox.2023.153684
+    title: 'Animal-free assessment of developmental toxicity: Combining PBPK modeling
+      with the ReproTracker assay'
+    authors:
+    - Marjory Moreau
+    - Amer Jamalpoor
+    - John Carter Hall
+    - Jeffrey Fisher
+    - Sabine Hartvelt
+    - Giel Hendriks
+    - Andy Nong
+    journal: Toxicology
+    year: 2023
+synonyms:
+- ReproTracker cardiomyocyte differentiation assay
+- ReproTracker cardiac arm
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Identifying teratogenic potential of pharmaceuticals and chemicals in a
+    human cell system, without animals. In the source study both thalidomide
+    and carbamazepine were detected by this arm.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Supplying the in vitro point of departure for a quantitative risk
+    assessment. The arm's lowest observed effect concentrations, 0.4 micromolar
+    for thalidomide and 7.8 micromolar for carbamazepine, are the input to the
+    reverse dosimetry in pregnancy-whole-body-pbpk-human.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Detecting a human teratogen that animal models miss. The source study's
+    framing for thalidomide: "Thalidomide is a strong human teratogenic agent
+    where its developmental toxicity cannot be detected in mouse models or in
+    murine-based in vitro assays."
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+limitations:
+- description: >-
+    The readout identifies no mechanism. It records that cardiomyocyte
+    identity was not acquired, not what was perturbed upstream or why. The
+    source publication asserts no pathway for either compound; for
+    thalidomide, whose teratogenicity has a documented molecular mechanism,
+    that mechanism has to come from elsewhere.
+- description: >-
+    The classification is one-directional, so an increase is invisible to it.
+    Classification is by "a significant reduction in the selected biomarker
+    expression"; the source study separately observed a dose-dependent
+    increase in a marker in the neural arm, which the rule does not act on.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    A compound that disrupts the cells without moving the two marker genes is
+    scored negative by design: "a compound affecting only
+    morphology/functionality of the differentiated cells without having any
+    effect on the selected biomarker genes, was a non-developmental toxicant
+    in ReproTracker". Morphology and beating are also scored subjectively.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    The assay covers one developmental window. "The ReproTracker assay focuses
+    on the gastrulation phase", so an effect whose window of susceptibility
+    falls later is outside what it can see, and the source study notes the
+    in vitro format cannot be run over the durations in vivo studies cover.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Exposure is nominal, not free, concentration. The source study records
+    that binding to plastics and serum proteins was not accounted for: "This
+    aspect was not taken into consideration in this analysis."
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Two compounds, chosen because they were already well characterised. The
+    source study is a pilot for the extrapolation method, not a validation of
+    the assay's accuracy across a chemical space.
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  accessed_on: '2026-11-13'
+compared_with:
+- nam: hepatocyte-differentiation-pluripotent-stem-cell-human
+  reference: doi:10.1016/j.tox.2023.153684
+- nam: neural-rosette-differentiation-pluripotent-stem-cell-human
+  reference: doi:10.1016/j.tox.2023.153684
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 1e2cc6eb42776ad811485bd728f3db3b7d989578
+  assessed_on: '2026-11-13'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-13'

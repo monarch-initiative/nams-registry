@@ -1,0 +1,153 @@
+model:
+  id: hepatocyte-differentiation-pluripotent-stem-cell-human
+  type: TwoDCellCulture
+  name: ReproTracker hepatocyte differentiation biomarker assay
+  description: >-
+    The hepatic arm of ReproTracker, a commercial human iPSC biomarker assay
+    for teratogenic potential (Toxys). Human induced pluripotent stem cells
+    are differentiated towards hepatocytes over an adherent protocol running
+    to at least day 17, the longest of the three arms, with the test compound
+    present from day 0 and renewed at each medium change, and the
+    differentiation is tracked by quantitative expression of the endodermal
+    biomarker FOXA2 and the hepatocyte-specific biomarker AFP. A
+    concentration-dependent fall in biomarker expression below the control
+    threshold, at non-cytotoxic concentrations, classifies the compound as a
+    teratogen. The companion records
+    cardiomyocyte-differentiation-pluripotent-stem-cell-human and
+    neural-rosette-differentiation-pluripotent-stem-cell-human run the same
+    cells and the same classification rule towards the other two germ layers;
+    the three are read together, and a compound is called a teratogen if any
+    one of them drops. Both compounds tested in the source study were detected
+    by this arm, in both cases at a higher concentration than the cardiac arm
+    needed. Recorded in the registry from the primary paper, Moreau et al.
+    2023 (doi:10.1016/j.tox.2023.153684), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    An adherent culture in a multi-well plate, differentiating from
+    pluripotency towards a single lineage. The measured quantity is the
+    population's transcript level for two marker genes, so the readout is
+    cell-identity acquisition rather than liver architecture. There is no
+    lobular organisation, no bile canaliculi, no sinusoidal or non-parenchymal
+    cell type, and the fetal marker AFP rather than a mature hepatic function
+    is what is read.
+  complexity_level: LOW
+  cell_types:
+  - id: CL:0002248
+    name: pluripotent stem cell
+  - id: CL:0000182
+    name: hepatocyte
+  cell_source: >-
+    Human induced pluripotent stem cells, differentiated towards hepatocytes
+    through an early endoderm intermediate.
+  substrate_type: multi-well tissue culture plate
+  culture_conditions: >-
+    Compound added on day 0 in differentiation medium at 0.1% v/v final DMSO,
+    at five concentrations, and renewed at each of five medium changes (days
+    3, 7, 10, 14 and 17). The top concentration comes from a prior AlamarBlue
+    dose-finding in undifferentiated hiPSCs: "The lowest concentration that
+    induced cytotoxicity (max 20-40%) in the dose finding was applied as the
+    top concentration for the differentiation experiment."
+  references:
+  - id: doi:10.1016/j.tox.2023.153684
+    title: 'Animal-free assessment of developmental toxicity: Combining PBPK modeling
+      with the ReproTracker assay'
+    authors:
+    - Marjory Moreau
+    - Amer Jamalpoor
+    - John Carter Hall
+    - Jeffrey Fisher
+    - Sabine Hartvelt
+    - Giel Hendriks
+    - Andy Nong
+    journal: Toxicology
+    year: 2023
+synonyms:
+- ReproTracker hepatocyte differentiation assay
+- ReproTracker hepatic arm
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Identifying teratogenic potential of pharmaceuticals and chemicals in a
+    human cell system, without animals. In the source study thalidomide
+    "resulted in disruption of endoderm to hepatocyte differentiation,
+    indicated by the reduced expression of the hepatocyte-specific marker AFP,
+    and a disruption of the hepatocyte morphology starting at 2" micromolar.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Covering the endodermal germ layer in a three-arm panel, so that a
+    compound sparing one lineage is still detected by another. Carbamazepine
+    moved both endodermal and hepatic markers in this arm.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+limitations:
+- description: >-
+    The readout identifies no mechanism. It records that hepatocyte identity
+    was not acquired, not what was perturbed upstream or why. The source
+    publication asserts no pathway for either compound.
+- description: >-
+    The classification is one-directional, so an increase is invisible to it.
+    Classification is by "a significant reduction in the selected biomarker
+    expression"; the source study separately observed a dose-dependent
+    increase in a marker in the neural arm, which the rule does not act on.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    A compound that disrupts the cells without moving the two marker genes is
+    scored negative by design: "a compound affecting only
+    morphology/functionality of the differentiated cells without having any
+    effect on the selected biomarker genes, was a non-developmental toxicant
+    in ReproTracker". Morphology is also scored subjectively.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    A developmental, not an adult, liver readout. The endpoint is acquisition
+    of a fetal hepatocyte marker during differentiation, so this arm says
+    nothing about hepatotoxicity in a formed liver and should not be read as a
+    DILI assay.
+- description: >-
+    The assay covers one developmental window. "The ReproTracker assay focuses
+    on the gastrulation phase", so an effect whose window of susceptibility
+    falls later is outside what it can see, and the source study notes the
+    in vitro format cannot be run over the durations in vivo studies cover.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Exposure is nominal, not free, concentration. The source study records
+    that binding to plastics and serum proteins was not accounted for: "This
+    aspect was not taken into consideration in this analysis."
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  accessed_on: '2026-11-13'
+compared_with:
+- nam: cardiomyocyte-differentiation-pluripotent-stem-cell-human
+  reference: doi:10.1016/j.tox.2023.153684
+- nam: neural-rosette-differentiation-pluripotent-stem-cell-human
+  reference: doi:10.1016/j.tox.2023.153684
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 1e2cc6eb42776ad811485bd728f3db3b7d989578
+  assessed_on: '2026-11-13'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-13'

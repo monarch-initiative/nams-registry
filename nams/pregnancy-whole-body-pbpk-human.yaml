@@ -1,0 +1,219 @@
+model:
+  id: pregnancy-whole-body-pbpk-human
+  # UTERUS has no value in NAMO's PBPKCompartmentEnum, and the uterus
+  # compartment is what makes this model a pregnancy model: it is where the
+  # blastocyst sits at the stage the coupled assay covers. That compartment,
+  # and the lumped "rest of the body" compartment, are therefore named but
+  # left untyped rather than forced onto a wrong value. Raised upstream as a
+  # NAMO issue; see the PR that added this record.
+  type: PBPKModel
+  name: Pregnancy whole-body PBPK model for in vitro to in vivo extrapolation of
+    developmental toxicity
+  description: >-
+    A human whole-body physiologically based pharmacokinetic model written for
+    the early-pregnancy window, used to turn an in vitro developmental
+    toxicity effect concentration into a human equivalent dose. It carries
+    blood plus five tissue compartments, including a uterus compartment and no
+    placenta or fetus, because at the stage it represents the placenta has not
+    formed. The model was first built and calibrated in non-pregnant adults
+    for each compound, then re-parameterised with pregnancy physiology; IVIVE
+    is run at five weeks of pregnancy by reverse dosimetry from the effect
+    concentrations measured in the coupled ReproTracker records
+    cardiomyocyte-differentiation-pluripotent-stem-cell-human,
+    hepatocyte-differentiation-pluripotent-stem-cell-human and
+    neural-rosette-differentiation-pluripotent-stem-cell-human. It is the
+    dosimetry half of that pairing, not a second assay: it asserts nothing
+    about developmental biology and measures no biological response. The
+    structure is generic and the source study proposes reusing it for other
+    chemicals; it was exercised on thalidomide and carbamazepine, each with
+    its own parameter set. Recorded in the registry from the primary paper,
+    Moreau et al. 2023 (doi:10.1016/j.tox.2023.153684), in the Toxicology
+    special issue "New approach methodologies: from conceptual development to
+    regulatory application".
+  biological_organization_level: SYSTEM
+  spatial_context: >-
+    Whole-body maternal physiology represented as well-mixed, flow-limited
+    compartments linked by blood flow. There is no spatial structure within a
+    compartment, no maternal-fetal transport, and no fetus: "Our PBPK model
+    captures compound distribution in the pregnant woman without consideration
+    of the fetus."
+  complexity_level: MODERATE
+  computational_method: >-
+    Flow-limited compartmental ordinary differential equations with a
+    three-compartment oral absorption model, hepatic and blood metabolism, and
+    tissue:blood partition coefficients predicted by the Rodgers and Rowland
+    algorithm. Population variability by Monte Carlo simulation; parameter
+    influence by local sensitivity analysis and by Morris and eFAST global
+    sensitivity analysis.
+  software_platform: Berkeley Madonna version 10.5.1; RVis for global sensitivity
+    analysis; PK-SIM for partition coefficient prediction
+  prediction_scope: >-
+    Predicts plasma and uterus concentration-time profiles for an oral or
+    intravenous dose in early pregnancy, and the human equivalent dose
+    corresponding to a given in vitro concentration. It does not predict
+    whether a compound is a developmental toxicant; that call comes from the
+    coupled in vitro assay.
+  validation_datasets:
+  - Human toxicokinetic studies of thalidomide in healthy volunteers, used for
+    calibration and validation of the non-pregnant model
+  - Human toxicokinetic studies of carbamazepine in healthy subjects, used for
+    calibration and validation of the non-pregnant model
+  - Plasma concentrations in nine pregnant epileptic patients on carbamazepine
+    monotherapy at eight weeks of pregnancy, the only pregnancy data used
+  species_modeled:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+  compartments:
+  - id: pregnancy-whole-body-pbpk-human.blood
+    name: blood
+    compartment_type: BLOOD
+  - id: pregnancy-whole-body-pbpk-human.gi-tract
+    name: gastrointestinal tract
+    compartment_type: GI_TRACT
+  - id: pregnancy-whole-body-pbpk-human.liver
+    name: liver
+    compartment_type: LIVER
+  - id: pregnancy-whole-body-pbpk-human.fat
+    name: fat
+    compartment_type: FAT
+  - id: pregnancy-whole-body-pbpk-human.uterus
+    name: uterus
+    description: >-
+      The compartment that makes this a pregnancy model, holding the embedded
+      blastocyst at the stage the coupled assay covers. Left untyped because
+      NAMO's PBPKCompartmentEnum has no uterus value.
+  - id: pregnancy-whole-body-pbpk-human.rest-of-body
+    name: rest of the body
+    description: >-
+      The lumped remainder compartment. Left untyped because NAMO's
+      PBPKCompartmentEnum has no value for a lumped remainder.
+  elimination_pathways:
+  - Non-enzymatic hydrolysis in plasma, the primary route for thalidomide
+  - Hepatic cytochrome P450 metabolism, the primary route for carbamazepine,
+    modelled with increased clearance to represent its autoinduction
+  references:
+  - id: doi:10.1016/j.tox.2023.153684
+    title: 'Animal-free assessment of developmental toxicity: Combining PBPK modeling
+      with the ReproTracker assay'
+    authors:
+    - Marjory Moreau
+    - Amer Jamalpoor
+    - John Carter Hall
+    - Jeffrey Fisher
+    - Sabine Hartvelt
+    - Giel Hendriks
+    - Andy Nong
+    journal: Toxicology
+    year: 2023
+synonyms:
+- pregnancy PBPK model for developmental toxicity IVIVE
+- five-week pregnancy PBPK model
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Converting an in vitro developmental toxicity effect concentration into a
+    human equivalent dose by reverse dosimetry, which is what lets an in vitro
+    teratogenicity call be compared with a clinical dose at all.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Checking an in vitro method against established in vivo values. The human
+    equivalent doses derived from the coupled assay for thalidomide, 6 to 49
+    mg/day, sit close to the reported teratogenic clinical dose of 50 mg/day
+    and to the 28 to 64 mg/day derived from rat and rabbit developmental
+    toxicity studies, which is the evidence the source study offers that the
+    in vitro route is protective.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Deriving a margin of safety from internal rather than external exposure,
+    by running the model at both the in vitro-derived dose and the therapeutic
+    dose. For both compounds the result was that "developmental effects will
+    occur at doses lower than the therapeutic dose".
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+limitations:
+- description: >-
+    It is not a model of a biological mechanism and carries no biological
+    response. It relates an administered dose to a concentration, so on its
+    own it identifies no hazard and predicts no effect; the hazard call comes
+    entirely from the coupled in vitro assay.
+- description: >-
+    No fetus and no placenta. "Our PBPK model captures compound distribution
+    in the pregnant woman without consideration of the fetus." This is
+    appropriate for the gastrulation window the coupled assay covers, and
+    means the model cannot be used for a later window: the source study states
+    that any endpoint targeting a different window would need a different
+    model with maternal-fetal transport.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Pregnancy-specific metabolism is not represented. Drug-specific parameters
+    from adult males were reused: "This was not considered explicitly in our
+    modeling approach and key drug specific model parameters used for adult
+    males were used to run simulations and predict limited pharmacokinetic
+    data in pregnant women."
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    The pregnancy model is validated at a different stage from the one it is
+    used at, and for only one of the two compounds. IVIVE is run at five
+    weeks; the only pregnancy pharmacokinetic data available were at eight
+    weeks and for carbamazepine, so the five-week configuration used for
+    extrapolation is not directly checked against observations.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    One of the two parameterisations rests on a fitted rather than a measured
+    clearance: for thalidomide, published in vivo and in vitro clearance
+    values did not reproduce the calibration data, so "the clearance value for
+    thalidomide was fitted to the in vivo pharmacokinetic data during the
+    calibration phase".
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    The animal comparison it is checked against is itself approximate.
+    "Allometric scaling based on body weight was used to extrapolate rats and
+    rabbits LOAELs" rather than animal PBPK models, which the source study
+    acknowledges is the weaker option taken for a proof of concept.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+- description: >-
+    Agreement was judged visually and within a factor of two. "Predictions of
+    maximal concentration (Cmax) that were within a factor of two of the
+    experimental data were considered adequate", against mean rather than
+    individual observed profiles.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153684
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153684
+  accessed_on: '2026-11-13'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 1e2cc6eb42776ad811485bd728f3db3b7d989578
+  assessed_on: '2026-11-13'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-13'

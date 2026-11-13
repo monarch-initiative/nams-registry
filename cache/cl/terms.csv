@@ -27,6 +27,8 @@ CL:0000681,radial glial cell,2026-11-11T13:24:57.092695
 CL:0000682,M cell of gut,2026-11-11T13:24:57.186852
 CL:0000700,dopaminergic neuron,2026-11-11T13:24:58.621971
 CL:0000706,choroid plexus epithelial cell,2026-11-11T13:24:57.102159
+CL:0000710,neurecto-epithelial cell,2026-11-13T12:34:07.521332
+CL:0000746,cardiac muscle cell,2026-11-13T12:34:07.422011
 CL:0001064,malignant cell,2026-11-11T13:24:57.081745
 CL:0002062,pulmonary alveolar type 1 cell,2026-11-11T13:24:57.049496
 CL:0002063,pulmonary alveolar type 2 cell,2026-11-11T13:24:57.047990
@@ -34,6 +36,7 @@ CL:0002079,pancreatic ductal cell,2026-11-11T13:24:58.637526
 CL:0002183,stem cell of gastric gland,2026-11-11T13:24:57.153449
 CL:0002195,hepatic stem cell,2026-11-11T13:24:58.587460
 CL:0002204,tuft cell,2026-11-11T13:24:57.185816
+CL:0002248,pluripotent stem cell,2026-11-13T12:34:07.419298
 CL:0002250,intestinal crypt stem cell,2026-11-11T13:24:57.170686
 CL:0002306,epithelial cell of proximal tubule,2026-11-11T13:24:57.214523
 CL:0002324,basal-myoepithelial cell of mammary gland,2026-11-11T13:24:58.611279
