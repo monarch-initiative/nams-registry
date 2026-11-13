@@ -81,7 +81,8 @@ Animal models fit the registry's schema already: a record's `model` is a
 NAMO `ModelSystem`, and NAMO's `AnimalModel` is one. Clinical,
 epidemiological and bioanalytical methods have no NAMO class yet, so their
 records are `deferred` until a `schema-change` issue settles how to hold
-them.
+them. A deferred record is still written and saved (see
+[Deferred records](#deferred-records)), so nothing found is lost.
 
 (Decided 2026-11-13.)
 
@@ -123,7 +124,16 @@ A paper not in the review log has not been looked at.
 |---|---|
 | `added` | The paper's NAMs are now records in `nams/` |
 | `duplicate` | The paper's NAM was already a record; its id goes in `nam_ids` |
-| `deferred` | Not added yet, e.g. it needs a term or a schema change; say why in `note` |
+| `deferred` | Written but not yet in `nams/`, e.g. it needs a term or a schema change; saved in `deferred-records/` (see below), with the reason in `note` |
+
+### Deferred records
+
+A record that can't go into `nams/` yet is saved as
+`COMPLEMENT_ARIE_DISEASE_PAPERS/deferred-records/<id>.yaml`. It follows the
+`NAMRecord` shape as far as the schema allows, and a comment at the top says
+what doesn't fit and which issue will settle it. These files are not
+validated. Once the schema can hold a record, it is checked, moved into
+`nams/`, and its row's `registry_outcome` becomes `added`.
 
 ## How a NAM record names the paper
 
