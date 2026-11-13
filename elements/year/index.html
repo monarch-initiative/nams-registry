@@ -425,17 +425,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#value-constraints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Value Constraints
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -513,7 +502,7 @@
 
 
 <h1 id="slot-year">Slot: year</h1>
-<p><em>The year of publication, e.g. '2021'.</em></p>
+<p><em>The year of publication, e.g. 2021.</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/year">nams_registry:year</a></p>
 <!-- no inheritance hierarchy -->
@@ -546,7 +535,7 @@
 <tbody>
 <tr>
 <td>Range</td>
-<td><a href="../String/">String</a></td>
+<td><a href="../Integer/">Integer</a></td>
 </tr>
 <tr>
 <td>Domain Of</td>
@@ -569,21 +558,6 @@
 <tr>
 <td>Owner</td>
 <td><a href="../Publication/">Publication</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="value-constraints">Value Constraints</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Regex Pattern</td>
-<td><code>^\d{4}$</code></td>
 </tr>
 </tbody>
 </table>
@@ -614,14 +588,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">year</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The year of publication, e.g. '2021'.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The year of publication, e.g. 2021.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span>
 <span class="nt">domain_of</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publication</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^\d{4}$</span>
+<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 </code></pre></div>
 </details>
 </div>
