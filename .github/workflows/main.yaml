@@ -14,6 +14,30 @@ env:
 permissions: {}
 
 jobs:
+  pre-commit:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # https://github.com/actions/checkout
+    - name: Check out repository
+      uses: actions/checkout@v7.0.1
+      with:
+        persist-credentials: false
+
+    # https://github.com/astral-sh/setup-uv
+    - name: Install uv
+      uses: astral-sh/setup-uv@v10.3.3
+      with:
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+
+    # pre-commit's version is pinned in uv.lock (the lint group), and each
+    # hook's in .pre-commit-config.yaml.
+    - name: Run the pre-commit hooks on every file
+      run: uv run --only-group lint pre-commit run --all-files --show-diff-on-failure
+
   test:
 
     runs-on: ubuntu-latest
