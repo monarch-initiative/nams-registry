@@ -20,6 +20,8 @@ prefixes:
   schema: http://schema.org/
   dcterms: http://purl.org/dc/terms/
   pav: http://purl.org/pav/
+  namo: https://w3id.org/monarch-initiative/namo/
+  doi: https://doi.org/
 default_prefix: nams_registry
 default_range: string
 
@@ -86,16 +88,23 @@ classes:
 
   Publication:
     description: >-
-      A publication. The same structure as a KG-Registry Publication.
+      A publication. It has the same fields as NAMO's Reference, which NAM
+      records use for model.references, so resources and NAM records cite
+      papers the same way. Keep the two in step. NAMO isn't imported here
+      because importing it would bring all of NAMO's classes into this
+      schema.
+    exact_mappings:
+    - namo:Reference
     attributes:
       id:
         identifier: true
         range: uriorcurie
         required: true
         description: >-
-          A CURIE for the publication, such as a DOI with its prefix
-          (doi:10.1038/s41597-021-00962-3) or a PMID.
+          The publication as a CURIE, e.g. doi:10.1093/nar/gkw928, or its URL
+          when it has no DOI or PMID.
       title:
+        required: true
         description: The title of the publication.
       authors:
         multivalued: true
@@ -103,14 +112,11 @@ classes:
       journal:
         description: The journal the publication appeared in.
       year:
-        pattern: "^\\d{4}$"
-        description: The year of publication, e.g. '2021'.
-      doi:
-        description: The DOI, without a prefix.
-      preferred:
-        range: boolean
-        description: >-
-          Whether this is the publication to cite for the resource.
+        range: integer
+        description: The year of publication, e.g. 2021.
+      url:
+        range: uri
+        description: A URL to read the publication at, when the id is not one.
 
   SupportingScript:
     description: >-

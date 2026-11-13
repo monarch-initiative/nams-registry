@@ -87,8 +87,12 @@ linkml_meta = LinkMLMeta({'default_prefix': 'nams_registry',
      'name': 'nams-registry',
      'prefixes': {'dcterms': {'prefix_prefix': 'dcterms',
                               'prefix_reference': 'http://purl.org/dc/terms/'},
+                  'doi': {'prefix_prefix': 'doi',
+                          'prefix_reference': 'https://doi.org/'},
                   'linkml': {'prefix_prefix': 'linkml',
                              'prefix_reference': 'https://w3id.org/linkml/'},
+                  'namo': {'prefix_prefix': 'namo',
+                           'prefix_reference': 'https://w3id.org/monarch-initiative/namo/'},
                   'nams_registry': {'prefix_prefix': 'nams_registry',
                                     'prefix_reference': 'https://w3id.org/monarch-initiative/nams-registry/'},
                   'pav': {'prefix_prefix': 'pav',
@@ -454,30 +458,17 @@ class LicenseInfo(ConfiguredBaseModel):
 
 class Publication(ConfiguredBaseModel):
     """
-    A publication. The same structure as a KG-Registry Publication.
+    A publication. It has the same fields as NAMO's Reference, which NAM records use for model.references, so resources and NAM records cite papers the same way. Keep the two in step. NAMO isn't imported here because importing it would bring all of NAMO's classes into this schema.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'exact_mappings': ['namo:Reference'],
+         'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
 
-    id: str = Field(default=..., description="""A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3) or a PMID.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication']} })
-    title: Optional[str] = Field(default=None, description="""The title of the publication.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
+    id: str = Field(default=..., description="""The publication as a CURIE, e.g. doi:10.1093/nar/gkw928, or its URL when it has no DOI or PMID.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication']} })
+    title: str = Field(default=..., description="""The title of the publication.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
     authors: Optional[list[str]] = Field(default=None, description="""The authors, e.g. Mortensen HM.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
     journal: Optional[str] = Field(default=None, description="""The journal the publication appeared in.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
-    year: Optional[str] = Field(default=None, description="""The year of publication, e.g. '2021'.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
-    doi: Optional[str] = Field(default=None, description="""The DOI, without a prefix.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
-    preferred: Optional[bool] = Field(default=None, description="""Whether this is the publication to cite for the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
-
-    @field_validator('year')
-    def pattern_year(cls, v):
-        pattern=re.compile(r"^\d{4}$")
-        if isinstance(v, list):
-            for element in v:
-                if isinstance(element, str) and not pattern.search(element):
-                    err_msg = f"Invalid year format: {element}"
-                    raise ValueError(err_msg)
-        elif isinstance(v, str) and not pattern.search(v):
-            err_msg = f"Invalid year format: {v}"
-            raise ValueError(err_msg)
-        return v
+    year: Optional[int] = Field(default=None, description="""The year of publication, e.g. 2021.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
+    url: Optional[str] = Field(default=None, description="""A URL to read the publication at, when the id is not one.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
 
 
 class SupportingScript(ConfiguredBaseModel):

@@ -24,7 +24,7 @@ license:
   id: https://creativecommons.org/publicdomain/zero/1.0/
   label: CC0 1.0 Universal
 publications:
-- id: https://doi.org/10.1289/ehp.1510267
+- id: doi:10.1289/ehp.1510267
   title: 'CERAPP: Collaborative Estrogen Receptor Activity Prediction Project'
   authors:
   - Kamel Mansouri
@@ -69,8 +69,6 @@ publications:
   - Xin Hu
   - Richard S. Judson
   journal: Environmental Health Perspectives
-  year: '2016'
-  doi: 10.1289/ehp.1510267
-  preferred: true
+  year: 2016
 creation_date: '2026-11-07'
-last_modified_date: '2026-11-07'
+last_modified_date: '2026-11-12'

@@ -21,7 +21,7 @@ license:
   id: https://creativecommons.org/publicdomain/zero/1.0/
   label: CC0
 publications:
-- id: https://doi.org/10.1016/j.comtox.2025.100365
+- id: doi:10.1016/j.comtox.2025.100365
   title: 'Development of the toxicity values database, ToxValDB: A curated resource
     for experimental and derived human health-relevant toxicity data'
   authors:
@@ -44,11 +44,9 @@ publications:
   - Richard S. Judson
   - Chelsea A. Weitekamp
   journal: Computational Toxicology
-  year: '2025'
-  doi: 10.1016/j.comtox.2025.100365
-  preferred: true
+  year: 2025
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: toxvaldb

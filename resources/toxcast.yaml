@@ -67,11 +67,9 @@ publications:
   - Judson RS
   - Paul Friedman K
   journal: Frontiers in Toxicology
-  year: '2023'
-  doi: 10.3389/ftox.2023.1275980
-  preferred: true
+  year: 2023
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-10'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: toxcast

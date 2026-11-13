@@ -16,7 +16,7 @@ license:
   id: https://creativecommons.org/licenses/by/4.0/
   label: CC BY 4.0
 publications:
-- id: https://doi.org/10.1093/database/baae121
+- id: doi:10.1093/database/baae121
   title: 'The TOXIN knowledge graph: supporting animal-free risk assessment of cosmetics'
   authors:
   - Sara Sepehri
@@ -31,11 +31,9 @@ publications:
   - Olga De Troyer
   - Tamara Vanhaecke
   journal: Database
-  year: '2025'
-  doi: 10.1093/database/baae121
-  preferred: true
+  year: 2025
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: toxin

@@ -40,8 +40,7 @@ publications:
   - Tong Ying Shun
   - D Lansing Taylor
   journal: Applied In Vitro Toxicology
-  year: '2016'
-  doi: 10.1089/aivt.2016.0011
+  year: 2016
 - id: doi:10.1039/c9lc01047e
   title: Applications of the microphysiology systems database for experimental ADME-Tox
     and disease models
@@ -55,11 +54,9 @@ publications:
   - D Lansing Taylor
   - Albert Gough
   journal: Lab on a Chip
-  year: '2020'
-  doi: 10.1039/c9lc01047e
-  preferred: true
+  year: 2020
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: mps-db

@@ -31,7 +31,7 @@ license:
   label: Open access for the open-access healthy volunteer cohort; managed access
     through EGA for other data (no single license stated)
 publications:
-- id: https://doi.org/10.1093/nar/gkw928
+- id: doi:10.1093/nar/gkw928
   title: The human-induced pluripotent stem cell initiative-data resources for cellular
     genetics
   authors:
@@ -43,10 +43,8 @@ publications:
   - Helen Parkinson
   - Laura Clarke
   journal: Nucleic Acids Research
-  year: '2017'
-  doi: 10.1093/nar/gkw928
-  preferred: true
-- id: https://doi.org/10.1038/nature22403
+  year: 2017
+- id: doi:10.1038/nature22403
   title: Common genetic variation drives molecular heterogeneity in human iPSCs
   authors:
   - Helena Kilpinen
@@ -93,10 +91,9 @@ publications:
   - Oliver Stegle
   - Daniel J. Gaffney
   journal: Nature
-  year: '2017'
-  doi: 10.1038/nature22403
+  year: 2017
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: hipsci

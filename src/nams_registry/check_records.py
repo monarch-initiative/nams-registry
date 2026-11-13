@@ -128,14 +128,8 @@ class Citation:
     title: str | None
 
 
-def reference_id(value: str, doi: str | None = None) -> str:
-    """The id the reference validator can look up, for an id as written in a record.
-
-    Resources imported from KG-Registry give a publication's id as a URL and
-    its DOI separately; the DOI is the reference.
-    """
-    if doi:
-        return f"doi:{doi}"
+def reference_id(value: str) -> str:
+    """The id the reference validator can look up, for an id as written in a record."""
     if m := DOI_URL.match(value):
         return f"doi:{m.group(1)}"
     if m := PUBMED_URL.match(value):
@@ -164,7 +158,7 @@ def citations(path: Path) -> Iterator[Citation]:
     for i, pub in enumerate(record.get("publications") or []):
         yield Citation(
             f"publications[{i}]",
-            reference_id(pub["id"], pub.get("doi")),
+            reference_id(pub["id"]),
             pub.get("title"),
         )
 

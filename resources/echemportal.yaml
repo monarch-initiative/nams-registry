@@ -26,16 +26,14 @@ license:
   label: eChemPortal Disclaimer (data remain subject to the terms of each participating
     source)
 publications:
-- id: https://doi.org/10.1016/B978-0-12-824315-2.01159-3
+- id: doi:10.1016/B978-0-12-824315-2.01159-3
   title: eChemPortal - The Global Portal to Information on Chemical Substances
   authors:
   - Sally de Marcellus
   journal: Encyclopedia of Toxicology
-  year: '2024'
-  doi: 10.1016/B978-0-12-824315-2.01159-3
-  preferred: true
+  year: 2024
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: echemportal

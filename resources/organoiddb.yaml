@@ -27,7 +27,7 @@ license:
   label: Copyright Intelligent Bioinformatics Research Group, Chongqing Medical University
     (all rights reserved)
 publications:
-- id: https://pubmed.ncbi.nlm.nih.gov/36271792/
+- id: doi:10.1093/nar/gkac942
   title: 'OrganoidDB: a comprehensive organoid database for the multi-perspective
     exploration of bulk and single-cell transcriptomic profiles of organoids'
   authors:
@@ -40,11 +40,9 @@ publications:
   - Ni Kuang
   - Jianbo Pan
   journal: Nucleic Acids Res
-  year: '2023'
-  doi: 10.1093/nar/gkac942
-  preferred: true
+  year: 2023
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: organoiddb

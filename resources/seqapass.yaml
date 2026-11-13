@@ -24,7 +24,7 @@ activity_status: active
 license:
   label: U.S. Government Work (public domain)
 publications:
-- id: https://doi.org/10.1093/toxsci/kfw119
+- id: doi:10.1093/toxsci/kfw119
   title: 'Editor''s Highlight: Sequence Alignment to Predict Across Species Susceptibility
     (SeqAPASS): A Web-Based Tool for Addressing the Challenges of Cross-Species Extrapolation
     of Chemical Toxicity'
@@ -38,10 +38,8 @@ publications:
   - Travis W. Saari
   - Gerald T. Ankley
   journal: Toxicological Sciences
-  year: '2016'
-  doi: 10.1093/toxsci/kfw119
-  preferred: true
-- id: https://doi.org/10.1093/toxsci/kfy186
+  year: 2016
+- id: doi:10.1093/toxsci/kfy186
   title: In Silico Site-Directed Mutagenesis Informs Species-Specific Predictions
     of Chemical Susceptibility Derived From the Sequence Alignment to Predict Across
     Species Susceptibility (SeqAPASS) Tool
@@ -54,10 +52,9 @@ publications:
   - Ingebrigt Sylte
   - Carlie A. LaLone
   journal: Toxicological Sciences
-  year: '2018'
-  doi: 10.1093/toxsci/kfy186
+  year: 2018
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: seqapass

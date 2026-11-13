@@ -69,6 +69,22 @@ RESOURCE_IDS = {Path(p).stem for p in RESOURCE_FILES}
 MODEL_CLASSES = set(SchemaView(str(NAM_SCHEMA_PATH)).class_descendants("ModelSystem"))
 
 
+def test_publication_matches_namo_reference():
+    """Test that a resource's Publication has the same fields as NAMO's
+    Reference, which NAM records cite papers with, so the two stay in step."""
+
+    def fields(schema_path, class_name):
+        view = SchemaView(str(schema_path))
+        return {
+            s.name: (s.range, bool(s.required), bool(s.multivalued), bool(s.identifier))
+            for s in view.class_induced_slots(class_name)
+        }
+
+    assert fields(MAIN_SCHEMA_PATH, "Publication") == fields(
+        NAM_SCHEMA_PATH, "Reference"
+    )
+
+
 @pytest.mark.parametrize("filepath", NAM_FILES, ids=lambda p: Path(p).stem)
 def test_nam_file_is_valid(filepath):
     """Test that every NAM file validates as a NAMRecord.

@@ -22,7 +22,7 @@ domain_areas:
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/53
 activity_status: active
 publications:
-- id: https://doi.org/10.1289/EHP8495
+- id: doi:10.1289/EHP8495
   title: 'CATMoS: Collaborative Acute Toxicity Modeling Suite'
   authors:
   - Kamel Mansouri
@@ -128,10 +128,8 @@ publications:
   - Warren Casey
   - Nicole C. Kleinstreuer
   journal: Environmental Health Perspectives
-  year: '2021'
-  doi: 10.1289/EHP8495
-  preferred: true
-- id: https://doi.org/10.1016/j.comtox.2018.08.002
+  year: 2021
+- id: doi:10.1016/j.comtox.2018.08.002
   title: 'Predictive models for acute oral systemic toxicity: A workshop to bridge the gap
     from research to regulation'
   authors:
@@ -142,7 +140,6 @@ publications:
   - Jeremy M. Fitzpatrick
   - Grace Patlewicz
   journal: Computational Toxicology
-  year: '2018'
-  doi: 10.1016/j.comtox.2018.08.002
+  year: 2018
 creation_date: '2026-11-07'
-last_modified_date: '2026-11-07'
+last_modified_date: '2026-11-12'

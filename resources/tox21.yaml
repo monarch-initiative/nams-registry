@@ -25,7 +25,7 @@ license:
   id: https://www.usa.gov/government-works
   label: U.S. Government Work (public domain)
 publications:
-- id: https://www.ncbi.nlm.nih.gov/pubmed/23603828
+- id: doi:10.1289/ehp.1205784
   title: 'Improving the Human Hazard Characterization of Chemicals: A Tox21 Update'
   authors:
   - Tice RR
@@ -33,11 +33,9 @@ publications:
   - Kavlock RJ
   - Bucher JR
   journal: Environ Health Perspect
-  year: '2013'
-  doi: 10.1289/ehp.1205784
-  preferred: true
+  year: 2013
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: tox21

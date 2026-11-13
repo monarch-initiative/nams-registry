@@ -1,0 +1,7 @@
+# Invalid: a publication needs a title, as NAMO's Reference does.
+---
+id: toxcast
+name: ToxCast
+publications:
+- id: doi:10.1093/toxsci/kfw119
+  year: 2016

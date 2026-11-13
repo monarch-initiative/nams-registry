@@ -40,9 +40,7 @@ publications:
   - Chris T. Evelo
   - Egon L. Willighagen
   journal: Applied In Vitro Toxicology
-  year: '2022'
-  doi: 10.1089/aivt.2021.0010
-  preferred: true
+  year: 2022
 - id: doi:10.5281/zenodo.13353286
   title: Adverse Outcome Pathway Wiki RDF
   authors:
@@ -50,10 +48,9 @@ publications:
   - Egon Willighagen
   - Chris Evelo
   journal: Zenodo
-  year: '2026'
-  doi: 10.5281/zenodo.13353286
+  year: 2026
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: aopwiki-rdf

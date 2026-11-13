@@ -23,7 +23,7 @@ license:
   id: https://github.com/Open-Systems-Pharmacology/Suite/blob/master/LICENSE
   label: GPL-2.0 with clarifying addendum
 publications:
-- id: https://doi.org/10.1002/psp4.12473
+- id: doi:10.1002/psp4.12473
   title: Open Systems Pharmacology Community-An Open Access, Open Source, Open Science
     Approach to Modeling and Simulation in Pharmaceutical Sciences
   authors:
@@ -47,11 +47,9 @@ publications:
   - Alexander Staab
   - Donato Teutonico
   journal: 'CPT: Pharmacometrics & Systems Pharmacology'
-  year: '2019'
-  doi: 10.1002/psp4.12473
-  preferred: true
+  year: 2019
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: open-systems-pharmacology

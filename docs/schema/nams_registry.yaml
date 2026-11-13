@@ -35,6 +35,12 @@ prefixes:
   pav:
     prefix_prefix: pav
     prefix_reference: http://purl.org/pav/
+  namo:
+    prefix_prefix: namo
+    prefix_reference: https://w3id.org/monarch-initiative/namo/
+  doi:
+    prefix_prefix: doi
+    prefix_reference: https://doi.org/
 default_prefix: nams_registry
 default_range: string
 types:
@@ -1023,8 +1029,8 @@ slots:
     required: true
   publication__id:
     name: publication__id
-    description: A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3)
-      or a PMID.
+    description: The publication as a CURIE, e.g. doi:10.1093/nar/gkw928, or its URL
+      when it has no DOI or PMID.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:id
     identifier: true
@@ -1044,6 +1050,7 @@ slots:
     domain_of:
     - Publication
     range: string
+    required: true
   publication__authors:
     name: publication__authors
     description: The authors, e.g. Mortensen HM.
@@ -1067,35 +1074,24 @@ slots:
     range: string
   publication__year:
     name: publication__year
-    description: The year of publication, e.g. '2021'.
+    description: The year of publication, e.g. 2021.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
     slot_uri: nams_registry:year
     alias: year
     owner: Publication
     domain_of:
     - Publication
-    range: string
-    pattern: ^\d{4}$
-  publication__doi:
-    name: publication__doi
-    description: The DOI, without a prefix.
+    range: integer
+  publication__url:
+    name: publication__url
+    description: A URL to read the publication at, when the id is not one.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
-    slot_uri: nams_registry:doi
-    alias: doi
+    slot_uri: nams_registry:url
+    alias: url
     owner: Publication
     domain_of:
     - Publication
-    range: string
-  publication__preferred:
-    name: publication__preferred
-    description: Whether this is the publication to cite for the resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
-    slot_uri: nams_registry:preferred
-    alias: preferred
-    owner: Publication
-    domain_of:
-    - Publication
-    range: boolean
+    range: uri
   supportingScript__name:
     name: supportingScript__name
     description: A short label for the script, e.g. fetch_namsnetwork.py, or for a
@@ -1224,27 +1220,32 @@ classes:
   Publication:
     name: Publication
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/Publication
-    description: A publication. The same structure as a KG-Registry Publication.
+    description: A publication. It has the same fields as NAMO's Reference, which
+      NAM records use for model.references, so resources and NAM records cite papers
+      the same way. Keep the two in step. NAMO isn't imported here because importing
+      it would bring all of NAMO's classes into this schema.
     from_schema: https://w3id.org/monarch-initiative/nams-registry
+    exact_mappings:
+    - namo:Reference
     slots:
     - publication__id
     - publication__title
     - publication__authors
     - publication__journal
     - publication__year
-    - publication__doi
-    - publication__preferred
+    - publication__url
     attributes:
       id:
         name: id
-        description: A CURIE for the publication, such as a DOI with its prefix (doi:10.1038/s41597-021-00962-3)
-          or a PMID.
+        description: The publication as a CURIE, e.g. doi:10.1093/nar/gkw928, or its
+          URL when it has no DOI or PMID.
         identifier: true
         range: uriorcurie
         required: true
       title:
         name: title
         description: The title of the publication.
+        required: true
       authors:
         name: authors
         description: The authors, e.g. Mortensen HM.
@@ -1254,15 +1255,12 @@ classes:
         description: The journal the publication appeared in.
       year:
         name: year
-        description: The year of publication, e.g. '2021'.
-        pattern: ^\d{4}$
-      doi:
-        name: doi
-        description: The DOI, without a prefix.
-      preferred:
-        name: preferred
-        description: Whether this is the publication to cite for the resource.
-        range: boolean
+        description: The year of publication, e.g. 2021.
+        range: integer
+      url:
+        name: url
+        description: A URL to read the publication at, when the id is not one.
+        range: uri
     class_uri: nams_registry:Publication
   SupportingScript:
     name: SupportingScript
@@ -1314,6 +1312,6 @@ classes:
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
 source_file: nams_registry.yaml
-source_file_date: '2026-11-12T00:51:27'
-source_file_size: 22586
+source_file_date: '2026-11-12T21:25:38'
+source_file_size: 22798
 

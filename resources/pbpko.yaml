@@ -14,7 +14,7 @@ license:
   id: http://creativecommons.org/licenses/by/3.0/
   label: CC BY 3.0
 publications:
-- id: https://doi.org/10.1016/j.toxlet.2024.07.382
+- id: doi:10.1016/j.toxlet.2024.07.382
   title: P05-47 An ontology of Physiologically Based Pharmacokinetic Model (PBPK)
     for harmonization and automation of modeling framework (PBPKO)
   authors:
@@ -23,11 +23,9 @@ publications:
   - Kumar S
   - Sharma S
   journal: Toxicology Letters
-  year: '2024'
-  doi: 10.1016/j.toxlet.2024.07.382
-  preferred: true
+  year: 2024
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: pbpko

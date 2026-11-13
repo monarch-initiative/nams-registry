@@ -61,15 +61,17 @@ from rdflib import (
     URIRef
 )
 
-from linkml_runtime.linkml_model.types import Boolean, Date, String, Uri, Uriorcurie
-from linkml_runtime.utils.metamodelcore import Bool, URI, URIorCURIE, XSDDate
+from linkml_runtime.linkml_model.types import Date, Integer, String, Uri, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URI, URIorCURIE, XSDDate
 
 metamodel_version = "1.12.0"
 version = None
 
 # Namespaces
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
+DOI = CurieNamespace('doi', 'https://doi.org/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+NAMO = CurieNamespace('namo', 'https://w3id.org/monarch-initiative/namo/')
 NAMS_REGISTRY = CurieNamespace('nams_registry', 'https://w3id.org/monarch-initiative/nams-registry/')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
@@ -278,7 +280,9 @@ class LicenseInfo(YAMLRoot):
 @dataclass(repr=False)
 class Publication(YAMLRoot):
     """
-    A publication. The same structure as a KG-Registry Publication.
+    A publication. It has the same fields as NAMO's Reference, which NAM records use for model.references, so
+    resources and NAM records cite papers the same way. Keep the two in step. NAMO isn't imported here because
+    importing it would bring all of NAMO's classes into this schema.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -288,12 +292,11 @@ class Publication(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NAMS_REGISTRY.Publication
 
     id: Union[str, PublicationId] = None
-    title: Optional[str] = None
+    title: str = None
     authors: Optional[Union[str, list[str]]] = empty_list()
     journal: Optional[str] = None
-    year: Optional[str] = None
-    doi: Optional[str] = None
-    preferred: Optional[Union[bool, Bool]] = None
+    year: Optional[int] = None
+    url: Optional[Union[str, URI]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -301,7 +304,9 @@ class Publication(YAMLRoot):
         if not isinstance(self.id, PublicationId):
             self.id = PublicationId(self.id)
 
-        if self.title is not None and not isinstance(self.title, str):
+        if self._is_empty(self.title):
+            self.MissingRequiredField("title")
+        if not isinstance(self.title, str):
             self.title = str(self.title)
 
         if not isinstance(self.authors, list):
@@ -311,14 +316,11 @@ class Publication(YAMLRoot):
         if self.journal is not None and not isinstance(self.journal, str):
             self.journal = str(self.journal)
 
-        if self.year is not None and not isinstance(self.year, str):
-            self.year = str(self.year)
+        if self.year is not None and not isinstance(self.year, int):
+            self.year = int(self.year)
 
-        if self.doi is not None and not isinstance(self.doi, str):
-            self.doi = str(self.doi)
-
-        if self.preferred is not None and not isinstance(self.preferred, Bool):
-            self.preferred = Bool(self.preferred)
+        if self.url is not None and not isinstance(self.url, URI):
+            self.url = URI(self.url)
 
         super().__post_init__(**kwargs)
 
@@ -801,7 +803,7 @@ slots.publication__id = Slot(uri=NAMS_REGISTRY.id, name="publication__id", curie
                    model_uri=NAMS_REGISTRY.publication__id, domain=None, range=URIRef)
 
 slots.publication__title = Slot(uri=NAMS_REGISTRY.title, name="publication__title", curie=NAMS_REGISTRY.curie('title'),
-                   model_uri=NAMS_REGISTRY.publication__title, domain=None, range=Optional[str])
+                   model_uri=NAMS_REGISTRY.publication__title, domain=None, range=str)
 
 slots.publication__authors = Slot(uri=NAMS_REGISTRY.authors, name="publication__authors", curie=NAMS_REGISTRY.curie('authors'),
                    model_uri=NAMS_REGISTRY.publication__authors, domain=None, range=Optional[Union[str, list[str]]])
@@ -810,14 +812,10 @@ slots.publication__journal = Slot(uri=NAMS_REGISTRY.journal, name="publication__
                    model_uri=NAMS_REGISTRY.publication__journal, domain=None, range=Optional[str])
 
 slots.publication__year = Slot(uri=NAMS_REGISTRY.year, name="publication__year", curie=NAMS_REGISTRY.curie('year'),
-                   model_uri=NAMS_REGISTRY.publication__year, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\d{4}$'))
+                   model_uri=NAMS_REGISTRY.publication__year, domain=None, range=Optional[int])
 
-slots.publication__doi = Slot(uri=NAMS_REGISTRY.doi, name="publication__doi", curie=NAMS_REGISTRY.curie('doi'),
-                   model_uri=NAMS_REGISTRY.publication__doi, domain=None, range=Optional[str])
-
-slots.publication__preferred = Slot(uri=NAMS_REGISTRY.preferred, name="publication__preferred", curie=NAMS_REGISTRY.curie('preferred'),
-                   model_uri=NAMS_REGISTRY.publication__preferred, domain=None, range=Optional[Union[bool, Bool]])
+slots.publication__url = Slot(uri=NAMS_REGISTRY.url, name="publication__url", curie=NAMS_REGISTRY.curie('url'),
+                   model_uri=NAMS_REGISTRY.publication__url, domain=None, range=Optional[Union[str, URI]])
 
 slots.supportingScript__name = Slot(uri=NAMS_REGISTRY.name, name="supportingScript__name", curie=NAMS_REGISTRY.curie('name'),
                    model_uri=NAMS_REGISTRY.supportingScript__name, domain=None, range=str)

@@ -29,7 +29,7 @@ license:
   id: https://opensource.org/licenses/MIT
   label: MIT License
 publications:
-- id: https://doi.org/10.1186/s13321-018-0263-1
+- id: doi:10.1186/s13321-018-0263-1
   title: OPERA models for predicting physicochemical properties and environmental
     fate endpoints
   authors:
@@ -38,10 +38,8 @@ publications:
   - Richard S. Judson
   - Antony J. Williams
   journal: Journal of Cheminformatics
-  year: '2018'
-  doi: 10.1186/s13321-018-0263-1
-  preferred: true
-- id: https://doi.org/10.1186/s13321-024-00814-3
+  year: 2018
+- id: doi:10.1186/s13321-024-00814-3
   title: Free and open-source QSAR-ready workflow for automated standardization of
     chemical structures in support of QSAR modeling
   authors:
@@ -56,10 +54,9 @@ publications:
   - Nicole C. Kleinstreuer
   - Antony J. Williams
   journal: Journal of Cheminformatics
-  year: '2024'
-  doi: 10.1186/s13321-024-00814-3
+  year: 2024
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: opera

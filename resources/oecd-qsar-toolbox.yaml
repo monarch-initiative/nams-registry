@@ -25,7 +25,7 @@ license:
   id: https://qsartoolbox.org/license-agreement/
   label: OECD QSAR Toolbox End User Licence Agreement (free of charge)
 publications:
-- id: https://doi.org/10.1080/1062936X.2015.1136680
+- id: doi:10.1080/1062936X.2015.1136680
   title: QSAR Toolbox - workflow and major functionalities
   authors:
   - S. D. Dimitrov
@@ -44,10 +44,8 @@ publications:
   - M. Rasenberg
   - O. G. Mekenyan
   journal: SAR and QSAR in Environmental Research
-  year: '2016'
-  doi: 10.1080/1062936X.2015.1136680
-  preferred: true
-- id: https://doi.org/10.1007/978-1-4939-7899-1_2
+  year: 2016
+- id: doi:10.1007/978-1-4939-7899-1_2
   title: The OECD QSAR Toolbox Starts Its Second Decade
   authors:
   - Terry W. Schultz
@@ -55,10 +53,9 @@ publications:
   - Chanita D. Kuseva
   - Ovanes G. Mekenyan
   journal: Methods in Molecular Biology
-  year: '2018'
-  doi: 10.1007/978-1-4939-7899-1_2
+  year: 2018
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: oecd-qsar-toolbox

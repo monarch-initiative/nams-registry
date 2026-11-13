@@ -25,7 +25,7 @@ license:
   label: hPSCreg Terms of Use (German copyright law; reproduction outside copyright
     limits requires written consent)
 publications:
-- id: https://doi.org/10.1093/nar/gkv963
+- id: doi:10.1093/nar/gkv963
   title: hPSCreg--the human pluripotent stem cell registry
   authors:
   - Stefanie Seltmann
@@ -40,10 +40,8 @@ publications:
   - Glyn Stacey
   - Andreas Kurtz
   journal: Nucleic Acids Research
-  year: '2016'
-  doi: 10.1093/nar/gkv963
-  preferred: true
-- id: https://doi.org/10.1111/cpr.13238
+  year: 2016
+- id: doi:10.1111/cpr.13238
   title: 'Human pluripotent stem cell registry: Operations, role and current directions'
   authors:
   - Andreas Kurtz
@@ -54,10 +52,9 @@ publications:
   - Stefanie Seltmann
   - Sabine C. Müller
   journal: Cell Proliferation
-  year: '2022'
-  doi: 10.1111/cpr.13238
+  year: 2022
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: hpscreg

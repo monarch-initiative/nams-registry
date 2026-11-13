@@ -43,11 +43,9 @@ publications:
   - Caleb DeGroote
   - Helena T. Hogberg
   journal: figshare
-  year: '2026'
-  doi: 10.6084/m9.figshare.34809921.v1
-  preferred: true
+  year: 2026
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: camera

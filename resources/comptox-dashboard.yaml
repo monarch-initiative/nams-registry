@@ -50,7 +50,7 @@ activity_status: active
 license:
   label: U.S. Government Work (public domain)
 publications:
-- id: https://doi.org/10.1186/s13321-017-0247-6
+- id: doi:10.1186/s13321-017-0247-6
   title: 'The CompTox Chemistry Dashboard: a community data resource for environmental
     chemistry'
   authors:
@@ -66,11 +66,9 @@ publications:
   - Richard S. Judson
   - Ann M. Richard
   journal: Journal of Cheminformatics
-  year: '2017'
-  doi: 10.1186/s13321-017-0247-6
-  preferred: true
+  year: 2017
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-10'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: comptox-dashboard

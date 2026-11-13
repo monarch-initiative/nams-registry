@@ -20,7 +20,7 @@ license:
   id: https://creativecommons.org/publicdomain/zero/1.0/
   label: CC0
 publications:
-- id: https://doi.org/10.3389/ftox.2023.1260305
+- id: doi:10.3389/ftox.2023.1260305
   title: 'ToxRefDB v2.1: update to curated in vivo study data in the Toxicity Reference
     Database'
   authors:
@@ -29,10 +29,8 @@ publications:
   - Sean Watford
   - Katie Paul Friedman
   journal: Frontiers in Toxicology
-  year: '2023'
-  doi: 10.3389/ftox.2023.1260305
-  preferred: true
-- id: https://doi.org/10.1016/j.reprotox.2019.07.012
+  year: 2023
+- id: doi:10.1016/j.reprotox.2019.07.012
   title: 'ToxRefDB version 2.0: Improved utility for predictive and retrospective
     toxicology analyses'
   authors:
@@ -43,10 +41,9 @@ publications:
   - Matthew T. Martin
   - Katie Paul Friedman
   journal: Reproductive Toxicology
-  year: '2019'
-  doi: 10.1016/j.reprotox.2019.07.012
+  year: 2019
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-05'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: toxrefdb

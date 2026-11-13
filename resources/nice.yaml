@@ -82,7 +82,7 @@ activity_status: active
 license:
   label: U.S. Government Work (public domain)
 publications:
-- id: https://doi.org/10.1016/j.tiv.2020.104916
+- id: doi:10.1016/j.tiv.2020.104916
   title: An integrated chemical environment with tools for chemical safety testing
   authors:
   - Shannon Bell
@@ -103,10 +103,8 @@ publications:
   - Warren Casey
   - Nicole Kleinstreuer
   journal: Toxicology in Vitro
-  year: '2020'
-  doi: 10.1016/j.tiv.2020.104916
-  preferred: true
-- id: https://doi.org/10.3389/ftox.2022.987848
+  year: 2020
+- id: doi:10.3389/ftox.2022.987848
   title: Data curation to support toxicity assessments using the Integrated Chemical
     Environment
   authors:
@@ -122,10 +120,9 @@ publications:
   - David Allen
   - Nicole Kleinstreuer
   journal: Frontiers in Toxicology
-  year: '2022'
-  doi: 10.3389/ftox.2022.987848
+  year: 2022
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-07'
+last_modified_date: '2026-11-12'
 imported_from:
 - source: kg_registry
   source_id: nice
