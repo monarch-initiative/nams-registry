@@ -101,7 +101,7 @@ Each paper kept appears in two logs, which record different outcomes.
 | Log | Holds |
 |---|---|
 | This project's [review log](COMPLEMENT_ARIE_DISEASE_PAPERS/review-log.tsv) | Every paper picked: its screening decision, its DisMech issue, and the registry records it led to |
-| A DisMech project log, to be created | Papers with a DisMech issue: the anchors used, entries and modules changed, and gaps opened |
+| A DisMech project log, to be created | Papers with a DisMech issue: the anchors used, entries and modules changed, gaps opened, and the pull requests for each paper (in DisMech and in this registry) with their status: draft, open, merged or closed |
 
 A paper not in the review log has not been looked at.
 
