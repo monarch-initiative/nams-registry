@@ -110,6 +110,12 @@ request's status is read from GitHub rather than copied into the log.
 
 A paper not in the review log has not been looked at.
 
+For the first round of 10 papers, the working copy of the log is a shared
+[review log page](https://claude.ai/artifact/RpqCWncgKjtbL4kDph94Zr), which
+the team can update without a pull request. Its "Copy as TSV" button gives
+the rows in this file's column order, and `review-log.tsv` is brought up to
+date from it at the end of the round.
+
 ### Review log columns
 
 | Column | Contents |
