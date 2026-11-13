@@ -63,6 +63,8 @@ nav:
 - Home: index.md
 - Browse records: resources/index.html
 - Schema: elements/index.md
+- Reports:
+    - Complement-ARIE Landscape Analysis publication years: reports/complement-arie-landscape-publication-years-2026-11-13.md
 - About: about.md
 
 exclude_docs: |
