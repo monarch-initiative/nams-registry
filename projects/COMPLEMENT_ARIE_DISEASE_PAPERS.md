@@ -44,7 +44,8 @@ review log.
    run on the issue. A session then checks the report against the paper and
    curates in DisMech: model links in disease entries, changes to modules,
    and issues for mechanisms DisMech has no node for.
-5. **Add** the NAM records to `nams/`, and record the outcome in both logs.
+5. **Add** the NAM records to `nams/`, and record the outcome in the review
+   log.
 
 Steps 3 and 4 run in [DisMech](https://github.com/monarch-initiative/dismech).
 
@@ -72,7 +73,7 @@ A paper is set aside only when there is nothing to extract:
 
 Whether a paper has a DisMech anchor (a model in it attaches to a mechanism
 node in a DisMech disease entry or module) never sets it aside. A paper with
-no anchor is still processed, and the DisMech log records why no link was
+no anchor is still processed, and its DisMech issue records why no link was
 made. Screening for both repositories through one filter sets aside papers
 the registry should hold, as DisMech found for its *Toxicology* special issue
 ([dismech#16882](https://github.com/monarch-initiative/dismech/issues/16882)).
@@ -94,14 +95,18 @@ that it fits no single disease term, or the context for a drug assay
 (natalizumab in multiple sclerosis). Each paper's abstract is read before it
 is screened.
 
-## Two logs
+## The review log
 
-Each paper kept appears in two logs, which record different outcomes.
+This project's [review log](COMPLEMENT_ARIE_DISEASE_PAPERS/review-log.tsv) is
+the one log for the project, in this registry and in DisMech. It has a row for
+every paper picked: its screening decision, what happened to it in DisMech,
+and the registry records it led to. DisMech keeps no project log of its own
+for these papers.
 
-| Log | Holds |
-|---|---|
-| This project's [review log](COMPLEMENT_ARIE_DISEASE_PAPERS/review-log.tsv) | Every paper picked: its screening decision, its DisMech issue, and the registry records it led to |
-| A DisMech project log, to be created | Papers with a DisMech issue: the anchors used, entries and modules changed, gaps opened, and the pull requests for each paper (in DisMech and in this registry) with their status: draft, open, merged or closed |
+For DisMech, the log holds pointers, not details: the paper's issue, the
+entries and modules it changed, the gap issues it opened, and its pull
+requests. The details stay in the issue and the pull requests, and a pull
+request's status is read from GitHub rather than copied into the log.
 
 A paper not in the review log has not been looked at.
 
@@ -115,6 +120,9 @@ A paper not in the review log has not been looked at.
 | `screen_reason` | For `set-aside`, which reason in [Screening](#screening) applies |
 | `method_kinds` | The kinds of method or model the abstract shows, separated by `;`: `in-vitro`, `in-silico`, `in-chemico`, `bioanalytical`, `clinical`, `epidemiological`, `animal`, `ecotox` |
 | `dismech_issue` | The DisMech issue for a paper kept, e.g. `dismech#17401` |
+| `dismech_entries` | The DisMech disease entries and modules the paper changed, by file name and separated by `;`, e.g. `Parkinson_Disease;dopaminergic_neuron_loss`. Empty if it had no DisMech anchor |
+| `dismech_gaps` | DisMech issues opened for mechanisms with no node, separated by `;` |
+| `dismech_prs` | The DisMech pull requests for the paper, separated by `;` |
 | `registry_outcome` | Empty until processed; then one of the values below |
 | `nam_ids` | The ids of the records in `nams/` the paper led to, separated by `;` |
 | `note` | Anything a later reader needs, e.g. why an outcome is `deferred` |
