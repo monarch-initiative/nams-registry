@@ -4,8 +4,8 @@ model:
   # compartment is what makes this model a pregnancy model: it is where the
   # blastocyst sits at the stage the coupled assay covers. That compartment,
   # and the lumped "rest of the body" compartment, are therefore named but
-  # left untyped rather than forced onto a wrong value. Raised upstream as a
-  # NAMO issue; see the PR that added this record.
+  # left untyped rather than forced onto a wrong value. Raised upstream as
+  # monarch-initiative/namo#46.
   type: PBPKModel
   name: Pregnancy whole-body PBPK model for in vitro to in vivo extrapolation of
     developmental toxicity

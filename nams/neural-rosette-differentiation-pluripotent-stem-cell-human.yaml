@@ -42,6 +42,9 @@ model:
     Human induced pluripotent stem cells, differentiated towards neural
     rosettes through an early neural ectoderm intermediate.
   substrate_type: multi-well tissue culture plate
+  # The differentiation protocol is carried here because NAMO's
+  # differentiation_method exists only on Organoid; see
+  # monarch-initiative/namo#47.
   culture_conditions: >-
     Compound added on day 0 in differentiation medium at 0.1% v/v final DMSO,
     at five concentrations, and renewed at each medium change (days 3, 7 and
