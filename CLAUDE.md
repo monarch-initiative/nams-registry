@@ -13,13 +13,14 @@ Analysis (see
 [projects/COMPLEMENT_ARIE_DISEASE_PAPERS.md](projects/COMPLEMENT_ARIE_DISEASE_PAPERS.md)),
 and they apply beyond that round.
 
-**One NAM record per distinct biological system.** A paper describing an
-organoid, a lesioned mouse and the chimera made by grafting one into the other
-yields three records. Assays, stains, reporter lines and behavioural batteries
-are not records: they are readouts on a record, or entries in `applications`.
-If a variant of a protocol differs enough that it looks like its own system,
-say so rather than deciding silently — the granularity rule is meant to be
-revisited with a case in hand.
+**A single NAM can have multiple endpoints; create one record for the NAM.**
+For example, a paper describing an organoid, a lesioned mouse and the chimera
+made by grafting one into the other yields three records. The assays, stains,
+reporter lines and behavioural batteries associated with those models are not
+model records: they are readouts on a model record, or entries in
+`applications`. If a variant of a protocol differs enough that it looks like
+its own system, say so rather than deciding silently — the granularity rule is
+meant to be revisited with a case in hand.
 
 **Do not rule a model out of a mechanism before reading the evidence.** A
 disease can be modelled in more than one way, and several models on one
