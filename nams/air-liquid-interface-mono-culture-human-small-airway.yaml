@@ -1,0 +1,43 @@
+model:
+  id: air-liquid-interface-mono-culture-human-small-airway
+  type: TwoDCellCulture
+  name: 'Air Liquid Interface: mono-culture human small airway epithelial (SAEC)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/116
+  - https://nams.network/details/224
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '116'
+  - '224'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - SAEC
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - Particulate matter (PM2.5)
+  methods_biomarkers:
+  - GM-CSF
+  - IFN-gamma
+  - IL-10
+  - IL-12
+  - IL-17A
+  - IL-1alpha
+  - IL-1beta
+  - IL-2
+  - IL-4
+  - IL-6
+  - IL-8
+  - TNF-alpha

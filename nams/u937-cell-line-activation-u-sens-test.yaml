@@ -1,0 +1,30 @@
+model:
+  id: u937-cell-line-activation-u-sens-test
+  name: U937 cell line activation (U-SENS™) Test
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/284
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '284'
+  method_type: in vitro
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Skin sensitisation in vitro/in chemico
+  organs:
+  - Skin
+  guidelines:
+  - OECD TG 442E
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  - US EPA TSCA
+  aops:
+  - aop:40
+  key_events:
+  - aop.events:398

@@ -1,0 +1,43 @@
+model:
+  id: bi-culture-model-human-lung-epithelial-cell-line-h441
+  type: CoCulture
+  name: 'Bi-culture model: human lung epithelial cell line (H441)/ endothelial cell line (ISO-HAS-1)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/513
+  - https://nams.network/details/514
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '513'
+  - '514'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Repeated dose toxicity
+  organs:
+  - Lung
+  cell_lines:
+  - ISO-HAS-1
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  substances:
+  - Silicon dioxide (SiO2)
+  - Multi-walled carbon nanotubes (MWCNTs)
+  - Single-walled nanotubes (SWCNTs)
+  methods_biomarkers:
+  - IL-6
+  - IL-8
+  - LDH
+  - MTS
+  - TER
+  - sICAM-1
+  - TNF-alpha
+  aops:
+  - aop:173

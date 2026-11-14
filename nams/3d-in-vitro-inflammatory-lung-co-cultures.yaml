@@ -1,0 +1,29 @@
+model:
+  id: 3d-in-vitro-inflammatory-lung-co-cultures
+  type: CoCulture
+  name: 3D In Vitro inflammatory lung co-cultures
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/58
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '58'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  guidelines:
+  - SOP PATROLS 3207
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  methods_biomarkers:
+  - IL-1beta
+  - TNF-alpha

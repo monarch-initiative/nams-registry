@@ -1,9 +1,7 @@
-"""Build the registry's browse page from resources/, nams/ and partial-nams/.
+"""Build the registry's browse page from resources/ and nams/.
 
-The page has four tabs: all records, resources (resources/*.yaml), NAM
-records (nams/*.yaml) and partial NAM records
-(partial-nams/<resource>/*.yaml). Each tab
-lists one row per record; clicking a row shows the rest of the record's
+The page has three tabs: all records, resources (resources/*.yaml) and NAM
+records (nams/*.yaml). Each tab lists one row per record; clicking a row shows the rest of the record's
 details below it. The data is embedded in the page, so it needs no server.
 `just build-table` runs this, as does `just gen-doc`, before MkDocs
 publishes the page at /resources/.
@@ -39,7 +37,7 @@ TABS = [
     (
         "all",
         "All records",
-        ["resource", "nam", "partial"],
+        ["resource", "nam"],
         [
             ("name", "Name", "text", None),
             ("kind_label", "Kind", "badge", "values"),
@@ -70,24 +68,12 @@ TABS = [
             ("organ", "Organ", "text", "values"),
             ("species", "Species", "text", "values"),
             ("sources", "Found in", "text", "values"),
-        ],
-    ),
-    (
-        "partial",
-        "Partial NAM records",
-        ["partial"],
-        [
-            ("name", "Name", "text", None),
-            ("type", "Proposed NAMO class", "text", "values"),
-            ("method_type", "Method type", "text", "values"),
-            ("organs", "Organ", "text", "values"),
-            ("development_status", "Development status", "text", "values"),
-            ("sources", "Found in", "text", "values"),
+            ("vendor_holds_more_details", "Source holds more", "check", "present"),
         ],
     ),
 ]
 
-KIND_LABELS = {"resource": "Resource", "nam": "NAM", "partial": "Partial NAM record"}
+KIND_LABELS = {"resource": "Resource", "nam": "NAM"}
 
 
 def record_link(path):
@@ -130,19 +116,14 @@ def nam_row(record, resource_names):
             resource_names,
         ),
         "synonyms": record.get("synonyms") or [],
+        "cell_lines": [
+            c
+            for s in record.get("source_resources") or []
+            for c in s.get("cell_lines", [])
+        ],
+        "vendor_holds_more_details": bool(record.get("vendor_holds_more_details")),
         "record": record,
         **record_link(f"nams/{model['id']}.yaml"),
-    }
-
-
-def partial_row(partial, resource_names):
-    """A partial NAM record, with the fields computed for the table."""
-    return {
-        **partial,
-        "kind": "partial",
-        "type": partial.get("proposed_namo_class"),
-        **found_in([partial["resource"]], resource_names),
-        **record_link(f"partial-nams/{partial['resource']}/{partial['id']}.yaml"),
     }
 
 
@@ -158,7 +139,7 @@ PAGE = """<!doctype html>
     --row-hover: #f3f5f9; --detail-bg: #f9fafc; --accent: #2f5fb3;
     --chip-bg: #eef2f8; --banner-bg: #2f4a8f; --banner-fg: #ffffff; --banner-muted: #d6def0;
     --tab-on-bg: #2f4a8f; --tab-on-fg: #ffffff; --badge-bg: #e6e9ef; --badge-fg: #2b3240;
-    --partial-bg: #fdf1dc; --partial-fg: #7a4b00;
+    --callout-bg: #fdf1dc; --callout-fg: #7a4b00;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -166,7 +147,7 @@ PAGE = """<!doctype html>
       --row-hover: #1b2028; --detail-bg: #181c23; --accent: #8fb3ff;
       --chip-bg: #232a35; --banner-bg: #1c2a4d; --banner-fg: #eef2fb; --banner-muted: #a9b6d3;
       --tab-on-bg: #8fb3ff; --tab-on-fg: #0f1420; --badge-bg: #2a303a; --badge-fg: #dde2ea;
-      --partial-bg: #3a2c12; --partial-fg: #f3c77a;
+      --callout-bg: #3a2c12; --callout-fg: #f3c77a;
     }
   }
   * { box-sizing: border-box; }
@@ -243,9 +224,8 @@ PAGE = """<!doctype html>
     display: inline-block; background: var(--badge-bg); color: var(--badge-fg); border-radius: 4px;
     padding: 1px 8px; font-size: 13px; font-weight: 600; white-space: nowrap;
   }
-  .badge.partial { background: var(--partial-bg); color: var(--partial-fg); }
   .callout {
-    background: var(--partial-bg); color: var(--partial-fg); border-radius: 6px;
+    background: var(--callout-bg); color: var(--callout-fg); border-radius: 6px;
     padding: 8px 12px; margin: 0 0 12px; font-size: 14px;
   }
   a { color: var(--accent); }
@@ -287,14 +267,13 @@ const TABS = __TABS__;
 
 // What each tab says above its table.
 const NOTES = {
-  all: "Every record in the registry: the resources reviewed, the NAMs recorded from them, and partial records of NAMs whose full records can't yet be held here.",
+  all: "Every record in the registry: the resources reviewed, and the NAMs recorded from them.",
   resources: "Sources of NAMs, and of data about them, each reviewed for what it holds.",
-  nams: "NAMs recorded in full from the resources, each as a NAMO model. Species, applications and limitations are held beside the model until NAMO covers them.",
-  partial: "NAMs recorded only in part. A partial record holds only what its resource gives publicly, in the resource's own terms, because the registry can't hold that resource's full records. It reflects what the resource allows, not how far the NAM has been curated.",
+  nams: "NAMs recorded from the resources, each as a NAMO model. Species, applications and limitations are held beside the model until NAMO covers them. Where a resource holds more about a NAM than it gives publicly, the record holds only the public part, and is marked as such.",
 };
 const NOUNS = {
   all: ["record", "records"], resources: ["resource", "resources"],
-  nams: ["NAM", "NAMs"], partial: ["partial NAM record", "partial NAM records"],
+  nams: ["NAM", "NAMs"],
 };
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -332,7 +311,7 @@ function cell(r, [f, heading, display]) {
   if (f === "name") return `<span class="name">${esc(v)}</span>`;
   if (display === "check") return v ? `<span class="check" role="img" aria-label="Yes">&#10003;</span>` : "";
   if (display === "clamp") return v ? `<span class="clamp">${esc(v)}</span>` : text(v);
-  if (display === "badge") return v ? `<span class="badge${r.kind === "partial" ? " partial" : ""}">${esc(v)}</span>` : DASH;
+  if (display === "badge") return v ? `<span class="badge">${esc(v)}</span>` : DASH;
   if (display === "issue") return v ? a(v, "#" + String(v).split("/").pop()) : DASH;
   return Array.isArray(v) ? chips(v) : text(v);
 }
@@ -354,7 +333,7 @@ function detailResource(r) {
   const imp = (r.imported_from || []).map(i =>
     `${esc(i.source)} ${a(i.source_url, i.source_id)}, commit ${esc(i.source_version || "?")}, ${esc(i.imported_on)}`).join("<br>");
   const found = DATA.filter(x => x.kind !== "resource" && x.source_resource_ids.includes(r.id));
-  const nams = found.filter(x => x.kind === "nam").length, partials = found.length - nams;
+  const nams = found.length;
   return `<dl>
     ${row("Id", esc(r.id))}
     ${row("Homepage", link(r.homepage_url))}
@@ -363,7 +342,7 @@ function detailResource(r) {
     ${row("Resource type", text(r.resource_type))}
     ${row("Activity status", text(r.activity_status))}
     ${row("Domain areas", chips(r.domain_areas))}
-    ${found.length ? row("NAMs from it", `${nams} NAM record${nams === 1 ? "" : "s"}, ${partials} partial record${partials === 1 ? "" : "s"}`) : ""}
+    ${found.length ? row("NAMs from it", `${nams} NAM record${nams === 1 ? "" : "s"}`) : ""}
     ${r.repository ? row("Repository", link(r.repository)) : ""}
     ${row("License", r.license ? (r.license.id ? a(r.license.id, r.license.label) : esc(r.license.label)) : DASH)}
     ${row("Curation model", chips(r.curation_model))}
@@ -393,6 +372,19 @@ function statements(list) {
 const MODEL_SHOWN = new Set(["id", "type", "name", "description", "cell_types", "organ_modeled", "models", "references"]);
 const plain = x => typeof x === "object" && x !== null ? (x.name || x.id || JSON.stringify(x)) : x;
 
+// What a resource itself gives for a NAM, in its own terms, as (field, label, format).
+const SOURCE_TERMS = [
+  ["method_type", "Method type", text], ["development_status", "Development status", text],
+  ["endpoints", "Endpoints", chips], ["organs", "Organs", chips], ["cell_lines", "Cell lines", chips],
+  ["guidelines", "Guidelines", chips], ["regulations", "Regulations", chips],
+  ["substances", "Substances", chips], ["methods_biomarkers", "Methods and biomarkers", chips],
+  ["aops", "AOP-Wiki AOPs", curies], ["key_events", "AOP-Wiki Key Events", curies],
+];
+function sourceTerms(s) {
+  const rows = SOURCE_TERMS.filter(([f]) => has(s[f])).map(([f, l, fmt]) => row(l, fmt(s[f]))).join("");
+  return rows ? `<dl>${rows}</dl>` : "";
+}
+
 function detailNam(r) {
   const rec = r.record, m = rec.model;
   const refs = (m.references || []).map(p =>
@@ -405,6 +397,7 @@ function detailNam(r) {
     (s.accessed_on ? `, accessed ${esc(s.accessed_on)}` : "") +
     ((s.source_urls || []).length ? `<br>${s.source_urls.map(u => a(u)).join("<br>")}` : "") +
     ((s.products || []).length ? `<br>Products: ${s.products.map(p => p.url ? a(p.url, p.name) : esc(p.name)).join(", ")}` : "") +
+    sourceTerms(s) +
     `</li>`).join("");
   const compared = (rec.compared_with || []).map(c =>
     `<li>${esc(DATA.find(x => x.kind === "nam" && x.id === c.nam)?.name || c.nam)}` +
@@ -414,7 +407,10 @@ function detailNam(r) {
     dm.processed_through_dismech ? "Came through DisMech curation" : "Did not come through DisMech curation",
     dm.present_in_dismech ? "in the DisMech graph" : "not in the DisMech graph",
   ].join("; ") + ` (${a("https://github.com/monarch-initiative/dismech/commit/" + dm.dismech_commit, "commit " + dm.dismech_commit.slice(0, 7))}, checked ${esc(dm.assessed_on)})` : "";
-  return `<dl>
+  const more = rec.vendor_holds_more_details
+    ? `<p class="callout">${esc(r.sources.join(" and "))} holds more about this NAM than it gives publicly. This record holds only the public part, in the resource's own terms, under Found in.</p>`
+    : "";
+  return `${more}<dl>
     ${row("Id", esc(r.id))}
     ${recordRow(r)}
     ${row("NAMO class", text(m.type))}
@@ -436,31 +432,7 @@ function detailNam(r) {
   </dl>`;
 }
 
-function detailPartial(r) {
-  const source = r.sources[0];
-  const pages = (r.source_urls || []).map(u => `<li>${a(u)}</li>`).join("");
-  return `<p class="callout">A partial record. It holds only what ${esc(source)} gives publicly: it has no description, species, references, applications or limitations.</p>
-  <dl>
-    ${row("Id", esc(r.id))}
-    ${recordRow(r)}
-    ${row(`Pages in ${source}`, pages ? `<ul class="pubs">${pages}</ul>` : DASH)}
-    ${row("Method type", text(r.method_type))}
-    ${row("Proposed NAMO class", text(r.proposed_namo_class))}
-    ${row("Development status", text(r.development_status))}
-    ${row("Endpoints", chips(r.endpoints))}
-    ${row("Organs", chips(r.organs))}
-    ${row("Cell lines", chips(r.cell_lines))}
-    ${row("Guidelines", chips(r.guidelines))}
-    ${rowIf("Regulations", r.regulations, chips)}
-    ${rowIf("Substances", r.substances, chips)}
-    ${rowIf("Methods and biomarkers", r.methods_biomarkers, chips)}
-    ${rowIf("AOP-Wiki AOPs", r.aops, curies)}
-    ${rowIf("AOP-Wiki Key Events", r.key_events, curies)}
-    ${row("Accessed on", text(r.accessed_on))}
-  </dl>`;
-}
-
-const DETAIL = { resource: detailResource, nam: detailNam, partial: detailPartial };
+const DETAIL = { resource: detailResource, nam: detailNam };
 
 // Labels for a "present" filter, by column display.
 const PRESENT_LABELS = {
@@ -477,7 +449,7 @@ const MISSING_LABEL = { holds_nams: "Not yet evaluated", type: "None" };
 const RANK = {
   priority: ["high", "medium", "low"],
   holds_nams: ["primary", "secondary", "unclear", "none"],
-  kind_label: ["Resource", "NAM", "Partial NAM record"],
+  kind_label: ["Resource", "NAM"],
 };
 
 let tab = null, sortField = "name", sortDir = 1;
@@ -566,7 +538,7 @@ function showTab(key) {
   };
   tab = TABS.find(t => t[0] === key) || TABS[0];
   // A tab opens as it was left; the first time, All records is grouped by
-  // kind (resources, then NAMs, then partial records) and the others sorted by name.
+  // kind (resources, then NAMs) and the others sorted by name.
   const state = STATE[tab[0]] || {
     q: "", sortField: tab[0] === "all" ? "kind_label" : "name", sortDir: 1, filters: {},
   };
@@ -604,7 +576,7 @@ window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
 
 const n = k => DATA.filter(r => r.kind === k).length;
 document.getElementById("summary").textContent =
-  `${DATA.length} records: ${n("resource")} resources, ${n("nam")} NAMs, ${n("partial")} partial NAM records`;
+  `${DATA.length} records: ${n("resource")} resources, ${n("nam")} NAMs`;
 
 document.getElementById("rows").addEventListener("click", e => {
   if (e.target.closest("a")) return;
@@ -649,11 +621,6 @@ def main(argv=None):
         "--nams", default="nams", help="Directory of NAM records (default: nams)"
     )
     parser.add_argument(
-        "--partial-nams",
-        default="partial-nams",
-        help="Directory of partial NAM records, one folder per resource (default: partial-nams)",
-    )
-    parser.add_argument(
         "--output",
         default="docs/resources/index.html",
         help="Page to write (default: docs/resources/index.html)",
@@ -664,10 +631,6 @@ def main(argv=None):
     names = {r["id"]: r["name"] for r in resources}
     rows = [resource_row(r) for r in resources]
     rows += [nam_row(r, names) for r in load(os.path.join(args.nams, "*.yaml"))]
-    rows += [
-        partial_row(p, names)
-        for p in load(os.path.join(args.partial_nams, "*", "*.yaml"))
-    ]
     for r in rows:
         r["kind_label"] = KIND_LABELS[r["kind"]]
     rows.sort(key=lambda r: r["name"].lower())
@@ -682,7 +645,7 @@ def main(argv=None):
         fh.write(page)
     counts = {k: sum(r["kind"] == k for r in rows) for k in KIND_LABELS}
     print(
-        f"Wrote {counts['resource']} resources, {counts['nam']} NAM records and {counts['partial']} partial NAM records to {args.output}"
+        f"Wrote {counts['resource']} resources and {counts['nam']} NAM records to {args.output}"
     )
 
 

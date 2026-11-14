@@ -1,0 +1,29 @@
+model:
+  id: organoid-tracheosphere-mouse
+  name: Organoid tracheosphere mouse
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/139
+  - https://nams.network/details/243
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '139'
+  - '243'
+  method_type: ex vivo
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  methods_biomarkers:
+  - cytokeratins 5 (Krt5)
+  - Krt14
+  - Trp-63 (p63)

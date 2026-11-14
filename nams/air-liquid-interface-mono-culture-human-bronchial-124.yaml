@@ -1,0 +1,32 @@
+model:
+  id: air-liquid-interface-mono-culture-human-bronchial-124
+  type: TwoDCellCulture
+  name: 'Air Liquid Interface: mono-culture human bronchial epithelial (BEAS-2B) for gasoline
+    engine exhaust'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/124
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '124'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - BEAS-2B
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - Gasoline engine exhaust (E20, 20% ethanol)
+  methods_biomarkers:
+  - ?H2AX
+  - LDH
+  - TEER

@@ -1,0 +1,24 @@
+model:
+  id: epics-previously-named-est-1000-skin-corrosion-test
+  name: epiCS (previously named EST-1000) Skin Corrosion Test
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/333
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '333'
+  method_type: in vitro
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Skin corrosion in vitro
+  organs:
+  - Skin
+  guidelines:
+  - OECD TG 431
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - US EPA TSCA

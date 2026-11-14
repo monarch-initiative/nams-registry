@@ -1,0 +1,22 @@
+model:
+  id: phototoxicity-testing
+  name: Phototoxicity testing
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/82
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '82'
+  method_type: in vitro/in silico
+  development_status: Under validation NAMs
+  endpoints:
+  - Phototoxicity
+  organs:
+  - Other
+  guidelines:
+  - Project 4.145
+  regulations:
+  - (EU) 528/2012
+  - (EC) 1223/2009

@@ -1,0 +1,26 @@
+model:
+  id: isolated-chicken-eye-ice-test
+  name: Isolated Chicken Eye (ICE) test
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/115
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '115'
+  method_type: in vitro
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Serious eye damage/eye irritation in vitro
+  organs:
+  - Eye
+  guidelines:
+  - OECD TG 438
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  - US EPA TSCA

@@ -1,0 +1,37 @@
+model:
+  id: air-liquid-interface-bi-culture-human-lung-epithelial-cells
+  type: CoCulture
+  name: 'Air Liquid Interface: bi-culture: human lung epithelial cells (NCI-H441)/ macrophages
+    (dTHP-1)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/3
+  - https://nams.network/details/263
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '3'
+  - '263'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Repeated dose toxicity
+  organs:
+  - Lung
+  cell_lines:
+  - THP-1
+  guidelines:
+  - SOP PATROLS 3111
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - Engineered nanomaterials (ENMs)
+  - Nanomaterials (NMs)
+  methods_biomarkers:
+  - not available
+  - Trypan blue

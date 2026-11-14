@@ -1,0 +1,17 @@
+model:
+  id: micro-electrode-array-human-induced-pluripotent-stem-cell
+  name: 'Micro Electrode Array: human induced pluripotent stem cell cardiomyocytes'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/46
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '46'
+  method_type: in vitro
+  development_status: Under validation NAMs
+  endpoints:
+  - Toxicity in vitro
+  organs:
+  - Cardiovascular

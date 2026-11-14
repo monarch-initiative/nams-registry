@@ -1,0 +1,23 @@
+model:
+  id: in-vitro-phototoxicity-reconstructed-human-epidermis
+  type: ThreeDCellCulture
+  name: 'In vitro Phototoxicity: Reconstructed Human Epidermis Phototoxicity test method'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/343
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '343'
+  method_type: in vitro
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Phototoxicity
+  organs:
+  - Skin
+  guidelines:
+  - OECD TG 498
+  regulations:
+  - (EU) 528/2012
+  - (EC) 1223/2009

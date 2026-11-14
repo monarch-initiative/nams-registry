@@ -1,0 +1,34 @@
+model:
+  id: prediction-of-in-vitro-micronucleus-test-on-tio2-nanoforms-492
+  name: Prediction of in vitro micronucleus test on TiO2 nanoforms - HEPG2
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/492
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '492'
+  method_type: in silico
+  development_status: Under validation NAMs
+  endpoints:
+  - Mutagenicity/Genotoxicity
+  organs:
+  - Liver
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 1831/2003
+  - (EU) 2015/2283
+  - (EC) 1852/2001
+  - (EC) 258/97
+  - (EU) 1169/2011
+  - (EC) 1333/2008
+  - (EC) 1331/2008
+  substances:
+  - Titanium dioxide (TiO2)
+  methods_biomarkers:
+  - Micronucleus test
+  key_events:
+  - aop.events:720

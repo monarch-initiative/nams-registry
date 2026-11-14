@@ -1,0 +1,23 @@
+model:
+  id: the-integrated-methodology-for-dissolution-of-nps-along-the
+  name: The integrated methodology for dissolution of NPs along the gastrointestinal tract
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/425
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '425'
+  method_type: in chemico
+  development_status: Under development NAMs
+  endpoints:
+  - Gastrointestinal digestion
+  organs:
+  - Gastrointestinal system
+  regulations:
+  - (EU) 2015/2283
+  substances:
+  - Engineered nanomaterials (ENMs)
+  methods_biomarkers:
+  - TEER
