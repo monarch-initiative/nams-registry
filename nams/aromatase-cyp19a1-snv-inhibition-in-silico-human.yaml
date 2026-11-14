@@ -1,0 +1,109 @@
+model:
+  id: aromatase-cyp19a1-snv-inhibition-in-silico-human
+  type: MolecularModel
+  name: Aromatase (CYP19A1) zearalenone-inhibition molecular model across reported SNVs
+  description: >-
+    A structure-based in silico model of human aromatase (CYP19A1) used to
+    predict whether reported sequence variants of the enzyme change its
+    susceptibility to inhibition by the mycoestrogen zearalenone (ZEN) and its
+    phase I metabolite alpha-zearalenol. A three-dimensional model of the enzyme
+    is built and the ligands are docked into the active site across 434 reported
+    single nucleotide variants, scoring each variant's predicted inhibitory
+    potential; variants are then prioritised for later experimental work. The
+    output is a prediction, not a measured enzyme activity, and there is no
+    wet-lab confirmation. Recorded in the registry from the primary paper,
+    Perugino et al. 2024 (doi:10.1016/j.tox.2023.153686), in the Toxicology
+    special issue "New approach methodologies: from conceptual development to
+    regulatory application".
+  biological_organization_level: SUBCELLULAR
+  spatial_context: >-
+    The three-dimensional structure of a single protein and its ligand-binding
+    site. No cellular, tissue, or organ context is represented, and the enzyme's
+    estrogen-receptor-activation route for ZEN is outside the model.
+  complexity_level: LOW
+  computational_method: >-
+    Three-dimensional (homology/comparative) molecular modelling of the enzyme
+    with ligand docking into the active site.
+  prediction_scope: >-
+    Predicted inhibitory potential of zearalenone and alpha-zearalenol against
+    wild-type and variant aromatase. An in silico prediction with no wet-lab
+    confirmation; it does not establish an observed inter-individual difference.
+  molecular_target: Human aromatase (CYP19A1)
+  modeling_approach:
+  - comparative/homology modelling
+  - molecular docking
+  sequence_variants:
+  - 434 reported CYP19A1 single nucleotide variants
+  - T310S (predicted more susceptible to inhibition)
+  - D309G (possibly inactive variant)
+  - S478F (possibly inactive variant)
+  references:
+  - id: doi:10.1016/j.tox.2023.153686
+    title: >-
+      A mechanistic toxicology study to grasp the mechanics of zearalenone
+      estrogenicity: Spotlighting aromatase and the effects of its genetic
+      variability
+    authors:
+    - Florinda Perugino
+    - Lorenzo Pedroni
+    - Gianni Galaverna
+    - Chiara Dall’Asta
+    - Luca Dellafiora
+    journal: Toxicology
+    year: 2024
+synonyms:
+- aromatase CYP19A1 zearalenone docking model
+- CYP19A1 SNV zearalenone inhibition in silico model
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Predicting which human aromatase sequence variants differ in susceptibility
+    to inhibition by a xenoestrogen, and prioritising those variants for later
+    experimental work.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153686
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153686
+- description: >-
+    Mechanistic hypothesis generation for inter-individual susceptibility to
+    zearalenone's endocrine-disrupting action via the aromatase-inhibition route.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153686
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153686
+limitations:
+- description: >-
+    The result is an in silico prediction with no wet-lab confirmation. Docked
+    binding and predicted inhibitory potential stand in for measured enzyme
+    activity, so the variant-susceptibility calls are hypotheses, not observed
+    differences.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153686
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153686
+- description: >-
+    Only the aromatase-inhibition route is modelled. ZEN also activates the
+    estrogen receptors, which the paper notes but does not model, so the net
+    endocrine effect is not captured.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153686
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153686
+- description: >-
+    The record is indexed abstract-only here, so the specific modelling
+    software and the source three-dimensional structure of aromatase are not
+    itemised beyond "3D molecular modelling".
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153686
+  accessed_on: '2026-11-14'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 3b9cbe3c4b1374a2631c1d924054535dd062d532
+  assessed_on: '2026-11-14'
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

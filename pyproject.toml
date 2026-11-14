@@ -56,7 +56,9 @@ fallback-version = "0.0.0"
 # ontology. It also includes namo#46, which gives PBPKCompartmentEnum its
 # UTERUS and REST_OF_BODY values, and namo#47, which moves
 # differentiation_method up to CellularSystem so a 2D culture can carry one;
-# the records in nams/ use all three.
+# the records in nams/ use all three. It also includes namo#48, which adds the
+# MolecularModel class for structure-based in silico models (homology
+# modelling, docking, molecular dynamics), used by the aromatase/ZEN record.
 ref = "1a43b04a037b41962e29f459d90778b52a3c06ea"
 
 [tool.pytest.ini_options]
