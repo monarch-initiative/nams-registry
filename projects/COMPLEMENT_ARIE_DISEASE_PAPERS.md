@@ -81,8 +81,9 @@ the registry should hold, as DisMech found for its *Toxicology* special issue
 Animal models fit the registry's schema already: a record's `model` is a
 NAMO `ModelSystem`, and NAMO's `AnimalModel` is one. Clinical,
 epidemiological and bioanalytical methods have no NAMO class yet, so their
-records are `deferred` until a `schema-change` issue settles how to hold
-them. A deferred record is still written and saved (see
+records are `deferred` until
+[#90](https://github.com/monarch-initiative/nams-registry/issues/90) settles
+how to hold them. A deferred record is still written and saved (see
 [Deferred records](#deferred-records)), so nothing found is lost.
 
 (Decided 2026-11-13.)
