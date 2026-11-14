@@ -51,10 +51,13 @@ fallback-version = "0.0.0"
 # The NAMO branch, tag or commit downloaded when there is no local NAMO
 # checkout (see scripts/link_namo.py). The NAMO_REF environment variable
 # overrides it.
-# NAMO main at fe36451. It includes namo#29, which binds NAMO's ontology enums
+# NAMO main at 1a43b04. It includes namo#29, which binds NAMO's ontology enums
 # with reachable_from; before #29, no enum could be checked against its
-# ontology.
-ref = "fe36451fb0af235b94aae0ba4a7d5b74135c7747"
+# ontology. It also includes namo#46, which gives PBPKCompartmentEnum its
+# UTERUS and REST_OF_BODY values, and namo#47, which moves
+# differentiation_method up to CellularSystem so a 2D culture can carry one;
+# the records in nams/ use all three.
+ref = "1a43b04a037b41962e29f459d90778b52a3c06ea"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

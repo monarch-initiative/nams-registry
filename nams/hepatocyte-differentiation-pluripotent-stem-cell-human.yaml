@@ -38,13 +38,13 @@ model:
     name: pluripotent stem cell
   - id: CL:0000182
     name: hepatocyte
-  cell_source: >-
-    Human induced pluripotent stem cells, differentiated towards hepatocytes
-    through an early endoderm intermediate.
+  cell_source: Human induced pluripotent stem cells
+  differentiation_method: >-
+    Directed differentiation towards hepatocytes through an early endoderm
+    intermediate, over an adherent protocol running to at least day 17, the
+    longest of the three arms, with medium changes on days 3, 7, 10, 14 and
+    17.
   substrate_type: multi-well tissue culture plate
-  # The differentiation protocol is carried here because NAMO's
-  # differentiation_method exists only on Organoid; see
-  # monarch-initiative/namo#47.
   culture_conditions: >-
     Compound added on day 0 in differentiation medium at 0.1% v/v final DMSO,
     at five concentrations, and renewed at each of five medium changes (days

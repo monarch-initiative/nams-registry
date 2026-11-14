@@ -38,13 +38,12 @@ model:
     name: pluripotent stem cell
   - id: CL:0000710
     name: neurecto-epithelial cell
-  cell_source: >-
-    Human induced pluripotent stem cells, differentiated towards neural
-    rosettes through an early neural ectoderm intermediate.
+  cell_source: Human induced pluripotent stem cells
+  differentiation_method: >-
+    Directed differentiation towards neural rosettes through an early neural
+    ectoderm intermediate, over an adherent protocol with medium changes on
+    days 3, 7 and 10.
   substrate_type: multi-well tissue culture plate
-  # The differentiation protocol is carried here because NAMO's
-  # differentiation_method exists only on Organoid; see
-  # monarch-initiative/namo#47.
   culture_conditions: >-
     Compound added on day 0 in differentiation medium at 0.1% v/v final DMSO,
     at five concentrations, and renewed at each medium change (days 3, 7 and

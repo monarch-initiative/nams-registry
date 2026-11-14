@@ -39,13 +39,12 @@ model:
     name: pluripotent stem cell
   - id: CL:0000746
     name: cardiac muscle cell
-  cell_source: >-
-    Human induced pluripotent stem cells, differentiated towards
-    cardiomyocytes through an early mesoderm intermediate.
+  cell_source: Human induced pluripotent stem cells
+  differentiation_method: >-
+    Directed differentiation towards cardiomyocytes through an early mesoderm
+    intermediate, over an adherent 10-day protocol with medium changes on days
+    2, 6 and 10.
   substrate_type: multi-well tissue culture plate
-  # The differentiation protocol is carried here because NAMO's
-  # differentiation_method exists only on Organoid; see
-  # monarch-initiative/namo#47.
   culture_conditions: >-
     Compound added on day 0 in differentiation medium at 0.1% v/v final DMSO,
     at five concentrations, and renewed at each medium change (days 2, 6 and
