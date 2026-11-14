@@ -12,9 +12,10 @@ repos:
   # linkml-reference-validator, so neither is edited by hand.
   - id: end-of-file-fixer
     exclude: ^(\.copier-answers\.yml|docs/schema/.*|references_cache/.*)$
+  # A TSV row whose last columns are empty ends in tabs.
   - id: trailing-whitespace
     args: [--markdown-linebreak-ext=md]
-    exclude: ^references_cache/
+    exclude: ^references_cache/|\.tsv$
 
 - repo: https://github.com/adrienverge/yamllint.git
   rev: v1.38.0
