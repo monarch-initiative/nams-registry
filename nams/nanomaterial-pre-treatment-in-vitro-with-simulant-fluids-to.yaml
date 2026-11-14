@@ -1,0 +1,26 @@
+model:
+  id: nanomaterial-pre-treatment-in-vitro-with-simulant-fluids-to
+  name: Nanomaterial pre-treatment in vitro with simulant fluids to mimic oral and inhalation
+    exposures for hazard assessment using 3D liver models in vitro
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/429
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '429'
+  method_type: in chemico
+  development_status: Under development NAMs
+  endpoints:
+  - Toxicokinetics
+  organs:
+  - Liver
+  guidelines:
+  - SOP PATROLS 4202
+  regulations:
+  - (EU) 2015/2283
+  substances:
+  - Engineered nanomaterials (ENMs)
+  methods_biomarkers:
+  - not available

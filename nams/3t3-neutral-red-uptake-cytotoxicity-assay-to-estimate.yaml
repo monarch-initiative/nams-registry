@@ -1,0 +1,26 @@
+model:
+  id: 3t3-neutral-red-uptake-cytotoxicity-assay-to-estimate
+  name: 3T3 Neutral Red Uptake cytotoxicity assay to estimate starting doses for acute oral
+    systemic toxicity tests
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/387
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '387'
+  method_type: in vitro
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Acute toxicity oral
+  organs:
+  - Other
+  guidelines:
+  - OECD GD 129
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003

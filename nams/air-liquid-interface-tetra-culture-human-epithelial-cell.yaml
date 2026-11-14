@@ -1,0 +1,40 @@
+model:
+  id: air-liquid-interface-tetra-culture-human-epithelial-cell
+  type: CoCulture
+  name: 'Air-Liquid Interface: tetra-culture human epithelial cell line (A549)/endothelial
+    (EA.hy 926)/ macrophage (THP-1)/mast (HMC-1)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/87
+  - https://nams.network/details/208
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '87'
+  - '208'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - EA.hy926
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - Diesel exhaust particulate matter (DEPM)
+  methods_biomarkers:
+  - COX-2
+  - GCSF-R
+  - ICAM-1
+  - IL-6
+  - IL-8
+  - LDH
+  - NF-kB
+  - VCAM-1

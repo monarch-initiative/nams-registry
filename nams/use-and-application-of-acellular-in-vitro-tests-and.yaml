@@ -1,0 +1,26 @@
+model:
+  id: use-and-application-of-acellular-in-vitro-tests-and
+  name: Use and application of acellular in vitro tests and methodologies to assess nanomaterial
+    biodurability
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/382
+  - https://nams.network/details/455
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '382'
+  - '455'
+  method_type: in chemico
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Water solubility and dissolution in biological media
+  - Gastrointestinal digestion
+  organs:
+  - Other
+  guidelines:
+  - ISO TR 19057:2017
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 2015/2283

@@ -1,0 +1,45 @@
+model:
+  id: air-liquid-interface-triple-culture-epithelial-beas-2b
+  type: CoCulture
+  name: 'Air Liquid Interface: triple-culture: epithelial (BEAS-2B)/ fibroblast (CCD-33Lu)/
+    macrophage (THP-1) cells'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/12
+  - https://nams.network/details/169
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '12'
+  - '169'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - THP-1
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - mechanically (mCF)
+  - thermo-mechanically treated (mtCF) carbon fibers
+  methods_biomarkers:
+  - CCL22
+  - Comet assay
+  - COX-2
+  - HMOX1
+  - HSPA1A
+  - IL-1alpha
+  - IL-1beta
+  - IL-6
+  - IL-8
+  - LDH
+  - NFKBIA
+  - TNF-alpha

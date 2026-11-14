@@ -1,0 +1,47 @@
+model:
+  id: air-liquid-interface-mono-culture-primary-bronchial
+  type: TwoDCellCulture
+  name: 'Air Liquid Interface: mono-culture primary bronchial epithelial (PBEC)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/90
+  - https://nams.network/details/211
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '90'
+  - '211'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - PBEC
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - BioDiesel exhaust particles (BDEP)
+  - Diesel exhaust particles (DEP)
+  - Rapeseed methyl ester (RME)
+  methods_biomarkers:
+  - Annexin-V/PI
+  - CXCL8
+  - DCFH-DA-DA
+  - IL-10
+  - IL-12
+  - IL-13
+  - IL-1beta
+  - IL-4
+  - IL-6
+  - LDH
+  - MMP9
+  - PGE2
+  - TNF-alpha
+  - Trypan blueassay

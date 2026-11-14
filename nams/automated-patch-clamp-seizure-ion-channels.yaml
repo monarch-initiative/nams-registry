@@ -1,0 +1,17 @@
+model:
+  id: automated-patch-clamp-seizure-ion-channels
+  name: 'Automated patch-clamp: seizure ion channels'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/20
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '20'
+  method_type: in vitro
+  development_status: Under validation NAMs
+  endpoints:
+  - Neurotoxicity
+  organs:
+  - Central nervous system
