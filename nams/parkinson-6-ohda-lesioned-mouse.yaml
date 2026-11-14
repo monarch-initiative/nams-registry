@@ -1,0 +1,72 @@
+model:
+  id: parkinson-6-ohda-lesioned-mouse
+  type: AnimalModel
+  name: Unilateral 6-OHDA-lesioned mouse (Parkinson disease host)
+  description: >-
+    A unilateral 6-hydroxydopamine (6-OHDA) neurotoxin lesion of the mouse
+    nigrostriatal pathway, used as the Parkinson-disease host for dopaminergic
+    cell therapy. 6-OHDA is injected into the striatum of severe combined
+    immunodeficient (SCID) mice; successfully lesioned animals are selected by
+    apomorphine-induced rotational asymmetry exceeding 100 turns per 30 minutes.
+    The lesion produces unilateral degeneration of endogenous TH-positive
+    dopaminergic neurons in the substantia nigra and striatum (confirmed by
+    immunohistochemistry) and silences nigrostriatal field-potential activity on
+    an MED64 array. It is an acute neurotoxin model of the dopaminergic deficit,
+    not a synucleinopathy, and carries no alpha-synuclein pathology or
+    Parkinson-disease genotype. Recorded as the disease host that the human
+    midbrain organoid graft is tested in (see
+    midbrain-organoid-graft-6-ohda-lesioned-mouse). NAM-adjacent: an animal
+    model, which the registry collects alongside non-animal methods.
+  species:
+    id: NCBITaxon:10090
+    name: Mus musculus
+applications:
+- description: >-
+    A Parkinson-disease host model of nigrostriatal dopaminergic loss and its
+    motor consequences, with lesioned animals selected by apomorphine-induced
+    rotation, used to test dopaminergic cell-therapy grafts.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    A readout of dopaminergic neuron loss (TH immunohistochemistry in the
+    substantia nigra and striatum) and of nigrostriatal circuit silencing
+    (no MED64 field-potential signal without a graft).
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+limitations:
+- description: >-
+    An acute neurotoxin lesion rather than the slow synucleinopathy of
+    idiopathic Parkinson disease: no alpha-synuclein pathology and no
+    Parkinson-disease genotype, so construct validity for the human disease is
+    low.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    The lesion is unilateral and in a mouse, and the striatal dopamine deficit
+    is read functionally (apomorphine-induced rotation) rather than by a direct
+    striatal dopamine measurement.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  accessed_on: '2026-11-14'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 91017180b087d89cee5b86f913ad1b068c37d01f
+  assessed_on: '2026-11-14'
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

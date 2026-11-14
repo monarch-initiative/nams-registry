@@ -1,0 +1,94 @@
+model:
+  id: midbrain-organoid-graft-6-ohda-lesioned-mouse
+  type: AnimalModel
+  name: Human midbrain organoid graft into 6-OHDA-lesioned mouse striatum
+  description: >-
+    The grafted graft-host chimera: a day-15 human iPSC-derived midbrain
+    organoid (see midbrain-organoid-pluripotent-stem-cell) transplanted into the
+    dopamine-depleted striatum of a unilaterally 6-OHDA-lesioned SCID mouse (see
+    parkinson-6-ohda-lesioned-mouse) as a cell therapy. Grafted human cells
+    survive and mature into A9-type dopaminergic neurons (at 12 weeks, 14.11% of
+    surviving human cells are TH-positive and over 90% of GIRK2+ cells co-label
+    with TH), fire spontaneous action potentials, and receive monosynaptic host
+    presynaptic input (G-deleted rabies tracing), establishing bidirectional
+    host-graft connections. Grafting reverses the motor deficits (apomorphine
+    rotation, open field, rotarod) not seen in vehicle controls, lowers host
+    striatal pro-inflammatory cytokine mRNA (IL-1beta, IL-6) and raises
+    antioxidant-response gene mRNA (Nrf2, Hmox1), with no tumor formation or
+    graft overgrowth. The whole system is the mouse host carrying the human
+    graft; NAM-adjacent, recorded as an animal model the registry collects. In
+    DisMech it is encoded as a RESCUE model of the host dopaminergic-loss,
+    dopamine-deficiency, circuit, neuroinflammation and oxidative-stress nodes;
+    whether cell-therapy restoration is a model relationship or a treatment is
+    an open question (dismech#17534).
+  species:
+    id: NCBITaxon:10090
+    name: Mus musculus
+synonyms:
+- hMO graft
+- grafted midbrain organoid chimera
+- organoid-grafted 6-OHDA mouse
+applications:
+- description: >-
+    Testing dopaminergic cell therapy: graft survival and A9 maturation,
+    functional host-graft integration (electrophysiology and rabies tracing),
+    and reversal of motor deficits in a Parkinson-disease host.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    Reading the host microenvironment response to grafting: striatal
+    pro-inflammatory cytokine mRNA (IL-1beta, IL-6) fell and antioxidant-response
+    gene mRNA (Nrf2, Hmox1) rose in grafted versus un-grafted lesioned striatum.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    Graft safety assessment: a subcutaneous teratoma assay (neuroblastoma
+    positive control) with no tumor formation or graft overgrowth, and
+    KI67/OCT4-negative grafts.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+limitations:
+- description: >-
+    A human graft in a mouse host: graft-host integration, behaviour and the
+    host microenvironment response are all read in mouse.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    The rescue of the striatal dopamine deficit is inferred from behaviour
+    (apomorphine rotation and the other motor tests); no post-graft striatal
+    dopamine was measured.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    Graft survival is modest (about 200-800 dopaminergic neurons, 14.11%
+    TH-positive) and follow-up is 12 weeks; graft-induced dyskinesia was not
+    measured, only inferred absent from the graft's cell composition.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  accessed_on: '2026-11-14'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 91017180b087d89cee5b86f913ad1b068c37d01f
+  assessed_on: '2026-11-14'
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

@@ -51,9 +51,25 @@ model:
     - Huck-Hui Ng
     journal: Cell Stem Cell
     year: 2016
+  - id: doi:10.7150/thno.80271
+    title: Human iPSC-derived midbrain organoids functionally integrate into striatum
+      circuits and restore motor function in a mouse model of Parkinson's disease
+    authors:
+    - Xin Zheng
+    - Deqiang Han
+    - Weihua Liu
+    - Xueyao Wang
+    - Na Pan
+    - Yuping Wang
+    - Zhiguo Chen
+    journal: Theranostics
+    year: 2023
+    url: https://doi.org/10.7150/thno.80271
 synonyms:
 - midbrain neural organoids
 - guided midbrain organoids
+- hMO
+- human midbrain organoid
 species:
 - id: NCBITaxon:9606
   name: Homo sapiens
@@ -80,6 +96,25 @@ applications:
     flow cytometry, for Parkinson's disease and therapeutic discovery.
   source_urls:
   - https://www.stemcell.com/single-cell-phenotyping-of-neurons-and-midbrain-organoids.html
+- description: >-
+    A dopaminergic cell-therapy graft source. Zheng et al. 2023 transplanted
+    day-15 Jo/Nolbrant-protocol organoids into the 6-OHDA-lesioned mouse
+    striatum, where grafted cells matured into A9 (TH+/GIRK2+) neurons, received
+    monosynaptic host input and reversed motor deficits, with no tumor formation
+    (see midbrain-organoid-graft-6-ohda-lesioned-mouse).
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
+- description: >-
+    Source of functional dopaminergic readouts used to qualify the organoid
+    before grafting: depolarization-evoked dopamine-metabolite release by HPLC,
+    synchronous network-wide bursts on an MED64 array, and neuromelanin by
+    Fontana-Masson staining (Zheng et al. 2023).
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
 limitations:
 - description: Represents the developing (fetal) midbrain; adult-like maturation remains unsolved for
     neural organoids, which matters for late-onset disease such as Parkinson's.
@@ -99,6 +134,15 @@ limitations:
     shipped fresh, with delivery times that vary with supply.
   source_urls:
   - https://www.stemcell.com/products/human-ipsc-derived-midbrain-organoids.html
+- description: >-
+    As a graft source it carries no Parkinson-disease genotype and no
+    alpha-synuclein pathology, and residual undifferentiated iPSCs must be
+    depleted (quercetin removed over 99.99% in Zheng et al. 2023) to limit
+    tumorigenic risk before transplantation.
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  supporting_references:
+  - doi:10.7150/thno.80271
 source_resources:
 - resource: stemcell-organoids
   source_urls:
@@ -116,5 +160,17 @@ source_resources:
     catalog_number: 100-0120
     url: https://www.stemcell.com/products/stemdiff-neural-organoid-maintenance-kit.html
   accessed_on: '2026-11-06'
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.7150/thno.80271
+  accessed_on: '2026-11-14'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 91017180b087d89cee5b86f913ad1b068c37d01f
+  assessed_on: '2026-11-14'
 creation_date: '2026-11-06'
-last_modified_date: '2026-11-06'
+last_modified_date: '2026-11-14'
