@@ -30,13 +30,15 @@ replaces a cell population can still speak to the causal chain. State what the
 evidence supports, and put what it does not into `limitations`, `divergences`
 and `fidelity` — not into a decision to leave the model out.
 
-**Screening records what a paper shows; it does not filter papers out.** Every
-method kind belongs in the registry: in vitro, in silico, in chemico,
-bioanalytical, clinical, epidemiological, animal, ecotoxicological. A paper is
-set aside only when no method or model can be identified at all, and the reason
-is written down along with whether the decision rested on the abstract alone,
-so it can be revisited. Whether a paper has a DisMech anchor decides *where*
-its NAMs go, never whether it is kept.
+**When screening papers, document what a paper shows, but do not filter out a
+paper based on incomplete information.** During this early stage of the NAMs
+Landscape Analysis (November 2026), every method kind is a candidate for the
+registry: in vitro, in silico, in chemico, bioanalytical, clinical,
+epidemiological, animal, ecotoxicological. A paper is set aside only when no
+method or model can be identified at all, and the reason is written down along
+with whether the decision rested on the abstract alone, so it can be revisited.
+Whether a paper has a DisMech anchor decides *where* its NAMs go, never whether
+it is kept.
 
 **Save rather than lose.** A record the schema cannot yet hold is still
 written, and parked where it will not fail validation (currently
