@@ -1,0 +1,27 @@
+model:
+  id: lung-on-a-chip-system-also-referred-to-as-multi-tissue
+  type: OrganOnChip
+  name: Lung-on-a-chip system (also referred to as Multi-tissue microphysiological system
+    or Micro Cell Culture Analog)
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/267
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '267'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - HPMEC ST1.6R
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003

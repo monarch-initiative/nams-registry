@@ -1,0 +1,43 @@
+model:
+  id: air-liquid-interface-tetra-culture-alveolar-type-ii-cell
+  type: CoCulture
+  name: 'Air Liquid Interface: tetra-culture: alveolar type II cell line/ differentiated macrophage-like
+    cells/ mast cells/ endothelial cells'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/245
+  - https://nams.network/details/521
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '245'
+  - '521'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Repeated dose toxicity
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - THP-1
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  substances:
+  - Silicon dioxide (SiO2)
+  - AAPH
+  methods_biomarkers:
+  - DCFH-DA-DA
+  - GM-CSF
+  - IL-1beta
+  - IL-6
+  - IL-8
+  - resazurin accessibility assay
+  - sodium fluorescein leakage (tracer) assay
+  - TNF-alpha
+  - Vitrocell™ aerosol exposure system

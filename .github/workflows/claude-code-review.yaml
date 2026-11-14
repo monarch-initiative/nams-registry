@@ -59,7 +59,7 @@ jobs:
 
           Review this pull request. This repository is a LinkML registry
           of New Approach Methodology (NAM) records: YAML records under
-          nams/ and partial-nams/, the schema under src/, and Python
+          nams/ and resources/, the schema under src/, and Python
           fetch and import scripts under scripts/. Read README.md and
           CONTRIBUTING.md for its conventions.
 

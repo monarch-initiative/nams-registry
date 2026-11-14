@@ -1,0 +1,32 @@
+model:
+  id: spheroid-hanging-drop-culture-mono-culture-human-epithelial
+  type: ThreeDCellCulture
+  name: 'Spheroid hanging drop culture: mono-culture human epithelial lung carcinoma (A549)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/518
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '518'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - A549
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  substances:
+  - benzene
+  methods_biomarkers:
+  - Comet assay
+  - IL-8
+  - MTS

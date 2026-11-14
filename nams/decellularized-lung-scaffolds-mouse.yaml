@@ -1,0 +1,29 @@
+model:
+  id: decellularized-lung-scaffolds-mouse
+  name: Decellularized lung scaffolds mouse
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/149
+  - https://nams.network/details/254
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '149'
+  - '254'
+  method_type: ex vivo
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Bone marrow
+  cell_lines:
+  - C10
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  methods_biomarkers:
+  - RT-qPCR

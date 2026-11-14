@@ -9,8 +9,8 @@ This is a repository of NAM and NAM-adjacent sources collected in support of a N
 [https://monarch-initiative.github.io/nams-registry](https://monarch-initiative.github.io/nams-registry)
 
 The [registry browser](https://monarch-initiative.github.io/nams-registry/resources/)
-lists every record in the registry, with a tab each for resources, NAM
-records and partial NAM records. `just build-table` rebuilds it, and the docs
+lists every record in the registry, with a tab each for resources and NAM
+records. `just build-table` rebuilds it, and the docs
 deployment does so on every push to main.
 
 ## Making changes

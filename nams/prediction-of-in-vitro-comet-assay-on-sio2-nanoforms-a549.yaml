@@ -1,0 +1,23 @@
+model:
+  id: prediction-of-in-vitro-comet-assay-on-sio2-nanoforms-a549
+  name: Prediction of in vitro Comet assay on SiO2 nanoforms - A549
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/490
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '490'
+  method_type: in silico
+  development_status: Under validation NAMs
+  endpoints:
+  - Mutagenicity/Genotoxicity
+  organs:
+  - Lung
+  substances:
+  - Silicon dioxide (SiO2)
+  methods_biomarkers:
+  - Comet assay
+  key_events:
+  - aop.events:1635

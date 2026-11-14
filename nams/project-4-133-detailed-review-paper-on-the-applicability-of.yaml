@@ -1,0 +1,30 @@
+model:
+  id: project-4-133-detailed-review-paper-on-the-applicability-of
+  name: 'Project 4.133: Detailed Review Paper on the Applicability of the key event based
+    Test Guideline 442D for in vitro skin sensitisation testing of nanomaterials'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/340
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '340'
+  method_type: in vitro
+  development_status: Under validation NAMs
+  endpoints:
+  - Skin sensitisation in vitro/in chemico
+  organs:
+  - Immune system
+  guidelines:
+  - Project 4.149 OECD Working TG 2021
+  regulations:
+  - (EU) 528/2012
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  - (EU) 2015/2283
+  - (EC) 1852/2001
+  - (EC) 258/97
+  - (EU) 1169/2011
+  - (EC) 1333/2008
+  - (EC) 1331/2008

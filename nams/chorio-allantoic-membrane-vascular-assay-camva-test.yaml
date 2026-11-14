@@ -1,0 +1,25 @@
+model:
+  id: chorio-allantoic-membrane-vascular-assay-camva-test
+  name: Chorio-Allantoic Membrane Vascular Assay (CAMVA) test
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/330
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '330'
+  method_type: in vitro
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Serious eye damage/eye irritation in vitro
+  organs:
+  - Eye
+  guidelines:
+  - OECD GD 263
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003

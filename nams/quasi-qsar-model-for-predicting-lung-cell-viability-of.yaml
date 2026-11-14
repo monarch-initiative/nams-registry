@@ -1,0 +1,46 @@
+model:
+  id: quasi-qsar-model-for-predicting-lung-cell-viability-of
+  type: QSARModel
+  name: Quasi-QSAR model for predicting lung cell viability of metal oxide nanomaterials
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/543
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '543'
+  method_type: in silico
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  substances:
+  - Aluminium oxide (Al2O3)
+  - Antimony(III) oxide (Sb2O3)
+  - Bismuth(III) oxide (Bi2O3)
+  - Chromium(III) oxide (Cr2O3)
+  - Cobalt(II,III) oxide (Co3O4)
+  - Cobalt(II) oxide (CoO)
+  - Copper oxide (CuO)
+  - Indium(III) oxide (In2O3)
+  - Iron(III) oxide (Fe2O3)
+  - Lanthanum(III) oxide (La2O3)
+  - Manganese(III) oxide (Mn2O3)
+  - Nickel(III) oxide (Ni2O3)
+  - Nickel(II) oxide (NiO)
+  - Silicon dioxide (SiO2)
+  - Silver (Ag)
+  - Tin(IV) oxide (SnO2)
+  - Titanium dioxide (TiO2)
+  - Tungsten(VI) oxide (WO3)
+  - Yttrium(III) oxide (Y2O3)
+  - Zinc oxide (ZnO)
+  - Zirconium dioxide (ZrO2)

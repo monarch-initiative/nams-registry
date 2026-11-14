@@ -1,0 +1,23 @@
+model:
+  id: prediction-of-in-vitro-comet-assay-on-tio2-nanoforms-ht29
+  name: Prediction of in vitro Comet assay on TiO2 nanoforms - HT29-MTX-E12
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/280
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '280'
+  method_type: in silico
+  development_status: Under validation NAMs
+  endpoints:
+  - Mutagenicity/Genotoxicity
+  organs:
+  - Colon
+  substances:
+  - Titanium dioxide (TiO2)
+  methods_biomarkers:
+  - Comet assay
+  key_events:
+  - aop.events:1635

@@ -1,0 +1,17 @@
+model:
+  id: micro-electrode-array-human-induced-pluripotent-stem-cell-51
+  name: 'Micro Electrode Array: human induced pluripotent stem cell neuronal cells'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/51
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '51'
+  method_type: in vitro
+  development_status: Under validation NAMs
+  endpoints:
+  - Neurotoxicity
+  organs:
+  - Central nervous system

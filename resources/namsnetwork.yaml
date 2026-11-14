@@ -26,8 +26,9 @@ relevance_note: >-
   endpoint is acute inhalation toxicity, and the most common organ is the
   lung (205 NAMs). The list and its filters are public through a JSON API at
   https://api.nams.network, which scripts/fetch_namsnetwork.py reads, and
-  scripts/write_partial_namsnetwork.py turns into a partial record per NAM
-  in partial-nams/namsnetwork/. A NAM's full record needs a free, logged-in account.
+  scripts/write_namsnetwork.py turns into a NAM record per NAM in nams/,
+  holding only what the public list and filters give, with
+  vendor_holds_more_details set. A NAM's full record needs a free, logged-in account.
   It adds a description, publications, cell types with species, measures,
   limitations and, for in silico NAMs, the model's algorithm and training
   data, but the site states no terms for reusing it.
@@ -45,15 +46,15 @@ supporting_scripts:
     Fetches the public NAM list and filter facets from the NAMs.network API,
     and rebuilds the links from NAMs to substances, methods and biomarkers,
     and AOP-Wiki AOPs and Key Events.
-- name: write_partial_namsnetwork.py
+- name: write_namsnetwork.py
   repository: https://github.com/monarch-initiative/nams-registry
-  path: scripts/write_partial_namsnetwork.py
-  command: uv run python scripts/write_partial_namsnetwork.py
+  path: scripts/write_namsnetwork.py
+  command: uv run python scripts/write_namsnetwork.py
   description: >-
-    Writes a partial record for each NAM in the catalogue fetched by
-    fetch_namsnetwork.py into partial-nams/namsnetwork/, merging the records
-    the catalogue lists more than once, and skipping NAMs that have a NAM
-    record in nams/.
+    Writes a NAM record into nams/ for each NAM in the catalogue fetched by
+    fetch_namsnetwork.py, merging the records the catalogue lists more than
+    once, and leaving alone NAMs whose record in nams/ has been curated
+    beyond what the catalogue gives.
 priority: high
 priority_rationale: >-
   It is one of the few resources that hold NAMs as structured records, each
@@ -76,7 +77,7 @@ expectations: >-
 discussion_issue: https://github.com/monarch-initiative/nams-registry/issues/20
 activity_status: active
 creation_date: '2026-11-05'
-last_modified_date: '2026-11-09'
+last_modified_date: '2026-11-13'
 imported_from:
 - source: kg_registry
   source_id: namsnetwork

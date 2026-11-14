@@ -1,0 +1,24 @@
+model:
+  id: in-vitro-simulated-human-digestive-system-iii
+  name: In vitro simulated human digestive system III
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/79
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '79'
+  method_type: in chemico
+  development_status: Under development NAMs
+  endpoints:
+  - Gastrointestinal digestion
+  organs:
+  - Gastrointestinal system
+  regulations:
+  - (EU) 2015/2283
+  substances:
+  - Chitin nanocrystals
+  methods_biomarkers:
+  - '% beta-carotene bioaccessibility'
+  - '% lipid digestion'

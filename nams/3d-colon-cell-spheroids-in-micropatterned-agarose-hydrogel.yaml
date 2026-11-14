@@ -1,0 +1,40 @@
+model:
+  id: 3d-colon-cell-spheroids-in-micropatterned-agarose-hydrogel
+  type: ThreeDCellCulture
+  name: 3D colon cell spheroids in micropatterned agarose hydrogel platform
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/216
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '216'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Toxicity in vitro
+  organs:
+  - Gastrointestinal system/liver
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EU) 2015/2283
+  - (EC) 1852/2001
+  - (EC) 258/97
+  - (EU) 1169/2011
+  - (EC) 1333/2008
+  - (EC) 1331/2008
+  substances:
+  - Zinc oxide (ZnO)
+  methods_biomarkers:
+  - Annexin-V/PI
+  - CellROX probes
+  - ?H2AX
+  - IL-18
+  - IL-1beta
+  - NLRC4
+  - Propidium iodide
+  - TLR6

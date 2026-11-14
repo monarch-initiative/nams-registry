@@ -1,0 +1,30 @@
+model:
+  id: organ-on-a-chip-lung-human-ooc-lung-haecs-hlmvecs-calu-3
+  type: OrganOnChip
+  name: Organ-on-a-chip lung human (OoC lung HAECs/HLMVECs/Calu-3-human)
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/154
+  - https://nams.network/details/258
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '154'
+  - '258'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - Calu-3
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  methods_biomarkers:
+  - not available

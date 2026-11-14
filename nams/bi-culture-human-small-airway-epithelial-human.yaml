@@ -1,0 +1,38 @@
+model:
+  id: bi-culture-human-small-airway-epithelial-human
+  type: CoCulture
+  name: 'Bi-culture: human small airway epithelial/human microvascular endothelial cells'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/515
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '515'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - HMVEC
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  substances:
+  - Engineered nanomaterials (ENMs)
+  - PEPs
+  - Silicon dioxide (SiO2)
+  methods_biomarkers:
+  - IL-1beta
+  - IL-1ra
+  - IL-8
+  - MCP-1
+  - MTS
+  aops:
+  - aop:173

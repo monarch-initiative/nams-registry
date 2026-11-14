@@ -1,0 +1,36 @@
+model:
+  id: air-liquid-interface-mono-culture-lung-adenocarcinoma-calu-21
+  type: TwoDCellCulture
+  name: 'Air Liquid Interface: mono-culture lung adenocarcinoma (Calu-3) using Vitrocell®
+    Cloud exposure system'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/21
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '21'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - Calu-3
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - Cerium dioxide (CeO2)
+  methods_biomarkers:
+  - Annexin-V/PI
+  - DCFH-DA-DA
+  - IL-1beta
+  - MTT
+  - Propidium iodide
+  - TEER
+  - TNF-alpha

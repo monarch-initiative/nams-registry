@@ -1,0 +1,31 @@
+model:
+  id: 3d-in-vitro-inflammatory-lung-co-cultures-triple-culture
+  type: CoCulture
+  name: '3D In Vitro inflammatory lung co-cultures: triple--culture human epithelial cells
+    (A549) and human monocyte derived macrophages and dendtric cells'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/33
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '33'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - A549
+  guidelines:
+  - SOP PATROLS 3207
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  methods_biomarkers:
+  - IL-1beta
+  - TNF-alpha

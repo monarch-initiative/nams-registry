@@ -1,0 +1,21 @@
+model:
+  id: integrated-in-vitro-approach-for-intestinal-fate-of-orally
+  name: Integrated In Vitro Approach for Intestinal Fate of Orally Ingested Nanomaterials
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/430
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '430'
+  method_type: in vitro
+  development_status: Under validation NAMs
+  endpoints:
+  - Gastrointestinal digestion
+  organs:
+  - Gastrointestinal system
+  guidelines:
+  - Project 4.158 TGP
+  regulations:
+  - (EU) 2015/2284

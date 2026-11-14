@@ -1,0 +1,26 @@
+model:
+  id: air-liquid-interface-mono-culture-primary-bronchial-232
+  type: TwoDCellCulture
+  name: 'Air Liquid Interface: mono-culture primary bronchial epithelial cells (PBEC) for
+    diesel exhaust particles exposure'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/232
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '232'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - PBEC
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008

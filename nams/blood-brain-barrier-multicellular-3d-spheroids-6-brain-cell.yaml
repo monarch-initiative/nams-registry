@@ -1,0 +1,29 @@
+model:
+  id: blood-brain-barrier-multicellular-3d-spheroids-6-brain-cell
+  type: ThreeDCellCulture
+  name: 'Blood-Brain Barrier: multicellular 3D spheroids: 6 brain cell types: astrocytes,
+    pericytes, endothelial cells, microglia cells, oligodendrocytes, and neurons'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/377
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '377'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Toxicokinetics
+  organs:
+  - Cardiovascular
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EU) 2015/2283
+  - (EC) 1852/2001
+  - (EC) 258/97
+  - (EU) 1169/2011
+  - (EC) 1333/2008
+  - (EC) 1331/2008

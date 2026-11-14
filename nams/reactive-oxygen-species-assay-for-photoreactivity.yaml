@@ -1,0 +1,22 @@
+model:
+  id: reactive-oxygen-species-assay-for-photoreactivity
+  name: Reactive Oxygen Species Assay for Photoreactivity
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/344
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '344'
+  method_type: in chemico
+  development_status: Regulatory accepted NAMs
+  endpoints:
+  - Phototoxicity
+  organs:
+  - Other
+  guidelines:
+  - OECD TG 495
+  regulations:
+  - (EU) 528/2012
+  - (EC) 1223/2009

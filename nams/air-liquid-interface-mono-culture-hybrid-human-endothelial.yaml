@@ -1,0 +1,35 @@
+model:
+  id: air-liquid-interface-mono-culture-hybrid-human-endothelial
+  type: TwoDCellCulture
+  name: 'Air Liquid Interface: mono-culture hybrid human endothelial cells (EA.hy926)'
+vendor_holds_more_details: true
+source_resources:
+- resource: namsnetwork
+  source_urls:
+  - https://nams.network/details/134
+  - https://nams.network/details/237
+  accessed_on: '2026-11-09'
+  source_ids:
+  - '134'
+  - '237'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  - Toxicity in vitro
+  organs:
+  - Lung
+  cell_lines:
+  - EA.hy926
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  substances:
+  - Soot particles
+  methods_biomarkers:
+  - Comet assay
+  - IL-8
+  - LDH
+  - Particle-bound ROS instrument
