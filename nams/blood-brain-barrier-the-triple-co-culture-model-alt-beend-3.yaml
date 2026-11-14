@@ -2,12 +2,12 @@ model:
   id: blood-brain-barrier-the-triple-co-culture-model-alt-beend-3
   type: CoCulture
   name: 'Blood-Brain Barrier: the triple co-culture model: ALT/ bEend.3/ N2a cell lines'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/69
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '69'
   method_type: in vitro

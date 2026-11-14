@@ -2,12 +2,12 @@ model:
   id: mono-culture-lung-epithelial-cell-line-cl-haelvi-model
   type: TwoDCellCulture
   name: 'Mono-culture: lung epithelial cell-line (Cl-hAELVi) model'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/360
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '360'
   method_type: in vitro

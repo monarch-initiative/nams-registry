@@ -1,12 +1,12 @@
 model:
   id: guidance-document-for-the-induction-of-the-inflamed
   name: Guidance Document for the induction of the inflamed alveolar epithelial model
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/362
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '362'
   method_type: in vitro

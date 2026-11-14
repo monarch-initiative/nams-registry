@@ -1,13 +1,13 @@
 model:
   id: decellularized-lung-scaffolds-mouse
   name: Decellularized lung scaffolds mouse
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/149
   - https://nams.network/details/254
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '149'
   - '254'

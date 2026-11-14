@@ -3,13 +3,13 @@ model:
   type: CoCulture
   name: 'Air Liquid Interface: co-culture: bronchial epithelial (Calu-3)/ THP-1 macrophages
     using VITROCELL® Cloud12 system'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/239
   - https://nams.network/details/271
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '239'
   - '271'

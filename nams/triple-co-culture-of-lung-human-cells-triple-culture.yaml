@@ -3,13 +3,13 @@ model:
   type: CoCulture
   name: 'Triple co-culture of lung human cells: triple-culture epithelial cells (16HBE14o-)/monocyte-derived
     macrophages/monocyte-derived dendritic cells'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/41
   - https://nams.network/details/264
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '41'
   - '264'

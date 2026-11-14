@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-pathhunter-beta-arrestin
   name: 'Thyroid hormone disruption: PATHHUNTER® BETA-ARRESTIN thyrotropin-releasing hormone
     (TRH) receptor activation (beta-galactosidase)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/408
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '408'
   method_type: in vitro

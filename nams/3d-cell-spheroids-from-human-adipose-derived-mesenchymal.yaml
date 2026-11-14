@@ -2,12 +2,12 @@ model:
   id: 3d-cell-spheroids-from-human-adipose-derived-mesenchymal
   type: ThreeDCellCulture
   name: 3D cell spheroids from human adipose-derived mesenchymal stem cells (hAD-MSCs)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/364
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '364'
   method_type: in vitro

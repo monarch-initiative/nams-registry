@@ -3,13 +3,13 @@ model:
   name: ENMs lung dosing consideration based on in silico analysis for Dörntruper quartz (DQ12),
     barium sulphate (BaSO4), cerium oxide (CeO2), and titanium dioxide (TiO2), and multi-walled
     carbon nanotubes (MWCNT)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/34
   - https://nams.network/details/452
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '34'
   - '452'

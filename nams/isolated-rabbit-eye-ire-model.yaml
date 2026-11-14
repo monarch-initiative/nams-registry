@@ -1,12 +1,12 @@
 model:
   id: isolated-rabbit-eye-ire-model
   name: Isolated Rabbit Eye (IRE) model
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/328
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '328'
   method_type: in vitro

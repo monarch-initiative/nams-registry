@@ -2,12 +2,12 @@ model:
   id: lymphocyte-stimulation-indices-and-cytokine-profiling
   name: 'Lymphocyte stimulation indices and cytokine profiling: peripheral blood mononuclear
     cells'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/83
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '83'
   method_type: in vitro

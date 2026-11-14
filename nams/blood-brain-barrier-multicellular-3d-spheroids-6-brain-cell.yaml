@@ -3,12 +3,12 @@ model:
   type: ThreeDCellCulture
   name: 'Blood-Brain Barrier: multicellular 3D spheroids: 6 brain cell types: astrocytes,
     pericytes, endothelial cells, microglia cells, oligodendrocytes, and neurons'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/377
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '377'
   method_type: in vitro

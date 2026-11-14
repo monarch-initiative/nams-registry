@@ -1,12 +1,12 @@
 model:
   id: prediction-of-in-vitro-micronucleus-test-on-sio2-nanoforms-434
   name: Prediction of in vitro micronucleus test on SiO2 nanoforms - HUVECs
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/434
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '434'
   method_type: in silico

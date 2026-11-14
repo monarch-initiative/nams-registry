@@ -2,12 +2,12 @@ model:
   id: micronucleus-assay-on-3d-hepg2-spheroids
   type: ThreeDCellCulture
   name: Micronucleus assay on 3D HepG2 spheroids
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/101
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '101'
   method_type: in vitro

@@ -1,12 +1,12 @@
 model:
   id: rna-sequencing-rna-seq-and-genome-wide-dna-methylation
   name: RNA-sequencing (RNA-Seq) and genome-wide DNA methylation analysis
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/32
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '32'
   method_type: in vitro

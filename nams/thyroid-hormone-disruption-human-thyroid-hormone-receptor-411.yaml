@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-human-thyroid-hormone-receptor-411
   name: 'Thyroid hormone disruption: Human thyroid hormone receptor alpha (TRα) and Human
     thyroid hormone receptor beta (TRβ) reporter gene transactivation assays'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/411
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '411'
   method_type: in vitro

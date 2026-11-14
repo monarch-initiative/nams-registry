@@ -2,12 +2,12 @@ model:
   id: air-liquid-interface-mono-culture-human-nasal-epithelial-56
   type: TwoDCellCulture
   name: 'Air-Liquid Interface: mono-culture human nasal epithelial cells (HNE) for ozone'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/56
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '56'
   method_type: in vitro

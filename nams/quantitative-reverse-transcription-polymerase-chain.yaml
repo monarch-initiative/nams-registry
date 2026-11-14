@@ -2,12 +2,12 @@ model:
   id: quantitative-reverse-transcription-polymerase-chain
   name: Quantitative reverse transcription polymerase chain reaction (RT-qPCR) with Hepatocarcinoma
     PCR Array plates (Bio-Rad 10034966)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/248
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '248'
   method_type: in vitro

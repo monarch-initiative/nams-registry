@@ -3,12 +3,12 @@ model:
   name: Short Time Exposure In Vitro Test Method for Identifying i) Chemicals Inducing Serious
     Eye Damage and ii) Chemicals Not Requiring Classification for Eye Irritation or Serious
     Eye Damage
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/318
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '318'
   method_type: in vitro

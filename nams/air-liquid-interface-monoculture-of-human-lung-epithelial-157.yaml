@@ -3,7 +3,6 @@ model:
   type: TwoDCellCulture
   name: 'Air Liquid Interface: monoculture of human lung epithelial cells (lung cancer A549)
     using VITROCELL System'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
@@ -12,6 +11,7 @@ source_resources:
   - https://nams.network/details/519
   - https://nams.network/details/520
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '157'
   - '234'

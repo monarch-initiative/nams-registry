@@ -2,12 +2,12 @@ model:
   id: proteomics-and-metabolomics-to-assess-proteins-and
   name: Proteomics and metabolomics to assess proteins and metabolites related to the production
     of reduced glutathione
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/310
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '310'
   method_type: in vitro

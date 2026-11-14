@@ -3,12 +3,12 @@ model:
   type: QSARModel
   name: Integration of QSAR and NAM in the Read-Across Process for an Effective and Relevant
     Toxicological Assessment
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/494
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '494'
   method_type: in silico

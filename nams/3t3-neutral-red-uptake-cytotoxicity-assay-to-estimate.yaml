@@ -2,12 +2,12 @@ model:
   id: 3t3-neutral-red-uptake-cytotoxicity-assay-to-estimate
   name: 3T3 Neutral Red Uptake cytotoxicity assay to estimate starting doses for acute oral
     systemic toxicity tests
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/387
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '387'
   method_type: in vitro

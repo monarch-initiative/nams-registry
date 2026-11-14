@@ -2,12 +2,12 @@ model:
   id: toxtree-module-a-decision-tree-for-estimating-eye
   type: QSARModel
   name: 'Toxtree Module: A decision tree for estimating eye irritation and corrosion potential'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/322
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '322'
   method_type: in silico

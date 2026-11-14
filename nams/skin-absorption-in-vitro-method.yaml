@@ -1,12 +1,12 @@
 model:
   id: skin-absorption-in-vitro-method
   name: 'Skin Absorption: In Vitro Method'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/391
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '391'
   method_type: in vitro

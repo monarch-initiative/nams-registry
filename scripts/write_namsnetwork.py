@@ -5,7 +5,7 @@ Reads the public catalogue that scripts/fetch_namsnetwork.py writes
 (``nams.json``) and writes one NAMRecord (see
 src/nams_registry/schema/nam_records.yaml) per NAM into nams/. Each record
 holds only what the public catalogue gives, on its namsnetwork source
-record, and sets vendor_holds_more_details, because a NAM's full record on
+record, which sets source_holds_more_details, because a NAM's full record on
 NAMs.network needs a logged-in account.
 
 NAMs.network lists some NAMs more than once, once per endpoint; records whose
@@ -130,12 +130,13 @@ def single(rows, field):
 
 # The keys a record this script writes can have. A record with any other key
 # has been curated, and the script leaves it alone.
-RECORD_KEYS = {"model", "source_resources", "vendor_holds_more_details"}
+RECORD_KEYS = {"model", "source_resources"}
 MODEL_KEYS = {"id", "type", "name"}
 SOURCE_KEYS = {
     "resource",
     "source_urls",
     "accessed_on",
+    "source_holds_more_details",
     "source_ids",
     "method_type",
     "development_status",
@@ -204,6 +205,7 @@ def build_record(rows, accessed_on):
         "resource": RESOURCE,
         "source_urls": [PAGE.format(r["qsar_id"]) for r in rows],
         "accessed_on": accessed_on,
+        "source_holds_more_details": True,
         "source_ids": [str(r["qsar_id"]) for r in rows],
         "method_type": method_type,
         "development_status": single(rows, "development_status"),
@@ -219,7 +221,6 @@ def build_record(rows, accessed_on):
     }
     return {
         "model": {k: v for k, v in model.items() if k == "id" or v is not None},
-        "vendor_holds_more_details": True,
         "source_resources": [{k: v for k, v in source.items() if v not in (None, [])}],
     }
 

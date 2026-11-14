@@ -1,12 +1,12 @@
 model:
   id: the-vitrigel-eye-irritancy-test-vitrigel-eit
   name: The Vitrigel-Eye Irritancy Test (Vitrigel EIT)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/255
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '255'
   method_type: in vitro

@@ -1,12 +1,12 @@
 model:
   id: in-vivo-17-gene-biomarker-panel-pfs17-applicable-to-the
   name: In vivo 17-gene biomarker panel (PFS17) applicable to the assessment of lung fibrosis
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/198
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '198'
   method_type: ex vivo

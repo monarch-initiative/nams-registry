@@ -1,12 +1,12 @@
 model:
   id: nanoximet-cellular-viability-wst-1-assay-in-nr8383
   name: nanOxiMet “Cellular viability – WST-1 assay in NR8383 macrophages v1.0”
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/348
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '348'
   method_type: in vitro

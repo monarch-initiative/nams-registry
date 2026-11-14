@@ -2,13 +2,13 @@ model:
   id: spheroid-rotating-wall-vessel-mono-culture-human-epithelial
   type: ThreeDCellCulture
   name: 'Spheroid rotating wall vessel: mono-culture human epithelial lung carcinoma (A549)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/138
   - https://nams.network/details/241
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '138'
   - '241'

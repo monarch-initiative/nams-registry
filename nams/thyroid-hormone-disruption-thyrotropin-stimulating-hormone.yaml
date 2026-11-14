@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-thyrotropin-stimulating-hormone
   name: 'Thyroid hormone disruption: Thyrotropin-stimulating hormone (TSH) receptor activation
     based on cAMP measurement'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/354
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '354'
   method_type: in vitro

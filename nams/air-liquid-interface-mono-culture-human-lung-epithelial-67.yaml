@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-mono-culture-human-lung-epithelial-67
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture human lung epithelial cells (HFBE-21)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/67
   - https://nams.network/details/194
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '67'
   - '194'

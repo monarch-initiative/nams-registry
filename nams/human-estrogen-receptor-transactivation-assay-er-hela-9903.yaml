@@ -1,12 +1,12 @@
 model:
   id: human-estrogen-receptor-transactivation-assay-er-hela-9903
   name: Human Estrogen Receptor-α Transactivation Assay (ERα-HeLa-9903 cell line)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/349
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '349'
   method_type: in vitro

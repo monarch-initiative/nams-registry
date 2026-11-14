@@ -2,12 +2,12 @@ model:
   id: cell-transformation-assay-in-vitro-using-syrian-hamster
   name: Cell Transformation Assay in vitro using Syrian hamster embryonic (SHE) cells at pH
     7
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/390
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '390'
   method_type: in vitro

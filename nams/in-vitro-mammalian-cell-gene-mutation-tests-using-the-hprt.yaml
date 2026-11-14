@@ -1,12 +1,12 @@
 model:
   id: in-vitro-mammalian-cell-gene-mutation-tests-using-the-hprt
   name: In Vitro Mammalian Cell Gene Mutation Tests using the Hprt and xprt genes
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/444
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '444'
   method_type: in vitro

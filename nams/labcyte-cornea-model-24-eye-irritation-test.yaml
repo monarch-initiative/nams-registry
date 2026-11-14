@@ -1,12 +1,12 @@
 model:
   id: labcyte-cornea-model-24-eye-irritation-test
   name: LabCyte CORNEA-MODEL 24 Eye Irritation Test
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/275
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '275'
   method_type: in vitro

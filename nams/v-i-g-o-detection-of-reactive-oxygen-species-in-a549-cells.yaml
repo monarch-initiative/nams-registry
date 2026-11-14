@@ -1,12 +1,12 @@
 model:
   id: v-i-g-o-detection-of-reactive-oxygen-species-in-a549-cells
   name: V.I.G.O. “Detection of reactive oxygen species in A549 cells v1.1”
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/50
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '50'
   method_type: in vitro

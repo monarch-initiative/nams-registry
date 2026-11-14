@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-inhibition-of-monocarboxylate
   name: 'Thyroid hormone disruption: Inhibition of monocarboxylate transporter 8 (MCT8) based
     on Sandell-Kolthoff reaction'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/183
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '183'
   method_type: in vitro

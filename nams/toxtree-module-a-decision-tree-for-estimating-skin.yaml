@@ -2,13 +2,13 @@ model:
   id: toxtree-module-a-decision-tree-for-estimating-skin
   type: QSARModel
   name: 'Toxtree Module: A decision tree for estimating skin irritation and corrosion potential'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/152
   - https://nams.network/details/303
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '152'
   - '303'

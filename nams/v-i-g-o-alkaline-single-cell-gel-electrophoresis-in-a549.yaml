@@ -1,12 +1,12 @@
 model:
   id: v-i-g-o-alkaline-single-cell-gel-electrophoresis-in-a549
   name: V.I.G.O. “Alkaline single cell gel electrophoresis in A549 cells v1.0”
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/433
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '433'
   method_type: in vitro

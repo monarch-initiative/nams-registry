@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-mono-culture-hybrid-human-endothelial
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture hybrid human endothelial cells (EA.hy926)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/134
   - https://nams.network/details/237
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '134'
   - '237'

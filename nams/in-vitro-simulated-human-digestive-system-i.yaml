@@ -1,12 +1,12 @@
 model:
   id: in-vitro-simulated-human-digestive-system-i
   name: In vitro simulated human digestive system I
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/420
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '420'
   method_type: in chemico

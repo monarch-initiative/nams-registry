@@ -1,12 +1,12 @@
 model:
   id: toxcast-estrogen-receptor-er-pathway-mathematical-model
   name: ToxCast estrogen receptor (ER) pathway mathematical model
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/312
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '312'
   method_type: in vitro

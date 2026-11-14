@@ -3,13 +3,13 @@ model:
   type: CoCulture
   name: 'Air Liquid Interface: bi-culture: lung epithelial (Calu-3)/ macrophages derived from
     monocytes'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/28
   - https://nams.network/details/175
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '28'
   - '175'

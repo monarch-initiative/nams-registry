@@ -1,13 +1,13 @@
 model:
   id: stability-in-lysosomal-fluid
   name: Stability in lysosomal fluid
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/407
   - https://nams.network/details/456
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '407'
   - '456'

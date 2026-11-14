@@ -1,12 +1,12 @@
 model:
   id: epiderm-skin-irritation-test-sit
   name: EpiDERM TM Skin Irritation Test (SIT)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/302
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '302'
   method_type: in vitro

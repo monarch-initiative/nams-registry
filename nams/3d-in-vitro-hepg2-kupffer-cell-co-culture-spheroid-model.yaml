@@ -2,12 +2,12 @@ model:
   id: 3d-in-vitro-hepg2-kupffer-cell-co-culture-spheroid-model
   type: CoCulture
   name: 3D In Vitro HepG2, Kupffer Cell Co-Culture Spheroid Model
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/346
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '346'
   method_type: in vitro

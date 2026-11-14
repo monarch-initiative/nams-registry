@@ -1,12 +1,12 @@
 model:
   id: advanced-microscopies-and-omics-to-in-vitro-and-in-vivo
   name: Advanced microscopies and omics to in vitro and in vivo systems
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/47
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '47'
   method_type: in vitro

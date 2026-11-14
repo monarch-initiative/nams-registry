@@ -1,13 +1,13 @@
 model:
   id: air-liquid-interface-moving-air-liquid-interface-mali-383
   name: 'Air-Liquid Interface: Moving Air-Liquid Interface (MALI) bioreactor'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/383
   - https://nams.network/details/457
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '383'
   - '457'

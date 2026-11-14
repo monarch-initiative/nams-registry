@@ -1,12 +1,12 @@
 model:
   id: cd59-gene-loci-mutation-assay-in-vitro
   name: CD59 gene loci mutation assay in vitro
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/95
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '95'
   method_type: in vitro

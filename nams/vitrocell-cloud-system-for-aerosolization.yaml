@@ -1,13 +1,13 @@
 model:
   id: vitrocell-cloud-system-for-aerosolization
   name: VITROCELL® Cloud System for aerosolization
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/150
   - https://nams.network/details/207
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '150'
   - '207'

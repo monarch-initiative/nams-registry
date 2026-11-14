@@ -2,12 +2,12 @@ model:
   id: qsar-models-for-qualitative-prediction-of-chemical-induced
   type: QSARModel
   name: QSAR models for qualitative prediction of chemical-induced respiratory toxicity
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/529
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '529'
   method_type: in silico

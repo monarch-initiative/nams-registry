@@ -2,13 +2,13 @@ model:
   id: organoid-bronchosphere-human
   type: Organoid
   name: Organoid bronchosphere human
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/140
   - https://nams.network/details/244
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '140'
   - '244'

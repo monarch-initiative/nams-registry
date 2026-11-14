@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-activation-of-the-sodium-iodide
   name: 'Thyroid hormone disruption: Activation of the sodium iodide symporter (NIS) based
     on Sandell-Kolthoff reaction'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/350
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '350'
   method_type: in vitro

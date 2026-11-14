@@ -2,13 +2,13 @@ model:
   id: co-culture-model-human-lung-epithelial-cell-line-h441
   type: CoCulture
   name: 'Co-culture model: human lung epithelial cell line (H441)/endothelial cell line (ISO-HAS-1)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/2
   - https://nams.network/details/6
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '2'
   - '6'

@@ -3,12 +3,12 @@ model:
   type: TwoDCellCulture
   name: 'Air-Liquid Interface: mono-culture normal human bronchial epithelial (NHBE) for air
     pollution particles exposure'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/222
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '222'
   method_type: in vitro

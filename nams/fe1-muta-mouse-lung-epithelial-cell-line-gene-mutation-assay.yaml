@@ -1,12 +1,12 @@
 model:
   id: fe1-muta-mouse-lung-epithelial-cell-line-gene-mutation-assay
   name: FE1 MutaTM Mouse Lung Epithelial Cell Line gene mutation assay
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/439
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '439'
   method_type: in vitro

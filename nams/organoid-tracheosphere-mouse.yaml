@@ -1,13 +1,13 @@
 model:
   id: organoid-tracheosphere-mouse
   name: Organoid tracheosphere mouse
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/139
   - https://nams.network/details/243
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '139'
   - '243'

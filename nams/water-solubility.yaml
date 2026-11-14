@@ -1,12 +1,12 @@
 model:
   id: water-solubility
   name: Water Solubility
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/406
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '406'
   method_type: in chemico

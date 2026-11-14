@@ -1,12 +1,12 @@
 model:
   id: platelet-aggregation-using-single-cell-counts
   name: Platelet aggregation using single cell counts
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/31
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '31'
   method_type: in vitro

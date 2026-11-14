@@ -2,12 +2,12 @@ model:
   id: stably-transfected-human-androgen-receptor-transcriptional-414
   name: Stably Transfected Human Androgen Receptor Transcriptional Activation Assay for Detection
     of Androgenic Agonist and Antagonist Activity of Chemicals (AR-EcoScreen™ cell line)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/414
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '414'
   method_type: in vitro

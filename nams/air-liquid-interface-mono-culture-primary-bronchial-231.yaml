@@ -3,12 +3,12 @@ model:
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture primary bronchial epithelial cells (PBEC) for
     wood smoke'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/231
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '231'
   method_type: in vitro

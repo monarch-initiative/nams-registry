@@ -1,12 +1,12 @@
 model:
   id: thyroid-hormone-disruption-tyrosine-iodination-measured
   name: 'Thyroid hormone disruption: Tyrosine iodination measured using liquid chromatography'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/277
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '277'
   method_type: in vitro

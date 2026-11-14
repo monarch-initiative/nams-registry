@@ -1,12 +1,12 @@
 model:
   id: cytochrome-p450-cyp-enzyme-induction-in-vitro-on-human
   name: Cytochrome P450 (CYP) enzyme induction in vitro on human HepaRG™ cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/127
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '127'
   method_type: in vitro

@@ -3,13 +3,13 @@ model:
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture human alveolar lung cell line (A549) with P.R.I.T.®
     ExpoCube®'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/15
   - https://nams.network/details/170
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '15'
   - '170'

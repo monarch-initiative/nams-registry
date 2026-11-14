@@ -53,8 +53,11 @@ def test_page_marks_nams_whose_source_holds_more(tmp_path):
     marked = [
         r
         for r in page_data(output)
-        if r["kind"] == "nam" and r["vendor_holds_more_details"]
+        if r["kind"] == "nam" and r["source_holds_more_details"]
     ]
     assert marked
     assert all(r["source_resource_ids"] == ["namsnetwork"] for r in marked)
     assert any(r["cell_lines"] for r in marked)
+    # The mark belongs to the source that holds more, not to the record, so
+    # only that source is named.
+    assert all(r["sources_holding_more"] == r["sources"] for r in marked)

@@ -1,13 +1,13 @@
 model:
   id: organoid-lung-bud-human
   name: Organoid lung bud human
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/146
   - https://nams.network/details/251
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '146'
   - '251'

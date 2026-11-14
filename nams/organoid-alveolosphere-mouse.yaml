@@ -1,13 +1,13 @@
 model:
   id: organoid-alveolosphere-mouse
   name: Organoid alveolosphere mouse
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/144
   - https://nams.network/details/246
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '144'
   - '246'

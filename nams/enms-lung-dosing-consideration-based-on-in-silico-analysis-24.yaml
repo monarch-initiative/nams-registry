@@ -5,13 +5,13 @@ model:
     (DQ12), barium sulphate (BaSO4), cerium oxide (CeO2), and titanium dioxide (TiO2), and
     multi-walled carbon nanotubes (MWCNT): bi-culture human epithelial cells (A549)/differentiated
     monocytes into macrophages (THP-1)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/24
   - https://nams.network/details/173
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '24'
   - '173'

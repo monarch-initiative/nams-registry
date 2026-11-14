@@ -1,12 +1,12 @@
 model:
   id: prediction-of-in-vitro-micronucleus-test-on-tio2-nanoforms-106
   name: Prediction of in vitro micronucleus test on TiO2 nanoforms - Caco-2
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/106
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '106'
   method_type: in silico

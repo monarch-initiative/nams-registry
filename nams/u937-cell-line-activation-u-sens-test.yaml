@@ -1,12 +1,12 @@
 model:
   id: u937-cell-line-activation-u-sens-test
   name: U937 cell line activation (U-SENS™) Test
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/284
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '284'
   method_type: in vitro

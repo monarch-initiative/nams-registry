@@ -2,12 +2,12 @@ model:
   id: intestinal-transport-follicle-associated-epithelial-model
   name: 'Intestinal Transport: Follicle-associated epithelial model mimicking microfold (M)
     cells'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/369
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '369'
   method_type: in vitro

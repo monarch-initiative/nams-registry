@@ -3,12 +3,12 @@ model:
   type: CoCulture
   name: Secondary genotoxicity testing by using in vitro methods based on conditioned media
     or co-cultures
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/440
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '440'
   method_type: in vitro

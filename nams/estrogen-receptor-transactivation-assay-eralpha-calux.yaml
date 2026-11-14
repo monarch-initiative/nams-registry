@@ -1,12 +1,12 @@
 model:
   id: estrogen-receptor-transactivation-assay-eralpha-calux
   name: Estrogen Receptor Transactivation Assay (ERalpha-CALUX)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/309
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '309'
   method_type: in vitro

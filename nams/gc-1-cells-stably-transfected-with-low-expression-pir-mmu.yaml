@@ -1,12 +1,12 @@
 model:
   id: gc-1-cells-stably-transfected-with-low-expression-pir-mmu
   name: GC-1 cells stably transfected with low expression piR-mmu-32362259 lentiviral vector
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/274
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '274'
   method_type: in vitro

@@ -2,12 +2,12 @@ model:
   id: 3d-luhmes-human-neuronal-precursor-cells-and-brainspheres
   type: ThreeDCellCulture
   name: 3D LUHMES human neuronal precursor cells and BrainSpheres from neural progenitor cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/103
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '103'
   method_type: in vitro

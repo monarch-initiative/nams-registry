@@ -1,13 +1,13 @@
 model:
   id: quasi-air-liquid-interface-exposure-of-nanoparticles
   name: Quasi-Air Liquid Interface exposure of nanoparticles
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/158
   - https://nams.network/details/379
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '158'
   - '379'

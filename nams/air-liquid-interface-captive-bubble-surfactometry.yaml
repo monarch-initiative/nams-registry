@@ -1,13 +1,13 @@
 model:
   id: air-liquid-interface-captive-bubble-surfactometry
   name: 'Air Liquid Interface: Captive Bubble Surfactometry'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/268
   - https://nams.network/details/293
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '268'
   - '293'

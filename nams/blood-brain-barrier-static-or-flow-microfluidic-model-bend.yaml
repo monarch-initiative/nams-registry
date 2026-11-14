@@ -1,12 +1,12 @@
 model:
   id: blood-brain-barrier-static-or-flow-microfluidic-model-bend
   name: 'Blood-Brain Barrier: static or flow microfluidic model: bEnd.3 cells'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/73
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '73'
   method_type: in vitro

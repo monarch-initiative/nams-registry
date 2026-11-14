@@ -2,12 +2,12 @@ model:
   id: guidance-document-on-the-adaptation-of-in-vitro-mammalian
   name: Guidance Document on the Adaptation of In Vitro Mammalian Cell Based Genotoxicity
     TGs for Testing of Manufactured Nanomaterials
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/437
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '437'
   method_type: in vitro

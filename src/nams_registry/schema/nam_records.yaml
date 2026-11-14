@@ -43,7 +43,6 @@ classes:
     - source_resources
     - compared_with
     - dismech_status
-    - vendor_holds_more_details
     - creation_date
     - last_modified_date
 
@@ -138,6 +137,13 @@ classes:
         description: Products the resource sells for the NAM, for a vendor.
       accessed_on:
         range: date
+      source_holds_more_details:
+        range: boolean
+        description: >-
+          The resource holds more about the NAM than this record does, in a
+          part the registry can't use, e.g. NAMs.network's full records, which
+          need a logged-in account. The record holds only what the resource
+          gives publicly.
       source_ids:
         multivalued: true
         description: >-
@@ -252,13 +258,6 @@ slots:
       product list of the resource it was found in (source_resources >
       products). Broader or narrower terms are not synonyms either. Move into
       the model if NAMO adds it.
-  vendor_holds_more_details:
-    range: boolean
-    description: >-
-      The resource the NAM was found in holds more about it than this record
-      does, in a part the registry can't use, e.g. NAMs.network's full
-      records, which need a logged-in account. The record holds only what
-      the resource gives publicly.
   creation_date:
     range: date
     slot_uri: dcterms:created

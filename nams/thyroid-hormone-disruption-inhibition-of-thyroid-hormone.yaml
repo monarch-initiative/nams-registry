@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-inhibition-of-thyroid-hormone
   name: 'Thyroid hormone disruption: Inhibition of thyroid hormone sulfation using liquid
     chromatography'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/404
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '404'
   method_type: in vitro

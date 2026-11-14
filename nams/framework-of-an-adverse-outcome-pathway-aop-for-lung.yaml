@@ -2,12 +2,12 @@ model:
   id: framework-of-an-adverse-outcome-pathway-aop-for-lung
   name: Framework of an adverse outcome pathway (AOP) for lung fibrosis to identify key biological
     events linking MWCNT exposure to lung fibrosis
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/297
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '297'
   method_type: in vitro

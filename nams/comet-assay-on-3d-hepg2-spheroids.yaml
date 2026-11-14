@@ -2,12 +2,12 @@ model:
   id: comet-assay-on-3d-hepg2-spheroids
   type: ThreeDCellCulture
   name: Comet assay on 3D HepG2 spheroids
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/100
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '100'
   method_type: in vitro

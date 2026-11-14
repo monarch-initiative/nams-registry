@@ -1,12 +1,12 @@
 model:
   id: thyroid-hormone-disruption-deiodinase-1-activity-based-on
   name: 'Thyroid hormone disruption: Deiodinase 1 activity based on Sandell-Kolthoff reaction'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/189
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '189'
   method_type: in vitro

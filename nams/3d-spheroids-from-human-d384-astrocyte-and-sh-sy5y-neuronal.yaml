@@ -2,12 +2,12 @@ model:
   id: 3d-spheroids-from-human-d384-astrocyte-and-sh-sy5y-neuronal
   type: ThreeDCellCulture
   name: 3D-spheroids from human D384 astrocyte- and SH-SY5Y neuronal-like cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/102
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '102'
   method_type: in vitro

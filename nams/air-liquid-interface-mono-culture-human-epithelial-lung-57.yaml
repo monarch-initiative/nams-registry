@@ -2,12 +2,12 @@ model:
   id: air-liquid-interface-mono-culture-human-epithelial-lung-57
   type: TwoDCellCulture
   name: 'Air-Liquid Interface: mono-culture human epithelial lung carcinoma (A549)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/57
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '57'
   method_type: in vitro

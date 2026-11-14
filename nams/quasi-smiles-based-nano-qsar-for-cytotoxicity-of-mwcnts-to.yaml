@@ -2,12 +2,12 @@ model:
   id: quasi-smiles-based-nano-qsar-for-cytotoxicity-of-mwcnts-to
   type: QSARModel
   name: Quasi-SMILES-based nano-QSAR for cytotoxicity of MWCNTs to human lung cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/539
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '539'
   method_type: in silico

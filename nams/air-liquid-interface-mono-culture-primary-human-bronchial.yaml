@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-mono-culture-primary-human-bronchial
   type: TwoDCellCulture
   name: 'Air-Liquid Interface: mono-culture primary human bronchial epithelial cells (HBEpC)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/60
   - https://nams.network/details/190
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '60'
   - '190'

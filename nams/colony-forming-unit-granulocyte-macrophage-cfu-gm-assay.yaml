@@ -1,12 +1,12 @@
 model:
   id: colony-forming-unit-granulocyte-macrophage-cfu-gm-assay
   name: Colony Forming Unit-Granulocyte Macrophage (CFU-GM) assay
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/427
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '427'
   method_type: in vitro

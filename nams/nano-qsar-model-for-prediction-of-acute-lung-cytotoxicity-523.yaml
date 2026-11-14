@@ -3,12 +3,12 @@ model:
   type: QSARModel
   name: Nano-QSAR model for prediction of acute lung cytotoxicity of metal oxide nanoparticles
     for A549 cell line
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/523
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '523'
   method_type: in silico

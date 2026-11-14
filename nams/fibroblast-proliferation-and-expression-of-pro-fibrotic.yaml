@@ -1,12 +1,12 @@
 model:
   id: fibroblast-proliferation-and-expression-of-pro-fibrotic
   name: Fibroblast proliferation and expression of pro-fibrotic biomarkers
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/55
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '55'
   method_type: in vitro

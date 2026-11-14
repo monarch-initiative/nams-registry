@@ -1,12 +1,12 @@
 model:
   id: high-content-imaging-of-dna-double-strain-breaks-dsbs
   name: High content imaging of DNA double strain breaks DSBs (phosphorylated H2AX staining)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/98
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '98'
   method_type: in vitro

@@ -3,12 +3,12 @@ model:
   type: PBPKModel
   name: Respiratory tract PBPK model for styrene - species-specific lung dosimetry and local
     metabolism
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/531
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '531'
   method_type: in silico

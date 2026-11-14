@@ -1,12 +1,12 @@
 model:
   id: defined-approaches-on-skin-sensitisation-2-out-of-3
   name: 'Defined Approaches on Skin Sensitisation: 2 out of 3'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/304
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '304'
   method_type: in vitro/in silico

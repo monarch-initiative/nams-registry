@@ -1,12 +1,12 @@
 model:
   id: v-i-g-o-mts-assay-in-thp-1-cells-v1-1
   name: V.I.G.O. "MTS assay in THP-1 cells v1.1"
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/356
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '356'
   method_type: in vitro

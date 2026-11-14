@@ -2,13 +2,13 @@ model:
   id: stably-transfected-human-androgen-receptor-transcriptional-174
   name: Stably Transfected Human Androgen Receptor Transcriptional Activation Assay for Detection
     of Androgenic Agonist and Antagonist Activity of Chemicals (AR-CALUX)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/174
   - https://nams.network/details/181
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '174'
   - '181'

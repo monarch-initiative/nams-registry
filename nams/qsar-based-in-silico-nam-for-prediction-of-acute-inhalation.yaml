@@ -3,12 +3,12 @@ model:
   type: QSARModel
   name: QSAR-based in silico NAM for prediction of acute inhalation toxicity of e-liquid ingredients
     and mixtures for rat
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/540
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '540'
   method_type: in silico

@@ -1,12 +1,12 @@
 model:
   id: stimulation-of-fibroblasts-in-vitro
   name: Stimulation of fibroblasts in vitro
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/52
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '52'
   method_type: in vitro

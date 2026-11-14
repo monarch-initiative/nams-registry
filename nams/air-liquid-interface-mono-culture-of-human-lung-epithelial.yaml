@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-mono-culture-of-human-lung-epithelial
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture of human lung epithelial cells (16HBE14o)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/88
   - https://nams.network/details/210
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '88'
   - '210'

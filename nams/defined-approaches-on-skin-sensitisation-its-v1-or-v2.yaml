@@ -1,12 +1,12 @@
 model:
   id: defined-approaches-on-skin-sensitisation-its-v1-or-v2
   name: 'Defined Approaches on Skin Sensitisation: ITS v1 or v2'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/341
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '341'
   method_type: in silico

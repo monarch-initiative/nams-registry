@@ -1,12 +1,12 @@
 model:
   id: cell-transformation-assay-in-vitro-on-the-bhas-42-cells
   name: Cell Transformation Assay in vitro on the Bhas 42 cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/389
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '389'
   method_type: in vitro

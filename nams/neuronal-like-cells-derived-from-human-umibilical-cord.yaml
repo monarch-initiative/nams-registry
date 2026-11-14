@@ -2,13 +2,13 @@ model:
   id: neuronal-like-cells-derived-from-human-umibilical-cord
   name: Neuronal-like cells derived from human umibilical cord lining membranes mesenchymal
     stem cells as a tool for the neurotoxicity and developmental neurotoxicity testing
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/393
   - https://nams.network/details/461
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '393'
   - '461'

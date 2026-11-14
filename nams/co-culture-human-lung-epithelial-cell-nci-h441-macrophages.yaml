@@ -2,13 +2,13 @@ model:
   id: co-culture-human-lung-epithelial-cell-nci-h441-macrophages
   type: CoCulture
   name: 'Co-culture: human lung epithelial cell (NCI-H441)/ macrophages (dTHP-1)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/242
   - https://nams.network/details/273
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '242'
   - '273'

@@ -1,12 +1,12 @@
 model:
   id: bovine-corneal-opacity-and-permeability-bcop-op-kit-test
   name: Bovine Corneal Opacity and Permeability (BCOP OP-KIT) test method
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/112
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '112'
   method_type: in vitro

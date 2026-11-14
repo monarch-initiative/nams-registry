@@ -2,12 +2,12 @@ model:
   id: venaflux-platform-cellix-ltd-studying-endothelial-cells
   name: 'VenaFluxTM Platform (Cellix Ltd): studying endothelial cells under regulated shear
     stress conditions'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/317
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '317'
   method_type: in vitro

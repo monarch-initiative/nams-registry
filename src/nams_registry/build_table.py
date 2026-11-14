@@ -68,7 +68,7 @@ TABS = [
             ("organ", "Organ", "text", "values"),
             ("species", "Species", "text", "values"),
             ("sources", "Found in", "text", "values"),
-            ("vendor_holds_more_details", "Source holds more", "check", "present"),
+            ("source_holds_more_details", "Source holds more", "check", "present"),
         ],
     ),
 ]
@@ -121,7 +121,15 @@ def nam_row(record, resource_names):
             for s in record.get("source_resources") or []
             for c in s.get("cell_lines", [])
         ],
-        "vendor_holds_more_details": bool(record.get("vendor_holds_more_details")),
+        "source_holds_more_details": any(
+            s.get("source_holds_more_details")
+            for s in record.get("source_resources") or []
+        ),
+        "sources_holding_more": [
+            resource_names.get(s["resource"], s["resource"])
+            for s in record.get("source_resources") or []
+            if s.get("source_holds_more_details")
+        ],
         "record": record,
         **record_link(f"nams/{model['id']}.yaml"),
     }
@@ -407,8 +415,9 @@ function detailNam(r) {
     dm.processed_through_dismech ? "Came through DisMech curation" : "Did not come through DisMech curation",
     dm.present_in_dismech ? "in the DisMech graph" : "not in the DisMech graph",
   ].join("; ") + ` (${a("https://github.com/monarch-initiative/dismech/commit/" + dm.dismech_commit, "commit " + dm.dismech_commit.slice(0, 7))}, checked ${esc(dm.assessed_on)})` : "";
-  const more = rec.vendor_holds_more_details
-    ? `<p class="callout">${esc(r.sources.join(" and "))} holds more about this NAM than it gives publicly. This record holds only the public part, in the resource's own terms, under Found in.</p>`
+  const holding = r.sources_holding_more || [];
+  const more = holding.length
+    ? `<p class="callout">${esc(holding.join(" and "))} ${holding.length === 1 ? "holds" : "hold"} more about this NAM than ${holding.length === 1 ? "it gives" : "they give"} publicly. This record holds only the public part, in the resource's own terms, under Found in.</p>`
     : "";
   return `${more}<dl>
     ${row("Id", esc(r.id))}

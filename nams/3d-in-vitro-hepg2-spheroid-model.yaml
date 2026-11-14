@@ -2,12 +2,12 @@ model:
   id: 3d-in-vitro-hepg2-spheroid-model
   type: ThreeDCellCulture
   name: 3D In Vitro HepG2 Spheroid Model
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/107
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '107'
   method_type: in vitro

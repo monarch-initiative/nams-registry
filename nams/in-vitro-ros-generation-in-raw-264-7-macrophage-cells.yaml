@@ -1,12 +1,12 @@
 model:
   id: in-vitro-ros-generation-in-raw-264-7-macrophage-cells
   name: In vitro ROS generation in RAW 264.7 macrophage cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/4
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '4'
   method_type: in vitro

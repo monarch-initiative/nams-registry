@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-in-vitro-human-adipose-stromal
   name: 'Thyroid hormone disruption: In vitro human adipose stromal cell—human umbilical vein
     endothelial cell (hASC-HUVEC) vasculogenesis/angiogenesis method'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/401
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '401'
   method_type: in vitro

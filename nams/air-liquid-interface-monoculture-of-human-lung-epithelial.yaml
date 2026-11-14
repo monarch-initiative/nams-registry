@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-monoculture-of-human-lung-epithelial
   type: TwoDCellCulture
   name: 'Air Liquid Interface: monoculture of human lung epithelial (NCI-H441) cell line'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/156
   - https://nams.network/details/347
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '156'
   - '347'

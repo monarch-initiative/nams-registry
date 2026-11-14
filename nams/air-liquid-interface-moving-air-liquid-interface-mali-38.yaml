@@ -3,13 +3,13 @@ model:
   type: TwoDCellCulture
   name: 'Air-Liquid Interface: Moving Air-Liquid Interface (MALI) bioreactor, mono-culture
     bronchial epithelial (16HBE14o-)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/38
   - https://nams.network/details/179
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '38'
   - '179'

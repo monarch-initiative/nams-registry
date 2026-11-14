@@ -2,12 +2,12 @@ model:
   id: bi-culture-human-small-airway-epithelial-human
   type: CoCulture
   name: 'Bi-culture: human small airway epithelial/human microvascular endothelial cells'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/515
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '515'
   method_type: in vitro

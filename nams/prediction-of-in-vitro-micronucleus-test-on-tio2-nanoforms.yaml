@@ -1,12 +1,12 @@
 model:
   id: prediction-of-in-vitro-micronucleus-test-on-tio2-nanoforms
   name: Prediction of in vitro micronucleus test on TiO2 nanoforms - SH-SY5Y
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/61
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '61'
   method_type: in silico

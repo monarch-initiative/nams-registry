@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-dynamic-model-for-the-alveolar
   name: 'Air-Liquid Interface: Dynamic Model for the Alveolar Interface (DALI) / Moving Air-Liquid
     Interface (MALI)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/40
   - https://nams.network/details/180
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '40'
   - '180'

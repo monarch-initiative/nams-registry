@@ -1,13 +1,13 @@
 model:
   id: biomarkers-of-lung-fibrosis-in-human-lung-fibroblasts
   name: Biomarkers of lung fibrosis in human lung fibroblasts
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/25
   - https://nams.network/details/449
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '25'
   - '449'

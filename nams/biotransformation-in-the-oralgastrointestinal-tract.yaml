@@ -1,12 +1,12 @@
 model:
   id: biotransformation-in-the-oralgastrointestinal-tract
   name: Biotransformation in the Oral–Gastro–Intestinal Tract
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/78
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '78'
   method_type: in vitro

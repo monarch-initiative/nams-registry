@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-bi-culture-bronchial-epithelial-calu-3
   type: CoCulture
   name: 'Air Liquid Interface: bi-culture: bronchial epithelial (Calu-3)/ THP-1 macrophages'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/1
   - https://nams.network/details/262
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '1'
   - '262'

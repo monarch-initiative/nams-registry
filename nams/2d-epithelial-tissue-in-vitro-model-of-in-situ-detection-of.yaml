@@ -1,12 +1,12 @@
 model:
   id: 2d-epithelial-tissue-in-vitro-model-of-in-situ-detection-of
   name: 2D epithelial tissue in-vitro model of in situ detection of ENM elemental distribution
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/363
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '363'
   method_type: in vitro

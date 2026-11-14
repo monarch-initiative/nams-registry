@@ -2,13 +2,13 @@ model:
   id: air-liquid-interface-mono-culture-epithelial-beas-2b
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture: epithelial (BEAS-2B)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/9
   - https://nams.network/details/166
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '9'
   - '166'

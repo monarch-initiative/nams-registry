@@ -2,12 +2,12 @@ model:
   id: 3d-reconstructed-skin-micronucleus-rsmn-assay-epiderm
   type: ThreeDCellCulture
   name: 3D reconstructed skin micronucleus (RSMN) assay (EpiDermTM)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/432
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '432'
   method_type: in vitro

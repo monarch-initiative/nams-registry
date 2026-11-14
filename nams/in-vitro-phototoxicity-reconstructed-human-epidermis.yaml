@@ -2,12 +2,12 @@ model:
   id: in-vitro-phototoxicity-reconstructed-human-epidermis
   type: ThreeDCellCulture
   name: 'In vitro Phototoxicity: Reconstructed Human Epidermis Phototoxicity test method'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/343
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '343'
   method_type: in vitro

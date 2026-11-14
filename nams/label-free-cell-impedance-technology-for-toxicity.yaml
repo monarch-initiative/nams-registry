@@ -2,12 +2,12 @@ model:
   id: label-free-cell-impedance-technology-for-toxicity
   name: Label-free cell impedance technology for toxicity assessment (xCELLigence System,
     ACEA Biosciences)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/85
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '85'
   method_type: in vitro

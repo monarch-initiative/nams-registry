@@ -2,7 +2,6 @@ model:
   id: air-liquid-interface-mono-culture-human-lung-epithelial
   type: TwoDCellCulture
   name: 'Air Liquid Interface: mono-culture: human lung epithelial cells (A549)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
@@ -11,6 +10,7 @@ source_resources:
   - https://nams.network/details/176
   - https://nams.network/details/236
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '29'
   - '133'

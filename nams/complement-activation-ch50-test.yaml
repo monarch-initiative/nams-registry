@@ -1,12 +1,12 @@
 model:
   id: complement-activation-ch50-test
   name: Complement activation (CH50) test
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/84
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '84'
   method_type: in vitro

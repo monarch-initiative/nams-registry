@@ -1,12 +1,12 @@
 model:
   id: the-kinetic-direct-peptide-reactivity-assay-kdpra
   name: The kinetic Direct Peptide Reactivity Assay (kDPRA)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/290
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '290'
   method_type: in chemico

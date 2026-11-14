@@ -1,12 +1,12 @@
 model:
   id: macrophage-differentiation-from-thp-1-cells
   name: Macrophage differentiation from THP-1 cells
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/358
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '358'
   method_type: in vitro

@@ -2,7 +2,6 @@ model:
   id: bfr-structural-alerts-rule-based-decision-support-system-dss
   type: QSARModel
   name: BfR structural alerts rule-based decision support system (DSS)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
@@ -10,6 +9,7 @@ source_resources:
   - https://nams.network/details/320
   - https://nams.network/details/448
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '7'
   - '320'

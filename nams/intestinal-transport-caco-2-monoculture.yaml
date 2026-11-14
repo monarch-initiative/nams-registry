@@ -2,12 +2,12 @@ model:
   id: intestinal-transport-caco-2-monoculture
   type: TwoDCellCulture
   name: 'Intestinal Transport: Caco-2 monoculture'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/316
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '316'
   method_type: in vitro

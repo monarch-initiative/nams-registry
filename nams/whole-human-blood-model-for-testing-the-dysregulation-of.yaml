@@ -1,12 +1,12 @@
 model:
   id: whole-human-blood-model-for-testing-the-dysregulation-of
   name: Whole human blood model for testing the dysregulation of fibrinolysis
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/16
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '16'
   method_type: in vitro

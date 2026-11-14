@@ -1,13 +1,13 @@
 model:
   id: organoid-alveolosphere-human
   name: Organoid alveolosphere human
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/145
   - https://nams.network/details/247
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '145'
   - '247'

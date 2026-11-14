@@ -1,12 +1,12 @@
 model:
   id: synthetic-microvascular-networks-smns-immortalized-rbe4
   name: 'Synthetic microvascular networks (SMNs): immortalized RBE4 cells'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/75
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '75'
   method_type: in vitro

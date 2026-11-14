@@ -2,13 +2,13 @@ model:
   id: nlrp3-inflammasome-and-pro-fibrotic-markers-induction-in
   name: NLRP3 inflammasome and pro-fibrotic markers induction in bronchial epithelial and
     fibroblast cells in vitro
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/26
   - https://nams.network/details/451
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '26'
   - '451'

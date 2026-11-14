@@ -1,12 +1,12 @@
 model:
   id: epiocular-eye-irritation-test
   name: EpiOcular™ Eye Irritation Test
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/279
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '279'
   method_type: in vitro

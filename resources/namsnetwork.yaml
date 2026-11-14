@@ -28,7 +28,8 @@ relevance_note: >-
   https://api.nams.network, which scripts/fetch_namsnetwork.py reads, and
   scripts/write_namsnetwork.py turns into a NAM record per NAM in nams/,
   holding only what the public list and filters give, with
-  vendor_holds_more_details set. A NAM's full record needs a free, logged-in account.
+  source_holds_more_details set on its source record. A NAM's full record needs
+  a free, logged-in account.
   It adds a description, publications, cell types with species, measures,
   limitations and, for in silico NAMs, the model's algorithm and training
   data, but the site states no terms for reusing it.

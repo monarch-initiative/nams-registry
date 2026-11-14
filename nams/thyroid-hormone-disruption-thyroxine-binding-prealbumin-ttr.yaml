@@ -2,12 +2,12 @@ model:
   id: thyroid-hormone-disruption-thyroxine-binding-prealbumin-ttr
   name: 'Thyroid hormone disruption: Thyroxine-binding prealbumin (TTR) / thyroxine-binding
     globulin (TBG) binding using fluorescence displacement (ANSA)'
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/351
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '351'
   method_type: in vitro

@@ -3,12 +3,12 @@ model:
   type: PBPKModel
   name: MPPD-PBPK QIVIVE framework for nicotine aerosols - ALI POD-to-HEC reverse dosimetry
     and plasma PK prediction
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/533
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '533'
   method_type: in silico

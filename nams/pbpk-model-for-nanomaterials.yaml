@@ -2,12 +2,12 @@ model:
   id: pbpk-model-for-nanomaterials
   type: PBPKModel
   name: PBPK Model for nanomaterials
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/64
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '64'
   method_type: in silico

@@ -1,12 +1,12 @@
 model:
   id: consensus-models-for-endocrine-disrupting-chemical-receptor
   name: Consensus models for endocrine-disrupting chemical receptor binding (PXR)
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/512
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '512'
   method_type: in silico

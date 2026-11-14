@@ -1,12 +1,12 @@
 model:
   id: human-cell-line-activation-h-clat-test
   name: Human Cell Line Activation (h-CLAT) Test
-vendor_holds_more_details: true
 source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/510
   accessed_on: '2026-11-09'
+  source_holds_more_details: true
   source_ids:
   - '510'
   method_type: in vitro
