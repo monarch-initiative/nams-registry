@@ -1,0 +1,115 @@
+model:
+  id: photoreceptor-pluripotent-stem-cell
+  type: TwoDCellCulture
+  name: Photoreceptors from human pluripotent stem cells
+  description: >-
+    Human iPSC/PSC-derived photoreceptors (rods and cones), the outer-retina
+    cells whose loss defines retinitis pigmentosa and underlies age-related
+    macular degeneration. Reviewed in Wong, Yip & Huang 2023
+    (doi:10.3390/ijms241713652, Table 3) across several protocols: defined
+    conditions with signalling modulators, conditions without extrinsic
+    modulators, small-molecule inhibitors, and stirred-tank bioreactor culture
+    for higher yield, enhanced proliferation and reduced apoptosis. These are
+    wild-type reference cells carrying no disease genotype. Maturation is
+    protocol-dependent: transmission electron microscopy shows photoreceptors
+    treated with 9-cis retinal reach a more advanced stage of outer-segment
+    maturation than those treated with all-trans retinoic acid. The purified
+    product is reported both as a 2D culture and in organoid/bioreactor
+    formats; the NAMO class is recorded as TwoDCellCulture for the
+    differentiated product.
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    Purified outer-retina photoreceptors (rods and cones) of the retina
+    (UBERON:0000966), as a monolayer or organoid/bioreactor-derived culture.
+  complexity_level: LOW
+  cell_types:
+  - id: CL:0000210
+    name: photoreceptor cell
+  - id: CL:0000604
+    name: retinal rod cell
+  - id: CL:0000573
+    name: retinal cone cell
+  cell_source: pluripotent stem cells
+  substrate_type: Tissue-culture surface; also organoid-derived and stirred-tank bioreactor formats.
+  differentiation_method: >-
+    Several protocols reviewed in Wong et al. 2023: defined differentiation
+    with signalling modulators; differentiation without extrinsic modulators;
+    small-molecule inhibitors; and stirred-tank bioreactor culture
+    (Ovando-Roche et al.) for the highest yield. 9-cis retinal is used to
+    advance rod outer-segment maturation.
+  culture_conditions: >-
+    2D adherent culture and organoid-derived/bioreactor formats. Identity and
+    maturation are validated by immunofluorescence and qPCR marker panels
+    (OTX2, recoverin, CRX, NRL, NR2E3, RHO, opsins), flow cytometry,
+    single-cell RNA sequencing, and transmission electron microscopy of
+    outer-segment ultrastructure.
+  references:
+  - id: doi:10.3390/ijms241713652
+    title: 'Establishing Functional Retina in a Dish: Progress and Promises of Induced
+      Pluripotent Stem Cell-Based Retinal Neuron Differentiation'
+    authors:
+    - Nonthaphat Kent Wong
+    - Shea Ping Yip
+    - Chien-Ling Huang
+    journal: International Journal of Molecular Sciences
+    year: 2023
+    url: https://doi.org/10.3390/ijms241713652
+synonyms:
+- iPSC-derived photoreceptors
+- hPSC-derived photoreceptors
+- iPSC-derived rods and cones
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Retinitis pigmentosa and age-related macular degeneration disease
+    modelling and photoreceptor replacement research; dysfunction or loss of
+    photoreceptors causes vision impairment or blindness in these diseases.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+- description: >-
+    Ultrastructural validation of photoreceptor maturation by transmission
+    electron microscopy (outer segment, inner segment, connecting cilium,
+    basal body), and phototransduction-marker readouts; rhodopsin expression
+    confirms functional rod cells.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+limitations:
+- description: >-
+    Single-cell RNA sequencing flags photoreceptors as a cell type whose
+    developmental trajectory diverges from human fetal retina even when the
+    overall cellular composition is fetal-like; the cells are developmentally
+    immature.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+- description: >-
+    Wild-type reference cells carrying no retinitis-pigmentosa or AMD lesion,
+    with maturation that is protocol-dependent (9-cis retinal advances
+    outer-segment maturation over all-trans retinoic acid by electron
+    microscopy).
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  accessed_on: '2026-11-15'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: true
+  dismech_commit: 4a06dc125341b0a570776c306211acabd2c92661
+  assessed_on: '2026-11-15'
+creation_date: '2026-11-15'
+last_modified_date: '2026-11-15'

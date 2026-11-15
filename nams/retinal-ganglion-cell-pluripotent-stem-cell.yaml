@@ -1,0 +1,112 @@
+model:
+  id: retinal-ganglion-cell-pluripotent-stem-cell
+  type: TwoDCellCulture
+  name: Retinal ganglion cells from human pluripotent stem cells
+  description: >-
+    Human iPSC/PSC-derived retinal ganglion cells (RGCs), the inner-retina
+    projection neuron whose loss defines glaucoma and the optic neuropathies.
+    Reviewed in Wong, Yip & Huang 2023 (doi:10.3390/ijms241713652, Table 2)
+    across several protocols: chemically defined conditions, biomaterial
+    scaffolds for neurite outgrowth, dual-SMAD plus Wnt inhibition, isolation
+    from retinal organoids by dissociation with THY1 magnetic-activated cell
+    sorting, and a rapid (about one week) neurogenin-2 (NGN2) overexpression
+    forward-programming protocol. These are wild-type reference cells carrying
+    no disease genotype. The review reports that directly differentiated RGCs
+    resemble fetal RGCs more closely than organoid-derived RGCs: fetal and
+    directly differentiated RGCs predominantly express BRN3A, whereas most
+    organoid RGCs express BRN3B. The purified product is reported both as a
+    2D culture and by organoid dissociation; the NAMO class is recorded as
+    TwoDCellCulture for the differentiated/sorted product.
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    Purified inner-retina projection neurons (retinal ganglion cells) of the
+    retina (UBERON:0000966), as a monolayer or organoid-dissociation-derived
+    culture.
+  complexity_level: LOW
+  cell_types:
+  - id: CL:0000740
+    name: retinal ganglion cell
+  cell_source: pluripotent stem cells
+  substrate_type: >-
+    Tissue-culture surface; organoid-dissociation protocols replate onto
+    poly-D-lysine/laminin.
+  differentiation_method: >-
+    Several protocols reviewed in Wong et al. 2023: chemically defined
+    conditions; dual-SMAD plus Wnt inhibition; biomaterial scaffolds to
+    support neurite outgrowth; dissociation of retinal organoids followed by
+    THY1 magnetic-activated cell sorting (Rabesandratana et al.); and NGN2
+    lentiviral forward-programming with doxycycline induction, completed in
+    approximately one week (Luo et al.).
+  culture_conditions: >-
+    2D adherent culture of purified RGCs, and organoid-dissociation-derived
+    cultures. Identity and maturation are validated by immunofluorescence
+    (BRN3A/SNCG), patch-clamp and multielectrode-array electrophysiology, and
+    calcium-imaging maturation staging.
+  references:
+  - id: doi:10.3390/ijms241713652
+    title: 'Establishing Functional Retina in a Dish: Progress and Promises of Induced
+      Pluripotent Stem Cell-Based Retinal Neuron Differentiation'
+    authors:
+    - Nonthaphat Kent Wong
+    - Shea Ping Yip
+    - Chien-Ling Huang
+    journal: International Journal of Molecular Sciences
+    year: 2023
+    url: https://doi.org/10.3390/ijms241713652
+synonyms:
+- iPSC-derived retinal ganglion cells
+- hPSC-derived retinal ganglion cells
+- stem-cell-derived RGCs
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Glaucoma and optic-neuropathy disease modelling and RGC replacement
+    research; the cell population whose degeneration is associated with
+    glaucoma and optic neuropathies.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+- description: >-
+    A platform for RGC electrophysiology and functional maturation staging:
+    calcium imaging distinguishes immature RGCs, which depolarise to a GABA
+    agonist, from mature RGCs, which do not.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+limitations:
+- description: >-
+    The product's identity depends on the sourcing route: directly
+    differentiated and fetal RGCs predominantly express BRN3A, whereas most
+    organoid-derived RGCs express BRN3B, so organoid-derived and directly
+    differentiated RGCs are not interchangeable.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+- description: >-
+    Wild-type reference cells carrying no glaucoma lesion (OPTN, MYOC,
+    elevated intraocular pressure), and developmentally immature relative to
+    the adult neurons that degenerate in glaucoma.
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  supporting_references:
+  - doi:10.3390/ijms241713652
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.3390/ijms241713652
+  accessed_on: '2026-11-15'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: true
+  dismech_commit: 4a06dc125341b0a570776c306211acabd2c92661
+  assessed_on: '2026-11-15'
+creation_date: '2026-11-15'
+last_modified_date: '2026-11-15'
