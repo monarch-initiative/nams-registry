@@ -6,17 +6,21 @@ model:
     Human iPSC/PSC-derived retinal ganglion cells (RGCs), the inner-retina
     projection neuron whose loss defines glaucoma and the optic neuropathies.
     Reviewed in Wong, Yip & Huang 2023 (doi:10.3390/ijms241713652, Table 2)
-    across several protocols: chemically defined conditions, biomaterial
-    scaffolds for neurite outgrowth, dual-SMAD plus Wnt inhibition, isolation
-    from retinal organoids by dissociation with THY1 magnetic-activated cell
-    sorting, and a rapid (about one week) neurogenin-2 (NGN2) overexpression
-    forward-programming protocol. These are wild-type reference cells carrying
+    across several developmental-differentiation protocols: chemically defined
+    conditions, biomaterial scaffolds for neurite outgrowth, dual-SMAD plus Wnt
+    inhibition, and isolation from retinal organoids by dissociation with THY1
+    magnetic-activated cell sorting. These are wild-type reference cells carrying
     no disease genotype. The review reports that directly differentiated RGCs
     resemble fetal RGCs more closely than organoid-derived RGCs: fetal and
     directly differentiated RGCs predominantly express BRN3A, whereas most
     organoid RGCs express BRN3B. The purified product is reported both as a
     2D culture and by organoid dissociation; the NAMO class is recorded as
-    TwoDCellCulture for the differentiated/sorted product.
+    TwoDCellCulture for the differentiated/sorted product. A separate
+    transcription-factor forward-programming route (NGN2 overexpression,
+    reaching RGCs in about one week) is recorded as its own system,
+    retinal-ganglion-cell-ngn2-forward-programming-pluripotent-stem-cell,
+    because its generating method is categorically different from the
+    developmental-differentiation and organoid-dissociation routes here.
   biological_organization_level: CELLULAR
   spatial_context: >-
     Purified inner-retina projection neurons (retinal ganglion cells) of the
@@ -31,12 +35,13 @@ model:
     Tissue-culture surface; organoid-dissociation protocols replate onto
     poly-D-lysine/laminin.
   differentiation_method: >-
-    Several protocols reviewed in Wong et al. 2023: chemically defined
-    conditions; dual-SMAD plus Wnt inhibition; biomaterial scaffolds to
-    support neurite outgrowth; dissociation of retinal organoids followed by
-    THY1 magnetic-activated cell sorting (Rabesandratana et al.); and NGN2
-    lentiviral forward-programming with doxycycline induction, completed in
-    approximately one week (Luo et al.).
+    Developmental-differentiation protocols reviewed in Wong et al. 2023:
+    chemically defined conditions; dual-SMAD plus Wnt inhibition; biomaterial
+    scaffolds to support neurite outgrowth; and dissociation of retinal
+    organoids followed by THY1 magnetic-activated cell sorting (Rabesandratana
+    et al.). The NGN2 lentiviral forward-programming route (Luo et al.) is
+    recorded separately as
+    retinal-ganglion-cell-ngn2-forward-programming-pluripotent-stem-cell.
   culture_conditions: >-
     2D adherent culture of purified RGCs, and organoid-dissociation-derived
     cultures. Identity and maturation are validated by immunofluorescence
