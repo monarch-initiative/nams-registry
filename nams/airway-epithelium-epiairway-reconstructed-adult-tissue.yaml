@@ -1,9 +1,12 @@
-# This full record supersedes the namsnetwork partial for EpiAirway cytotoxicity
-# (partial-nams/namsnetwork/air-liquid-interface-epiairway-cytotoxicity-model.yaml,
+# This full record supersedes the generated NAMs.network record for EpiAirway
+# cytotoxicity (nams/air-liquid-interface-epiairway-cytotoxicity-model.yaml,
 # NAMs.network id 130): it names that page in source_resources, so
-# write_partial_namsnetwork.py drops the partial on its next run. The partial
-# file is deleted in this PR to reflect that end-state. It remains close to the
-# generic primary-cell ALI record (airway-epithelium-ali-large-airway-adult-tissue);
+# write_namsnetwork.py drops the generated record on its next run, and the file
+# is deleted in this PR to reflect that end-state. What that record held from
+# the catalogue is carried below, under the namsnetwork source, with the date
+# that content was read -- 2026-11-09, the harvest date every other
+# namsnetwork source in the registry carries. It remains close to the generic
+# primary-cell ALI record (airway-epithelium-ali-large-airway-adult-tissue);
 # kept distinct as the MatTek reconstructed commercial tissue, matching how
 # NAMs.network tracks EpiAirway as its own entry.
 model:
@@ -42,6 +45,10 @@ model:
     - Patrudu Makena
     journal: Toxicology
     year: 2024
+synonyms:
+# NAMs.network's own name for the entry this record supersedes, kept so a
+# reader searching the catalogue's wording still finds it here.
+- 'Air Liquid Interface: EpiAirway™ cytotoxicity model'
 species:
 - id: NCBITaxon:9606
   name: Homo sapiens
@@ -68,7 +75,31 @@ source_resources:
 - resource: namsnetwork
   source_urls:
   - https://nams.network/details/130
-  accessed_on: '2026-11-13'
+  accessed_on: '2026-11-09'
+  source_holds_more_details: true
+  source_ids:
+  - '130'
+  method_type: in vitro
+  development_status: Under development NAMs
+  endpoints:
+  - Acute toxicity inhalation
+  organs:
+  - Lung
+  cell_lines:
+  - EpiAirway
+  regulations:
+  - (EC) 1907/2006
+  - (EU) 528/2012
+  - (EC) 1223/2009
+  - (EC) 429/2008
+  - (EC) 1831/2003
+  substances:
+  - Titanium dioxide (TiO2)
+  methods_biomarkers:
+  - MTT
+  - TER
+  aops:
+  - aop:173
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false

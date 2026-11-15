@@ -56,8 +56,11 @@ def test_page_marks_nams_whose_source_holds_more(tmp_path):
         if r["kind"] == "nam" and r["source_holds_more_details"]
     ]
     assert marked
-    assert all(r["source_resource_ids"] == ["namsnetwork"] for r in marked)
+    assert all("namsnetwork" in r["source_resource_ids"] for r in marked)
     assert any(r["cell_lines"] for r in marked)
     # The mark belongs to the source that holds more, not to the record, so
-    # only that source is named.
-    assert all(r["sources_holding_more"] == r["sources"] for r in marked)
+    # only the sources that hold more are named -- which is fewer than all of
+    # them for a record that also cites the paper it was curated from.
+    assert all(r["sources_holding_more"] for r in marked)
+    assert all(set(r["sources_holding_more"]) <= set(r["sources"]) for r in marked)
+    assert any(set(r["sources_holding_more"]) < set(r["sources"]) for r in marked)
