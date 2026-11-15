@@ -1,0 +1,5 @@
+# The publisher's supplementary files. fetch_inputs.sh re-downloads them and
+# verifies each against the sha256 pinned in inputs/README.md, so committing a
+# megabyte of them would buy nothing.
+inputs/*.xlsx
+inputs/*.docx

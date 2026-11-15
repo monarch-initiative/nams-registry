@@ -66,12 +66,13 @@ If a record needs the panel size, say 76 assay wells over 64 targets and cite th
 workbook sheet, or quote the paper's "63" and attribute it to the main text. Do not
 present them as the same claim.
 
-The counts above come from reading the sheet with a short `openpyxl` script, held
-outside this repository along with its output. It parses each assay name on the
-vendor's `<target name>, <SYMBOL> (<species>) (<mode>)` convention rather than
+The counts above come from reading the sheet with the scripts in
+[`cable2025-ipp-panel/`](cable2025-ipp-panel/README.md), whose output is committed
+beside them. The extraction parses each assay name on the vendor's
+`<target name>, <SYMBOL> (<species>) (<mode>)` convention rather than
 pattern-matching for symbols, and ignores the two rows beginning `*` that are the
-sheet's own footnotes. Anyone re-deriving these numbers needs the workbook
-(`toxsci-24-0360-File009.xlsx`, from the publisher) and those two rules.
+sheet's own footnotes. Re-deriving these numbers needs the workbook, which
+`fetch_inputs.sh` downloads and verifies against a pinned checksum.
 
 ## Checked and found correct
 

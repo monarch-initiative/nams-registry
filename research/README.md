@@ -76,8 +76,29 @@ Two consequences worth knowing before sending a paper to DisMech:
 - A report informs a resource record; it is never cited by one. Resource `publications`
   cite the paper, not the report.
 
+## Checking a report
+
+A report is a lead, so some of its claims get checked against the primary source, and
+a check worth doing twice is worth committing. When checking one meant running
+something, that goes in a directory named for the report's stem and what it derives --
+`cable2025-ipp-panel/` beside `cable2025-nam-...-openscientist.md` -- holding the
+scripts, their committed output, and a README saying what the numbers are and what
+they do not settle.
+
+- **The errata states the finding; the directory shows the work.** A reader who only
+  wants the correction reads the errata. A reader who doubts it re-runs the scripts.
+- **Commit the output, not the inputs.** A publisher's supplementary file is
+  re-downloadable; pin its checksum and gitignore the file. Output that is committed
+  turns a later re-run into a diff, which is the point.
+- **A derivation directory is not a report** and is not subject to the no-editing
+  rule. It is ordinary repository content: fix it, improve it, delete it when the
+  claim it supports is gone.
+- **It records what it could not settle.** A disagreement between a paper and its own
+  supplement is not resolvable by reading the supplement harder, and a directory that
+  quietly picks one number is worse than no directory.
+
 ## Reports
 
 | Report | Subject | Informs |
 |---|---|---|
-| `cable2025-nam-systemic-toxicity-toolbox-deep-research-openscientist.md` | Cable et al. 2025, *Advancing systemic toxicity risk assessment: evaluation of a NAM-based toolbox approach*, Toxicol Sci 204(1):79-95 ([10.1093/toxsci/kfae159](https://doi.org/10.1093/toxsci/kfae159), PMID:39693112) | not yet written |
+| `cable2025-nam-systemic-toxicity-toolbox-deep-research-openscientist.md` | Cable et al. 2025, *Advancing systemic toxicity risk assessment: evaluation of a NAM-based toolbox approach*, Toxicol Sci 204(1):79-95 ([10.1093/toxsci/kfae159](https://doi.org/10.1093/toxsci/kfae159), PMID:39693112) | four NAM records and four resources, in [#101](https://github.com/monarch-initiative/nams-registry/pull/101). Checked by [`cable2025-ipp-panel/`](cable2025-ipp-panel/README.md) |
