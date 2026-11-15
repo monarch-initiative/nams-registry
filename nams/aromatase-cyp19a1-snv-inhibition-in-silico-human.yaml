@@ -38,7 +38,7 @@ model:
   - D309G (possibly inactive variant)
   - S478F (possibly inactive variant)
   references:
-  - id: doi:10.1016/j.tox.2023.153686
+  - id: pmid:38036094
     title: >-
       A mechanistic toxicology study to grasp the mechanics of zearalenone
       estrogenicity: Spotlighting aromatase and the effects of its genetic
@@ -65,14 +65,14 @@ applications:
   source_urls:
   - https://doi.org/10.1016/j.tox.2023.153686
   supporting_references:
-  - doi:10.1016/j.tox.2023.153686
+  - pmid:38036094
 - description: >-
     Mechanistic hypothesis generation for inter-individual susceptibility to
     zearalenone's endocrine-disrupting action via the aromatase-inhibition route.
   source_urls:
   - https://doi.org/10.1016/j.tox.2023.153686
   supporting_references:
-  - doi:10.1016/j.tox.2023.153686
+  - pmid:38036094
 limitations:
 - description: >-
     The result is an in silico prediction with no wet-lab confirmation. Docked
@@ -82,7 +82,7 @@ limitations:
   source_urls:
   - https://doi.org/10.1016/j.tox.2023.153686
   supporting_references:
-  - doi:10.1016/j.tox.2023.153686
+  - pmid:38036094
 - description: >-
     Only the aromatase-inhibition route is modelled. ZEN also activates the
     estrogen receptors, which the paper notes but does not model, so the net
@@ -90,11 +90,13 @@ limitations:
   source_urls:
   - https://doi.org/10.1016/j.tox.2023.153686
   supporting_references:
-  - doi:10.1016/j.tox.2023.153686
+  - pmid:38036094
 - description: >-
-    The record is indexed abstract-only here, so the specific modelling
+    Only the paper's abstract is cached here, so the specific modelling
     software and the source three-dimensional structure of aromatase are not
     itemised beyond "3D molecular modelling".
+  supporting_references:
+  - pmid:38036094
 source_resources:
 - resource: scientific-literature
   source_urls:
