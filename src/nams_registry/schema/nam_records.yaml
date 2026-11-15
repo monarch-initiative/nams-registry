@@ -68,12 +68,12 @@ classes:
 
   DismechStatus:
     description: >-
-      Whether a NAM came into the registry through DisMech curation, and
-      whether DisMech's graph represents it, as of one DisMech commit.
-      DisMech is a route into the registry, not a source, so it is not
-      listed in source_resources. A NAM curated in DisMech need not be in
-      its graph, e.g. when its readout identifies no mechanism to attach it
-      to.
+      Whether a NAM came into the registry through DisMech curation, whether
+      DisMech's graph represents it, and where in DisMech to look. DisMech is
+      a route into the registry, not a source, so it is not listed in
+      source_resources. A NAM curated in DisMech need not be in its graph,
+      e.g. when its readout identifies no mechanism to attach it to; the
+      issue or pull request is where that reasoning was written down.
     attributes:
       processed_through_dismech:
         range: boolean
@@ -83,14 +83,21 @@ classes:
         range: boolean
         required: true
         description: >-
-          The NAM is represented in the DisMech graph at dismech_commit. It
+          The NAM is represented in the DisMech graph as of assessed_on. It
           can change as DisMech changes.
-      dismech_commit:
-        required: true
-        pattern: "^[0-9a-f]{40}$"
+      dismech_issue_id:
+        range: integer
+        minimum_value: 1
         description: >-
-          The full 40-character SHA of the DisMech commit the values were
-          checked against.
+          The number of the DisMech issue that tracked the mining or the
+          screening decision for this NAM, e.g. 16865 for
+          monarch-initiative/dismech#16865.
+      dismech_pr_id:
+        range: integer
+        minimum_value: 1
+        description: >-
+          The number of the DisMech pull request that made the change, e.g.
+          17310 for monarch-initiative/dismech#17310.
       assessed_on:
         range: date
         required: true

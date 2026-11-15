@@ -28,5 +28,6 @@ compared_with:
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
-  dismech_commit: 0123456789abcdef0123456789abcdef01234567
+  dismech_issue_id: 16869
+  dismech_pr_id: 16894
   assessed_on: '2026-11-09'

@@ -144,7 +144,8 @@ compared_with:
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
-  dismech_commit: 1e2cc6eb42776ad811485bd728f3db3b7d989578
+  dismech_issue_id: 16871
+  dismech_pr_id: 16911
   assessed_on: '2026-11-13'
 creation_date: '2026-11-13'
 last_modified_date: '2026-11-13'

@@ -1,4 +1,4 @@
-# dismech_commit must be the full 40-character SHA, not an abbreviation.
+# dismech_issue_id is the issue's number, not a reference written out.
 model:
   id: cortex-mea-acute-network-primary-cell-rat
   type: TwoDCellCulture
@@ -8,5 +8,5 @@ source_resources:
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
-  dismech_commit: 3f9c2a1
+  dismech_issue_id: dismech#16869
   assessed_on: '2026-11-09'

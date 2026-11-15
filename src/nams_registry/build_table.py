@@ -411,10 +411,17 @@ function detailNam(r) {
     `<li>${esc(DATA.find(x => x.kind === "nam" && x.id === c.nam)?.name || c.nam)}` +
     ` <span class="none">(${a(curieUrl(c.reference) || c.reference, c.reference)})</span></li>`).join("");
   const dm = rec.dismech_status;
+  const dmLink = (kind, n) =>
+    a(`https://github.com/monarch-initiative/dismech/${kind === "pull" ? "pull" : "issues"}/${n}`,
+      `dismech#${n}`);
+  const dmWhere = dm ? [
+    dm.dismech_issue_id ? dmLink("issues", dm.dismech_issue_id) : "",
+    dm.dismech_pr_id ? dmLink("pull", dm.dismech_pr_id) : "",
+  ].filter(Boolean).join(", ") : "";
   const dismech = dm ? [
     dm.processed_through_dismech ? "Came through DisMech curation" : "Did not come through DisMech curation",
     dm.present_in_dismech ? "in the DisMech graph" : "not in the DisMech graph",
-  ].join("; ") + ` (${a("https://github.com/monarch-initiative/dismech/commit/" + dm.dismech_commit, "commit " + dm.dismech_commit.slice(0, 7))}, checked ${esc(dm.assessed_on)})` : "";
+  ].join("; ") + ` (${dmWhere ? dmWhere + ", " : ""}checked ${esc(dm.assessed_on)})` : "";
   const holding = r.sources_holding_more || [];
   const more = holding.length
     ? `<p class="callout">${esc(holding.join(" and "))} ${holding.length === 1 ? "holds" : "hold"} more about this NAM than ${holding.length === 1 ? "it gives" : "they give"} publicly. This record holds only the public part, in the resource's own terms, under Found in.</p>`

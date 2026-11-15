@@ -94,7 +94,8 @@ source_resources:
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: true
-  dismech_commit: a7c19ae41cf1de0dc199f268f4769a44291d3f23
+  dismech_issue_id: 16865
+  dismech_pr_id: 17310
   assessed_on: '2026-11-12'
 creation_date: '2026-11-12'
 last_modified_date: '2026-11-12'

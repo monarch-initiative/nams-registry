@@ -1,8 +1,8 @@
 # A NAM found in a research paper (PMID:38614204), curated through DisMech but
 # not represented in its graph: the reporter's readout (NRF2/ARE pathway
 # activation) identified no mechanism node the DisMech screen could ground a
-# model link to from the abstract alone. See dismech projects/NAMS_SPECIAL_ISSUE.md
-# and dismech#16873 / dismech#17314.
+# model link to from the abstract alone. See dismech projects/NAMS_SPECIAL_ISSUE.md,
+# and dismech_status below for the issue and pull request.
 #
 # The reporter construct (lentiviral vector, ARE fused to luciferase, made by
 # MatTek) and the response to cigarette smoke at sub-cytotoxic doses are from
@@ -97,7 +97,8 @@ source_resources:
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
-  dismech_commit: f0043ac2e79785b8b9e3ae2b56431b8051a53b45
+  dismech_issue_id: 16873
+  dismech_pr_id: 17316
   assessed_on: '2026-11-13'
 creation_date: '2026-11-13'
 last_modified_date: '2026-11-15'
