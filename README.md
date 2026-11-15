@@ -13,6 +13,11 @@ lists every record in the registry, with a tab each for resources and NAM
 records. `just build-table` rebuilds it, and the docs
 deployment does so on every push to main.
 
+The site also documents both schemas: the resources schema,
+`nams_registry.yaml`, and the NAM records schema, `nam_records.yaml`,
+together with the NAMO classes it imports, at the NAMO commit
+`pyproject.toml` pins. `just gen-doc` generates both.
+
 ## Making changes
 
 A change is made to a record, to the schema, or to both:
@@ -105,7 +110,9 @@ and read terms and references. The setup follows
 ## Repository Structure
 
 * [docs/](docs/) - mkdocs-managed documentation
-  * [elements/](docs/elements/) - generated schema documentation
+  * [elements/](docs/elements/) - generated documentation of the resources schema
+  * nam-records/ - generated documentation of the NAM records schema and
+    the NAMO classes it imports (not committed)
 * [examples/](examples/) - Examples of using the schema
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [resources/](resources/) - one file per resource in the registry (edit these)

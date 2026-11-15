@@ -294,5 +294,6 @@ set allow-duplicate-recipes
 # name in an imported file is not possible until a known issue in just is fixed,
 # https://github.com/casey/just/issues/2540 - So we need to override them here.
 
-# Add the resource table to the documentation site
-_add-artifacts: build-table
+# Add the resource table, and the NAM records schema with the NAMO classes it
+# uses, to the documentation site
+_add-artifacts: build-table gen-doc-nam-records

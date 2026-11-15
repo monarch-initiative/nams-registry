@@ -62,7 +62,9 @@ watch:
 nav:
 - Home: index.md
 - Browse records: resources/index.html
-- Schema: elements/index.md
+- Schemas:
+  - Resources: elements/index.md
+  - NAM records and NAMO: nam-records/index.md
 - Reports:
   - Complement-ARIE Landscape Analysis publication years: reports/complement-arie-landscape-publication-years-2026-11-13.md
 - About: about.md

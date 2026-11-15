@@ -24,6 +24,12 @@ validate-nams:
 namo:
   uv run python scripts/link_namo.py
 
+# Generate the NAM records schema docs, with the NAMO classes at the pinned commit, into docs/nam-records/
+[group('model development')]
+gen-doc-nam-records: namo
+  -rm -rf docs/nam-records/*.md
+  uv run gen-doc {{gen_doc_args}} -d docs/nam-records {{source_schema_dir}}/nam_records.yaml
+
 # Build the registry browser (resources and NAM records), docs/resources/index.html
 [group('data')]
 build-table:
