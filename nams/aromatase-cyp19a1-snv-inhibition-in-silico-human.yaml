@@ -51,6 +51,7 @@ model:
     - Luca Dellafiora
     journal: Toxicology
     year: 2024
+    url: https://doi.org/10.1016/j.tox.2023.153686
 synonyms:
 - aromatase CYP19A1 zearalenone docking model
 - CYP19A1 SNV zearalenone inhibition in silico model
