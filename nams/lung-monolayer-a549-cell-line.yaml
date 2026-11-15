@@ -1,0 +1,107 @@
+model:
+  id: lung-monolayer-a549-cell-line
+  type: CellLineModel
+  name: A549 human lung adenocarcinoma monolayer
+  description: >-
+    A conventional two-dimensional monolayer of A549 human lung adenocarcinoma
+    cells, used as the lung-epithelial comparator in a paired study of particulate
+    matter (PM) cytotoxicity across monolayers and two-layer co-cultures. The
+    companion record lung-coculture-a549-balb-3t3-transwell is the same A549
+    epithelium seeded over a BALB/3T3 mouse fibroblast feeder on a porous Transwell
+    insert, and the pair is the point of the study: it compares the single-cell-type
+    monolayer against the two-layer architecture under the same PM exposures.
+    Recorded in the registry from the primary paper, Guerra-Flórez et al. 2023
+    (doi:10.1016/j.tox.2023.153685), in the Toxicology special issue "New approach
+    methodologies: from conceptual development to regulatory application". Only the
+    paper's abstract was retrievable in the curation environment, so this record is
+    bounded to what the abstract reports.
+  biological_organization_level: CELLULAR
+  cell_types:
+  - id: CL:0000082
+    name: epithelial cell of lung
+  cell_source: >-
+    The A549 immortalised human lung adenocarcinoma cell line, a type II
+    alveolar-epithelial-derived line used here as a lung-epithelial model.
+  culture_conditions: >-
+    Monolayer culture. Exposed to coarse and fine PM extracts at 1, 2 and 5 mg/mL,
+    with cell viability read at 24 hours by MTT assay. Finer detail of medium,
+    seeding density and PM preparation is in the full text, which was not
+    retrievable here.
+  references:
+  - id: doi:10.1016/j.tox.2023.153685
+    title: 'In vitro toxicity of fine and coarse particulate matter on the skin, ocular
+      and lung microphysiological cell-culture systems.'
+    authors:
+    - Guerra-Flórez DY
+    - Valencia-Osorio LM
+    - Zapata-González AF
+    - Álvarez-Láinez ML
+    - Cadavid-Torres E
+    - Meneses-Ramírez EA
+    - Torres-Osorio V
+    - Botero-Valencia JS
+    - Pareja-López A
+    journal: Toxicology
+    year: 2023
+    url: https://doi.org/10.1016/j.tox.2023.153685
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Cytotoxicity screening of airborne particulate matter. The study exposed the
+    monolayer to coarse and fine PM at 1, 2 and 5 mg/mL and read viability at 24
+    hours by MTT, and reports that models exposed to fine PM showed a significant
+    reduction in viability relative to coarse PM, so the assay resolves a
+    particle-size effect.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+- description: >-
+    A single-cell-type baseline for the paired co-culture architecture. Among the
+    formats tested the abstract reports the A549 monolayer as showing the highest
+    viability response, which is what makes it the reference point the two-layer
+    lung construct is read against.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+limitations:
+- description: >-
+    The only endpoint is MTT viability at 24 hours, an apical measure of cell death.
+    It identifies no mechanism: the abstract proposes possible cellular interactions
+    behind the cytotoxic response rather than measuring any, so this record carries
+    no mechanistic readout.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+- description: >-
+    A tumour-derived line standing in for alveolar epithelium. A549 is an
+    adenocarcinoma line and carries the genomic alterations of one, so its PM
+    response need not match primary lung epithelium.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+- description: >-
+    Abstract-only record. The full text was not retrievable in the curation
+    environment (the paper sits behind the publisher and is absent from PMC and
+    Europe PMC), so quantitative dose-response, replicate structure and PM
+    characterisation are not captured here.
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  accessed_on: '2026-11-15'
+compared_with:
+- nam: lung-coculture-a549-balb-3t3-transwell
+  reference: doi:10.1016/j.tox.2023.153685
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 131ff600d50f8065064082566c4dc28ebccba986
+  assessed_on: '2026-11-15'
+creation_date: '2026-11-15'
+last_modified_date: '2026-11-15'

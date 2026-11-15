@@ -1,0 +1,108 @@
+model:
+  id: skin-coculture-hek001-balb-3t3-transwell
+  type: CoCulture
+  name: HEK001 / BALB-3T3 two-layer skin co-culture on Transwell
+  description: >-
+    A two-layer co-culture built to resemble the epithelial-fibroblast interaction
+    of skin tissue: HEK001 human keratinocytes over a BALB/3T3 clone A31 mouse
+    fibroblast feeder, on a porous Transwell insert, seeded in both in-contact and
+    non-contact configurations. It is the skin arm of a paired comparison against
+    the HEK001 monolayer (skin-monolayer-hek001-cell-line). For this construct the
+    abstract reports that the non-contact seeding was more PM-resistant than the
+    in-contact seeding. Recorded in the registry from the primary paper,
+    Guerra-Flórez et al. 2023 (doi:10.1016/j.tox.2023.153685), in the Toxicology
+    special issue "New approach methodologies: from conceptual development to
+    regulatory application". Only the abstract was retrievable, so this record is
+    bounded to what it reports.
+  biological_organization_level: CELLULAR_NEIGHBORHOOD
+  coculture_configuration: TRANSWELL
+  cell_types:
+  - id: CL:0000312
+    name: keratinocyte
+  - id: CL:0000057
+    name: fibroblast
+  cell_source: >-
+    HEK001 immortalised human keratinocytes over a BALB/3T3 clone A31 mouse embryonic
+    fibroblast feeder layer. The construct is therefore mixed-species: a human
+    epithelial layer and a non-human feeder.
+  culture_conditions: >-
+    Two-cell-layer construct on a porous Transwell insert, seeded in both in-contact
+    and non-contact configurations, with a BALB/3T3 clone A31 feeder layer. Exposed
+    to coarse and fine PM extracts at 1, 2 and 5 mg/mL, with viability read at 24
+    hours by MTT. Finer detail is in the full text, which was not retrievable here.
+  references:
+  - id: doi:10.1016/j.tox.2023.153685
+    title: 'In vitro toxicity of fine and coarse particulate matter on the skin, ocular
+      and lung microphysiological cell-culture systems.'
+    authors:
+    - Guerra-Flórez DY
+    - Valencia-Osorio LM
+    - Zapata-González AF
+    - Álvarez-Láinez ML
+    - Cadavid-Torres E
+    - Meneses-Ramírez EA
+    - Torres-Osorio V
+    - Botero-Valencia JS
+    - Pareja-López A
+    journal: Toxicology
+    year: 2023
+    url: https://doi.org/10.1016/j.tox.2023.153685
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: >-
+    Cytotoxicity screening of airborne particulate matter in a two-layer skin
+    architecture. The paper reports multilayer models as more PM-resistant than
+    monolayers across the models tested, and for this construct reports non-contact
+    seeding as more PM-resistant than in-contact.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+- description: >-
+    A test bed for whether seeding configuration changes a PM cytotoxicity call: for
+    HEK001 the non-contact and in-contact seedings gave different resistance, which
+    is a property of the test system rather than of the biology.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+limitations:
+- description: >-
+    The only endpoint is MTT viability at 24 hours, an apical measure of cell death
+    that identifies no mechanism. The abstract proposes possible epithelial-fibroblast
+    interactions rather than measuring any.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+- description: >-
+    Mixed-species construct: a human HEK001 epithelial layer over a mouse BALB/3T3
+    feeder. A single statement of species or of fidelity to human skin cannot
+    describe both layers at once.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  supporting_references:
+  - doi:10.1016/j.tox.2023.153685
+- description: >-
+    Abstract-only record. The full text was not retrievable in the curation
+    environment, so quantitative dose-response, replicate structure and PM
+    characterisation are not captured here.
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153685
+  accessed_on: '2026-11-15'
+compared_with:
+- nam: skin-monolayer-hek001-cell-line
+  reference: doi:10.1016/j.tox.2023.153685
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_commit: 131ff600d50f8065064082566c4dc28ebccba986
+  assessed_on: '2026-11-15'
+creation_date: '2026-11-15'
+last_modified_date: '2026-11-15'
