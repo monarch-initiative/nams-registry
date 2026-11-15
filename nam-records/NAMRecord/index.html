@@ -419,6 +419,17 @@
 
 
 
+      NAMRecord : measured_targets
+
+
+
+
+
+        NAMRecord --&gt; "*" MeasuredTarget : measured_targets
+        click MeasuredTarget href "../MeasuredTarget/"
+
+
+
       NAMRecord : model
 
 
@@ -513,6 +524,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../measured_targets/">measured_targets</a></td>
+<td>* <br/> <a href="../MeasuredTarget/">MeasuredTarget</a></td>
+<td>The biological entities the NAM measures or acts on, where the NAM screens a ...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../source_resources/">source_resources</a></td>
 <td>1..* <br/> <a href="../SourceRecord/">SourceRecord</a></td>
 <td></td>
@@ -583,6 +600,7 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">species</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">applications</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">limitations</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measured_targets</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_resources</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compared_with</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_status</span>
@@ -667,6 +685,22 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMRecord</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMStatement</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">measured_targets</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">measured_targets</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">biological</span><span class="nv"> </span><span class="s">entities</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">NAM</span><span class="nv"> </span><span class="s">measures</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">acts</span><span class="nv"> </span><span class="s">on,</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">NAM</span>
+<span class="w">      </span><span class="s">screens</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">defined</span><span class="nv"> </span><span class="s">panel.</span><span class="nv"> </span><span class="s">NAMO</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">slot</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">what</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">model</span><span class="nv"> </span><span class="s">measures:</span><span class="nv"> </span><span class="s">ModelSystem</span>
+<span class="w">      </span><span class="s">carries</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">measurand,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">its</span><span class="nv"> </span><span class="s">Gene</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">FunctionalAssay</span><span class="nv"> </span><span class="s">classes</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">reachable</span>
+<span class="w">      </span><span class="s">only</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">model-to-model</span><span class="nv"> </span><span class="s">comparison</span><span class="nv"> </span><span class="s">classes.</span><span class="nv"> </span><span class="s">Move</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">model</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">NAMO</span>
+<span class="w">      </span><span class="s">adds</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">(namo#59).</span><span class="nv"> </span><span class="s">Leave</span><span class="nv"> </span><span class="s">out</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">NAM</span><span class="nv"> </span><span class="s">whose</span><span class="nv"> </span><span class="s">readout</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">target</span><span class="nv"> </span><span class="s">list.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMRecord</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMRecord</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MeasuredTarget</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
