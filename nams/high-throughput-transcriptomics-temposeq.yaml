@@ -22,8 +22,18 @@ model:
     on.
   description_scope: METHOD
   cell_types:
+  # Three lines, and CL carries what two of them are: HepG2 is hepatocyte-like
+  # and MCF7 is a mammary epithelial line. The parent mammary term is used
+  # rather than the luminal one because the source says only that MCF7 cells
+  # were treated; the line itself is named exactly under source_resources.
+  # HepaRG is a hepatic progenitor line and neither the paper nor its
+  # supplementary methods gives the differentiation state the cells were used
+  # in, so it is left under hepatocyte rather than bound to a progenitor term
+  # the source does not support.
   - id: CL:0000182
     name: hepatocyte
+  - id: CL:0002327
+    name: mammary gland epithelial cell
 synonyms:
 - HTTr
 - high-throughput transcriptomics
@@ -83,4 +93,4 @@ source_resources:
   - HepaRG
   - MCF7
 creation_date: '2026-11-14'
-last_modified_date: '2026-11-14'
+last_modified_date: '2026-11-15'
