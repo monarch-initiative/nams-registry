@@ -275,6 +275,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -291,6 +309,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -329,6 +377,55 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="elements/" class="md-nav__link">
         
@@ -337,7 +434,7 @@
   <span class="md-ellipsis">
     
   
-    Schema
+    Resources
   
 
     
@@ -346,6 +443,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nam-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAM records and NAMO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -481,6 +614,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -501,9 +653,31 @@
 
 
 <h1 id="nams-registry">nams-registry</h1>
-<p>This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis.</p>
+<p>The registry records a landscape analysis of New Approach Methodologies
+(NAMs). It holds two kinds of record:</p>
 <ul>
-<li>Auto-generated <a href="elements/">schema documentation</a></li>
+<li><strong>Resources</strong>: the sources reviewed for NAMs, such as vendor catalogues,
+  databases and the scientific literature, one file per resource in
+  <code>resources/</code>. Each records what the source holds, how relevant it is, and
+  how its NAMs can be extracted.</li>
+<li><strong>NAM records</strong>: the NAMs found in those resources, one file per NAM in
+  <code>nams/</code>. Each record holds the NAM as a <a href="https://github.com/monarch-initiative/namo">NAMO</a>
+  model, and around it what the registry adds: the resources the NAM was
+  found in, what it is used for, and its limitations.</li>
+</ul>
+<p><a href="resources/">Browse the records</a> to see both, with a tab for each.</p>
+<h2 id="schemas">Schemas</h2>
+<p>Each kind of record has its own schema:</p>
+<ul>
+<li><a href="elements/">Resources</a>, from <code>nams_registry.yaml</code>. Start with
+  <a href="elements/Resource/">Resource</a>.</li>
+<li><a href="nam-records/">NAM records and NAMO</a>, from <code>nam_records.yaml</code>,
+  which imports NAMO. Start with <a href="nam-records/NAMRecord/">NAMRecord</a>. The
+  registry's own classes are NAMRecord, SourceRecord, NAMStatement,
+  Comparison, DismechStatus and Product. Every other class on those pages,
+  from <a href="nam-records/ModelSystem/">ModelSystem</a> down, is NAMO's, at the
+  NAMO commit <code>pyproject.toml</code> pins, so the pages match what the records are
+  validated against.</li>
 </ul>
 
 
