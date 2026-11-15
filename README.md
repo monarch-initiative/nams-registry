@@ -43,8 +43,8 @@ A change is made to a record, to the schema, or to both:
   or, without one, downloads it from GitHub at the NAMO commit set in
   `pyproject.toml` (`[tool.nams-registry.namo]`), or at `NAMO_REF`. The
   tests do this themselves.
-  Where a NAM needs something NAMO lacks, prefer proposing it in NAMO over
-  adding it here.
+  Where a NAM needs a property NAMO lacks, it is added to
+  `nam_records.yaml` and proposed to NAMO at the same time (see below).
 
 In practice the two tend to change together, because it is the content
 that drives the schema. Reviewing a resource often turns up something
@@ -61,6 +61,23 @@ pull request as the record that needs it. When that happens:
 A schema change that needs discussion before anyone builds on it, or
 that no single resource prompted, can have its own issue, labelled
 `schema-change`.
+
+A property a NAM record needs but NAMO lacks is added here and proposed to
+NAMO at the same time. The goal is for the NAMO schema to cover every
+attribute of a NAM, but curation does not wait for NAMO. In order:
+
+1. Add the property to `src/nams_registry/schema/nam_records.yaml`, in its
+   own commit as above.
+2. Open an issue in
+   [monarch-initiative/namo](https://github.com/monarch-initiative/namo/issues)
+   proposing the property for the NAMO schema.
+3. Cite that issue, as `monarch-initiative/namo#N`, in the property's
+   description and in the pull request.
+4. Once NAMO has the property and `pyproject.toml` pins a NAMO commit that
+   includes it, move the values into each record's `model` and remove the
+   property from `nam_records.yaml`.
+
+Only the property moves. The NAM records in `nams/` stay in this registry.
 
 Make each change on a branch, and run `just test` before opening a pull
 request.

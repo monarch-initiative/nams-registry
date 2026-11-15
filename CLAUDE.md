@@ -62,9 +62,21 @@ source_resources:
   accessed_on: '2026-11-13'
 ```
 
-**Prefer proposing a missing field in NAMO over adding it here.** The registry's
-own NAM fields are stopgaps; the goal is for the NAMO scheam to covering all
-attributes of a NAM.
+**When a record needs a property NAMO lacks, add it here and propose it to
+NAMO at the same time.** The goal is for the NAMO schema to cover every
+attribute of a NAM, but curation does not wait for NAMO. In order:
+
+1. Add the property to `src/nams_registry/schema/nam_records.yaml`, in its own
+   commit ahead of the records that use it (see the README).
+2. Open an issue in [monarch-initiative/namo](https://github.com/monarch-initiative/namo/issues)
+   proposing the property for the NAMO schema.
+3. Cite that issue, as `monarch-initiative/namo#N`, in the property's
+   description and in the pull request.
+4. Once NAMO has the property and `pyproject.toml` pins a NAMO commit that
+   includes it, move the values into each record's `model` and remove the
+   property from `nam_records.yaml`.
+
+Only the property moves. The NAM records in `nams/` stay in this registry.
 
 ## Working habits
 
