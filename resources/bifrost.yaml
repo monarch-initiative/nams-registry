@@ -1,0 +1,33 @@
+id: bifrost
+name: BIFROST
+description: >-
+  BIFROST is a Bayesian method for inferring a point of departure from
+  transcriptomic concentration-response data. Rather than fitting each gene
+  separately and then choosing among the results, it infers gene-level effect
+  concentrations under a hierarchical model and derives a single global point
+  of departure, the minimum effect concentration across all genes, with its
+  uncertainty. In the NAM toolbox evaluation of Cable et al. 2025 it was run
+  alongside BMDExpress on the same high-throughput transcriptomic data, and a
+  version of it was also used to derive a global point of departure from the
+  cell stress panel.
+resource_type: DataSource
+domain_areas:
+- software
+- toxicology
+- gene expression profiling
+activity_status: unknown
+relevance_note: >-
+  The second of the two concentration-response analyses behind the registry's
+  high-throughput transcriptomics record, and the analysis behind the cell
+  stress panel's global point of departure. No homepage or repository is
+  recorded because the method paper names none; an implementation exists, and
+  the registry should record it once its identity and licence have been read
+  from a primary source rather than inferred.
+publications:
+- id: doi:10.1016/j.comtox.2020.100138
+  title: A Bayesian approach for inferring global points of departure from
+    transcriptomics data
+  journal: Computational Toxicology
+  year: 2020
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

@@ -1,0 +1,28 @@
+id: gastroplus
+name: GastroPlus
+description: >-
+  GastroPlus is commercial simulation software for physiologically based
+  pharmacokinetic and physiologically based kinetic modelling, sold by
+  Simulations Plus. It carries modules for several routes of administration,
+  including oral, dermal and intravenous, and predicts the internal
+  concentration a given exposure produces. In next-generation risk assessment
+  it supplies the exposure half of a bioactivity:exposure ratio: a model is
+  built per chemical and exposure scenario, parameterized on properties such as
+  logP, water solubility, unbound fraction in plasma, blood:plasma ratio,
+  hepatic intrinsic clearance, permeability and pKa, and tiered by whether
+  those parameters are predicted, measured in vitro, or calibrated against
+  clinical data. Version 9.8 was used for the 70 consumer exposure scenarios in
+  the NAM toolbox evaluation of Cable et al. 2025.
+homepage_url: https://www.simulations-plus.com/software/gastroplus/
+resource_type: DataSource
+domain_areas:
+- software
+- pharmacology
+- toxicology
+activity_status: active
+relevance_note: >-
+  The platform behind the registry's tiered PBK model record
+  (tiered-pbk-model-gastroplus). It is proprietary, so a model built in it
+  cannot be re-run without a licence.
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

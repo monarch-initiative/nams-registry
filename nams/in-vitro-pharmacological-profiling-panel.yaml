@@ -1,0 +1,656 @@
+model:
+  id: in-vitro-pharmacological-profiling-panel
+  name: In vitro pharmacological profiling panel for systemic toxicity safety
+    assessment
+  description: >-
+    A fixed panel of receptors, enzymes, transporters, ion channels and nuclear
+    receptors with known safety liabilities, screened in binding, enzymatic,
+    coactivator-recruitment and luciferase assays, and used as the specific
+    off-target arm of a NAM-based systemic toxicity toolbox alongside
+    high-throughput transcriptomics and a cell stress panel. Forty-four of its
+    targets were associated with in vivo adverse drug reactions by the
+    pharmaceutical industry (Bowes et al. 2012); 19 more were added from a
+    literature search to extend coverage into developmental toxicity. A point
+    of departure is derived in two stages: every assay is first screened at one
+    fixed concentration of 10 or 100 micromolar in two replicates, the
+    concentration chosen from prior cytotoxicity measurements in HepG2, HepaRG
+    and MCF7 cells; any target inhibited or stimulated by more than 50% is then
+    followed up in concentration-response, giving an EC50 or IC50 and from it
+    an IPP-specific point of departure. Because the assays are a mixture of
+    cell-free biochemical measurements and cell-based reporter assays, no
+    single NAMO class describes the platform, so the model carries no type.
+    The paper's main text gives the panel as 63 targets; its supplementary
+    sheet S3b, from which the target list below is taken, carries 76 assay
+    wells over 64 distinct targets, 12 of them nuclear receptors run in both
+    agonist and antagonist mode. Exactly 63 of the 64 resolve to HGNC genes,
+    the exception being a rat tubulin preparation. The two counts are recorded
+    as the paper and its supplement give them rather than reconciled.
+  description_scope: METHOD
+synonyms:
+- IPP panel
+- IPP platform
+- in vitro pharmacological profiling
+measured_targets:
+- name: TUBULIN
+  measurement: Specific binding
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+  notes: >-
+    A rat tubulin preparation, not one human gene, so no HGNC id. It is the
+    one panel member that fits neither of the paper's two stated provenances,
+    and the only one of the 64 that does not resolve to an HGNC gene.
+- name: ACE2
+  gene: hgnc:13557
+  gene_symbol: ACE2
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ACHE
+  gene: hgnc:108
+  gene_symbol: ACHE
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CA2
+  gene: hgnc:1373
+  gene_symbol: CA2
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: LCK
+  gene: hgnc:6524
+  gene_symbol: LCK
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MAOA
+  gene: hgnc:6833
+  gene_symbol: MAOA
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+- name: PDE3A
+  gene: hgnc:8778
+  gene_symbol: PDE3A
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PDE4D
+  gene: hgnc:8783
+  gene_symbol: PDE4D
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PTGS1
+  gene: hgnc:9604
+  gene_symbol: PTGS1
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PTGS2
+  gene: hgnc:9605
+  gene_symbol: PTGS2
+  measurement: Enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ADORA2A
+  gene: hgnc:263
+  gene_symbol: ADORA2A
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ADRA1A
+  gene: hgnc:277
+  gene_symbol: ADRA1A
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ADRA2A
+  gene: hgnc:281
+  gene_symbol: ADRA2A
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ADRB1
+  gene: hgnc:285
+  gene_symbol: ADRB1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ADRB2
+  gene: hgnc:286
+  gene_symbol: ADRB2
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: AGTR1
+  gene: hgnc:336
+  gene_symbol: AGTR1
+  measurement: Specific binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: AVPR1A
+  gene: hgnc:895
+  gene_symbol: AVPR1A
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CCKAR
+  gene: hgnc:1570
+  gene_symbol: CCKAR
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CHRM1
+  gene: hgnc:1950
+  gene_symbol: CHRM1
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CHRM2
+  gene: hgnc:1951
+  gene_symbol: CHRM2
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CHRM3
+  gene: hgnc:1952
+  gene_symbol: CHRM3
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CNR1
+  gene: hgnc:2159
+  gene_symbol: CNR1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CNR2
+  gene: hgnc:2160
+  gene_symbol: CNR2
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: DRD1
+  gene: hgnc:3020
+  gene_symbol: DRD1
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: DRD2
+  gene: hgnc:3023
+  gene_symbol: DRD2
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: EDNRA
+  gene: hgnc:3179
+  gene_symbol: EDNRA
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HRH1
+  gene: hgnc:5182
+  gene_symbol: HRH1
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HRH2
+  gene: hgnc:5183
+  gene_symbol: HRH2
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HTR1A
+  gene: hgnc:5286
+  gene_symbol: HTR1A
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HTR1B
+  gene: hgnc:5287
+  gene_symbol: HTR1B
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HTR2A
+  gene: hgnc:5293
+  gene_symbol: HTR2A
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HTR2B
+  gene: hgnc:5294
+  gene_symbol: HTR2B
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HTR3A
+  gene: hgnc:5297
+  gene_symbol: HTR3A
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: OPRD1
+  gene: hgnc:8153
+  gene_symbol: OPRD1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: OPRK1
+  gene: hgnc:8154
+  gene_symbol: OPRK1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: OPRM1
+  gene: hgnc:8156
+  gene_symbol: OPRM1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CACNA1C
+  gene: hgnc:1390
+  gene_symbol: CACNA1C
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+- name: CHRNA4
+  gene: hgnc:1958
+  gene_symbol: CHRNA4
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GABRA1A
+  gene: hgnc:4075
+  gene_symbol: GABRA1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+  notes: >-
+    The workbook writes GABRA1A; HGNC's symbol is GABRA1.
+- name: GRIN1
+  gene: hgnc:4584
+  gene_symbol: GRIN1
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+- name: KCNH2
+  gene: hgnc:6251
+  gene_symbol: KCNH2
+  measurement: Specific binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KCNQ1
+  gene: hgnc:6294
+  gene_symbol: KCNQ1
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+- name: SCN5A
+  gene: hgnc:10593
+  gene_symbol: SCN5A
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:10116
+    name: Rattus norvegicus
+- name: SLC6A2
+  gene: hgnc:11048
+  gene_symbol: SLC6A2
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLC6A3
+  gene: hgnc:11049
+  gene_symbol: SLC6A3
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLC6A4
+  gene: hgnc:11050
+  gene_symbol: SLC6A4
+  measurement: Specific binding (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ER1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+  notes: >-
+    The workbook writes ER1; HGNC's symbol is ESR1.
+- name: ER1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+  notes: >-
+    The workbook writes ER1; HGNC's symbol is ESR1.
+- name: ESR2
+  gene: hgnc:3468
+  gene_symbol: ESR2
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ESR2
+  gene: hgnc:3468
+  gene_symbol: ESR2
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1I2
+  gene: hgnc:7968
+  gene_symbol: NR1I2
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1I2
+  gene: hgnc:7968
+  gene_symbol: NR1I2
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1I3
+  gene: hgnc:7969
+  gene_symbol: NR1I3
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1I3
+  gene: hgnc:7969
+  gene_symbol: NR1I3
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR3C1
+  gene: hgnc:7978
+  gene_symbol: NR3C1
+  measurement: Specific binding (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR3C2
+  gene: hgnc:7979
+  gene_symbol: NR3C2
+  measurement: Specific binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+  measured: false
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARA
+  gene: hgnc:9232
+  gene_symbol: PPARA
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARA
+  gene: hgnc:9232
+  gene_symbol: PPARA
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARD
+  gene: hgnc:9235
+  gene_symbol: PPARD
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARD
+  gene: hgnc:9235
+  gene_symbol: PPARD
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARG
+  gene: hgnc:9236
+  gene_symbol: PPARG
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARG
+  gene: hgnc:9236
+  gene_symbol: PPARG
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RARA
+  gene: hgnc:9864
+  gene_symbol: RARA
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RARA
+  gene: hgnc:9864
+  gene_symbol: RARA
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RARG
+  gene: hgnc:9866
+  gene_symbol: RARG
+  measurement: Specific binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+  measured: false
+- name: RXRA
+  gene: hgnc:10477
+  gene_symbol: RXRA
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RXRA
+  gene: hgnc:10477
+  gene_symbol: RXRA
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RXRB
+  gene: hgnc:10478
+  gene_symbol: RXRB
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RXRB
+  gene: hgnc:10478
+  gene_symbol: RXRB
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THRA
+  gene: hgnc:11796
+  gene_symbol: THRA
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THRB
+  gene: hgnc:11799
+  gene_symbol: THRB
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VDR
+  gene: hgnc:12679
+  gene_symbol: VDR
+  measurement: Coactivator recruitment (agonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VDR
+  gene: hgnc:12679
+  gene_symbol: VDR
+  measurement: Coactivator recruitment (antagonist mode)
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+applications:
+- description: >-
+    Screening a chemical for activity at targets with known safety liabilities,
+    as the specific off-target arm of a NAM-based systemic toxicity toolbox.
+    Forty-four of the panel's targets were associated with in vivo adverse drug
+    reactions by the pharmaceutical industry; 19 more were added to extend
+    coverage into developmental toxicity.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    Deriving a point of departure for a bioactivity:exposure ratio. Every assay
+    is screened at a single fixed concentration of 10 or 100 micromolar in two
+    replicates; a target inhibited or stimulated by more than 50% is followed
+    up in concentration-response, and the resulting EC50 or IC50 gives the
+    panel's point of departure.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    Detecting a specific pharmacological mechanism that broader, non-specific
+    platforms miss. Across 38 chemicals the panel gave the lowest point of
+    departure for metoclopramide, cetirizine dihydrochloride and verapamil
+    hydrochloride, where transcriptomic and cell stress points of departure sat
+    above the predicted Cmax. For metoclopramide, a dopamine D2 antagonist, the
+    panel's IC50 was 0.046 micromolar against a next-lowest point of departure
+    of 16 micromolar from HepG2 transcriptomics.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+limitations:
+- description: >-
+    The assays have no metabolic capability, so a chemical that acts through a
+    metabolite is missed even when its target is in the panel. Acetylcholinesterase
+    is a panel target, but chlorpyrifos inhibits it only after conversion to
+    chlorpyrifos-oxon, which the assay set-up cannot form.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    A fixed target list covers only the modes of action it contains, and
+    subunit-level specificity can defeat it. Topiramate acts as a GABA-receptor
+    antagonist but was not detected, because the receptor subunit it is
+    specific for is not in the panel. Hydralazine hydrochloride and
+    glibenclamide act on ion movement through targets the panel does not hold,
+    and warfarin's target, vitamin K epoxide reductase, is in neither the panel
+    nor the wider toolbox.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    Three targets carried by an earlier version of the panel were unavailable
+    for this study. The mineralocorticoid receptor (NR3C2) and retinoic acid
+    receptor gamma (RARG) assays are listed but returned no data; the aryl
+    hydrocarbon receptor assay was dropped from the panel entirely, and AhR is
+    instead an endpoint of the cell stress panel that runs beside it.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    The first stage is a single fixed concentration in two replicates, so a
+    target reaches concentration-response only by crossing a 50% response
+    threshold at that one concentration.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  accessed_on: '2026-11-14'
+  method_type: in vitro
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

@@ -1,0 +1,26 @@
+id: admet-predictor
+name: ADMET Predictor
+description: >-
+  ADMET Predictor is commercial software from Simulations Plus that predicts
+  physicochemical, absorption, distribution, metabolism, excretion and toxicity
+  properties of a chemical from its structure. In tiered physiologically based
+  kinetic modelling it supplies the chemical-specific parameters at the lowest
+  tier, where nothing has been measured: in the NAM toolbox evaluation of Cable
+  et al. 2025, a Level 1 model is one whose parameters come solely from ADMET
+  Predictor, a Level 2 model replaces at least one of them with an in vitro
+  measurement, and a Level 3 model is further calibrated against clinical data.
+homepage_url: https://www.simulations-plus.com/software/membraneplus/admet-predictor/
+resource_type: DataSource
+domain_areas:
+- software
+- cheminformatics
+- pharmacology
+- toxicology
+activity_status: active
+relevance_note: >-
+  The in silico parameter source that defines Level 1 in the registry's tiered
+  PBK model record (tiered-pbk-model-gastroplus). It is proprietary. The free
+  and open-source OPERA suite, already a resource here, predicts an overlapping
+  set of ADME and physicochemical properties.
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

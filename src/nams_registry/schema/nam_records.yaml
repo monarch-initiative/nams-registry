@@ -40,6 +40,7 @@ classes:
     - species
     - applications
     - limitations
+    - measured_targets
     - source_resources
     - compared_with
     - dismech_status
@@ -188,6 +189,56 @@ classes:
           AOP-Wiki Key Events the resource links to the NAM, e.g.
           aop.events:1635.
 
+  MeasuredTarget:
+    description: >-
+      One biological entity a NAM measures or acts on, as the NAM's own panel
+      names it. A NAM that screens a defined panel -- a receptor panel, a
+      stress-response biomarker set, a transcriptomic probe set -- is largely
+      characterized by that panel, and a record without it cannot answer which
+      NAMs cover a given target.
+    attributes:
+      name:
+        required: true
+        description: >-
+          The target as the source names it, e.g. HRH1, or Tubulin for a
+          preparation that is not one gene. Not normalized: the source's own
+          spelling is what ties the entry back to its table.
+      gene:
+        range: uriorcurie
+        pattern: "^hgnc:[0-9]+$"
+        description: >-
+          The gene, when the target is a human gene product and name resolves
+          to one, e.g. hgnc:5182. Read from HGNC in the step it is written,
+          never constructed from the symbol. Left out for a target that is not
+          one human gene.
+      gene_symbol:
+        description: >-
+          HGNC's own symbol for gene. Recorded even when it equals name,
+          because the two disagree often enough to matter -- a panel may write
+          ER1 for ESR1 -- and because it is what a future check would compare
+          gene against. HGNC is not yet routed in conf/oak_config.yaml, so
+          neither is validated.
+      measurement:
+        description: >-
+          What is measured on the target, in the source's terms, e.g. agonist
+          radioligand binding. A target screened in more than one mode gets one
+          entry per mode.
+      organism:
+        range: OrganismTaxon
+        inlined: true
+        description: The species the target is from, where the source says.
+        bindings:
+        - binds_value_of: id
+          range: SpeciesEnum
+          obligation_level: REQUIRED
+      measured:
+        range: boolean
+        description: >-
+          False for a target in the panel that returned no data in this study,
+          e.g. an assay withdrawn by its supplier. Left out when the source
+          does not say.
+      notes:
+
   Product:
     attributes:
       name:
@@ -229,6 +280,17 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: The NAM's limitations. Move into the model if NAMO adds it.
+  measured_targets:
+    range: MeasuredTarget
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      The biological entities the NAM measures or acts on, where the NAM
+      screens a defined panel. NAMO has no slot for what a model measures:
+      ModelSystem carries no measurand, and its Gene and FunctionalAssay
+      classes are reachable only from the model-to-model comparison classes.
+      Move into the model if NAMO adds it (namo#59). Leave out for a NAM whose
+      readout is not a target list.
   source_resources:
     range: SourceRecord
     multivalued: true

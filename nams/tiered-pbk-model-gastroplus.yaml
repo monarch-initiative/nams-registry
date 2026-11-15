@@ -1,0 +1,102 @@
+model:
+  id: tiered-pbk-model-gastroplus
+  type: PBPKModel
+  name: Tiered physiologically based kinetic model for consumer exposure
+    scenarios
+  description: >-
+    A physiologically based kinetic model built per chemical and per exposure
+    scenario to predict the internal concentration a consumer exposure
+    produces, which is the exposure half of a bioactivity:exposure ratio. Oral,
+    dermal and intravenous routes are simulated. Models are parameterized on
+    logP, water solubility, unbound fraction in plasma, blood:plasma ratio,
+    hepatic intrinsic clearance, Madin-Darby canine kidney permeability, pKa,
+    and intestinal absorption or skin penetration where they apply. The
+    framework is tiered by where those parameters come from: at Level 1 every
+    chemical-specific parameter is predicted in silico, at Level 2 at least one
+    comes from an in vitro measurement, and at Level 3 clinical data are used
+    to calibrate the model by refining key parameters. The tier sets the
+    decision threshold rather than only the confidence: a bioactivity:exposure
+    ratio of 110, 11 or 2.5 was needed to conclude low risk at Levels 1, 2 and
+    3 respectively, because a more refined exposure estimate carries less
+    uncertainty.
+  description_scope: METHOD
+  computational_method: physiologically based kinetic modelling, tiered by
+    parameter provenance after Moxon et al. 2020
+  software_platform: GastroPlus 9.8 (Simulation Plus, Lancaster, CA, United
+    States), with chemical-specific parameters predicted by ADMET Predictor at
+    Level 1
+  prediction_scope: internal exposure (Cmax) for a given consumer exposure
+    scenario
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+synonyms:
+- PBK model
+- tiered PBK modelling
+- L1/L2/L3 PBK
+applications:
+- description: >-
+    Predicting the Cmax a consumer exposure scenario produces, so that a
+    bioactivity point of departure can be turned into a margin of internal
+    exposure.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+  - doi:10.1016/j.tiv.2019.104746
+- description: >-
+    Showing what refining an exposure estimate buys. In 5 of the paper's
+    exposure scenarios the decision changed from uncertain risk to low risk on
+    moving from a Level 1 to a Level 2 prediction, with no new bioactivity
+    data.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+limitations:
+- description: >-
+    Transporter kinetics are not part of the early-tier model, so a substrate
+    of active transport is underpredicted. The Level 2 Cmax for digoxin, a
+    P-glycoprotein and organic anion transporter substrate, underpredicted the
+    Level 3 plasma Cmax by roughly 30- to 50-fold, the largest underprediction
+    in the study. Adding transporter kinetics is possible but needs further in
+    vitro data.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    Level 2 is the tier most often available for a new chemical, and it
+    underpredicts for some. Digoxin, warfarin, topiramate and ketoconazole were
+    each underpredicted at Level 2 by at least 5-fold against their Level 3
+    results, which the paper names as a gap in the workflow.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    A chemical with a long plasma half-life may need bespoke testing to
+    parameterize. Digoxin, warfarin and topiramate all have half-lives over
+    20 h.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    Where only physico-chemical properties were measured in vitro, key values
+    such as intrinsic clearance stay predicted. Most of the 15 low-risk
+    exposure scenarios the toolbox classified as uncertain risk were of that
+    kind.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  - https://doi.org/10.1016/j.tiv.2019.104746
+  accessed_on: '2026-11-14'
+  method_type: in silico
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

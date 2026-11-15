@@ -1,0 +1,76 @@
+model:
+  id: cell-stress-panel-hepg2
+  type: CellLineModel
+  name: Cell stress panel in HepG2 cells
+  description: >-
+    A panel of cellular stress-response biomarkers read in HepG2 hepatocellular
+    carcinoma cells, used as one of the two non-specific bioactivity arms of a
+    NAM-based systemic toxicity toolbox. Cells are treated for 24 h across 8
+    concentrations, with 3 biological and 2 technical replicates per assay, on
+    the plate layout of the panel it extends. The maximum concentration tested
+    is the lower of the chemical's solubility limit and the concentration at
+    which cytotoxicity appears, from prior ATP and LDH measurements. A
+    chemical's point of departure is a global one, derived across the panel
+    with a version of the same Bayesian method used for the transcriptomic arm.
+    The panel is the one described in Hatherell et al. 2020 with the expanded
+    biomarker set of Middleton et al. 2022; this study does not re-list the
+    biomarkers, so the record does not either. The aryl hydrocarbon receptor is
+    the one endpoint it names, which matters because the AhR assay was dropped
+    from the pharmacological profiling panel that runs beside it.
+  description_scope: METHOD
+  cell_types:
+  - id: CL:0000182
+    name: hepatocyte
+synonyms:
+- CSP
+- cell stress panel
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Giving a broad, mechanism-agnostic point of departure for a
+    bioactivity:exposure ratio, covering stress responses that a fixed
+    pharmacological target panel cannot reach.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+  - doi:10.1093/toxsci/kfaa054
+- description: >-
+    Carrying the aryl hydrocarbon receptor endpoint for the toolbox, after the
+    AhR assay became unavailable in the in vitro pharmacological profiling
+    panel.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+limitations:
+- description: >-
+    One cell line, so a stress response that a hepatocellular carcinoma line
+    does not mount is not measured.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    A biomarker panel detects a response, not a mechanism. Cyclophosphamide and
+    azathioprine act through metabolites that interfere with DNA, and that
+    mechanism was not detected in the panel's biomarkers, although both
+    chemicals were highly active across the toolbox's platforms. Benzocaine
+    forms methaemoglobin, which no assay in the toolbox measures.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  - https://doi.org/10.1093/toxsci/kfaa054
+  accessed_on: '2026-11-14'
+  method_type: in vitro
+  cell_lines:
+  - HepG2
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

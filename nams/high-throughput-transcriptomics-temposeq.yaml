@@ -1,0 +1,86 @@
+model:
+  id: high-throughput-transcriptomics-temposeq
+  type: CellLineModel
+  name: High-throughput transcriptomics by TempO-Seq in HepG2, HepaRG and MCF7
+    cells
+  description: >-
+    Whole-transcriptome profiling of chemical-treated human cell lines, used as
+    the broadest bioactivity arm of a NAM-based systemic toxicity toolbox.
+    HepG2, HepaRG and MCF7 cells are treated for 24 h across 7 concentrations
+    and lysed in TempO-Seq lysis buffer (BioSpyder Technologies), and the
+    libraries are sequenced on version 2 of the TempO-Seq human whole
+    transcriptome panel (BioClavis). The maximum concentration is set as for
+    the cell stress panel, from the lower of solubility and the onset of
+    cytotoxicity. Two independent concentration-response analyses are run on
+    the same data and treated as separate lines of evidence: BMDExpress2 gives
+    a benchmark concentration per probe at a 10% benchmark response, with
+    Reactome pathway enrichment and a mean pathway BMDL, and BIFROST gives a
+    global point of departure, the minimum effect concentration across all
+    genes. The three cell lines are recorded here as one method rather than
+    three, because the paper runs and reports them as one platform; if a later
+    record needs them apart, this is the case to revisit the granularity rule
+    on.
+  description_scope: METHOD
+  cell_types:
+  - id: CL:0000182
+    name: hepatocyte
+synonyms:
+- HTTr
+- high-throughput transcriptomics
+- TempO-Seq
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Giving a point of departure with no prior hypothesis about mechanism, which
+    is what makes the toolbox protective for chemicals whose target is in none
+    of its panels. Protective ratios for hydralazine hydrochloride,
+    glibenclamide, benzocaine and chlorpyrifos all came from this platform
+    after the pharmacological panel missed their mechanisms.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    Reading a metabolic response as the signal: for chlorpyrifos, differential
+    expression of cytochrome P450 and UGT genes in HepG2 cells drove the point
+    of departure, although the organophosphate's own mechanism needs a
+    metabolite the assays cannot form.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+limitations:
+- description: >-
+    A transcriptional response is not a mechanism, and a point of departure
+    from it can sit far above a specific pharmacological effect. For
+    metoclopramide the HepG2 transcriptomic point of departure was 16
+    micromolar against 0.046 micromolar for dopamine D2 antagonism in the
+    pharmacological panel.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+- description: >-
+    The two analyses of the same data do not agree, and the paper carries both
+    rather than choosing. For warfarin they ranged from 13.6 micromolar for the
+    HepaRG BIFROST global point of departure to 259 micromolar for the HepaRG
+    minimum pathway BMDL.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  supporting_references:
+  - doi:10.1093/toxsci/kfae159
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfae159
+  - https://doi.org/10.1093/toxsci/kfac068
+  accessed_on: '2026-11-14'
+  method_type: in vitro
+  cell_lines:
+  - HepG2
+  - HepaRG
+  - MCF7
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'

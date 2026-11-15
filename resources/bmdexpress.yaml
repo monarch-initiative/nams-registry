@@ -1,0 +1,38 @@
+id: bmdexpress
+name: BMDExpress
+description: >-
+  BMDExpress is free, open-source software for benchmark-dose analysis of
+  transcriptomic concentration-response data. It fits dose-response models to
+  each probe, returns a benchmark dose with upper and lower confidence bounds
+  (BMD, BMDU, BMDL) at a chosen benchmark response, and aggregates probe-level
+  results by pathway, so that a mean pathway BMDL can stand as a point of
+  departure. BMDExpress 2 rebuilt the original tool with a new interface,
+  curve-fitting engine and batch workflow; development has since continued as
+  BMDExpress 3. In the NAM toolbox evaluation of Cable et al. 2025 it was run
+  at a 10% benchmark response with Reactome pathway enrichment, as one of two
+  independent analyses of the same high-throughput transcriptomic data.
+synonyms:
+- BMDExpress 2
+- BMDExpress2
+- BMDExpress 3
+homepage_url: https://www.sciome.com/bmdexpress/
+repository: https://github.com/auerbachs/BMDExpress-3
+resource_type: DataSource
+domain_areas:
+- software
+- toxicology
+- gene expression profiling
+- pathways
+activity_status: active
+relevance_note: >-
+  One of the two concentration-response analyses behind the registry's
+  high-throughput transcriptomics record
+  (high-throughput-transcriptomics-temposeq). The other is BIFROST, and the two
+  are treated as separate lines of evidence rather than alternatives.
+publications:
+- id: doi:10.1093/bioinformatics/bty878
+  title: "BMDExpress 2: enhanced transcriptomic dose-response analysis workflow"
+  journal: Bioinformatics
+  year: 2019
+creation_date: '2026-11-14'
+last_modified_date: '2026-11-14'
