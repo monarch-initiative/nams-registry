@@ -47,7 +47,7 @@ written, and parked where it will not fail validation (currently
 discard curation work because the field for it does not exist yet; open the
 schema issue and keep the record.
 
-**A record from a paper names two resources.** `scientific-literature`, and the
+**A record from a paper may name two resources.** `scientific-literature`, and the
 resource the paper was found through — each with the paper's DOI, and the
 discovery resource carrying `accessed_on`:
 
@@ -62,18 +62,9 @@ source_resources:
   accessed_on: '2026-11-13'
 ```
 
-A paper is not a resource of its own.
-
-**A record describes either a method or one study's use of it, and the schema
-cannot yet say which.** The EPA MEA assay record describes a protocol; a
-patient-derived organoid record describes one study's system. Provenance does
-not settle it — reviews are publications that yield method descriptions. Until
-[namo#52](https://github.com/monarch-initiative/namo/issues/52) and
-[#86](https://github.com/monarch-initiative/nams-registry/issues/86) resolve
-this, write the record plainly and do not invent a local flag for it.
-
 **Prefer proposing a missing field in NAMO over adding it here.** The registry's
-own NAM fields are stopgaps; the goal is NAMO covering the attributes of a NAM.
+own NAM fields are stopgaps; the goal is for the NAMO scheam to covering all
+attributes of a NAM.
 
 ## Working habits
 
@@ -85,15 +76,8 @@ own NAM fields are stopgaps; the goal is NAMO covering the attributes of a NAM.
 - **Do not run `pre-commit run --all-files`.** The fixing hooks rewrite files
   across the repository. Survey with read-only runs, or in a throwaway
   worktree.
-- **Update a branch with `git rebase --onto origin/main`** and force-push with
-  `--force-with-lease`. Do not merge `main` into a branch.
-- **Never push to someone else's branch.** Open your own and link to theirs.
-- **Write "partial record", not "stub"**, for the files in `partial-nams/` and
-  for a gap in an external resource such as AOP-Wiki or NAMs.network. "Stub"
-  means something else in DisMech.
-- **Do not name colleagues in public issues.** Attribute team feedback
-  anonymously; no `@` mentions.
-- **Write issue and PR numbers as links**, never a bare `#N`.
+- **In most cases, use `git rebase --onto origin/main` over a merge commit**
+  and force-push with `--force-with-lease`. Do not merge `main` into a branch.
 
 ## Writing for GitHub
 
