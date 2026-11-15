@@ -1053,7 +1053,11 @@
          <lastmod>2026-11-15</lastmod>
     </url>
     <url>
-         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/dismech_commit/</loc>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/dismech_issue_id/</loc>
+         <lastmod>2026-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/dismech_pr_id/</loc>
          <lastmod>2026-11-15</lastmod>
     </url>
     <url>

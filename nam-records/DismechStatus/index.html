@@ -365,7 +365,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-dismechstatus">Class: DismechStatus</h1>
-<p><em>Whether a NAM came into the registry through DisMech curation, and whether DisMech's graph represents it, as of one DisMech commit. DisMech is a route into the registry, not a source, so it is not listed in source_resources. A NAM curated in DisMech need not be in its graph, e.g. when its readout identifies no mechanism to attach it to.</em></p>
+<p><em>Whether a NAM came into the registry through DisMech curation, whether DisMech's graph represents it, and where in DisMech to look. DisMech is a route into the registry, not a source, so it is not listed in source_resources. A NAM curated in DisMech need not be in its graph, e.g. when its readout identifies no mechanism to attach it to; the issue or pull request is where that reasoning was written down.</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/DismechStatus">nams_registry:DismechStatus</a></p>
 <pre class="mermaid"><code> classDiagram
@@ -373,7 +373,9 @@
     click DismechStatus href "../DismechStatus/"
       DismechStatus : assessed_on
 
-      DismechStatus : dismech_commit
+      DismechStatus : dismech_issue_id
+
+      DismechStatus : dismech_pr_id
 
       DismechStatus : present_in_dismech
 
@@ -401,13 +403,19 @@
 <tr>
 <td><a href="../present_in_dismech/">present_in_dismech</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>The NAM is represented in the DisMech graph at dismech_commit</td>
+<td>The NAM is represented in the DisMech graph as of assessed_on</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../dismech_commit/">dismech_commit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The full 40-character SHA of the DisMech commit the values were checked again...</td>
+<td><a href="../dismech_issue_id/">dismech_issue_id</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>The number of the DisMech issue that tracked the mining or the screening deci...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dismech_pr_id/">dismech_pr_id</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>The number of the DisMech pull request that made the change, e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -466,11 +474,12 @@
 <h3 id="direct">Direct</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether a NAM came into the registry through DisMech curation, and whether</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">DisMech's graph represents it, as of one DisMech commit. DisMech is a route into</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the registry, not a source, so it is not listed in source_resources. A NAM curated</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">in DisMech need not be in its graph, e.g. when its readout identifies no mechanism</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to attach it to.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether a NAM came into the registry through DisMech curation, whether</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">DisMech's graph represents it, and where in DisMech to look. DisMech is a route</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">into the registry, not a source, so it is not listed in source_resources. A NAM</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">curated in DisMech need not be in its graph, e.g. when its readout identifies no</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">mechanism to attach it to; the issue or pull request is where that reasoning was</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">written down.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">processed_through_dismech</span><span class="p">:</span>
@@ -484,7 +493,7 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">present_in_dismech</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present_in_dismech</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The NAM is represented in the DisMech graph at dismech_commit. It</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The NAM is represented in the DisMech graph as of assessed_on. It</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">can change as DisMech changes.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
@@ -492,16 +501,26 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">dismech_commit</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_commit</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The full 40-character SHA of the DisMech commit the values were checked</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">against.</span>
+<span class="w">  </span><span class="nt">dismech_issue_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_issue_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The number of the DisMech issue that tracked the mining or the screening</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">decision for this NAM, e.g. 16865 for monarch-initiative/dismech#16865.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^[0-9a-f]{40}$</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">dismech_pr_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_pr_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The number of the DisMech pull request that made the change, e.g.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">17310 for monarch-initiative/dismech#17310.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">  </span><span class="nt">assessed_on</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assessed_on</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date the values were checked.</span>
@@ -516,11 +535,12 @@
 <h3 id="induced">Induced</h3>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether a NAM came into the registry through DisMech curation, and whether</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">DisMech's graph represents it, as of one DisMech commit. DisMech is a route into</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the registry, not a source, so it is not listed in source_resources. A NAM curated</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">in DisMech need not be in its graph, e.g. when its readout identifies no mechanism</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to attach it to.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Whether a NAM came into the registry through DisMech curation, whether</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">DisMech's graph represents it, and where in DisMech to look. DisMech is a route</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">into the registry, not a source, so it is not listed in source_resources. A NAM</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">curated in DisMech need not be in its graph, e.g. when its readout identifies no</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">mechanism to attach it to; the issue or pull request is where that reasoning was</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">written down.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="nt">attributes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">processed_through_dismech</span><span class="p">:</span>
@@ -535,7 +555,7 @@
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">present_in_dismech</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present_in_dismech</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The NAM is represented in the DisMech graph at dismech_commit. It</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The NAM is represented in the DisMech graph as of assessed_on. It</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">can change as DisMech changes.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
@@ -544,18 +564,28 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
 <span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">dismech_commit</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_commit</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The full 40-character SHA of the DisMech commit the values were checked</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">against.</span>
+<span class="w">  </span><span class="nt">dismech_issue_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_issue_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The number of the DisMech issue that tracked the mining or the screening</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">decision for this NAM, e.g. 16865 for monarch-initiative/dismech#16865.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
-<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^[0-9a-f]{40}$</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">dismech_pr_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_pr_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The number of the DisMech pull request that made the change, e.g.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">17310 for monarch-initiative/dismech#17310.</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DismechStatus</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">    </span><span class="nt">minimum_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">  </span><span class="nt">assessed_on</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assessed_on</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The date the values were checked.</span>
