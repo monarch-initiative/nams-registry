@@ -1,0 +1,226 @@
+# How scripts/write_toxcast.py turns EPA's ToxCast annotation values into
+# registry values.
+#
+# Each table lists every value EPA uses in one field, as fetched by
+# scripts/fetch_toxcast.py, and says what the registry does with it. The
+# writer only applies this file: it never guesses. A value missing from a
+# table is left out of the record and listed in the writer's report, and
+# `write_toxcast.py --check` exits 1 while any value is missing, so a new EPA
+# release cannot slip values in unreviewed. Add the value here, then rerun.
+#
+# Ontology ids are recorded here for review and later use; the records carry
+# only the label, because the source-record fields they fill take text. Every
+# id was read from its ontology in the step it was written, never from
+# memory: UBERON and CL from OLS, cell lines from the Cellosaurus API
+# (2026-11-17). A row with no id says why.
+#
+# EPA values are matched exactly, after collapsing whitespace.
+
+# Text repairs, applied to every EPA string before anything else. EPA's text
+# carries a UTF-8 non-breaking space that was decoded as Latin-1 somewhere
+# upstream, leaving "Â" before it (e.g. "microplate:Â 96-wellÂ plate"), in
+# assayDesc, detectionTechnology and the component descriptions.
+text_repairs:
+  "Â ": " "
+
+# organismId corrections: an NCBI taxon id EPA gives that contradicts EPA's
+# own organism name for the same assay. Applied before the species is looked
+# up. Report each one to EPA as well.
+organism_id:
+  # Tanguay_ZF_120hpf (aid 907) is "zebrafish" with taxon 7956, which is the
+  # goldfish genus Carassius; every other zebrafish assay uses 7955, Danio
+  # rerio.
+  7956: {taxon: 7955, organism: zebrafish}
+
+# assayFormatType -> the registry's method_type, in the vocabulary NAMs.network
+# records already use (in vitro, in chemico, ex vivo, in silico).
+method_type:
+  cell-based: in vitro
+  # A purified protein, membrane preparation or enzyme with no living cell.
+  biochemical: in chemico
+  cell-free: in chemico
+  # Whole zebrafish embryos.
+  organism: in vivo
+
+# cellFormat -> whether cellShortName names the test system. In a cell-free
+# assay EPA often still names a cell line (CHO, HEK293, Sf9): the cells only
+# produced the protein, so they are not written as the NAM's cells.
+cell_format:
+  cell line: test_system
+  cell-based: test_system
+  primary cell: test_system
+  primary cell co-culture: test_system
+  secondary cell: test_system
+  whole embryo: test_system
+  cell-free: protein_source
+  tissue-based cell-free: protein_source
+
+# tissue -> the registry's organs. EPA's tissue field mixes organs, adjectives,
+# cell types and non-tissues; only organs and tissues are written. organ: null
+# means the value is not an organ, with the reason.
+tissue:
+  adrenal gland: {organ: Adrenal gland, uberon: UBERON:0002369}
+  bladder: {organ: Urinary bladder, uberon: UBERON:0001255}
+  bone: {organ: Bone, uberon: UBERON:0001474}
+  brain: {organ: Brain, uberon: UBERON:0000955}
+  breast: {organ: Breast, uberon: UBERON:0000310}
+  central nervous system: {organ: Central nervous system, uberon: UBERON:0001017}
+  cerebral cortex: {organ: Cerebral cortex, uberon: UBERON:0000956}
+  cervix: {organ: Uterine cervix, uberon: UBERON:0000002}
+  colon: {organ: Colon, uberon: UBERON:0001155}
+  # Rat cortical primary cells.
+  cortical: {organ: Cerebral cortex, uberon: UBERON:0000956}
+  embryo: {organ: null, reason: a developmental stage of the whole organism, not an organ}
+  H9 embryonic stem cell: {organ: null, reason: a cell line, not a tissue}
+  H9-derived embryonic differentiated neuron: {organ: null, reason: a cell type, not a tissue}
+  H9-derived embryonic neural crest stem cell: {organ: null, reason: a cell type, not a tissue}
+  H9-derived neuroprogenitor stem cell: {organ: null, reason: a cell type, not a tissue}
+  heart: {organ: Heart, uberon: UBERON:0000948}
+  intestinal: {organ: Intestine, uberon: UBERON:0000160}
+  iPS-derived endothelial cell: {organ: null, reason: a cell type, not a tissue}
+  kidney: {organ: Kidney, uberon: UBERON:0002113}
+  liver: {organ: Liver, uberon: UBERON:0002107}
+  lung: {organ: Lung, uberon: UBERON:0002048}
+  lymphoblast: {organ: null, reason: a cell type, not a tissue}
+  mammary gland/breast: {organ: Breast, uberon: UBERON:0000310}
+  # Nervous tissue, used for neural progenitor and neuron cultures.
+  neural: {organ: Nervous system, uberon: UBERON:0001016}
+  ovary: {organ: Ovary, uberon: UBERON:0000992}
+  pancreas: {organ: Pancreas, uberon: UBERON:0001264}
+  peripheral nervous system: {organ: Peripheral nervous system, uberon: UBERON:0000010}
+  pituitary gland: {organ: Pituitary gland, uberon: UBERON:0000007}
+  pluripotent stem cell: {organ: null, reason: a cell type, not a tissue}
+  prostate: {organ: Prostate gland, uberon: UBERON:0002367}
+  purified enzyme: {organ: null, reason: not a tissue}
+  # UBERON's label is "saliva-secreting gland"; "salivary gland" is its synonym.
+  salivary gland: {organ: Salivary gland, uberon: UBERON:0001044}
+  skin: {organ: Skin, uberon: UBERON:0002097}
+  spinal cord: {organ: Spinal cord, uberon: UBERON:0002240}
+  spleen: {organ: Spleen, uberon: UBERON:0002106}
+  testis: {organ: Testis, uberon: UBERON:0000473}
+  thyroid: {organ: Thyroid gland, uberon: UBERON:0002046}
+  thyroid gland: {organ: Thyroid gland, uberon: UBERON:0002046}
+  umbilical vein-derived endothelial cell: {organ: null, reason: a cell type, not a tissue}
+  uterus: {organ: Uterus, uberon: UBERON:0000995}
+  # BioSeek's label for its endothelial and blood-cell co-culture panels.
+  vascular: {organ: Vasculature, uberon: UBERON:0002049}
+
+# cellShortName -> the registry's cell_lines. Each value gives the cells it
+# names, as one entry or a list for a co-culture: a cell line by its
+# Cellosaurus name and accession, a primary or derived cell by its CL label
+# and id. An engineered or derived line with no Cellosaurus entry of its own
+# keeps EPA's name and records the line it was made from as `parent`.
+# `organ` on a cell overrides the tissue table for that cell, where EPA's
+# tissue is wrong for it; `organ: null` drops it.
+cells:
+  1321-N1: {name: 1321N1, cellosaurus: CVCL_0110}
+  22Rv1: {name: 22Rv1, cellosaurus: CVCL_1045}
+  B and peripheral blood mononuclear cells:
+  - {name: B cell, cl: CL:0000236}
+  - {name: peripheral blood mononuclear cell, cl: CL:2000001}
+  bronchial epithelial cells: {name: bronchial epithelial cell, cl: CL:0002328}
+  bronchial epithelial cells and dermal fibroblasts:
+  - {name: bronchial epithelial cell, cl: CL:0002328}
+  - {name: fibroblast of dermis, cl: CL:0002551}
+  C3H10T1/2: {name: C3H/10T1/2 clone 8, cellosaurus: CVCL_0190}
+  CHO: {name: CHO, cellosaurus: CVCL_0213}
+  CHO-K1: {name: CHO-K1, cellosaurus: CVCL_0214}
+  coronary artery smooth muscle cells: {name: smooth muscle cell of the coronary artery, cl: CL:0002592}
+  DT40: {name: DT40, cellosaurus: CVCL_0249}
+  ERR-HEK293T: {name: ERR-HEK293T, parent: CVCL_0063, note: HEK293T engineered with an ERR reporter}
+  foreskin fibroblasts: {name: foreskin fibroblast, cl: CL:1001608}
+  GH3: {name: GH3, cellosaurus: CVCL_0273}
+  H295R: {name: NCI-H295R, cellosaurus: CVCL_0458}
+  HaCAT: {name: HaCaT, cellosaurus: CVCL_0038}
+  HCT116: {name: HCT 116, cellosaurus: CVCL_0291}
+  HEK293: {name: HEK293, cellosaurus: CVCL_0045}
+  HEK293-PR-A: {name: HEK293-PR-A, parent: CVCL_0045, note: HEK293 engineered to express progesterone receptor A}
+  HEK293T: {name: HEK293T, cellosaurus: CVCL_0063}
+  HeLa: {name: HeLa, cellosaurus: CVCL_0030}
+  HepaRG: {name: HepaRG, cellosaurus: CVCL_9720}
+  hepatocytes: {name: hepatocyte, cl: CL:0000182}
+  HepG2: {name: Hep-G2, cellosaurus: CVCL_0027}
+  # Cellosaurus "H9" (CVCL_1240) is a T-cell lymphoma line; the H9 embryonic
+  # stem cell line EPA means is WA09, which lists H9 as a synonym.
+  hESC: {name: WA09, cellosaurus: CVCL_9773}
+  hN2: {name: hN2, note: "ArunA's human neurons; no Cellosaurus or CL id looked up yet"}
+  hNC: {name: hNC, cl: CL:0011012, parent: CVCL_9773, note: neural crest cells derived from H9 (WA09)}
+  hNN: {name: hNN, cl: CL:0000540, parent: CVCL_9773, note: neurons derived from H9 (WA09)}
+  hNP1: {name: hNP1, cl: CL:0011020, parent: CVCL_9773, note: neural progenitor cells derived from H9 (WA09)}
+  hNPC: {name: neural progenitor cell, cl: CL:0011020}
+  # Not mapped to Cellosaurus HUVEC-C (CVCL_2959): that is one ATCC line, and
+  # EPA's HUVEC are not said to be it.
+  HUVEC: {name: endothelial cell of umbilical vein, cl: CL:0002618}
+  iCell GABANeurons: {name: iCell GABANeurons, cl: CL:0000617, note: iPSC-derived GABAergic neurons}
+  iCell GlutaNeurons: {name: iCell GlutaNeurons, cl: CL:0000679, note: iPSC-derived glutamatergic neurons}
+  IMR90 (neural crest cells differentiated from iPSC): {name: IMR90 iPSC-derived neural crest cell, cl: CL:0011012, note: "iPSC line not identified in Cellosaurus yet"}
+  # EPA's tissue for these is "iPS-derived endothelial cell".
+  iPSC: {name: iPSC-derived endothelial cell, cl: CL:0000115}
+  keratinocytes and foreskin fibroblasts:
+  - {name: keratinocyte, cl: CL:0000312}
+  - {name: foreskin fibroblast, cl: CL:1001608}
+  Lenti-TPO (Lenti-X 293T with TPO overexpression transgene): {name: Lenti-X 293T expressing TPO, parent: CVCL_4401, note: Cellosaurus lists Lenti-X 293T as a synonym of BOSC-23}
+  LUHMES: {name: LUHMES, cellosaurus: CVCL_B056}
+  # EPA's tissue for BioSeek's lung fibroblast panel is "vascular".
+  lung fibroblasts: {name: fibroblast of lung, cl: CL:0002553, organ: Lung}
+  MCF7: {name: MCF-7, cellosaurus: CVCL_0031}
+  MDA-kb2: {name: MDA-kb2, cellosaurus: CVCL_6421}
+  ME-180: {name: ME-180, cellosaurus: CVCL_1401}
+  NIH/3T3: {name: NIH 3T3, cellosaurus: CVCL_0594}
+  PGC/ERR HEK293T: {name: PGC/ERR HEK293T, parent: CVCL_0063, note: HEK293T engineered with PGC and ERR reporters}
+  PR-UAS-bla-HEK293T: {name: PR-UAS-bla HEK293T, parent: CVCL_0063, note: HEK293T engineered with a progesterone receptor GAL4-UAS beta-lactamase reporter}
+  RUES2-GLR: {name: RUES2-GLR, parent: CVCL_B810, note: RUES2 embryonic stem cells with a reporter}
+  RXRa-UAS-bla HEK 293T: {name: RXRa-UAS-bla HEK293T, parent: CVCL_0063, note: HEK293T engineered with an RXR-alpha GAL4-UAS beta-lactamase reporter}
+  SBAD2 (peripheral neurons differentiated from iPSC): {name: SBAD2 iPSC-derived peripheral neuron, cl: CL:2000032, note: "iPSC line not identified in Cellosaurus yet"}
+  Sf21: {name: Sf21, cellosaurus: CVCL_0518}
+  Sf9: {name: Sf9, cellosaurus: CVCL_0549}
+  # A neuroblastoma line; EPA's "bone" is where the parent tumour was sampled
+  # (a bone marrow metastasis), not the cells' tissue.
+  SH-SY5Y: {name: SH-SY5Y, cellosaurus: CVCL_0019, organ: null}
+  T47D: {name: T-47D, cellosaurus: CVCL_0553}
+  TRb-UAS-bla-HEK293T: {name: TRb-UAS-bla HEK293T, parent: CVCL_0063, note: HEK293T engineered with a thyroid receptor beta GAL4-UAS beta-lactamase reporter}
+  U-937: {name: U-937, cellosaurus: CVCL_0007}
+  U2OS: {name: U2OS, cellosaurus: CVCL_0042}
+  umbilical vein endothelium: {name: endothelial cell of umbilical vein, cl: CL:0002618}
+  umbilical vein endothelium and peripheral blood mononuclear cells:
+  - {name: endothelial cell of umbilical vein, cl: CL:0002618}
+  - {name: peripheral blood mononuclear cell, cl: CL:2000001}
+  venular endothelial cells and macrophages:
+  - {name: endothelial cell of venule, cl: CL:1000414}
+  - {name: macrophage, cl: CL:0000235}
+  # Cellosaurus has no line named VM7 alone. VM7Luc4E2 (formerly BG1Luc4E2)
+  # is the reporter line derived from it; not assumed to be the same cells.
+  VM7: {name: VM7, note: "no Cellosaurus entry named VM7"}
+  VM7Luc4E2: {name: VM7Luc4E2, cellosaurus: CVCL_6571}
+
+# assayFunctionType of an endpoint -> what a measured target records.
+#   measurement: the text written as the target's measurement.
+#   mode_from_name: the type names a readout (a channel ratio), not what the
+#     assay does, so the measurement is "agonist" or "antagonist" when the
+#     assay name says which, and is left out otherwise.
+#   targets: false means the endpoint's genes are not written as targets:
+#     a background control or viability readout does not measure them.
+function_type:
+  agonist: {measurement: agonist}
+  antagonist: {measurement: antagonist}
+  background control: {targets: false}
+  binding: {measurement: binding}
+  cardiac function: {measurement: cardiac function}
+  cellular respiration: {measurement: cellular respiration}
+  chemical reporter: {measurement: chemical reporter}
+  cytotoxicity: {targets: false}
+  detection of steroid hormone: {measurement: steroid hormone production}
+  developmental: {measurement: developmental}
+  electrical activity: {measurement: electrical activity}
+  enzymatic activity: {measurement: enzymatic activity}
+  gene expression: {measurement: gene expression}
+  inducer: {measurement: inducer}
+  # The second channel of a Tox21 beta-lactamase assay, beside "substrate".
+  product: {mode_from_name: true}
+  ratio: {mode_from_name: true}
+  relative metabolite change: {measurement: relative metabolite change}
+  reporter gene: {measurement: reporter gene}
+  signaling: {measurement: signaling}
+  substrate: {mode_from_name: true}
+  transporter: {measurement: transporter}
+  viability: {targets: false}

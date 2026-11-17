@@ -13,22 +13,27 @@ channels and their ratio, a cell-viability counter-screen run in the same
 wells, a reagent concentration -- so they are readouts on its record, not NAMs
 of their own (see CLAUDE.md, "A single NAM can have multiple endpoints").
 
-What a record holds, all in EPA's own terms:
+EPA's values are decoded through conf/toxcast_decoder.yaml, which lists every
+value EPA uses in the fields below and what the registry does with it. The
+writer only applies that file; a value it does not list is left out and
+reported, and ``--check`` exits 1 while any is. What a record holds:
 
-- ``model``: the assay's name and EPA's description of it. No NAMO type: the
-  annotation does not make the class clear, and over half the assays are
-  cell-free, for which NAMO has no class.
+- ``model``: the assay's name and EPA's description of it, with EPA's text
+  repaired as the decoder says. No NAMO type: the annotation does not make the
+  class clear, and over half the assays are cell-free, for which NAMO has no
+  class.
 - ``species``: the organism the assay ran in.
-- ``measured_targets``: the intended gene targets of the assay's
-  non-viability endpoints, one per target and function type. A human target's
-  HGNC id and symbol are looked up in HGNC by the Entrez id EPA gives, never
-  built from the symbol. A target that is not one human gene keeps EPA's
-  symbol and carries a note. EPA's target is what the assay is aimed at, which
-  is not always what it reads: H295R steroidogenesis endpoints measure a
-  hormone but name its receptor.
+- ``measured_targets``: the intended gene targets of the assay's endpoints,
+  one per target and measurement, leaving out endpoints the decoder marks as
+  not measuring them (viability, background controls). A target is human, with
+  HGNC's id and symbol, when HGNC lists the Entrez id EPA gives; it is never
+  built from the symbol. Other targets keep EPA's symbol and carry a note.
+  EPA's target is what the assay is aimed at, which is not always what it
+  reads: H295R steroidogenesis endpoints measure a hormone but name its
+  receptor.
 - ``source_resources``: ``toxcast`` for every assay, with the assay and
-  endpoint ids, the CTX API record of each endpoint, the assay format, cell
-  line, tissue, and the AOP-Wiki AOPs and Key Events EPA links to the
+  endpoint ids, the CTX API record of each endpoint, the decoded method type,
+  cells and organs, and the AOP-Wiki AOPs and Key Events EPA links to the
   endpoints; ``tox21`` as well for an assay Tox21 ran.
 
 The script owns only the records it writes. A record in nams/ with anything
@@ -40,6 +45,7 @@ writes is lost: curate a record by adding to it. Records of assays no longer
 returned are removed.
 
     uv run python scripts/fetch_toxcast.py
+    uv run python scripts/write_toxcast.py --check       # exit 1 if the decoder lacks a value
     uv run python scripts/write_toxcast.py --dry-run     # report only, write nothing
     uv run python scripts/write_toxcast.py
 """
@@ -156,12 +162,116 @@ def aop_numbers(records):
     return events, aops, unparsed
 
 
+MODE_IN_NAME = re.compile(r"(?i)(?:^|_)(agonist|antagonist)(?:_|$)")
+
+
+class Decoder:
+    """conf/toxcast_decoder.yaml: EPA's values, and what the registry does with each.
+
+    Every lookup goes through here, and a value the decoder does not list is
+    recorded in ``missing`` by field rather than guessed at.
+    """
+
+    def __init__(self, path):
+        tables = yaml.safe_load(Path(path).read_text())
+        self.repairs = tables.get("text_repairs") or {}
+        self.tables = {
+            field: {clean(k): v for k, v in (tables.get(field) or {}).items()}
+            for field in (
+                "method_type",
+                "cell_format",
+                "tissue",
+                "cells",
+                "function_type",
+            )
+        }
+        self.missing = {field: Counter() for field in self.tables}
+        self.organism_ids = {
+            int(k): v for k, v in (tables.get("organism_id") or {}).items()
+        }
+
+    def taxon(self, row):
+        """The assay's NCBI taxon id, corrected where the decoder says EPA's is wrong.
+
+        A correction applies only while EPA's organism name is the one the
+        decoder expects, so a later fix upstream is not overridden blindly.
+        """
+        taxon = row.get("organismId")
+        if not taxon:
+            return None
+        fix = self.organism_ids.get(int(taxon))
+        if fix and clean(row.get("organism")) == fix.get("organism"):
+            return fix["taxon"]
+        return int(taxon)
+
+    def repair(self, value):
+        """Apply the text repairs to every string in a parsed JSON value."""
+        if isinstance(value, str):
+            for bad, good in self.repairs.items():
+                value = value.replace(bad, good)
+            return value
+        if isinstance(value, list):
+            return [self.repair(v) for v in value]
+        if isinstance(value, dict):
+            return {k: self.repair(v) for k, v in value.items()}
+        return value
+
+    def lookup(self, field, value):
+        """The decoder's entry for a value; None, and recorded as missing, if it has none."""
+        value = clean(value)
+        if value is None:
+            return None
+        table = self.tables[field]
+        if value not in table:
+            self.missing[field][value] += 1
+            return None
+        return table[value]
+
+    def method_type(self, row):
+        return self.lookup("method_type", row.get("assayFormatType"))
+
+    def cells(self, row):
+        """The cells an endpoint's test system is made of, as decoder entries.
+
+        Empty when the assay is cell-free: a cell line EPA names there only
+        produced the protein.
+        """
+        if self.lookup("cell_format", row.get("cellFormat")) != "test_system":
+            return []
+        return as_list(self.lookup("cells", row.get("cellShortName")))
+
+    def organs(self, row):
+        """The organs for an endpoint: a cell's own organ where the decoder gives
+        one, otherwise EPA's tissue when it is an organ."""
+        cells = self.cells(row)
+        if len(cells) == 1 and "organ" in cells[0]:
+            organ = cells[0]["organ"]
+            return [organ] if organ else []
+        entry = self.lookup("tissue", row.get("tissue"))
+        return [entry["organ"]] if entry and entry.get("organ") else []
+
+    def measurement(self, row):
+        """(writes targets, measurement) for an endpoint, from its function type."""
+        entry = self.lookup("function_type", row.get("assayFunctionType"))
+        if entry is None:
+            return True, None
+        if entry.get("targets") is False:
+            return False, None
+        if entry.get("mode_from_name"):
+            match = MODE_IN_NAME.search(row.get("assayName") or "")
+            return True, match.group(1).lower() if match else None
+        return True, entry.get("measurement")
+
+
 class Inputs:
     """What fetch_toxcast.py saved, read from one directory."""
 
-    def __init__(self, directory):
+    def __init__(self, directory, decoder):
         directory = Path(directory)
-        self.endpoints = json.loads((directory / "assay_annotations.json").read_text())
+        self.decoder = decoder
+        self.endpoints = decoder.repair(
+            json.loads((directory / "assay_annotations.json").read_text())
+        )
         aops = directory / "aops.json"
         self.aops = json.loads(aops.read_text()) if aops.exists() else None
         self.hgnc = json.loads((directory / "hgnc.json").read_text())
@@ -190,7 +300,9 @@ def measured_targets(rows, inputs, report):
     for row in rows:
         if is_viability(row):
             continue
-        measurement = clean(row.get("assayFunctionType"))
+        writes_targets, measurement = inputs.decoder.measurement(row)
+        if not writes_targets:
+            continue
         for gene in as_list(row.get("gene")):
             if not isinstance(gene, dict):
                 continue
@@ -204,27 +316,29 @@ def measured_targets(rows, inputs, report):
             target = {"name": symbol}
             entrez = gene.get("entrezGeneId")
             entrez = str(int(entrez)) if isinstance(entrez, (int, float)) else None
-            if gene.get("organismId") == HUMAN_GENE_ORGANISM_ID:
-                hgnc = inputs.hgnc.get(entrez) if entrez else None
-                if hgnc:
-                    target["gene"] = hgnc["hgnc_id"]
-                    target["gene_symbol"] = hgnc["symbol"]
-                    report["human_targets_resolved"] += 1
-                    if hgnc["symbol"] != symbol:
-                        report["symbol_differs_from_hgnc"].add(
-                            f"{symbol} -> {hgnc['symbol']}"
-                        )
-                else:
-                    report["human_targets_unresolved"].add(symbol)
-                    target["notes"] = (
-                        f"EPA lists a human gene, Entrez {entrez or 'id not given'}, "
-                        "that is not an approved gene in HGNC, so no HGNC id."
+            # An Entrez id names one gene in one species, and HGNC lists only
+            # human genes, so HGNC listing the id is what makes a target human.
+            # EPA's own gene organismId is not used: the API returns it null.
+            hgnc = inputs.hgnc.get(entrez) if entrez else None
+            if hgnc:
+                target["gene"] = hgnc["hgnc_id"]
+                target["gene_symbol"] = hgnc["symbol"]
+                report["human_targets_resolved"] += 1
+                if hgnc["symbol"] != symbol:
+                    report["symbol_differs_from_hgnc"].add(
+                        f"{symbol} -> {hgnc['symbol']}"
                     )
-            else:
-                report["non_human_targets"] += 1
+            elif gene.get("organismId") == HUMAN_GENE_ORGANISM_ID:
+                report["human_targets_unresolved"].add(symbol)
                 target["notes"] = (
-                    "Not a human gene: EPA lists this target under its gene organism "
-                    f"id {gene.get('organismId')}, so no HGNC id."
+                    f"EPA lists a human gene, Entrez {entrez or 'id not given'}, "
+                    "that is not an approved gene in HGNC, so no HGNC id."
+                )
+            else:
+                report["targets_not_in_hgnc"] += 1
+                target["notes"] = (
+                    f"Entrez {entrez or 'id not given'} is not an approved human gene "
+                    "in HGNC, so no HGNC id."
                 )
             if measurement:
                 target["measurement"] = measurement
@@ -251,6 +365,7 @@ def measured_targets(rows, inputs, report):
 
 
 def build_record(aid, rows, inputs, accessed_on, report):
+    decoder = inputs.decoder
     name = union(r.get("assayName") for r in rows)
     name = name[0] if name else f"ToxCast assay {aid}"
     description = union(r.get("assayDesc") for r in rows)
@@ -261,7 +376,7 @@ def build_record(aid, rows, inputs, accessed_on, report):
 
     record = {"model": model}
     species = []
-    for taxon_id in union(str(r.get("organismId") or "") for r in rows):
+    for taxon_id in union(str(decoder.taxon(r) or "") for r in rows):
         organism = inputs.organism(taxon_id)
         if organism:
             species.append(organism)
@@ -291,9 +406,9 @@ def build_record(aid, rows, inputs, accessed_on, report):
         "source_urls": [ENDPOINT_URL.format(r["aeid"]) for r in rows],
         "accessed_on": accessed_on,
         "source_ids": [f"aid:{aid}"] + [f"aeid:{r['aeid']}" for r in rows],
-        "method_type": "; ".join(union(r.get("assayFormatType") for r in rows)) or None,
-        "cell_lines": union(r.get("cellShortName") for r in rows),
-        "organs": union(r.get("tissue") for r in rows),
+        "method_type": "; ".join(union(decoder.method_type(r) for r in rows)) or None,
+        "cell_lines": union(c["name"] for r in rows for c in decoder.cells(r)),
+        "organs": union(o for r in rows for o in decoder.organs(r)),
         "aops": [f"aop:{n}" for n in union(aops)],
         "key_events": [f"aop.events:{n}" for n in union(events)],
     }
@@ -462,7 +577,7 @@ def summarise(assays, records, report, leads, skipped, changes):
             if report["symbol_differs_from_hgnc"]
             else ""
         ),
-        f"non-human targets            : {report['non_human_targets']}",
+        f"targets not in HGNC          : {report['targets_not_in_hgnc']}",
         f"gene objects with no symbol  : {report['targets_without_symbol']}",
         f"taxa with no label           : {len(report['taxa_without_label'])}"
         + (
@@ -526,9 +641,23 @@ def main(argv=None):
         action="store_true",
         help="Report what would be written, and write nothing",
     )
+    parser.add_argument(
+        "--decoder",
+        type=Path,
+        default=ROOT / "conf/toxcast_decoder.yaml",
+        help="The decoder tables (default: conf/toxcast_decoder.yaml)",
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Write nothing, and exit 1 if any EPA value is missing from the decoder",
+    )
     args = parser.parse_args(argv)
+    if args.check:
+        args.dry_run = True
 
-    inputs = Inputs(args.input)
+    decoder = Decoder(args.decoder)
+    inputs = Inputs(args.input, decoder)
     accessed_on = args.accessed_on or inputs.manifest.get("fetched_at", "")[:10]
     if not accessed_on:
         sys.exit(
@@ -540,7 +669,7 @@ def main(argv=None):
         "human_targets_resolved": 0,
         "human_targets_unresolved": set(),
         "symbol_differs_from_hgnc": set(),
-        "non_human_targets": 0,
+        "targets_not_in_hgnc": 0,
         "targets_without_symbol": 0,
         "taxa_without_label": set(),
         "aops_fetched": inputs.aops is not None,
@@ -591,9 +720,17 @@ def main(argv=None):
 
     leads = possible_overlaps(assays, curated)
     print(summarise(assays, records, report, leads, skipped, changes), file=sys.stderr)
+    missing = {f: c for f, c in decoder.missing.items() if c}
+    print(
+        f"\nvalues not in the decoder    : {sum(len(c) for c in missing.values())}",
+        file=sys.stderr,
+    )
+    for field, values in missing.items():
+        for value, n in values.most_common():
+            print(f"    {field}: {value!r} ({n} uses, left out)", file=sys.stderr)
     if args.dry_run:
         print("\ndry run: nothing written", file=sys.stderr)
-    return 0
+    return 1 if args.check and missing else 0
 
 
 if __name__ == "__main__":
