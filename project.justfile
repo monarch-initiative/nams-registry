@@ -64,3 +64,60 @@ search-term adapter query:
 [group('data')]
 term-info adapter curie:
   uv run runoak -i {{adapter}} info {{curie}}
+
+# Fetch a research group's papers from OpenAlex into templates/research_groups/<slug>.works.yaml (commit it)
+[group('research')]
+research-group-works slug:
+  uv run python scripts/fetch_openalex_works.py {{slug}}
+
+# Print the prompt `just research-group` would send for a group, and stop. Read it before paying for a run.
+[group('research')]
+research-group-prompt slug:
+  uv run python scripts/research_group_vars.py {{slug}} --format prompt
+
+# Writes research/<stem>-deep-research-<provider>.md and its _artifacts/, with every
+# reference checked against references_cache/. Extra arguments go to the client,
+# e.g. `-- --param max_iterations=8 --param timeout=7200`.
+#
+# Refuses to run while the template, the group's spec or its paper list has
+# uncommitted changes: the report's frontmatter names the template and every
+# variable, and a committed template is what lets that be traced to a revision.
+# Refuses to overwrite a report, too; change the spec's stem for a second run.
+#
+# Run deep research on a research group's models, e.g. `just research-group openscientist carreras_puigvert`
+[group('research')]
+research-group provider slug *args="":
+  #!/usr/bin/env bash
+  set -euo pipefail
+  template=templates/research_group_models.md
+  spec=templates/research_groups/{{slug}}.yaml
+  works=templates/research_groups/{{slug}}.works.yaml
+  dirty=$(git status --porcelain -- "$template" "$spec" "$works" scripts/research_group_vars.py)
+  if [ -n "$dirty" ]; then
+    echo "Commit these before a run, so the report can be traced to them:" >&2
+    echo "$dirty" >&2
+    exit 1
+  fi
+  stem=$(uv run python scripts/research_group_vars.py {{slug}} --format stem)
+  output="research/$stem-deep-research-{{provider}}.md"
+  if [ -e "$output" ] || [ -e "research/$stem-deep-research-{{provider}}_artifacts" ]; then
+    echo "$output already exists. Reports are never overwritten; give the spec a new stem." >&2
+    exit 1
+  fi
+  # The values are multi-line, so they pass through a NUL-separated file:
+  # command substitution would drop the separators.
+  vars_file=$(mktemp)
+  trap 'rm -f "$vars_file"' EXIT
+  uv run python scripts/research_group_vars.py {{slug}} --format null > "$vars_file"
+  var_args=()
+  while IFS= read -r -d '' record; do
+    var_args+=(--var "$record")
+  done < "$vars_file"
+  echo "Research group {{slug}} ({{provider}}) -> $output"
+  uv run deep-research-client research \
+    --template "$template" \
+    "${var_args[@]}" \
+    --provider {{provider}} \
+    --output "$output" \
+    --validate-references --validation-cache-dir references_cache \
+    {{args}}

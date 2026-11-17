@@ -21,6 +21,15 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "aiofiles"
+version = "25.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz", hash = "sha256:a8d728f0a29de45dc521f18f07297428d56992a742f0cd2701ba86e44d23d5b2", size = 46354, upload-time = "2025-10-09T20:51:04.358Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bc/8a/340a1555ae33d7354dbca4faa54948d76d89a27ceef032c8c3bc661d003e/aiofiles-25.1.0-py3-none-any.whl", hash = "sha256:abe311e527c862958650f9438e859c1fa7568a141b22abcd015e120e86a85695", size = 14668, upload-time = "2025-10-09T20:51:03.174Z" },
+]
+
+[[package]]
 name = "airium"
 version = "0.2.7"
 source = { registry = "https://pypi.org/simple" }
@@ -948,6 +957,23 @@ wheels = [
 ]
 
 [[package]]
+name = "cyberian"
+version = "0.2.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "jinja2" },
+    { name = "linkml-runtime" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
+    { name = "typer" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/95/09/84a9b0a143e1bb0016a51a49d2cccbb80b9c08a2dc76a9674ded22575015/cyberian-0.2.2.tar.gz", hash = "sha256:636d4a6d05535b830f850f5f1607f3b6c5bcfc10445cb90c02af6cd3b1b899ce", size = 508877, upload-time = "2026-01-27T19:01:58.539Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e0/09/a3394e2fb94b2cee3c12705f811a2daa478a62af2a77c378ec51542daac9/cyberian-0.2.2-py3-none-any.whl", hash = "sha256:71d6db5842da20c25add103afe3d89aecdb65ede8674ff469219ba54bff74236", size = 39661, upload-time = "2026-01-27T19:01:57.029Z" },
+]
+
+[[package]]
 name = "debugpy"
 version = "1.8.22"
 source = { registry = "https://pypi.org/simple" }
@@ -987,6 +1013,30 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/60/8b/32f9823da46cde7df2087faa08cd98d01b908f8dcab982cdba9c84e85355/decorator-5.3.1.tar.gz", hash = "sha256:4cbcdd55a6efadb9dbea26b858f4fb3264567b52d69ca0d25b721b553f60ea82", size = 58084, upload-time = "2026-05-18T06:03:28.057Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/05/7f/798705f5296a58ca505d600456748d1be48078eac8a7050d8a98bc9edb89/decorator-5.3.1-py3-none-any.whl", hash = "sha256:f47fe6fdbd2edd623ecfe36875d37aba411624e2670dd395dddae1358689bb3c", size = 10365, upload-time = "2026-05-18T06:03:26.517Z" },
+]
+
+[[package]]
+name = "deep-research-client"
+version = "0.2.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiofiles" },
+    { name = "cyberian" },
+    { name = "httpx" },
+    { name = "jinja2" },
+    { name = "openai" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
+    { name = "typer" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/81/61/47309a3eb94a2e2c4115abeb6082174a7c0e4016d7226df399a49bfc6fd2/deep_research_client-0.2.14.tar.gz", hash = "sha256:501787cc31f70fc843a0674ee147d641d3729f605e025fefff10f3b30b426382", size = 3769814, upload-time = "2026-11-15T05:09:57.707Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/85/4935bc77b236c8207143bc75508b5e4aecaace877481f780263937e30853/deep_research_client-0.2.14-py3-none-any.whl", hash = "sha256:69f793dbb75e944d1a2392e48e846e9d91a66b1034272823d17feb6347d712ce", size = 539996, upload-time = "2026-11-15T05:09:55.695Z" },
+]
+
+[package.optional-dependencies]
+validation = [
+    { name = "linkml-reference-validator" },
 ]
 
 [[package]]
@@ -3624,6 +3674,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "deep-research-client", extra = ["validation"], marker = "python_full_version >= '3.12'" },
     { name = "jupyter" },
     { name = "linkml" },
     { name = "linkml-reference-validator" },
@@ -3645,6 +3696,7 @@ requires-dist = [{ name = "linkml-runtime", specifier = ">=1.9.4" }]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "deep-research-client", extras = ["validation"], marker = "python_full_version >= '3.12'", specifier = ">=0.2.14" },
     { name = "jupyter", specifier = ">=1.0.0" },
     { name = "linkml", specifier = ">=1.9.3" },
     { name = "linkml-reference-validator", specifier = ">=0.5.1" },

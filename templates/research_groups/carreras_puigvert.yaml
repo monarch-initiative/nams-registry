@@ -1,0 +1,38 @@
+# One research group for templates/research_group_models.md.
+# `just research-group-works carreras_puigvert` writes the paper list to
+# carreras_puigvert.works.yaml from the `openalex` block below; prune it by
+# adding OpenAlex work IDs or DOIs to `exclude_works`, never by editing the
+# generated file, so a re-fetch keeps the pruning.
+
+# Report file stem: research/<stem>-deep-research-<provider>.md
+stem: carreraspuigvert2026-phenomics-models
+
+group_name: Jordi Carreras Puigvert
+group_kind: researcher
+date_range: 2018 to present, weighting the most recent work most heavily
+
+group_description: >-
+  Researcher at Uppsala University and SciLifeLab, in Ola Spjuth's
+  pharmaceutical bioinformatics group (pharmb.io), working on phenotypic
+  screening and high-throughput microscopy, chiefly Cell Painting and other
+  morphological profiling. Published as Jordi Carreras Puigvert, J
+  Carreras-Puigvert and JC Puigvert; ORCID 0000-0002-7671-3707, OpenAlex
+  A5070109614. Earlier affiliation at Karolinska Institutet.
+
+focus: >-
+  Phenomics and Cell Painting: the morphological profiling methods the group
+  develops and uses, the mechanisms and phenotypes characterised with them, and
+  their contexts of use, from drug discovery and repurposing to chemical safety
+  and environmental monitoring.
+
+# true: ask the run to find and reanalyse public datasets; false: literature only
+data_analysis: true
+
+openalex:
+  authors:
+  - A5070109614
+  from_year: 2018
+  # Optional: an OpenAlex full-text search to narrow a large group's corpus.
+  # search: cell painting
+
+exclude_works: []

@@ -29,6 +29,7 @@ dev = [
     "linkml-term-validator>=0.4.5",
     "linkml-reference-validator>=0.5.1",
     "oaklib>=0.7.4",
+    "deep-research-client[validation]>=0.2.14 ; python_full_version >= '3.12'",
 ]
 lint = [
     "pre-commit>=4.6.2",

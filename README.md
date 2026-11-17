@@ -116,6 +116,9 @@ and read terms and references.
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [resources/](resources/) - one file per resource in the registry (edit these)
 * [nams/](nams/) - one file per NAM extracted from the resources (edit these)
+* [research/](research/) - deep-research reports, kept as provenance (see its README)
+* [templates/](templates/) - deep-research prompts, and one spec per research
+  group in `research_groups/`; `just research-group` runs them
 * [src/](src/) - source files (edit these)
   * [nams_registry](src/nams_registry)
     * [schema/](src/nams_registry/schema) -- LinkML schema

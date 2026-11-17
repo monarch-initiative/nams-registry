@@ -48,6 +48,8 @@ here:
   one names it by URL; it is not copied here.
 - **Run on a paper** — no DisMech entity, so no DisMech recipe applies. The report
   belongs here, with the records it informs.
+- **Run on a research group** — a researcher, team or organization, through
+  `just research-group` (below). The report belongs here.
 
 Nothing moves a report between the two repositories. DisMech's recipes write only to
 DisMech's `research/`, and none of them mentions this registry.
@@ -61,6 +63,60 @@ Two consequences worth knowing before sending a paper to DisMech:
   present a direct `deep-research-client` call with a prompt written for the paper.
 - **A report produced that way carries no `template_file`** in its frontmatter, because
   no template file produced it. Record the prompt in the pull request instead.
+
+## Running a research group
+
+When a researcher, team or organization turns out to be working on methods the
+registry should hold, one run collects the models it develops and uses, the
+mechanisms and phenotypes it has characterised with them, its contexts of use, and
+candidate mechanistic chains that may not yet be AOPs. The pieces:
+
+```
+templates/research_group_models.md            the prompt, with {placeholders}
+templates/research_groups/<slug>.yaml         one group: who it is, the focus, the OpenAlex selection
+templates/research_groups/<slug>.works.yaml   its papers and datasets, generated from OpenAlex
+scripts/fetch_openalex_works.py               writes the .works.yaml
+scripts/research_group_vars.py                turns the two YAML files into the template's variables
+```
+
+To add a group and run it:
+
+1. Copy an existing spec to `templates/research_groups/<slug>.yaml` and fill it in.
+   Find the group's OpenAlex author IDs at
+   `https://api.openalex.org/authors?search=<name>`. For an organization, give ROR
+   IDs under `institutions` instead, with a `search` to narrow the corpus.
+2. `just research-group-works <slug>` fetches the papers. Read the list; drop what
+   does not belong by adding its OpenAlex ID or DOI to `exclude_works` in the spec,
+   and fetch again.
+3. `just research-group-prompt <slug>` prints the exact prompt. Read it: a run
+   costs real time and credit.
+4. Commit the spec and its `.works.yaml`. The run refuses to start until they are
+   committed, so the report can always be traced to the prompt that produced it.
+5. `just research-group openscientist <slug>`, with provider settings after `--`,
+   for example `-- --param max_iterations=8 --param timeout=7200`. OpenScientist
+   needs `OPENSCIENTIST_API_KEY` in the environment.
+
+### How the request is wired
+
+Nothing here talks to OpenScientist directly. The recipe calls
+[deep-research-client](https://pypi.org/project/deep-research-client/) (a
+development dependency, Python 3.12 or later), the same client DisMech uses:
+
+- `research_group_vars.py` gathers the variables and the recipe passes each one as
+  `--var`. The client fills the template, submits the job, polls until it finishes,
+  and writes the report with its provider, model, settings, template path and every
+  variable in the frontmatter. No rendered prompt is committed; the template and
+  spec are.
+- `--validate-references` makes the client check every PMID and DOI the report
+  cites with `linkml-reference-validator`, the same library `just
+  validate-references` runs on records, caching into this repository's
+  `references_cache/`. The result is the report's `reference_validation`
+  frontmatter.
+- The client writes the provider's own files to `<stem>-deep-research-<provider>_artifacts/`.
+  The recipe refuses to overwrite an existing report; give the spec a new `stem`
+  for a second run.
+
+The report is a lead like any other, and the rules below apply to it.
 
 ## Rules
 
