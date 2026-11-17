@@ -14,7 +14,7 @@ records. `just build-table` rebuilds it, and the docs
 deployment does so on every push to main.
 
 The site also documents both schemas: the resources schema,
-`nams_registry.yaml`, and the NAM records schema, `nam_records.yaml`,
+`nam_resources.yaml`, and the NAM records schema, `nam_records.yaml`,
 together with the NAMO classes it imports, at the NAMO commit
 `pyproject.toml` pins. `just gen-doc` generates both.
 
@@ -39,7 +39,7 @@ A change is made to a record, to the schema, or to both:
   name each other, and the paper, in `compared_with`. A NAM that came
   through DisMech curation records whether DisMech's graph represents it
   in `dismech_status`.
-- **The schema**, `src/nams_registry/schema/nams_registry.yaml`, sets
+- **The schema**, `src/nams_registry/schema/nam_resources.yaml`, sets
   what every resource record can hold. NAM records have a separate schema,
   `nam_records.yaml`, which imports NAMO; the two schemas do not import
   each other. NAMO's schema is kept only in the

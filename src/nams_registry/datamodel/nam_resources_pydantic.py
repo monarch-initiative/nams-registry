@@ -68,8 +68,13 @@ class LinkMLMeta(RootModel):
 
 linkml_meta = LinkMLMeta({'default_prefix': 'nams_registry',
      'default_range': 'string',
-     'description': 'This is a repository of NAM and NAM-adjacent sources '
-                    'collected in support of a NAMs landscape analysis.\n'
+     'description': 'The resources in the nams-registry, one file per resource in '
+                    'resources/:\n'
+                    'the NAM and NAM-adjacent sources collected in support of a '
+                    'NAMs landscape\n'
+                    'analysis. The NAMs extracted from them have their own '
+                    'schema,\n'
+                    'nam_records.yaml.\n'
                     '\n'
                     'Sources are not limited to data repositories and knowledge '
                     'bases. They\n'
@@ -81,10 +86,10 @@ linkml_meta = LinkMLMeta({'default_prefix': 'nams_registry',
                     'the\n'
                     'scientific-literature resource and cites the paper on its NAM '
                     'record.',
-     'id': 'https://w3id.org/monarch-initiative/nams-registry',
+     'id': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources',
      'imports': ['linkml:types'],
      'license': 'MIT',
-     'name': 'nams-registry',
+     'name': 'nam_resources',
      'prefixes': {'dcterms': {'prefix_prefix': 'dcterms',
                               'prefix_reference': 'http://purl.org/dc/terms/'},
                   'doi': {'prefix_prefix': 'doi',
@@ -100,8 +105,8 @@ linkml_meta = LinkMLMeta({'default_prefix': 'nams_registry',
                   'schema': {'prefix_prefix': 'schema',
                              'prefix_reference': 'http://schema.org/'}},
      'see_also': ['https://monarch-initiative.github.io/nams-registry'],
-     'source_file': 'src/nams_registry/schema/nams_registry.yaml',
-     'title': 'nams-registry'} )
+     'source_file': 'src/nams_registry/schema/nam_resources.yaml',
+     'title': 'NAM resources'} )
 
 class ActivityStatusEnum(str, Enum):
     """
@@ -387,7 +392,7 @@ class NamedThing(ConfiguredBaseModel):
     A generic grouping for any identifiable entity
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'schema:Thing',
-         'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+         'from_schema': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources'})
 
     id: str = Field(default=..., description="""The identifier of an entity within the registry. Use the KG-Registry id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication'],
          'slot_uri': 'schema:identifier'} })
@@ -400,7 +405,7 @@ class Resource(NamedThing):
     """
     A source of NAMs or NAMs-adjacent information. This includes data resources, such as databases, repositories, catalogs, and portals; reports, such as landscape analyses, reviews, and OECD Test Guidelines; and the scientific literature as a whole.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources'})
 
     synonyms: Optional[list[str]] = Field(default=None, description="""Acronyms, abbreviations, and other alternate names for the resource.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource']} })
     homepage_url: Optional[str] = Field(default=None, description="""The primary URL of the resource, preferably the main page documenting it.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource'], 'slot_uri': 'schema:url'} })
@@ -450,7 +455,7 @@ class LicenseInfo(ConfiguredBaseModel):
     """
     A license for a resource.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources'})
 
     id: Optional[str] = Field(default=None, description="""A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/. Leave it out when there is none, as for a US government work.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication']} })
     label: str = Field(default=..., description="""The name of the license.""", json_schema_extra = { "linkml_meta": {'domain_of': ['LicenseInfo']} })
@@ -461,7 +466,7 @@ class Publication(ConfiguredBaseModel):
     A publication. It has the same fields as NAMO's Reference, which NAM records use for model.references, so resources and NAM records cite papers the same way. Keep the two in step. NAMO isn't imported here because importing it would bring all of NAMO's classes into this schema.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'exact_mappings': ['namo:Reference'],
-         'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+         'from_schema': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources'})
 
     id: str = Field(default=..., description="""The publication as a CURIE, e.g. doi:10.1093/nar/gkw928, or its URL when it has no DOI or PMID.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'LicenseInfo', 'Publication']} })
     title: str = Field(default=..., description="""The title of the publication.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Publication']} })
@@ -475,7 +480,7 @@ class SupportingScript(ConfiguredBaseModel):
     """
     A script, or a command of a larger tool, written to retrieve or parse content from a resource. It can live in this repository or another one.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources'})
 
     name: str = Field(default=..., description="""A short label for the script, e.g. fetch_namsnetwork.py, or for a command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'SupportingScript']} })
     repository: str = Field(default=..., description="""The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Resource', 'SupportingScript']} })
@@ -488,7 +493,7 @@ class ImportRecord(ConfiguredBaseModel):
     """
     A record of content imported into this registry entry from another registry.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/monarch-initiative/nams-registry/nam_resources'})
 
     source: SourceRegistryEnum = Field(default=..., description="""The registry the content was imported from.""", json_schema_extra = { "linkml_meta": {'domain_of': ['ImportRecord']} })
     source_id: str = Field(default=..., description="""The resource's identifier in the source registry, e.g. toxcast.""", json_schema_extra = { "linkml_meta": {'domain_of': ['ImportRecord']} })

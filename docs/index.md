@@ -18,7 +18,7 @@ The registry records a landscape analysis of New Approach Methodologies
 
 Each kind of record has its own schema:
 
-- [Resources](elements/index.md), from `nams_registry.yaml`. Start with
+- [Resources](elements/index.md), from `nam_resources.yaml`. Start with
   [Resource](elements/Resource.md).
 - [NAM records and NAMO](nam-records/index.md), from `nam_records.yaml`,
   which imports NAMO. Start with [NAMRecord](nam-records/NAMRecord.md). The

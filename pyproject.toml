@@ -73,8 +73,8 @@ testpaths = ["tests"]
 # so any fix ruff made to them would be undone.
 exclude = [
     "src/nams_registry/_version.py",
-    "src/nams_registry/datamodel/nams_registry.py",
-    "src/nams_registry/datamodel/nams_registry_pydantic.py",
+    "src/nams_registry/datamodel/nam_resources.py",
+    "src/nams_registry/datamodel/nam_resources_pydantic.py",
 ]
 # Apply the excludes to files pre-commit passes by name, too.
 force-exclude = true
@@ -88,8 +88,8 @@ skip = [
   "pyproject.toml",
   "uv.lock",
   "project/*",
-  "src/nams_registry/datamodel/nams_registry_pydantic.py",
-  "src/nams_registry/datamodel/nams_registry.py",
+  "src/nams_registry/datamodel/nam_resources_pydantic.py",
+  "src/nams_registry/datamodel/nam_resources.py",
   "references_cache/*",
 ]
 

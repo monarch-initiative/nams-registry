@@ -6,7 +6,10 @@
 
 # Note:
 # - just works fine with quoted variables of dot-env files like this one
-LINKML_SCHEMA_NAME="nams_registry"
+LINKML_SCHEMA_NAME="nam_resources"
+# The Python package the datamodel is generated into, src/<name>/datamodel.
+# It differs from the schema name, so the justfile cannot derive it from that.
+LINKML_PACKAGE_NAME="nams_registry"
 LINKML_SCHEMA_AUTHOR="Ginnie Hench <vhench@unc.edu>"
 LINKML_SCHEMA_DESCRIPTION="This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis."
 LINKML_SCHEMA_SOURCE_DIR="src/nams_registry/schema"

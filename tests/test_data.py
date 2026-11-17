@@ -6,7 +6,7 @@ import pytest
 from pathlib import Path
 
 import yaml
-import nams_registry.datamodel.nams_registry
+import nams_registry.datamodel.nam_resources
 from linkml.validator import validate
 from linkml_runtime.loaders import yaml_loader
 from nams_registry.datamodel import MAIN_SCHEMA_PATH, NAM_SCHEMA_PATH
@@ -23,7 +23,7 @@ def test_valid_data_files(filepath):
     """Test loading of all valid data files."""
     target_class_name = Path(filepath).stem.split("-")[0]
     tgt_class = getattr(
-        nams_registry.datamodel.nams_registry,
+        nams_registry.datamodel.nam_resources,
         target_class_name,
     )
     obj = yaml_loader.load(filepath, target_class=tgt_class)

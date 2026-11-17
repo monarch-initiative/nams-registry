@@ -1,6 +1,11 @@
-name: nams-registry
-description: 'This is a repository of NAM and NAM-adjacent sources collected in support
-  of a NAMs landscape analysis.
+name: nam_resources
+description: 'The resources in the nams-registry, one file per resource in resources/:
+
+  the NAM and NAM-adjacent sources collected in support of a NAMs landscape
+
+  analysis. The NAMs extracted from them have their own schema,
+
+  nam_records.yaml.
 
 
   Sources are not limited to data repositories and knowledge bases. They
@@ -12,10 +17,10 @@ description: 'This is a repository of NAM and NAM-adjacent sources collected in 
   paper is not a resource of its own: a NAM found in one names the
 
   scientific-literature resource and cites the paper on its NAM record.'
-title: nams-registry
+title: NAM resources
 see_also:
 - https://monarch-initiative.github.io/nams-registry
-id: https://w3id.org/monarch-initiative/nams-registry
+id: https://w3id.org/monarch-initiative/nams-registry/nam_resources
 imports:
 - linkml:types
 license: MIT
@@ -318,7 +323,7 @@ enums:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ActivityStatusEnum
     description: The status of a resource. The same values as KG-Registry, which follow
       OBO Foundry.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       active:
         text: active
@@ -341,7 +346,7 @@ enums:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ResourceTypeEnum
     description: What form a resource takes, or, for an Organization, who it is. The
       KG-Registry Resource categories, plus Report, Literature and Organization.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       DataSource:
         text: DataSource
@@ -386,7 +391,7 @@ enums:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/DomainAreaEnum
     description: Domains a resource covers. Taken from the KG-Registry domains used
       by its NAMs resources; add a value here when a new resource needs one.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       adverse outcome pathways:
         text: adverse outcome pathways
@@ -523,7 +528,7 @@ enums:
     name: HoldsNAMsEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/HoldsNAMsEnum
     description: Whether a resource holds NAMs, and whether they are its primary content.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       primary:
         text: primary
@@ -543,7 +548,7 @@ enums:
     name: CurationModelEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/CurationModelEnum
     description: Who creates a resource's content.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       maintainers:
         text: maintainers
@@ -568,7 +573,7 @@ enums:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/PriorityEnum
     description: 'Extraction priority: how much a resource adds, and so how soon it
       is worth extracting content from.'
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       high:
         text: high
@@ -581,7 +586,7 @@ enums:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ExtractionEffortEnum
     description: The estimated effort to ready a resource for incorporation. The levels
       are left loose for now; effort_rationale carries the detail.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       high:
         text: high
@@ -597,7 +602,7 @@ enums:
     name: SourceRegistryEnum
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/SourceRegistryEnum
     description: Registries that content can be imported from.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     permissible_values:
       kg_registry:
         text: kg_registry
@@ -610,7 +615,7 @@ slots:
     description: The identifier of an entity within the registry. Use the KG-Registry
       id where the resource has one, e.g. toxcast. For an OECD Test Guideline, use
       oecd-tg- followed by the guideline number in lower case, e.g. oecd-tg-442d.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - schema:identifier
     slot_uri: schema:identifier
@@ -624,7 +629,7 @@ slots:
     name: name
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/name
     description: The human-readable name of the resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - schema:name
     slot_uri: schema:name
@@ -637,7 +642,7 @@ slots:
     name: description
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/description
     description: A description of the resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - schema:description
     slot_uri: schema:description
@@ -650,7 +655,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/homepage_url
     description: The primary URL of the resource, preferably the main page documenting
       it.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - schema:url
     slot_uri: schema:url
@@ -662,7 +667,7 @@ slots:
     name: synonyms
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/synonyms
     description: Acronyms, abbreviations, and other alternate names for the resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:synonyms
     owner: Resource
     domain_of:
@@ -673,7 +678,7 @@ slots:
     name: repository
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/repository
     description: The main version control repository for the resource, if it has one.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:repository
     owner: Resource
     domain_of:
@@ -685,7 +690,7 @@ slots:
     description: What form the resource takes, such as a data source or a knowledge
       graph, or, for an organization covered as a whole, Organization. Imported from
       the KG-Registry category.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:resource_type
     owner: Resource
     domain_of:
@@ -696,7 +701,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/domain_areas
     description: The domains the resource covers, such as toxicology. Imported from
       the KG-Registry domains.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:domain_areas
     owner: Resource
     domain_of:
@@ -708,7 +713,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/holds_nams
     description: Whether the resource holds NAMs, and whether they are its primary
       content. Leave it out until the resource has been evaluated.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:holds_nams
     owner: Resource
     domain_of:
@@ -720,7 +725,7 @@ slots:
     description: Why the resource was given its holds_nams value, e.g. "Holds the
       measurement methods for key events, but its primary content is adverse outcome
       pathways."
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:relevance_note
     owner: Resource
     domain_of:
@@ -731,7 +736,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/curation_model
     description: Who creates the resource's content, as the resource works today.
       Use more than one value when the resource mixes them.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:curation_model
     owner: Resource
     domain_of:
@@ -745,7 +750,7 @@ slots:
       has been incorporated into DisMech, and whether DisMech has tooling for it,
       such as a script or skill. Records what exists, not what the resource could
       offer. Free text for now.'
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:dismech_integration
     owner: Resource
     domain_of:
@@ -757,7 +762,7 @@ slots:
     description: Scripts written to retrieve or parse the resource's content, in this
       repository or elsewhere. List only scripts that exist. DisMech tooling that
       uses the resource without retrieving from it stays in dismech_integration.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:supporting_scripts
     owner: Resource
     domain_of:
@@ -774,7 +779,7 @@ slots:
       A resource that repackages another one can still add value, for example through
       a new format, integration with other data, or easier access, so repackaging
       alone does not make a resource low priority.'
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:priority
     owner: Resource
     domain_of:
@@ -786,7 +791,7 @@ slots:
     description: Why the resource was given its priority, based on what was found
       about what it adds. For a resource that repackages another, say what it adds
       beyond the original, or that nothing was found.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:priority_rationale
     owner: Resource
     domain_of:
@@ -799,7 +804,7 @@ slots:
       what to extract from it and getting that content into a usable form. Independent
       of priority, which records how much the resource adds. Set it once the resource
       has been looked at.'
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:extraction_effort
     owner: Resource
     domain_of:
@@ -811,7 +816,7 @@ slots:
     description: Why the resource was given its extraction_effort, for example its
       format, its access, existing tooling, or decisions still to be made about what
       to extract.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:effort_rationale
     owner: Resource
     domain_of:
@@ -823,7 +828,7 @@ slots:
     description: What is expected to be found in the resource, written before content
       is extracted from it, e.g. "A classification of NAMs by model type, and a list
       of biomedical databases scored for FAIRness."
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:expectations
     owner: Resource
     domain_of:
@@ -834,7 +839,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/discussion_issue
     description: The GitHub issue where the resource is discussed, e.g. https://github.com/monarch-initiative/nams-registry/issues/2.
       Set by `just create-review-issues`.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:discussion_issue
     owner: Resource
     domain_of:
@@ -845,7 +850,7 @@ slots:
     name: activity_status
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/activity_status
     description: The status of the resource itself.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:activity_status
     owner: Resource
     domain_of:
@@ -856,7 +861,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/use_instead
     description: The ids of other registry resources to use in place of this one,
       for a resource that is no longer active and has a clear replacement.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:use_instead
     owner: Resource
     domain_of:
@@ -870,7 +875,7 @@ slots:
       to, such as a database to the institute that runs it, or a core facility to
       its university. Set it on the part, not on the organization; an organization's
       parts are the entries that name it.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:part_of
     owner: Resource
     domain_of:
@@ -881,7 +886,7 @@ slots:
     name: license
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/license
     description: The license of the resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - dcterms:license
     slot_uri: dcterms:license
@@ -896,7 +901,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/publications
     description: For a Report, the publications the report consists of. For any other
       resource, publications that describe the resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:publications
     owner: Resource
     domain_of:
@@ -910,7 +915,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/creation_date
     description: The date this registry entry was created, not the date the resource
       was created. For an entry imported from another registry, the date of the import.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - dcterms:created
     slot_uri: dcterms:created
@@ -923,7 +928,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/last_modified_date
     description: The date this registry entry was last changed, not the date the resource
       was last updated.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - dcterms:modified
     slot_uri: dcterms:modified
@@ -936,7 +941,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/imported_from
     description: The registries this entry's content was imported from. Leave empty
       for an entry curated directly in this registry.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - pav:importedFrom
     slot_uri: pav:importedFrom
@@ -951,7 +956,7 @@ slots:
     name: source
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/source
     description: The registry the content was imported from.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:source
     owner: ImportRecord
     domain_of:
@@ -962,7 +967,7 @@ slots:
     name: source_id
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/source_id
     description: The resource's identifier in the source registry, e.g. toxcast.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:source_id
     owner: ImportRecord
     domain_of:
@@ -973,7 +978,7 @@ slots:
     name: source_url
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/source_url
     description: The URL of the resource's page in the source registry.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - pav:sourceAccessedAt
     slot_uri: pav:sourceAccessedAt
@@ -986,7 +991,7 @@ slots:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/source_version
     description: The version of the source registry the content was copied from. For
       a registry kept in git, such as KG-Registry, the commit hash.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:source_version
     owner: ImportRecord
     domain_of:
@@ -996,7 +1001,7 @@ slots:
     name: imported_on
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/imported_on
     description: The date the content was imported.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     mappings:
     - pav:importedOn
     slot_uri: pav:importedOn
@@ -1009,7 +1014,7 @@ slots:
     name: licenseInfo__id
     description: A URL to the license text, e.g. https://creativecommons.org/licenses/by/4.0/.
       Leave it out when there is none, as for a US government work.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:id
     alias: id
     owner: LicenseInfo
@@ -1019,7 +1024,7 @@ slots:
   licenseInfo__label:
     name: licenseInfo__label
     description: The name of the license.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:label
     alias: label
     owner: LicenseInfo
@@ -1031,7 +1036,7 @@ slots:
     name: publication__id
     description: The publication as a CURIE, e.g. doi:10.1093/nar/gkw928, or its URL
       when it has no DOI or PMID.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:id
     identifier: true
     alias: id
@@ -1043,7 +1048,7 @@ slots:
   publication__title:
     name: publication__title
     description: The title of the publication.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:title
     alias: title
     owner: Publication
@@ -1054,7 +1059,7 @@ slots:
   publication__authors:
     name: publication__authors
     description: The authors, e.g. Mortensen HM.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:authors
     alias: authors
     owner: Publication
@@ -1065,7 +1070,7 @@ slots:
   publication__journal:
     name: publication__journal
     description: The journal the publication appeared in.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:journal
     alias: journal
     owner: Publication
@@ -1075,7 +1080,7 @@ slots:
   publication__year:
     name: publication__year
     description: The year of publication, e.g. 2021.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:year
     alias: year
     owner: Publication
@@ -1085,7 +1090,7 @@ slots:
   publication__url:
     name: publication__url
     description: A URL to read the publication at, when the id is not one.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:url
     alias: url
     owner: Publication
@@ -1096,7 +1101,7 @@ slots:
     name: supportingScript__name
     description: A short label for the script, e.g. fetch_namsnetwork.py, or for a
       command of a larger tool, e.g. aop-wiki-cli search-with-config methods_nams.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:name
     alias: name
     owner: SupportingScript
@@ -1107,7 +1112,7 @@ slots:
   supportingScript__repository:
     name: supportingScript__repository
     description: The repository that houses the script, e.g. https://github.com/monarch-initiative/nams-registry.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:repository
     alias: repository
     owner: SupportingScript
@@ -1119,7 +1124,7 @@ slots:
     name: supportingScript__path
     description: The file within the repository, e.g. scripts/fetch_namsnetwork.py.
       For a command of a larger tool, the file that defines it or configures it.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:path
     alias: path
     owner: SupportingScript
@@ -1130,7 +1135,7 @@ slots:
     name: supportingScript__command
     description: How to run it, e.g. uv run python scripts/fetch_namsnetwork.py. For
       a command of a larger tool, the command and its arguments.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:command
     alias: command
     owner: SupportingScript
@@ -1140,7 +1145,7 @@ slots:
   supportingScript__description:
     name: supportingScript__description
     description: What the script retrieves or does, in a sentence or two.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slot_uri: nams_registry:description
     alias: description
     owner: SupportingScript
@@ -1152,7 +1157,7 @@ classes:
     name: NamedThing
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/NamedThing
     description: A generic grouping for any identifiable entity
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     exact_mappings:
     - schema:Thing
     slots:
@@ -1167,7 +1172,7 @@ classes:
       resources, such as databases, repositories, catalogs, and portals; reports,
       such as landscape analyses, reviews, and OECD Test Guidelines; and the scientific
       literature as a whole.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     is_a: NamedThing
     slots:
     - id
@@ -1202,7 +1207,7 @@ classes:
     name: LicenseInfo
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/LicenseInfo
     description: A license for a resource.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slots:
     - licenseInfo__id
     - licenseInfo__label
@@ -1224,7 +1229,7 @@ classes:
       NAM records use for model.references, so resources and NAM records cite papers
       the same way. Keep the two in step. NAMO isn't imported here because importing
       it would bring all of NAMO's classes into this schema.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     exact_mappings:
     - namo:Reference
     slots:
@@ -1267,7 +1272,7 @@ classes:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/SupportingScript
     description: A script, or a command of a larger tool, written to retrieve or parse
       content from a resource. It can live in this repository or another one.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slots:
     - supportingScript__name
     - supportingScript__repository
@@ -1302,7 +1307,7 @@ classes:
     definition_uri: https://w3id.org/monarch-initiative/nams-registry/ImportRecord
     description: A record of content imported into this registry entry from another
       registry.
-    from_schema: https://w3id.org/monarch-initiative/nams-registry
+    from_schema: https://w3id.org/monarch-initiative/nams-registry/nam_resources
     slots:
     - source
     - source_id
@@ -1311,7 +1316,7 @@ classes:
     - imported_on
     class_uri: nams_registry:ImportRecord
 metamodel_version: 1.12.0
-source_file: nams_registry.yaml
-source_file_date: '2026-11-12T21:25:38'
-source_file_size: 22798
+source_file: nam_resources.yaml
+source_file_date: '2026-11-17T17:29:23'
+source_file_size: 22941
 

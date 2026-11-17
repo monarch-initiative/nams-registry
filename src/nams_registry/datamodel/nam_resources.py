@@ -1,8 +1,11 @@
-# Auto generated from nams_registry.yaml by pythongen.py version: 0.0.1
-# Schema: nams-registry
+# Auto generated from nam_resources.yaml by pythongen.py version: 0.0.1
+# Schema: nam_resources
 #
-# id: https://w3id.org/monarch-initiative/nams-registry
-# description: This is a repository of NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis.
+# id: https://w3id.org/monarch-initiative/nams-registry/nam_resources
+# description: The resources in the nams-registry, one file per resource in resources/:
+#   the NAM and NAM-adjacent sources collected in support of a NAMs landscape
+#   analysis. The NAMs extracted from them have their own schema,
+#   nam_records.yaml.
 #
 #   Sources are not limited to data repositories and knowledge bases. They
 #   also include reports, such as landscape analyses, reviews, and OECD Test
