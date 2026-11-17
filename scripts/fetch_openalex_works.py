@@ -241,7 +241,7 @@ def main(argv: list[str] | None = None) -> int:
         "# Do not edit: prune with exclude_works in the spec and re-fetch.\n"
     )
     text = header + yaml.safe_dump(
-        document, sort_keys=False, allow_unicode=True, width=100
+        document, sort_keys=False, allow_unicode=True, width=72
     )
     if args.dry_run:
         print(text)
