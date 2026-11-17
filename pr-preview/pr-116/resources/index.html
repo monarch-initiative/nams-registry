@@ -59,13 +59,18 @@
   }
   td:nth-child(2) { min-width: 16em; }
   .count { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
-  .pager { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 16px 0 0; }
+  .pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; }
+  .pager.top { margin: 0 0 10px; }
+  .pager.bottom { margin: 16px 0 0; }
   .pager button {
-    font: inherit; color: var(--accent); background: var(--surface); cursor: pointer;
-    border: 1px solid var(--line); border-radius: 8px; padding: 6px 14px;
+    font: inherit; font-size: 14px; color: var(--accent); background: var(--surface); cursor: pointer;
+    border: 1px solid var(--line); border-radius: 8px; padding: 5px 11px; min-width: 2.4em;
   }
   .pager button:disabled { color: var(--muted); cursor: default; opacity: .6; }
-  .pager span { color: var(--muted); font-size: 14px; }
+  .pager button[aria-current="page"] {
+    background: var(--tab-on-bg); color: var(--tab-on-fg); border-color: var(--tab-on-bg); cursor: default; opacity: 1;
+  }
+  .pager .gap { color: var(--muted); padding: 0 2px; }
   .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
   table { width: 100%; border-collapse: collapse; }
   th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -130,17 +135,14 @@
     <input id="q" type="search" aria-label="Filter">
   </div>
   <p class="count" id="count"></p>
+  <nav class="pager top" aria-label="Pages" hidden></nav>
   <div class="table-wrap">
   <table>
     <thead><tr id="headers"></tr><tr class="filters" id="filters"></tr></thead>
     <tbody id="rows"></tbody>
   </table>
   </div>
-  <nav class="pager" id="pager" aria-label="Pages" hidden>
-    <button type="button" id="prev">&larr; Previous</button>
-    <span id="page"></span>
-    <button type="button" id="next">Next &rarr;</button>
-  </nav>
+  <nav class="pager bottom" aria-label="Pages, below the table" hidden></nav>
 </main>
 <footer><p>NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis, and the NAMs found in them.</p></footer>
 <script>
@@ -404,6 +406,34 @@ function searchText(r) {
     .filter(Boolean).join(" ").toLowerCase();
 }
 
+// The page numbers to offer: every page when there are few, otherwise the
+// first, the last, and the current page with its neighbours; null marks a gap.
+function pageList(pages) {
+  if (pages <= 7) return Array.from({ length: pages }, (_, i) => i + 1);
+  let lo = Math.max(2, Math.min(page - 1, pages - 4));
+  let hi = Math.min(pages - 1, Math.max(page + 1, 5));
+  // A gap of a single page shows that page instead.
+  if (lo === 3) lo = 2;
+  if (hi === pages - 2) hi = pages - 1;
+  const list = [1];
+  if (lo > 2) list.push(null);
+  for (let p = lo; p <= hi; p++) list.push(p);
+  if (hi < pages - 1) list.push(null);
+  list.push(pages);
+  return list;
+}
+
+// Previous, the page numbers, and Next. Each button carries the page it goes to.
+function pager(pages) {
+  const btn = (to, label, aria, extra = "") =>
+    `<button type="button" data-page="${to}" aria-label="${aria}"${extra}>${label}</button>`;
+  return btn(page - 1, "&larr; Previous", "Previous page", page <= 1 ? " disabled" : "") +
+    pageList(pages).map(p => p === null
+      ? `<span class="gap" aria-hidden="true">&hellip;</span>`
+      : btn(p, p, `Page ${p}`, p === page ? ` aria-current="page"` : "")).join("") +
+    btn(page + 1, "Next &rarr;", "Next page", page >= pages ? " disabled" : "");
+}
+
 function render() {
   const all = tabRows(tab);
   const term = q.value.trim().toLowerCase();
@@ -422,10 +452,11 @@ function render() {
   document.getElementById("count").textContent = (shown.length
     ? `${start + 1}\u2013${end} of ${shown.length} ${noun}`
     : `0 ${many}`) + (shown.length < all.length ? ` (filtered from ${all.length})` : "");
-  document.getElementById("pager").hidden = pages < 2;
-  document.getElementById("page").textContent = `Page ${page} of ${pages}`;
-  document.getElementById("prev").disabled = page <= 1;
-  document.getElementById("next").disabled = page >= pages;
+  const pagerHtml = pager(pages);
+  document.querySelectorAll("nav.pager").forEach(nav => {
+    nav.hidden = pages < 2;
+    nav.innerHTML = pagerHtml;
+  });
   const columns = tab[3];
   document.getElementById("rows").innerHTML = shown.slice(start, end).map((r, i) => `
     <tr class="summary">
@@ -490,14 +521,14 @@ document.getElementById("rows").addEventListener("click", e => {
   d.hidden = open;
 });
 q.addEventListener("input", rerun);
-// Turning a page goes back to the top of the table.
-const turn = step => {
-  page += step;
+// Going to another page, from either pager, goes back to the top of the table.
+document.querySelectorAll("nav.pager").forEach(nav => nav.addEventListener("click", e => {
+  const b = e.target.closest("button[data-page]");
+  if (!b || b.disabled || b.getAttribute("aria-current")) return;
+  page = Number(b.dataset.page);
   render();
   document.getElementById("count").scrollIntoView({ block: "start" });
-};
-document.getElementById("prev").addEventListener("click", () => turn(-1));
-document.getElementById("next").addEventListener("click", () => turn(1));
+}));
 showTab(location.hash.slice(1));
 </script>
 </body>
