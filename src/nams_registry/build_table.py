@@ -1,7 +1,9 @@
 """Build the registry's browse page from resources/ and nams/.
 
-The page has three tabs: all records, resources (resources/*.yaml) and NAM
-records (nams/*.yaml). Each tab lists one row per record; clicking a row shows the rest of the record's
+The page has two views: NAM records (nams/*.yaml), which it opens on, and
+resources (resources/*.yaml). The current view's name is the heading above
+the table, and a "Go to" link at the top right switches to the other. Each
+view lists one row per record; clicking a row shows the rest of the record's
 details below it. The data is embedded in the page, so it needs no server.
 `just build-table` runs this, as does `just gen-doc`, before MkDocs
 publishes the page at /resources/.
@@ -33,15 +35,19 @@ REPOSITORY = "https://github.com/monarch-initiative/nams-registry"
 #   present   choose whether the column has a value
 # Clicking a column heading sorts by that column, ascending then descending.
 # Everything else stays in the details that open below the row.
+# The first tab is the view the page opens on. Each view links to the other,
+# so the page expects exactly two.
 TABS = [
     (
-        "all",
-        "All records",
-        ["resource", "nam"],
+        "nams",
+        "NAM records",
+        ["nam"],
         [
             ("name", "Name", "text", None),
-            ("kind_label", "Kind", "badge", "values"),
-            ("type", "Type or NAMO class", "text", "values"),
+            ("type", "NAMO class", "text", "values"),
+            ("organ", "Organ", "text", "values"),
+            ("cell_types", "Cell types", "text", "values"),
+            ("species", "Species", "text", "values"),
             ("sources", "Found in", "text", "values"),
         ],
     ),
@@ -56,19 +62,6 @@ TABS = [
             ("dismech_integration", "DisMech integration", "clamp", "present"),
             ("is_tox", "is_tox", "check", "present"),
             ("discussion_issue", "GH Issue", "issue", "present"),
-        ],
-    ),
-    (
-        "nams",
-        "NAMs",
-        ["nam"],
-        [
-            ("name", "Name", "text", None),
-            ("type", "NAMO class", "text", "values"),
-            ("organ", "Organ", "text", "values"),
-            ("species", "Species", "text", "values"),
-            ("sources", "Found in", "text", "values"),
-            ("source_holds_more_details", "Source holds more", "check", "present"),
         ],
     ),
 ]
@@ -100,6 +93,18 @@ def resource_row(resource):
     }
 
 
+def organs(record):
+    """The organ a NAM models: the model's organ_modeled where it has one,
+    otherwise the organs its sources report (such as NAMs.network's)."""
+    modeled = record["model"].get("organ_modeled")
+    if modeled:
+        return [modeled.get("name") or modeled["id"]]
+    reported = [
+        o for s in record.get("source_resources") or [] for o in s.get("organs", [])
+    ]
+    return list(dict.fromkeys(reported))
+
+
 def nam_row(record, resource_names):
     """A NAM record, flattened for the table; the full record is kept for its details."""
     model = record["model"]
@@ -109,7 +114,8 @@ def nam_row(record, resource_names):
         "name": model.get("name") or model["id"],
         "description": model.get("description"),
         "type": model.get("type"),
-        "organ": (model.get("organ_modeled") or {}).get("name"),
+        "organ": organs(record),
+        "cell_types": [c.get("name") or c["id"] for c in model.get("cell_types") or []],
         "species": [s.get("name") or s["id"] for s in record.get("species") or []],
         **found_in(
             [s["resource"] for s in record.get("source_resources") or []],
@@ -170,17 +176,13 @@ PAGE = """<!doctype html>
   h1 { font-size: 26px; margin: 0 0 4px; }
   .subtitle { color: var(--banner-muted); margin: 0; }
   main { padding-top: 20px; padding-bottom: 48px; }
-  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
-  .tabs button {
-    font: inherit; color: var(--accent); background: var(--surface); cursor: pointer;
-    border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+  .viewbar {
+    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+    gap: 4px 16px; margin: 0 0 12px;
   }
-  .tabs button[aria-selected="true"] { background: var(--tab-on-bg); color: var(--tab-on-fg); border-color: var(--tab-on-bg); }
-  .tabs .n {
-    display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 999px;
-    font-size: 12px; background: var(--chip-bg); color: var(--muted);
-  }
-  .tabs button[aria-selected="true"] .n { background: rgba(255,255,255,.22); color: inherit; }
+  .viewbar h2 { font-size: 20px; margin: 0; }
+  .viewbar .n { color: var(--muted); font-weight: normal; }
+  .viewbar a { color: var(--accent); font-size: 15px; }
   .controls { display: flex; margin-bottom: 12px; }
   .controls input {
     flex: 1 1 260px; font: inherit; color: inherit; background: var(--surface);
@@ -255,7 +257,10 @@ PAGE = """<!doctype html>
   <p class="subtitle" id="summary"></p>
 </div></header>
 <main>
-  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="viewbar">
+    <h2 id="view"></h2>
+    <a id="switch" href="#"></a>
+  </div>
   <p class="note" id="note"></p>
   <div class="controls">
     <input id="q" type="search" aria-label="Filter">
@@ -275,13 +280,11 @@ const TABS = __TABS__;
 
 // What each tab says above its table.
 const NOTES = {
-  all: "Every record in the registry: the resources reviewed, and the NAMs recorded from them.",
   resources: "Sources of NAMs, and of data about them, each reviewed for what it holds.",
   nams: "NAMs recorded from the resources, each as a NAMO model. Species, applications and limitations are held beside the model until NAMO covers them. Where a resource holds more about a NAM than it gives publicly, the record holds only the public part, and is marked as such.",
 };
 const NOUNS = {
-  all: ["record", "records"], resources: ["resource", "resources"],
-  nams: ["NAM", "NAMs"],
+  resources: ["resource", "resources"], nams: ["NAM", "NAMs"],
 };
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -465,7 +468,6 @@ const MISSING_LABEL = { holds_nams: "Not yet evaluated", type: "None" };
 const RANK = {
   priority: ["high", "medium", "low"],
   holds_nams: ["primary", "secondary", "unclear", "none"],
-  kind_label: ["Resource", "NAM"],
 };
 
 let tab = null, sortField = "name", sortDir = 1;
@@ -523,7 +525,8 @@ function matches(r) {
 }
 
 function searchText(r) {
-  return [r.id, r.name, r.description, r.type, ...(r.sources || []), ...(r.synonyms || []), ...(r.cell_lines || [])]
+  return [r.id, r.name, r.description, r.type, ...(r.sources || []), ...(r.synonyms || []), ...(r.cell_lines || []),
+    ...(r.organ || []), ...(r.cell_types || [])]
     .filter(Boolean).join(" ").toLowerCase();
 }
 
@@ -553,16 +556,21 @@ function showTab(key) {
     filters: Object.fromEntries(selects.map(s => [s.dataset.field, s.value])),
   };
   tab = TABS.find(t => t[0] === key) || TABS[0];
-  // A tab opens as it was left; the first time, All records is grouped by
-  // kind (resources, then NAMs) and the others sorted by name.
-  const state = STATE[tab[0]] || {
-    q: "", sortField: tab[0] === "all" ? "kind_label" : "name", sortDir: 1, filters: {},
-  };
+  // A tab opens as it was left; the first time, sorted by name.
+  const state = STATE[tab[0]] || { q: "", sortField: "name", sortDir: 1, filters: {} };
   ({ sortField, sortDir } = state);
   q.value = state.q;
-  document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === tab[0])));
+  // The current view is the heading; the other is a link to go to it.
+  const other = TABS.find(t => t !== tab);
+  document.getElementById("view").innerHTML = `${esc(tab[1])} <span class="n">(${tabRows(tab).length})</span>`;
+  const sw = document.getElementById("switch");
+  sw.hidden = !other;
+  if (other) {
+    sw.href = "#" + other[0];
+    sw.textContent = `Go to ${other[1]} (${tabRows(other).length}) \\u2192`;
+  }
   document.getElementById("note").textContent = NOTES[tab[0]];
-  q.placeholder = `Filter ${tab[0] === "all" ? "all records" : tab[1]}`;
+  q.placeholder = `Filter ${tab[1]}`;
   const columns = tab[3], rows = tabRows(tab);
   document.getElementById("headers").innerHTML = "<th></th>" + columns.map(([f, heading, display]) =>
     `<th class="col-${display}" aria-sort="none"><button class="sort" data-field="${f}">${esc(heading)}<span class="arrow" aria-hidden="true"></span></button></th>`).join("");
@@ -580,14 +588,6 @@ function showTab(key) {
   render();
 }
 
-document.getElementById("tabs").innerHTML = TABS.map(t =>
-  `<button role="tab" data-tab="${t[0]}" aria-selected="false">${esc(t[1])}<span class="n">${tabRows(t).length}</span></button>`).join("");
-document.getElementById("tabs").addEventListener("click", e => {
-  const b = e.target.closest("button[data-tab]");
-  if (!b) return;
-  history.replaceState(null, "", "#" + b.dataset.tab);
-  showTab(b.dataset.tab);
-});
 window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
 
 const n = k => DATA.filter(r => r.kind === k).length;
