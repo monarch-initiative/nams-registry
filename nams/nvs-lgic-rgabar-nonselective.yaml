@@ -1,0 +1,25 @@
+model:
+  id: nvs-lgic-rgabar-nonselective
+  name: NVS_LGIC_rGABAR_NonSelective
+  description: NVS_LGIC_rGABAR_NonSelective is a biochemical, single-readout assay that uses
+    extracted gene-proteins from Rat whole brain in a tissue-based cell-free assay. Measurements
+    were taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Gabra1
+  measurement: binding
+  notes: Entrez 29705 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/700
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:251
+  - aeid:700
+  method_type: in chemico
+  organs:
+  - Brain

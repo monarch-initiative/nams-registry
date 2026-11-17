@@ -1,0 +1,55 @@
+model:
+  id: tox21-pr-bla-followup
+  name: TOX21_PR_BLA_Followup
+  description: TOX21_PR_BLA_Followup is a secondary assay for specificity for the TOX21_PR_BLA_Agonist
+    assay. To differentiate true PR agonists from cytotoxic substances, this follow up assay
+    is multiplexed with a cell viability assay. The compounds were also tested for auto fluorescence
+    that may interfere with the biological target readout resulting in potential false positives
+    and/or negatives. To identify the compounds that stimulate PR signaling, a PR-UAS-bla
+    GripTite cell line i.e. PR-UAS-bla HEK293T (Invitrogen, Carlsbad, CA, USA) containing
+    a beta-lactamase reporter gene under the control of an UAS response element was used to
+    screen Tox21 10K compound library. The cytotoxicity of the Tox21 compound library against
+    the PR-bla cell line was tested in parallel by measuring the cell viability using CellTiter-Glo
+    assay in the same wells.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2214
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2215
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2216
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2217
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2218
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2219
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2220
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2221
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:642
+  - aeid:2214
+  - aeid:2215
+  - aeid:2216
+  - aeid:2217
+  - aeid:2218
+  - aeid:2219
+  - aeid:2220
+  - aeid:2221
+  method_type: in vitro
+  cell_lines:
+  - PR-UAS-bla HEK293T
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:642

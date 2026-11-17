@@ -1,0 +1,33 @@
+model:
+  id: tox21-dt40-luc
+  name: TOX21_DT40_LUC
+  description: TOX21_DT40_LUC is a cell-based, single-readout assay that uses DT40, a chicken
+    lymphoblast cell line, with measurements taken at 40 hours after chemical dosing in a
+    1536-well plate. See tox21-dt40-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9031
+  name: Gallus gallus
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1134
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2130
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2131
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:382
+  - aeid:1134
+  - aeid:2130
+  - aeid:2131
+  method_type: in vitro
+  cell_lines:
+  - DT40
+  aops:
+  - aop:212
+  key_events:
+  - aop.events:1505
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:382

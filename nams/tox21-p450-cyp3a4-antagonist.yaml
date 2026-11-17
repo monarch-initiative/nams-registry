@@ -1,0 +1,32 @@
+model:
+  id: tox21-p450-cyp3a4-antagonist
+  name: TOX21_p450_CYP3A4_Antagonist
+  description: TOX21_p450_CYP3A4_Antagonist is a cell-free assay that uses recombinant human
+    p450 CYP3A4, isolated from insect cells infected with baculovirus containing human CYP3A4
+    cDNA, as a source of enzyme to measure test chemical effects on enzymatic activity against
+    a fluorescent substrate, P450-Glo CYP3A4. See tox21-p450-3a4-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP3A4
+  gene: hgnc:2637
+  gene_symbol: CYP3A4
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2544
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:690
+  - aeid:2544
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:690

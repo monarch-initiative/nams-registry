@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hppm1a
+  name: NVS_ENZ_hPPM1A
+  description: NVS_ENZ_hPPM1A is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 1 hour after chemical dosing in a 384-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPM1A
+  gene: hgnc:9275
+  gene_symbol: PPM1A
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/521
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:116
+  - aeid:521
+  method_type: in chemico

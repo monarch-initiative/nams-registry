@@ -1,0 +1,41 @@
+model:
+  id: tox21-rorg-luc-cho-antagonist
+  name: TOX21_RORg_LUC_CHO_Antagonist
+  description: TOX21_RORg_LUC_CHO_Antagonist is a cell-based, single-readout assay that uses
+    CHO-K1, a chinese hamster ovary cell line, with measurements taken at 17 hours after chemical
+    dosing in a 1536-well plate. See tox21-ror-cho-antagonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10029
+  name: Cricetulus griseus
+measured_targets:
+- name: RORC
+  gene: hgnc:10260
+  gene_symbol: RORC
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1661
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1662
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:426
+  - aeid:1661
+  - aeid:1662
+  method_type: in vitro
+  cell_lines:
+  - CHO-K1
+  organs:
+  - Ovary
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:426

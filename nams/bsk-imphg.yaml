@@ -1,0 +1,117 @@
+model:
+  id: bsk-imphg
+  name: BSK_IMphg
+  description: 'BSK_IMphg is a cell-based, multiplexed-readout assay that uses venular endothelial
+    cells and macrophages, a human vascular primary cell, with measurements taken at 24 hours
+    after chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CCL3
+  gene: hgnc:10627
+  gene_symbol: CCL3
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD40
+  gene: hgnc:11919
+  gene_symbol: CD40
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD69
+  gene: hgnc:1694
+  gene_symbol: CD69
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CSF1
+  gene: hgnc:2432
+  gene_symbol: CSF1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL10
+  gene: hgnc:5962
+  gene_symbol: IL10
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL1A
+  gene: hgnc:5991
+  gene_symbol: IL1A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SELE
+  gene: hgnc:10718
+  gene_symbol: SELE
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2909
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2911
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2913
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2915
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2917
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2919
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2921
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2923
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2925
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2927
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2929
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2931
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:856
+  - aeid:2909
+  - aeid:2911
+  - aeid:2913
+  - aeid:2915
+  - aeid:2917
+  - aeid:2919
+  - aeid:2921
+  - aeid:2923
+  - aeid:2925
+  - aeid:2927
+  - aeid:2929
+  - aeid:2931
+  method_type: in vitro
+  cell_lines:
+  - endothelial cell of venule
+  - macrophage
+  organs:
+  - Vasculature

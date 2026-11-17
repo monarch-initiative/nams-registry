@@ -1,0 +1,35 @@
+model:
+  id: ccte-harrill-httr-apoptosis
+  name: CCTE_Harrill_HTTr_Apoptosis
+  description: This is a cell-based assay that evaluates apoptosis using high content imaging
+    to evaluate activation of caspase-3/7 using the CellEvent Caspase 3/7 Green detection
+    reagent in 384-well format.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2303
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2304
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2305
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2306
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2307
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2308
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2452
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:666
+  - aeid:2303
+  - aeid:2304
+  - aeid:2305
+  - aeid:2306
+  - aeid:2307
+  - aeid:2308
+  - aeid:2452
+  method_type: in vitro
+  cell_lines:
+  - MCF-7
+  organs:
+  - Breast

@@ -1,0 +1,29 @@
+model:
+  id: nvs-gpcr-hadora1
+  name: NVS_GPCR_hAdoRA1
+  description: NVS_GPCR_hAdoRA1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins from Human cortical membranes in a tissue-based cell-free assay. Measurements
+    were taken 1 hour after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ADORA1
+  gene: hgnc:262
+  gene_symbol: ADORA1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/626
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:177
+  - aeid:626
+  method_type: in chemico
+  organs:
+  - Brain

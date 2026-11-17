@@ -1,0 +1,31 @@
+model:
+  id: tox21-p450-cyp1a2-antagonist
+  name: TOX21_p450_CYP1A2_Antagonist
+  description: TOX21_p450_CYP1A2_Antagonist is a cell-free assay that uses recombinant human
+    p450 CYP1A2 as a source for enzyme to measure test chemical effects on enzymatic activity
+    against a fluorescent substrate, P450-Glo CYP1a2. See tox21-p450-1a2-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP1A2
+  gene: hgnc:2596
+  gene_symbol: CYP1A2
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3188
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:901
+  - aeid:3188
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:901

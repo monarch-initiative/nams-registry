@@ -1,0 +1,85 @@
+model:
+  id: bsk-bt
+  name: BSK_BT
+  description: 'BSK_BT is a cell-based, multiplexed-readout assay that uses B cell and peripheral
+    blood mononuclear cells, a human vascular primary cell co-culture, with measurements taken
+    at 24 hours after chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: IGHG1
+  gene: hgnc:5525
+  gene_symbol: IGHG1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL17A
+  gene: hgnc:5981
+  gene_symbol: IL17A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL17F
+  gene: hgnc:16404
+  gene_symbol: IL17F
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL2
+  gene: hgnc:6001
+  gene_symbol: IL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL6
+  gene: hgnc:6018
+  gene_symbol: IL6
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TNF
+  gene: hgnc:11892
+  gene_symbol: TNF
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2809
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2811
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2813
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2815
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2817
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2819
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2821
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2823
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:433
+  - aeid:2809
+  - aeid:2811
+  - aeid:2813
+  - aeid:2815
+  - aeid:2817
+  - aeid:2819
+  - aeid:2821
+  - aeid:2823
+  method_type: in vitro
+  cell_lines:
+  - B cell
+  - peripheral blood mononuclear cell
+  organs:
+  - Vasculature
+  aops:
+  - aop:154
+  key_events:
+  - aop.events:1202

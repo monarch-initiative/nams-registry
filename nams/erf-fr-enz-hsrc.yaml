@@ -1,0 +1,27 @@
+model:
+  id: erf-fr-enz-hsrc
+  name: ERF_FR_ENZ_hSRC
+  description: ERF_FR_ENZ_hSRC is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.16 hour after chemical dosing
+    in a 96-well plate. See Src Human TK Kinase Enzymatic LANCE Assay [Km ATP], Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SRC
+  gene: hgnc:11283
+  gene_symbol: SRC
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2621
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:779
+  - aeid:2621
+  method_type: in chemico

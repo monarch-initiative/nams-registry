@@ -1,0 +1,45 @@
+model:
+  id: tox21-are-bla-agonist
+  name: TOX21_ARE_BLA_Agonist
+  description: TOX21_ARE_BLA_Agonist is a cell-based, single-readout assay that uses HepG2,
+    a human liver cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-are-bla-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NFE2L2
+  gene: hgnc:7782
+  gene_symbol: NFE2L2
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1108
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1109
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1110
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1185
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:372
+  - aeid:1108
+  - aeid:1109
+  - aeid:1110
+  - aeid:1185
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:372

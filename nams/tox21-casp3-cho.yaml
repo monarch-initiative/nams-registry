@@ -1,0 +1,45 @@
+model:
+  id: tox21-casp3-cho
+  name: TOX21_CASP3_CHO
+  description: 'The TOX21_CASP3_CHO is a cell-based, single-readout assay that uses CHO-K1,
+    a hamster ovary cell line, with measurements taken at 16 hours after chemical dosing on
+    a microplate: 1536-well plate. To identify small molecule compounds that induce apoptosis,
+    a homogeneous, luminescent Caspase-Glo 3/7 assay was used. Wild type CHO-K1 cells were
+    used to screen Tox21 libraries for identifying caspase-3/7 activity inducers. Cytotoxicity
+    of the compounds was tested in parallel by measuring the cell viability using CellTiter-Fluor
+    assay system in the same wells. See tox21-casp3-cho-p1.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10029
+  name: Cricetulus griseus
+measured_targets:
+- name: CASP3
+  gene: hgnc:1504
+  gene_symbol: CASP3
+  measurement: inducer
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2368
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2369
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:678
+  - aeid:2368
+  - aeid:2369
+  method_type: in vitro
+  cell_lines:
+  - CHO-K1
+  organs:
+  - Ovary
+  aops:
+  - aop:212
+  key_events:
+  - aop.events:1505
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:678

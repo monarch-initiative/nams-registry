@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hmapk11
+  name: NVS_ENZ_hMAPK11
+  description: NVS_ENZ_hMAPK11 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0 hour after chemical dosing
+    in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: MAPK11
+  gene: hgnc:6873
+  gene_symbol: MAPK11
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/475
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:93
+  - aeid:475
+  method_type: in chemico

@@ -1,0 +1,42 @@
+model:
+  id: tox21-tr-luc-gh3-agonist
+  name: TOX21_TR_LUC_GH3_Agonist
+  description: TOX21_TR_LUC_GH3_Agonist is a cell-based, single-readout assay that uses GH3,
+    a rat pituitary gland cell line, with measurements taken at 28 hours after chemical dosing
+    in a 1536-well plate. See tox21-gh3-tre-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: THRA
+  gene: hgnc:11796
+  gene_symbol: THRA
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THRB
+  gene: hgnc:11799
+  gene_symbol: THRB
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/803
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:326
+  - aeid:803
+  method_type: in vitro
+  cell_lines:
+  - GH3
+  organs:
+  - Pituitary gland
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:326

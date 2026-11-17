@@ -1,0 +1,151 @@
+model:
+  id: bsk-bf4t
+  name: BSK_BF4T
+  description: 'BSK_BF4T is a cell-based, multiplexed-readout assay that uses bronchial epithelial
+    cells and dermal fibroblasts, a human vascular primary cell, with measurements taken at
+    24 hours after chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CCL26
+  gene: hgnc:10625
+  gene_symbol: CCL26
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ICAM1
+  gene: hgnc:5344
+  gene_symbol: ICAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL1A
+  gene: hgnc:5991
+  gene_symbol: IL1A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KRT18
+  gene: hgnc:6430
+  gene_symbol: KRT18
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP1
+  gene: hgnc:7155
+  gene_symbol: MMP1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP3
+  gene: hgnc:7173
+  gene_symbol: MMP3
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP9
+  gene: hgnc:7176
+  gene_symbol: MMP9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAT
+  gene: hgnc:9051
+  gene_symbol: PLAT
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAU
+  gene: hgnc:9052
+  gene_symbol: PLAU
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SERPINE1
+  gene: hgnc:8583
+  gene_symbol: SERPINE1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THY1
+  gene: hgnc:11801
+  gene_symbol: THY1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2849
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2851
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2853
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2855
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2857
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2859
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2861
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2863
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2865
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2867
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2869
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2871
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2873
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2875
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2877
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:857
+  - aeid:2849
+  - aeid:2851
+  - aeid:2853
+  - aeid:2855
+  - aeid:2857
+  - aeid:2859
+  - aeid:2861
+  - aeid:2863
+  - aeid:2865
+  - aeid:2867
+  - aeid:2869
+  - aeid:2871
+  - aeid:2873
+  - aeid:2875
+  - aeid:2877
+  method_type: in vitro
+  cell_lines:
+  - bronchial epithelial cell
+  - fibroblast of dermis
+  organs:
+  - Vasculature

@@ -1,0 +1,45 @@
+model:
+  id: tox21-nfkb-bla-agonist
+  name: TOX21_NFkB_BLA_Agonist
+  description: TOX21_NFkB_BLA_Agonist is a cell-based, single-readout assay that uses ME-180,
+    a human cervix cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-nfkb-bla-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NFKB1
+  gene: hgnc:7794
+  gene_symbol: NFKB1
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1344
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1345
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1346
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1347
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:407
+  - aeid:1344
+  - aeid:1345
+  - aeid:1346
+  - aeid:1347
+  method_type: in vitro
+  cell_lines:
+  - ME-180
+  organs:
+  - Uterine cervix
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:407

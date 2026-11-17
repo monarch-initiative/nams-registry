@@ -1,0 +1,30 @@
+model:
+  id: ccte-glted-hiyd
+  name: CCTE_GLTED_hIYD
+  description: CCTE_GLTED_hIYD is a cell-free, single-readout assay that uses human iodotyrosine
+    deiodinase (hIYD) enzyme produced with baculovirus-insect cell system. The assay is based
+    on iodide release measured by the Sandell-Kolthoff method and is run in 96-well plate
+    format with assay plates run in triplicate (n=3) with measurements taken at 3 hours after
+    chemical dosing. Platewise-normalization was used based on positive control (3-Nitro-L-tyrosine,
+    MNT) and negative/solvent controls (DMSO, NaOH).
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: IYD
+  gene: hgnc:21071
+  gene_symbol: IYD
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3032
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:866
+  - aeid:3032
+  method_type: in chemico

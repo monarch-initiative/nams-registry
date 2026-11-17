@@ -1,0 +1,25 @@
+model:
+  id: nvs-lgic-bgabar-agonist
+  name: NVS_LGIC_bGABAR_Agonist
+  description: NVS_LGIC_bGABAR_Agonist is a biochemical, single-readout assay that uses extracted
+    gene-proteins from Bovine cerebellar membranes in a tissue-based cell-free assay. Measurements
+    were taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9913
+  name: Bos taurus
+measured_targets:
+- name: GABRA1
+  measurement: binding
+  notes: Entrez 780973 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/694
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:245
+  - aeid:694
+  method_type: in chemico
+  organs:
+  - Brain

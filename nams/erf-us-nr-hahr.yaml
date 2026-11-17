@@ -1,0 +1,29 @@
+model:
+  id: erf-us-nr-hahr
+  name: ERF_US_NR_hAHR
+  description: ERF_US_NR_hAHR is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 16 hours after chemical dosing in a 384-well
+    plate. See AHR Human NHR Cell Based Antagonist Protein-Protein Interaction Assay, DiscoverX.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AHR
+  gene: hgnc:348
+  gene_symbol: AHR
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3182
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:895
+  - aeid:3182
+  method_type: in chemico
+  cell_lines:
+  - U2OS

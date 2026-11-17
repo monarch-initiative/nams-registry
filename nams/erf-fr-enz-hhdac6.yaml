@@ -1,0 +1,31 @@
+model:
+  id: erf-fr-enz-hhdac6
+  name: ERF_FR_ENZ_hHDAC6
+  description: ERF_FR_ENZ_hHDAC6 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.5 hour after chemical dosing
+    in a 96-well plate. See HDAC6 Human Histone Deacetylase (HDAC) Enzymatic Assay, Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: HDAC6
+  gene: hgnc:14064
+  gene_symbol: HDAC6
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2584
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:756
+  - aeid:2584
+  method_type: in chemico
+  aops:
+  - aop:212
+  key_events:
+  - aop.events:1502

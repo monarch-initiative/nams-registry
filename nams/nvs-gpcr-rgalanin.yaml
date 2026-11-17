@@ -1,0 +1,25 @@
+model:
+  id: nvs-gpcr-rgalanin
+  name: NVS_GPCR_rGalanin
+  description: NVS_GPCR_rGalanin is a biochemical, single-readout assay that uses extracted
+    gene-proteins from Rat brain membranes in a tissue-based cell-free assay. Measurements
+    were taken 2 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Galr1
+  measurement: binding
+  notes: Entrez 50577 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/670
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:221
+  - aeid:670
+  method_type: in chemico
+  organs:
+  - Brain

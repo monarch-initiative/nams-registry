@@ -1,0 +1,45 @@
+model:
+  id: tox21-tshr-htrf-agonist
+  name: TOX21_TSHR_HTRF_Agonist
+  description: TOX21_TSHR_HTRF_Agonist is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 0.5 hours after chemical dosing in
+    a 1536-well plate. See tox21-tshr-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TSHR
+  gene: hgnc:12373
+  gene_symbol: TSHR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2038
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2039
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2040
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:575
+  - aeid:2038
+  - aeid:2039
+  - aeid:2040
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:42
+  - aop:54
+  - aop:159
+  key_events:
+  - aop.events:277
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:575

@@ -1,0 +1,156 @@
+model:
+  id: cld-24hr
+  name: CLD_24hr
+  description: CLD_24hr is a cell-based, multiplexed-readout assay that uses hepatocyte, a
+    human liver primary cell, with measurements taken at 24 hours after chemical dosing in
+    a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ABCB1
+  gene: hgnc:40
+  gene_symbol: ABCB1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ABCB11
+  gene: hgnc:42
+  gene_symbol: ABCB11
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ABCG2
+  gene: hgnc:74
+  gene_symbol: ABCG2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP1A1
+  gene: hgnc:2595
+  gene_symbol: CYP1A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP1A2
+  gene: hgnc:2596
+  gene_symbol: CYP1A2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2B6
+  gene: hgnc:2615
+  gene_symbol: CYP2B6
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2C19
+  gene: hgnc:2621
+  gene_symbol: CYP2C19
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2C9
+  gene: hgnc:2623
+  gene_symbol: CYP2C9
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP3A4
+  gene: hgnc:2637
+  gene_symbol: CYP3A4
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GSTA2
+  gene: hgnc:4627
+  gene_symbol: GSTA2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HMGCS2
+  gene: hgnc:5008
+  gene_symbol: HMGCS2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLCO1B1
+  gene: hgnc:10959
+  gene_symbol: SLCO1B1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SULT2A1
+  gene: hgnc:11458
+  gene_symbol: SULT2A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: UGT1A1
+  gene: hgnc:12530
+  gene_symbol: UGT1A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1627
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1628
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1629
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1630
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1631
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1632
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1633
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1634
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1635
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1636
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1637
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1638
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1639
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1640
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1641
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1642
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:400
+  - aeid:1627
+  - aeid:1628
+  - aeid:1629
+  - aeid:1630
+  - aeid:1631
+  - aeid:1632
+  - aeid:1633
+  - aeid:1634
+  - aeid:1635
+  - aeid:1636
+  - aeid:1637
+  - aeid:1638
+  - aeid:1639
+  - aeid:1640
+  - aeid:1641
+  - aeid:1642
+  method_type: in vitro
+  cell_lines:
+  - hepatocyte
+  organs:
+  - Liver
+  aops:
+  - aop:131
+  key_events:
+  - aop.events:850

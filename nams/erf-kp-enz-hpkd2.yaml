@@ -1,0 +1,28 @@
+model:
+  id: erf-kp-enz-hpkd2
+  name: ERF_KP_ENZ_hPKD2
+  description: ERF_KP_ENZ_hPKD2 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.66 hour after chemical dosing
+    in a 96-well plate. See PKD2 Human Protein Ser/Thr Kinase Enzymatic Radiometric Assay
+    [10 uM ATP], KinaseProfiler.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PRKD2
+  gene: hgnc:17293
+  gene_symbol: PRKD2
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2607
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:702
+  - aeid:2607
+  method_type: in chemico

@@ -1,0 +1,36 @@
+model:
+  id: tox21-herg-u2os-antagonist
+  name: TOX21_hERG_U2OS_Antagonist
+  description: TOX21_hERG_U2OS_Antagonist is a cell-based, single-readout assay that uses
+    U2OS, a human osteosarcoma cell line, to measure inhibition of hERG channel activity by
+    continuously measuring fluorescence intensity once per second for two minutes, taken 10
+    minutes after chemical dosing in a 1536-well plate. See tox21-herg-u2os-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: KCNH2
+  gene: hgnc:6251
+  gene_symbol: KCNH2
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3210
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:910
+  - aeid:3210
+  method_type: in vitro
+  cell_lines:
+  - U2OS
+  organs:
+  - Bone
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:910

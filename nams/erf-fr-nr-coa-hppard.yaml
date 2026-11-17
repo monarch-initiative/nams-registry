@@ -1,0 +1,27 @@
+model:
+  id: erf-fr-nr-coa-hppard
+  name: ERF_FR_NR_COA_hPPARD
+  description: ERF_FR_NR_COA_hPPARD is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 2 hours after chemical dosing
+    in a 384-well plate. See PPARdelta Human NHR Functional Agonist Coactivator Assay, Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPARD
+  gene: hgnc:9235
+  gene_symbol: PPARD
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3174
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:887
+  - aeid:3174
+  method_type: in chemico

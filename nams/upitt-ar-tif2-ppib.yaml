@@ -1,0 +1,41 @@
+model:
+  id: upitt-ar-tif2-ppib
+  name: UPITT_AR_TIF2_PPIB
+  description: UPITT_AR_TIF2_PPIB is a cell-based, high-content imaging assay that uses U2OS,
+    a human osteosarcoma cell line, expressing a human androgen receptor fused to red fluorescent
+    protein and the coactivator TIF2 fused to green fluorescent protein.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2386
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2387
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2390
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2391
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:681
+  - aeid:2386
+  - aeid:2387
+  - aeid:2390
+  - aeid:2391
+  method_type: in vitro
+  cell_lines:
+  - U2OS
+  organs:
+  - Bone
+  aops:
+  - aop:23
+  key_events:
+  - aop.events:25

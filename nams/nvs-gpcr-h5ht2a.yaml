@@ -1,0 +1,29 @@
+model:
+  id: nvs-gpcr-h5ht2a
+  name: NVS_GPCR_h5HT2A
+  description: NVS_GPCR_h5HT2A is a biochemical, single-readout assay that uses extracted
+    gene-proteins from Human cortex in a tissue-based cell-free assay. Measurements were taken
+    1.5 hours after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: HTR2A
+  gene: hgnc:5293
+  gene_symbol: HTR2A
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/622
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:173
+  - aeid:622
+  method_type: in chemico
+  organs:
+  - Brain

@@ -1,0 +1,30 @@
+model:
+  id: erf-tw-enz-bpde1
+  name: ERF_TW_ENZ_bPDE1
+  description: ERF_TW_ENZ_bPDE1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.33 hour after chemical dosing
+    in a 96-well plate. See PDE1 (Non-Selective) Bovine Phosphodiesterase Enzymatic Assay,
+    Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9913
+  name: Bos taurus
+measured_targets:
+- name: PDE10A
+  gene: hgnc:8772
+  gene_symbol: PDE10A
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2557
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:711
+  - aeid:2557
+  method_type: in chemico
+  organs:
+  - Brain

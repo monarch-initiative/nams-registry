@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hppp2ca
+  name: NVS_ENZ_hPPP2CA
+  description: NVS_ENZ_hPPP2CA is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1.33 hours after chemical
+    dosing in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPP2CA
+  gene: hgnc:9299
+  gene_symbol: PPP2CA
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/525
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:118
+  - aeid:525
+  method_type: in chemico

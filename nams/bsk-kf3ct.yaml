@@ -1,0 +1,124 @@
+model:
+  id: bsk-kf3ct
+  name: BSK_KF3CT
+  description: BSK_KF3CT is a cell-based, multiplexed-readout assay that uses keratinocytes
+    and foreskin fibroblasts, a human skin primary cell co-culture, with measurements taken
+    at 24 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL10
+  gene: hgnc:10637
+  gene_symbol: CXCL10
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL9
+  gene: hgnc:7098
+  gene_symbol: CXCL9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ICAM1
+  gene: hgnc:5344
+  gene_symbol: ICAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL1A
+  gene: hgnc:5991
+  gene_symbol: IL1A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP9
+  gene: hgnc:7176
+  gene_symbol: MMP9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAU
+  gene: hgnc:9052
+  gene_symbol: PLAU
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SERPINE1
+  gene: hgnc:8583
+  gene_symbol: SERPINE1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TGFB1
+  gene: hgnc:11766
+  gene_symbol: TGFB1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TIMP2
+  gene: hgnc:11821
+  gene_symbol: TIMP2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/260
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/262
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/264
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/266
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/268
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/270
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/272
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/274
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/276
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2903
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2905
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2907
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:12
+  - aeid:260
+  - aeid:262
+  - aeid:264
+  - aeid:266
+  - aeid:268
+  - aeid:270
+  - aeid:272
+  - aeid:274
+  - aeid:276
+  - aeid:2903
+  - aeid:2905
+  - aeid:2907
+  method_type: in vitro
+  cell_lines:
+  - keratinocyte
+  - foreskin fibroblast
+  organs:
+  - Skin

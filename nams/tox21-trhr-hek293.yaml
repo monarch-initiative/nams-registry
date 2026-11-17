@@ -1,0 +1,51 @@
+model:
+  id: tox21-trhr-hek293
+  name: TOX21_TRHR_HEK293
+  description: TOX21_TRHR_HEK293 assay is a cell-based assay, single-readout assay that uses
+    HEK293T, a human kidney cell line, with measurements taken at 24 hours after chemical
+    dosing in a 1536-well plate. It has the potential to screen G protein-coupled receptors.
+    A compound/drug can either activate (agonist) or suppress (antagonist) GPCRs that can
+    be monitored by levels of intracellular calcium. Using this assay, the Tox21 10K compound
+    library was screened to identify potential TRHR agonists. See tox21-trhr-hek293-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TRHR
+  gene: hgnc:12299
+  gene_symbol: TRHR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TRHR
+  gene: hgnc:12299
+  gene_symbol: TRHR
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2364
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2365
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:671
+  - aeid:2364
+  - aeid:2365
+  method_type: in vitro
+  cell_lines:
+  - HEK293
+  organs:
+  - Kidney
+  aops:
+  - aop:48
+  key_events:
+  - aop.events:389
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:671

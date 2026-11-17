@@ -1,0 +1,161 @@
+model:
+  id: bsk-hdfcgf
+  name: BSK_hDFCGF
+  description: BSK_hDFCGF is a cell-based, multiplexed-readout assay that uses foreskin fibroblast,
+    a human skin primary cell, with measurements taken at 24 hours after chemical dosing in
+    a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: COL1A1
+  gene: hgnc:2197
+  gene_symbol: COL1A1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: COL3A1
+  gene: hgnc:2201
+  gene_symbol: COL3A1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CSF1
+  gene: hgnc:2432
+  gene_symbol: CSF1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL10
+  gene: hgnc:10637
+  gene_symbol: CXCL10
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL11
+  gene: hgnc:10638
+  gene_symbol: CXCL11
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL9
+  gene: hgnc:7098
+  gene_symbol: CXCL9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: EGFR
+  gene: hgnc:3236
+  gene_symbol: EGFR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ICAM1
+  gene: hgnc:5344
+  gene_symbol: ICAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP1
+  gene: hgnc:7155
+  gene_symbol: MMP1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SERPINE1
+  gene: hgnc:8583
+  gene_symbol: SERPINE1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TIMP1
+  gene: hgnc:11820
+  gene_symbol: TIMP1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TIMP2
+  gene: hgnc:11821
+  gene_symbol: TIMP2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/236
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/238
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/240
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/242
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/244
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/246
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/248
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/250
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/252
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/254
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/256
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/258
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2893
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2895
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2897
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2899
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2901
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:11
+  - aeid:236
+  - aeid:238
+  - aeid:240
+  - aeid:242
+  - aeid:244
+  - aeid:246
+  - aeid:248
+  - aeid:250
+  - aeid:252
+  - aeid:254
+  - aeid:256
+  - aeid:258
+  - aeid:2893
+  - aeid:2895
+  - aeid:2897
+  - aeid:2899
+  - aeid:2901
+  method_type: in vitro
+  cell_lines:
+  - foreskin fibroblast
+  organs:
+  - Skin

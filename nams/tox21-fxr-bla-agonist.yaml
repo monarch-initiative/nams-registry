@@ -1,0 +1,45 @@
+model:
+  id: tox21-fxr-bla-agonist
+  name: TOX21_FXR_BLA_Agonist
+  description: TOX21_FXR_BLA_Agonist is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-fxr-bla-agonist-p2.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR1H4
+  gene: hgnc:7967
+  gene_symbol: NR1H4
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1117
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1118
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1119
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1188
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:375
+  - aeid:1117
+  - aeid:1118
+  - aeid:1119
+  - aeid:1188
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:375

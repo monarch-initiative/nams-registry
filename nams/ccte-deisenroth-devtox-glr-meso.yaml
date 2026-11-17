@@ -1,0 +1,49 @@
+model:
+  id: ccte-deisenroth-devtox-glr-meso
+  name: CCTE_Deisenroth_DEVTOX-GLR_Meso
+  description: CCTE_Deisenroth_DEVTOX-GLR_Meso assay is a cell-based, multiplex-readout assay
+    that uses RUES2-GLR, a human pluripotent cell line, with measurements taken at 48 hours
+    after chemical dosing in a 384-well microplate
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SOX17
+  gene: hgnc:18122
+  gene_symbol: SOX17
+  measurement: gene expression
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SOX2
+  gene: hgnc:11195
+  gene_symbol: SOX2
+  measurement: gene expression
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TBXT
+  gene: hgnc:11515
+  gene_symbol: TBXT
+  measurement: gene expression
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3227
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3228
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3229
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3230
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:913
+  - aeid:3227
+  - aeid:3228
+  - aeid:3229
+  - aeid:3230
+  method_type: in vitro
+  cell_lines:
+  - RUES2-GLR

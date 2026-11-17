@@ -1,0 +1,27 @@
+model:
+  id: nvs-gpcr-hv1a
+  name: NVS_GPCR_hV1A
+  description: NVS_GPCR_hV1A is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Human platelets in a cell-free assay. Measurements were taken 1.5 hours after chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AVPR1A
+  gene: hgnc:895
+  gene_symbol: AVPR1A
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/656
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:207
+  - aeid:656
+  method_type: in chemico

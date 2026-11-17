@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hptprf
+  name: NVS_ENZ_hPTPRF
+  description: NVS_ENZ_hPTPRF is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 1 hour after chemical dosing in a 384-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PTPRF
+  gene: hgnc:9670
+  gene_symbol: PTPRF
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/551
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:131
+  - aeid:551
+  method_type: in chemico

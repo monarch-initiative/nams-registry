@@ -1,0 +1,25 @@
+model:
+  id: tamu-hcs-1-5hr
+  name: TAMU_HCS_1.5hr
+  description: 'TAMU_HCS_1.5hr is a cell-based, multiplexed-readout assay that uses iPSC-derived
+    cardiomyocytes with measurements taken at 1.5 hours after chemical dosing in a microplate:
+    384-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2731
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:843
+  - aeid:2731
+  method_type: in vitro
+  organs:
+  - Heart
+  aops:
+  - aop:212
+  key_events:
+  - aop.events:1505

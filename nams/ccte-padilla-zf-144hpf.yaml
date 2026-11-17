@@ -1,0 +1,19 @@
+model:
+  id: ccte-padilla-zf-144hpf
+  name: CCTE_Padilla_ZF_144hpf
+  description: CCTE_Padilla_ZF_144hpf is a whole embryo, multiplexed assay. Zebrafish embryos
+    were exposed to chemicals starting 6 hr post-fertilization for 5 days in 96-well plates.
+    Developing larvae were examined microscopically daily for malformation and mortality.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:7955
+  name: Danio rerio
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1507
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:410
+  - aeid:1507
+  method_type: in vivo

@@ -1,0 +1,45 @@
+model:
+  id: tox21-hre-bla-agonist
+  name: TOX21_HRE_BLA_Agonist
+  description: TOX21_HRE_BLA_Agonist is a cell-based, single-readout assay that uses ME-180,
+    a human cervix cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-hre-bla-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: HIF1A
+  gene: hgnc:4910
+  gene_symbol: HIF1A
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2063
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2064
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2065
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2066
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:583
+  - aeid:2063
+  - aeid:2064
+  - aeid:2065
+  - aeid:2066
+  method_type: in vitro
+  cell_lines:
+  - ME-180
+  organs:
+  - Uterine cervix
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:583

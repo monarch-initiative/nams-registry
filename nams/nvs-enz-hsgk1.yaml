@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hsgk1
+  name: NVS_ENZ_hSGK1
+  description: NVS_ENZ_hSGK1 is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 1 hour after chemical dosing in a 96-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SGK1
+  gene: hgnc:10810
+  gene_symbol: SGK1
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/559
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:135
+  - aeid:559
+  method_type: in chemico

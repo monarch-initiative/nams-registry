@@ -1,0 +1,35 @@
+model:
+  id: ot-ar-areluc-ag-1440
+  name: OT_AR_ARELUC_AG_1440
+  description: OT_AR_ARELUC_AG_1440 is a cell-based, single-readout assay that uses CHO-K1,
+    a chinese hamster ovary cell line, with measurements taken at 24 hours after chemical
+    dosing in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10029
+  name: Cricetulus griseus
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/739
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:290
+  - aeid:739
+  method_type: in vitro
+  cell_lines:
+  - CHO-K1
+  organs:
+  - Ovary
+  aops:
+  - aop:23
+  key_events:
+  - aop.events:25

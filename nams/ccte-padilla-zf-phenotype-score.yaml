@@ -1,0 +1,40 @@
+model:
+  id: ccte-padilla-zf-phenotype-score
+  name: CCTE_Padilla_ZF_Phenotype_Score
+  description: CCTE_Padilla_ZF_Phenotype_Score is a whole embryo, multiplexed assay using
+    zebrafish ova exposed for 144 hours post fertilization on a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:7955
+  name: Danio rerio
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3211
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3212
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3213
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3214
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3215
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3216
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3217
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3218
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3219
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3220
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3221
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3222
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:911
+  - aeid:3211
+  - aeid:3212
+  - aeid:3213
+  - aeid:3214
+  - aeid:3215
+  - aeid:3216
+  - aeid:3217
+  - aeid:3218
+  - aeid:3219
+  - aeid:3220
+  - aeid:3221
+  - aeid:3222
+  method_type: in vivo

@@ -1,0 +1,23 @@
+model:
+  id: tox21-luc-biochem
+  name: TOX21_LUC_Biochem
+  description: TOX21_LUC_Biochem is a cell-free, single-readout assay that uses purified luciferase
+    enzyme. Measurements were taken 24 hours after chemical dosing in a 1536-well plate. See
+    tox21-luc-biochem-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:7054
+  name: Photinus pyralis
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2067
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:584
+  - aeid:2067
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:584

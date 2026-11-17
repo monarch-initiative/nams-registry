@@ -1,0 +1,35 @@
+model:
+  id: ccte-harrill-httr-viability
+  name: CCTE_Harrill_HTTr_Viability
+  description: This is a cell-based assay that evaluates cell viability using high content
+    imaging to evaluate membrane integrity using propidium iodide dye exclusion in a 384 well
+    format.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2297
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2298
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2299
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2300
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2301
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2302
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2451
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:665
+  - aeid:2297
+  - aeid:2298
+  - aeid:2299
+  - aeid:2300
+  - aeid:2301
+  - aeid:2302
+  - aeid:2451
+  method_type: in vitro
+  cell_lines:
+  - MCF-7
+  organs:
+  - Breast

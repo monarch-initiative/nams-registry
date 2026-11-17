@@ -1,0 +1,40 @@
+model:
+  id: acea-er
+  name: ACEA_ER
+  description: ACEA_ER is a cell-based, single-readout assay that uses T47D, a human breast
+    cell line, with measurements taken at 80 hours after chemical dosing in a 96-well plate,
+    although TO2 (mc0.srcf) used a 384-well plate. Differences in plate size can be ignored
+    given data normalization.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1852
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1
+  - aeid:2
+  - aeid:1852
+  method_type: in vitro
+  cell_lines:
+  - T-47D
+  organs:
+  - Breast
+  aops:
+  - aop:220
+  - aop:263
+  key_events:
+  - aop.events:1394
+  - aop.events:1821

@@ -1,0 +1,168 @@
+model:
+  id: atg-xsp1-multi-species-trans
+  name: ATG_XSP1_multi-species_TRANS
+  description: 'ATG_XSP1_multi-species_TRANS is a cell-based, multiplexed assay created by
+    modifying the existing Attagene TRANS-FACTORIAL system to include a panel of nuclear receptors
+    from some or all the following species: human (Homo sapiens), mouse (Mus musculus), frog
+    (Xenopus laevis), zebrafish (Danio rerio), chicken (Gallus gallus), and turtle (Chrysemys
+    picta). The ECOTOX-FACTORIAL format uses HepG2, a human liver cell line, with measurements
+    taken at 24 hours after chemical dosing in a 24-well plate. Xsp1 included 3 nM 6-alpha-fluorotestosterone
+    to partially stimulate the androgen receptor.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  measurement: reporter gene
+  notes: Entrez 422165 is not an approved human gene in HGNC, so no HGNC id.
+- name: ar
+  measurement: reporter gene
+  notes: Entrez 100005148 is not an approved human gene in HGNC, so no HGNC id.
+- name: ar.L
+  measurement: reporter gene
+  notes: Entrez 399456 is not an approved human gene in HGNC, so no HGNC id.
+- name: esr1
+  measurement: reporter gene
+  notes: Entrez 259252 is not an approved human gene in HGNC, so no HGNC id.
+- name: ESR1
+  measurement: reporter gene
+  notes: Entrez 396099 is not an approved human gene in HGNC, so no HGNC id.
+- name: esr1.L
+  measurement: reporter gene
+  notes: Entrez 398734 is not an approved human gene in HGNC, so no HGNC id.
+- name: ESR2
+  gene: hgnc:3468
+  gene_symbol: ESR2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: esr2.L
+  measurement: reporter gene
+  notes: Entrez 100174814 is not an approved human gene in HGNC, so no HGNC id.
+- name: esr2a
+  measurement: reporter gene
+  notes: Entrez 317734 is not an approved human gene in HGNC, so no HGNC id.
+- name: esr2b
+  measurement: reporter gene
+  notes: Entrez 317733 is not an approved human gene in HGNC, so no HGNC id.
+- name: GAL4
+  measurement: reporter gene
+  notes: Entrez 855828 is not an approved human gene in HGNC, so no HGNC id.
+- name: NR1I2
+  gene: hgnc:7968
+  gene_symbol: NR1I2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PPARG
+  gene: hgnc:9236
+  gene_symbol: PPARG
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: Pparg
+  measurement: reporter gene
+  notes: Entrez 19016 is not an approved human gene in HGNC, so no HGNC id.
+- name: pparg
+  measurement: reporter gene
+  notes: Entrez 557037 is not an approved human gene in HGNC, so no HGNC id.
+- name: THRA
+  gene: hgnc:11796
+  gene_symbol: THRA
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: thra.L
+  measurement: reporter gene
+  notes: Entrez 397942 is not an approved human gene in HGNC, so no HGNC id.
+- name: thraa
+  measurement: reporter gene
+  notes: Entrez 30670 is not an approved human gene in HGNC, so no HGNC id.
+- name: THRB
+  gene: hgnc:11799
+  gene_symbol: THRB
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: thrb
+  measurement: reporter gene
+  notes: Entrez 30607 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1913
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1915
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1917
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1919
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1921
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1923
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1925
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1927
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1929
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1931
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1933
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1935
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1937
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1939
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1941
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1943
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1945
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1947
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1949
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1951
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1953
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1955
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1957
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1959
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1961
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1963
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1965
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1967
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1969
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:569
+  - aeid:1913
+  - aeid:1915
+  - aeid:1917
+  - aeid:1919
+  - aeid:1921
+  - aeid:1923
+  - aeid:1925
+  - aeid:1927
+  - aeid:1929
+  - aeid:1931
+  - aeid:1933
+  - aeid:1935
+  - aeid:1937
+  - aeid:1939
+  - aeid:1941
+  - aeid:1943
+  - aeid:1945
+  - aeid:1947
+  - aeid:1949
+  - aeid:1951
+  - aeid:1953
+  - aeid:1955
+  - aeid:1957
+  - aeid:1959
+  - aeid:1961
+  - aeid:1963
+  - aeid:1965
+  - aeid:1967
+  - aeid:1969
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:23
+  key_events:
+  - aop.events:25

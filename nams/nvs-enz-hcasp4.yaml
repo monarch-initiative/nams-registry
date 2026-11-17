@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hcasp4
+  name: NVS_ENZ_hCASP4
+  description: NVS_ENZ_hCASP4 is a biochemical, single-readout assay that uses extracted gene-proteins
+    from E. coli in a cell-free assay. Measurements were taken 2 hours after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CASP4
+  gene: hgnc:1505
+  gene_symbol: CASP4
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/407
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:59
+  - aeid:407
+  method_type: in chemico

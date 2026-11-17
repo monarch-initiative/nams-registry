@@ -1,0 +1,39 @@
+model:
+  id: tox21-gr-bla-agonist
+  name: TOX21_GR_BLA_Agonist
+  description: TOX21_GR_BLA_Agonist is a cell-based, single-readout assay that uses HeLa,
+    a human cervix cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-gr-hela-bla-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR3C1
+  gene: hgnc:7978
+  gene_symbol: NR3C1
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/791
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/792
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/793
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:322
+  - aeid:791
+  - aeid:792
+  - aeid:793
+  method_type: in vitro
+  cell_lines:
+  - HeLa
+  organs:
+  - Uterine cervix
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:322

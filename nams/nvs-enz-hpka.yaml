@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hpka
+  name: NVS_ENZ_hPKA
+  description: NVS_ENZ_hPKA is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 1 hour after chemical dosing in a 384-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PRKACA
+  gene: hgnc:9380
+  gene_symbol: PRKACA
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/515
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:113
+  - aeid:515
+  method_type: in chemico

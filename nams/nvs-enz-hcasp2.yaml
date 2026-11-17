@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hcasp2
+  name: NVS_ENZ_hCASP2
+  description: NVS_ENZ_hCASP2 is a biochemical, single-readout assay that uses extracted gene-proteins
+    from E. coli in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CASP2
+  gene: hgnc:1503
+  gene_symbol: CASP2
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/403
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:57
+  - aeid:403
+  method_type: in chemico

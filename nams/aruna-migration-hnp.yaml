@@ -1,0 +1,21 @@
+model:
+  id: aruna-migration-hnp
+  name: ArunA_Migration_hNP
+  description: ArunA_Migration_hNP is a cell-based, single-readout assay that uses human H9-derived
+    neuroprogenitor stem cells (hNP1). Measurements were taken 72 hours after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1827
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:447
+  - aeid:1827
+  method_type: in vitro
+  cell_lines:
+  - hNP1

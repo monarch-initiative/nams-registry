@@ -1,0 +1,30 @@
+model:
+  id: erf-us-nr-hpparg
+  name: ERF_US_NR_hPPARG
+  description: ERF_US_NR_hPPARG is a cell-based, single-readout assay that uses extracted
+    gene-proteins in a cell-line assay. Measurements were taken 5 hours after chemical dosing
+    in a 384-well plate. See PPARgamma Human NHR Cell Based Agonist Protein-Protein Interaction
+    Assay, DiscoverX.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPARG
+  gene: hgnc:9236
+  gene_symbol: PPARG
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3172
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:885
+  - aeid:3172
+  method_type: in vitro
+  cell_lines:
+  - CHO-K1

@@ -1,0 +1,27 @@
+model:
+  id: nvs-gpcr-hetb
+  name: NVS_GPCR_hETB
+  description: NVS_GPCR_hETB is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Human astrocytoma cells in a cell-free assay. Measurements were taken 4 hours after
+    chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: EDNRB
+  gene: hgnc:3180
+  gene_symbol: EDNRB
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/639
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:190
+  - aeid:639
+  method_type: in chemico

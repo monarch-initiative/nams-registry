@@ -1,0 +1,35 @@
+model:
+  id: ccte-simmons-mito
+  name: CCTE_Simmons_MITO
+  description: 'CCTE_Simmons_MITO is cell-based, respirometric assay using HepG2 cells and
+    a Seahorse XF Analyzer to measure oxygen consumption rates over four temporal phases spanning
+    a total of 72 minutes: pre-injection (pre-treatment), basal (following test compound injection),
+    maximal (following FCCP uncoupler injection), and inhibited (following rotenone/antimycin
+    A injection)'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2442
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2444
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2446
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2450
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:682
+  - aeid:2442
+  - aeid:2444
+  - aeid:2446
+  - aeid:2450
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771

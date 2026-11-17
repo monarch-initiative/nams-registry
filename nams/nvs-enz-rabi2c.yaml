@@ -1,0 +1,25 @@
+model:
+  id: nvs-enz-rabi2c
+  name: NVS_ENZ_rabI2C
+  description: NVS_ENZ_rabI2C is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Rabbit brain membranes in a tissue-based cell-free assay. Measurements were taken
+    1.5 hours after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9986
+  name: Oryctolagus cuniculus
+measured_targets:
+- name: CKB
+  measurement: enzymatic activity
+  notes: Entrez 100009085 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/589
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:150
+  - aeid:589
+  method_type: in chemico
+  organs:
+  - Brain

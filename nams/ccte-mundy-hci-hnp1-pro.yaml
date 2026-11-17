@@ -1,0 +1,30 @@
+model:
+  id: ccte-mundy-hci-hnp1-pro
+  name: CCTE_Mundy_HCI_hNP1_Pro
+  description: 'CCTE_Mundy_HCI_hNP1_Pro is a multiplexed, cell-based-readout assay that uses
+    neural stem cells derived from a neuroepithelial cell lineage of WA09 embryonic cells
+    with measurements taken at 26.25 hours after chemical dosing in a microplate: 96-well
+    plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2797
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:853
+  - aeid:2797
+  method_type: in vitro
+  cell_lines:
+  - hNP1
+  organs:
+  - Nervous system
+  aops:
+  - aop:220
+  - aop:263
+  key_events:
+  - aop.events:1394
+  - aop.events:1821

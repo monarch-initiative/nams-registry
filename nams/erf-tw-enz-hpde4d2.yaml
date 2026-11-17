@@ -1,0 +1,27 @@
+model:
+  id: erf-tw-enz-hpde4d2
+  name: ERF_TW_ENZ_hPDE4D2
+  description: ERF_TW_ENZ_hPDE4D2 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.25 hour after chemical dosing
+    in a 96-well plate. See PDE4D2 Human Phosphodiesterase Enzymatic Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PDE4D
+  gene: hgnc:8783
+  gene_symbol: PDE4D
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2606
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:712
+  - aeid:2606
+  method_type: in chemico

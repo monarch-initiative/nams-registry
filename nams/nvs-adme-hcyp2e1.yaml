@@ -1,0 +1,27 @@
+model:
+  id: nvs-adme-hcyp2e1
+  name: NVS_ADME_hCYP2E1
+  description: NVS_ADME_hCYP2E1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.5 hour after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP2E1
+  gene: hgnc:2631
+  gene_symbol: CYP2E1
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/341
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:26
+  - aeid:341
+  method_type: in chemico

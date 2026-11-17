@@ -1,0 +1,27 @@
+model:
+  id: erf-fr-enz-hgsk3b
+  name: ERF_FR_ENZ_hGSK3b
+  description: ERF_FR_ENZ_hGSK3b is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1.5 hour after chemical dosing
+    in a 96-well plate. See GSK3beta Human CMGC Kinase Enzymatic LANCE Assay [Km ATP], Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: GSK3B
+  gene: hgnc:4617
+  gene_symbol: GSK3B
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2583
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:773
+  - aeid:2583
+  method_type: in chemico

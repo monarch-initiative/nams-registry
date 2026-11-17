@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-ic-hscn5a
+  name: ERF_TW_IC_hSCN5A
+  description: ERF_TW_IC_hSCN5A is a biochemical, single -readout assay that uses extracted
+    gene-proteins from human recombinant CHO cells in a cell-free assay. Measurements were
+    taken 3 hour after chemical dosing in a 96-well plate. See Nav1.5 Sodium Channel Site
+    2 Human Ion Channel [3H]BNZA Binding LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SCN5A
+  gene: hgnc:10593
+  gene_symbol: SCN5A
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3310
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1054
+  - aeid:3310
+  method_type: in chemico

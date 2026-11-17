@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hes
+  name: NVS_ENZ_hES
+  description: NVS_ENZ_hES is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Human plasma in a cell-free assay. Measurements were taken 0.25 hour after chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: BCHE
+  gene: hgnc:983
+  gene_symbol: BCHE
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/441
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:76
+  - aeid:441
+  method_type: in chemico

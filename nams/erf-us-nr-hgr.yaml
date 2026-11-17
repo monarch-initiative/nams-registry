@@ -1,0 +1,29 @@
+model:
+  id: erf-us-nr-hgr
+  name: ERF_US_NR_hGR
+  description: ERF_US_NR_hGR is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 5 hours after chemical dosing in a 384-well
+    plate. See GR Human Glucocorticoid NHR Binding (Agonist Radioligand) Assay, DiscoverX.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR3C1
+  gene: hgnc:7978
+  gene_symbol: NR3C1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3183
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:896
+  - aeid:3183
+  method_type: in chemico
+  cell_lines:
+  - CHO-K1

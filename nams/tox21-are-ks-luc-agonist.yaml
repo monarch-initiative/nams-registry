@@ -1,0 +1,37 @@
+model:
+  id: tox21-are-ks-luc-agonist
+  name: TOX21_ARE_KS_LUC_Agonist
+  description: TOX21_ARE_KS_LUC_Agonist is a cell-based, single-readout assay that uses HaCAT,
+    a human skin cell line, with measurements taken at 24 hours after chemical dosing in a
+    1536-well plate. See tox21-ks-are-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NFE2L2
+  gene: hgnc:7782
+  gene_symbol: NFE2L2
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3324
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3325
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1065
+  - aeid:3324
+  - aeid:3325
+  method_type: in vitro
+  cell_lines:
+  - HaCaT
+  organs:
+  - Skin
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1065

@@ -1,0 +1,23 @@
+model:
+  id: nvs-adme-rcyp2c11
+  name: NVS_ADME_rCYP2C11
+  description: NVS_ADME_rCYP2C11 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.33 hour after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Cyp2c11
+  measurement: enzymatic activity
+  notes: Entrez 29277 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/361
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:36
+  - aeid:361
+  method_type: in chemico

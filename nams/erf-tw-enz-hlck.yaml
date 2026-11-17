@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-enz-hlck
+  name: ERF_TW_ENZ_hLCK
+  description: ERF_TW_ENZ_hLCK is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant cells in a cell-free assay. Measurements were taken
+    0.5 hour after chemical dosing in a 96-well plate. See Lck Human TK Kinase Enzymatic Radiometric
+    LeadHunter Assay [10 uM ATP] - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: LCK
+  gene: hgnc:6524
+  gene_symbol: LCK
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3280
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1024
+  - aeid:3280
+  method_type: in chemico

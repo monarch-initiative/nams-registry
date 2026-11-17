@@ -1,0 +1,33 @@
+model:
+  id: ccte-glted-htpo
+  name: CCTE_GLTED_hTPO
+  description: CCTE_GLTED_hTPO is a cell-free, single-readout assay designed to test the inhibitory
+    activity of chemicals toward human thyroperoxidase (TPO) protein. Uninhibited enzyme converts
+    Amplex UltraRed to a fluorescent product. Measurements were taken 0.5 hour after chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TPO
+  gene: hgnc:12015
+  gene_symbol: TPO
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3090
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:872
+  - aeid:3090
+  method_type: in chemico
+  aops:
+  - aop:42
+  - aop:159
+  key_events:
+  - aop.events:279

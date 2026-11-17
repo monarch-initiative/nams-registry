@@ -1,0 +1,30 @@
+model:
+  id: erf-us-nr-hesr1
+  name: ERF_US_NR_hESR1
+  description: ERF_US_NR_hESR1 is a cell-based, single-readout assay that uses extracted gene-proteins
+    in a cell-line assay. Measurements were taken 5 hours after chemical dosing in a 384-well
+    plate. See ERalpha Human Estrogen NHR Cell Based Agonist Protein-Protein Interaction Assay,
+    DiscoverX.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3168
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:881
+  - aeid:3168
+  method_type: in vitro
+  cell_lines:
+  - CHO-K1

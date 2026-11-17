@@ -1,0 +1,27 @@
+model:
+  id: aruna-nog
+  name: ArunA_NOG
+  description: ArunA_NOG (Neurite Outgrowth) is a cell-based, image-based assay that uses
+    human H9-derived embryonic differentiated neurons (hNN). Measurements were taken 48 hours
+    after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1831
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1833
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1835
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1838
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:449
+  - aeid:1831
+  - aeid:1833
+  - aeid:1835
+  - aeid:1838
+  method_type: in vitro
+  cell_lines:
+  - hNN

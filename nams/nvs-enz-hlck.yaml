@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hlck
+  name: NVS_ENZ_hLck
+  description: NVS_ENZ_hLck is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 1 hour after chemical dosing in a 384-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: LCK
+  gene: hgnc:6524
+  gene_symbol: LCK
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/467
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:89
+  - aeid:467
+  method_type: in chemico

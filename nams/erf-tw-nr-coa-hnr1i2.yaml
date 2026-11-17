@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-nr-coa-hnr1i2
+  name: ERF_TW_NR_COA_hNR1I2
+  description: ERF_TW_NR_COA_hNR1I2 is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant cells in a cell-free assay. Measurements were taken
+    1 hour after chemical dosing in a 96-well plate. See PXR Human Pregnane X NHR Functional
+    Agonist & Antagonist Coactivator LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR1I2
+  gene: hgnc:7968
+  gene_symbol: NR1I2
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3318
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1062
+  - aeid:3318
+  method_type: in chemico

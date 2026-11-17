@@ -1,0 +1,41 @@
+model:
+  id: tox21-tr-rxr-bla-agonist-followup
+  name: TOX21_TR_RXR_BLA_Agonist_Followup
+  description: GeneBLAzer RXRa-UAS-bla HEK293T assay (RXRa-bla) (ThermoFisherScientific Catalog
+    No. K1697) was run in qHTS 1536 well format as a secondary assay for specificity of response
+    in the TOX21_TR_GH3_LUC_Agonist assay.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: RXRA
+  gene: hgnc:10477
+  gene_symbol: RXRA
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2251
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2252
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2253
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2254
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:653
+  - aeid:2251
+  - aeid:2252
+  - aeid:2253
+  - aeid:2254
+  method_type: in vitro
+  cell_lines:
+  - RXRa-UAS-bla HEK293T
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:653

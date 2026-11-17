@@ -1,0 +1,29 @@
+model:
+  id: nvs-tr-hsert
+  name: NVS_TR_hSERT
+  description: NVS_TR_hSERT is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Human platelet membranes in a tissue-based cell-free assay. Measurements were taken
+    1 hour after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SLC6A4
+  gene: hgnc:11050
+  gene_symbol: SLC6A4
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/734
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:285
+  - aeid:734
+  method_type: in chemico
+  organs:
+  - Vasculature

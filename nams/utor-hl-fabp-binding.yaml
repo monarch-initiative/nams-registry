@@ -1,0 +1,29 @@
+model:
+  id: utor-hl-fabp-binding
+  name: UTOR_hL-FABP_binding
+  description: UTOR_hL-FABP_binding is a cell-free, single-readout assay that uses extracted
+    liver fatty acid binding proteins (hL-FABP) from E. coli lysates with measurements taken
+    at 1 hour after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: FABP1
+  gene: hgnc:3555
+  gene_symbol: FABP1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2808
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:855
+  - aeid:2808
+  method_type: in chemico
+  organs:
+  - Liver

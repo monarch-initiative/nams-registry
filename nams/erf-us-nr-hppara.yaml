@@ -1,0 +1,30 @@
+model:
+  id: erf-us-nr-hppara
+  name: ERF_US_NR_hPPARA
+  description: ERF_US_NR_hPPARA is a cell-based, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 5 hours after chemical dosing
+    in a 384-well plate. See PPARalpha Human NHR Cell Based Agonist Protein-Protein Interaction
+    Assay, DiscoverX.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPARA
+  gene: hgnc:9232
+  gene_symbol: PPARA
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3170
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:883
+  - aeid:3170
+  method_type: in vitro
+  cell_lines:
+  - CHO-K1

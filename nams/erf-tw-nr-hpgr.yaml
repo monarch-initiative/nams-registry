@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-nr-hpgr
+  name: ERF_TW_NR_hPGR
+  description: ERF_TW_NR_hPGR is a biochemical, single-readout assay that uses extracted gene-proteins
+    from human endogenous T47D cells in a cell-free assay. Measurements were taken 20 hour
+    after chemical dosing in a 96-well plate. See PR Human Progesterone NHR Binding Agonist
+    Radioligand LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3316
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1060
+  - aeid:3316
+  method_type: in chemico

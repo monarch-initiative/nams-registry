@@ -1,0 +1,27 @@
+model:
+  id: ccte-mundy-hci-hn2-nog
+  name: CCTE_Mundy_HCI_hN2_NOG
+  description: 'CCTE_Mundy_HCI_hN2_NOG is a multiplexed, cell-based-readout assay that uses
+    immature neurons derived from hNP1 neuroprogenitor cells with measurements taken at 50.33
+    hours after chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2790
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2791
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2792
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:849
+  - aeid:2790
+  - aeid:2791
+  - aeid:2792
+  method_type: in vitro
+  cell_lines:
+  - hN2
+  organs:
+  - Nervous system

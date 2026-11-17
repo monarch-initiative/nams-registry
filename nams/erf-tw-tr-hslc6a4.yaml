@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-tr-hslc6a4
+  name: ERF_TW_TR_hSLC6A4
+  description: ERF_TW_TR_hSLC6A4 is a biochemical, single -readout assay that uses extracted
+    gene-proteins from human recombinant HEK-293 cells in a cell-free assay. Measurements
+    were taken 1 hour after chemical dosing in a 96-well plate. See SERT Human Serotonin Transporter
+    Binding Antagonist Radioligand LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SLC6A4
+  gene: hgnc:11050
+  gene_symbol: SLC6A4
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3309
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1053
+  - aeid:3309
+  method_type: in chemico

@@ -1,0 +1,65 @@
+model:
+  id: ccte-shafer-mea-dev
+  name: CCTE_Shafer_MEA_dev
+  description: CCTE_Shafer_MEA_dev assay is conducted using Axion Biosystems 48 well microelectrode
+    array (MEA) plates and Maestro recording system. Each well of the MEA plate contains a
+    grid of 16 microelectrodes embedded in the culture surface. Electrically active cells,
+    such as neurons, can be cultured over the electrodes, and electrical activity in these
+    cells can be recorded extracellularly. The spontaneous firing of neurons is captured from
+    each electrode on a microsecond timescale providing both temporally and spatially precise
+    data. Because the recordings do not impact the health of the cells, multiple recordings
+    can be made from the same neural network over time in culture. The CCTE_Shafer_MEA_dev
+    assay uses primary cultures of rat cortical neurons. Recordings are made on days post-plating
+    5, 7, 9 and 12. As these cultures mature over time, neural networks develop functional
+    activity and form cohesive networks in which electrical activity can be highly coordinated.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2494
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2496
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2498
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2500
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2502
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2504
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2506
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2508
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2510
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2512
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2514
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2516
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2518
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2520
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2522
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2524
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2526
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2529
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2530
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:573
+  - aeid:2494
+  - aeid:2496
+  - aeid:2498
+  - aeid:2500
+  - aeid:2502
+  - aeid:2504
+  - aeid:2506
+  - aeid:2508
+  - aeid:2510
+  - aeid:2512
+  - aeid:2514
+  - aeid:2516
+  - aeid:2518
+  - aeid:2520
+  - aeid:2522
+  - aeid:2524
+  - aeid:2526
+  - aeid:2529
+  - aeid:2530
+  method_type: in vitro
+  organs:
+  - Cerebral cortex

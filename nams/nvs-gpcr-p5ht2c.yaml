@@ -1,0 +1,29 @@
+model:
+  id: nvs-gpcr-p5ht2c
+  name: NVS_GPCR_p5HT2C
+  description: NVS_GPCR_p5HT2C is a biochemical, single-readout assay that uses extracted
+    gene-proteins from Pig choroid plexus membranes in a tissue-based cell-free assay. Measurements
+    were taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9823
+  name: Sus scrofa
+measured_targets:
+- name: HTR2C
+  gene: hgnc:5295
+  gene_symbol: HTR2C
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/659
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:210
+  - aeid:659
+  method_type: in chemico
+  organs:
+  - Brain

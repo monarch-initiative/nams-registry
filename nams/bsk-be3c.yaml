@@ -1,0 +1,168 @@
+model:
+  id: bsk-be3c
+  name: BSK_BE3C
+  description: BSK_BE3C is a cell-based, multiplexed-readout assay that uses bronchial epithelial
+    cell, a human lung primary cell, with measurements taken at 24 hours after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CXCL10
+  gene: hgnc:10637
+  gene_symbol: CXCL10
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL11
+  gene: hgnc:10638
+  gene_symbol: CXCL11
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL9
+  gene: hgnc:7098
+  gene_symbol: CXCL9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: EGFR
+  gene: hgnc:3236
+  gene_symbol: EGFR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HLA-DRA
+  gene: hgnc:4947
+  gene_symbol: HLA-DRA
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ICAM1
+  gene: hgnc:5344
+  gene_symbol: ICAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL1A
+  gene: hgnc:5991
+  gene_symbol: IL1A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KRT18
+  gene: hgnc:6430
+  gene_symbol: KRT18
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP1
+  gene: hgnc:7155
+  gene_symbol: MMP1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP9
+  gene: hgnc:7176
+  gene_symbol: MMP9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAT
+  gene: hgnc:9051
+  gene_symbol: PLAT
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAU
+  gene: hgnc:9052
+  gene_symbol: PLAU
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAUR
+  gene: hgnc:9053
+  gene_symbol: PLAUR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SERPINE1
+  gene: hgnc:8583
+  gene_symbol: SERPINE1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TGFB1
+  gene: hgnc:11766
+  gene_symbol: TGFB1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/186
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/188
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/190
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/192
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/194
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/196
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/198
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/200
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/202
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/204
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/206
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2879
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2881
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2883
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2885
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2887
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2889
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:9
+  - aeid:186
+  - aeid:188
+  - aeid:190
+  - aeid:192
+  - aeid:194
+  - aeid:196
+  - aeid:198
+  - aeid:200
+  - aeid:202
+  - aeid:204
+  - aeid:206
+  - aeid:2879
+  - aeid:2881
+  - aeid:2883
+  - aeid:2885
+  - aeid:2887
+  - aeid:2889
+  method_type: in vitro
+  cell_lines:
+  - bronchial epithelial cell
+  organs:
+  - Lung

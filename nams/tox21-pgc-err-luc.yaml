@@ -1,0 +1,50 @@
+model:
+  id: tox21-pgc-err-luc
+  name: TOX21_PGC_ERR_LUC
+  description: TOX21_PGC_ERR_LUC is a cell-based, single-readout assay that uses PGC/ERR HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-pgc-err-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESRRA
+  gene: hgnc:3471
+  gene_symbol: ESRRA
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ESRRA
+  gene: hgnc:3471
+  gene_symbol: ESRRA
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2068
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2070
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2072
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:585
+  - aeid:2068
+  - aeid:2070
+  - aeid:2072
+  method_type: in vitro
+  cell_lines:
+  - PGC/ERR HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:585

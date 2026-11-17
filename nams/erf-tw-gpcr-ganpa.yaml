@@ -1,0 +1,26 @@
+model:
+  id: erf-tw-gpcr-ganpa
+  name: ERF_TW_GPCR_gANPA
+  description: ERF_TW_GPCR_gANPA is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate. See Atrial Natriuretic Factor (ANF, Non-Selective) Guinea Pig Binding
+    Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10141
+  name: Cavia porcellus
+measured_targets:
+- name: Nppa
+  measurement: binding
+  notes: Entrez 100135578 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2627
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:746
+  - aeid:2627
+  method_type: in chemico
+  organs:
+  - Kidney

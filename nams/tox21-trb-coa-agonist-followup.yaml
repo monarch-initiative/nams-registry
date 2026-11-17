@@ -1,0 +1,36 @@
+model:
+  id: tox21-trb-coa-agonist-followup
+  name: TOX21_TRB_COA_Agonist_Followup
+  description: TOX21_TRb_COA_Agonist_Followup is a secondary assay for specificity for the
+    TOX21_TR_GH3_LUC_Agonist assay. The LanthaScreen TR-FRET TR coactivator assay kits were
+    used to determine TR activity in a cell-free functional assay. A time-resolved fluorescence
+    resonance energy transfer (TR-FRET) signal was indicative of coactivator (SRC-2) recruitment.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: THRB
+  gene: hgnc:11799
+  gene_symbol: THRB
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2242
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2243
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2244
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:650
+  - aeid:2242
+  - aeid:2243
+  - aeid:2244
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:650

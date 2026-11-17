@@ -1,0 +1,31 @@
+model:
+  id: tox21-p450-cyp2c9-antagonist
+  name: TOX21_p450_CYP2C9_Antagonist
+  description: TOX21_p450_CYP2C9_Antagonist is a cell-free assay that uses recombinant human
+    p450 CYP2C9 as a source for enzyme to measure test chemical effects on enzymatic activity
+    against a fluorescent substrate, P450-Glo CYP2c9. See tox21-p450-2c9-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP2C9
+  gene: hgnc:2623
+  gene_symbol: CYP2C9
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3187
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:900
+  - aeid:3187
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:900

@@ -1,0 +1,23 @@
+model:
+  id: vala-tubips-antagonist
+  name: VALA_TUBIPS_Antagonist
+  description: VALA_TUBIPS_Agonist is a cell-based, multiplexed assay that uses human iPS-derived
+    endothelial cells (iPSC). Measurements were taken 72 hours after chemical dosing in a
+    96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3025
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3026
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:863
+  - aeid:3025
+  - aeid:3026
+  method_type: in vitro
+  cell_lines:
+  - iPSC-derived endothelial cell

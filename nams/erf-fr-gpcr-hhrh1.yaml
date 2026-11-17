@@ -1,0 +1,28 @@
+model:
+  id: erf-fr-gpcr-hhrh1
+  name: ERF_FR_GPCR_hHRH1
+  description: ERF_FR_GPCR_hHRH1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate. See H1 Human Histamine GPCR Binding (Antagonist Radioligand) Assay,
+    Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: HRH1
+  gene: hgnc:5182
+  gene_symbol: HRH1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2652
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:834
+  - aeid:2652
+  method_type: in chemico

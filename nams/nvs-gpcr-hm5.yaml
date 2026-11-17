@@ -1,0 +1,27 @@
+model:
+  id: nvs-gpcr-hm5
+  name: NVS_GPCR_hM5
+  description: NVS_GPCR_hM5 is a biochemical, single-readout assay that uses extracted gene-proteins
+    from CHO in a cell-free assay. Measurements were taken 1 hour after chemical dosing in
+    a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CHRM5
+  gene: hgnc:1954
+  gene_symbol: CHRM5
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/646
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:197
+  - aeid:646
+  method_type: in chemico

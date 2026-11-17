@@ -1,0 +1,38 @@
+model:
+  id: ccte-deisenroth-5ar-nbte
+  name: CCTE_Deisenroth_5AR_NBTE
+  description: CCTE_Deisenroth_5AR NBTE (5alpha-reductase NanoBRET Target Engagement Assay)
+    is a cell-based, single-readout assay that uses HEK293T, a human kidney cell line, with
+    measurements taken at 5 hours after chemical dosing in a 384 well plate. This assay includes
+    a primary and secondary screen as well as an autofluorscence screen.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SRD5A2
+  gene: hgnc:11285
+  gene_symbol: SRD5A2
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3072
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3074
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3076
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3078
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:869
+  - aeid:3072
+  - aeid:3074
+  - aeid:3076
+  - aeid:3078
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney

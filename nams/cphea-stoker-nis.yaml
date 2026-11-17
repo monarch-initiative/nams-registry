@@ -1,0 +1,41 @@
+model:
+  id: cphea-stoker-nis
+  name: CPHEA_Stoker_NIS
+  description: CPHEA_Stoker_NIS is a cell-based, single-readout assay that uses hNIS-HEK293T-EPA,
+    a novel human kidney cell line expressing human NIS, with measurements taken at 2 hours
+    after chemical dosing in a 96-well plate. This radioactive iodide uptake (RAIU) assay
+    is used to identify inhibitors of NIS-mediated iodide uptake. A parallel cytoxicity assay
+    (Cell Titer Glo, Promega) was also run in the same cell line.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SLC5A5
+  gene: hgnc:11040
+  gene_symbol: SLC5A5
+  measurement: transporter
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2037
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2110
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:574
+  - aeid:2037
+  - aeid:2110
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:54
+  - aop:263
+  key_events:
+  - aop.events:424
+  - aop.events:1771

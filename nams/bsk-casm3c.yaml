@@ -1,0 +1,143 @@
+model:
+  id: bsk-casm3c
+  name: BSK_CASM3C
+  description: BSK_CASM3C is a cell-based, multiplexed-readout assay that uses umbilical vein
+    endothelium and coronary artery smooth muscle cells, a human vascular primary cell co-culture,
+    with measurements taken at 24 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CSF1
+  gene: hgnc:2432
+  gene_symbol: CSF1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL9
+  gene: hgnc:7098
+  gene_symbol: CXCL9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: F3
+  gene: hgnc:3541
+  gene_symbol: F3
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HLA-DRA
+  gene: hgnc:4947
+  gene_symbol: HLA-DRA
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL6
+  gene: hgnc:6018
+  gene_symbol: IL6
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: LDLR
+  gene: hgnc:6547
+  gene_symbol: LDLR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAUR
+  gene: hgnc:9053
+  gene_symbol: PLAUR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SAA1
+  gene: hgnc:10513
+  gene_symbol: SAA1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SERPINE1
+  gene: hgnc:8583
+  gene_symbol: SERPINE1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THBD
+  gene: hgnc:11784
+  gene_symbol: THBD
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/208
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/210
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/212
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/214
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/216
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/218
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/220
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/222
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/224
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/226
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/228
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/230
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/232
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/234
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2891
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:10
+  - aeid:208
+  - aeid:210
+  - aeid:212
+  - aeid:214
+  - aeid:216
+  - aeid:218
+  - aeid:220
+  - aeid:222
+  - aeid:224
+  - aeid:226
+  - aeid:228
+  - aeid:230
+  - aeid:232
+  - aeid:234
+  - aeid:2891
+  method_type: in vitro
+  cell_lines:
+  - smooth muscle cell of the coronary artery
+  organs:
+  - Vasculature

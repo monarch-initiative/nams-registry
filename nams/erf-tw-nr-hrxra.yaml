@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-nr-hrxra
+  name: ERF_TW_NR_hRXRa
+  description: ERF_TW_NR_hRXRa is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant E. coli in a cell-free assay. Measurements were taken
+    16 hour after chemical dosing in a 96-well plate. See RXRalpha Human Retinoid X NHR Binding
+    (Agonist Radioligand) Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: RXRA
+  gene: hgnc:10477
+  gene_symbol: RXRA
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3314
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1058
+  - aeid:3314
+  method_type: in chemico

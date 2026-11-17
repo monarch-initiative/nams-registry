@@ -1,0 +1,36 @@
+model:
+  id: atg-xsp1-xtt-cytotoxicity-multi-species
+  name: ATG_XSP1_XTT_Cytotoxicity_multi-species
+  description: ATG_XSP1_XTT_Cytotoxicity_multi-species is a cell-based, single-readout assay
+    that uses HepG2, a human liver cell line, with measurements taken at 24 hours after chemical
+    dosing in a 24-well plate. Xsp1 included 3 nM 6-alpha-fluorotestosterone to partially
+    stimulate the androgen receptor.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1971
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:570
+  - aeid:1971
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:12
+  - aop:220
+  - aop:212
+  - aop:13
+  - aop:17
+  - aop:38
+  - aop:48
+  key_events:
+  - aop.events:55
+  - aop.events:1393
+  - aop.events:1505

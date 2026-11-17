@@ -1,0 +1,39 @@
+model:
+  id: ccte-glted-hdio1
+  name: CCTE_GLTED_hDIO1
+  description: CCTE_GLTED_hDIO1 is a cell-free, single-readout assay designed to test the
+    inhibitory activity of chemicals toward human iodothyronine Deiodinase type 1 (DIO1) enzyme.
+    Enzyme is incubated in presence of test chemical for 3 hours during which uninhibited
+    enzyme liberates free iodide from substrate. Free iodide is measured in a second step
+    using the Sandell-Kolthoff method.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: DIO1
+  gene: hgnc:2883
+  gene_symbol: DIO1
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2309
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:667
+  - aeid:2309
+  method_type: in chemico
+  aops:
+  - aop:42
+  - aop:157
+  - aop:54
+  - aop:158
+  - aop:159
+  key_events:
+  - aop.events:280
+  - aop.events:281
+  - aop.events:1009

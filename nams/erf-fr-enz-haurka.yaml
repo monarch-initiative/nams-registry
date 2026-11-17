@@ -1,0 +1,28 @@
+model:
+  id: erf-fr-enz-haurka
+  name: ERF_FR_ENZ_hAURKA
+  description: ERF_FR_ENZ_hAURKA is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.25 hour after chemical dosing
+    in a 96-well plate. See Aurora-A Human Other Protein Kinase Enzymatic LANCE Assay [Km
+    ATP], Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AURKA
+  gene: hgnc:11393
+  gene_symbol: AURKA
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2561
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:774
+  - aeid:2561
+  method_type: in chemico

@@ -1,0 +1,52 @@
+model:
+  id: tox21-vdr-bla-agonist
+  name: TOX21_VDR_BLA_Agonist
+  description: TOX21_VDR_BLA_Agonist is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-vdr-bla-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP24A1
+  gene: hgnc:2602
+  gene_symbol: CYP24A1
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VDR
+  gene: hgnc:12679
+  gene_symbol: VDR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1129
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1130
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1131
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1331
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:380
+  - aeid:1129
+  - aeid:1130
+  - aeid:1131
+  - aeid:1331
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:380

@@ -1,0 +1,40 @@
+model:
+  id: tox21-p53-bla-ms-human
+  name: TOX21_p53_BLA_ms_human
+  description: TOX21_p53_BLA_ms_human is a cell-based, single-readout assay that uses HCT116,
+    a human intestinal cell line, incubated in the presence of human liver microsomes with
+    measurements taken at 18 hours after chemical dosing in a 1536-well plate. See tox21-ms-p53-p2.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TP53
+  gene: hgnc:11998
+  gene_symbol: TP53
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3330
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3331
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3332
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3333
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1067
+  - aeid:3330
+  - aeid:3331
+  - aeid:3332
+  - aeid:3333
+  method_type: in vitro
+  cell_lines:
+  - HCT 116
+  organs:
+  - Intestine
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1067

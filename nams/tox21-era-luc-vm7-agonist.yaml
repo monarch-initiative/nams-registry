@@ -1,0 +1,35 @@
+model:
+  id: tox21-era-luc-vm7-agonist
+  name: TOX21_ERa_LUC_VM7_Agonist
+  description: TOX21_ERa_LUC_VM7_Agonist is a cell-based, single-readout assay that uses VM7,
+    a human breast tissue cell line, with measurements taken at 22 hours after chemical dosing
+    in a 1536-well plate. See tox21-er-luc-bg1-4e2-agonist-p2.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/788
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:320
+  - aeid:788
+  method_type: in vitro
+  cell_lines:
+  - VM7
+  organs:
+  - Breast
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:320

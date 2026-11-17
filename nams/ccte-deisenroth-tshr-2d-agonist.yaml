@@ -1,0 +1,31 @@
+model:
+  id: ccte-deisenroth-tshr-2d-agonist
+  name: CCTE_Deisenroth_TSHR_2D_Agonist
+  description: CCTE_Deisenroth_TSHR_2D_Agonist is a cell-based, single-readout assay that
+    uses human primary thyrocytes. Measurements were taken 96 hours after repeated chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TSHR
+  gene: hgnc:12373
+  gene_symbol: TSHR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3244
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3245
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:919
+  - aeid:3244
+  - aeid:3245
+  method_type: in vitro
+  organs:
+  - Thyroid gland

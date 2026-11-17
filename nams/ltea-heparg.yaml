@@ -1,0 +1,905 @@
+model:
+  id: ltea-heparg
+  name: LTEA_HepaRG
+  description: LTEA_HepaRG is a cell based, multiplexed-readout assay that uses HepaRG, a
+    human liver cell line, with measurements taken at 48 hours after chemical dosing on a
+    96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ABCB1
+  gene: hgnc:40
+  gene_symbol: ABCB1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ABCB11
+  gene: hgnc:42
+  gene_symbol: ABCB11
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ABCC2
+  gene: hgnc:53
+  gene_symbol: ABCC2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ABCC3
+  gene: hgnc:54
+  gene_symbol: ABCC3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ABCG2
+  gene: hgnc:74
+  gene_symbol: ABCG2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ACLY
+  gene: hgnc:115
+  gene_symbol: ACLY
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ACOX1
+  gene: hgnc:119
+  gene_symbol: ACOX1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ADK
+  gene: hgnc:257
+  gene_symbol: ADK
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: AFP
+  gene: hgnc:317
+  gene_symbol: AFP
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ALPP
+  gene: hgnc:439
+  gene_symbol: ALPP
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: APOA5
+  gene: hgnc:17288
+  gene_symbol: APOA5
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: BAD
+  gene: hgnc:936
+  gene_symbol: BAD
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: BAX
+  gene: hgnc:959
+  gene_symbol: BAX
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: BCL2
+  gene: hgnc:990
+  gene_symbol: BCL2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: BCL2L11
+  gene: hgnc:994
+  gene_symbol: BCL2L11
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: BID
+  gene: hgnc:1050
+  gene_symbol: BID
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CASP3
+  gene: hgnc:1504
+  gene_symbol: CASP3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CASP8
+  gene: hgnc:1509
+  gene_symbol: CASP8
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CAT
+  gene: hgnc:1516
+  gene_symbol: CAT
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CCND1
+  gene: hgnc:1582
+  gene_symbol: CCND1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CCND2
+  gene: hgnc:1583
+  gene_symbol: CCND2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CDKN1A
+  gene: hgnc:1784
+  gene_symbol: CDKN1A
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CFLAR
+  gene: hgnc:1876
+  gene_symbol: CFLAR
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP1A1
+  gene: hgnc:2595
+  gene_symbol: CYP1A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP1A2
+  gene: hgnc:2596
+  gene_symbol: CYP1A2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP24A1
+  gene: hgnc:2602
+  gene_symbol: CYP24A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2B6
+  gene: hgnc:2615
+  gene_symbol: CYP2B6
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2C19
+  gene: hgnc:2621
+  gene_symbol: CYP2C19
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2C8
+  gene: hgnc:2622
+  gene_symbol: CYP2C8
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2C9
+  gene: hgnc:2623
+  gene_symbol: CYP2C9
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP2E1
+  gene: hgnc:2631
+  gene_symbol: CYP2E1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP3A4
+  gene: hgnc:2637
+  gene_symbol: CYP3A4
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP3A5
+  gene: hgnc:2638
+  gene_symbol: CYP3A5
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP3A7
+  gene: hgnc:2640
+  gene_symbol: CYP3A7
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP4A11
+  gene: hgnc:2642
+  gene_symbol: CYP4A11
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP4A22
+  gene: hgnc:20575
+  gene_symbol: CYP4A22
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CYP7A1
+  gene: hgnc:2651
+  gene_symbol: CYP7A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: DDIT3
+  gene: hgnc:2726
+  gene_symbol: DDIT3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: EGF
+  gene: hgnc:3229
+  gene_symbol: EGF
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: EGR1
+  gene: hgnc:3238
+  gene_symbol: EGR1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: EZR
+  gene: hgnc:12691
+  gene_symbol: EZR
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FABP1
+  gene: hgnc:3555
+  gene_symbol: FABP1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FAS
+  gene: hgnc:11920
+  gene_symbol: FAS
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FASN
+  gene: hgnc:3594
+  gene_symbol: FASN
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FMO3
+  gene: hgnc:3771
+  gene_symbol: FMO3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FOXO1
+  gene: hgnc:3819
+  gene_symbol: FOXO1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FOXO3
+  gene: hgnc:3821
+  gene_symbol: FOXO3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GADD45A
+  gene: hgnc:4095
+  gene_symbol: GADD45A
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GADD45B
+  gene: hgnc:4096
+  gene_symbol: GADD45B
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GADD45G
+  gene: hgnc:4097
+  gene_symbol: GADD45G
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GCLC
+  gene: hgnc:4311
+  gene_symbol: GCLC
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GCLM
+  gene: hgnc:4312
+  gene_symbol: GCLM
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GSTA2
+  gene: hgnc:4627
+  gene_symbol: GSTA2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GSTM3
+  gene: hgnc:4635
+  gene_symbol: GSTM3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HGF
+  gene: hgnc:4893
+  gene_symbol: HGF
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HIF1A
+  gene: hgnc:4910
+  gene_symbol: HIF1A
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HMGCS2
+  gene: hgnc:5008
+  gene_symbol: HMGCS2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HSPA1A
+  gene: hgnc:5232
+  gene_symbol: HSPA1A
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ICAM1
+  gene: hgnc:5344
+  gene_symbol: ICAM1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IGF1
+  gene: hgnc:5464
+  gene_symbol: IGF1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IGFBP1
+  gene: hgnc:5469
+  gene_symbol: IGFBP1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL6
+  gene: hgnc:6018
+  gene_symbol: IL6
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL6R
+  gene: hgnc:6019
+  gene_symbol: IL6R
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: JUN
+  gene: hgnc:6204
+  gene_symbol: JUN
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KCNK1
+  gene: hgnc:6272
+  gene_symbol: KCNK1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KLK3
+  gene: hgnc:6364
+  gene_symbol: KLK3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KRT19
+  gene: hgnc:6436
+  gene_symbol: KRT19
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: LIPC
+  gene: hgnc:6619
+  gene_symbol: LIPC
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: LPL
+  gene: hgnc:6677
+  gene_symbol: LPL
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MIR122
+  gene: hgnc:31501
+  gene_symbol: MIR122
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP1
+  gene: hgnc:7155
+  gene_symbol: MMP1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP10
+  gene: hgnc:7156
+  gene_symbol: MMP10
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP3
+  gene: hgnc:7173
+  gene_symbol: MMP3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MYC
+  gene: hgnc:7553
+  gene_symbol: MYC
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NFE2L2
+  gene: hgnc:7782
+  gene_symbol: NFE2L2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NFKB1
+  gene: hgnc:7794
+  gene_symbol: NFKB1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NQO1
+  gene: hgnc:2874
+  gene_symbol: NQO1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PDK4
+  gene: hgnc:8812
+  gene_symbol: PDK4
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PEG10
+  gene: hgnc:14005
+  gene_symbol: PEG10
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PTEN
+  gene: hgnc:9588
+  gene_symbol: PTEN
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PTPA
+  gene: hgnc:9308
+  gene_symbol: PTPA
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SDHB
+  gene: hgnc:10681
+  gene_symbol: SDHB
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLC10A1
+  gene: hgnc:10905
+  gene_symbol: SLC10A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLC22A1
+  gene: hgnc:10963
+  gene_symbol: SLC22A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLC22A6
+  gene: hgnc:10970
+  gene_symbol: SLC22A6
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SLCO1B1
+  gene: hgnc:10959
+  gene_symbol: SLCO1B1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: STAT3
+  gene: hgnc:11364
+  gene_symbol: STAT3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SULT2A1
+  gene: hgnc:11458
+  gene_symbol: SULT2A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TGFA
+  gene: hgnc:11765
+  gene_symbol: TGFA
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TGFB1
+  gene: hgnc:11766
+  gene_symbol: TGFB1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THRSP
+  gene: hgnc:11800
+  gene_symbol: THRSP
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TIMP1
+  gene: hgnc:11820
+  gene_symbol: TIMP1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TNFRSF1A
+  gene: hgnc:11916
+  gene_symbol: TNFRSF1A
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TP53
+  gene: hgnc:11998
+  gene_symbol: TP53
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: UGT1A1
+  gene: hgnc:12530
+  gene_symbol: UGT1A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: UGT1A6
+  gene: hgnc:12538
+  gene_symbol: UGT1A6
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: XBP1
+  gene: hgnc:12801
+  gene_symbol: XBP1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/916
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/918
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/920
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/922
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/924
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/926
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/928
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/930
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/932
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/934
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/936
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/938
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/940
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/942
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/944
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/946
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/948
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/950
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/952
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/954
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/956
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/958
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/960
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/962
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/964
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/966
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/968
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/970
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/972
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/974
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/976
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/978
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/980
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/982
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/984
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/986
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/988
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/990
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/992
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/994
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/996
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/998
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1000
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1002
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1004
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1006
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1008
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1010
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1012
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1014
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1016
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1018
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1026
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1028
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1030
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1032
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1034
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1036
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1038
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1040
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1042
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1044
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1046
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1048
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1050
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1052
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1054
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1056
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1058
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1060
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1062
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1064
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1066
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1068
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1070
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1072
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1074
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1076
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1078
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1080
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1082
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1084
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1086
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1088
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1090
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1092
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1094
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1096
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1098
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1100
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1102
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1104
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1106
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1136
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1390
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1392
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1394
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1396
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1398
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:371
+  - aeid:916
+  - aeid:918
+  - aeid:920
+  - aeid:922
+  - aeid:924
+  - aeid:926
+  - aeid:928
+  - aeid:930
+  - aeid:932
+  - aeid:934
+  - aeid:936
+  - aeid:938
+  - aeid:940
+  - aeid:942
+  - aeid:944
+  - aeid:946
+  - aeid:948
+  - aeid:950
+  - aeid:952
+  - aeid:954
+  - aeid:956
+  - aeid:958
+  - aeid:960
+  - aeid:962
+  - aeid:964
+  - aeid:966
+  - aeid:968
+  - aeid:970
+  - aeid:972
+  - aeid:974
+  - aeid:976
+  - aeid:978
+  - aeid:980
+  - aeid:982
+  - aeid:984
+  - aeid:986
+  - aeid:988
+  - aeid:990
+  - aeid:992
+  - aeid:994
+  - aeid:996
+  - aeid:998
+  - aeid:1000
+  - aeid:1002
+  - aeid:1004
+  - aeid:1006
+  - aeid:1008
+  - aeid:1010
+  - aeid:1012
+  - aeid:1014
+  - aeid:1016
+  - aeid:1018
+  - aeid:1026
+  - aeid:1028
+  - aeid:1030
+  - aeid:1032
+  - aeid:1034
+  - aeid:1036
+  - aeid:1038
+  - aeid:1040
+  - aeid:1042
+  - aeid:1044
+  - aeid:1046
+  - aeid:1048
+  - aeid:1050
+  - aeid:1052
+  - aeid:1054
+  - aeid:1056
+  - aeid:1058
+  - aeid:1060
+  - aeid:1062
+  - aeid:1064
+  - aeid:1066
+  - aeid:1068
+  - aeid:1070
+  - aeid:1072
+  - aeid:1074
+  - aeid:1076
+  - aeid:1078
+  - aeid:1080
+  - aeid:1082
+  - aeid:1084
+  - aeid:1086
+  - aeid:1088
+  - aeid:1090
+  - aeid:1092
+  - aeid:1094
+  - aeid:1096
+  - aeid:1098
+  - aeid:1100
+  - aeid:1102
+  - aeid:1104
+  - aeid:1106
+  - aeid:1136
+  - aeid:1390
+  - aeid:1392
+  - aeid:1394
+  - aeid:1396
+  - aeid:1398
+  method_type: in vitro
+  cell_lines:
+  - HepaRG
+  organs:
+  - Liver
+  aops:
+  - aop:131
+  - aop:38
+  key_events:
+  - aop.events:850
+  - aop.events:344

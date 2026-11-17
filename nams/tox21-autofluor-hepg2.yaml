@@ -1,0 +1,37 @@
+model:
+  id: tox21-autofluor-hepg2
+  name: TOX21_AutoFluor_HEPG2
+  description: TOX21_AutoFluor_HEPG2 is a cell-based, single-readout assay that uses HepG2,
+    a human liver cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/775
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/776
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/777
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/778
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/779
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/780
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:316
+  - aeid:775
+  - aeid:776
+  - aeid:777
+  - aeid:778
+  - aeid:779
+  - aeid:780
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:316

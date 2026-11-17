@@ -1,0 +1,26 @@
+model:
+  id: erf-fr-lgic-rglra1
+  name: ERF_FR_LGIC_rGLRA1
+  description: ERF_FR_LGIC_rGLRA1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.25 hour after chemical dosing
+    in a 96-well plate. See Non-Selective Rat Glycine Ion Channel [3H]- Strychnine Binding
+    Assay, Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Glra1
+  measurement: binding
+  notes: Entrez 25674 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2676
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:831
+  - aeid:2676
+  method_type: in chemico
+  organs:
+  - Spinal cord

@@ -1,0 +1,27 @@
+model:
+  id: nvs-adme-hcyp2a6
+  name: NVS_ADME_hCYP2A6
+  description: NVS_ADME_hCYP2A6 is a biochemical, single-readout assay that uses extracted
+    gene-proteins from insect cells in a cell-free assay. Measurements were taken 0.5 hour
+    after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP2A6
+  gene: hgnc:2610
+  gene_symbol: CYP2A6
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/327
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:19
+  - aeid:327
+  method_type: in chemico

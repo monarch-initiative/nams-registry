@@ -1,0 +1,45 @@
+model:
+  id: tox21-fxr-bla-antagonist
+  name: TOX21_FXR_BLA_Antagonist
+  description: TOX21_FXR_BLA_Antagonist is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-fxr-bla-antagonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR1H4
+  gene: hgnc:7967
+  gene_symbol: NR1H4
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1120
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1121
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1191
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1192
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:376
+  - aeid:1120
+  - aeid:1121
+  - aeid:1191
+  - aeid:1192
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:376

@@ -1,0 +1,27 @@
+model:
+  id: nvs-tr-hadot
+  name: NVS_TR_hAdoT
+  description: NVS_TR_hAdoT is a biochemical, single-readout assay that uses extracted gene-proteins
+    from U937 in a cell-free assay. Measurements were taken 1 hour after chemical dosing in
+    a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SLC29A1
+  gene: hgnc:11003
+  gene_symbol: SLC29A1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/731
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:282
+  - aeid:731
+  method_type: in chemico

@@ -1,0 +1,39 @@
+model:
+  id: tox21-shh-3t3-gli3-luc-agonist
+  name: TOX21_SHH_3T3_GLI3_LUC_Agonist
+  description: TOX21_SHH_3T3_GLI3_LUC_Agonist is a cell-based, single-readout assay that uses
+    NIH/3T3, a mouse embryo cell line, with measurements taken at 24 hours after chemical
+    dosing in a 1536 well. See tox21-shh-3t3-gli3-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10090
+  name: Mus musculus
+measured_targets:
+- name: SHH
+  gene: hgnc:10848
+  gene_symbol: SHH
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2106
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2107
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:588
+  - aeid:2106
+  - aeid:2107
+  method_type: in vitro
+  cell_lines:
+  - NIH 3T3
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:588

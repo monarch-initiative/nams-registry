@@ -1,0 +1,27 @@
+model:
+  id: nvs-nr-car
+  name: NVS_NR_cAR
+  description: NVS_NR_cAR is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Sf9/Sf21 in a cell-free assay. Measurements were taken 72 hours after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9598
+  name: Pan troglodytes
+measured_targets:
+- name: AR
+  measurement: binding
+  notes: Entrez 747460 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/710
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:261
+  - aeid:710
+  method_type: in chemico
+  aops:
+  - aop:23
+  key_events:
+  - aop.events:25

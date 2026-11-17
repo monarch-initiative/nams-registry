@@ -1,0 +1,118 @@
+model:
+  id: bsk-3c
+  name: BSK_3C
+  description: BSK_3C is a cell-based, multiplexed-readout assay that uses umbilical vein
+    endothelium, a human vascular primary cell, with measurements taken at 24 hours after
+    chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL9
+  gene: hgnc:7098
+  gene_symbol: CXCL9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: F3
+  gene: hgnc:3541
+  gene_symbol: F3
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HLA-DRA
+  gene: hgnc:4947
+  gene_symbol: HLA-DRA
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ICAM1
+  gene: hgnc:5344
+  gene_symbol: ICAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAUR
+  gene: hgnc:9053
+  gene_symbol: PLAUR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SELE
+  gene: hgnc:10718
+  gene_symbol: SELE
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THBD
+  gene: hgnc:11784
+  gene_symbol: THBD
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/146
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/148
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/150
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/152
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/154
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/156
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/158
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/160
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/162
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/164
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/166
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/168
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/170
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:7
+  - aeid:146
+  - aeid:148
+  - aeid:150
+  - aeid:152
+  - aeid:154
+  - aeid:156
+  - aeid:158
+  - aeid:160
+  - aeid:162
+  - aeid:164
+  - aeid:166
+  - aeid:168
+  - aeid:170
+  method_type: in vitro
+  cell_lines:
+  - endothelial cell of umbilical vein
+  organs:
+  - Vasculature

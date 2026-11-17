@@ -1,0 +1,23 @@
+model:
+  id: nvs-nr-mera
+  name: NVS_NR_mERa
+  description: NVS_NR_mERa is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 18 hours after chemical dosing in a 96-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10090
+  name: Mus musculus
+measured_targets:
+- name: Esr1
+  measurement: binding
+  notes: Entrez 13982 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/725
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:276
+  - aeid:725
+  method_type: in chemico

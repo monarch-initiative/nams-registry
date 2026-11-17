@@ -1,0 +1,47 @@
+model:
+  id: tox21-ar-luc-mdakb2-agonist-3um-nilutamide
+  name: TOX21_AR_LUC_MDAKB2_Agonist_3uM_Nilutamide
+  description: TOX21_AR_LUC_MDAKB2_Agonist_3uM_Nilutamide is a cell-based, single-readout
+    assay that uses MDA-kb2, a human breast cell line, with measurements taken at 24 hours
+    after chemical dosing in a 1536-well plate. This is an secondary assay to TOX21_AR_LUC_MDAKB2_Agonist
+    for agonist specificity. This particular screening for measuring luciferase reporter gene
+    activity using MDA-kb2 cells against Tox21 10K library compounds is a confirmation study
+    on agonist mode screening in the presence of AR-antagonist compound (Nilutamide) at 3.0uM
+    final concentration. See tox21-ar-mda-kb2-luc-agonist-p3.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1822
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1823
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:443
+  - aeid:1822
+  - aeid:1823
+  method_type: in vitro
+  cell_lines:
+  - MDA-kb2
+  organs:
+  - Breast
+  aops:
+  - aop:23
+  - aop:263
+  key_events:
+  - aop.events:25
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:443

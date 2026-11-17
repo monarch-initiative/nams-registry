@@ -1,0 +1,41 @@
+model:
+  id: ccte-mundy-hci-cortical-synap-neurite-matur
+  name: CCTE_Mundy_HCI_Cortical_Synap&Neurite_Matur
+  description: 'CCTE_Mundy_HCI_Cortical_Synap&Neurite_Matur is a multiplexed, cell-based-readout
+    assay that uses rat primary cortical cells with measurements taken at 288.33 hours after
+    chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2781
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2782
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2783
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2784
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2785
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2786
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2787
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2788
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:852
+  - aeid:2781
+  - aeid:2782
+  - aeid:2783
+  - aeid:2784
+  - aeid:2785
+  - aeid:2786
+  - aeid:2787
+  - aeid:2788
+  method_type: in vitro
+  organs:
+  - Cerebral cortex
+  aops:
+  - aop:13
+  - aop:23
+  - aop:54
+  key_events:
+  - aop.events:385

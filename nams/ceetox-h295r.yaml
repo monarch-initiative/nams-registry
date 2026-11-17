@@ -1,0 +1,129 @@
+model:
+  id: ceetox-h295r
+  name: CEETOX_H295R
+  description: CEETOX_H295R is a cell-based, multiplexed-readout assay that uses H295R, a
+    human adrenal gland cell line, with measurements taken at 48 hours after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ESR2
+  gene: hgnc:3468
+  gene_symbol: ESR2
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1I2
+  gene: hgnc:7968
+  gene_symbol: NR1I2
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR3C1
+  gene: hgnc:7978
+  gene_symbol: NR3C1
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR3C2
+  gene: hgnc:7979
+  gene_symbol: NR3C2
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: steroid hormone production
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/891
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/893
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/895
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/897
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/899
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/901
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/905
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/907
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/909
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/913
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/915
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1664
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2143
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2145
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2147
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2149
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2151
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2153
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2157
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2159
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2161
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2165
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2167
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:370
+  - aeid:891
+  - aeid:893
+  - aeid:895
+  - aeid:897
+  - aeid:899
+  - aeid:901
+  - aeid:905
+  - aeid:907
+  - aeid:909
+  - aeid:913
+  - aeid:915
+  - aeid:1664
+  - aeid:2143
+  - aeid:2145
+  - aeid:2147
+  - aeid:2149
+  - aeid:2151
+  - aeid:2153
+  - aeid:2157
+  - aeid:2159
+  - aeid:2161
+  - aeid:2165
+  - aeid:2167
+  method_type: in vitro
+  cell_lines:
+  - NCI-H295R
+  organs:
+  - Adrenal gland
+  aops:
+  - aop:23
+  - aop:12
+  - aop:212
+  - aop:13
+  - aop:17
+  - aop:38
+  - aop:48
+  key_events:
+  - aop.events:274
+  - aop.events:55
+  - aop.events:1505

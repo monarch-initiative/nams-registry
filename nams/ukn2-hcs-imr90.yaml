@@ -1,0 +1,28 @@
+model:
+  id: ukn2-hcs-imr90
+  name: UKN2_HCS_IMR90
+  description: 'UKN2_HCS_IMR90 is a cell-based, multiplexed-readout assay screening for neural
+    crest cell migration and cell viability that uses IMR90 (neural crest cells differentiated
+    from iPSC), a human embryo cell line, with measurements taken at 3 hours after chemical
+    dosing in a microplate: 96-well plate. UKN2, also known as cMINC, is an assay that uses
+    IMR90 cells (neural crest cells differentiated from iPSC) as a model of neural crest cell
+    migration. 24 hr after cell seeding, cell migration was initiated and proceeded for 24
+    hr. Then, chemical was applied, and after 24 hr of exposure migration and viability were
+    assessed using high-content imaging of cells stained with calcein-AM and Hoechst H-33342.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2697
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2699
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:840
+  - aeid:2697
+  - aeid:2699
+  method_type: in vitro
+  cell_lines:
+  - IMR90 iPSC-derived neural crest cell

@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-ic-hkcnh2
+  name: ERF_TW_IC_hKCNH2
+  description: ERF_TW_IC_hKCNH2 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate. See hERG Human Potassium Ion Channel [3H]- Dofetilide Binding (Antagonist
+    Radioligand) Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: KCNH2
+  gene: hgnc:6251
+  gene_symbol: KCNH2
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3184
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:897
+  - aeid:3184
+  method_type: in chemico

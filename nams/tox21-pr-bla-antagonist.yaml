@@ -1,0 +1,50 @@
+model:
+  id: tox21-pr-bla-antagonist
+  name: TOX21_PR_BLA_Antagonist
+  description: TOX21_PR_BLA_Antagonist is a cell-based, single-readout assay that uses transfected
+    HEK293T, a human kidney cell line, with measurements taken at 24 hours after chemical
+    dosing in a 1536-well plate. To identify the compounds that stimulate PR signaling, a
+    PR-UAS-bla GripTite cell line i.e. PR-UAS-bla HEK293T (Invitrogen, Carlsbad, CA, USA)
+    containing a beta-lactamase reporter gene under the control of an UAS response element
+    was used to screen Tox21 10K compound library. The cytotoxicity of the Tox21 compound
+    library against the PR-bla cell line was tested in parallel by measuring the cell viability
+    using CellTiter-Glo assay in the same wells. See tox21-pr-bla-antagonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2125
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2126
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2127
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2128
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:595
+  - aeid:2125
+  - aeid:2126
+  - aeid:2127
+  - aeid:2128
+  method_type: in vitro
+  cell_lines:
+  - PR-UAS-bla HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:595

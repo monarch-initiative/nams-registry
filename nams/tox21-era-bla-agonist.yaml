@@ -1,0 +1,39 @@
+model:
+  id: tox21-era-bla-agonist
+  name: TOX21_ERa_BLA_Agonist
+  description: TOX21_ERa_BLA_Agonist is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-er-bla-agonist-p2.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/783
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/784
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/785
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:318
+  - aeid:783
+  - aeid:784
+  - aeid:785
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:318

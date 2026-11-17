@@ -1,0 +1,27 @@
+model:
+  id: nvs-gpcr-h5ht5a
+  name: NVS_GPCR_h5HT5A
+  description: NVS_GPCR_h5HT5A is a biochemical, single-readout assay that uses extracted
+    gene-proteins from HEK293 in a cell-free assay. Measurements were taken 1 hour after chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: HTR5A
+  gene: hgnc:5300
+  gene_symbol: HTR5A
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/623
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:174
+  - aeid:623
+  method_type: in chemico

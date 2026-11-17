@@ -1,0 +1,27 @@
+model:
+  id: erf-tw-enz-hbtk
+  name: ERF_TW_ENZ_hBTK
+  description: ERF_TW_ENZ_hBTK is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.5 hour after chemical dosing
+    in a 96-well plate. See BTK Human TK Kinase Enzymatic Radiometric Assay [10 uM ATP], Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: BTK
+  gene: hgnc:1133
+  gene_symbol: BTK
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2562
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:726
+  - aeid:2562
+  method_type: in chemico

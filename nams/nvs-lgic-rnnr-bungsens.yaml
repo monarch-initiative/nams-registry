@@ -1,0 +1,25 @@
+model:
+  id: nvs-lgic-rnnr-bungsens
+  name: NVS_LGIC_rNNR_BungSens
+  description: NVS_LGIC_rNNR_BungSens is a biochemical, single-readout assay that uses extracted
+    gene-proteins from Rat cortical membranes in a tissue-based cell-free assay. Measurements
+    were taken 2.5 hours after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Chrna7
+  measurement: binding
+  notes: Entrez 25302 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/705
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:256
+  - aeid:705
+  method_type: in chemico
+  organs:
+  - Brain

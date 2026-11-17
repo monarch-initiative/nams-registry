@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-tr-hslc6a3
+  name: ERF_TW_TR_hSLC6A3
+  description: ERF_TW_TR_hSLC6A3 is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant cells in a cell-free assay. Measurements were taken
+    3 hour after chemical dosing in a 96-well plate. See DAT Human Dopamine Transporter Binding
+    Antagonist Radioligand LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SLC6A3
+  gene: hgnc:11049
+  gene_symbol: SLC6A3
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3290
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1034
+  - aeid:3290
+  method_type: in chemico

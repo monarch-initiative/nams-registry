@@ -1,0 +1,44 @@
+model:
+  id: tox21-sbe-bla-antagonist
+  name: TOX21_SBE_BLA_Antagonist
+  description: 'The TOX21_SBE_BLA_Antagonist is a cell-based, single-readout assay that uses
+    HEK293T , a human kidney cell line, with measurements taken at 5 hours after chemical
+    dosing on a microplate: 1536-well plate. This cell line contains a beta-lactamase reporter
+    gene under control of the Smad binding element (SBE) stably integrated into HEK 293T cells.
+    Cytotoxicity of the compounds was tested in parallel by measuring the cell viability using
+    CellTiter-Glo assay system in the same wells. See tox21-sbe-bla-antagonist-p1.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SMAD1
+  gene: hgnc:6767
+  gene_symbol: SMAD1
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2370
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2371
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2372
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2373
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:679
+  - aeid:2370
+  - aeid:2371
+  - aeid:2372
+  - aeid:2373
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:679

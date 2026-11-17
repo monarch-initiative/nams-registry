@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-nr-hrara
+  name: ERF_TW_NR_hRARa
+  description: ERF_TW_NR_hRARa is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 2 hour after chemical dosing
+    in a 96-well plate. See RARalpha Human retinoic acid NHR Binding (Agonist Radioligand)
+    Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: RARA
+  gene: hgnc:9864
+  gene_symbol: RARA
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2688
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:762
+  - aeid:2688
+  method_type: in chemico

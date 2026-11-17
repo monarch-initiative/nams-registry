@@ -1,0 +1,54 @@
+model:
+  id: tanguay-zf-120hpf-legacy
+  name: Tanguay_ZF_120hpf_legacy
+  description: Tanguay_ZF_120hpf_legacy is a whole embryo, multiplexed endpoint assay using
+    zebrafish larvae exposed for 120 hours post fertilization on a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:7955
+  name: Danio rerio
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1372
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1373
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1374
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1375
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1376
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1377
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1378
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1379
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1380
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1381
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1382
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1383
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1384
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1385
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1386
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1387
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1388
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1389
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1797
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:409
+  - aeid:1372
+  - aeid:1373
+  - aeid:1374
+  - aeid:1375
+  - aeid:1376
+  - aeid:1377
+  - aeid:1378
+  - aeid:1379
+  - aeid:1380
+  - aeid:1381
+  - aeid:1382
+  - aeid:1383
+  - aeid:1384
+  - aeid:1385
+  - aeid:1386
+  - aeid:1387
+  - aeid:1388
+  - aeid:1389
+  - aeid:1797
+  method_type: in vivo

@@ -1,0 +1,25 @@
+model:
+  id: nvs-gpcr-bh1
+  name: NVS_GPCR_bH1
+  description: NVS_GPCR_bH1 is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Bovine cerebellar membranes in a tissue-based cell-free assay. Measurements were
+    taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9913
+  name: Bos taurus
+measured_targets:
+- name: HRH1
+  measurement: binding
+  notes: Entrez 281231 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/612
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:163
+  - aeid:612
+  method_type: in chemico
+  organs:
+  - Brain

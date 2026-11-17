@@ -1,0 +1,41 @@
+model:
+  id: tox21-car-luc-antagonist
+  name: TOX21_CAR_LUC_Antagonist
+  description: TOX21_CAR_LUC_Antagonist is a cell-based, single-readout assay that uses HepG2,
+    a human liver cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-car-antagonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR1I3
+  gene: hgnc:7969
+  gene_symbol: NR1I3
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2049
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2050
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:579
+  - aeid:2049
+  - aeid:2050
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:579

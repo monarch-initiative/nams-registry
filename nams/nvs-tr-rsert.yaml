@@ -1,0 +1,25 @@
+model:
+  id: nvs-tr-rsert
+  name: NVS_TR_rSERT
+  description: NVS_TR_rSERT is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Rat forebrain membranes in a tissue-based cell-free assay. Measurements were taken
+    1 hour after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Slc6a4
+  measurement: binding
+  notes: Entrez 25553 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/737
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:288
+  - aeid:737
+  method_type: in chemico
+  organs:
+  - Brain

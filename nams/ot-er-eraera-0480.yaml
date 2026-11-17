@@ -1,0 +1,30 @@
+model:
+  id: ot-er-eraera-0480
+  name: OT_ER_ERaERa_0480
+  description: OT_ER_ERaERa_0480 is a cell-based assay that uses HEK293T, a human kidney cell
+    line, with measurements taken at 8 hours after chemical dosing in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/742
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:293
+  - aeid:742
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney

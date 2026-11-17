@@ -1,0 +1,25 @@
+model:
+  id: nvs-gpcr-r5ht1-nonselective
+  name: NVS_GPCR_r5HT1_NonSelective
+  description: NVS_GPCR_r5HT1_NonSelective is a biochemical, single-readout assay that uses
+    extracted gene-proteins from Rat cortical membranes in a tissue-based cell-free assay.
+    Measurements were taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Htr1a
+  measurement: binding
+  notes: Entrez 24473 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/661
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:212
+  - aeid:661
+  method_type: in chemico
+  organs:
+  - Brain

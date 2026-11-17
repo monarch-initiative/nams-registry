@@ -1,0 +1,27 @@
+model:
+  id: ccte-harrill-httr-cellcount
+  name: CCTE_Harrill_HTTr_CellCount
+  description: This is a cell-based assay that evaluates cell viability and cell growth using
+    high content imaging to count the number of Hoechst-labeled nuclei that are present in
+    an assay well in 384-well format.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2453
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:683
+  - aeid:2453
+  method_type: in vitro
+  cell_lines:
+  - MCF-7
+  organs:
+  - Breast
+  aops:
+  - aop:212
+  key_events:
+  - aop.events:1505

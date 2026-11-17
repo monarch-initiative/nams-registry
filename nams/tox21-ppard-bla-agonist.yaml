@@ -1,0 +1,45 @@
+model:
+  id: tox21-ppard-bla-agonist
+  name: TOX21_PPARd_BLA_Agonist
+  description: TOX21_PPARd_BLA_Agonist is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-ppard-bla-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPARD
+  gene: hgnc:9235
+  gene_symbol: PPARD
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1122
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1123
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1124
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1195
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:377
+  - aeid:1122
+  - aeid:1123
+  - aeid:1124
+  - aeid:1195
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:377

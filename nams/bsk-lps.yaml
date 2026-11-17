@@ -1,0 +1,133 @@
+model:
+  id: bsk-lps
+  name: BSK_LPS
+  description: BSK_LPS is a cell-based, multiplexed-readout assay that uses umbilical vein
+    endothelium and peripheral blood mononuclear cells, a human vascular primary cell co-culture,
+    with measurements taken at 24 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD40
+  gene: hgnc:11919
+  gene_symbol: CD40
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD69
+  gene: hgnc:1694
+  gene_symbol: CD69
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CSF1
+  gene: hgnc:2432
+  gene_symbol: CSF1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: F3
+  gene: hgnc:3541
+  gene_symbol: F3
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: IL1A
+  gene: hgnc:5991
+  gene_symbol: IL1A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PTGER2
+  gene: hgnc:9594
+  gene_symbol: PTGER2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SELE
+  gene: hgnc:10718
+  gene_symbol: SELE
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THBD
+  gene: hgnc:11784
+  gene_symbol: THBD
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TNF
+  gene: hgnc:11892
+  gene_symbol: TNF
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/278
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/280
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/282
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/284
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/286
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/288
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/290
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/292
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/294
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/296
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/298
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2933
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2935
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:13
+  - aeid:278
+  - aeid:280
+  - aeid:282
+  - aeid:284
+  - aeid:286
+  - aeid:288
+  - aeid:290
+  - aeid:292
+  - aeid:294
+  - aeid:296
+  - aeid:298
+  - aeid:2933
+  - aeid:2935
+  method_type: in vitro
+  cell_lines:
+  - endothelial cell of umbilical vein
+  - peripheral blood mononuclear cell
+  organs:
+  - Vasculature

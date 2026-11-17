@@ -1,0 +1,26 @@
+model:
+  id: erf-tw-enz-atpase-nk
+  name: ERF_TW_ENZ_ATPase_NK
+  description: ERF_TW_ENZ_ATPase_NK is a biochemical, single-readout assay that uses extracted
+    gene-proteins from pig heart in a tissue-based cell-free assay. Measurements were taken
+    1 hour after chemical dosing in a 96-well plate. See ATPase (Na+/K+) Pig Heart Enzymatic
+    LeadHunter Assay â€“ TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9823
+  name: Sus scrofa
+measured_targets:
+- name: ATP1A1
+  measurement: enzymatic activity
+  notes: Entrez 397481 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3270
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:937
+  - aeid:3270
+  method_type: in chemico
+  organs:
+  - Heart

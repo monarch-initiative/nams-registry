@@ -1,0 +1,31 @@
+model:
+  id: ccte-glted-httr
+  name: CCTE_GLTED_hTTR
+  description: CCTE_GLTED_hTTR is a cell-free, single-readout assay designed to test the chemicals'
+    ability to displace T4 from the human transthyretin (TTR) protein. TTR (at 0.125uM or
+    0.5uM) is incubated in presence of test chemical for 2 hours during which disrupting chemicals
+    displace ANSA from the TTR protein. Results read fluorescence at 380 excitation and 475
+    emission.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TTR
+  gene: hgnc:12405
+  gene_symbol: TTR
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3089
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3264
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:871
+  - aeid:3089
+  - aeid:3264
+  method_type: in chemico

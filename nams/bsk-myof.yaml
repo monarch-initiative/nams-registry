@@ -1,0 +1,123 @@
+model:
+  id: bsk-myof
+  name: BSK_MyoF
+  description: 'BSK_MyoF is a cell-based, multiplexed-readout assay that uses lung fibroblasts,
+    a human vascular primary cell, with measurements taken at 24 hours after chemical dosing
+    in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ACTA1
+  gene: hgnc:129
+  gene_symbol: ACTA1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: COL1A1
+  gene: hgnc:2197
+  gene_symbol: COL1A1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: COL3A1
+  gene: hgnc:2201
+  gene_symbol: COL3A1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: COL4A1
+  gene: hgnc:2202
+  gene_symbol: COL4A1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: DCN
+  gene: hgnc:2705
+  gene_symbol: DCN
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: FGF2
+  gene: hgnc:3676
+  gene_symbol: FGF2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: MMP1
+  gene: hgnc:7155
+  gene_symbol: MMP1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SERPINE1
+  gene: hgnc:8583
+  gene_symbol: SERPINE1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TIMP1
+  gene: hgnc:11820
+  gene_symbol: TIMP1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2825
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2827
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2829
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2831
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2833
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2835
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2837
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2839
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2841
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2843
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2845
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2847
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:435
+  - aeid:2825
+  - aeid:2827
+  - aeid:2829
+  - aeid:2831
+  - aeid:2833
+  - aeid:2835
+  - aeid:2837
+  - aeid:2839
+  - aeid:2841
+  - aeid:2843
+  - aeid:2845
+  - aeid:2847
+  method_type: in vitro
+  cell_lines:
+  - fibroblast of lung
+  organs:
+  - Lung

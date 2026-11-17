@@ -1,0 +1,25 @@
+model:
+  id: nvs-enz-rcomt
+  name: NVS_ENZ_rCOMT
+  description: NVS_ENZ_rCOMT is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Rat dorsal striatum in a tissue-based cell-free assay. Measurements were taken 0
+    hour after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Comt
+  measurement: enzymatic activity
+  notes: Entrez 24267 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/597
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:154
+  - aeid:597
+  method_type: in chemico
+  organs:
+  - Brain

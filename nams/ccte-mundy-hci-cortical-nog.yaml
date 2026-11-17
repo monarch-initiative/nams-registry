@@ -1,0 +1,27 @@
+model:
+  id: ccte-mundy-hci-cortical-nog
+  name: CCTE_Mundy_HCI_Cortical_NOG
+  description: 'CCTE_Mundy_HCI_Cortical_NOG is a multiplexed, cell-based-readout assay that
+    uses rat primary cortical cells with measurements taken at 50.33 hours after chemical
+    dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2777
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2778
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2779
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2780
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:850
+  - aeid:2777
+  - aeid:2778
+  - aeid:2779
+  - aeid:2780
+  method_type: in vitro
+  organs:
+  - Cerebral cortex

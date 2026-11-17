@@ -1,0 +1,45 @@
+model:
+  id: tox21-pparg-bla-antagonist
+  name: TOX21_PPARg_BLA_Antagonist
+  description: TOX21_PPARg_BLA_Antagonist is a cell-based, single-readout assay that uses
+    HEK293, a human kidney cell line, with measurements taken at 24 hours after chemical dosing
+    in a 1536-well plate. See tox21-pparg-bla-antagonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPARG
+  gene: hgnc:9236
+  gene_symbol: PPARG
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1127
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1128
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1198
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1199
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:379
+  - aeid:1127
+  - aeid:1128
+  - aeid:1198
+  - aeid:1199
+  method_type: in vitro
+  cell_lines:
+  - HEK293
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:379

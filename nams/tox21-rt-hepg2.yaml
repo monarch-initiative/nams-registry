@@ -1,0 +1,54 @@
+model:
+  id: tox21-rt-hepg2
+  name: TOX21_RT_HEPG2
+  description: TOX21_RT_HEPG2 is a cell-based, single-readout assay that uses HepG2, a human
+    liver cell line, with measurements taken at 24 hours after chemical dosing in a 1536-well
+    plate. See tox21-rt-viability-hepg2-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2094
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2095
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2096
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2097
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2098
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2099
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2100
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2101
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2102
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2103
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2105
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2213
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:587
+  - aeid:2094
+  - aeid:2095
+  - aeid:2096
+  - aeid:2097
+  - aeid:2098
+  - aeid:2099
+  - aeid:2100
+  - aeid:2101
+  - aeid:2102
+  - aeid:2103
+  - aeid:2105
+  - aeid:2213
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:220
+  key_events:
+  - aop.events:1393
+  - aop.events:1394
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:587

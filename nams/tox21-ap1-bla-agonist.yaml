@@ -1,0 +1,52 @@
+model:
+  id: tox21-ap1-bla-agonist
+  name: TOX21_AP1_BLA_Agonist
+  description: TOX21_AP1_BLA_Agonist is a cell-based, single-readout assay that uses ME-180,
+    a human cervix cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-ap1-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: FOS
+  gene: hgnc:3796
+  gene_symbol: FOS
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: JUN
+  gene: hgnc:6204
+  gene_symbol: JUN
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1844
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1845
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1846
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1847
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:452
+  - aeid:1844
+  - aeid:1845
+  - aeid:1846
+  - aeid:1847
+  method_type: in vitro
+  cell_lines:
+  - ME-180
+  organs:
+  - Uterine cervix
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:452

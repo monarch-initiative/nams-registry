@@ -1,0 +1,44 @@
+model:
+  id: tox21-gnrhr-hek293
+  name: TOX21_GNRHR_HEK293
+  description: TOX21_GNRHR_HEK293 is a cell-based, single-readout assay that uses GnRHR-expressing
+    stably transfected HEK293, a human kidney cell line, with measurements taken at 1.25 hours
+    after chemical dosing in a 1536-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: GNRHR
+  gene: hgnc:4421
+  gene_symbol: GNRHR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: GNRHR
+  gene: hgnc:4421
+  gene_symbol: GNRHR
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3334
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3335
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1068
+  - aeid:3334
+  - aeid:3335
+  method_type: in vitro
+  cell_lines:
+  - HEK293
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1068

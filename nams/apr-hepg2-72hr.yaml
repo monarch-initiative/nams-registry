@@ -1,0 +1,87 @@
+model:
+  id: apr-hepg2-72hr
+  name: APR_HepG2_72hr
+  description: APR_HepG2_72hr is a cell-based, multiplexed-readout assay that uses HepG2,
+    a human liver cell line, with measurements taken at 72 hours after chemical dosing in
+    a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: H2AX
+  gene: hgnc:4739
+  gene_symbol: H2AX
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: H3-3A
+  gene: hgnc:4764
+  gene_symbol: H3-3A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: JUN
+  gene: hgnc:6204
+  gene_symbol: JUN
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TP53
+  gene: hgnc:11998
+  gene_symbol: TP53
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: TUBA1A
+  gene: hgnc:20766
+  gene_symbol: TUBA1A
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/44
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/46
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/48
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/50
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/52
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/54
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/56
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/58
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/60
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/62
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:4
+  - aeid:44
+  - aeid:46
+  - aeid:48
+  - aeid:50
+  - aeid:52
+  - aeid:54
+  - aeid:56
+  - aeid:58
+  - aeid:60
+  - aeid:62
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:12
+  - aop:212
+  - aop:13
+  - aop:17
+  - aop:38
+  - aop:48
+  key_events:
+  - aop.events:55
+  - aop.events:1505

@@ -1,0 +1,30 @@
+model:
+  id: erf-tw-gpcr-hhtr2a
+  name: ERF_TW_GPCR_hHTR2A
+  description: ERF_TW_GPCR_hHTR2A is a biochemical, single-readout assay that uses extracted
+    gene-proteins from male Wistar rat cortex membranes in a tissue-based cell-free assay.
+    Measurements were taken 1 hour after chemical dosing in a 96-well plate. See 5-HT2A Human
+    Serotonin GPCR Binding Antagonist Radioligand LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: HTR2A
+  gene: hgnc:5293
+  gene_symbol: HTR2A
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3306
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1050
+  - aeid:3306
+  method_type: in chemico
+  organs:
+  - Brain

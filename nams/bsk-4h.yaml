@@ -1,0 +1,78 @@
+model:
+  id: bsk-4h
+  name: BSK_4H
+  description: BSK_4H is a cell-based, multiplexed-readout assay that uses umbilical vein
+    endothelium, a human vascular primary cell, with measurements taken at 24 hours after
+    chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CCL26
+  gene: hgnc:10625
+  gene_symbol: CCL26
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: KDR
+  gene: hgnc:6307
+  gene_symbol: KDR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PLAUR
+  gene: hgnc:9053
+  gene_symbol: PLAUR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SELP
+  gene: hgnc:10721
+  gene_symbol: SELP
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: VCAM1
+  gene: hgnc:12663
+  gene_symbol: VCAM1
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/172
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/174
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/176
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/178
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/180
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/182
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/184
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:8
+  - aeid:172
+  - aeid:174
+  - aeid:176
+  - aeid:178
+  - aeid:180
+  - aeid:182
+  - aeid:184
+  method_type: in vitro
+  cell_lines:
+  - endothelial cell of umbilical vein
+  organs:
+  - Vasculature

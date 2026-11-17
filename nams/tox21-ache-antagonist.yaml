@@ -1,0 +1,32 @@
+model:
+  id: tox21-ache-antagonist
+  name: TOX21_AChE_Antagonist
+  description: TOX21_AChE_Antagonist is a cell-free assay that uses recombinant human AChE
+    (acetylcholinesterase) as a source for enzyme to evaluate chemicals that inhibit AChE
+    activity, with measurements taken 30 minutes after compound dosing in a 1536-well plate.
+    See tox21-ache-p5.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ACHE
+  gene: hgnc:108
+  gene_symbol: ACHE
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3190
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:903
+  - aeid:3190
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:903

@@ -1,0 +1,52 @@
+model:
+  id: tox21-pr-luc-followup
+  name: TOX21_PR_LUC_Followup
+  description: TOX21_PR_LUC_Followup is a secondary assay for specificity for the TOX21_PR_BLA_Agonist
+    assay. To differentiate true PR agonists from cytotoxic substances, this follow up assay
+    is multiplexed with a cell viability assay.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2222
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2223
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2224
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2225
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:643
+  - aeid:2222
+  - aeid:2223
+  - aeid:2224
+  - aeid:2225
+  method_type: in vitro
+  cell_lines:
+  - HEK293-PR-A
+  organs:
+  - Kidney
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:643

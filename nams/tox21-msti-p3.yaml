@@ -1,0 +1,25 @@
+model:
+  id: tox21-msti-p3
+  name: TOX21_MSTI_p3
+  description: TOX21_MSTI_p3 is a cell-free assay that uses a chemical substrate, (E)-2-(4-mercaptostyryl)-1,3,3-trimethyl-3H-indol-1-ium
+    (MSTI), to detect electrophilic test chemicals that can covalently bind to the substrate
+    and thereby change substrated fluorescence.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3017
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3018
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:859
+  - aeid:3017
+  - aeid:3018
+  method_type: in chemico
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:859

@@ -1,0 +1,44 @@
+model:
+  id: acea-ar-agonist
+  name: ACEA_AR_agonist
+  description: ACEA_AR_agonist is a cell-based, single-readout assay that uses 22Rv1, a human
+    prostate cancer cell line, with measurements taken at 80 hours after chemical dosing in
+    a 384-well plate, although TO5 and TO6 (mc0.srcf) used a 96-well plate. Differences in
+    plate size can be ignored given data normalization.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1850
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1855
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:533
+  - aeid:1850
+  - aeid:1855
+  method_type: in vitro
+  cell_lines:
+  - 22Rv1
+  organs:
+  - Prostate gland
+  aops:
+  - aop:220
+  - aop:212
+  - aop:263
+  - aop:23
+  key_events:
+  - aop.events:1394
+  - aop.events:1505
+  - aop.events:1821
+  - aop.events:25

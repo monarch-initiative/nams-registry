@@ -1,0 +1,46 @@
+model:
+  id: tox21-pxr-luc-agonist
+  name: TOX21_PXR_LUC_Agonist
+  description: 'TOX21_PXR_LUC_Agonist is a cell-based, single-readout assay that uses HepG2,
+    a human liver cell line, with measurements taken at 24 hours after chemical dosing on
+    a microplate: 1536-well plate. To screen Tox21 libraries for compounds that activate hPXR-mediated
+    CYP3A4 gene expression, PXR-Luc HepG2 cells were used. Cytotoxicity of the compounds was
+    tested in parallel by measuring the cell viability using CellTiter-Fluor assay system
+    in the same wells. See tox21-pxr-p1.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NR1I2
+  gene: hgnc:7968
+  gene_symbol: NR1I2
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2362
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2363
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:670
+  - aeid:2362
+  - aeid:2363
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:220
+  - aop:212
+  key_events:
+  - aop.events:1393
+  - aop.events:1505
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:670

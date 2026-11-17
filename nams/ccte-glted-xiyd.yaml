@@ -1,0 +1,28 @@
+model:
+  id: ccte-glted-xiyd
+  name: CCTE_GLTED_xIYD
+  description: CCTE_GLTED_xIYD is a cell-free, single-readout assay that uses Xenopus (frog)
+    iodotyrosine deiodinase (xIYD) enzyme from liver microsomes. Assay is based on iodide
+    release measured by the Sandell-Kolthoff method and is run in 96-well plate format with
+    assay plates run in triplicate (n=3) with measurements taken at 3 hours after chemical
+    dosing. Platewise-normalization was used based on positive control (3-Nitro-L-tyrosine,
+    MNT) and negative/solvent controls (DMSO, NaOH).
+  description_scope: METHOD
+species:
+- id: NCBITaxon:8355
+  name: Xenopus laevis
+measured_targets:
+- name: iyd.L
+  measurement: enzymatic activity
+  notes: Entrez 447152 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3092
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:874
+  - aeid:3092
+  method_type: in chemico
+  organs:
+  - Liver

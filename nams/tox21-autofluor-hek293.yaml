@@ -1,0 +1,37 @@
+model:
+  id: tox21-autofluor-hek293
+  name: TOX21_AutoFluor_HEK293
+  description: TOX21_AutoFluor_HEK293 is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/769
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/770
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/771
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/772
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/773
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/774
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:315
+  - aeid:769
+  - aeid:770
+  - aeid:771
+  - aeid:772
+  - aeid:773
+  - aeid:774
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:315

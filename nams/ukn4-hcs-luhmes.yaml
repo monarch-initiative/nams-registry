@@ -1,0 +1,30 @@
+model:
+  id: ukn4-hcs-luhmes
+  name: UKN4_HCS_LUHMES
+  description: 'UKN4_HCS_LUHMES is a cell-based, multiplexed-readout assay screening for neurite
+    outgrowth and cell viability that uses LUHMES, a human central nervous system cell line,
+    with measurements taken at 3 hours after chemical dosing in a microplate: 96-well plate.
+    UKN4, also referred to as NeuriTox, is an assay that uses LUHMES neuronal precursors as
+    a model of dopaminergic neuronal differentiation. Following a 2-day differentiation period,
+    cells are exposed to chemicals for 24 hr and neurite area is evaluated as a marker of
+    neurite outgrowth using high-content imaging of cells stained with calcein AM. Cell viability
+    is assessed using stain Hoechst H-33342.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2701
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2703
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:841
+  - aeid:2701
+  - aeid:2703
+  method_type: in vitro
+  cell_lines:
+  - LUHMES
+  organs:
+  - Central nervous system

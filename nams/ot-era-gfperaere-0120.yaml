@@ -1,0 +1,31 @@
+model:
+  id: ot-era-gfperaere-0120
+  name: OT_ERa_GFPERaERE_0120
+  description: OT_ERa_GFPERaERE_0120 is a cell-based, single-readout assay that uses HeLa,
+    a human cervix cell line, with measurements taken at 2 hours after chemical dosing in
+    a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/750
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:301
+  - aeid:750
+  method_type: in vitro
+  cell_lines:
+  - HeLa
+  organs:
+  - Uterine cervix

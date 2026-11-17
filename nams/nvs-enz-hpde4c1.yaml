@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hpde4c1
+  name: NVS_ENZ_hPDE4C1
+  description: NVS_ENZ_hPDE4C1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PDE4C
+  gene: hgnc:8782
+  gene_symbol: PDE4C
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2287
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:660
+  - aeid:2287
+  method_type: in chemico

@@ -1,0 +1,26 @@
+model:
+  id: erf-tw-tr-rslc18a2
+  name: ERF_TW_TR_rSLC18A2
+  description: ERF_TW_TR_rSLC18A2 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.5 hour after chemical dosing
+    in a 96-well plate. See VMAT2 Rat Vesicular Monoamine Transporter Binding (Antagonist
+    Radioligand) Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Slc18a2
+  measurement: binding
+  notes: Entrez 25549 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2695
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:758
+  - aeid:2695
+  method_type: in chemico
+  organs:
+  - Brain

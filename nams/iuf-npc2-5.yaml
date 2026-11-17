@@ -1,0 +1,53 @@
+model:
+  id: iuf-npc2-5
+  name: IUF_NPC2-5
+  description: IUF_NPC2-5 is a cell-based, multiplexed assay that uses hNPC, a human primary
+    neural progenitor cells, with measurements taken at 72 or 120 hours after chemical dosing
+    in a 96-well plate. Human neural progenitor cells (hNPC) are generated from human fetal
+    brain cortex at gestational week (GW) 16-19. In the neural progenitor cell migration and
+    differentiation assay (NPC2-5), hNPCs grown as spheres are plated on an extracellular
+    matrix and migrate and differentiate out of the sphere core. The processes radial glia
+    migration, neuronal and oligodendrocyte migration as well as neuronal differentiation,
+    neuronal morphology and oligodendrocyte differentiation are studied using automated phase
+    contrast imaging and automated fluorescence imaging in combination with high content image
+    analysis. In parallel, the cell viability is assessed using an alamar blue viability assay
+    and the cytotoxicity using a lactate dehydrogenase dependent membrane integrity assay.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2938
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2940
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2942
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2944
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2946
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2948
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2950
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2952
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2954
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2956
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2958
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2960
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:858
+  - aeid:2938
+  - aeid:2940
+  - aeid:2942
+  - aeid:2944
+  - aeid:2946
+  - aeid:2948
+  - aeid:2950
+  - aeid:2952
+  - aeid:2954
+  - aeid:2956
+  - aeid:2958
+  - aeid:2960
+  method_type: in vitro
+  cell_lines:
+  - neural progenitor cell
+  organs:
+  - Brain

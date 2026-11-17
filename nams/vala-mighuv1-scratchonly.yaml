@@ -1,0 +1,23 @@
+model:
+  id: vala-mighuv1-scratchonly
+  name: VALA_MIGHUV1_ScratchOnly
+  description: VALA_MIGHUV1_ScratchOnly is a cell-based, multiplexed assay that uses umbilical
+    vein-derived endothelial cells (HUVEC). Measurements were taken 24 hours after chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3027
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3028
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:864
+  - aeid:3027
+  - aeid:3028
+  method_type: in vitro
+  cell_lines:
+  - endothelial cell of umbilical vein

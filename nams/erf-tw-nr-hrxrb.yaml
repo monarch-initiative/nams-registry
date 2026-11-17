@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-nr-hrxrb
+  name: ERF_TW_NR_hRXRb
+  description: ERF_TW_NR_hRXRb is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant insect cells in a cell-free assay. Measurements were
+    taken 24 hour after chemical dosing in a 96-well plate. See RXRbeta Human Retinoid X NHR
+    Binding (Agonist Radioligand) Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: RXRB
+  gene: hgnc:10478
+  gene_symbol: RXRB
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3315
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1059
+  - aeid:3315
+  method_type: in chemico

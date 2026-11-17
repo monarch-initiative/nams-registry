@@ -1,0 +1,29 @@
+model:
+  id: hcan-aur-htpo
+  name: HCAN_AUR_hTPO
+  description: HCAN_AUR_hTPO is a biochemical, single-readout assay that uses Lenti-TPO, derived
+    from human kidney Lenti-X 293T cells, in a cell-free assay. Measurements were taken 0.5
+    hour after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TPO
+  gene: hgnc:12015
+  gene_symbol: TPO
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3071
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:868
+  - aeid:3071
+  method_type: in chemico
+  organs:
+  - Kidney

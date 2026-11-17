@@ -1,0 +1,39 @@
+model:
+  id: tox21-ar-luc-mdakb2-agonist
+  name: TOX21_AR_LUC_MDAKB2_Agonist
+  description: TOX21_AR_LUC_MDAKB2_Agonist is a cell-based, single-readout assay that uses
+    MDA-kb2, a human breast cell line, with measurements taken at 24 hours after chemical
+    dosing in a 1536-well plate. See tox21-ar-mda-kb2-luc-agonist-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/764
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:312
+  - aeid:764
+  method_type: in vitro
+  cell_lines:
+  - MDA-kb2
+  organs:
+  - Breast
+  aops:
+  - aop:23
+  key_events:
+  - aop.events:25
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:312

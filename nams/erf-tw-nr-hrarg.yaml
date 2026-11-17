@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-nr-hrarg
+  name: ERF_TW_NR_hRARg
+  description: ERF_TW_NR_hRARg is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant insect cells in a cell-free assay. Measurements were
+    taken 2 hour after chemical dosing in a 96-well plate. See RARgamma Human retinoic acid
+    NHR Binding (Agonist Radioligand) Assay, Panlabs.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: RARG
+  gene: hgnc:9866
+  gene_symbol: RARG
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3313
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1057
+  - aeid:3313
+  method_type: in chemico

@@ -1,0 +1,27 @@
+model:
+  id: nvs-gpcr-heta
+  name: NVS_GPCR_hETA
+  description: NVS_GPCR_hETA is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Human neuroblastoma cells (SH-SY5Y) in a cell-free assay. Measurements were taken
+    3 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: EDNRA
+  gene: hgnc:3179
+  gene_symbol: EDNRA
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/638
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:189
+  - aeid:638
+  method_type: in chemico

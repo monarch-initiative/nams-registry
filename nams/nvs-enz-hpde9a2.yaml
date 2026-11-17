@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hpde9a2
+  name: NVS_ENZ_hPDE9A2
+  description: NVS_ENZ_hPDE9A2 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PDE9A
+  gene: hgnc:8795
+  gene_symbol: PDE9A
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2295
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:664
+  - aeid:2295
+  method_type: in chemico

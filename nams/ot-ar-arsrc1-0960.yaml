@@ -1,0 +1,42 @@
+model:
+  id: ot-ar-arsrc1-0960
+  name: OT_AR_ARSRC1_0960
+  description: OT_AR_ARSRC1_0960 is a cell-based, single-readout assay that uses HEK293T,
+    a human kidney cell line, with measurements taken at 16 hours after chemical dosing in
+    a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: AR
+  gene: hgnc:644
+  gene_symbol: AR
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SRC
+  gene: hgnc:11283
+  gene_symbol: SRC
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/741
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:292
+  - aeid:741
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney
+  aops:
+  - aop:23
+  key_events:
+  - aop.events:25

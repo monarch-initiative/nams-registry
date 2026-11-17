@@ -1,0 +1,27 @@
+model:
+  id: nvs-or-hfkbp12
+  name: NVS_OR_hFKBP12
+  description: NVS_OR_hFKBP12 is a biochemical, single-readout assay that uses extracted gene-proteins
+    from E. coli in a cell-free assay. Measurements were taken 0.75 hour after chemical dosing
+    in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: FKBP1A
+  gene: hgnc:3711
+  gene_symbol: FKBP1A
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/729
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:280
+  - aeid:729
+  method_type: in chemico

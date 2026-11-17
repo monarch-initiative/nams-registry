@@ -1,0 +1,28 @@
+model:
+  id: erf-tw-enz-hpde3a
+  name: ERF_TW_ENZ_hPDE3A
+  description: ERF_TW_ENZ_hPDE3A is a biochemical, single-readout assay that uses extracted
+    gene-proteins from human recombinant insect Sf9 cells in a cell-free assay. Measurements
+    were taken 0.5 hour after chemical dosing in a 96-well plate. See PDE3A Human Phosphodiesterase
+    Enzymatic LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PDE3A
+  gene: hgnc:8778
+  gene_symbol: PDE3A
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3279
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1023
+  - aeid:3279
+  method_type: in chemico

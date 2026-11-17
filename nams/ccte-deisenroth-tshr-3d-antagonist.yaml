@@ -1,0 +1,31 @@
+model:
+  id: ccte-deisenroth-tshr-3d-antagonist
+  name: CCTE_Deisenroth_TSHR_3D_Antagonist
+  description: CCTE_Deisenroth_TSHR_3D_Antagonist is a cell-based, single-readout assay that
+    uses human primary thyrocytes. Measurements were taken 144 hours after repeated chemical
+    dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TSHR
+  gene: hgnc:12373
+  gene_symbol: TSHR
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3250
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3251
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:922
+  - aeid:3250
+  - aeid:3251
+  method_type: in vitro
+  organs:
+  - Thyroid gland

@@ -1,0 +1,43 @@
+model:
+  id: iuf-npc1
+  name: IUF_NPC1
+  description: IUF_NPC1 is a cell-based, multiplexed assay that uses hNPC, a human primary
+    neural progenitor cells, with measurements taken at 72 hours after chemical dosing in
+    a 96-well plate. Human neural progenitor cells (hNPC) are generated from human fetal brain
+    cortex at gestational week (GW) 16-19. Grown in suspension culture and under proliferative
+    conditions (proliferation media and growth factors), these cells represent neural progenitor
+    cell proliferation. In the NPC1 assay, hNPC's are exposed to the test compound for 72h.
+    Cell proliferation is assessed as an increase in sphere area using automated phase contrast
+    imaging and as incorporation of Bromodeoxyuridine (BrdU) during DNA synthesis using a
+    luminescence-based cell proliferation ELISA. In parallel, the cell viability is assessed
+    using an alamar blue viability assay and the cytotoxicity using a lactate dehydrogenase
+    dependent membrane integrity assay.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2771
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2773
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2775
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3087
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:846
+  - aeid:2771
+  - aeid:2773
+  - aeid:2775
+  - aeid:3087
+  method_type: in vitro
+  cell_lines:
+  - neural progenitor cell
+  organs:
+  - Brain
+  aops:
+  - aop:220
+  - aop:263
+  key_events:
+  - aop.events:1394
+  - aop.events:1821

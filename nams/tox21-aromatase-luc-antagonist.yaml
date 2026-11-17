@@ -1,0 +1,43 @@
+model:
+  id: tox21-aromatase-luc-antagonist
+  name: TOX21_Aromatase_LUC_Antagonist
+  description: TOX21_Aromatase_LUC_Antagonist is a cell-based, single-readout assay that uses
+    MCF-7, a human breast cell line, with measurements taken at 24 hours after chemical dosing
+    in a 1536-well plate. See tox21-aromatase-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP19A1
+  gene: hgnc:2594
+  gene_symbol: CYP19A1
+  measurement: inducer
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/767
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/768
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:314
+  - aeid:767
+  - aeid:768
+  method_type: in vitro
+  cell_lines:
+  - MCF-7
+  organs:
+  - Breast
+  aops:
+  - aop:25
+  - aop:263
+  key_events:
+  - aop.events:36
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:314

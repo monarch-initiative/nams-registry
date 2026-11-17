@@ -1,0 +1,39 @@
+model:
+  id: tox21-rar-luc-antagonist
+  name: TOX21_RAR_LUC_Antagonist
+  description: TOX21_RAR_LUC_Antagonist is a cell-based, single-readout assay that uses C3H10T1/2,
+    a mouse sarcoma cell line, with measurements taken at 6 hours after chemical dosing in
+    a 1536-well plate. See tox21-rar-antagonist-p2.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10090
+  name: Mus musculus
+measured_targets:
+- name: RARA
+  gene: hgnc:9864
+  gene_symbol: RARA
+  measurement: antagonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1839
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1840
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:450
+  - aeid:1839
+  - aeid:1840
+  method_type: in vitro
+  cell_lines:
+  - C3H/10T1/2 clone 8
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:450

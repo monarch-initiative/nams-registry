@@ -1,0 +1,28 @@
+model:
+  id: erf-fr-enz-hraf1
+  name: ERF_FR_ENZ_hRAF1
+  description: ERF_FR_ENZ_hRAF1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.25 hour after chemical dosing
+    in a 96-well plate. See c-Raf (Raf-1) Human TKL Kinase Enzymatic HTRF Assay [Km ATP],
+    Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: RAF1
+  gene: hgnc:9829
+  gene_symbol: RAF1
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2617
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:724
+  - aeid:2617
+  method_type: in chemico

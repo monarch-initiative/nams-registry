@@ -1,0 +1,39 @@
+model:
+  id: ccte-deisenroth-aime-384well
+  name: CCTE_Deisenroth_AIME_384WELL
+  description: CCTE_Deisenroth_AIME_384WELL (AIME metabolism assay) is a cell-based, single-readout
+    assay that uses VM7Luc4E2, a human mammary gland/breast cell line, with measurements taken
+    at 24 hour after chemical dosing in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR1
+  gene: hgnc:3467
+  gene_symbol: ESR1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2488
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2489
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2490
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2491
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2492
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:685
+  - aeid:2488
+  - aeid:2489
+  - aeid:2490
+  - aeid:2491
+  - aeid:2492
+  method_type: in vitro
+  cell_lines:
+  - VM7Luc4E2
+  organs:
+  - Breast

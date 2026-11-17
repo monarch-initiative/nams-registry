@@ -1,0 +1,45 @@
+model:
+  id: tox21-esre-bla-agonist
+  name: TOX21_ESRE_BLA_Agonist
+  description: TOX21_ESRE_BLA_Agonist is a cell-based, single-readout assay that uses HeLa,
+    a human cervix cell line, with measurements taken at 24 hours after chemical dosing in
+    a 1536-well plate. See tox21-esre-bla-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ATF6
+  gene: hgnc:791
+  gene_symbol: ATF6
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1340
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1341
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1342
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1343
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:406
+  - aeid:1340
+  - aeid:1341
+  - aeid:1342
+  - aeid:1343
+  method_type: in vitro
+  cell_lines:
+  - HeLa
+  organs:
+  - Uterine cervix
+  aops:
+  - aop:263
+  key_events:
+  - aop.events:1771
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:406

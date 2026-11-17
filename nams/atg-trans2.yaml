@@ -1,0 +1,238 @@
+model:
+  id: atg-trans2
+  name: ATG_TRANS2
+  description: ATG_TRANS2 is a cell-based, multiplexed-readout assay that uses HepG2, a human
+    liver cell line, with measurements taken at 24 hours after chemical dosing in a 24-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ESR2
+  gene: hgnc:3468
+  gene_symbol: ESR2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: ESRRB
+  gene: hgnc:3473
+  gene_symbol: ESRRB
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: HNF4G
+  gene: hgnc:5026
+  gene_symbol: HNF4G
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR0B1
+  gene: hgnc:7960
+  gene_symbol: NR0B1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR0B2
+  gene: hgnc:7961
+  gene_symbol: NR0B2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1D1
+  gene: hgnc:7962
+  gene_symbol: NR1D1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR1D2
+  gene: hgnc:7963
+  gene_symbol: NR1D2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2C1
+  gene: hgnc:7971
+  gene_symbol: NR2C1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2C2
+  gene: hgnc:7972
+  gene_symbol: NR2C2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2E1
+  gene: hgnc:7973
+  gene_symbol: NR2E1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2E3
+  gene: hgnc:7974
+  gene_symbol: NR2E3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2F1
+  gene: hgnc:7975
+  gene_symbol: NR2F1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2F2
+  gene: hgnc:7976
+  gene_symbol: NR2F2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR2F6
+  gene: hgnc:7977
+  gene_symbol: NR2F6
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR3C2
+  gene: hgnc:7979
+  gene_symbol: NR3C2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR4A1
+  gene: hgnc:7980
+  gene_symbol: NR4A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR4A3
+  gene: hgnc:7982
+  gene_symbol: NR4A3
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR5A1
+  gene: hgnc:7983
+  gene_symbol: NR5A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR5A2
+  gene: hgnc:7984
+  gene_symbol: NR5A2
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: NR6A1
+  gene: hgnc:7985
+  gene_symbol: NR6A1
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: PGR
+  gene: hgnc:8910
+  gene_symbol: PGR
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RORA
+  gene: hgnc:10258
+  gene_symbol: RORA
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: RXRG
+  gene: hgnc:10479
+  gene_symbol: RXRG
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: THRB
+  gene: hgnc:11799
+  gene_symbol: THRB
+  measurement: reporter gene
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1348
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1349
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1350
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1351
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1352
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1353
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1354
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1355
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1356
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1357
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1358
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1359
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1360
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1361
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1362
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1363
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1364
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1365
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1366
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1367
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1368
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1369
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1370
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1371
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:408
+  - aeid:1348
+  - aeid:1349
+  - aeid:1350
+  - aeid:1351
+  - aeid:1352
+  - aeid:1353
+  - aeid:1354
+  - aeid:1355
+  - aeid:1356
+  - aeid:1357
+  - aeid:1358
+  - aeid:1359
+  - aeid:1360
+  - aeid:1361
+  - aeid:1362
+  - aeid:1363
+  - aeid:1364
+  - aeid:1365
+  - aeid:1366
+  - aeid:1367
+  - aeid:1368
+  - aeid:1369
+  - aeid:1370
+  - aeid:1371
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver

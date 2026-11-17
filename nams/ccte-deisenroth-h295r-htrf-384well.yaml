@@ -1,0 +1,27 @@
+model:
+  id: ccte-deisenroth-h295r-htrf-384well
+  name: CCTE_Deisenroth_H295R-HTRF_384WELL
+  description: CCTE_Deisenroth_H295R-HTRF_384WELL assay is a cell-based, multiplex-readout
+    assay that uses H295R, a human adrenocortical carcinoma cell line, with measurements taken
+    at 48 hours after chemical dosing in a 384-well microplate
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3161
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3162
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3163
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:879
+  - aeid:3161
+  - aeid:3162
+  - aeid:3163
+  method_type: in vitro
+  cell_lines:
+  - NCI-H295R
+  organs:
+  - Adrenal gland

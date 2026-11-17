@@ -1,0 +1,25 @@
+model:
+  id: nvs-nr-ber
+  name: NVS_NR_bER
+  description: NVS_NR_bER is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Bovine uterine membranes in a tissue-based cell-free assay. Measurements were taken
+    18 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9913
+  name: Bos taurus
+measured_targets:
+- name: ESR1
+  measurement: binding
+  notes: Entrez 407238 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/708
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:259
+  - aeid:708
+  method_type: in chemico
+  organs:
+  - Uterus

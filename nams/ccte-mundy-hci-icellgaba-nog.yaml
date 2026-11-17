@@ -1,0 +1,28 @@
+model:
+  id: ccte-mundy-hci-icellgaba-nog
+  name: CCTE_Mundy_HCI_iCellGABA_NOG
+  description: 'CCTE_Mundy_HCI_iCellGABA_NOG is a multiplexed, cell-based-readout assay that
+    uses iCell GABANeurons from FUJIFILM Cellular Dynamics, Inc. (FCDI), human GABAergic enriched
+    neurons derived from induced pluripotent stem (iPS) cells, with measurements taken at
+    50.33 hours after chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3165
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3166
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3167
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:880
+  - aeid:3165
+  - aeid:3166
+  - aeid:3167
+  method_type: in vitro
+  cell_lines:
+  - iCell GABANeurons
+  organs:
+  - Nervous system

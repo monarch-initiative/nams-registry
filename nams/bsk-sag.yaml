@@ -1,0 +1,92 @@
+model:
+  id: bsk-sag
+  name: BSK_SAg
+  description: BSK_SAg is a cell-based, multiplexed-readout assay that uses umbilical vein
+    endothelium and peripheral blood mononuclear cells, a human vascular primary cell co-culture,
+    with measurements taken at 24 hours after chemical dosing in a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CCL2
+  gene: hgnc:10618
+  gene_symbol: CCL2
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD38
+  gene: hgnc:1667
+  gene_symbol: CD38
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD40
+  gene: hgnc:11919
+  gene_symbol: CD40
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CD69
+  gene: hgnc:1694
+  gene_symbol: CD69
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL8
+  gene: hgnc:6025
+  gene_symbol: CXCL8
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: CXCL9
+  gene: hgnc:7098
+  gene_symbol: CXCL9
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SELE
+  gene: hgnc:10718
+  gene_symbol: SELE
+  measurement: signaling
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/300
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/302
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/304
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/306
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/308
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/310
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/312
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/314
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/316
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/318
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:14
+  - aeid:300
+  - aeid:302
+  - aeid:304
+  - aeid:306
+  - aeid:308
+  - aeid:310
+  - aeid:312
+  - aeid:314
+  - aeid:316
+  - aeid:318
+  method_type: in vitro
+  cell_lines:
+  - endothelial cell of umbilical vein
+  - peripheral blood mononuclear cell
+  organs:
+  - Vasculature

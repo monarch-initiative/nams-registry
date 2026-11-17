@@ -1,0 +1,27 @@
+model:
+  id: tox21-kiss1r-hek293-wt
+  name: TOX21_KISS1R_HEK293_WT
+  description: TOX21_KISS1R_HEK293_WT is a cell-based, single-readout assay that uses wild-type
+    HEK293, a human kidney cell line, with measurements taken at 1.25 hours after chemical
+    dosing in a 1536-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3338
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1070
+  - aeid:3338
+  method_type: in vitro
+  cell_lines:
+  - HEK293
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1070

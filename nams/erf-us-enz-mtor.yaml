@@ -1,0 +1,28 @@
+model:
+  id: erf-us-enz-mtor
+  name: ERF_US_ENZ_MTOR
+  description: ERF_US_ENZ_MTOR is a biochemical, single -readout assay that uses extracted
+    gene-proteins from human recombinant cells in a cell-free assay. Measurements were taken
+    1 hour after chemical dosing in a 96-well plate. See mTOR Human PIKK Kinase KINOMEscan
+    KdELECT Binding LeadHunter Assay - US.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: MTOR
+  gene: hgnc:3942
+  gene_symbol: MTOR
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3272
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:939
+  - aeid:3272
+  method_type: in chemico

@@ -1,0 +1,30 @@
+model:
+  id: erf-us-nr-hnfe2l2
+  name: ERF_US_NR_hNFE2L2
+  description: ERF_US_NR_hNFE2L2 is a cell-based, single-readout assay that uses extracted
+    gene-proteins in a cell-line assay. Measurements were taken 6 hours after chemical dosing
+    in a 384-well plate. See Keap1-Nrf2 Human Transcription Factor Cell Based Agonist Nuclear
+    Translocation Assay, DiscoverX.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: NFE2L2
+  gene: hgnc:7782
+  gene_symbol: NFE2L2
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3169
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:882
+  - aeid:3169
+  method_type: in vitro
+  cell_lines:
+  - U2OS

@@ -1,0 +1,53 @@
+model:
+  id: tox21-rt-hek293
+  name: TOX21_RT_HEK293
+  description: TOX21_RT_HEK293 is a cell-based, single-readout assay that uses HEK293, a human
+    kidney cell line, with measurements taken at 24 hours after chemical dosing in a 1536-well
+    plate. See tox21-rt-viability-hek293-p1.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2074
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2075
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2077
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2078
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2080
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2082
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2084
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2086
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2088
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2089
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2091
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2093
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:586
+  - aeid:2074
+  - aeid:2075
+  - aeid:2077
+  - aeid:2078
+  - aeid:2080
+  - aeid:2082
+  - aeid:2084
+  - aeid:2086
+  - aeid:2088
+  - aeid:2089
+  - aeid:2091
+  - aeid:2093
+  method_type: in vitro
+  cell_lines:
+  - HEK293
+  organs:
+  - Kidney
+  aops:
+  - aop:220
+  key_events:
+  - aop.events:1394
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:586

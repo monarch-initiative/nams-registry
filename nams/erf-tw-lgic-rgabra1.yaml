@@ -1,0 +1,26 @@
+model:
+  id: erf-tw-lgic-rgabra1
+  name: ERF_TW_LGIC_rGABRA1
+  description: ERF_TW_LGIC_rGABRA1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins from rat whole brains (except cerebellum) in a tissue-based cell-free assay.
+    Measurements were taken 1 hour after chemical dosing in a 96-well plate. See GABAA (Non-Selective)
+    Rat Ion Channel [3H]- Flunitrazepam Binding Agonist Radioligand LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: Gabra1
+  measurement: binding
+  notes: Entrez 29705 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3292
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1036
+  - aeid:3292
+  method_type: in chemico
+  organs:
+  - Brain

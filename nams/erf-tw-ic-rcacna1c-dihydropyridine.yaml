@@ -1,0 +1,30 @@
+model:
+  id: erf-tw-ic-rcacna1c-dihydropyridine
+  name: ERF_TW_IC_rCACNA1C_Dihydropyridine
+  description: ERF_TW_IC_rCACNA1C_Dihydropyridine is a biochemical, single-readout assay that
+    uses extracted gene-proteins from rat cerebral cortex in a tissue-based cell-free assay.
+    Measurements were taken 1.3 hour after chemical dosing in a 96-well plate. See Cav1.2
+    (L-type) Rat Calcium Ion Channel Binding (Dihydropyridine Site) LeadHunter Assay - TW.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+measured_targets:
+- name: CACNA1C
+  gene: hgnc:1390
+  gene_symbol: CACNA1C
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3285
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:1029
+  - aeid:3285
+  method_type: in chemico
+  organs:
+  - Brain

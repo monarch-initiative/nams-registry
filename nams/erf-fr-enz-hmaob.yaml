@@ -1,0 +1,27 @@
+model:
+  id: erf-fr-enz-hmaob
+  name: ERF_FR_ENZ_hMAOB
+  description: ERF_FR_ENZ_hMAOB is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 1 hour after chemical dosing
+    in a 96-well plate. See Monoamine Oxidase B (MAO-B) Human Enzymatic Assay, Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: MAOB
+  gene: hgnc:6834
+  gene_symbol: MAOB
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2591
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:800
+  - aeid:2591
+  method_type: in chemico

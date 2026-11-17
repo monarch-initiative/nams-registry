@@ -1,0 +1,35 @@
+model:
+  id: atg-xtt-cytotoxicity
+  name: ATG_XTT_Cytotoxicity
+  description: ATG_XTT_Cytotoxicity is a cell-based, single-readout assay that uses HepG2,
+    a human liver cell line, with measurements taken at 24 hours after chemical dosing in
+    a 24-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1204
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:386
+  - aeid:1204
+  method_type: in vitro
+  cell_lines:
+  - Hep-G2
+  organs:
+  - Liver
+  aops:
+  - aop:12
+  - aop:220
+  - aop:212
+  - aop:13
+  - aop:17
+  - aop:38
+  - aop:48
+  key_events:
+  - aop.events:55
+  - aop.events:1393
+  - aop.events:1505

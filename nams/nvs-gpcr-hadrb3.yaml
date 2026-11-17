@@ -1,0 +1,27 @@
+model:
+  id: nvs-gpcr-hadrb3
+  name: NVS_GPCR_hAdrb3
+  description: NVS_GPCR_hAdrb3 is a biochemical, single-readout assay that uses extracted
+    gene-proteins from SK-N-MC pretreated with isoproteronol and 8-bromo-cAMP in a cell-free
+    assay. Measurements were taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: ADRB3
+  gene: hgnc:288
+  gene_symbol: ADRB3
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/632
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:183
+  - aeid:632
+  method_type: in chemico

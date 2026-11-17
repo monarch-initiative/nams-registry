@@ -1,0 +1,28 @@
+model:
+  id: erf-fr-enz-hflt1
+  name: ERF_FR_ENZ_hFLT1
+  description: ERF_FR_ENZ_hFLT1 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.25 hour after chemical dosing
+    in a 96-well plate. See Flt-1 (VEGFR1) Human RTK Kinase Enzymatic LANCE Assay [Km ATP],
+    Cerep.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: FLT1
+  gene: hgnc:3763
+  gene_symbol: FLT1
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2580
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:792
+  - aeid:2580
+  method_type: in chemico

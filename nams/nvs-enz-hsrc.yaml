@@ -1,0 +1,27 @@
+model:
+  id: nvs-enz-hsrc
+  name: NVS_ENZ_hSRC
+  description: NVS_ENZ_hSRC is a biochemical, single-readout assay that uses extracted gene-proteins
+    in a cell-free assay. Measurements were taken 1 hour after chemical dosing in a 384-well
+    plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: SRC
+  gene: hgnc:11283
+  gene_symbol: SRC
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/567
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:139
+  - aeid:567
+  method_type: in chemico

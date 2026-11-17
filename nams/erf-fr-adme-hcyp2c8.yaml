@@ -1,0 +1,29 @@
+model:
+  id: erf-fr-adme-hcyp2c8
+  name: ERF_FR_ADME_hCYP2C8
+  description: ERF_FR_ADME_hCYP2C8 is a biochemical, single-readout assay that uses extracted
+    gene-proteins in a cell-free assay. Measurements were taken 0.16 hour after chemical dosing
+    in a 96-well plate. See CYP2C8 inhibition (HLM, amodiaquine substrate).
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: CYP2C8
+  gene: hgnc:2622
+  gene_symbol: CYP2C8
+  measurement: enzymatic activity
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2553
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:821
+  - aeid:2553
+  method_type: in chemico
+  organs:
+  - Liver

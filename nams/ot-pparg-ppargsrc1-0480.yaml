@@ -1,0 +1,37 @@
+model:
+  id: ot-pparg-ppargsrc1-0480
+  name: OT_PPARg_PPARgSRC1_0480
+  description: OT_PPARg_PPARgSRC1_0480 is a cell-based assay that uses HEK293T, a human kidney
+    cell line, with measurements taken at 8 hours after chemical dosing in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: PPARG
+  gene: hgnc:9236
+  gene_symbol: PPARG
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+- name: SRC
+  gene: hgnc:11283
+  gene_symbol: SRC
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/757
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:308
+  - aeid:757
+  method_type: in vitro
+  cell_lines:
+  - HEK293T
+  organs:
+  - Kidney

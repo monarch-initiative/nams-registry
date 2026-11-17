@@ -1,0 +1,44 @@
+model:
+  id: tanguay-zf-120hpf
+  name: Tanguay_ZF_120hpf
+  description: Tanguay_ZF_120hpf is a whole embryo, multiplexed endpoint assay using zebrafish
+    larvae exposed for 120 hours post fertilization on a 96-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:7955
+  name: Danio rerio
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3194
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3195
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3196
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3197
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3198
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3199
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3200
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3201
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3202
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3203
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3204
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3205
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3206
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3207
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:907
+  - aeid:3194
+  - aeid:3195
+  - aeid:3196
+  - aeid:3197
+  - aeid:3198
+  - aeid:3199
+  - aeid:3200
+  - aeid:3201
+  - aeid:3202
+  - aeid:3203
+  - aeid:3204
+  - aeid:3205
+  - aeid:3206
+  - aeid:3207
+  method_type: in vivo

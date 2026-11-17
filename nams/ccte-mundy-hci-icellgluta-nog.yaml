@@ -1,0 +1,28 @@
+model:
+  id: ccte-mundy-hci-icellgluta-nog
+  name: CCTE_Mundy_HCI_iCellGluta_NOG
+  description: 'CCTE_Mundy_HCI_iCellGluta_NOG is a multiplexed, cell-based-readout assay that
+    uses iCell GlutaNeurons from FUJIFILM Cellular Dynamics, Inc. (FCDI), human glutamatergic
+    enriched neurons derived from induced pluripotent stem (iPS) cells, with measurements
+    taken at 50.33 hours after chemical dosing in a microplate: 96-well plate.'
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3068
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3069
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/3070
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:867
+  - aeid:3068
+  - aeid:3069
+  - aeid:3070
+  method_type: in vitro
+  cell_lines:
+  - iCell GlutaNeurons
+  organs:
+  - Nervous system

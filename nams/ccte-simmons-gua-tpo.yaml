@@ -1,0 +1,30 @@
+model:
+  id: ccte-simmons-gua-tpo
+  name: CCTE_Simmons_GUA_TPO
+  description: CCTE_Simmons_GUA_TPO is a biochemical, single-readout assay that uses microsomes
+    from porcine thyroid gland in a tissue-based cell-free assay. Measurements were taken
+    0.5 hour after chemical dosing in a 384-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9823
+  name: Sus scrofa
+measured_targets:
+- name: TPO
+  measurement: binding
+  notes: Entrez 445522 is not an approved human gene in HGNC, so no HGNC id.
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/1824
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:444
+  - aeid:1824
+  method_type: in chemico
+  organs:
+  - Thyroid gland
+  aops:
+  - aop:42
+  - aop:159
+  key_events:
+  - aop.events:279

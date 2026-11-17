@@ -1,0 +1,45 @@
+model:
+  id: tox21-trb-bla-agonist-followup
+  name: TOX21_TRB_BLA_Agonist_Followup
+  description: The GeneBLAzer TRb-UAS-bla HEK293T assay kit for human TRb (ThermoFisherScientific
+    Catalog No. K1684) was used as a secondary assay for specificity (TRb-bla). This assay
+    contained the ligand-binding domain (LBD) of the human TRb fused to the DNA-binding domain
+    of GAL4 stably integrated in the GeneBLAzer UAS-bla HEK293Tcell line. The reporter gene,
+    b-lactamase, is under the transcriptional control of a UAS that binds the GAL4 DNA-binding
+    domain. A cell viability assay was run in parallel for these cells as well using the CellTiter-Glo
+    viability assay kit.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: THRB
+  gene: hgnc:11799
+  gene_symbol: THRB
+  measurement: agonist
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2234
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2235
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2236
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/2237
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:648
+  - aeid:2234
+  - aeid:2235
+  - aeid:2236
+  - aeid:2237
+  method_type: in vitro
+  cell_lines:
+  - TRb-UAS-bla HEK293T
+  organs:
+  - Kidney
+- resource: tox21
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:648

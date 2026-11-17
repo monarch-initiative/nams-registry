@@ -1,0 +1,29 @@
+model:
+  id: nvs-mp-hpbr
+  name: NVS_MP_hPBR
+  description: NVS_MP_hPBR is a biochemical, single-readout assay that uses extracted gene-proteins
+    from Human colonic cell membranes in a tissue-based cell-free assay. Measurements were
+    taken 1 hour after chemical dosing in a 48-well plate.
+  description_scope: METHOD
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+measured_targets:
+- name: TSPO
+  gene: hgnc:1158
+  gene_symbol: TSPO
+  measurement: binding
+  organism:
+    id: NCBITaxon:9606
+    name: Homo sapiens
+source_resources:
+- resource: toxcast
+  source_urls:
+  - https://comptox.epa.gov/ctx-api/bioactivity/assay/search/by-aeid/706
+  accessed_on: '2026-11-17'
+  source_ids:
+  - aid:257
+  - aeid:706
+  method_type: in chemico
+  organs:
+  - Intestine
