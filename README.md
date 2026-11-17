@@ -40,7 +40,7 @@ A change is made to a record, to the schema, or to both:
   through DisMech curation records whether DisMech's graph represents it
   in `dismech_status`.
 - **The schema**, `src/nams_registry/schema/nams_registry.yaml`, sets
-  what every record can hold. NAM records have a separate schema,
+  what every resource record can hold. NAM records have a separate schema,
   `nam_records.yaml`, which imports NAMO; the two schemas do not import
   each other. NAMO's schema is kept only in the
   [namo repository](https://github.com/monarch-initiative/namo), never here:
@@ -51,21 +51,20 @@ A change is made to a record, to the schema, or to both:
   Where a NAM needs a property NAMO lacks, it is added to
   `nam_records.yaml` and proposed to NAMO at the same time (see below).
 
-In practice the two tend to change together, because it is the content
-that drives the schema. Reviewing a resource often turns up something
-the registry has no field for, and the new field is added in the same
-pull request as the record that needs it. When that happens:
+In practice records and the schema change together, because it is the
+content that drives the schema. Reviewing a resource or curating a NAM
+usually turns up something the schema has no field for, and the schema
+change lands in the same pull request as the records that need it. When
+that happens:
 
+- Open an issue labelled `schema-change` first, saying what the records
+  need and why. The pull request that makes the change closes it.
 - Make the schema change in its own commit, ahead of the record changes
-  that use it, since it affects every resource. Include the files it
-  regenerates: `just test` regenerates the Python datamodel, and
+  that use it, since it affects every record of that kind. Include the
+  files it regenerates: `just test` regenerates the Python datamodel, and
   `just gen-doc` the copy in `docs/schema/`.
-- Refer to the resource's review issue in the record commits and in the
-  pull request.
-
-A schema change that needs discussion before anyone builds on it, or
-that no single resource prompted, can have its own issue, labelled
-`schema-change`.
+- Refer to the issue the records came from, such as a resource's review
+  issue, in the record commits and in the pull request.
 
 A property a NAM record needs but NAMO lacks is added here and proposed to
 NAMO at the same time. The goal is for the NAMO schema to cover every
@@ -116,6 +115,25 @@ and read terms and references.
 * [project/](project/) - project files (these files are auto-generated, do not edit)
 * [resources/](resources/) - one file per resource in the registry (edit these)
 * [nams/](nams/) - one file per NAM extracted from the resources (edit these)
+* [scripts/](scripts/) - scripts that fetch content from resources
+  (`fetch_*.py`) and write NAM records from it (`write_*.py`), to be
+  listed in the resource's `supporting_scripts`. Also `link_namo.py`,
+  which `just namo` runs.
+* [projects/](projects/) - project pages for curation work that spans many
+  records, such as the Complement-ARIE disease papers, with their review
+  logs
+* [research/](research/) - deep-research reports, kept as provenance for
+  the records they informed; a report is a lead, never a source (see its
+  [README](research/README.md))
+* [cache/](cache/) - ontology term lookups that `just test` checks NAM
+  records against offline; `just validate-terms` adds to it (commit what
+  it adds)
+* [references_cache/](references_cache/) - the cited references, one file
+  each, that `just test` checks citations against offline;
+  `just validate-references` and `just fetch-reference` add to it (commit
+  what they add)
+* [conf/](conf/) - `oak_config.yaml`, which says where each ontology is
+  looked up when the term cache is filled
 * [src/](src/) - source files (edit these)
   * [nams_registry](src/nams_registry)
     * [schema/](src/nams_registry/schema) -- LinkML schema
