@@ -91,6 +91,9 @@ skip = [
   "src/nams_registry/datamodel/nam_resources_pydantic.py",
   "src/nams_registry/datamodel/nam_resources.py",
   "references_cache/*",
+  # EPA's CTX annotations, verbatim: OT is an assay source, and EPA's own
+  # misspellings stay as EPA wrote them.
+  "tests/data/toxcast/*",
 ]
 
 # Domain words codespell would otherwise flag, one per line.

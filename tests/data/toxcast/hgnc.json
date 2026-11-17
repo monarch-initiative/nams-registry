@@ -1,0 +1,22 @@
+{
+ "2099": {
+  "hgnc_id": "hgnc:3467",
+  "symbol": "ESR1"
+ },
+ "2100": {
+  "hgnc_id": "hgnc:3468",
+  "symbol": "ESR2"
+ },
+ "367": {
+  "hgnc_id": "hgnc:644",
+  "symbol": "AR"
+ },
+ "7068": {
+  "hgnc_id": "hgnc:11799",
+  "symbol": "THRB"
+ },
+ "7276": {
+  "hgnc_id": "hgnc:12405",
+  "symbol": "TTR"
+ }
+}
