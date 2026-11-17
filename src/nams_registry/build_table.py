@@ -3,8 +3,8 @@
 The page has two views: NAM records (nams/*.yaml), which it opens on, and
 resources (resources/*.yaml). The current view's name is the heading above
 the table, and a "Go to" link at the top right switches to the other. Each
-view lists one row per record; clicking a row shows the rest of the record's
-details below it. The data is embedded in the page, so it needs no server.
+view lists one row per record, 25 to a page; clicking a row shows the rest of
+the record's details below it. The data is embedded in the page, so it needs no server.
 `just build-table` runs this, as does `just gen-doc`, before MkDocs
 publishes the page at /resources/.
 
@@ -202,6 +202,18 @@ PAGE = """<!doctype html>
   }
   td:nth-child(2) { min-width: 16em; }
   .count { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+  .pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; }
+  .pager.top { margin: 0 0 10px; }
+  .pager.bottom { margin: 16px 0 0; }
+  .pager button {
+    font: inherit; font-size: 14px; color: var(--accent); background: var(--surface); cursor: pointer;
+    border: 1px solid var(--line); border-radius: 8px; padding: 5px 11px; min-width: 2.4em;
+  }
+  .pager button:disabled { color: var(--muted); cursor: default; opacity: .6; }
+  .pager button[aria-current="page"] {
+    background: var(--tab-on-bg); color: var(--tab-on-fg); border-color: var(--tab-on-bg); cursor: default; opacity: 1;
+  }
+  .pager .gap { color: var(--muted); padding: 0 2px; }
   .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
   table { width: 100%; border-collapse: collapse; }
   th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -266,12 +278,14 @@ PAGE = """<!doctype html>
     <input id="q" type="search" aria-label="Filter">
   </div>
   <p class="count" id="count"></p>
+  <nav class="pager top" aria-label="Pages" hidden></nav>
   <div class="table-wrap">
   <table>
     <thead><tr id="headers"></tr><tr class="filters" id="filters"></tr></thead>
     <tbody id="rows"></tbody>
   </table>
   </div>
+  <nav class="pager bottom" aria-label="Pages, below the table" hidden></nav>
 </main>
 <footer><p>NAM and NAM-adjacent sources collected in support of a NAMs landscape analysis, and the NAMs found in them.</p></footer>
 <script>
@@ -471,6 +485,11 @@ const RANK = {
 };
 
 let tab = null, sortField = "name", sortDir = 1;
+// Rows shown per page, and the page shown.
+const PAGE_SIZE = 25;
+let page = 1;
+// A new search, filter or sort starts again from the first page.
+const rerun = () => { page = 1; render(); };
 // Each tab's search, filters and sort, kept while another tab is open.
 const STATE = {};
 const tabRows = t => DATA.filter(r => t[2].includes(r.kind));
@@ -530,6 +549,34 @@ function searchText(r) {
     .filter(Boolean).join(" ").toLowerCase();
 }
 
+// The page numbers to offer: every page when there are few, otherwise the
+// first, the last, and the current page with its neighbours; null marks a gap.
+function pageList(pages) {
+  if (pages <= 7) return Array.from({ length: pages }, (_, i) => i + 1);
+  let lo = Math.max(2, Math.min(page - 1, pages - 4));
+  let hi = Math.min(pages - 1, Math.max(page + 1, 5));
+  // A gap of a single page shows that page instead.
+  if (lo === 3) lo = 2;
+  if (hi === pages - 2) hi = pages - 1;
+  const list = [1];
+  if (lo > 2) list.push(null);
+  for (let p = lo; p <= hi; p++) list.push(p);
+  if (hi < pages - 1) list.push(null);
+  list.push(pages);
+  return list;
+}
+
+// Previous, the page numbers, and Next. Each button carries the page it goes to.
+function pager(pages) {
+  const btn = (to, label, aria, extra = "") =>
+    `<button type="button" data-page="${to}" aria-label="${aria}"${extra}>${label}</button>`;
+  return btn(page - 1, "&larr; Previous", "Previous page", page <= 1 ? " disabled" : "") +
+    pageList(pages).map(p => p === null
+      ? `<span class="gap" aria-hidden="true">&hellip;</span>`
+      : btn(p, p, `Page ${p}`, p === page ? ` aria-current="page"` : "")).join("") +
+    btn(page + 1, "Next &rarr;", "Next page", page >= pages ? " disabled" : "");
+}
+
 function render() {
   const all = tabRows(tab);
   const term = q.value.trim().toLowerCase();
@@ -539,10 +586,22 @@ function render() {
     b.closest("th").setAttribute("aria-sort", on ? (sortDir > 0 ? "ascending" : "descending") : "none");
     b.querySelector(".arrow").textContent = on ? (sortDir > 0 ? "\\u25B2" : "\\u25BC") : "";
   });
+  // One page of the matching rows at a time.
+  const pages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
+  page = Math.min(Math.max(page, 1), pages);
+  const start = (page - 1) * PAGE_SIZE, end = Math.min(start + PAGE_SIZE, shown.length);
   const [one, many] = NOUNS[tab[0]];
-  document.getElementById("count").textContent = `${shown.length} of ${all.length} ${all.length === 1 ? one : many}`;
+  const noun = shown.length === 1 ? one : many;
+  document.getElementById("count").textContent = (shown.length
+    ? `${start + 1}\\u2013${end} of ${shown.length} ${noun}`
+    : `0 ${many}`) + (shown.length < all.length ? ` (filtered from ${all.length})` : "");
+  const pagerHtml = pager(pages);
+  document.querySelectorAll("nav.pager").forEach(nav => {
+    nav.hidden = pages < 2;
+    nav.innerHTML = pagerHtml;
+  });
   const columns = tab[3];
-  document.getElementById("rows").innerHTML = shown.map((r, i) => `
+  document.getElementById("rows").innerHTML = shown.slice(start, end).map((r, i) => `
     <tr class="summary">
       <td><button class="toggle" aria-expanded="false" aria-controls="d${i}" aria-label="Show details for ${esc(r.name)}"><span class="chev">&#9656;</span></button></td>
       ${columns.map(c => `<td class="col-${c[2]}">${cell(r, c)}</td>`).join("")}
@@ -552,13 +611,13 @@ function render() {
 
 function showTab(key) {
   if (tab) STATE[tab[0]] = {
-    q: q.value, sortField, sortDir,
+    q: q.value, sortField, sortDir, page,
     filters: Object.fromEntries(selects.map(s => [s.dataset.field, s.value])),
   };
   tab = TABS.find(t => t[0] === key) || TABS[0];
-  // A tab opens as it was left; the first time, sorted by name.
-  const state = STATE[tab[0]] || { q: "", sortField: "name", sortDir: 1, filters: {} };
-  ({ sortField, sortDir } = state);
+  // A tab opens as it was left; the first time, sorted by name, on page 1.
+  const state = STATE[tab[0]] || { q: "", sortField: "name", sortDir: 1, page: 1, filters: {} };
+  ({ sortField, sortDir, page } = state);
   q.value = state.q;
   // The current view is the heading; the other is a link to go to it.
   const other = TABS.find(t => t !== tab);
@@ -578,12 +637,12 @@ function showTab(key) {
   selects = [...document.querySelectorAll("#filters select")];
   selects.forEach(el => {
     el.value = state.filters[el.dataset.field] || "";
-    el.addEventListener("input", render);
+    el.addEventListener("input", rerun);
   });
   document.querySelectorAll("button.sort").forEach(b => b.addEventListener("click", () => {
     sortDir = b.dataset.field === sortField ? -sortDir : 1;
     sortField = b.dataset.field;
-    render();
+    rerun();
   }));
   render();
 }
@@ -604,7 +663,15 @@ document.getElementById("rows").addEventListener("click", e => {
   btn.setAttribute("aria-expanded", String(!open));
   d.hidden = open;
 });
-q.addEventListener("input", render);
+q.addEventListener("input", rerun);
+// Going to another page, from either pager, goes back to the top of the table.
+document.querySelectorAll("nav.pager").forEach(nav => nav.addEventListener("click", e => {
+  const b = e.target.closest("button[data-page]");
+  if (!b || b.disabled || b.getAttribute("aria-current")) return;
+  page = Number(b.dataset.page);
+  render();
+  document.getElementById("count").scrollIntoView({ block: "start" });
+}));
 showTab(location.hash.slice(1));
 </script>
 </body>
