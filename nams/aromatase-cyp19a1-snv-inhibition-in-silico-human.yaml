@@ -4,36 +4,35 @@ model:
   name: Aromatase (CYP19A1) zearalenone-inhibition molecular model across reported SNVs
   description: >-
     A structure-based in silico model of human aromatase (CYP19A1) used to
-    predict whether reported sequence variants of the enzyme change its
+    predict whether human sequence variants of the enzyme change its
     susceptibility to inhibition by the mycoestrogen zearalenone (ZEN) and its
-    phase I metabolite alpha-zearalenol. A three-dimensional model of the enzyme
-    is built and the ligands are docked into the active site across 434 reported
-    single nucleotide variants, scoring each variant's predicted inhibitory
-    potential; variants are then prioritised for later experimental work. The
-    output is a prediction, not a measured enzyme activity, and there is no
-    wet-lab confirmation. Recorded in the registry from the primary paper,
-    Perugino et al. 2024 (doi:10.1016/j.tox.2023.153686), in the Toxicology
-    special issue "New approach methodologies: from conceptual development to
-    regulatory application".
+    phase I metabolite alpha-zearalenol. By 3D molecular modelling, the
+    inhibitory potential of ZEN was assessed against some of the 434 CYP19A1
+    single nucleotide variants reported to date, and that of alpha-zearalenol
+    against a subset of those variants with an expected diverse sensitivity to
+    ZEN; each variant's predicted inhibitory potential is scored and variants
+    are prioritised for later experimental work. The output is a prediction, not
+    a measured enzyme activity, and there is no wet-lab confirmation. Recorded in
+    the registry from the primary paper, Perugino et al. 2024
+    (doi:10.1016/j.tox.2023.153686), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
   biological_organization_level: SUBCELLULAR
   spatial_context: >-
-    The three-dimensional structure of a single protein and its ligand-binding
-    site. No cellular, tissue, or organ context is represented, and the enzyme's
-    estrogen-receptor-activation route for ZEN is outside the model.
+    The three-dimensional structure of a single protein, including the site
+    where ZEN and alpha-zearalenol act as inhibitors. No cellular, tissue, or
+    organ context is represented, and the enzyme's estrogen-receptor-activation
+    route for ZEN is outside the model.
   complexity_level: LOW
-  computational_method: >-
-    Three-dimensional (homology/comparative) molecular modelling of the enzyme
-    with ligand docking into the active site.
+  computational_method: 3D molecular modelling.
   prediction_scope: >-
     Predicted inhibitory potential of zearalenone and alpha-zearalenol against
     wild-type and variant aromatase. An in silico prediction with no wet-lab
     confirmation; it does not establish an observed inter-individual difference.
   molecular_target: Human aromatase (CYP19A1)
-  modeling_approach:
-  - comparative/homology modelling
-  - molecular docking
   sequence_variants:
-  - 434 reported CYP19A1 single nucleotide variants
+  - Some of the 434 CYP19A1 single nucleotide variants reported to date (the
+    number actually modelled is not stated in the abstract)
   - T310S (predicted more susceptible to inhibition)
   - D309G (possibly inactive variant)
   - S478F (possibly inactive variant)
@@ -53,7 +52,7 @@ model:
     year: 2024
     url: https://doi.org/10.1016/j.tox.2023.153686
 synonyms:
-- aromatase CYP19A1 zearalenone docking model
+- aromatase CYP19A1 zearalenone inhibition model
 - CYP19A1 SNV zearalenone inhibition in silico model
 species:
 - id: NCBITaxon:9606
@@ -76,10 +75,9 @@ applications:
   - pmid:38036094
 limitations:
 - description: >-
-    The result is an in silico prediction with no wet-lab confirmation. Docked
-    binding and predicted inhibitory potential stand in for measured enzyme
-    activity, so the variant-susceptibility calls are hypotheses, not observed
-    differences.
+    The result is an in silico prediction with no wet-lab confirmation. The
+    predicted inhibitory potential stands in for measured enzyme activity, so
+    the variant-susceptibility calls are hypotheses, not observed differences.
   source_urls:
   - https://doi.org/10.1016/j.tox.2023.153686
   supporting_references:
@@ -110,4 +108,4 @@ dismech_status:
   dismech_pr_id: 17315
   assessed_on: '2026-11-14'
 creation_date: '2026-11-14'
-last_modified_date: '2026-11-14'
+last_modified_date: '2026-11-17'
