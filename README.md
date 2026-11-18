@@ -105,6 +105,14 @@ add to the caches. `conf/oak_config.yaml` says where each ontology is looked
 up. `just search-term`, `just term-info` and `just fetch-reference` help find
 and read terms and references.
 
+A reference is cached with its full text where the paper's licence allows it
+(`fetch_full_text` in `.linkml-reference-validator.yaml`). Open access is
+enforced by the fetcher, not by the curator: a PMC author manuscript is free
+to read but not open-access licensed, and is cached as an abstract. The full
+text is kept because a NAM that no mechanism graph can hold today may be
+linked later, and that linkage will need evidence from the paper's methods
+and results rather than its abstract.
+
 ## Repository Structure
 
 * [docs/](docs/) - mkdocs-managed documentation
