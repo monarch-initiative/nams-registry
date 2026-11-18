@@ -155,6 +155,16 @@ def citations(path: Path) -> Iterator[Citation]:
                     reference_id(ref),
                     None,
                 )
+            # A quote's reference has to be cached for `just check-snippets` to
+            # check the quote against it at all, so it is checked here with
+            # the rest: an uncached one would otherwise be caught by nothing
+            # that runs in `just test`.
+            for j, quote in enumerate(statement.get("quotes") or []):
+                yield Citation(
+                    f"{section}[{i}].quotes[{j}].reference",
+                    reference_id(quote["reference"]),
+                    None,
+                )
     for i, pub in enumerate(record.get("publications") or []):
         yield Citation(
             f"publications[{i}]",
