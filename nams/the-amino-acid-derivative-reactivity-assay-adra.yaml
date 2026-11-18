@@ -1,6 +1,116 @@
 model:
   id: the-amino-acid-derivative-reactivity-assay-adra
   name: The Amino Acid Derivative Reactivity Assay (ADRA)
+  # Untyped: NAMO has no class for an in chemico method (namo#55). A class
+  # for it is part of the NAMO work under nams-registry#110.
+  description: >-
+    A cell-free, in chemico assay for skin sensitization, developed from the
+    DPRA to overcome its sensitivity and solubility limits. In place of the
+    DPRA's peptides it uses two synthetic amino acid derivatives, N-(2-(1-
+    naphthyl)acetyl)-L-cysteine (NAC) and alpha-N-(2-(1-naphthyl)acetyl)-L-
+    lysine (NAL), each carrying a naphthalene ring on the amino group. The
+    naphthalene chromophore lets the unreacted derivative be quantified by
+    HPLC at 281 nm, which gives a more stable baseline and less interference
+    from co-absorbing test chemicals than the DPRA's 220 nm, and allows the
+    reaction to run at roughly a hundredth of the DPRA's chemical
+    concentration -- so poorly soluble, hydrophobic chemicals that precipitate
+    in the DPRA can still be tested. As in the DPRA, a test chemical is
+    incubated with each derivative and percent depletion of NAC and NAL is the
+    readout for the molecular initiating event of the skin sensitization AOP
+    (AOP 40, Key Event 396). The method was introduced by Fujita et al. 2014
+    and reached ~88% predictive accuracy against DPRA on 82 chemicals; it is
+    one of the in chemico methods of OECD Test Guideline 442C, alongside DPRA
+    and kDPRA.
+  description_scope: METHOD
+  references:
+  - id: pmid:24928155
+    title: Development of a prediction method for skin sensitization using novel cysteine and lysine derivatives.
+    journal: J Pharmacol Toxicol Methods
+    year: 2014
+    url: https://doi.org/10.1016/j.vascn.2014.06.001
+  - id: doi:10.1787/9789264229709-en
+    title: 'Test No. 442C: In Chemico Skin Sensitisation'
+    url: https://doi.org/10.1787/9789264229709-en
+synonyms:
+- ADRA
+- amino acid derivative reactivity assay
+measured_targets:
+- name: N-(2-(1-naphthyl)acetyl)-L-cysteine (NAC)
+  measurement: percent depletion after 24 h reaction with the test chemical (HPLC at 281 nm)
+  notes: >-
+    A synthetic cysteine derivative, not a gene product. Replaces the DPRA
+    cysteine peptide; the naphthalene ring moves detection to 281 nm.
+- name: alpha-N-(2-(1-naphthyl)acetyl)-L-lysine (NAL)
+  measurement: percent depletion after 24 h reaction with the test chemical (HPLC at 281 nm)
+  notes: >-
+    A synthetic lysine derivative, not a gene product. Replaces the DPRA
+    lysine peptide.
+applications:
+- description: >-
+    Hazard identification of skin sensitizers without animals, reading the
+    protein reactivity that is the molecular initiating event of the skin
+    sensitization AOP. Fujita et al. reported ~88% predictive accuracy on 82
+    chemicals, comparable to the DPRA, while the naphthalene label improved
+    baseline stability and reduced interference from other substances in the
+    reaction solution.
+  source_urls:
+  - https://doi.org/10.1016/j.vascn.2014.06.001
+  supporting_references:
+  - pmid:24928155
+  quotes:
+  - snippet: >-
+      ADRA measurements were conducted at 281nm, which improved baseline
+      stability, and were less influenced by other substances in the reaction
+      solutions than DPRA measurements that are conducted at 220nm.
+    reference: pmid:24928155
+- description: >-
+    Testing hydrophobic or poorly soluble chemicals that the DPRA cannot
+    handle. The naphthalene chromophore lets ADRA run at chemical
+    concentrations about two orders of magnitude below the DPRA's, so
+    chemicals that would precipitate in the DPRA reaction stay in solution.
+  source_urls:
+  - https://doi.org/10.1002/jat.3139
+  supporting_references:
+  - pmid:25809859
+  quotes:
+  - snippet: >-
+      ADRA-DM does not have the restrictions on test compound solubility that
+      were a major problem with the DPRA.
+    reference: pmid:25809859
+limitations:
+- description: >-
+    No cells, so no xenobiotic metabolism. Like the DPRA, ADRA reads direct
+    protein reactivity and can miss pro-haptens, which become protein-reactive
+    only after metabolic activation, and pre-haptens, which require abiotic
+    transformation. The gap is the same one documented for the DPRA, since
+    both are cell-free peptide-reactivity assays; combining in chemico with
+    cell-based methods recovers the missed sensitizers.
+  source_urls:
+  - https://doi.org/10.1021/acs.chemrestox.6b00055
+  supporting_references:
+  - pmid:27070937
+  quotes:
+  - snippet: >-
+      In contrast to in vivo methods, they lack or provide limited metabolic
+      capacity. For this reason, identification of pro-haptens but also
+      pre-haptens, which require molecular transformations to gain peptide
+      reactivity, is a challenge for these methods.
+    reference: pmid:27070937
+- description: >-
+    A hazard call, not a potency measure. ADRA, like the standard DPRA, reads
+    depletion at a single reaction time and so identifies sensitizers without
+    resolving GHS potency sub-categories 1A and 1B; potency sub-classification
+    in this assay family needs the kinetic reading used by the kDPRA.
+  source_urls:
+  - https://doi.org/10.1016/j.tiv.2017.08.015
+  supporting_references:
+  - pmid:28882705
+  quotes:
+  - snippet: >-
+      While the skin sensitization hazard of substances can already be
+      identified using non-animal methods, the classification of potency
+      sub-categories GHS-1A and 1B is still challenging.
+    reference: pmid:28882705
 source_resources:
 - resource: namsnetwork
   source_urls:
@@ -27,3 +137,12 @@ source_resources:
   - aop:40
   key_events:
   - aop.events:396
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.vascn.2014.06.001
+dismech_status:
+  processed_through_dismech: false
+  present_in_dismech: false
+  dismech_pr_id: 15958
+  dismech_issue_id: 15944
+  assessed_on: '2026-11-18'
