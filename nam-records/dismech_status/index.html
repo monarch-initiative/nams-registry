@@ -671,7 +671,7 @@
 
 
 <h1 id="slot-dismech_status">Slot: dismech_status</h1>
-<p><em>For a NAM that came through DisMech curation, whether DisMech's graph represents it. Leave it out for a NAM that did not come through DisMech.</em></p>
+<p><em>For a NAM that came through DisMech curation, or that a DisMech curation screened or named without curating it, whether DisMech's graph represents it. In the second case processed_through_dismech is false and dismech_issue_id / dismech_pr_id point at where DisMech discussed it. Leave it out for a NAM that DisMech has never touched.</em></p>
 <div>
 <p>URI: <a href="https://w3id.org/monarch-initiative/nams-registry/dismech_status">nams_registry:dismech_status</a></p>
 <!-- no inheritance hierarchy -->
@@ -739,8 +739,11 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 <div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_status</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">For a NAM that came through DisMech curation, whether DisMech's graph</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">represents it. Leave it out for a NAM that did not come through DisMech.</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">For a NAM that came through DisMech curation, or that a DisMech curation</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">screened or named without curating it, whether DisMech's graph represents it. In</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">the second case processed_through_dismech is false and dismech_issue_id / dismech_pr_id</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">point at where DisMech discussed it. Leave it out for a NAM that DisMech has never</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">touched.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="nt">domain_of</span><span class="p">:</span>
