@@ -27,8 +27,9 @@ model:
   computational_method: 3D molecular modelling.
   prediction_scope: >-
     Predicted inhibitory potential of zearalenone and alpha-zearalenol against
-    wild-type and variant aromatase. An in silico prediction with no wet-lab
-    confirmation; it does not establish an observed inter-individual difference.
+    wild-type and variant aromatase. The paper reports that this proved the
+    possible existence of inter-individual susceptibility to zearalenone; the
+    report rests on in silico prediction with no wet-lab confirmation.
   molecular_target: Human aromatase (CYP19A1)
   sequence_variants:
   - Some of the 434 CYP19A1 single nucleotide variants reported to date (the
@@ -108,4 +109,4 @@ dismech_status:
   dismech_pr_id: 17315
   assessed_on: '2026-11-14'
 creation_date: '2026-11-14'
-last_modified_date: '2026-11-17'
+last_modified_date: '2026-11-18'
