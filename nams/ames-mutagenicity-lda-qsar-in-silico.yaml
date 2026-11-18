@@ -1,0 +1,107 @@
+model:
+  id: ames-mutagenicity-lda-qsar-in-silico
+  type: QSARModel
+  name: Classical LDA QSAR classification model for Ames mutagenicity
+  description: >-
+    A traditional classification QSAR model that predicts Ames mutagenicity
+    from two-dimensional structural descriptors. Linear discriminant analysis
+    (LDA) is trained on the benchmark Ames dataset of 6512 diverse chemicals,
+    and the final model uses 31 descriptors identified by analysing the most
+    discriminating features. It is the comparator the same paper builds its
+    read-across-derived model against
+    (ames-mutagenicity-read-across-lda-qsar-in-silico), and it is recorded here
+    in its own right because the paper characterises it as a model: its
+    descriptor class, its descriptor count and its relative predictivity are
+    all reported. Its output is a mutagenicity class, not a mechanism of
+    mutagenicity. Recorded in the registry from the primary paper, Pandey and
+    Roy 2023 (doi:10.1016/j.tox.2023.153676), in the Toxicology special issue
+    "New approach methodologies: from conceptual development to regulatory
+    application".
+  description_scope: METHOD
+  biological_organization_level: SUBCELLULAR
+  spatial_context: >-
+    None. The model operates on chemical structure alone; no biological system
+    is represented, and the bacterial reverse-mutation assay that produced the
+    training outcomes is not simulated.
+  complexity_level: LOW
+  computational_method: >-
+    Linear discriminant analysis over selected two-dimensional molecular
+    descriptors.
+  prediction_scope: >-
+    A binary mutagenicity class for an organic chemical. It predicts the
+    outcome of the assay, not the mechanism by which a chemical is mutagenic.
+  molecular_descriptors:
+  # The abstract gives the class and the count, not the individual descriptors.
+  - two-dimensional (2D) molecular descriptors, 31 in the final model
+  activity_endpoint: >-
+    Mutagenicity in the Ames assay, as a class label
+  references:
+  - id: pmid:37993082
+    title: >-
+      Development of a read-across-derived classification model for the
+      predictions of mutagenicity data and its comparison with traditional QSAR
+      models and expert systems
+    authors:
+    - Sapna Kumari Pandey
+    - Kunal Roy
+    journal: Toxicology
+    year: 2023
+    url: https://doi.org/10.1016/j.tox.2023.153676
+synonyms:
+- classical LDA QSAR model
+- LDA QSAR model
+applications:
+- description: >-
+    Recognising the relationship between molecular structure and potential
+    mutagenic behaviour across the benchmark Ames dataset, which is the step the
+    paper takes before introducing read-across-derived features.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+- description: >-
+    Serving as the traditional-QSAR baseline that a read-across-based approach
+    is measured against, alongside the OECD QSAR Toolbox and a set of
+    machine-learning models.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+limitations:
+- description: >-
+    The paper reports it as worse than its read-across-derived counterpart in
+    predictivity, transferability and interpretability, while needing many more
+    descriptors: 31 against what the paper calls a very small number.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+- description: >-
+    The output is a mutagenicity class, so the model identifies no mechanism of
+    mutagenicity.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+- description: >-
+    Only the paper's abstract is cached here, so the 31 descriptors are not
+    itemised, no performance values are available in this record, and the
+    software is not named.
+  supporting_references:
+  - pmid:37993082
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  accessed_on: '2026-11-18'
+  method_type: in silico
+compared_with:
+- nam: ames-mutagenicity-read-across-lda-qsar-in-silico
+  reference: doi:10.1016/j.tox.2023.153676
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-18'
+creation_date: '2026-11-18'
+last_modified_date: '2026-11-18'

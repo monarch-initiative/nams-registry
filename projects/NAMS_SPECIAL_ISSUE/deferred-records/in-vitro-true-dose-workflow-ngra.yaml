@@ -1,0 +1,128 @@
+# DEFERRED. Not in nams/, and not validated.
+#
+# What does not fit: this NAM is not a model system. It is a decision workflow
+# that characterises the "true dose" in an in vitro test -- what fraction of
+# the nominal concentration is biologically available -- by working through a
+# chemical's volatility, stability, hydrophobicity, binding to plastic and
+# serum, and solubility. NAMO's ModelSystem hierarchy has no class for a
+# workflow of this kind: it is neither a biological system nor a model that
+# predicts an activity from structure, and typing it as an InSilicoModel would
+# misstate it, since part of the workflow is measurement and only some
+# parameters may come from in silico models.
+#
+# Which issue will settle it: monarch-initiative/namo#55 (no class for a
+# method NAMO's taxonomy does not cover) and nams-registry#90 (whether and how
+# the registry holds methods of this kind). The registry schema does allow a
+# model with no `type` where NAMO has no class, so this record could be moved
+# into nams/ before either issue closes; it is parked here instead so the
+# typing decision is made once, in those issues, rather than per record.
+#
+# Where it came from: the Toxicology special issue "New approach
+# methodologies: from conceptual development to regulatory application",
+# screened in DisMech and recorded as having no mechanism node to attach to
+# (monarch-initiative/dismech#16882). DisMech also tracks where a dosimetry
+# bridge belongs as its own open question, monarch-initiative/dismech#16887,
+# which is the shape this workflow belongs to.
+#
+# Only the paper's abstract is cached, so every statement below comes from it.
+
+model:
+  # type is omitted deliberately; see the note above.
+  id: in-vitro-true-dose-workflow-ngra
+  name: Workflow for applying true dose considerations to in vitro testing in
+    next generation risk assessment
+  description: >-
+    A workflow that assesses whether the nominal concentration of a test
+    chemical in culture media can be treated as a conservative dose metric for
+    next generation risk assessment (NGRA), and characterises the actual
+    biologically effective dose at the target site where it cannot. The
+    workflow examines the implications of volatility, stability,
+    hydrophobicity, binding to plastic and to serum, and solubility, and
+    considers in silico models for some of these parameters. It is illustrated
+    on 40 case study chemicals. For the majority of them, using nominal
+    concentrations in risk assessment would result in conservative decision
+    making; for several, the authors identify a potential underestimation of
+    risk in humans in vivo based on in vitro nominal effect concentrations, and
+    propose approaches for refinement by characterising the actual effect
+    concentration. Recorded in the registry from the primary paper, Nicol et
+    al. 2024 (doi:10.1016/j.tox.2024.153826).
+  description_scope: METHOD
+  references:
+  - id: pmid:38719068
+    title: >-
+      A workflow to practically apply true dose considerations to in vitro
+      testing for next generation risk assessment
+    authors:
+    - Beate Nicol
+    - Evita Vandenbossche-Goddard
+    - Charlotte Thorpe
+    - Richard Newman
+    - Hiral Patel
+    - Dawn Yates
+    journal: Toxicology
+    year: 2024
+    url: https://doi.org/10.1016/j.tox.2024.153826
+synonyms:
+- true dose workflow
+applications:
+- description: >-
+    Deciding whether the nominal test concentration can be considered a
+    conservative dose metric for a given chemical in NGRA, before that
+    concentration is used as a point of departure.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153826
+  supporting_references:
+  - pmid:38719068
+- description: >-
+    Characterising the actual effect concentration where the nominal one would
+    underestimate risk, which the authors propose as the refinement step.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153826
+  supporting_references:
+  - pmid:38719068
+- description: >-
+    Building confidence in the biologically effective dose in in vitro test
+    systems generally, which is the uncertainty the paper sets out to address:
+    risk assessment depends on the relationship between the surrogate dose
+    metric used and the actual dose at the target site.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153826
+  supporting_references:
+  - pmid:38719068
+limitations:
+- description: >-
+    It conditions a dose metric rather than asserting a mechanism. The workflow
+    says what concentration a cell is really exposed to, never what the
+    chemical does to it, so it has no mechanism to attach to a DisMech node.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153826
+  supporting_references:
+  - pmid:38719068
+- description: >-
+    The conclusion that nominal concentrations are conservative holds for the
+    majority of the 40 case study chemicals but not all of them: for several,
+    a potential underestimation of risk in humans in vivo was identified. The
+    workflow is therefore a per-chemical check and not a general assurance.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153826
+  supporting_references:
+  - pmid:38719068
+- description: >-
+    Only the paper's abstract is cached here, so the 40 case study chemicals,
+    the decision criteria at each step of the workflow and the in silico models
+    proposed for individual parameters are not itemised.
+  supporting_references:
+  - pmid:38719068
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153826
+  accessed_on: '2026-11-18'
+  method_type: in silico
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-18'
+creation_date: '2026-11-18'
+last_modified_date: '2026-11-18'

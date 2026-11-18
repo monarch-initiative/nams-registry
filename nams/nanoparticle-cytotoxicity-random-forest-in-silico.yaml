@@ -1,0 +1,115 @@
+model:
+  id: nanoparticle-cytotoxicity-random-forest-in-silico
+  type: MLModel
+  name: Random Forest classifier for nanoparticle-induced cell death
+  description: >-
+    A machine-learning classifier that predicts the cellular response to a
+    nanoparticle from the nanoparticle's physicochemical properties, the
+    exposure conditions and the cell line exposed. The training data combine
+    all three, drawn from cellular responses of different cell lines. Five
+    classifiers were trained on the same dataset -- Decision Tree, Random
+    Forest, Support Vector Machine, Naive Bayes and Artificial Neural Network
+    -- and compared on accuracy, sensitivity, specificity, area under the
+    curve, F measure, K-fold validation and classification error; Random Forest
+    performed best and is the model the authors recommend, so it is the model
+    recorded here. The four others are characterised only by their rank, so
+    they are noted rather than given records of their own. Feature importance
+    was assessed with the Gini index, which identified cell line, exposure dose
+    and tissue as the most influential factors in cell death. Recorded in the
+    registry from the primary paper, Ahmadi et al. 2024
+    (doi:10.1016/j.tox.2023.153697), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  description_scope: METHOD
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    None. The model predicts a cell-level outcome from tabulated properties and
+    conditions; no biological system is represented, and the cell line and
+    tissue enter only as input features.
+  complexity_level: LOW
+  computational_method: >-
+    Supervised classification by Random Forest, selected by comparison against
+    Decision Tree, Support Vector Machine, Naive Bayes and Artificial Neural
+    Network classifiers on the same dataset.
+  prediction_scope: >-
+    The cellular response, chiefly cell death, for a nanoparticle and exposure
+    condition in a given cell line. It predicts the toxicity outcome and ranks
+    the factors driving it; it asserts no mechanism by which a nanoparticle
+    kills a cell.
+  ml_algorithm: RANDOM_FOREST
+  feature_types:
+  # Physicochemical properties of the nanoparticles. The exposure conditions
+  # and the cell line are also features but match no value of this enum, so
+  # they are described in prose rather than forced into one.
+  - MOLECULAR
+  # INTERPRETABLE, not EXPLAINABLE: the Gini index gives feature importance,
+  # which is what this value means, and that is as far as the abstract goes.
+  model_interpretability: INTERPRETABLE
+  cross_validation:
+    # The abstract names K-fold validation among the comparison metrics but
+    # gives neither the number of folds nor a score.
+    cv_method: K_FOLD
+  # training_data_size is left out: the abstract describes what the training
+  # dataset contains but not how many records it holds.
+  references:
+  - id: pmid:38056590
+    title: Toxicity prediction of nanoparticles using machine learning approaches
+    authors:
+    - Mahnaz Ahmadi
+    - Seyed Mohammad Ayyoubzadeh
+    - Fatemeh Ghorbani-Bidkorpeh
+    journal: Toxicology
+    year: 2024
+    url: https://doi.org/10.1016/j.tox.2023.153697
+applications:
+- description: >-
+    Predicting nanoparticle toxicity in place of experimental evaluation, which
+    the authors present as a saving in the cost and time of toxicity analysis.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153697
+  supporting_references:
+  - pmid:38056590
+- description: >-
+    Ranking which parameters drive nanoparticle-induced cell death. By Gini
+    index, cell line, exposure dose and tissue are the most influential.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153697
+  supporting_references:
+  - pmid:38056590
+limitations:
+- description: >-
+    The output is a predicted toxicity outcome, so the model asserts no
+    mechanism of nanoparticle toxicity. Feature importance ranks what matters
+    without saying how a nanoparticle causes the cell death it predicts.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153697
+  supporting_references:
+  - pmid:38056590
+- description: >-
+    Performance is reported on the given dataset. The abstract reports Random
+    Forest as highest-performing in that dataset and the other models as lower,
+    without performance values for any of them, so this record carries the
+    ranking and not the numbers.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153697
+  supporting_references:
+  - pmid:38056590
+- description: >-
+    Only the paper's abstract is cached here, so the dataset's size and
+    provenance, the nanoparticle types and physicochemical properties used as
+    features, the cell lines covered and the software are not itemised.
+  supporting_references:
+  - pmid:38056590
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153697
+  accessed_on: '2026-11-18'
+  method_type: in silico
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-18'
+creation_date: '2026-11-18'
+last_modified_date: '2026-11-18'
