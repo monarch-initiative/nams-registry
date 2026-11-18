@@ -82,6 +82,13 @@ applications:
   - https://doi.org/10.1016/j.tox.2023.153694
   supporting_references:
   - pmid:38043774
+  quotes:
+  - snippet: >-
+      High-throughput transcriptomics (HTTr) in human cell lines has been
+      proposed as a first-tier screening approach for determining the types of
+      bioactivity a chemical can cause (activation of specific targets vs.
+      generalized cell stress)
+    reference: pmid:38043774
 - description: >-
     Benchmarking tPOD calculation methods against an external reference: in
     vitro PODs from a validated set of high-throughput screening assays, for a
@@ -109,6 +116,15 @@ limitations:
   - https://doi.org/10.1016/j.tox.2023.153694
   supporting_references:
   - pmid:38043774
+  quotes:
+  - snippet: >-
+      for a given chemical and set of experimental conditions, tPODs calculated
+      by different methods can vary by several orders of magnitude
+    reference: pmid:38043774
+  - snippet: >-
+      tPODs are at least as sensitive to computational methods as to
+      experimental conditions
+    reference: pmid:38043774
 - description: >-
     Against an external reference set of PODs, some methods give generally
     higher values, principally PLIER and BMDExpress.
@@ -116,6 +132,11 @@ limitations:
   - https://doi.org/10.1016/j.tox.2023.153694
   supporting_references:
   - pmid:38043774
+  quotes:
+  - snippet: >-
+      in comparison to an external reference set of PODs, some methods give
+      generally higher values, principally PLIER and BMDExpress
+    reference: pmid:38043774
 - description: >-
     tPODs from HTTr in this one cell type are mostly higher than the overall
     PODs from a broad battery of targeted in vitro ToxCast assays. The authors
@@ -125,6 +146,15 @@ limitations:
   - https://doi.org/10.1016/j.tox.2023.153694
   supporting_references:
   - pmid:38043774
+  quotes:
+  - snippet: >-
+      the tPODs from HTTr in this one cell type are mostly higher than the
+      overall PODs from a broad battery of targeted in vitro ToxCast assays,
+      reflecting the need to test chemicals in multiple cell types and readout
+      technologies for in vitro hazard screening
+    reference: pmid:38043774
+    note: >-
+      The authors' own reading of their result, not an inference from it.
 - description: >-
     Only the paper's abstract is cached here. Its PubMed Central copy is an
     author manuscript rather than an open-access article, so the assay

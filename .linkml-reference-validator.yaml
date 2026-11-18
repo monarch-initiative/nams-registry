@@ -10,5 +10,25 @@ validation:
   # The committed cache has been reviewed: use it as it is, and never
   # re-fetch an entry only because the validator's extractor has changed.
   trust_cached_entries: true
-  # Titles are checked against the abstract record; full text is not needed.
-  fetch_full_text: false
+  # Full text is fetched and cached where the paper allows it. This was false
+  # until 2026-11-18 (issue #104, PR #106), when only titles were checked and
+  # an abstract sufficed.
+  #
+  # It is true now for the evidence, not the titles. A NAM whose method DisMech
+  # has no node for today may get one later, and the linkage will then need
+  # evidence that holds up -- quotes from the paper's methods and results, not
+  # its abstract. The full text has to still be at hand when that happens, and
+  # some of it will not be re-fetchable, so it is collected as the corpus is
+  # screened rather than re-gathered later.
+  #
+  # It also makes `just check-snippets` conclusive. Against an abstract-only
+  # cache, a quote from the methods section is merely unverified; against the
+  # full text it either matches or it does not.
+  #
+  # Open access is enforced upstream, not by a curator: the fetcher's PMC
+  # provider serves only open and publisher-free articles, and records
+  # anything else as no_pmc or pmc_restricted. A PMC *author manuscript* is
+  # free to read but not open-access licensed, and is correctly refused --
+  # PMID:38043774 stays abstract_only for exactly that reason, while
+  # PMID:37215566 (CC BY) caches as full_text_xml.
+  fetch_full_text: true
