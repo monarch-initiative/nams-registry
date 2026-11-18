@@ -544,7 +544,7 @@
 <tr>
 <td><a href="../dismech_status/">dismech_status</a></td>
 <td>0..1 <br/> <a href="../DismechStatus/">DismechStatus</a></td>
-<td>For a NAM that came through DisMech curation, whether DisMech's graph represe...</td>
+<td>For a NAM that came through DisMech curation, or that a DisMech curation scre...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -732,8 +732,11 @@
 <span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">dismech_status</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dismech_status</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">For a NAM that came through DisMech curation, whether DisMech's graph</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">represents it. Leave it out for a NAM that did not come through DisMech.</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">For a NAM that came through DisMech curation, or that a DisMech curation</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">screened or named without curating it, whether DisMech's graph represents it.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">In the second case processed_through_dismech is false and dismech_issue_id /</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">dismech_pr_id point at where DisMech discussed it. Leave it out for a NAM that</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">DisMech has never touched.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
 <span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 <span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMRecord</span>
