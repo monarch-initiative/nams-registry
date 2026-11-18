@@ -372,9 +372,11 @@ slots:
     range: DismechStatus
     inlined: true
     description: >-
-      For a NAM that came through DisMech curation, whether DisMech's graph
-      represents it. Leave it out for a NAM that did not come through
-      DisMech.
+      For a NAM that came through DisMech curation, or that a DisMech
+      curation screened or named without curating it, whether DisMech's graph
+      represents it. In the second case processed_through_dismech is false and
+      dismech_issue_id / dismech_pr_id point at where DisMech discussed it.
+      Leave it out for a NAM that DisMech has never touched.
   synonyms:
     multivalued: true
     description: >-
