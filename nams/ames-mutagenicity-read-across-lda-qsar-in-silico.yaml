@@ -1,0 +1,120 @@
+model:
+  id: ames-mutagenicity-read-across-lda-qsar-in-silico
+  type: QSARModel
+  name: Read-across-derived LDA QSAR classification model for Ames mutagenicity
+  description: >-
+    A classification model that predicts whether a chemical is mutagenic in the
+    Ames assay from similarity-derived features. Linear discriminant analysis
+    (LDA) is run not on conventional structural descriptors but on
+    similarity-derived features obtained from read-across against a benchmark
+    Ames dataset of 6512 diverse chemicals, so a query chemical's predicted
+    class rests on its similarity to measured analogues. The paper reports it as
+    better in predictivity, transferability and interpretability than the
+    classical LDA QSAR model built from the same dataset
+    (ames-mutagenicity-lda-qsar-in-silico), using a very small number of
+    descriptors by comparison, and checks it on a true external set of 216
+    compounds. Its output is a mutagenicity class, not a mechanism of
+    mutagenicity. Recorded in the registry from the primary paper, Pandey and
+    Roy 2023 (doi:10.1016/j.tox.2023.153676), in the Toxicology special issue
+    "New approach methodologies: from conceptual development to regulatory
+    application".
+  description_scope: METHOD
+  biological_organization_level: SUBCELLULAR
+  spatial_context: >-
+    None. The model operates on chemical structure and on similarity to
+    structures with measured Ames outcomes; no biological system is
+    represented, and the bacterial reverse-mutation assay that produced the
+    training outcomes is not simulated.
+  complexity_level: LOW
+  computational_method: >-
+    Linear discriminant analysis over similarity-derived features extracted by
+    read-across.
+  prediction_scope: >-
+    A binary mutagenicity class for an organic chemical, intended to complement
+    existing expert systems for screening and prediction. It predicts the
+    outcome of the assay, not the mechanism by which a chemical is mutagenic.
+  molecular_descriptors:
+  # The abstract names the descriptor classes but not the individual
+  # descriptors, and does not give the count for this model beyond saying it is
+  # very small compared with the classical QSAR model's 31.
+  - similarity-derived features from read-across
+  activity_endpoint: >-
+    Mutagenicity in the Ames assay, as a class label
+  # model_performance is left out: the abstract reports that this model
+  # out-predicts the classical QSAR model, the machine-learning models and the
+  # OECD QSAR Toolbox, but gives no accuracy, sensitivity or specificity for it.
+  references:
+  - id: pmid:37993082
+    title: >-
+      Development of a read-across-derived classification model for the
+      predictions of mutagenicity data and its comparison with traditional QSAR
+      models and expert systems
+    authors:
+    - Sapna Kumari Pandey
+    - Kunal Roy
+    journal: Toxicology
+    year: 2023
+    url: https://doi.org/10.1016/j.tox.2023.153676
+synonyms:
+- read-across-based LDA QSAR model
+- RA-based LDA QSAR model
+applications:
+- description: >-
+    Screening and predicting the mutagenicity of chemicals without a rodent
+    mutagenicity bioassay, as a complement to already available expert systems.
+    The paper's stated motivation is the number of compounds of concern and the
+    time, money and animal cost of the bioassay.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+- description: >-
+    Predicting a true external set of 216 compounds, which the paper uses to
+    compare the model against the OECD QSAR Toolbox and against machine-learning
+    models built from the descriptors this model selected.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+limitations:
+- description: >-
+    The output is a mutagenicity class, so the model identifies no mechanism of
+    mutagenicity and says nothing about how a predicted-positive chemical
+    damages DNA.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+- description: >-
+    A read-across prediction is only as good as the analogues available, since a
+    query chemical's class is derived from its similarity to measured compounds.
+    The paper's own framing of the problem it addresses applies here: models
+    built on older data can lose performance when applied to newer chemical
+    candidates.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  supporting_references:
+  - pmid:37993082
+- description: >-
+    Only the paper's abstract is cached here, so the individual
+    similarity-derived descriptors, the read-across similarity measure and the
+    software are not itemised, and the reported performance values are not
+    available in this record.
+  supporting_references:
+  - pmid:37993082
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153676
+  accessed_on: '2026-11-18'
+  method_type: in silico
+compared_with:
+- nam: ames-mutagenicity-lda-qsar-in-silico
+  reference: doi:10.1016/j.tox.2023.153676
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-18'
+creation_date: '2026-11-18'
+last_modified_date: '2026-11-18'

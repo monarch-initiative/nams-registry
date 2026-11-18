@@ -1,0 +1,149 @@
+model:
+  id: breast-monolayer-mcf7-httr-cell-line
+  type: CellLineModel
+  name: High-throughput transcriptomics in MCF7 cells for transcriptional points
+    of departure
+  description: >-
+    High-throughput transcriptomics (HTTr) in MCF7 cells, used to derive
+    transcriptional points of departure (tPODs) from concentration-dependent
+    changes in gene expression. In this study the platform is run as six data
+    sets: MCF7 cells cultured in two different media formulations, treated with
+    a panel of 44 chemicals, at three exposure durations (6, 12 and 24 hours).
+    HTTr has been proposed as a first-tier screening approach, both for
+    distinguishing activation of specific targets from generalized cell stress
+    and for calculating a tPOD. The paper's subject is what happens after the
+    assay: a range of computational methods for turning the same expression
+    data into a tPOD, at the level of individual genes and of gene set
+    signatures, comparing data processed with the ToxCast Pipeline 2
+    (tcplfit2), BMDExpress and PLIER (Pathway Level Information ExtractoR).
+    Those methods are analyses of this system's readout, not systems of their
+    own, so they are recorded here rather than as separate NAMs. Recorded in
+    the registry from the primary paper, Harrill et al. 2024
+    (doi:10.1016/j.tox.2023.153694), in the Toxicology special issue "New
+    approach methodologies: from conceptual development to regulatory
+    application".
+  # USE rather than METHOD: what the abstract characterises is this study's
+  # six-data-set design and the tPOD methods applied to it, not HTTr as a
+  # protocol. The `method` slot is deliberately empty: the registry holds
+  # high-throughput-transcriptomics-temposeq as a method record, but this
+  # abstract never names its assay chemistry, so tying the two together would
+  # assert a sameness the source does not support.
+  description_scope: USE
+  biological_organization_level: CELLULAR
+  spatial_context: >-
+    A single human cell line in culture. One cell type, with no tissue
+    architecture, no co-culture and no barrier; the paper's own conclusion is
+    that one cell type is not enough for in vitro hazard screening.
+  complexity_level: LOW
+  references:
+  - id: pmid:38043774
+    title: >-
+      Exploring the effects of experimental parameters and data modeling
+      approaches on in vitro transcriptomic point-of-departure estimates
+    authors:
+    - Joshua A. Harrill
+    - Logan J. Everett
+    - Derik E. Haggard
+    - Joseph L. Bundy
+    - Clinton M. Willis
+    - Imran Shah
+    - Katie Paul Friedman
+    - Danilo Basili
+    - Alistair Middleton
+    - Richard S. Judson
+    journal: Toxicology
+    year: 2024
+    url: https://doi.org/10.1016/j.tox.2023.153694
+  cell_types:
+  # MCF7 is a mammary epithelial line. The parent mammary term is used rather
+  # than a luminal one because the abstract says only that MCF7 cells were
+  # treated; the line itself is named under source_resources.
+  - id: CL:0002327
+    name: mammary gland epithelial cell
+synonyms:
+- HTTr
+- high-throughput transcriptomics
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Calculating a transcriptional point of departure for a chemical from
+    concentration-dependent gene expression change, as a first-tier screening
+    value.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+- description: >-
+    Determining the type of bioactivity a chemical causes, separating
+    activation of specific targets from generalized cell stress.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+- description: >-
+    Benchmarking tPOD calculation methods against an external reference: in
+    vitro PODs from a validated set of high-throughput screening assays, for a
+    set of estrogenic compounds.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+limitations:
+- description: >-
+    The readout is a point of departure, a dose metric. It does not assert a
+    mechanism, which is why this paper was screened out of DisMech: a tPOD has
+    no mechanism node to attach to.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+- description: >-
+    For one chemical under one set of experimental conditions, tPODs calculated
+    by different methods can vary by several orders of magnitude, and tPODs are
+    at least as sensitive to the computational method as to the experimental
+    conditions. The value is therefore not interpretable without the method
+    that produced it.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+- description: >-
+    Against an external reference set of PODs, some methods give generally
+    higher values, principally PLIER and BMDExpress.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+- description: >-
+    tPODs from HTTr in this one cell type are mostly higher than the overall
+    PODs from a broad battery of targeted in vitro ToxCast assays. The authors
+    read this as the need to test chemicals in multiple cell types and readout
+    technologies, so a single-cell-type tPOD may not be protective on its own.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  supporting_references:
+  - pmid:38043774
+- description: >-
+    Only the paper's abstract is cached here. Its PubMed Central copy is an
+    author manuscript rather than an open-access article, so the assay
+    chemistry, the probe panel, the concentration range and the 44 chemicals
+    are not itemised in this record.
+  supporting_references:
+  - pmid:38043774
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2023.153694
+  accessed_on: '2026-11-18'
+  method_type: in vitro
+  cell_lines:
+  - MCF7
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-18'
+creation_date: '2026-11-18'
+last_modified_date: '2026-11-18'

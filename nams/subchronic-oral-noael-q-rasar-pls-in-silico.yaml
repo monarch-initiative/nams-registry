@@ -1,0 +1,131 @@
+model:
+  id: subchronic-oral-noael-q-rasar-pls-in-silico
+  type: QSARModel
+  name: q-RASAR PLS model for subchronic oral NOAEL of organic chemicals in rats
+  description: >-
+    A quantitative read-across structure-activity relationship (q-RASAR) model
+    that predicts the subchronic oral no-observed-adverse-effect level of a
+    diverse organic chemical in rats, as -Log(NOAEL). It is built from 186 data
+    points using structural and physicochemical (0D-2D) descriptors: read-across
+    derived similarity, error and concordance measures (RASAR descriptors) are
+    extracted from those preliminary descriptors, and the combined pool of RASAR
+    and selected 0D-2D descriptors for the training set is then fitted by
+    partial least squares. The authors validate it by the internal and external
+    metrics recommended by the OECD and report R2 = 0.85, Q2LOO = 0.82 and
+    Q2F1 = 0.94, exceeding both the corresponding QSAR model built in the same
+    study and a previously reported subchronic repeated-dose toxicity model.
+    The corresponding QSAR comparator has no record of its own because the
+    abstract reports no performance values for it. The output is a dose metric,
+    not a mechanism. Recorded in the registry from the primary paper, Ghosh and
+    Roy 2024 (doi:10.1016/j.tox.2024.153824), in the Toxicology special issue
+    "New approach methodologies: from conceptual development to regulatory
+    application".
+  description_scope: METHOD
+  biological_organization_level: SYSTEM
+  spatial_context: >-
+    None is modelled. The predicted endpoint is a whole-animal dose level in
+    rats, so the quantity refers to the organism, but no body, compartment or
+    tissue is represented: the model maps chemical structure and similarity
+    directly onto the dose metric.
+  complexity_level: LOW
+  computational_method: >-
+    Partial least squares regression over a combined pool of read-across-derived
+    RASAR descriptors and selected 0D-2D structural and physicochemical
+    descriptors.
+  prediction_scope: >-
+    -Log(NOAEL) for subchronic repeated oral dosing of a diverse organic
+    chemical in rats, which the authors treat as an indicator of subchronic oral
+    safety and as usable for ecotoxicity risk identification. It predicts the
+    dose at which no adverse effect is observed, not what the adverse effect is
+    or how it arises.
+  molecular_descriptors:
+  # Descriptor classes as the abstract names them; the individual descriptors
+  # in the final model are not listed there.
+  - structural and physicochemical (0D-2D) descriptors
+  - RASAR descriptors (read-across-derived similarity, error and concordance
+    measures)
+  activity_endpoint: >-
+    Subchronic oral NOAEL in rats, as -Log(NOAEL)
+  model_performance:
+    # R2 = 0.85 from the abstract. Q2LOO = 0.82 and Q2F1 = 0.94 are reported
+    # too and are kept in the description, as the schema has no slot for them.
+    r_squared: 0.85
+  # training_dataset_size is left out: 186 is the total number of data points
+  # used for model generation, and the abstract does not say how many of them
+  # are the training set.
+  references:
+  - id: pmid:38705560
+    title: >-
+      Quantitative read-across structure-activity relationship (q-RASAR): A
+      novel approach to estimate the subchronic oral safety (NOAEL) of diverse
+      organic chemicals in rats
+    authors:
+    - Shilpayan Ghosh
+    - Kunal Roy
+    journal: Toxicology
+    year: 2024
+    url: https://doi.org/10.1016/j.tox.2024.153824
+synonyms:
+- q-RASAR
+- quantitative read-across structure-activity relationship model
+applications:
+- description: >-
+    Estimating the maximum dose level at which no adverse effects of a chemical
+    are found on subchronic repeated oral dosing, as an alternative to running
+    the rat study.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153824
+  supporting_references:
+  - pmid:38705560
+- description: >-
+    Ecotoxicity risk identification, which the authors name alongside
+    subchronic oral safety prediction as a use for the approach.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153824
+  supporting_references:
+  - pmid:38705560
+limitations:
+- description: >-
+    The output is a dose metric. The model identifies no target, no adverse
+    effect and no mechanism, which is why this paper has no DisMech anchor: a
+    NOAEL has no mechanism node to attach to.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153824
+  supporting_references:
+  - pmid:38705560
+- description: >-
+    The endpoint is the rat NOAEL, so the model predicts an animal outcome
+    rather than a human one, and its training values come from the animal study
+    it is meant to replace.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153824
+  supporting_references:
+  - pmid:38705560
+- description: >-
+    It is built from 186 data points of diverse organic chemicals, which bounds
+    the chemical space the predictions can be trusted in; the paper frames the
+    gain of the RASAR approach as improved external predictivity,
+    interpretability and transferability rather than as coverage.
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153824
+  supporting_references:
+  - pmid:38705560
+- description: >-
+    Only the paper's abstract is cached here, so the descriptors in the final
+    model, the similarity measure, the training and test split and the software
+    are not itemised.
+  supporting_references:
+  - pmid:38705560
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.tox.2024.153824
+  accessed_on: '2026-11-18'
+  method_type: in silico
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-18'
+creation_date: '2026-11-18'
+last_modified_date: '2026-11-18'
