@@ -36,8 +36,14 @@ This wrapper needs both the pinned DisMech (for the provider policy) and
 deep-research-client. Both are in the `research` dependency group, which
 `uv sync` does not install by default; the recipe passes `--group research`:
 
-    just deep-research {args}\
+    just deep-research{args}\
 """
+
+
+def _args(argv):
+    """The caller's arguments as they would be retyped after the recipe."""
+    given = " ".join(argv)
+    return f" {given}" if given else ""
 
 
 def main(argv=None):
@@ -52,13 +58,20 @@ def main(argv=None):
     except ImportError:
         sys.exit(
             MISSING_DEPENDENCY.format(
-                module="dismech.deep_research_policy", args=" ".join(argv)
+                module="dismech.deep_research_policy", args=_args(argv)
             ).rstrip()
         )
 
     # Before provider discovery, so an un-opted-in session is not offered
     # Biomni as a fallback.
-    if not configure_biomni_environment() and requests_biomni_research(argv):
+    #
+    # requests_biomni_research expects the whole client command line, and tests
+    # for the "research" subcommand in it; this recipe supplies that word
+    # itself, below, so it has to be supplied here too. Passing the caller's
+    # arguments alone leaves the test always false and this branch dead.
+    if not configure_biomni_environment() and requests_biomni_research(
+        ["research", *argv]
+    ):
         print(BIOMNI_DISABLED_DETAIL, file=sys.stderr)
         return 2
 
@@ -67,7 +80,7 @@ def main(argv=None):
     except ImportError:
         sys.exit(
             MISSING_DEPENDENCY.format(
-                module="deep_research_client", args=" ".join(argv)
+                module="deep_research_client", args=_args(argv)
             ).rstrip()
         )
 

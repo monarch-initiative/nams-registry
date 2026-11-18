@@ -45,7 +45,7 @@ This module borrows DisMech's snippet audit, and DisMech is installed for the
 duration of one command rather than being a dependency of this package. Run it
 through the recipe, which does that:
 
-    just check-snippets {args}
+    just check-snippets{args}
 
 or put a DisMech checkout on the path yourself.\
 """
@@ -83,7 +83,7 @@ def main(argv=None):
         from dismech.reference_snippet_audit import audit_files
     except ImportError:
         given = " ".join(str(path) for path in args.files)
-        sys.exit(MISSING_DISMECH.format(args=given).rstrip())
+        sys.exit(MISSING_DISMECH.format(args=f" {given}" if given else "").rstrip())
 
     paths = args.files or sorted(NAMS_DIR.glob("*.yaml"))
     if not paths:
