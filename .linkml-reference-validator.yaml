@@ -29,6 +29,5 @@ validation:
   # provider serves only open and publisher-free articles, and records
   # anything else as no_pmc or pmc_restricted. A PMC *author manuscript* is
   # free to read but not open-access licensed, and is correctly refused --
-  # PMID:38043774 stays abstract_only for exactly that reason, while
-  # PMID:37215566 (CC BY) caches as full_text_xml.
+  # PMID:38043774 stays abstract_only for exactly that reason.
   fetch_full_text: true
