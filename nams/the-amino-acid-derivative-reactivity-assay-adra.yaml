@@ -15,11 +15,10 @@ model:
     test chemical is incubated with each derivative and percent depletion of
     NAC and NAL is the readout for the molecular initiating event of the skin
     sensitization AOP (AOP 40, Key Event 396). The method was introduced by
-    Fujita et al. 2014 and reached ~88% predictive accuracy against DPRA on 82
-    chemicals. A later dilutional variant, the ADRA-dilutional method
+    Fujita et al. 2014 and reached ~88% predictive accuracy on 82 chemicals,
+    similar to that of the DPRA tested on the same set. A later dilutional variant, the ADRA-dilutional method
     (ADRA-DM; Yamamoto et al. 2015), reduces the test-chemical concentration
-    100-fold relative to the ADRA -- two orders of magnitude lower than the
-    ADRA -- and removes the solubility restriction that was a major problem for
+    100-fold relative to the ADRA and removes the solubility restriction that was a major problem for
     the DPRA, so poorly soluble, hydrophobic chemicals can still be tested.
     ADRA is one of the in chemico methods of OECD Test Guideline 442C,
     alongside DPRA and kDPRA.
@@ -30,6 +29,21 @@ model:
     journal: J Pharmacol Toxicol Methods
     year: 2014
     url: https://doi.org/10.1016/j.vascn.2014.06.001
+  - id: pmid:25809859
+    title: A novel in chemico method to detect skin sensitizers in highly diluted reaction conditions.
+    journal: J Appl Toxicol
+    year: 2015
+    url: https://doi.org/10.1002/jat.3139
+  - id: pmid:27070937
+    title: Assessment of Pre- and Pro-haptens Using Nonanimal Test Methods for Skin Sensitization.
+    journal: Chem Res Toxicol
+    year: 2016
+    url: https://doi.org/10.1021/acs.chemrestox.6b00055
+  - id: pmid:28882705
+    title: Prediction of skin sensitization potency sub-categories using peptide reactivity data.
+    journal: Toxicol In Vitro
+    year: 2017
+    url: https://doi.org/10.1016/j.tiv.2017.08.015
   - id: doi:10.1787/9789264229709-en
     title: 'Test No. 442C: In Chemico Skin Sensitisation'
     url: https://doi.org/10.1787/9789264229709-en
@@ -101,19 +115,21 @@ limitations:
       reactivity, is a challenge for these methods.
     reference: pmid:27070937
 - description: >-
-    A hazard call, not a potency measure. ADRA, like the standard DPRA, reads
-    depletion at a single reaction time and so identifies sensitizers without
-    resolving GHS potency sub-categories 1A and 1B; potency sub-classification
-    in this assay family needs the kinetic reading used by the kDPRA.
+    A hazard call, not a potency measure -- inferred by analogy with the DPRA,
+    not shown for ADRA itself. ADRA, like the standard DPRA, reads depletion
+    at a single concentration and reaction time. For the DPRA that design did
+    not discriminate GHS potency sub-categories 1A and 1B, and resolving them
+    needed the kinetic reading used by the kDPRA. No ADRA potency study has
+    been curated here yet.
   source_urls:
   - https://doi.org/10.1016/j.tiv.2017.08.015
   supporting_references:
   - pmid:28882705
   quotes:
   - snippet: >-
-      While the skin sensitization hazard of substances can already be
-      identified using non-animal methods, the classification of potency
-      sub-categories GHS-1A and 1B is still challenging.
+      The Direct Peptide Reactivity Assay (DPRA; one concentration and
+      reaction-time) did not sufficiently discriminate between sub-categories
+      1A and 1B (56% accuracy compared to LLNA data, n=124).
     reference: pmid:28882705
 source_resources:
 - resource: namsnetwork
@@ -150,3 +166,5 @@ dismech_status:
   dismech_pr_id: 15958
   dismech_issue_id: 15944
   assessed_on: '2026-11-18'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-18'

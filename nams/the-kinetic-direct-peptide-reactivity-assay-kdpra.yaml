@@ -36,6 +36,16 @@ model:
     journal: Toxicol In Vitro
     year: 2017
     url: https://doi.org/10.1016/j.tiv.2017.08.015
+  - id: pmid:27070937
+    title: Assessment of Pre- and Pro-haptens Using Nonanimal Test Methods for Skin Sensitization.
+    journal: Chem Res Toxicol
+    year: 2016
+    url: https://doi.org/10.1021/acs.chemrestox.6b00055
+  - id: pmid:32840629
+    title: Predictivity of the kinetic direct peptide reactivity assay (kDPRA) for sensitizer potency assessment and GHS subclassification.
+    journal: ALTEX
+    year: 2020
+    url: https://doi.org/10.14573/altex.2004292
   - id: doi:10.1787/9789264229709-en
     title: 'Test No. 442C: In Chemico Skin Sensitisation'
     url: https://doi.org/10.1787/9789264229709-en
@@ -102,10 +112,11 @@ limitations:
     reference: pmid:27070937
 - description: >-
     The potency readout is a reaction-rate constant for the molecular
-    initiating event, not an apical potency. It is validated for separating
-    GHS 1A from 1B/not-classified among chemicals already identified as
-    sensitizers, and is used for 1A identification or within a defined
-    approach rather than as a complete potency assessment on its own.
+    initiating event, not an apical potency. It is accepted for identifying
+    GHS 1A sensitizers, and Natsch et al. propose it as a stand-alone assay
+    only among chemicals already identified as sensitizers by other tests or
+    defined approaches; otherwise it belongs within a defined approach
+    rather than serving as a complete potency assessment on its own.
   source_urls:
   - https://doi.org/10.14573/altex.2004292
   supporting_references:
@@ -151,3 +162,5 @@ dismech_status:
   dismech_pr_id: 15958
   dismech_issue_id: 15944
   assessed_on: '2026-11-18'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-18'

@@ -16,8 +16,8 @@ model:
     controls is the readout. In the method paper, Gerberick et al. 2004, 38
     chemicals were tested against glutathione and three peptides containing
     cysteine, lysine or histidine, and depletion of glutathione, cysteine and
-    lysine correlated with allergen potency in the local lymph node assay
-    while histidine did not; the assay as later standardised uses the cysteine
+    lysine correlated significantly with allergen potency while histidine did
+    not; the assay as later standardised uses the cysteine
     and lysine peptides. It is one of the in chemico methods of OECD Test
     Guideline 442C, alongside ADRA and kDPRA.
   description_scope: METHOD
@@ -27,6 +27,16 @@ model:
     journal: Toxicol Sci
     year: 2004
     url: https://doi.org/10.1093/toxsci/kfh213
+  - id: pmid:27070937
+    title: Assessment of Pre- and Pro-haptens Using Nonanimal Test Methods for Skin Sensitization.
+    journal: Chem Res Toxicol
+    year: 2016
+    url: https://doi.org/10.1021/acs.chemrestox.6b00055
+  - id: pmid:28882705
+    title: Prediction of skin sensitization potency sub-categories using peptide reactivity data.
+    journal: Toxicol In Vitro
+    year: 2017
+    url: https://doi.org/10.1016/j.tiv.2017.08.015
   - id: doi:10.1787/9789264229709-en
     title: 'Test No. 442C: In Chemico Skin Sensitisation'
     url: https://doi.org/10.1787/9789264229709-en
@@ -50,7 +60,7 @@ applications:
     the protein reactivity that is the molecular initiating event of the skin
     sensitization AOP. Gerberick et al. found the cysteine peptide the most
     sensitive readout (80.8%) and histidine the least, and proposed peptide
-    reactivity as a screen that reduces reliance on the local lymph node assay.
+    reactivity as a screen that reduces reliance on animal test methods.
   source_urls:
   - https://doi.org/10.1093/toxsci/kfh213
   supporting_references:
@@ -132,3 +142,5 @@ dismech_status:
   dismech_pr_id: 15958
   dismech_issue_id: 15944
   assessed_on: '2026-11-18'
+creation_date: '2026-11-13'
+last_modified_date: '2026-11-18'
