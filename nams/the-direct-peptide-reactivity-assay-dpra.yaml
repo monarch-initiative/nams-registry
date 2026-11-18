@@ -1,6 +1,101 @@
 model:
   id: the-direct-peptide-reactivity-assay-dpra
   name: The Direct Peptide Reactivity Assay (DPRA)
+  # Untyped: NAMO has no class for an in chemico method (namo#55). A class
+  # for it is part of the NAMO work under nams-registry#110.
+  description: >-
+    A cell-free, in chemico assay for skin sensitization that measures a test
+    chemical's reactivity towards synthetic peptides standing in for the
+    nucleophilic amino acids of skin proteins. Most chemical allergens are
+    electrophiles that react with cysteine or lysine before sensitization is
+    induced, so covalent binding to protein -- the molecular initiating event
+    of the skin sensitization adverse outcome pathway (AOP 40, Key Event 396)
+    -- is read as depletion of the peptide. The test chemical is incubated
+    with each peptide for 24 hours and the remaining, unreacted peptide is
+    quantified by HPLC with UV detection; percent depletion relative to
+    controls is the readout. In the method paper, Gerberick et al. 2004, 38
+    chemicals were tested against glutathione and three peptides containing
+    cysteine, lysine or histidine, and depletion of glutathione, cysteine and
+    lysine correlated with allergen potency in the local lymph node assay
+    while histidine did not; the assay as later standardised uses the cysteine
+    and lysine peptides. It is one of the in chemico methods of OECD Test
+    Guideline 442C, alongside ADRA and kDPRA.
+  description_scope: METHOD
+  references:
+  - id: pmid:15254333
+    title: Development of a peptide reactivity assay for screening contact allergens.
+    journal: Toxicol Sci
+    year: 2004
+    url: https://doi.org/10.1093/toxsci/kfh213
+  - id: doi:10.1787/9789264229709-en
+    title: 'Test No. 442C: In Chemico Skin Sensitisation'
+    url: https://doi.org/10.1787/9789264229709-en
+synonyms:
+- DPRA
+- direct peptide reactivity assay
+measured_targets:
+- name: cysteine-containing synthetic peptide
+  measurement: percent peptide depletion after 24 h reaction with the test chemical (HPLC-UV)
+  notes: >-
+    A synthetic model peptide, not a gene product. Stands in for the
+    nucleophilic cysteine thiol of skin proteins.
+- name: lysine-containing synthetic peptide
+  measurement: percent peptide depletion after 24 h reaction with the test chemical (HPLC-UV)
+  notes: >-
+    A synthetic model peptide, not a gene product. Stands in for the
+    nucleophilic lysine amine of skin proteins.
+applications:
+- description: >-
+    Hazard identification of skin sensitizers without animals, by measuring
+    the protein reactivity that is the molecular initiating event of the skin
+    sensitization AOP. Gerberick et al. found the cysteine peptide the most
+    sensitive readout (80.8%) and histidine the least, and proposed peptide
+    reactivity as a screen that reduces reliance on the local lymph node assay.
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfh213
+  supporting_references:
+  - pmid:15254333
+  quotes:
+  - snippet: >-
+      The majority of chemical allergens is electrophilic and as such reacts
+      with nucleophilic amino acids like cysteine or lysine.
+    reference: pmid:15254333
+limitations:
+- description: >-
+    No cells, so no xenobiotic metabolism. The assay reads direct protein
+    reactivity and can miss pro-haptens, which become protein-reactive only
+    after metabolic activation, and pre-haptens, which require abiotic
+    (e.g. air oxidation) transformation. In a dedicated study, the DPRA gave
+    true positive results for 18 of 27 pre- and pro-haptens (67% sensitivity);
+    combining it with cell-based assays (KeratinoSens, h-CLAT) in a weight-of
+    -evidence approach recovered the sensitivity lost to the missing metabolism.
+  source_urls:
+  - https://doi.org/10.1021/acs.chemrestox.6b00055
+  supporting_references:
+  - pmid:27070937
+  quotes:
+  - snippet: >-
+      In contrast to in vivo methods, they lack or provide limited metabolic
+      capacity. For this reason, identification of pro-haptens but also
+      pre-haptens, which require molecular transformations to gain peptide
+      reactivity, is a challenge for these methods.
+    reference: pmid:27070937
+- description: >-
+    A single reaction time and concentration give a hazard call (sensitizer or
+    not), not a potency measure. The DPRA alone did not discriminate GHS
+    potency sub-categories 1A and 1B (56% accuracy against the local lymph
+    node assay); resolving potency needed the extended quantitative and
+    kinetic DPRA protocols.
+  source_urls:
+  - https://doi.org/10.1016/j.tiv.2017.08.015
+  supporting_references:
+  - pmid:28882705
+  quotes:
+  - snippet: >-
+      The Direct Peptide Reactivity Assay (DPRA; one concentration and
+      reaction-time) did not sufficiently discriminate between sub-categories
+      1A and 1B (56% accuracy compared to LLNA data, n=124).
+    reference: pmid:28882705
 source_resources:
 - resource: namsnetwork
   source_urls:
@@ -28,3 +123,12 @@ source_resources:
   - aop:40
   key_events:
   - aop.events:396
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1093/toxsci/kfh213
+dismech_status:
+  processed_through_dismech: false
+  present_in_dismech: false
+  dismech_pr_id: 15958
+  dismech_issue_id: 15944
+  assessed_on: '2026-11-18'

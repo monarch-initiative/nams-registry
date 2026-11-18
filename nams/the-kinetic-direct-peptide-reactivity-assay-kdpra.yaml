@@ -1,6 +1,121 @@
 model:
   id: the-kinetic-direct-peptide-reactivity-assay-kdpra
   name: The kinetic Direct Peptide Reactivity Assay (kDPRA)
+  # Untyped: NAMO has no class for an in chemico method (namo#55). A class
+  # for it is part of the NAMO work under nams-registry#110.
+  description: >-
+    A cell-free, in chemico assay for skin sensitization that extends the DPRA
+    into a kinetic reading to assess potency, not just hazard. A test chemical
+    is incubated with the synthetic cysteine-containing model peptide across
+    several concentrations and several reaction times; the reaction is stopped
+    by adding monobromobimane, which forms a fluorescent complex with the
+    peptide's remaining free cysteine, and the non-depleted peptide is
+    quantified by fluorescence. From the depletion-versus-concentration-and-
+    time matrix a kinetic rate constant (log kmax) is derived, and that rate
+    constant -- rather than a single depletion value -- is used to separate UN
+    GHS sub-category 1A (strong) sensitizers from 1B/not-classified chemicals,
+    because protein-reaction rate tracks sensitizer potency. The kinetic
+    reading was introduced by Wareing et al. 2017 as a modification of the
+    DPRA, its reproducibility established in a seven-laboratory ring trial
+    (Wareing et al. 2020) with intra- and inter-laboratory reproducibility of
+    96% and 88%, and after independent peer review it was accepted for
+    identifying GHS 1A sensitizers. It reads the same molecular initiating
+    event as the DPRA (AOP 40, Key Event 396) and is one of the in chemico
+    methods of OECD Test Guideline 442C, alongside DPRA and ADRA.
+  description_scope: METHOD
+  references:
+  - id: pmid:32521036
+    title: >-
+      The kinetic direct peptide reactivity assay (kDPRA): Intra- and
+      inter-laboratory reproducibility in a seven-laboratory ring trial.
+    journal: ALTEX
+    year: 2020
+    url: https://doi.org/10.14573/altex.2004291
+  - id: pmid:28882705
+    title: Prediction of skin sensitization potency sub-categories using peptide reactivity data.
+    journal: Toxicol In Vitro
+    year: 2017
+    url: https://doi.org/10.1016/j.tiv.2017.08.015
+  - id: doi:10.1787/9789264229709-en
+    title: 'Test No. 442C: In Chemico Skin Sensitisation'
+    url: https://doi.org/10.1787/9789264229709-en
+synonyms:
+- kDPRA
+- kinetic direct peptide reactivity assay
+measured_targets:
+- name: cysteine-containing synthetic peptide
+  measurement: >-
+    kinetic rate constant (log kmax) of peptide depletion, from fluorescence
+    of remaining free cysteine (monobromobimane) across concentrations and
+    reaction times
+  notes: >-
+    A synthetic model peptide, not a gene product. The kDPRA uses only the
+    cysteine peptide; the readout is a rate constant, giving potency rather
+    than a hazard call.
+applications:
+- description: >-
+    Potency sub-classification of skin sensitizers without animals:
+    identifying UN GHS sub-category 1A (strong) sensitizers from the kinetic
+    rate constant of cysteine-peptide depletion. Following peer review the
+    kDPRA was accepted for this use, as a stand-alone assay or within a
+    defined approach for quantitative potency assessment.
+  source_urls:
+  - https://doi.org/10.14573/altex.2004291
+  supporting_references:
+  - pmid:32521036
+  quotes:
+  - snippet: >-
+      Following an independent peer review, the kDPRA was considered to be
+      acceptable for the identification of GHS Cat 1A skin sensitizers.
+    reference: pmid:32521036
+- description: >-
+    A continuous potency readout combinable with other in vitro assays in a
+    defined approach. Natsch et al. built a database of rate constants for 180
+    chemicals and set a threshold of log kmax -2, giving 85% balanced accuracy
+    for predicting GHS 1A sensitizers against the local lymph node assay.
+  source_urls:
+  - https://doi.org/10.14573/altex.2004292
+  supporting_references:
+  - pmid:32840629
+  quotes:
+  - snippet: >-
+      A threshold of log kmax -2 offers a balanced accuracy of 85% for
+      predicting GHS 1A sensitizers according to the local lymph node assay.
+    reference: pmid:32840629
+limitations:
+- description: >-
+    No cells, so no xenobiotic metabolism. Like the DPRA and ADRA, the kDPRA
+    reads direct protein reactivity and can miss pro-haptens, which become
+    protein-reactive only after metabolic activation, and pre-haptens, which
+    require abiotic transformation -- the missing-metabolism gap shared by all
+    the cell-free peptide-reactivity assays of TG 442C.
+  source_urls:
+  - https://doi.org/10.1021/acs.chemrestox.6b00055
+  supporting_references:
+  - pmid:27070937
+  quotes:
+  - snippet: >-
+      In contrast to in vivo methods, they lack or provide limited metabolic
+      capacity. For this reason, identification of pro-haptens but also
+      pre-haptens, which require molecular transformations to gain peptide
+      reactivity, is a challenge for these methods.
+    reference: pmid:27070937
+- description: >-
+    The potency readout is a reaction-rate constant for the molecular
+    initiating event, not an apical potency. It is validated for separating
+    GHS 1A from 1B/not-classified among chemicals already identified as
+    sensitizers, and is used for 1A identification or within a defined
+    approach rather than as a complete potency assessment on its own.
+  source_urls:
+  - https://doi.org/10.14573/altex.2004292
+  supporting_references:
+  - pmid:32840629
+  quotes:
+  - snippet: >-
+      The kDPRA is proposed as a stand-alone assay for identification of GHS
+      1A sensitizers among chemicals identified as sensitizers by other tests
+      or defined approaches.
+    reference: pmid:32840629
 source_resources:
 - resource: namsnetwork
   source_urls:
@@ -27,3 +142,12 @@ source_resources:
   - aop:40
   key_events:
   - aop.events:396
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.14573/altex.2004291
+dismech_status:
+  processed_through_dismech: false
+  present_in_dismech: false
+  dismech_pr_id: 15958
+  dismech_issue_id: 15944
+  assessed_on: '2026-11-18'
