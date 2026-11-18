@@ -55,6 +55,20 @@ validate-references *files:
 fetch-reference ref:
   uv run linkml-reference-validator lookup {{ref}} --config .linkml-reference-validator.yaml
 
+# Check each quote in a NAM record is really in its cited reference (imports DisMech's snippet audit)
+[group('research')]
+[positional-arguments]
+check-snippets *args:
+  uv run --group research python -m nams_registry.check_snippets "$@"
+
+# Run a deep-research provider on a paper, e.g. `just deep-research --provider mock "query"`
+# [positional-arguments] keeps a quoted multi-word query as one argument; with
+# just's plain `{{args}}` expansion the shell resplits it on spaces.
+[group('research')]
+[positional-arguments]
+deep-research *args:
+  uv run --group research python -m nams_registry.deep_research "$@"
+
 # Search an ontology for a term, e.g. `just search-term sqlite:obo:cl "goblet cell"`
 [group('data')]
 search-term adapter query:

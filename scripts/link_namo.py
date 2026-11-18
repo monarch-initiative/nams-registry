@@ -21,13 +21,9 @@ registry never commits a copy. This script puts it at
 import os
 import subprocess
 import sys
+import tomllib
 import urllib.request
 from pathlib import Path
-
-try:
-    import tomllib
-except ModuleNotFoundError:  # Python 3.10
-    import tomli as tomllib
 
 SCHEMA_IN_NAMO = Path("src/namo/schema/namo.yaml")
 REPO = Path(__file__).resolve().parent.parent
