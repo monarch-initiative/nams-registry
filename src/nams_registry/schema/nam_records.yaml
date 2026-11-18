@@ -118,6 +118,63 @@ classes:
         description: >-
           Publications the source page cites for the statement, e.g.
           doi:10.1038/nm.3201.
+      quotes:
+        range: Excerpt
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          The source's own words behind the statement, each with the one
+          reference it is from. Optional: a statement assembled from a
+          catalogue entry or from a whole paper has no single sentence to
+          quote. Give one where a reader would otherwise have to take the
+          statement on trust, and always for a claim a record is likely to be
+          challenged on.
+
+  Excerpt:
+    description: >-
+      One verbatim quote and the single reference it comes from. The pair is
+      what makes a statement checkable: `just check-snippets` finds each quote
+      in the cited reference's cached text and reports the ones that are not
+      there.
+
+      The reference is one id, not a list, because a quote comes from one
+      publication. That is also what the checker pairs on: it reads the
+      reference beside the quote, so a quote next to a list of references
+      cannot be checked at all. Cite the rest of the support in the
+      statement's supporting_references.
+
+      Held here only until NAMO can carry evidence itself. NAMO has no slot
+      anywhere that holds the evidence for a claim about a model, so nothing
+      inside a record's `model` can be checked against its source; this covers
+      the registry's own statements and stops at that boundary. Proposed to
+      NAMO as monarch-initiative/namo#71, which sets out the gap against
+      dismech's ModelMechanismLink and the AOP Evidence Model's
+      Key Event / Observation / Assay chain.
+    attributes:
+      snippet:
+        required: true
+        # The annotation the checker and linkml-reference-validator both read
+        # to find quote fields, so neither hardcodes the name "snippet".
+        implements:
+        - linkml:excerpt
+        description: >-
+          The quote, exactly as the reference has it. Not a paraphrase and not
+          tidied up: it is checked as a substring, after the validator's own
+          normalisation of case, punctuation and whitespace. Join parts of a
+          sentence with " ... " rather than eliding silently.
+      reference:
+        range: uriorcurie
+        required: true
+        implements:
+        - linkml:authoritative_reference
+        description: >-
+          The reference the quote is from, as a CURIE, e.g. pmid:38043774. It
+          must be cached in references_cache/ for the quote to be checkable;
+          `just fetch-reference` puts it there.
+      note:
+        description: >-
+          Why this quote was chosen, where that is not obvious, e.g. that it
+          is the authors' own caveat rather than an observation.
 
   SourceRecord:
     description: >-
