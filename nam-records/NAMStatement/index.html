@@ -373,6 +373,17 @@
     click NAMStatement href "../NAMStatement/"
       NAMStatement : description
 
+      NAMStatement : quotes
+
+
+
+
+
+        NAMStatement --&gt; "*" Excerpt : quotes
+        click Excerpt href "../Excerpt/"
+
+
+
       NAMStatement : source_urls
 
       NAMStatement : supporting_references
@@ -406,6 +417,12 @@
 <td><a href="../supporting_references/">supporting_references</a></td>
 <td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Publications the source page cites for the statement, e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../quotes/">quotes</a></td>
+<td>* <br/> <a href="../Excerpt/">Excerpt</a></td>
+<td>The source's own words behind the statement, each with the one reference it i...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -494,6 +511,20 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMStatement</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">quotes</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quotes</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">source</span><span class="se">''</span><span class="s">s</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">words</span><span class="nv"> </span><span class="s">behind</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statement,</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">one</span>
+<span class="w">      </span><span class="s">reference</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">from.</span><span class="nv"> </span><span class="s">Optional:</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">statement</span><span class="nv"> </span><span class="s">assembled</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">catalogue</span><span class="nv"> </span><span class="s">entry</span>
+<span class="w">      </span><span class="s">or</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">whole</span><span class="nv"> </span><span class="s">paper</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">single</span><span class="nv"> </span><span class="s">sentence</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">quote.</span><span class="nv"> </span><span class="s">Give</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">reader</span>
+<span class="w">      </span><span class="s">would</span><span class="nv"> </span><span class="s">otherwise</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">take</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statement</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">trust,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">always</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">claim</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">likely</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">challenged</span><span class="nv"> </span><span class="s">on.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMStatement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Excerpt</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -533,6 +564,22 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMStatement</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uriorcurie</span>
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">quotes</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quotes</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'The</span><span class="nv"> </span><span class="s">source</span><span class="se">''</span><span class="s">s</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">words</span><span class="nv"> </span><span class="s">behind</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statement,</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">one</span>
+<span class="w">      </span><span class="s">reference</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">from.</span><span class="nv"> </span><span class="s">Optional:</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">statement</span><span class="nv"> </span><span class="s">assembled</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">catalogue</span><span class="nv"> </span><span class="s">entry</span>
+<span class="w">      </span><span class="s">or</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">whole</span><span class="nv"> </span><span class="s">paper</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">single</span><span class="nv"> </span><span class="s">sentence</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">quote.</span><span class="nv"> </span><span class="s">Give</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">reader</span>
+<span class="w">      </span><span class="s">would</span><span class="nv"> </span><span class="s">otherwise</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">take</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">statement</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">trust,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">always</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">claim</span>
+<span class="w">      </span><span class="s">a</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">likely</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">challenged</span><span class="nv"> </span><span class="s">on.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMStatement</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NAMStatement</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Excerpt</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </details>
 </div>
