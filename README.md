@@ -113,6 +113,51 @@ text is kept because a NAM that no mechanism graph can hold today may be
 linked later, and that linkage will need evidence from the paper's methods
 and results rather than its abstract.
 
+## Checking quotes, and reading a paper
+
+A statement in a NAM record can carry the source's own words, as
+`applications` / `limitations` > `quotes`, each quote with the one reference it
+is from. `just check-snippets` finds every quote in its reference's cached
+text and reports the ones that are not there; `--strict` makes that a
+failure, which is what a pull request wants.
+
+```bash
+just check-snippets                      # every record in nams/
+just check-snippets --strict             # exit 1 on an unverified quote
+
+# A real run, keyed on the paper rather than on a DisMech entity:
+just deep-research --provider openscientist --input-file prompt.md \
+  --output research/<stem>-deep-research-openscientist.md
+
+# A cheap end-to-end check that the recipe works; the mock provider is
+# off unless its own environment variable enables it:
+ENABLE_MOCK_PROVIDER=true just deep-research --provider mock "a test query"
+```
+
+A quote whose reference is cached as an abstract only is reported apart, and
+`--strict` still fails on it: nothing is established either way, because the
+full text may well contain it. The cure is to cache the full text, not to
+pass `--allow-abstract-only`.
+
+Both recipes **import DisMech rather than copying it** — the snippet audit
+from `dismech.reference_snippet_audit`, and the research provider policy from
+`dismech.deep_research_policy`. Nothing is copied into this repository; one
+copy of the thing stays in the repository that owns it, as with `just namo`.
+
+DisMech is in the `research` dependency group in `pyproject.toml`, pinned to a
+commit and resolved in `uv.lock`. It is a group rather than a project
+dependency because only these two recipes need it, so `uv sync` does not
+install it by default; the recipes pass `--group research`. Bump the pin by
+editing the rev and running `uv lock --upgrade-package dismech`. DisMech
+requires Python >=3.12, which is why this project's floor is >=3.12.
+
+The research client itself is the third-party `deep-research-client`, in the
+same group; DisMech does not implement one either. DisMech's own
+`just research-*` recipes are each keyed on a DisMech entity and none takes a
+PMID, which is why a paper with no DisMech anchor is run from here. Read
+[research/README.md](research/README.md) before committing a report: a report
+is a lead, never a source.
+
 ## Repository Structure
 
 * [docs/](docs/) - mkdocs-managed documentation

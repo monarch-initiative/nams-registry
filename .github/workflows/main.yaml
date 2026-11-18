@@ -44,8 +44,10 @@ jobs:
     strategy:
       matrix:
         # The oldest and newest supported versions. The registry isn't
-        # published as a package, so the versions between add little.
-        python-version: ["3.10", "3.14"]
+        # published as a package, so the versions between add little. The
+        # floor is 3.12 because the `research` dependency group imports
+        # DisMech, which requires it; 3.10 reached end of life in October 2026.
+        python-version: ["3.12", "3.14"]
       fail-fast: false
 
     steps:

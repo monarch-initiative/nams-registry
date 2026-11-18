@@ -11,7 +11,7 @@ authors = [
 license = "MIT"
 license-files = ["LICENSE"]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dynamic = ["version"]
 
 dependencies = [
@@ -32,6 +32,29 @@ dev = [
 ]
 lint = [
     "pre-commit>=4.6.2",
+]
+# The code `just check-snippets` and `just deep-research` import. It is a
+# group rather than a project dependency for two reasons: it is needed only by
+# those recipes, so `uv sync` does not install it by default; and a git
+# requirement in `project.dependencies` would need
+# `tool.hatch.metadata.allow-direct-references`, which bars the package from
+# PyPI. A group is not package metadata, so neither applies.
+#
+# DisMech is pinned to a commit here and resolved in uv.lock. Bump it with
+# `uv lock --upgrade-package dismech` after editing the rev. DisMech requires
+# Python >=3.12, which is this project's floor; it adds 18 packages to the
+# lockfile (matplotlib, seaborn, koza, duckdb and their dependencies).
+#
+# DisMech main at e23ed98 (2026-11-18). Its reference_snippet_audit takes the
+# schema, the validator config and the cache directory as arguments, so it
+# audits this repository's records and references_cache/ unchanged. Its
+# deep_research_policy gates Biomni behind DISMECH_ENABLE_BIOMNI.
+#
+# deep-research-client is the same third-party client DisMech uses; DisMech
+# does not implement one, so it is required here rather than inherited.
+research = [
+    "dismech @ git+https://github.com/monarch-initiative/dismech@e23ed9889fe8e2e621879db5830e660d98f3c28f",
+    "deep-research-client[terms,validation]>=0.2.14",
 ]
 
 # See https://hatch.pypa.io/latest/config/build/#file-selection for how to
@@ -79,7 +102,7 @@ exclude = [
 # Apply the excludes to files pre-commit passes by name, too.
 force-exclude = true
 # Set oldest supported Python version
-target-version = "py310"
+target-version = "py312"
 
 # Ref.: https://github.com/codespell-project/codespell
 [tool.codespell]
