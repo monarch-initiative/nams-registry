@@ -5,22 +5,24 @@ model:
   # for it is part of the NAMO work under nams-registry#110.
   description: >-
     A cell-free, in chemico assay for skin sensitization, developed from the
-    DPRA to overcome its sensitivity and solubility limits. In place of the
+    DPRA to improve its sensitivity and reduce interference. In place of the
     DPRA's peptides it uses two synthetic amino acid derivatives, N-(2-(1-
     naphthyl)acetyl)-L-cysteine (NAC) and alpha-N-(2-(1-naphthyl)acetyl)-L-
     lysine (NAL), each carrying a naphthalene ring on the amino group. The
     naphthalene chromophore lets the unreacted derivative be quantified by
     HPLC at 281 nm, which gives a more stable baseline and less interference
-    from co-absorbing test chemicals than the DPRA's 220 nm, and allows the
-    reaction to run at roughly a hundredth of the DPRA's chemical
-    concentration -- so poorly soluble, hydrophobic chemicals that precipitate
-    in the DPRA can still be tested. As in the DPRA, a test chemical is
-    incubated with each derivative and percent depletion of NAC and NAL is the
-    readout for the molecular initiating event of the skin sensitization AOP
-    (AOP 40, Key Event 396). The method was introduced by Fujita et al. 2014
-    and reached ~88% predictive accuracy against DPRA on 82 chemicals; it is
-    one of the in chemico methods of OECD Test Guideline 442C, alongside DPRA
-    and kDPRA.
+    from co-absorbing test chemicals than the DPRA's 220 nm. As in the DPRA, a
+    test chemical is incubated with each derivative and percent depletion of
+    NAC and NAL is the readout for the molecular initiating event of the skin
+    sensitization AOP (AOP 40, Key Event 396). The method was introduced by
+    Fujita et al. 2014 and reached ~88% predictive accuracy against DPRA on 82
+    chemicals. A later dilutional variant, the ADRA-dilutional method
+    (ADRA-DM; Yamamoto et al. 2015), reduces the test-chemical concentration
+    100-fold relative to the ADRA -- two orders of magnitude lower than the
+    ADRA -- and removes the solubility restriction that was a major problem for
+    the DPRA, so poorly soluble, hydrophobic chemicals can still be tested.
+    ADRA is one of the in chemico methods of OECD Test Guideline 442C,
+    alongside DPRA and kDPRA.
   description_scope: METHOD
   references:
   - id: pmid:24928155
@@ -65,9 +67,11 @@ applications:
     reference: pmid:24928155
 - description: >-
     Testing hydrophobic or poorly soluble chemicals that the DPRA cannot
-    handle. The naphthalene chromophore lets ADRA run at chemical
-    concentrations about two orders of magnitude below the DPRA's, so
-    chemicals that would precipitate in the DPRA reaction stay in solution.
+    handle, through the ADRA-dilutional method (ADRA-DM) variant. ADRA-DM
+    reduces the test-chemical concentration 100-fold relative to the ADRA --
+    two orders of magnitude lower -- so chemicals that would precipitate in the
+    DPRA reaction stay in solution, removing the solubility restriction that
+    was a major problem for the DPRA.
   source_urls:
   - https://doi.org/10.1002/jat.3139
   supporting_references:
