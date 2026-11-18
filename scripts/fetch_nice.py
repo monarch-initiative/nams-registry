@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # /// script
-# requires-python = ">=3.10"
+# requires-python = ">=3.12"
 # dependencies = ["playwright", "pandas", "openpyxl"]
 # ///
 """Fetch the NICE data set catalogue, assay list and data set files.
