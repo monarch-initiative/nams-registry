@@ -181,9 +181,9 @@ Because every paper is processed through DisMech, each record also has
 |---|---|
 | In scope | 1,572 |
 | In the review log | 10 |
-| Screened | 0 |
-| Kept | 0 |
-| Added to the registry | 0 |
+| Screened | 2 |
+| Kept | 2 |
+| Added to the registry | 2 |
 
 The first 10 papers in the log are a random sample of the 2023 papers.
 None of the 1,572 papers' DOIs or PMIDs appeared in `nams/`, `partial-nams/`
