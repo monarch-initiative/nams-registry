@@ -1,0 +1,151 @@
+model:
+  id: ace-inhibition-ga-mlr-2d-qsar-in-silico
+  type: QSARModel
+  name: GA-MLR 2D-QSAR model for angiotensin-converting-enzyme inhibition
+  description: >-
+    A quantitative structure-activity relationship model that predicts
+    angiotensin-converting-enzyme (ACE) inhibitory activity from
+    two-dimensional molecular descriptors. Genetic algorithm-multiple linear
+    regression (GA-MLR) is fitted to a dataset of 255 structurally diverse,
+    experimentally validated ACE inhibitors, yielding models that conform to
+    the OECD principles for QSAR validation (reported R2 = 0.70-0.75,
+    Q2LOO = 0.67-0.73, Q2LMO = 0.66-0.72, CCCex = 0.70-0.78). The descriptors
+    are Padel, Estate and PyDescriptors chosen to be simply illustratable, and
+    they correlate the structural scaffold required for ACE inhibition. In the
+    same study the model drives a QSAR-based virtual screen of 102 thiadiazole
+    derivatives, alongside constraint-based molecular docking against ACE,
+    molecular dynamics and ADMET analysis, nominating two computational leads
+    (D24, D40). Its output is predicted ACE-inhibition activity, not a
+    mechanism of cardiovascular disease, which the paper names only as
+    motivation. Recorded in the registry from the primary paper, Shah et al.
+    2023/2024 (doi:10.1080/07391102.2023.2203261), found through the
+    Complement-ARIE Landscape Analysis disease-paper corpus.
+  description_scope: METHOD
+  biological_organization_level: SUBCELLULAR
+  spatial_context: >-
+    None for the QSAR itself: it operates on chemical structure alone and
+    simulates no biological system. The constraint-based molecular docking
+    reported alongside it represents the ACE active site to characterise
+    ligand-enzyme binding, but the predictive model is structure-based QSAR.
+  complexity_level: LOW
+  computational_method: >-
+    Genetic algorithm-multiple linear regression (GA-MLR) over selected
+    two-dimensional molecular descriptors, with constraint-based molecular
+    docking, molecular dynamics and ADMET analysis used to triage the
+    virtual-screening hits.
+  prediction_scope: >-
+    ACE-inhibition activity for an organic chemical from its two-dimensional
+    structure, used to rank and virtually screen candidate inhibitors. It
+    predicts a drug-target activity endpoint, not the mechanism by which ACE
+    inhibition modifies cardiovascular disease.
+  molecular_descriptors:
+  # The abstract names the descriptor classes, not the individual descriptors.
+  - Padel descriptors (2D)
+  - Estate descriptors (2D)
+  - PyDescriptors (2D)
+  activity_endpoint: >-
+    Angiotensin-converting-enzyme (ACE) inhibitory activity
+  references:
+  - id: pmid:37128759
+    title: >-
+      In silico study to recognize novel angiotensin-converting-enzyme-I
+      inhibitors by 2D-QSAR and constraint-based molecular simulations
+    authors:
+    - Sagar Shah
+    - Dinesh Chaple
+    - Vijay H. Masand
+    - Magdi E. A. Zaki
+    - Sami A. Al-Hussain
+    - Abhay Shah
+    - Sumit Arora
+    - Rahul Jawarkar
+    - Mohd Tauqeer
+    journal: Journal of Biomolecular Structure and Dynamics
+    year: 2024
+    url: https://doi.org/10.1080/07391102.2023.2203261
+synonyms:
+- GA-MLR QSAR model for ACE inhibition
+- 2D-QSAR model for ACE inhibitors
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Correlating the two-dimensional structural scaffold required for ACE
+    inhibition, through OECD-conformant GA-MLR QSAR models built on 255
+    experimentally validated ACE inhibitors.
+  source_urls:
+  - https://doi.org/10.1080/07391102.2023.2203261
+  supporting_references:
+  - pmid:37128759
+  quotes:
+  - snippet: >-
+      the genetic algorithm-multiple linear regressions (GA-MLR) method is used
+      to generate highly predictive and statistically significant (R2 =
+      0.70-0.75, Q2LOO=0.67-0.73, Q2LMO=0.66-0.72, CCCex=0.70-0.78) quantitative
+      structure-activity relationships (QSAR) models conferring to OECD
+      requirements using a dataset of 255 structurally diverse and
+      experimentally validated ACE inhibitors
+    reference: pmid:37128759
+- description: >-
+    QSAR-based virtual screening of a designed database of 102 thiadiazole
+    derivatives for novel lead molecules, combined with applicability-domain
+    analysis, constraint-based molecular docking, molecular dynamics and
+    ADMET; the workflow nominated two compounds, D24 and D40, as inflexibly
+    bound to the ACE binding site and drug-like.
+  source_urls:
+  - https://doi.org/10.1080/07391102.2023.2203261
+  supporting_references:
+  - pmid:37128759
+  quotes:
+  - snippet: >-
+      The QSAR-based virtual screening was utilized to find novel lead
+      molecules from a designed database of 102 thiadiazole derivatives. The
+      Applicability domain (AD), Molecular Docking, Molecular dynamics, and
+      ADMET analysis suggest two compound D24 and D40 are inflexibly linked to
+      the protein binding site and follows drug-likeness properties.
+    reference: pmid:37128759
+limitations:
+- description: >-
+    The model's output is predicted ACE-inhibition activity, a drug-target
+    endpoint, so it identifies no disease mechanism. Cardiovascular disease is
+    the stated motivation, not something the model represents; this is why the
+    NAM has no DisMech mechanism anchor (monarch-initiative/dismech#16882).
+  source_urls:
+  - https://doi.org/10.1080/07391102.2023.2203261
+  supporting_references:
+  - pmid:37128759
+- description: >-
+    The two nominated leads (D24, D40) are computational predictions from
+    docking, molecular dynamics and ADMET with no wet-lab confirmation
+    reported. Docking against a known target to confirm candidate binding sits
+    at the edge of the unsettled question of how far a simulation-only target
+    claim can be trusted (monarch-initiative/dismech#16883); here ACE is an
+    established target, so the docking is confirmatory within the screen rather
+    than a new target proposal.
+  source_urls:
+  - https://doi.org/10.1080/07391102.2023.2203261
+  supporting_references:
+  - pmid:37128759
+- description: >-
+    Only the paper's abstract is cached here, so the individual descriptors
+    are not itemised, the ACE structure used as the docking receptor is not
+    named, and no experimental validation of the virtual-screening hits is
+    available in this record.
+  supporting_references:
+  - pmid:37128759
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1080/07391102.2023.2203261
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1080/07391102.2023.2203261
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 16882
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
