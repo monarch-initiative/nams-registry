@@ -414,6 +414,17 @@
 
       SourceRecord : substances
 
+      SourceRecord : text_consulted
+
+
+
+
+
+        SourceRecord --&gt; "*" TextConsulted : text_consulted
+        click TextConsulted href "../TextConsulted/"
+
+
+
 </code></pre>
 <!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
@@ -449,6 +460,12 @@
 <td><a href="../accessed_on/">accessed_on</a></td>
 <td>0..1 <br/> <a href="../Date/">Date</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../text_consulted/">text_consulted</a></td>
+<td>* <br/> <a href="../TextConsulted/">TextConsulted</a></td>
+<td>For each paper in source_urls, how much of it the curator read: the full text...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -621,6 +638,21 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SourceRecord</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">  </span><span class="nt">text_consulted</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text_consulted</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'For</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">paper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">source_urls,</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">much</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">curator</span><span class="nv"> </span><span class="s">read:</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">full</span><span class="nv"> </span><span class="s">text,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">only</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">abstract.</span><span class="nv"> </span><span class="s">Per</span><span class="nv"> </span><span class="s">paper,</span><span class="nv"> </span><span class="s">because</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">NAM</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">often</span><span class="nv"> </span><span class="s">described</span>
+<span class="w">      </span><span class="s">in</span><span class="nv"> </span><span class="s">several</span><span class="nv"> </span><span class="s">papers</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">curator</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">had</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">full</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">only</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">abstract</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">another.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">ABSTRACT_ONLY</span><span class="nv"> </span><span class="s">entry</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">provisional</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">paper:</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">full</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">sought</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">revisited.</span><span class="nv"> </span><span class="s">Used</span>
+<span class="w">      </span><span class="s">with</span><span class="nv"> </span><span class="s">scientific-literature;</span><span class="nv"> </span><span class="s">leave</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">out</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">paper.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SourceRecord</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TextConsulted</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">source_holds_more_details</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_holds_more_details</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource holds more about the NAM than this record does, in a</span>
@@ -783,6 +815,23 @@
 <span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SourceRecord</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span>
+<span class="w">  </span><span class="nt">text_consulted</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text_consulted</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'For</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">paper</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">source_urls,</span><span class="nv"> </span><span class="s">how</span><span class="nv"> </span><span class="s">much</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">curator</span><span class="nv"> </span><span class="s">read:</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">full</span><span class="nv"> </span><span class="s">text,</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">only</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">abstract.</span><span class="nv"> </span><span class="s">Per</span><span class="nv"> </span><span class="s">paper,</span><span class="nv"> </span><span class="s">because</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">NAM</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">often</span><span class="nv"> </span><span class="s">described</span>
+<span class="w">      </span><span class="s">in</span><span class="nv"> </span><span class="s">several</span><span class="nv"> </span><span class="s">papers</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">curator</span><span class="nv"> </span><span class="s">may</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">had</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">full</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">only</span>
+<span class="w">      </span><span class="s">the</span><span class="nv"> </span><span class="s">abstract</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">another.</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">ABSTRACT_ONLY</span><span class="nv"> </span><span class="s">entry</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">provisional</span>
+<span class="w">      </span><span class="s">for</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">paper:</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">full</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">should</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">sought</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">revisited.</span><span class="nv"> </span><span class="s">Used</span>
+<span class="w">      </span><span class="s">with</span><span class="nv"> </span><span class="s">scientific-literature;</span><span class="nv"> </span><span class="s">leave</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">out</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">resource</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">paper.'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/monarch-initiative/nams-registry/nam_records</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SourceRecord</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SourceRecord</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TextConsulted</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">inlined_as_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">source_holds_more_details</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_holds_more_details</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The resource holds more about the NAM than this record does, in a</span>

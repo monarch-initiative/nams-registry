@@ -757,6 +757,14 @@
          <lastmod>2026-11-19</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/TextConsulted/</loc>
+         <lastmod>2026-11-19</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/TextConsultedEnum/</loc>
+         <lastmod>2026-11-19</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/ThreeDArchitectureEnum/</loc>
          <lastmod>2026-11-19</lastmod>
     </url>
@@ -1617,6 +1625,10 @@
          <lastmod>2026-11-19</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/source_url/</loc>
+         <lastmod>2026-11-19</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/source_urls/</loc>
          <lastmod>2026-11-19</lastmod>
     </url>
@@ -1686,6 +1698,14 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/synonyms/</loc>
+         <lastmod>2026-11-19</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/text/</loc>
+         <lastmod>2026-11-19</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/text_consulted/</loc>
          <lastmod>2026-11-19</lastmod>
     </url>
     <url>
