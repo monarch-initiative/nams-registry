@@ -141,6 +141,25 @@ def test_nam_source_resources_exist(filepath):
     assert not missing, f"unknown resources: {missing}"
 
 
+@pytest.mark.parametrize("filepath", NAM_FILES, ids=lambda p: Path(p).stem)
+def test_nam_text_consulted_names_its_own_papers(filepath):
+    """Test that text_consulted describes the papers of the source it is on.
+
+    Each entry must name a URL in the same source's source_urls, and no paper
+    may be described twice, so an abstract-only flag cannot drift away from
+    the paper it is about.
+    """
+    with open(filepath) as fh:
+        instance = yaml.safe_load(fh)
+    for source in instance["source_resources"]:
+        consulted = [t["source_url"] for t in source.get("text_consulted", [])]
+        stray = set(consulted) - set(source.get("source_urls", []))
+        assert not stray, f"{source['resource']}: not in its source_urls: {stray}"
+        assert len(consulted) == len(set(consulted)), (
+            f"{source['resource']}: a paper is listed twice in text_consulted"
+        )
+
+
 def load_nam(nam_id):
     with open(NAMS_DIR / f"{nam_id}.yaml") as fh:
         return yaml.safe_load(fh)

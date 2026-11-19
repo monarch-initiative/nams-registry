@@ -202,6 +202,19 @@ classes:
         description: Products the resource sells for the NAM, for a vendor.
       accessed_on:
         range: date
+      text_consulted:
+        range: TextConsulted
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          For each paper in source_urls, how much of it the curator read: the
+          full text, or only the abstract. Per paper, because one NAM is
+          often described in several papers and the curator may have had the
+          full text of one and only the abstract of another. A record with an
+          ABSTRACT_ONLY entry is provisional for that paper: the full text
+          should be sought and the record revisited. Used with
+          scientific-literature; leave it out for a resource that is not a
+          paper.
       source_holds_more_details:
         range: boolean
         description: >-
@@ -252,6 +265,22 @@ classes:
         description: >-
           AOP-Wiki Key Events the resource links to the NAM, e.g.
           aop.events:1635.
+
+  TextConsulted:
+    description: >-
+      How much of one paper a record's curator read. Kept in the registry,
+      not proposed to NAMO, because it describes the curation, not the NAM.
+    attributes:
+      source_url:
+        range: uri
+        required: true
+        description: >-
+          The paper, as it is given in the same source's source_urls, e.g.
+          https://doi.org/10.1016/j.drudis.2023.103488.
+      text:
+        range: TextConsultedEnum
+        required: true
+        description: How much of the paper was read.
 
   MeasuredTarget:
     description: >-
@@ -394,3 +423,17 @@ slots:
     range: date
     slot_uri: dcterms:modified
     description: The date this record was last changed.
+
+enums:
+
+  TextConsultedEnum:
+    description: How much of a paper a record's curator read.
+    permissible_values:
+      FULL_TEXT:
+        description: The full text was read; the record may draw on any part of it.
+      ABSTRACT_ONLY:
+        description: >-
+          Only the abstract was read, because the full text was not available
+          to the curator (e.g. subscription-only, not in PMC). The record is
+          bounded to what the abstract states, and the full text should be
+          sought so the record can be completed or corrected.
