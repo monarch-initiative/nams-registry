@@ -1,0 +1,54 @@
+model:
+  id: osteoarthritis-horse
+  type: AnimalModel
+  name: Horse model of osteoarthritis
+  description: >-
+    A horse model of osteoarthritis (OA), named in the review by Manivong et al.
+    2023 (doi:10.1016/j.drudis.2023.103488) as the large relevant animal model
+    for evaluating new OA therapeutic strategies, alongside a small (zebrafish)
+    model. Recorded from the abstract alone: the abstract does not say how OA
+    arises or is induced in the horse, which joints or life stages are used, or
+    what is read out. NAM-adjacent: an animal model, which the registry collects
+    alongside non-animal methods.
+  description_scope: METHOD
+  species:
+    id: NCBITaxon:9796
+    name: Equus caballus
+applications:
+- description: >-
+    Evaluating new therapeutic strategies for osteoarthritis, as a large
+    animal model.
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  supporting_references:
+  - doi:10.1016/j.drudis.2023.103488
+  quotes:
+  - snippet: >-
+      using either large (horse) or small (zebrafish) relevant animal models to
+      evaluate new therapeutic strategies
+    reference: pmid:36623796
+limitations:
+- description: >-
+    Abstract-only record. The full text of Manivong et al. 2023 is subscription-
+    only and was not available to the curator, so this record holds only what
+    the abstract states. How the model is made, the readouts used and its
+    fidelity to human osteoarthritis are not captured; seek the full text and
+    revisit.
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  supporting_references:
+  - doi:10.1016/j.drudis.2023.103488
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  accessed_on: '2026-11-19'
+  text_consulted:
+  - source_url: https://doi.org/10.1016/j.drudis.2023.103488
+    text: ABSTRACT_ONLY
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
