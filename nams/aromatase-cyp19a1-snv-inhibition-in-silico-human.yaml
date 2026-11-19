@@ -102,6 +102,9 @@ source_resources:
   source_urls:
   - https://doi.org/10.1016/j.tox.2023.153686
   accessed_on: '2026-11-14'
+  text_consulted:
+  - source_url: https://doi.org/10.1016/j.tox.2023.153686
+    text: ABSTRACT_ONLY
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
@@ -109,4 +112,4 @@ dismech_status:
   dismech_pr_id: 17315
   assessed_on: '2026-11-14'
 creation_date: '2026-11-14'
-last_modified_date: '2026-11-18'
+last_modified_date: '2026-11-19'

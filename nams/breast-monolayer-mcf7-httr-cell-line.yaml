@@ -170,10 +170,13 @@ source_resources:
   method_type: in vitro
   cell_lines:
   - MCF7
+  text_consulted:
+  - source_url: https://doi.org/10.1016/j.tox.2023.153694
+    text: ABSTRACT_ONLY
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
   dismech_issue_id: 16882
   assessed_on: '2026-11-18'
 creation_date: '2026-11-18'
-last_modified_date: '2026-11-18'
+last_modified_date: '2026-11-19'

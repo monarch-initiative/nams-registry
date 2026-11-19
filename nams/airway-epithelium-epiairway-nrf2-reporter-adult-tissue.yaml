@@ -94,6 +94,11 @@ source_resources:
   - https://doi.org/10.1016/j.tox.2024.153801
   - https://doi.org/10.3390/toxics12020129
   accessed_on: '2026-11-13'
+  text_consulted:
+  - source_url: https://doi.org/10.1016/j.tox.2024.153801
+    text: ABSTRACT_ONLY
+  - source_url: https://doi.org/10.3390/toxics12020129
+    text: FULL_TEXT
 dismech_status:
   processed_through_dismech: true
   present_in_dismech: false
@@ -101,4 +106,4 @@ dismech_status:
   dismech_pr_id: 17316
   assessed_on: '2026-11-13'
 creation_date: '2026-11-13'
-last_modified_date: '2026-11-15'
+last_modified_date: '2026-11-19'
