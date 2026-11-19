@@ -171,6 +171,16 @@ records how the paper was found, so all NAMs found this way can be listed by
 its resource id. The DOI in `source_urls` is also what ties a record to its
 row in the review log.
 
+When only a paper's abstract could be read, its `scientific-literature`
+source says so, one entry per paper, so that abstract-only records can be
+found and revisited once the full text is in hand:
+
+```yaml
+  text_consulted:
+  - source_url: https://doi.org/10.1016/j.drudis.2023.103488
+    text: ABSTRACT_ONLY
+```
+
 Because every paper is processed through DisMech, each record also has
 `dismech_status`, with `processed_through_dismech: true`, and
 `present_in_dismech` checked against a DisMech commit.
