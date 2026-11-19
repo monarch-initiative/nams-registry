@@ -1,0 +1,117 @@
+# DEFERRED. Not in nams/, and not validated.
+#
+# What does not fit: this NAM is a bioanalytical assay, not a model system. It
+# is an ELISA system that measures a therapeutic antibody, natalizumab, in its
+# bivalent (unexchanged) and monovalent (Fab-arm-exchanged) forms in clinical
+# samples. NAMO's ModelSystem hierarchy has no class for an assay of this kind.
+#
+# Which issue will settle it: nams-registry#90 (whether and how the registry
+# holds clinical, epidemiological and bioanalytical methods; this paper is the
+# example that issue was opened on) and monarch-initiative/namo#55 (no NAMO
+# class for a method outside the ModelSystem taxonomy). The registry decided
+# on 2026-11-13 that bioanalytical assays are in scope; only the typing is
+# open.
+#
+# Where it came from: the Complement-ARIE Landscape Analysis dashboard, whose
+# "Disease(s) Examined" answer named multiple sclerosis. The disease is the
+# context for the drug assay, not something the assay models.
+#
+# DisMech: not yet processed. No DisMech issue has been opened for this paper.
+#
+# Only the paper's abstract is available (it is not open access, and is not
+# in PMC), so every statement below comes from the abstract.
+
+model:
+  # type is omitted deliberately; see the note above.
+  id: natalizumab-arm-exchange-veritope-elisa
+  name: Peptide mimotope (Veritope) ELISA for bivalent and arm-exchanged
+    natalizumab
+  description: >-
+    An enzyme-linked immunosorbent assay (ELISA) system that distinguishes and
+    quantifies the bivalent (unexchanged) and monovalent (Fab-arm-exchanged)
+    forms of natalizumab, a therapeutic antibody used to treat multiple
+    sclerosis that undergoes in vivo Fab arm exchange to form a monovalent
+    bispecific antibody. One assay uses a peptide mimotope, the Veritope, that
+    binds exclusively to bivalent natalizumab; combined with an ELISA that
+    quantifies total natalizumab, the system gives the amounts of both forms.
+    The assays were developed using in vitro natalizumab arm exchange together
+    with peptide mimotope and anti-idiotype surface capture chemistry.
+    Recorded from Page et al. 2023 (doi:10.1097/FTD.0000000000001038).
+  description_scope: METHOD
+  references:
+  - id: pmid:36201847
+    title: >-
+      Peptide Mimotope-Enabled Quantification of Natalizumab Arm Exchange
+      During Multiple Sclerosis Treatment
+    authors:
+    - LJ Page
+    - J Lagunas-Acosta
+    - R Heussen
+    - ET Castellana
+    - BT Messmer
+    journal: Therapeutic Drug Monitoring
+    year: 2023
+    url: https://doi.org/10.1097/FTD.0000000000001038
+synonyms:
+- Veritope natalizumab assay
+- natalizumab arm exchange ELISA
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Quantifying unexchanged (bivalent) and exchanged (monovalent) natalizumab
+    in clinical samples from people with multiple sclerosis treated with the
+    drug.
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+  supporting_references:
+  - pmid:36201847
+- description: >-
+    Investigating how the monovalent-to-bivalent ratio relates to natalizumab
+    pharmacokinetics and pharmacodynamics, the drug's efficacy, and the risk
+    of JC polyomavirus-driven progressive multifocal leukoencephalopathy (PML).
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+  supporting_references:
+  - pmid:36201847
+- description: >-
+    The authors propose such assays may be useful for optimizing extended
+    interval dosing of natalizumab and reducing the risk of PML.
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+  supporting_references:
+  - pmid:36201847
+limitations:
+- description: >-
+    The Veritope assay measures bivalent natalizumab only; the monovalent form
+    is obtained in combination with a separate total-natalizumab ELISA, so the
+    exchanged fraction depends on two assays.
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+  supporting_references:
+  - pmid:36201847
+- description: >-
+    The clinical significance of the monovalent-to-bivalent ratio, for
+    efficacy or for PML risk, is what the assay is meant to let others
+    investigate; the paper does not establish it.
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+  supporting_references:
+  - pmid:36201847
+- description: >-
+    Only the paper's abstract was available, so assay performance (range,
+    sensitivity, precision), the sample matrix, and the number and source of
+    clinical samples tested are not recorded here.
+  supporting_references:
+  - pmid:36201847
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1097/FTD.0000000000001038
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
