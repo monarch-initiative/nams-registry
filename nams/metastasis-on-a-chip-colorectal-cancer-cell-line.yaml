@@ -1,0 +1,267 @@
+model:
+  id: metastasis-on-a-chip-colorectal-cancer-cell-line
+  type: OrganOnChip
+  name: Metastasis-on-a-chip (colorectal cancer cell line)
+  description: >-
+    A microfluidic "metastasis-on-a-chip" platform developed by the Skardal
+    laboratory, in which a tumour construct is connected by recirculating fluid
+    flow to one or more downstream healthy-tissue constructs, so that
+    fluorescently labelled tumour cells can be tracked as they leave the primary
+    site, enter circulation, and colonise the downstream organs. Tumour and host
+    tissues are biofabricated in hyaluronic-acid/gelatin hydrogels. In the
+    two-chamber version (Skardal et al. 2016), red-fluorescent HCT-116
+    colorectal carcinoma cells seeded in a gut construct disseminate under flow
+    to a downstream liver construct; the system responds to hydrogel-stiffness
+    modulation and to chemotherapeutic agents. In the multi-site version (Aleman
+    & Skardal 2019), a colorectal cancer (CRC) organoid in a single upstream
+    microfluidic chamber is connected to multiple downstream chambers housing
+    liver, lung, and endothelial constructs built by 3D photopatterning, and
+    HCT116 CRC cells preferentially home to the liver and lung constructs — the
+    organs to which human CRC most often metastasises. The platform is reviewed
+    as an organ-on-a-chip cancer model in Anderson et al. 2023 (Figure 3c).
+
+    The static liver-tumour hybrid-organoid system of Skardal et al. 2015
+    (doi:10.1007/s10439-015-1298-3) is the conceptual precursor: HepG2
+    hepatoma cells and RFP-labelled HCT-116 colon carcinoma cells were
+    co-cultured in hyaluronic-acid/gelatin microcarriers in a rotating-wall-
+    vessel bioreactor to form liver organoids carrying colon-carcinoma tumour
+    foci, and the tumour cells shifted from an epithelial phenotype in 2D to a
+    mesenchymal/metastatic phenotype inside the organoid. That system has no
+    microfluidic device and no gut-to-liver flow; it is a single combined
+    organoid rather than connected chambers, so it may warrant its own record
+    (NAMO Organoid rather than OrganOnChip). It is described here as the
+    precursor to the chip rather than curated separately.
+  biological_organization_level: ORGAN
+  spatial_context: >-
+    A circulatory microfluidic device of separate chambers connected in series
+    by fluid flow: an upstream tumour/gut construct (colorectal cancer cells)
+    and one or more downstream healthy-tissue constructs (liver, and in the
+    multi-site version lung and endothelium), each a 3D hydrogel construct.
+  complexity_level: HIGH
+  organ_modeled:
+    id: UBERON:0001155
+    name: colon
+  cell_types:
+  - id: CL:0002253
+    name: epithelial cell of large intestine
+  - id: CL:0000182
+    name: hepatocyte
+  - id: CL:0000115
+    name: endothelial cell
+  cell_source: >-
+    Human cancer cell lines and biofabricated host-tissue constructs: HCT-116
+    red-fluorescent-protein-labelled colorectal carcinoma cells as the tumour,
+    with liver (HepG2 hepatoma in the precursor system), lung, and endothelial
+    constructs as downstream host tissues.
+  perfusion_system: >-
+    A circulatory device of chambers connected in series by recirculating fluid
+    flow, which carries tumour cells from the primary construct into circulation
+    and on to the downstream constructs. Two chambers (gut and liver) in Skardal
+    et al. 2016; a single upstream microfluidic chamber connected to multiple
+    downstream chambers (liver, lung, endothelium) in Aleman & Skardal 2019.
+  references:
+  - id: doi:10.1002/bit.25950
+    title: A reductionist metastasis-on-a-chip platform for in vitro tumor progression
+      modeling and drug screening
+    authors:
+    - Aleksander Skardal
+    - Mahesh Devarasetty
+    - Steven Forsythe
+    - Anthony Atala
+    - Shay Soker
+    journal: Biotechnology and Bioengineering
+    year: 2016
+    url: https://doi.org/10.1002/bit.25950
+  - id: doi:10.1002/bit.26871
+    title: A multi-site metastasis-on-a-chip microphysiological system for assessing
+      metastatic preference of cancer cells
+    authors:
+    - Julio Aleman
+    - Aleksander Skardal
+    journal: Biotechnology and Bioengineering
+    year: 2019
+    url: https://doi.org/10.1002/bit.26871
+  - id: pmid:25777294
+    title: Liver-Tumor Hybrid Organoids for Modeling Tumor Growth and Drug Response
+      In Vitro.
+    authors:
+    - Skardal A
+    - Devarasetty M
+    - Rodman C
+    - Atala A
+    - Soker S
+    journal: Ann Biomed Eng
+    year: 2015
+    url: https://doi.org/10.1007/s10439-015-1298-3
+  - id: doi:10.1557/s43577-023-00559-8
+    title: Three-dimensional bioprinting of in vitro tumor organoid and organ-on-a-chip
+      models
+    authors:
+    - Sydney R. Anderson
+    - Emerie J. Stagner
+    - Hemamylammal Sivakumar
+    - Aleksander Skardal
+    journal: MRS Bulletin
+    year: 2023
+    url: https://doi.org/10.1557/s43577-023-00559-8
+synonyms:
+- metastasis-on-a-chip
+- multi-site metastasis-on-a-chip microphysiological system
+- tumour-liver metastasis chip
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Modelling the migratory events of metastasis in vitro: fluorescent
+    colorectal cancer cells are tracked in real time as they leave a
+    hydrogel-fabricated gut/tumour construct, enter circulation, and reach a
+    downstream liver construct within a circulatory fluidic device, mimicking
+    stages of human metastasis.
+  source_urls:
+  - https://doi.org/10.1002/bit.25950
+  supporting_references:
+  - doi:10.1002/bit.25950
+  quotes:
+  - snippet: >-
+      Here we describe a "metastasis‐on‐a‐chip" system allowing real time tracking
+      of fluorescent colon cancer cells migrating from hydrogel‐fabricated gut
+      constructs to downstream liver constructs within a circulatory fluidic
+      device system that responds to environmental manipulation and drug
+      treatment.
+    reference: doi:10.1002/bit.25950
+  - snippet: >-
+      Metastatic tumor foci grew in size, eventually disseminating from the
+      intestine construct and entering circulation, subsequently reaching in the
+      liver construct, thus mimicking some of the migratory events observed
+      during metastasis.
+    reference: doi:10.1002/bit.25950
+- description: >-
+    Assessing organ-specific metastatic preference: in the multi-site device, a
+    colorectal cancer organoid is connected to downstream liver, lung, and
+    endothelial constructs, and HCT116 CRC cells preferentially home to the
+    liver and lung — the organs CRC metastasises to most in human patients.
+  source_urls:
+  - https://doi.org/10.1002/bit.26871
+  supporting_references:
+  - doi:10.1002/bit.26871
+  quotes:
+  - snippet: >-
+      Specifically, cancer cells begin in colorectal cancer (CRC) organoid, which
+      resides in a single microfluidic chamber connected to multiple downstream
+      chambers in which liver, lung, and endothelial constructs are housed.
+    reference: doi:10.1002/bit.26871
+  - snippet: >-
+      Importantly, we describe that in the current version of this platform,
+      HCT116 CRC cells preferentially home to the liver and lung constructs; the
+      corresponding organs of which CRC metastases arise the most in human
+      patients.
+    reference: doi:10.1002/bit.26871
+- description: >-
+    Drug screening and microenvironment manipulation: the platform allows
+    chemical modulation of hydrogel mechanical properties and administration of
+    chemotherapeutic agents, with the effects on invasive tumour migration
+    evaluated under flow.
+  source_urls:
+  - https://doi.org/10.1002/bit.25950
+  supporting_references:
+  - doi:10.1002/bit.25950
+  quotes:
+  - snippet: >-
+      we demonstrated the ability to manipulate the system, including chemically
+      modulating the hydrogel system mechanical properties and administering
+      chemotherapeutic agents, and evaluated the effects of these parameters on
+      invasive tumor migration.
+    reference: doi:10.1002/bit.25950
+- description: >-
+    In the precursor static liver-tumour hybrid organoid (Skardal et al. 2015),
+    colon carcinoma cells acquired a mesenchymal/metastatic phenotype only once
+    transferred from 2D into the 3D liver organoid, and WNT-pathway modulation
+    changed their sensitivity to the chemotherapeutic 5-fluorouracil, serving as
+    a model for metastatic tumour growth and drug response.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/25777294/
+  supporting_references:
+  - pmid:25777294
+  quotes:
+  - snippet: >-
+      In 2D they displayed an epithelial phenotype, and only after transition to
+      the organoids did the cells present with a mesenchymal phenotype.
+    reference: pmid:25777294
+  - snippet: >-
+      Manipulating the WNT pathway with an agonist and antagonist showed
+      significant changes in sensitivity to the anti-proliferative drug
+      5-fluoruracil.
+    reference: pmid:25777294
+limitations:
+- description: >-
+    An early-stage model that reproduces only some characteristics of human
+    metastasis: the authors present the two-chamber device as modelling several
+    important characteristics of metastasis rather than the full process.
+  source_urls:
+  - https://doi.org/10.1002/bit.25950
+  supporting_references:
+  - doi:10.1002/bit.25950
+  quotes:
+  - snippet: >-
+      These results describe the capability of this early stage metastasis‐on‐a‐chip
+      system to model several important characteristics of human metastasis,
+      thereby demonstrating the potential of the platform for making meaningful
+      advances in cancer investigation and drug discovery.
+    reference: doi:10.1002/bit.25950
+    note: >-
+      The authors' own framing of the 2016 device as an early-stage model of
+      selected metastatic characteristics.
+- description: >-
+    Both the tumour and the host liver tissue are transformed human cell lines
+    rather than primary cells: the tumour is the HCT-116 colon carcinoma line,
+    and the precursor system's liver construct used the HepG2 hepatoma line
+    chosen as a liver mimetic, which limits physiological fidelity of the host
+    tissue.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/25777294/
+  supporting_references:
+  - pmid:25777294
+  quotes:
+  - snippet: >-
+      For this particular model, HepG2 hepatoma cells were chosen to act as a
+      liver mimetic
+    reference: pmid:25777294
+- description: >-
+    Not every metastasis-on-a-chip configuration incorporates an endothelial
+    barrier between the circulating compartment and the tissue constructs; the
+    review notes this gap across bioprinted tumour organ-on-a-chip models, so
+    intravasation and extravasation across a vascular barrier are not captured
+    by versions that omit an endothelial construct.
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.1557/s43577-023-00559-8
+- description: >-
+    Evidence from the two primary chip papers (Skardal et al. 2016,
+    doi:10.1002/bit.25950; Aleman & Skardal 2019, doi:10.1002/bit.26871) rests
+    on their abstracts only, which are all that could be cached; the full texts
+    were not available. The review (Anderson et al. 2023,
+    doi:10.1557/s43577-023-00559-8) is free to read but not openly licensed, so
+    its full text was read on the publisher page and cannot be cached — only its
+    abstract is quotable. The precursor liver-tumour organoid paper (Skardal et
+    al. 2015, pmid:25777294) was available as full text.
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.1002/bit.25950
+  - doi:10.1002/bit.26871
+  - doi:10.1557/s43577-023-00559-8
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1002/bit.25950
+  - https://doi.org/10.1002/bit.26871
+  - https://doi.org/10.1007/s10439-015-1298-3
+  - https://doi.org/10.1557/s43577-023-00559-8
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

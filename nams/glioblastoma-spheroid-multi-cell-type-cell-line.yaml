@@ -1,0 +1,286 @@
+model:
+  id: glioblastoma-spheroid-multi-cell-type-cell-line
+  type: ThreeDCellCulture
+  name: Multi-cell-type glioblastoma spheroids in a brain-like hyaluronic acid hydrogel
+  description: >-
+    Glioblastoma (GBM) spheroids, which the authors also call organoids, formed
+    by self-aggregation of human GBM cell lines, alone or with human
+    astrocytes, and then embedded in a thiolated hyaluronic acid / thiolated
+    gelatin / PEGDA hydrogel tuned toward the stiffness of brain tissue
+    (Sivakumar et al. 2020). Each cell population is labelled with its own
+    fluorescent probe, so the relative share of each subpopulation can be
+    followed by macro-confocal imaging over time and under drug treatment. Two
+    configurations are reported: two-cell-type spheroids (U-373 MG or A172 with
+    astrocytes, DiI/DiO membrane dyes) and four-GBM-line spheroids (U-87 MG,
+    U-87 EGFRvIII, U-373 MG, A172, Qtracker quantum-dot labels) chosen as loose
+    stand-ins for four GBM subtypes. The abstract describes five
+    subpopulations (four GBM lines plus one astrocyte line); the four-line
+    experiments as reported in the results use the GBM lines only. The
+    embedded spheroid is also the format the Anderson et al. 2023 review
+    (Figure 3a/3b, ref. 104) presents for hydrogel invasion assays, in which
+    the outward invasion distance of GBM organoids is measured under a Wnt
+    agonist (BIO) or antagonist (XAV939); that invasion experiment is not in
+    the cached text of the primary paper and is recorded here as an
+    application of this model, not as a separate system.
+  models:
+  - biological_system_modeled: UBERON:0000955
+  biological_organization_level: CELLULAR_NEIGHBORHOOD
+  spatial_context: >-
+    Glioblastoma of the brain (UBERON:0000955), represented by a spheroid of
+    tumour cell lines (with or without astrocytes) inside a hyaluronic
+    acid-rich, low-collagen hydrogel standing in for brain extracellular
+    matrix.
+  complexity_level: MODERATE
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  - id: CL:0000127
+    name: astrocyte
+  cell_source: cell line
+  differentiation_method: >-
+    None. Established GBM cell lines (U-87 MG ATCC HTB-14, U-373 MG ATCC
+    HTB-16, A172 ATCC CRL-1620, and a U-87 EGFRvIII line gifted by Dr. Webster
+    Cavenee) and commercial human astrocytes (ScienCell) are used as supplied.
+  culture_conditions: >-
+    GBM lines in high-glucose DMEM with 10% FBS, 1% L-glutamine and 1%
+    penicillin/streptomycin; astrocytes in Astrocyte Medium (2% FBS, 1%
+    astrocyte growth supplement); 37 °C, 5% CO2. Cells are labelled before
+    aggregation (DiI/DiO Vybrant dyes for two-population spheroids; Qtracker
+    525/585/655 and 705 or 605 for U-373 MG, the methods and results differing
+    on that probe, for four-population spheroids). Suspensions of 10,000 cells
+    in 100 µL are aggregated for 3 days in non-adherent round-bottom 96-well
+    plates, then each spheroid is resuspended in 10 µL of hydrogel precursor
+    and photocrosslinked for 1 s under UV in PDMS-coated 48- or 96-well plates,
+    covered with 200 µL DMEM and fed every 3 days. Drug screens run for 7 days
+    (four-line spheroids after a 7-day pre-culture in hydrogel). Readouts:
+    relative subpopulation area by fluorescent channel (ImageJ binary pixel
+    counts), LIVE/DEAD staining and CellTiter-Glo 3D ATP activity at days 1, 4
+    and 7.
+  three_d_architecture: HYDROGEL_EMBEDDED
+  matrix_composition: >-
+    HyStem-based hydrogel (ESI-BIO): thiolated hyaluronic acid and thiolated
+    gelatin at 1% w/v each with 0.1% w/v photoinitiator, mixed 2:2:1 by volume
+    with 2% w/v linear PEG diacrylate (3,400 Da) and UV-crosslinked; shear
+    elastic modulus reported between 200 and 1000 Pa, in the range of brain
+    tissue.
+  size_range: >-
+    Not given as a number; 10,000 cells per spheroid at formation, 250 µm
+    scale bars on the drug-response images, and size and geometry become
+    variable once cells migrate outward in the hydrogel.
+  references:
+  - id: pmid:33042963
+    title: Multi-Cell Type Glioblastoma Tumor Spheroids for Evaluating Sub-Population-Specific
+      Drug Response.
+    authors:
+    - Sivakumar H
+    - Devarasetty M
+    - Kram DE
+    - Strowd RE
+    - Skardal A
+    journal: Front Bioeng Biotechnol
+    year: 2020
+    url: https://doi.org/10.3389/fbioe.2020.538663
+  - id: doi:10.1557/s43577-023-00559-8
+    title: Three-dimensional bioprinting of in vitro tumor organoid and organ-on-a-chip
+      models
+    authors:
+    - Sydney R. Anderson
+    - Emerie J. Stagner
+    - Hemamylammal Sivakumar
+    - Aleksander Skardal
+    journal: MRS Bulletin
+    year: 2023
+    url: https://doi.org/10.1557/s43577-023-00559-8
+synonyms:
+- multi-cell type GBM organoids
+- multi-cell type glioblastoma tumor spheroids
+- GBM tumor organoid model
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Tracking how individual fluorescently labelled GBM subpopulations shift in
+    relative abundance within one spheroid over time and under treatment, as
+    a stand-in for intratumoural heterogeneity and clonal evolution.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: Here we describe the development of an in vitro GBM tumor organoid model
+      that is comprised of five distinct cellular subpopulations (4 GBM cell lines that
+      represent GBM subpopulations and 1 astrocyte line), each fluorescently labeled
+      with a different color.
+    reference: pmid:33042963
+  - snippet: This approach allows for the visual assessment of drug influence on individual
+      subpopulations within GBM
+    reference: pmid:33042963
+- description: >-
+    Subpopulation-specific drug response to EGFR inhibitors (erlotinib,
+    dacomitinib) and a p53 pathway activator (NSC59984), 7-day exposure. In
+    U-373/astrocyte spheroids the U-373 share fell somewhat with dacomitinib
+    and much more with erlotinib, while A172/astrocyte spheroids barely
+    responded. In four-line spheroids (n = 4; day 7 vs day 15), erlotinib
+    significantly reduced A172, dacomitinib significantly reduced A172 and
+    U-87 EGFRvIII while U-373 rose, and the p53 activator reduced U-87
+    EGFRvIII without reaching significance. The authors read the dacomitinib
+    effect on EGFRvIII cells as reproducing second-generation TKI activity
+    where EGFRvIII confers resistance to first-generation TKIs.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: The U373 and astrocyte spheroids show that the relative U373 cell number
+      decreases somewhat when treated with dacomitinib, but much more substantially with
+      erlotinib.
+    reference: pmid:33042963
+  - snippet: In comparison, the A172 and astrocyte spheroids show little response to
+      any of the drug conditions
+    reference: pmid:33042963
+  - snippet: Erlotinib treatment resulted in significant decreases in A172 cell populations
+    reference: pmid:33042963
+  - snippet: dacomitinib, which appears to have had statistically significant cell killing
+      effects in the A172 and U87 EGFR VIII cell populations, while the average U373 relative
+      percentage increased
+    reference: pmid:33042963
+  - snippet: Specifically, EGFR VIII is a specific resistance mechanism
+    reference: pmid:33042963
+  - snippet: This phenomenon was observed in our model.
+    reference: pmid:33042963
+- description: >-
+    Untreated baseline: subpopulations self-organise and their ratios drift
+    without drug (U-87 and U-373 shares fall while A172 and U-87 EGFRvIII
+    rise), and viability stays high over the first week (ATP activity rising
+    from day 1 to 4 to 7, n = 3, p < 0.001; few ethidium-stained dead cells).
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: Multi-cell type GBM spheroids that were not subjected to drugs (i.e., no
+      drug control) were observed to undergo some rearrangement, or self-organization
+      of cell populations.
+    reference: pmid:33042963
+  - snippet: overall viability is high, with ethidium homodimer-stained red fluorescing
+      dead cells only making up a small percentage of the organoids.
+    reference: pmid:33042963
+- description: >-
+    Hydrogel invasion assay: GBM organoids embedded in an ECM hydrogel, with
+    the distance of outwardly invading tumour cells quantified under Wnt
+    pathway upregulation (6-bromoindirubin-3-oxime, BIO) or inhibition
+    (XAV939). This is the review's Figure 3a, which the review's text attaches
+    to ref. 104 (Sivakumar et al. 2020); the cached full text of that paper
+    reports no Wnt or invasion experiment, so the invasion data and any
+    numbers behind them are not recorded here. Only the review's abstract can
+    be cached, so this statement rests on the review's full text as read on
+    the publisher page and carries no quote.
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.1557/s43577-023-00559-8
+- description: >-
+    Proposed by the authors as a basis for patient tumour biospecimen-derived
+    GBM organoids in which each GBM subtype is tracked, for ex vivo
+    patient-specific drug screening; not yet done in this paper.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: in future work can be expanded to supporting studies using patient tumor
+      biospecimen-derived cells for personalized diagnostics.
+    reference: pmid:33042963
+limitations:
+- description: >-
+    Built from long-established cell lines, which the authors say are loose
+    stand-ins for the four GBM subtypes rather than faithful representations
+    of them; no patient-derived cells were used.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: It should be noted that these cell lines are not complete representations
+      of these subtypes
+    reference: pmid:33042963
+- description: >-
+    Spheroids vary in size and geometry once embedded, because cells can
+    (but do not always) migrate outward into the hydrogel as they
+    proliferate; outward migration is therefore both a source of variability
+    in the subpopulation readout and the basis of the invasion readout.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: The organoid cultures themselves admittedly vary in size.
+    reference: pmid:33042963
+  - snippet: The cells can, but do not always, migrate outwards as the overall number
+      of cells increases during proliferation in culture.
+    reference: pmid:33042963
+- description: >-
+    No brain microenvironment beyond the hyaluronic acid-based matrix (and
+    astrocytes in the two-cell-type configuration): no blood-brain barrier,
+    immune cells, neurons or pericytes.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: we did not include many other features of the brain microenvironment beyond
+      a hyaluronic acid-based ECM
+    reference: pmid:33042963
+- description: >-
+    The test compounds were chosen to validate the model, not because they
+    are clinically actionable in GBM; the p53-activator result in four-line
+    spheroids did not reach significance because of high variance at the
+    first time point.
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: While these compounds are not understood to be clinically actionable, they
+      were selected to support model validation.
+    reference: pmid:33042963
+  - snippet: although this result was not significant due to a large standard deviation
+      at timepoint 1
+    reference: pmid:33042963
+- description: >-
+    The subpopulation readout is fluorescent area from macro-confocal images,
+    and imaging under-samples the spheroid core because the laser penetrates
+    the centre poorly. The paper's own reporting is also inconsistent in
+    places (U-373 Qtracker 705 in the methods but 605 in the results; the
+    p53-activator concentration given as 100 µM in the methods and 40 nM in
+    the two-cell-type results).
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  supporting_references:
+  - pmid:33042963
+  quotes:
+  - snippet: as the ability of the microscope laser to penetrate the central region of
+      a spheroid can be limited.
+    reference: pmid:33042963
+- description: >-
+    The Anderson et al. 2023 review through which this model was found is free
+    to read on the publisher's site but not openly licensed, so only its
+    abstract is cached; statements resting on the review's figures (the Wnt
+    invasion assay) were read on the publisher page and cannot be checked
+    against cached text.
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.1557/s43577-023-00559-8
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.3389/fbioe.2020.538663
+  - https://doi.org/10.1557/s43577-023-00559-8
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
