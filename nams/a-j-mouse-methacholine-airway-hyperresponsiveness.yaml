@@ -1,0 +1,131 @@
+# A NAM from Webb et al. 2023 (PMID:37418196), the in vivo system that shows a
+# nebulised GABA_A receptor ligand reducing airway resistance. The second of
+# only two systems in this paper with a DisMech anchor: it both imposes and
+# reverses Asthma#Bronchoconstriction. No link is recorded yet, pending a
+# gaba_a_receptor_agonism module; see dismech_status below.
+#
+# NAM-adjacent: an animal model, which this registry collects alongside
+# non-animal methods.
+#
+# The paper is not open access. The strain rationale, the nebulised dose, the
+# five-challenge sequence and the sRaw computation below are from the PMC full
+# text (PMC10833105, section 2.10 and the Experimental Section); the cached
+# reference holds the abstract, which states only "reduction of
+# methacholine-induced airway hyperresponsiveness (AHR) in conscious mice".
+model:
+  id: a-j-mouse-methacholine-airway-hyperresponsiveness
+  type: AnimalModel
+  name: A/J mouse methacholine airway hyperresponsiveness model
+  description: >-
+    A non-invasive in vivo model of reversible airway narrowing in the conscious
+    mouse. Adult female A/J mice are used because they exhibit severe airway
+    hyperresponsiveness to methacholine without any preexisting allergen
+    sensitisation or challenge, so the hyperresponsive state is a strain
+    property rather than an induced allergic phenotype. A test compound is
+    nebulised, then a sequence of five nebulised methacholine challenges is
+    delivered, and airway mechanics are recorded in a double-chamber
+    plethysmograph. Specific airway resistance (sRaw) is computed from
+    parameters recorded in the nasal and thoracic chambers using FinePoint
+    software. In vehicle-treated animals sRaw rises across successive
+    challenges, representing more laboured breathing against airway
+    constriction; a bronchodilator flattens or lowers that rise. Because the
+    readout comes from paired nasal and thoracic chambers rather than from a
+    single whole-body chamber, it is a computed specific airway resistance and
+    not the whole-body Penh index whose relation to airway resistance has been
+    contested.
+  species:
+    id: NCBITaxon:10090
+    name: Mus musculus
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- A/J mouse AHR model
+- conscious mouse double-chamber plethysmography airway resistance model
+applications:
+- description: >-
+    Testing whether an inhaled compound reverses methacholine-induced airway
+    narrowing in a conscious animal. In this paper compounds 5b, 5c, 5h and 5j,
+    nebulised at 7.2 mg/kg, reduced sRaw from the first methacholine challenge
+    onward, while the weak GABA_A receptor binders 5a and 5d-f produced little
+    or no change against vehicle.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    A bronchodilator efficacy readout that requires no allergen sensitisation
+    protocol, because the strain is innately hyperresponsive to methacholine.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Testing the inhaled route specifically: the compound is delivered by
+    nebulisation to the airway it is intended to act on.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    It is not a model of asthma. There is no allergen, no sensitisation, no
+    airway inflammation, no mucus hypersecretion and no remodelling; the
+    hyperresponsiveness is a strain characteristic and the constriction is
+    imposed pharmacologically by methacholine.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    sRaw is computed from plethysmograph chamber parameters, not measured
+    directly as airway resistance, so it is an indirect index of airway calibre.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    One nebulised dose was tested, so the model as applied here gives no
+    dose-response relationship and no duration of action.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The effect is not shown to be receptor-dependent in this paper: no GABA_A
+    receptor antagonist, no subunit-null animal and no pharmacokinetic
+    measurement of airway drug exposure is reported, so the attribution to
+    airway GABA_A receptors rests on correlation with binding affinity and on
+    the authors' prior work.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The CNS-safety claim for this compound class was established in a different
+    strain by a different route (Swiss Webster mice dosed orally, in the rotarod
+    assay), so efficacy and safety are not demonstrated in the same animal. See
+    swiss-webster-mouse-rotarod-sensorimotor-assay.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
