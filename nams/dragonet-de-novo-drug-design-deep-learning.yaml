@@ -1,0 +1,114 @@
+model:
+  id: dragonet-de-novo-drug-design-deep-learning
+  type: MLModel
+  name: DRAGONET deep-learning de novo drug design from patient gene expression
+  description: >-
+    A deep-learning generative method that produces drug candidate molecular
+    structures from patient gene expression profiles, named DRAGONET. The model
+    explores a latent space built by a transformer-based variational
+    autoencoder and integrates the substructures of disease-correlated
+    molecules, so that the structures it generates are likely to counteract the
+    disease-specific gene expression pattern of a patient. Because it works from
+    the expression signature rather than a known target, it is presented as
+    applicable to diseases whose therapeutic target proteins are unknown.
+    Recorded in the registry from the primary paper, Yamanaka et al. 2023
+    (doi:10.1002/minf.202300064), found through the Complement-ARIE Landscape
+    Analysis dashboard. Only the paper's abstract is cached here, so the network
+    architecture details, the training corpus and the generation and evaluation
+    procedures beyond those named in the abstract are not itemised.
+  description_scope: METHOD
+  spatial_context: >-
+    None. The disease state enters only as a patient gene expression profile (a
+    transcriptomic vector) and the chemical space as molecular substructures; no
+    cellular, tissue or organ system is represented. The model maps an
+    expression signature to generated small-molecule structures.
+  complexity_level: LOW
+  computational_method: >-
+    A transformer-based variational autoencoder whose latent space is explored
+    to generate new molecular structures, with the substructures of
+    disease-correlated molecules integrated into generation so that outputs are
+    biased toward counteracting the patient's disease-specific expression
+    pattern.
+  prediction_scope: >-
+    Generative, not predictive of a single endpoint: given a disease-specific
+    patient gene expression profile, the method outputs candidate
+    small-molecule structures proposed as therapeutics for that disease. It
+    proposes chemical structures; it does not assert a mechanism of action or a
+    measured activity for them.
+  ml_algorithm: DEEP_LEARNING
+  feature_types:
+  # The disease state is supplied as a patient gene expression profile.
+  - TRANSCRIPTOMIC
+  # Chemical structure enters as the substructures of disease-correlated
+  # molecules, integrated during generation.
+  - MOLECULAR
+  references:
+  - id: pmid:37475603
+    title: De novo drug design based on patient gene expression profiles via deep
+      learning
+    authors:
+    - Chikashige Yamanaka
+    - Shunya Uki
+    - Kazuma Kaitoh
+    - Michio Iwata
+    - Yoshihiro Yamanishi
+    journal: Molecular Informatics
+    year: 2023
+    url: https://doi.org/10.1002/minf.202300064
+synonyms:
+- DRAGONET
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    De novo generation of drug candidate molecules for a disease from its
+    patient gene expression signature. Applied by the authors to gastric
+    cancer, atopic dermatitis and Alzheimer's disease, where the generated
+    molecules were reported to be chemically similar to drugs already
+    registered for each disease.
+  source_urls:
+  - https://doi.org/10.1002/minf.202300064
+  supporting_references:
+  - pmid:37475603
+- description: >-
+    Drug design for diseases with unknown therapeutic target proteins, which
+    the authors present as a contribution to precision medicine, since the
+    method starts from the expression state rather than a known target.
+  source_urls:
+  - https://doi.org/10.1002/minf.202300064
+  supporting_references:
+  - pmid:37475603
+limitations:
+- description: >-
+    The output is a set of proposed chemical structures; the method asserts no
+    mechanism of action and reports no measured or experimentally confirmed
+    activity for the generated molecules.
+  source_urls:
+  - https://doi.org/10.1002/minf.202300064
+  supporting_references:
+  - pmid:37475603
+- description: >-
+    The evidence of validity reported in the abstract is chemical similarity of
+    the generated molecules to already-registered drugs for the three test
+    diseases; no prospective synthesis or biological testing is reported there.
+  source_urls:
+  - https://doi.org/10.1002/minf.202300064
+  supporting_references:
+  - pmid:37475603
+- description: >-
+    Only the paper's abstract is cached here, so the network architecture, the
+    training corpus, the dimensionality of the gene expression input and the
+    generation and evaluation procedures are not itemised.
+  supporting_references:
+  - pmid:37475603
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1002/minf.202300064
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1002/minf.202300064
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
