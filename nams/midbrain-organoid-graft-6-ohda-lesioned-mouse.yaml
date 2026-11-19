@@ -87,8 +87,9 @@ source_resources:
   accessed_on: '2026-11-14'
 dismech_status:
   processed_through_dismech: true
-  present_in_dismech: false
+  present_in_dismech: true
   dismech_issue_id: 17532
-  assessed_on: '2026-11-14'
+  dismech_pr_id: 17536
+  assessed_on: '2026-11-19'
 creation_date: '2026-11-14'
-last_modified_date: '2026-11-14'
+last_modified_date: '2026-11-19'
