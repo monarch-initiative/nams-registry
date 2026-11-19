@@ -1,0 +1,158 @@
+# A NAM from Webb et al. 2023 (PMID:37418196), a medicinal-chemistry study of
+# spiro imidazobenzodiazepine GABA_A receptor (GABA_AR) ligands developed as
+# non-CNS-penetrant inhaled bronchodilators for asthma. Curated through DisMech
+# and not represented in its graph: the mechanism this model bears on,
+# occupancy of the allosteric benzodiazepine site of a GABA_AR, has no node in
+# DisMech. The two existing inhaled-bronchodilator modules are scoped to other
+# receptors (beta2_adrenergic_receptor_agonism, muscarinic_receptor_antagonism),
+# so a link to either would assert a transducer this paper never measured. See
+# dismech_status below.
+#
+# The paper is not open access. The protocol facts below (the 6HUO structure,
+# the His102/Ser206 pharmacophore, the MOE software and the rigid-receptor
+# choice) are from the PMC full text (PMC10833105, section 2.6); the cached
+# reference holds the abstract, which states only that "Compound design was
+# guided by molecular docking using the available crystal structure of the
+# alpha1beta3gamma2 GABA_AR and correlated with in vitro binding data".
+model:
+  id: gaba-a-receptor-benzodiazepine-site-docking-model
+  type: MolecularModel
+  name: GABA_A receptor benzodiazepine-site docking model
+  description: >-
+    A structure-based in silico model of the allosteric benzodiazepine binding
+    site of the GABA_A receptor, used to design and rank spiro
+    imidazobenzodiazepine ligands before synthesis. Ligands are docked into the
+    alpha1+/gamma2- subunit interface of the alpha1beta3gamma2 GABA_A receptor,
+    using the crystal structure 6HUO solved in complex with alprazolam. Poses
+    are scored against a pharmacophore that requires a halogen bond to His102
+    and a hydrogen bond to Ser206, so that only poses reproducing the
+    experimentally inferred binding mode are counted. Both rigid-receptor and
+    induced-fit docking were run in Molecular Operating Environment (MOE)
+    software; the rigid-receptor model gave the more homogeneous poses and was
+    used. Because the compound class has two stable rotamers, each rotamer was
+    docked separately. The output is a docking score, which the authors compare
+    against measured displacement of a radioligand; the correlation is
+    described as moderate, and poor for weak binders. The model predicts
+    affinity for the benzodiazepine site, not relaxation of airway smooth
+    muscle, and it is built on alpha1beta3gamma2 rather than the alpha4- and
+    alpha5-containing subtypes the paper names as the airway target.
+  biological_organization_level: SUBCELLULAR
+  spatial_context: >-
+    The three-dimensional structure of one subunit interface of a pentameric
+    ligand-gated ion channel, covering the allosteric benzodiazepine binding
+    pocket between the alpha and gamma subunits. No membrane, cell, tissue or
+    organ context is represented, and the receptor's chloride channel and its
+    gating are not modelled.
+  complexity_level: LOW
+  molecular_target: >-
+    GABA_A receptor, alpha1beta3gamma2 subtype (GABRA1, GABRB3, GABRG2); the
+    benzodiazepine site at the alpha1+/gamma2- interface
+  modeling_approach:
+  - molecular docking, rigid receptor
+  - molecular docking, induced fit
+  - pharmacophore-constrained pose scoring
+  structural_sources:
+  - PDB 6HUO, alpha1beta3gamma2 GABA_A receptor in complex with alprazolam
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    authors:
+    - Dylan A. Webb
+    - Michael J. Meyer
+    - Kehinde M. Medubi
+    - Anna S. Tylek
+    - Gene T. Yocum
+    - Md Shahid Rahman Roni
+    - Nicolas M. Zahn
+    - Samuel A. Swartwout
+    - Alexander K. Masoud
+    - Charles W. Emala
+    - Douglas C. Stafford
+    - Leggy A. Arnold
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- GABA_AR benzodiazepine-site docking model
+- alpha1beta3gamma2 GABA_A receptor docking model (6HUO)
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Prospective design and prioritisation of GABA_A receptor ligands before
+    synthesis, by scoring docked poses against a pharmacophore derived from the
+    experimentally inferred binding mode.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Rationalising a structure-activity relationship across a congeneric series,
+    including the conclusion that the benzodiazepine pocket accommodates only a
+    three-membered spiro ring, with larger rings losing affinity.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Predicting a stereochemical preference not resolved experimentally: the
+    (S) enantiomer of one compound scored better than the (R), where binding
+    had been measured only on the racemate.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    The docked receptor is the alpha1beta3gamma2 subtype, whereas the paper
+    names alpha4- and alpha5-containing GABA_A receptors as the airway smooth
+    muscle target. The model therefore predicts affinity for a subtype that is
+    not the therapeutic target, and cannot speak to subtype selectivity for the
+    airway.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The docking score correlates only moderately with measured radioligand
+    displacement, and the correlation is poor for weak binders, which the
+    authors attribute to high standard deviation in the binding percentages.
+    The model ranks strong binders better than it discriminates weak ones.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    A docking score is a predicted binding affinity, not a functional outcome.
+    The model represents neither the chloride conductance the receptor gates nor
+    the relaxation of airway smooth muscle that is the therapeutic effect, and
+    it contains no cell or tissue in which either could occur.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The pharmacophore filter requires a halogen bond to His102 and a hydrogen
+    bond to Ser206, so poses binding in another mode are discarded by
+    construction. This enforces the assumed binding mode rather than testing it.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

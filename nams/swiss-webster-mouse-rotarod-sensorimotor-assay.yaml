@@ -1,0 +1,109 @@
+# A NAM from Webb et al. 2023 (PMID:37418196), the in vivo assay used to show
+# that a GABA_A receptor ligand does NOT reach the brain. Curated through
+# DisMech and deliberately not linked: the result is the absence of central
+# GABA_A receptor engagement, so a model link to a CNS GABAergic node would
+# invert the paper's claim. Recorded in the registry as the evidence that the
+# compound class is peripherally restricted. See dismech_status below.
+#
+# NAM-adjacent: an animal model, which this registry collects alongside
+# non-animal methods. Kept as its own record rather than as a readout on
+# a-j-mouse-methacholine-airway-hyperresponsiveness because the strain, the
+# route and the purpose all differ, and merging them would imply that the
+# safety and efficacy claims were made in the same animal.
+#
+# The paper is not open access. The strain, age, route, speed and dose below are
+# from the PMC full text (PMC10833105, the rotarod section of the Results and
+# the Experimental Section); the cached reference holds the abstract, which
+# states only that "The inability of GABAAR ligands to cross the blood-brain
+# barrier was confirmed in vivo by the absence of sensorimotor inhibition".
+model:
+  id: swiss-webster-mouse-rotarod-sensorimotor-assay
+  type: AnimalModel
+  name: Swiss Webster mouse rotarod sensorimotor assay
+  description: >-
+    An in vivo behavioural assay that detects central nervous system depression
+    by loss of motor coordination, used here as a functional surrogate for
+    blood-brain barrier penetration. Ten-week-old female Swiss Webster mice are
+    trained to maintain balance on a rotating rod at a constant 15 rpm for three
+    minutes, then dosed by oral gavage and retested. A compound that reaches
+    brain GABA_A receptors in sufficient quantity shortens the time the animal
+    stays on the rod. The assay is run as a negative control on compounds
+    designed not to enter the brain, alongside a positive control of known
+    central action; it establishes an absence of effect at the dose tested
+    rather than a dose-response. In this paper it is the only in vivo evidence
+    offered for peripheral restriction, which the compounds are designed for by
+    carrying an ionised carboxylate at neutral pH.
+  species:
+    id: NCBITaxon:10090
+    name: Mus musculus
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- rotarod sensorimotor coordination assay
+- mouse rotarod blood-brain barrier surrogate assay
+applications:
+- description: >-
+    Screening a compound series for central nervous system effects as a
+    surrogate for blood-brain barrier penetration. In this paper none of the
+    imidazodiazepine acids impaired the ability of trained mice to balance on
+    the rotating rod after an oral dose of 40 mg/kg.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Demonstrating assay sensitivity with a brain-penetrant positive control of
+    comparable receptor affinity: diazepam, of similar GABA_A receptor affinity
+    to the best compound in the series, caused rapid and significant loss of
+    sensorimotor coordination at 8 mg/kg.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    The result is a negative. Absence of sensorimotor impairment bounds central
+    GABA_A receptor engagement at the dose and timepoint tested; it does not
+    measure brain concentration, receptor occupancy or barrier transit directly,
+    and a pharmacokinetic measurement would be stronger evidence.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Rotarod performance detects frank motor incoordination and would miss
+    central effects that do not impair balance, such as sedation without ataxia,
+    anxiolysis, amnesia or anticonvulsant action.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The strain and route differ from those used for the efficacy readout, where
+    A/J mice received nebulised compound. The oral 40 mg/kg safety dose and the
+    nebulised 7.2 mg/kg efficacy dose are therefore not directly comparable, and
+    no single animal demonstrates both.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

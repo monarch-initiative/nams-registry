@@ -1,0 +1,106 @@
+# A NAM from Webb et al. 2023 (PMID:37418196). Curated through DisMech and not
+# represented in its graph: a viability LD50 is an apical cytotoxicity endpoint
+# with no mechanism attached, so there is no node to anchor it to -- the
+# dismech#16882 shape. See dismech_status below.
+#
+# Kept separate from ccte-simmons-celltiterglo-hek293t, the EPA ToxCast assay
+# of the same reagent and cell line, because that record describes a specific
+# named assay read at 24 hours in a 384-well plate under the ToxCast protocol,
+# and this is a different laboratory's 18-hour measurement. They are the same
+# technique, not the same assay; see compared_with below.
+#
+# The paper is not open access. The cell line, the 18-hour timepoint and the
+# 300 uM result below are from the PMC full text (PMC10833105, section 2.4 and
+# Experimental Section 4.5); the cached reference holds the abstract, which
+# states only that the ligands have "low cell toxicity". Note that the Results
+# write the line as HEK-293 while Experimental Section 4.5 writes HEK293T.
+model:
+  id: hek293-celltiter-glo-cytotoxicity-webb
+  name: HEK293 CellTiter-Glo cytotoxicity assay (Webb 2023 compound screen)
+  description: >-
+    A single-readout in vitro viability assay used to bound the general toxicity
+    of a compound series before animal work. Human embryonic kidney cells are
+    exposed to compound for 18 hours, and viability is read with CellTiter-Glo
+    (Promega), a luminescent assay proportional to cellular ATP. The readout is
+    a concentration producing 50% loss of viability, reported here as an LD50.
+    The assay establishes a ceiling of tolerated concentration rather than any
+    mechanism of toxicity: it distinguishes a compound that kills cells from one
+    that does not, and says nothing about how. The paper's result is a negative
+    for the compounds of interest, which is what the series needed.
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- CellTiter-Glo ATP viability assay, HEK293
+- HEK293 18-hour cytotoxicity screen
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Bounding general cytotoxicity across a compound series, to confirm that
+    functional effects seen elsewhere are not an artefact of cell death. In this
+    paper the carboxylic acid compounds showed no toxicity at 300 uM.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Setting a tolerated-concentration ceiling against which the concentrations
+    used in functional assays can be judged.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    HEK293 is a human embryonic kidney line with no airway relevance, so the
+    assay bounds general toxicity only and says nothing about tolerability in
+    the tissue the compounds are intended to act on.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    ATP content is a single apical viability readout. It identifies no mechanism
+    of toxicity and would not distinguish apoptosis, necrosis, mitochondrial
+    impairment or growth arrest.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Where no 50% effect is reached, the reported LD50 is bounded by the highest
+    concentration tested rather than measured. The authors note for one compound
+    that its actual LD50 might be lower than 300 uM.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The source is internally inconsistent on the line's identity, writing
+    HEK-293 in the Results and HEK293T in the Experimental Section. The two
+    differ by SV40 large T antigen expression.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
