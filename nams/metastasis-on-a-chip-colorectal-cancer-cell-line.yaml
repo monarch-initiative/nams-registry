@@ -259,6 +259,15 @@ source_resources:
   - https://doi.org/10.1002/bit.26871
   - https://doi.org/10.1007/s10439-015-1298-3
   - https://doi.org/10.1557/s43577-023-00559-8
+  text_consulted:
+  - source_url: https://doi.org/10.1002/bit.25950
+    text: ABSTRACT_ONLY
+  - source_url: https://doi.org/10.1002/bit.26871
+    text: ABSTRACT_ONLY
+  - source_url: https://doi.org/10.1007/s10439-015-1298-3
+    text: FULL_TEXT
+  - source_url: https://doi.org/10.1557/s43577-023-00559-8
+    text: FULL_TEXT
 - resource: complement-arie-landscape-dashboard
   source_urls:
   - https://doi.org/10.1557/s43577-023-00559-8

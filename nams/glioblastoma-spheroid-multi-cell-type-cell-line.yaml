@@ -278,6 +278,11 @@ source_resources:
   source_urls:
   - https://doi.org/10.3389/fbioe.2020.538663
   - https://doi.org/10.1557/s43577-023-00559-8
+  text_consulted:
+  - source_url: https://doi.org/10.3389/fbioe.2020.538663
+    text: FULL_TEXT
+  - source_url: https://doi.org/10.1557/s43577-023-00559-8
+    text: FULL_TEXT
 - resource: complement-arie-landscape-dashboard
   source_urls:
   - https://doi.org/10.1557/s43577-023-00559-8
