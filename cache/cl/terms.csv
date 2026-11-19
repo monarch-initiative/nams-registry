@@ -10,6 +10,7 @@ CL:0000100,motor neuron,2026-11-11T13:24:58.668978
 CL:0000115,endothelial cell,2026-11-11T13:24:57.058447
 CL:0000127,astrocyte,2026-11-11T13:24:57.095830
 CL:0000128,oligodendrocyte,2026-11-11T13:24:57.097059
+CL:0000145,professional antigen presenting cell,2026-11-19T22:25:01.736635
 CL:0000158,club cell,2026-11-11T13:24:58.662990
 CL:0000160,goblet cell,2026-11-11T13:24:57.109027
 CL:0000164,enteroendocrine cell,2026-11-11T13:24:57.176209
@@ -18,6 +19,8 @@ CL:0000210,photoreceptor cell,2026-11-11T13:24:58.656585
 CL:0000235,macrophage,2026-11-11T13:24:55.770694
 CL:0000312,keratinocyte,2026-11-15T20:12:08.886089
 CL:0000324,metanephric mesenchyme stem cell,2026-11-11T13:24:57.218024
+CL:0000492,CD4-positive helper T cell,2026-11-19T22:30:11.057044
+CL:0000499,stromal cell,2026-11-19T22:25:01.744615
 CL:0000510,paneth cell,2026-11-11T13:24:57.174992
 CL:0000540,neuron,2026-11-11T13:24:57.094454
 CL:0000542,lymphocyte,2026-11-11T13:24:57.115520
@@ -34,8 +37,10 @@ CL:0000682,M cell of gut,2026-11-11T13:24:57.186852
 CL:0000700,dopaminergic neuron,2026-11-11T13:24:58.621971
 CL:0000706,choroid plexus epithelial cell,2026-11-11T13:24:57.102159
 CL:0000710,neurecto-epithelial cell,2026-11-13T12:34:07.521332
+CL:0000738,leukocyte,2026-11-19T22:26:01.794611
 CL:0000740,retinal ganglion cell,2026-11-15T02:14:33.990050
 CL:0000746,cardiac muscle cell,2026-11-13T12:34:07.422011
+CL:0000910,cytotoxic T cell,2026-11-19T22:30:11.063109
 CL:0001064,malignant cell,2026-11-11T13:24:57.081745
 CL:0002062,pulmonary alveolar type 1 cell,2026-11-11T13:24:57.049496
 CL:0002063,pulmonary alveolar type 2 cell,2026-11-11T13:24:57.047990
@@ -45,6 +50,7 @@ CL:0002195,hepatic stem cell,2026-11-11T13:24:58.587460
 CL:0002204,tuft cell,2026-11-11T13:24:57.185816
 CL:0002248,pluripotent stem cell,2026-11-13T12:34:07.419298
 CL:0002250,intestinal crypt stem cell,2026-11-11T13:24:57.170686
+CL:0002253,epithelial cell of large intestine,2026-11-19T22:28:26.189926
 CL:0002306,epithelial cell of proximal tubule,2026-11-11T13:24:57.214523
 CL:0002324,basal-myoepithelial cell of mammary gland,2026-11-11T13:24:58.611279
 CL:0002326,luminal epithelial cell of mammary gland,2026-11-11T13:24:58.609131
@@ -68,6 +74,7 @@ CL:0017000,pulmonary ionocyte,2026-11-11T13:24:55.717530
 CL:1000488,cholangiocyte,2026-11-11T13:24:58.592613
 CL:1000849,kidney distal convoluted tubule epithelial cell,2026-11-11T13:24:57.216364
 CL:1001433,epithelial cell of exocrine pancreas,2026-11-11T13:24:58.639187
+CL:2000001,peripheral blood mononuclear cell,2026-11-19T22:25:01.740630
 CL:4030006,fallopian tube secretory epithelial cell,2026-11-11T13:24:57.134074
 CL:4030007,fallopian tube multiciliated epithelial cell,2026-11-11T13:24:57.132905
 CL:4030040,endometrial multiciliated epithelial cell,2026-11-11T13:24:57.127267

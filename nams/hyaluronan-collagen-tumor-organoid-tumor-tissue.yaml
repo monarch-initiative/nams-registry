@@ -1,0 +1,628 @@
+model:
+  id: hyaluronan-collagen-tumor-organoid-tumor-tissue
+  type: Organoid
+  name: >-
+    Patient-derived tumour organoids in hyaluronic acid/collagen hydrogel,
+    hand-deposited or immersion-bioprinted in well plates (pan-cancer)
+  description: >-
+    Patient-derived tumour organoids (PTOs) made by the Skardal, Soker and
+    Votanopoulos groups (Wake Forest, later Ohio State) and summarised in the
+    review by Anderson, Stagner, Sivakumar & Skardal 2023
+    (doi:10.1557/s43577-023-00559-8). A fresh surgical tumour specimen (or,
+    for lung adenocarcinoma, pleural effusion aspirate) is enzymatically
+    dissociated and the unsorted, unexpanded cell population, which keeps
+    tumour stroma and infiltrating immune cells, is suspended in an
+    extracellular-matrix-mimicking hydrogel of thiolated hyaluronic acid with
+    methacrylated collagen (or, in some studies, the HyStem-HP
+    hyaluronan/heparin/gelatin system), deposited as small droplets of about
+    5-10 μL in well plates and photocrosslinked. Drugs are screened about 7
+    days after fabrication, with LIVE/DEAD imaging and metabolic (MTS) or ATP
+    viability readouts. The lab has applied the platform across tumour types:
+    appendiceal (low- and high-grade), colorectal and appendiceal peritoneal
+    metastases, sarcomas of several subtypes, lung adenocarcinoma, peritoneal
+    mesothelioma, glioblastoma/glioma and a lung adenocarcinoma brain
+    metastasis. These are described within this one record rather than as
+    separate records.
+
+    Bioprinted versus hand-deposited: in the four full-text primary papers
+    used here (appendiceal, colorectal/HIPEC, sarcoma, lung adenocarcinoma)
+    the organoids were made by pipetting hydrogel-cell droplets into
+    PDMS-coated 48- or 96-well plates; they were not bioprinted. Bioprinting
+    is the scale-up fabrication route for the same hydrogel PTO, shown in
+    two abstract-only papers: Maloney et al. 2020 immersion-bioprinted an
+    HA/collagen bioink into a gelatin support bath in 96-well plates and
+    applied it to patient glioblastoma and sarcoma specimens, and Clark et
+    al. 2023 replaced the gelatin bath with a hyaluronic acid bath and
+    screened glioma and lung-adenocarcinoma-brain-metastasis PTOs. The
+    bioink, the patient cells and the screening readouts are shared; the
+    printing step changes deposition, throughput and organoid uniformity.
+    The mesothelioma study (Mazzocchi et al. 2018) placed the organoids in a
+    tumour-on-a-chip microfluidic device rather than well plates.
+
+    Distinct from tumor-organoid-tumor-tissue, the general pan-cancer
+    patient-derived organoid record, whose organoids are expanded and banked
+    as lines in basement-membrane (Matrigel-type) domes over weeks; these
+    PTOs are not expanded, are used within days of surgery, and use a
+    defined hyaluronan/collagen matrix that the authors chose instead of
+    basement membrane extract partly because it can be bioprinted.
+    Immune-enhanced PTOs (with patient-matched lymph node or blood immune
+    cells), metastasis-on-a-chip and the glioblastoma spheroid Wnt invasion
+    assay from the same review are separate records.
+  description_scope: METHOD
+  three_d_architecture: HYDROGEL_EMBEDDED
+  complexity_level: MODERATE
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  - id: CL:0000057
+    name: fibroblast
+  - id: CL:0000738
+    name: leukocyte
+  cell_source: >-
+    Fresh human tumour tissue from surgical resection (including
+    cytoreductive surgery with HIPEC), or malignant pleural effusion
+    aspirate; cells are used unsorted and without expansion.
+  differentiation_method: >-
+    None; primary tumour cells are encapsulated directly. Tissue is minced
+    and digested with collagenase/hyaluronidase (or collagenase HA and BP
+    protease) for up to 2 h, filtered at 100 µm, red cells lysed and, in
+    later studies, dead cells removed; about 10 million cells/mL of hydrogel
+    precursor.
+  matrix_composition: >-
+    Thiolated hyaluronic acid (Glycosil) mixed 1:3 with methacrylated type I
+    collagen (PhotoCol), photocrosslinked by brief UV exposure with a
+    photoinitiator; the sarcoma study instead used HyStem-HP
+    (thiol-modified heparin, thiol-modified gelatin and PEGDA crosslinker).
+    The bioprinted versions use an HA/collagen bioink of the same family,
+    printed into a gelatin (Maloney 2020) or hyaluronic acid (Clark 2023)
+    support bath.
+  size_range: >-
+    About 5-10 μL hydrogel droplets, roughly 1 mm across; 75-200 organoids
+    per tumour specimen.
+  culture_system: >-
+    Droplets pipetted into PDMS-coated 48- or 96-well plates (hand-deposited
+    format), or immersion-bioprinted into a support bath in 96-well plates;
+    optionally integrated into microfluidic tumour-on-a-chip devices.
+  culture_conditions: >-
+    DMEM with 10% FBS, penicillin-streptomycin and L-glutamine (appendiceal,
+    sarcoma), RPMI with 5% FBS (lung), or an Advanced DMEM/F12 organoid
+    medium with B-27, N-2, EGF, nicotinamide, Y-27632, SB202190 and A83-01
+    (colorectal/HIPEC). Drug exposure for 3-4 days starting on day 7;
+    readouts by LIVE/DEAD staining, MTS or CellTiter-Glo 3D, H&E and
+    immunohistochemistry.
+  references:
+  - id: doi:10.1557/s43577-023-00559-8
+    title: Three-dimensional bioprinting of in vitro tumor organoid and organ-on-a-chip models
+    authors:
+    - Sydney R. Anderson
+    - Emerie J. Stagner
+    - Hemamylammal Sivakumar
+    - Aleksander Skardal
+    journal: MRS Bulletin
+    year: 2023
+    url: https://doi.org/10.1557/s43577-023-00559-8
+  - id: pmid:30414038
+    title: 'Appendiceal Cancer Patient-Specific Tumor Organoid Model for Predicting Chemotherapy
+      Efficacy Prior to Initiation of Treatment: A Feasibility Study.'
+    authors:
+    - Votanopoulos KI
+    - Mazzocchi A
+    - Sivakumar H
+    - Forsythe S
+    - Aleman J
+    - Levine EA
+    - Skardal A
+    journal: Ann Surg Oncol
+    year: 2019
+    url: https://doi.org/10.1245/s10434-018-7008-2
+  - id: pmid:32632882
+    title: Personalized Identification of Optimal HIPEC Perfusion Protocol in Patient-Derived
+      Tumor Organoid Platform.
+    authors:
+    - Forsythe SD
+    - Sasikumar S
+    - Moaven O
+    - Sivakumar H
+    - Shen P
+    - Levine EA
+    - Soker S
+    - Skardal A
+    - Votanopoulos KI
+    journal: Ann Surg Oncol
+    year: 2020
+    url: https://doi.org/10.1245/s10434-020-08790-2
+  - id: pmid:35780216
+    title: 'Patient-Specific Sarcoma Organoids for Personalized Translational Research: Unification
+      of the Operating Room with Rare Cancer Research and Clinical Implications.'
+    authors:
+    - Forsythe SD
+    - Sivakumar H
+    - Erali RA
+    - Wajih N
+    - Li W
+    - Shen P
+    - Levine EA
+    - Miller KE
+    - Skardal A
+    - Votanopoulos KI
+    journal: Ann Surg Oncol
+    year: 2022
+    url: https://doi.org/10.1245/s10434-022-12086-y
+  - id: pmid:31723594
+    title: Pleural Effusion Aspirate for use in 3D Lung Cancer Modeling and Chemotherapy Screening.
+    authors:
+    - Mazzocchi A
+    - Devarasetty M
+    - Herberg S
+    - Petty WJ
+    - Marini F
+    - Miller L
+    - Kucera G
+    - Dukes DK
+    - Ruiz J
+    - Skardal A
+    - Soker S
+    journal: ACS Biomater Sci Eng
+    year: 2019
+    url: https://doi.org/10.1021/acsbiomaterials.8b01356
+  - id: doi:10.3390/mi11020208
+    title: Immersion Bioprinting of Tumor Organoids in Multi-Well Plates for Increasing Chemotherapy
+      Screening Throughput
+    authors:
+    - Erin Maloney
+    - Casey Clark
+    - Hemamylammal Sivakumar
+    - KyungMin Yoo
+    - Julio Aleman
+    - Shiny A. P. Rajan
+    - Steven Forsythe
+    - Andrea Mazzocchi
+    - Adrian W. Laxton
+    - Stephen B. Tatter
+    - Roy E. Strowd
+    - Konstantinos I. Votanopoulos
+    - Aleksander Skardal
+    journal: Micromachines
+    year: 2020
+    url: https://doi.org/10.3390/mi11020208
+  - id: doi:10.1088/1748-605X/aca05d
+    title: Immersion bioprinting of hyaluronan and collagen bioink-supported 3D patient-derived
+      brain tumor organoids
+    authors:
+    - Casey C Clark
+    - Kyung Min Yoo
+    - Hemamylammal Sivakumar
+    - Kristina Strumpf
+    - Adrian W Laxton
+    - Stephen B Tatter
+    - Roy E Strowd
+    - Aleksander Skardal
+    journal: Biomedical Materials
+    year: 2023
+    url: https://doi.org/10.1088/1748-605X/aca05d
+  - id: doi:10.1101/2021.09.01.458584
+    title: Engineering a thixotropic and biochemically tunable hyaluronan and collagen bioink
+      for biofabrication of multiple tissue construct types
+    authors:
+    - Julio Aleman
+    - Hemamylammal Sivakumar
+    - Thomas DePalma
+    - Yu Zhou
+    - Andrea Mazzocchi
+    - Richard Connor Huntwork
+    - KyungMin Yoo
+    - Surya Banks
+    - Casey Clark
+    - Alexandra Maycock
+    - Kalan Leaks
+    - Kevin Enck
+    - Emmanuel C Opara
+    - Paul Gatenholm
+    - Mark Welker
+    - Shay Soker
+    - Samuel Herberg
+    - Tracy Criswell
+    - Aleksander Skardal
+    year: 2021
+    url: https://doi.org/10.1101/2021.09.01.458584
+  - id: doi:10.1038/s41598-018-21200-8
+    title: In vitro patient-derived 3D mesothelioma tumor organoids facilitate patient-centric
+      therapeutic screening
+    authors:
+    - Andrea R. Mazzocchi
+    - Shiny A. P. Rajan
+    - Konstantinos I. Votanopoulos
+    - Adam R. Hall
+    - Aleksander Skardal
+    journal: Scientific Reports
+    year: 2018
+    url: https://doi.org/10.1038/s41598-018-21200-8
+  - id: doi:10.1002/bit.28313
+    title: αCT1 peptide sensitizes glioma cells to temozolomide in a glioblastoma organoid platform
+    authors:
+    - Jingru Che
+    - Thomas J. DePalma
+    - Hemamylammal Sivakumar
+    - Louisa S. Mezache
+    - Miranda M. Tallman
+    - Monica Venere
+    - Katelyn Swindle‐Reilly
+    - Rengasayee Veeraraghavan
+    - Aleksander Skardal
+    journal: Biotechnology and Bioengineering
+    year: 2023
+    url: https://doi.org/10.1002/bit.28313
+  - id: doi:10.1063/1.5056188
+    title: '3D bioprinting for high-throughput screening: Drug screening, disease modeling,
+      and precision medicine applications'
+    authors:
+    - Andrea Mazzocchi
+    - Shay Soker
+    - Aleksander Skardal
+    journal: Applied Physics Reviews
+    year: 2019
+    url: https://doi.org/10.1063/1.5056188
+synonyms:
+- patient-derived tumor organoids (PTOs)
+- patient tumor organoids
+- hydrogel-based tumor organoids
+- immersion-bioprinted tumor organoids
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Personalised chemotherapy screening on a patient's own tumour before or
+    alongside treatment, with results inside a clinically usable window:
+    drug testing starts about 7 days after organoid fabrication and the full
+    panel is complete in under 12 days. In 12 appendiceal cancers (3
+    high-grade, 9 low-grade) 9 organoid sets were established (75%);
+    high-grade sets responded variably between patients while low-grade sets
+    did not respond to any regimen, matching the clinical pattern. In 16
+    sarcomas of several subtypes, organoids were made from every specimen
+    and 12 had enough cells for chemotherapy screening, with doxorubicin the
+    most often effective agent.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - pmid:30414038
+  - pmid:35780216
+  quotes:
+  - snippet: Successful establishment rate of viable organoid sets was 75% (9/12). Average time
+      from organoid development to chemotherapy testing was 7 days.
+    reference: pmid:30414038
+  - snippet: The time needed to engineer patient-specific tumor organoids and complete chemosensitivity
+      panels is less than 12 days
+    reference: pmid:30414038
+  - snippet: HGA tumor organoids derived from different patients demonstrated variable chemotherapy
+      tumor-killing responses, whereas LGA organoids tested with the same regimens showed no response
+      to chemotherapy.
+    reference: pmid:30414038
+  - snippet: Sixteen sarcomas were biofabricated into three-dimensional (3D) patient-specific sarcoma
+      organoids with a 100% success rate.
+    reference: pmid:35780216
+- description: >-
+    Modelling rare and low-cellularity tumours for which cell lines and 2D
+    cultures are hard to establish, such as low-grade mucinous appendiceal
+    tumours and rare sarcoma subtypes, without expanding the cells; of the
+    appendiceal specimens only one cell population adhered to 2D plastic,
+    and unexpanded sarcoma PTO cells kept a drug response that expanded or
+    immortalised cells from the same patient lost over passages.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  supporting_references:
+  - pmid:30414038
+  - pmid:35780216
+  quotes:
+  - snippet: Notably, of these biospecimens only one HGA-derived cell population successfully
+      adhered to plastic tissue 2D culture dishes.
+    reference: pmid:30414038
+  - snippet: Non-immortalized cells maintained sensitivity to imatinib but became resistant to
+      doxorubicin at passage 8 and regorafenib in passage 12.
+    reference: pmid:35780216
+- description: >-
+    Comparing intraperitoneal (HIPEC) perfusion regimens patient by patient:
+    PTOs from 15 appendiceal and 8 colon cancers with peritoneal spread were
+    exposed to mitomycin C and two oxaliplatin regimens at 37 and 42 °C. The
+    high-dose 30-minute oxaliplatin regimen was the least effective in both
+    tumour types, and the benefit of hyperthermia varied between patients.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/32632882/
+  supporting_references:
+  - pmid:32632882
+  quotes:
+  - snippet: An adequate organoid number was generated for 75% (6/8) of colon and 73% (11/15)
+      of appendiceal patients.
+    reference: pmid:32632882
+  - snippet: These data demonstrate that the 460 mg/m2/30 min oxaliplatin regimen is ineffective
+      in both colon and appendiceal PTOs.
+    reference: pmid:32632882
+- description: >-
+    Lung adenocarcinoma modelling and drug testing from malignant pleural
+    effusion, a fluid routinely drained and otherwise discarded. Freshly
+    isolated effusion cells in the hydrogel formed mucin-producing acinar
+    structures containing tumour, fibroblast and CD45+ cells that persisted
+    for up to 6 weeks, whereas cells first passaged on plastic formed
+    smaller structures; the same patient's cells were less sensitive to
+    cisplatin/pemetrexed and carboplatin/pemetrexed in 3D organoids than on
+    2D plastic. The drug-tested specimen came from a patient whose
+    adenocarcinoma was possibly a metastasis from pancreatic cancer.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31723594/
+  supporting_references:
+  - pmid:31723594
+  quotes:
+  - snippet: Our results show that cells in 2D culture were more sensitive to treatment when compared
+      with 3D organoids.
+    reference: pmid:31723594
+  - snippet: On the other hand, cells first grown in plastic dishes and then cultured in 3D did
+      not create similar structures.
+    reference: pmid:31723594
+- description: >-
+    Higher-throughput, bioprinted PTO drug screening in 96-well plates.
+    Immersion bioprinting of an HA/collagen bioink into a support bath keeps
+    each organoid from touching the well wall and spreading into a 2D
+    layer. It was validated with cancer cell lines and then used to screen
+    patient glioblastoma and sarcoma specimens (gelatin bath), and later
+    glioma and lung-adenocarcinoma-brain-metastasis PTOs against
+    temozolomide and an experimental p53 activator (hyaluronic acid bath).
+  source_urls:
+  - https://doi.org/10.3390/mi11020208
+  - https://doi.org/10.1088/1748-605X/aca05d
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.3390/mi11020208
+  - doi:10.1088/1748-605X/aca05d
+  - doi:10.1101/2021.09.01.458584
+  - doi:10.1063/1.5056188
+  quotes:
+  - snippet: A hydrogel bioink comprised of hyaluronic acid and collagen is bioprinted into a viscous
+      gelatin bath, which blocks the bioink from interacting with the well walls and provides support
+      to maintain a spherical form.
+    reference: doi:10.3390/mi11020208
+  - snippet: This method was validated using several cancerous cell lines, and then applied to
+      patient-derived glioblastoma (GBM) and sarcoma biospecimens for drug screening.
+    reference: doi:10.3390/mi11020208
+  - snippet: Responses to the p53 activator compound were effective across all PTO sets, while
+      TMZ responses were observed, but less pronounced, potentially explained by genetic and epigenetic
+      states of the originating tumors.
+    reference: doi:10.1088/1748-605X/aca05d
+  - snippet: Bioprinting technology enables the biofabrication of organoid models at increased
+      throughput, furthering the use of organoid/organ-on-a-chip systems in basic science and translational
+      studies.
+    reference: doi:10.1557/s43577-023-00559-8
+- description: >-
+    Testing candidate combination therapies in glioblastoma: in a 3D GBM
+    organoid model from the same group, temozolomide combined with the
+    connexin 43 mimetic peptide αCT1 improved treatment efficacy in some
+    GBM populations. The abstract does not say whether these organoids were
+    patient-derived or which matrix or fabrication method was used; the
+    review cites the work as part of the lab's GBM organoid platform.
+  source_urls:
+  - https://doi.org/10.1002/bit.28313
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.1002/bit.28313
+  quotes:
+  - snippet: combinatorial treatment with TMZ and αCT1, a Cx43 mimetic peptide, significantly
+      improves treatment efficacy in certain populations of GBM
+    reference: doi:10.1002/bit.28313
+- description: >-
+    Mutation-guided drug testing and on-chip screening: mesothelioma PTOs
+    biofabricated from two patients' biopsies and kept in a tumour-on-a-chip
+    microfluidic device gave on-chip chemotherapy results that the authors
+    report mimicked the patients' own responses, and confirmed the
+    non-standard compound 3-deazaneplanocin A against a mutation found by
+    genetic screening. The hydrogel PTOs can likewise be placed in
+    microfluidic devices for staged infusions or linked to other organoid
+    types; the metastasis-on-a-chip system is a separate record.
+  source_urls:
+  - https://doi.org/10.1038/s41598-018-21200-8
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  supporting_references:
+  - doi:10.1038/s41598-018-21200-8
+  - pmid:30414038
+  quotes:
+  - snippet: Second, we demonstrate that results of on-chip chemotherapy screening mimic those
+      observed in subjects themselves.
+    reference: doi:10.1038/s41598-018-21200-8
+  - snippet: As an optional addition, organoids could be integrated into microfluidic devices
+      as recently described.
+    reference: pmid:30414038
+limitations:
+- description: >-
+    Most of the evidence is not for a bioprinted system. Every full-text
+    study used here (appendiceal, colorectal/HIPEC, sarcoma, lung) made the
+    organoids by pipetting hydrogel droplets by hand; bioprinting of these
+    PTOs rests on two abstract-only papers covering glioblastoma/glioma,
+    sarcoma and one lung-adenocarcinoma brain metastasis. Success rates,
+    timelines and response patterns from the hand-deposited studies have not
+    been shown to carry over to bioprinted organoids.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  - https://pubmed.ncbi.nlm.nih.gov/31723594/
+  - https://pubmed.ncbi.nlm.nih.gov/32632882/
+  - https://doi.org/10.3390/mi11020208
+  - https://doi.org/10.1088/1748-605X/aca05d
+  supporting_references:
+  - pmid:30414038
+  - pmid:35780216
+  - pmid:31723594
+  - pmid:32632882
+  quotes:
+  - snippet: Organoids (cells supported by the ECM hydrogel) were formed by pipetting 5 μL of
+      hydrogel precursor cell suspension into 48-well plates
+    reference: pmid:30414038
+  - snippet: Organoids were formed by pipetting 5 μL of hydrogel precursor cell suspension into
+      96-well plates previously coated with polydimethylsiloxane (PDMS)
+    reference: pmid:35780216
+  - snippet: In suspension, organoids were made by depositing 10 μL of gel into each well of 48-well
+      TCP plates
+    reference: pmid:31723594
+- description: >-
+    Bioprinting hydrogel into small wells is error-prone: a bioink droplet
+    that touches the well wall spreads and flattens into a 2D culture. The
+    support bath addresses this, and the authors report that a hyaluronic
+    acid bath gave more consistent organoid volumes and shapes than the
+    earlier gelatin bath, so organoid geometry depends on bath and print
+    parameters.
+  source_urls:
+  - https://doi.org/10.1088/1748-605X/aca05d
+  - https://doi.org/10.3390/mi11020208
+  supporting_references:
+  - doi:10.1088/1748-605X/aca05d
+  - doi:10.3390/mi11020208
+  quotes:
+  - snippet: When this happens, surface tension causes bioinks to fall flat, resulting in 2D cultures.
+    reference: doi:10.1088/1748-605X/aca05d
+  - snippet: HA print baths enabled more consistent organoid volumes and geometries.
+    reference: doi:10.1088/1748-605X/aca05d
+- description: >-
+    Correlation with patient outcome is not established. The appendiceal
+    study was not designed to test it, sarcoma outcome correlation was not
+    feasible, and the authors state that PTOs are not ready for clinical
+    practice without sufficiently powered correlative data.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  supporting_references:
+  - pmid:30414038
+  - pmid:35780216
+  quotes:
+  - snippet: The scope of this work was not to establish clinical correlation between appendiceal
+      organoid response to chemotherapy and clinical response of the patient to the same chemotherapy.
+    reference: pmid:30414038
+  - snippet: we do not claim organoids are ready to be applied in clinical practice without the
+      backing of sufficiently powered correlative data with patient outcomes.
+    reference: pmid:35780216
+- description: >-
+    Small cohorts, one to two dozen patients per tumour type and only two
+    patients in the lung and mesothelioma studies, which the authors list
+    as a limitation.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  - https://pubmed.ncbi.nlm.nih.gov/32632882/
+  - https://pubmed.ncbi.nlm.nih.gov/31723594/
+  - https://doi.org/10.1038/s41598-018-21200-8
+  supporting_references:
+  - pmid:30414038
+  - pmid:32632882
+  - pmid:31723594
+  quotes:
+  - snippet: The undeniable limitation of this study is the modest number of specimens.
+    reference: pmid:30414038
+  - snippet: The modest sample size is one of the limitations to this study.
+    reference: pmid:32632882
+- description: >-
+    Cell yield limits what can be screened, because the cells are not
+    expanded: low-cellularity mucinous tumours had a lower take rate (about
+    66% for low-grade appendiceal), some specimens gave too few organoids
+    for a full screen, and prior systemic chemotherapy can reduce the cells
+    available.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/30414038/
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  - https://pubmed.ncbi.nlm.nih.gov/32632882/
+  supporting_references:
+  - pmid:30414038
+  - pmid:35780216
+  - pmid:32632882
+  quotes:
+  - snippet: Low-grade mucinous appendiceal primaries had a take rate of close to 66% (6/9), reflecting
+      the acellular mucin load that was comprising the majority of the surgically obtained specimens.
+    reference: pmid:30414038
+  - snippet: We are typically still able to create organoids, but the total number of organoids
+      could be decreased, thus placing a limit on the breadth of chemosensitivity screening that
+      could be performed.
+    reference: pmid:30414038
+  - snippet: due to low yield of either tumor or immune cells, chemotherapy screening was performed
+      for 12/16 (75%) PTO sets
+    reference: pmid:35780216
+- description: >-
+    Tissue architecture is not reproduced and genomic fidelity is untested:
+    sarcoma organoids lost the tumour architecture though cell morphology
+    and markers matched, and the authors note that genomic analysis is
+    still needed to show that the hydrogel preserves the tumour's genetic
+    profile.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  - https://pubmed.ncbi.nlm.nih.gov/32632882/
+  supporting_references:
+  - pmid:35780216
+  - pmid:32632882
+  quotes:
+  - snippet: While organoids lost the tumor architecture, their cytomorphologies were identical
+      to matched tumor tissues.
+    reference: pmid:35780216
+  - snippet: However, a genomic analysis will be required to test this theory, and these studies
+      are ongoing.
+    reference: pmid:32632882
+- description: >-
+    The matrix is not one fixed formulation across the studies: most use
+    thiolated hyaluronic acid with methacrylated collagen, but the sarcoma
+    study used the HyStem-HP hyaluronan/heparin/gelatin system, and the
+    bioprinted versions use a printable HA/collagen bioink. Culture media
+    also differ between tumour types, so results are not directly
+    comparable across studies.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/35780216/
+  - https://pubmed.ncbi.nlm.nih.gov/32632882/
+  - https://doi.org/10.1101/2021.09.01.458584
+  supporting_references:
+  - pmid:35780216
+  - pmid:32632882
+  - doi:10.1101/2021.09.01.458584
+  quotes:
+  - snippet: The HA/gelatin system (HyStem HP, ESI-BIO, Alameda, CA, USA) was utilized as previously
+      described.
+    reference: pmid:35780216
+- description: >-
+    No vasculature or perfusion in the well-plate format; small organoid
+    size is relied on for diffusion of oxygen and nutrients, and the review
+    names vascularisation as a limitation of organoid disease models
+    (paraphrased from the review's full text, which cannot be cached).
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  supporting_references:
+  - doi:10.1557/s43577-023-00559-8
+- description: >-
+    Source coverage: statements resting on the bioprinting papers (Maloney
+    2020, Clark 2023), the bioink preprint (Aleman 2021), the mesothelioma
+    chip study (Mazzocchi 2018), the αCT1 GBM study (Che 2023) and the
+    bioprinting-for-screening review (Mazzocchi, Soker & Skardal 2019) were
+    made from their abstracts only. The appendiceal, colorectal/HIPEC,
+    sarcoma and lung papers were read in full text. The Anderson et al. 2023
+    review's full text was read on the publisher's page but is not openly
+    licensed, so only its abstract is cached and quoted.
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  - https://doi.org/10.3390/mi11020208
+  - https://doi.org/10.1088/1748-605X/aca05d
+  - https://doi.org/10.1101/2021.09.01.458584
+  - https://doi.org/10.1038/s41598-018-21200-8
+  - https://doi.org/10.1002/bit.28313
+  - https://doi.org/10.1063/1.5056188
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  - https://doi.org/10.1245/s10434-018-7008-2
+  - https://doi.org/10.1245/s10434-020-08790-2
+  - https://doi.org/10.1245/s10434-022-12086-y
+  - https://doi.org/10.1021/acsbiomaterials.8b01356
+  - https://doi.org/10.3390/mi11020208
+  - https://doi.org/10.1088/1748-605X/aca05d
+  - https://doi.org/10.1101/2021.09.01.458584
+  - https://doi.org/10.1038/s41598-018-21200-8
+  - https://doi.org/10.1002/bit.28313
+  - https://doi.org/10.1063/1.5056188
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

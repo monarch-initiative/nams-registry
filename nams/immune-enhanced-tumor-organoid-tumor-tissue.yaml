@@ -1,0 +1,462 @@
+model:
+  id: immune-enhanced-tumor-organoid-tumor-tissue
+  type: CoCulture
+  name: Immune-enhanced patient-derived tumor organoids (iPTOs)
+  description: >-
+    Patient-derived tumor organoids (PTOs) into which immune cells from the
+    same patient are mixed, so that a patient's tumour, stroma and immune
+    system are screened together against immunotherapies. Unsorted,
+    non-expanded cells from an enzymatically digested surgical tumour
+    specimen are combined with cells from a lymph node of the same patient
+    (node-enhanced iPTOs) or, where no node is available, with peripheral
+    blood mononuclear cells (blood iPTOs), suspended in a photo-crosslinkable
+    hyaluronic acid/collagen hydrogel and formed into 5 uL organoid droplets.
+    Tumour-only PTOs from the same specimen are run in parallel as the
+    non-immune-enhanced comparator. After about 7 days in culture the
+    organoids are treated for 72 h with checkpoint inhibitors (pembrolizumab,
+    nivolumab, ipilimumab) and, in parallel, targeted or chemotherapy agents,
+    and response is read by ATP-based viability, LIVE/DEAD imaging, LDH
+    release and immunohistochemistry. Reported by the Votanopoulos and
+    Skardal groups (Wake Forest) for stage III/IV melanoma (Votanopoulos et
+    al. 2020) and Merkel cell carcinoma (Forsythe et al. 2022), and reviewed
+    in Anderson et al. 2023 (doi:10.1557/s43577-023-00559-8), which presents
+    immune-enhanced PTOs as organoids imbued with immune cells from lymph
+    nodes or other immune-rich tissue of the same patient, for testing
+    checkpoint inhibitors and cell therapies. The NAMO class mirrors the
+    related colorectal-cancer-organoid-t-cell-coculture-tumor-tissue record
+    (CoCulture); the cells are encapsulated in a hydrogel droplet rather than
+    self-organising, and the two cell populations are in direct contact. The
+    tumour-only platform used for chemotherapy screening is recorded
+    separately as hyaluronan-collagen-tumor-organoid-tumor-tissue.
+  biological_organization_level: TISSUE
+  complexity_level: MODERATE
+  spatial_context: >-
+    Mixed tumour/immune organoid: unsorted tumour cells with their stroma and
+    tumour-infiltrating leucocytes, plus patient-matched lymph node cells or
+    PBMCs, dispersed in a 5 uL hyaluronic acid/collagen hydrogel droplet.
+  cell_types:
+  - id: CL:0001064
+    name: malignant cell
+  - id: CL:0000084
+    name: T cell
+  - id: CL:0000492
+    name: CD4-positive helper T cell
+  - id: CL:0000910
+    name: cytotoxic T cell
+  - id: CL:0000145
+    name: professional antigen presenting cell
+  - id: CL:2000001
+    name: peripheral blood mononuclear cell
+  - id: CL:0000499
+    name: stromal cell
+  cell_source: tumor tissue
+  coculture_configuration: DIRECT_CONTACT
+  interaction_mechanisms:
+  - >-
+    Checkpoint-inhibitor-dependent killing of tumour cells by patient-matched
+    T cells within the organoid, read as loss of viability relative to the
+    matched tumour-only PTO and as granzyme B staining.
+  - >-
+    Presentation of tumour antigens by lymph-node-derived antigen-presenting
+    cells (MHC class I and II), proposed by Votanopoulos et al. as the
+    advantage of node-enhanced over PBMC-enhanced organoids.
+  culture_conditions: >-
+    Melanoma (Votanopoulos et al. 2020): tumour and lymph node specimens
+    minced and digested in collagenase/hyaluronidase, red cells lysed;
+    thiolated HA (Glycosil) and methacrylated collagen mixed 3:1 by volume
+    with photoinitiator; unsorted cells at 10 million cells/mL; 5 uL droplets
+    pipetted into PDMS-coated 48-well plates and UV-crosslinked (365 nm, 1 s);
+    DMEM with 10% FBS, 1% penicillin-streptomycin, 1% L-glutamine; lymph node
+    cells added 1:1 to tumour cells, or Ficoll-isolated PBMCs where no node
+    was available; 75-100 organoids per specimen, split between PTOs and
+    iPTOs; drugs from day 7 for 72 h (pembrolizumab, nivolumab, ipilimumab
+    100 nM; dabrafenib 40 uM with trametinib 2 uM; cisplatin when yield
+    allowed); histology on day 10. Merkel cell carcinoma (Forsythe et al.
+    2022): digestion with collagenase HA, protease and DNase; thiol-modified
+    hyaluronan/heparin (Heprasil) with 3 mg/mL methacrylated collagen
+    (PhotoCol) in a 1:3 volume ratio at 10 million cells/mL; 5 uL droplets in
+    96-well non-tissue-culture plates, UV-crosslinked; DMEM-F12 with 5% FBS,
+    EGF 50 ng/mL and Y-27632 10 uM; immune cells from blood or lymph node
+    combined with tumour cells at 3:1-5:1 according to cell yield; 7 days of
+    culture, then 72 h of treatment (checkpoint inhibitors at 100 nM on iPTOs
+    and PTOs in parallel; cisplatin, doxorubicin, vincristine, etoposide and
+    combinations on PTOs); results within 10 days of surgery. Optionally the
+    organoids can be integrated into microfluidic devices.
+  references:
+  - id: pmid:31858299
+    title: 'Model of Patient-Specific Immune-Enhanced Organoids for Immunotherapy Screening:
+      Feasibility Study.'
+    authors:
+    - Votanopoulos KI
+    - Forsythe S
+    - Sivakumar H
+    - Mazzocchi A
+    - Aleman J
+    - Miller L
+    - Levine E
+    - Triozzi P
+    - Skardal A
+    journal: Ann Surg Oncol
+    year: 2020
+    url: https://doi.org/10.1245/s10434-019-08143-8
+  - id: pmid:35974123
+    title: Application of immune enhanced organoids in modeling personalized Merkel cell carcinoma
+      research.
+    authors:
+    - Forsythe SD
+    - Erali RA
+    - Laney P
+    - Sivakumar H
+    - Li W
+    - Skardal A
+    - Soker S
+    - Votanopoulos KI
+    journal: Sci Rep
+    year: 2022
+    url: https://doi.org/10.1038/s41598-022-17921-6
+  - id: doi:10.1557/s43577-023-00559-8
+    title: Three-dimensional bioprinting of in vitro tumor organoid and organ-on-a-chip models
+    authors:
+    - Sydney R. Anderson
+    - Emerie J. Stagner
+    - Hemamylammal Sivakumar
+    - Aleksander Skardal
+    journal: MRS Bulletin
+    year: 2023
+    url: https://doi.org/10.1557/s43577-023-00559-8
+synonyms:
+- iPTO
+- immune-enhanced PTO
+- immune enhanced organoids
+- tumor/node organoids
+- node-enhanced PTO
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+applications:
+- description: >-
+    Personalised checkpoint-inhibitor screening in melanoma: in ten
+    biospecimen sets from eight stage III/IV patients, viable organoid sets
+    were established in 9/10, immunotherapy testing began about 7 days after
+    organoid formation, and iPTO response to immunotherapy matched the
+    resected specimen's clinical response in 6 of 7 patients with
+    correlative data. In the first specimen tested, PD-1 inhibitors increased
+    melanoma cell death in the node-enhanced organoids but not in tumour-only
+    organoids.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  supporting_references:
+  - pmid:31858299
+  quotes:
+  - snippet: >-
+      Ten biospecimen sets obtained from eight stage III and IV melanoma
+      patients were reconstructed as symbiotic immune/tumor organoids between
+      September 2017 and June 2018. Successful establishment of viable
+      organoid sets was 90% (9/10), although organoid yield varied with
+      biospecimen size. Average time from organoid development to initiation
+      of immunotherapy testing was 7 days.
+    reference: pmid:31858299
+  - snippet: >-
+      iPTO response to immunotherapy was similar to specimen clinical
+      response in 85% (6/7) patients.
+    reference: pmid:31858299
+  - snippet: >-
+      the PD-1 inhibitors resulted in a clear increase in overall melanoma
+      cell death in the node-enhanced organoids but not in the organoids that
+      were lacking the lymph node component
+    reference: pmid:31858299
+- description: >-
+    Following treatment resistance by building a second set of organoids from
+    a resected recurrence or progressing lesion. In melanoma, two patients
+    who progressed on checkpoint inhibitors had the progressing lesions
+    reconstructed as iPTOs that matched the clinical response; in Merkel cell
+    carcinoma, four specimens taken from two patients over their course of
+    pembrolizumab showed iPTO resistance to pembrolizumab concordant with
+    the patients' clinical course.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      Two of the patients who experienced recurrence while on treatment had a
+      second set of organoids built directly from the recurrences that
+      recapitulated the clinical response of the recurrence.
+    reference: pmid:31858299
+  - snippet: >-
+      Four specimens from two patients demonstrated resistance to
+      pembrolizumab, correlating with the corresponding patient's treatment
+      response.
+    reference: pmid:35974123
+- description: >-
+    Immunotherapy and chemotherapy testing in a rare cancer (Merkel cell
+    carcinoma) where comparative clinical trials are hard to accrue: nine
+    specimens from seven patients gave PTOs in 8/9 and iPTOs in 7/9; no
+    immunotherapy met the response criteria in the iPTO sets tested, while
+    cisplatin with doxorubicin was the most effective chemotherapy in the
+    parallel tumour-only PTOs. Histology showed MCC markers matched between
+    patient tissue and organoids, including Merkel cell polyomavirus.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      Nine specimens from seven patients were recruited from December
+      2018-January 2022. Establishment rate was 88.8% (8/9) for PTOs and
+      77.8% (7/9) for iPTOs.
+    reference: pmid:35974123
+  - snippet: >-
+      Chemotherapy response was exhibited in 4/6 (66.6%) specimens with
+      cisplatin and doxorubicin as the most effective agents (4/6 PTO sets)
+      while immunotherapy was not effective in tested iPTO sets.
+    reference: pmid:35974123
+- description: >-
+    Reading immune activity inside the organoid: immunohistochemistry
+    confirmed CD4+ and CD8+ T cells in melanoma iPTOs and granzyme B staining
+    in an iPTO that responded to ipilimumab; in MCC iPTOs, CD8+ T cells were
+    present but granzyme B and caspase 3 staining was low, and LDH release
+    was followed over 24-72 h as a non-lytic measure of cell damage.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      immunofluorescence confirmed the presence of both CD4+ helper T cells
+      (Fig. 2h) and CD8+ cytotoxic T cells (Fig. 2i), verifying that iPTOs
+      maintain important components of the originating patients' immune
+      system
+    reference: pmid:31858299
+  - snippet: >-
+      IHC analysis of treated organoids demonstrated minimal immune-mediated
+      cytotoxicity measured by granzyme B and caspase 3 activity in tumor
+      cells while demonstrating the presence of CD8+ T-cells over the course
+      of the study period when compared to controls
+    reference: pmid:35974123
+- description: >-
+    Pilot use for generating adaptive immunity ex vivo: the patient's
+    peripheral white blood cells were cultured with node-enhanced iPTOs for 7
+    days and the supernatant then transferred to naive tumour-only PTOs from
+    the same specimen, which showed a high degree of cell death after 7 more
+    days, suggesting T cell-mediated killing.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  supporting_references:
+  - pmid:31858299
+  quotes:
+  - snippet: >-
+      peripheral T cells were circulated through iPTOs, and subsequently
+      transferred to naïve PTOs from the same patient, resulting in tumor
+      killing, suggesting a possible role of iPTOs in generating adaptive
+      immunity.
+    reference: pmid:31858299
+- description: >-
+    Drug-response findings beyond the immune axis: melanoma iPTOs from a
+    BRAF wild-type patient responded to dabrafenib/trametinib, at first
+    judged a false positive, before sequencing found a MEK mutation bypassing
+    the BRAF pathway; the patient then responded to trametinib.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  supporting_references:
+  - pmid:31858299
+  quotes:
+  - snippet: >-
+      Next-generation sequencing (NGS) performed after clinical progression
+      on CPIs demonstrated a downstream MEK mutation that was bypassing the
+      BRAF pathway.
+    reference: pmid:31858299
+limitations:
+- description: >-
+    Small feasibility cohorts: the authors name the modest number of
+    patients as the major limitation of the melanoma study, and the rarity of
+    Merkel cell carcinoma limits the power of the second study; neither is
+    sufficient to apply the organoids in clinical practice.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: The major limitation of this study is the modest number of patients.
+    reference: pmid:31858299
+    note: The authors' own caveat.
+  - snippet: >-
+      organoids are not yet ready to be applied in clinical practice without
+      sufficiently powered correlative data with patient outcomes.
+    reference: pmid:35974123
+    note: The authors' own caveat.
+- description: >-
+    The clinical correlation is mostly of non-response. Six of the seven
+    melanoma patients with correlative data had organoids that did not
+    respond and progressed on treatment, the one discordant case was an iPTO
+    that responded to nivolumab in a patient who recurred on nivolumab, and
+    the MCC correlation rests on specimens resected because they were failing
+    immunotherapy. The authors say the MCC results are skewed towards
+    non-response and describe negative predictive value only; positive
+    predictive value remains to be established.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      the patient's iPTO was responsive to nivolumab while the corresponding
+      patient progressed at 2.5 months while being treated with nivolumab
+    reference: pmid:31858299
+  - snippet: >-
+      The herein presented organoid results are artificially skewed towards
+      to lack of immunotherapy response because corresponding patients were
+      failing on immunotherapy and surgery was performed only to obtain local
+      control.
+    reference: pmid:35974123
+    note: The authors' own caveat.
+  - snippet: >-
+      The presented clinical correlation describes negative predictive value,
+      as many resected specimens originated from tumors clinically resistant
+      to systemic treatment.
+    reference: pmid:35974123
+  - snippet: Establishing positive predictive value will be a necessary endpoint in future studies.
+    reference: pmid:35974123
+- description: >-
+    An organoid reports only the lesion it was built from. Clonal escape in
+    advanced disease is not captured by a single-site biopsy, and in MCC a
+    mixed clinical response across lesions of one patient showed that
+    organoid response need not represent the patient's overall response.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      In advanced stages of disease, tumors may have developed clonality
+      through escape mutations that will not be captured by a single-site
+      biopsy.
+    reference: pmid:31858299
+  - snippet: >-
+      any response exhibited by the PTOs is reflective only of the biopsied
+      lesions used to develop the organoids and not necessarily representative
+      of the overall response of the patient
+    reference: pmid:35974123
+- description: >-
+    The immune component is not standardised. Lymph node cells were used
+    where a node was resected and PBMCs otherwise (three of eight melanoma
+    patients; six of seven MCC iPTO sets), at different immune:tumour ratios
+    in the two studies (1:1 for node cells in melanoma; 3:1-5:1 by cell yield
+    in MCC). The authors were still comparing node- and PBMC-based
+    constructs and expect node-derived organoids to have the advantage of
+    more mature antigen-presenting cells, so the two variants are not shown
+    to be equivalent.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      Currently, both constructs are developed in parallel to study their
+      relative efficacy in predicting immune response.
+    reference: pmid:31858299
+  - snippet: >-
+      In these organoids, the lymph node cells were added at 1:1 ratio to the
+      tumor cells.
+    reference: pmid:31858299
+  - snippet: >-
+      in a 3:1–5:1 ratio according to cell yield with tumor cells
+    reference: pmid:35974123
+- description: >-
+    No agreed definition of response. The MCC study applies a stringent,
+    arbitrarily chosen threshold (statistically significant loss of viability
+    against both the untreated iPTO and the treated tumour-only PTO, and
+    under 50% viability), while the melanoma study judged response from ATP
+    activity and LIVE/DEAD imaging; LIVE/DEAD and LDH were supporting assays
+    only because of low throughput. Organoid yield, and so the number of
+    drugs tested per patient, varied with specimen size.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: There is no consensus regarding what represents therapeutic efficacy in organoids.
+    reference: pmid:35974123
+  - snippet: We arbitrarily selected 50% viability reduction as the lowest threshold suggestive of therapy response.
+    reference: pmid:35974123
+  - snippet: >-
+      Each organoid set's group of drug compounds varied slightly due to the
+      PTO and iPTO yield from each particular set of biospecimens.
+    reference: pmid:31858299
+- description: >-
+    The adaptive-immunity transfer experiment is a single-specimen pilot that
+    needs more patients, and the observed difference between pembrolizumab
+    and nivolumab, which target the same receptor interaction, is described
+    by the authors as speculative.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  supporting_references:
+  - pmid:31858299
+  quotes:
+  - snippet: These data presented herein require additional exploration with more patients
+    reference: pmid:31858299
+  - snippet: It should be noted that this is speculative and requires further research to be validated.
+    reference: pmid:31858299
+- description: >-
+    Radiation, a treatment option for Merkel cell carcinoma, was not modelled.
+  source_urls:
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      although radiation is a potential treatment options for MCC, we did
+      not incorporate this treatment parameter in our study
+    reference: pmid:35974123
+- description: >-
+    Not bioprinted in the primary studies. The review (doi:10.1557/s43577-023-00559-8)
+    presents immune-enhanced PTOs within a survey of bioprinting, but both
+    primary papers formed organoids by pipetting 5 uL hydrogel/cell droplets
+    and photo-crosslinking them; bioprinting is the review's proposal for
+    raising throughput, not a demonstrated feature of this model. The
+    review's full text was read on the publisher's page but is free to read
+    rather than openly licensed, so only its abstract is cached here and the
+    statements in this record are drawn from the two primary papers.
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  - https://pubmed.ncbi.nlm.nih.gov/31858299/
+  - https://pubmed.ncbi.nlm.nih.gov/35974123/
+  supporting_references:
+  - doi:10.1557/s43577-023-00559-8
+  - pmid:31858299
+  - pmid:35974123
+  quotes:
+  - snippet: >-
+      PTOs were created by seeding 5 µL of the hydrogel/cell mixture into
+      individual wells of a 96-well non-tissue culture treated plate
+    reference: pmid:35974123
+  - snippet: >-
+      Bioprinting technology enables the biofabrication of organoid models at
+      increased throughput
+    reference: doi:10.1557/s43577-023-00559-8
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  - https://doi.org/10.1245/s10434-019-08143-8
+  - https://doi.org/10.1038/s41598-022-17921-6
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1557/s43577-023-00559-8
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
