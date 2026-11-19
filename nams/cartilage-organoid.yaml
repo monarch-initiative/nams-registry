@@ -1,0 +1,80 @@
+model:
+  id: cartilage-organoid
+  type: Organoid
+  name: Cartilage organoid (osteoarthritis in vitro model)
+  description: >-
+    Three-dimensional (organoid) in vitro models of cartilage used to model
+    osteoarthritis (OA), reviewed by Manivong et al. 2023
+    (doi:10.1016/j.drudis.2023.103488) as a 3Rs alternative to animal
+    experimentation. Recorded from the abstract alone: the abstract does not
+    name the cell source, scaffold or matrix, or how an OA-like state is
+    induced, and it may group several distinct 3D cartilage systems under one
+    heading. Whether they are one NAM or several is left to be settled against
+    the full text.
+  description_scope: METHOD
+  biological_organization_level: TISSUE
+  spatial_context: Cartilage.
+  three_d_architecture: ORGANOID
+  references:
+  - id: doi:10.1016/j.drudis.2023.103488
+    title: 'New trends for osteoarthritis: Biomaterials, models and modeling'
+    authors:
+    - S Manivong
+    - A Cullier
+    - F Audigié
+    - X Banquy
+    - F Moldovan
+    - M Demoor
+    - VG Roullin
+    journal: Drug Discovery Today
+    year: 2023
+    url: https://doi.org/10.1016/j.drudis.2023.103488
+synonyms:
+- 3D cartilage model
+applications:
+- description: >-
+    In vitro modelling of osteoarthritis in cartilage, as a way to replace,
+    reduce and refine animal experiments (the 3Rs).
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  supporting_references:
+  - doi:10.1016/j.drudis.2023.103488
+  quotes:
+  - snippet: >-
+      OA in vitro modeling, focusing on 3D (organoid) models of cartilage
+      regarding the Replace, Reduce and Refine (3R) principle of animal
+      experimentation
+    reference: pmid:36623796
+limitations:
+- description: >-
+    Abstract-only record. The full text of Manivong et al. 2023 is subscription-
+    only and was not available to the curator, so this record holds only what
+    the abstract states. How the model is made, the readouts used and its
+    fidelity to human osteoarthritis are not captured; seek the full text and
+    revisit.
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  supporting_references:
+  - doi:10.1016/j.drudis.2023.103488
+- description: >-
+    The abstract groups 3D cartilage models under the term organoid; it does not
+    say whether they are self-organising organoids, scaffold-based constructs or
+    pellet cultures, so the NAMO class Organoid is provisional.
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  supporting_references:
+  - doi:10.1016/j.drudis.2023.103488
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  accessed_on: '2026-11-19'
+  text_consulted:
+  - source_url: https://doi.org/10.1016/j.drudis.2023.103488
+    text: ABSTRACT_ONLY
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1016/j.drudis.2023.103488
+  accessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
