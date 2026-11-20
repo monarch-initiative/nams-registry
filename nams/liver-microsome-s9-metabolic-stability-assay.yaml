@@ -1,0 +1,121 @@
+# A NAM from Webb et al. 2023 (PMID:37418196). Curated through DisMech and not
+# represented in its graph: metabolic half-life is an ADME property, not a
+# mechanism, so there is no node to anchor it to -- the dismech#16882 shape.
+# See dismech_status below.
+#
+# `type:` is left out: NAMO has no class for an in vitro assay on a subcellular
+# liver fraction, as src/nams_registry/schema/nam_records.yaml notes for the
+# model slot.
+#
+# The paper is not open access. The preparation details below are from the PMC
+# full text (PMC10833105, section 2.7 and Experimental Section 4.7); the cached
+# reference holds the abstract, which states only that compound 5c "was
+# metabolically stable in the presence of human and mouse microsomes".
+#
+# NOTE a discrepancy in the source, carried here deliberately rather than
+# resolved: the abstract and the Experimental Section describe liver
+# microsomes (Xenotech), while the Results state that the compounds were
+# "stable for 2 h in the presence of mouse and human S9 using a NADPH
+# regeneration system". S9 contains cytosolic enzymes that microsomes lack, so
+# which preparation produced the phase 1 result cannot be determined from the
+# paper. Both are named in the description for that reason.
+model:
+  id: liver-microsome-s9-metabolic-stability-assay
+  name: Human and mouse liver microsome and S9 metabolic stability assay
+  description: >-
+    An in vitro assay measuring how fast a compound is cleared by hepatic
+    drug-metabolising enzymes, run with human and mouse preparations in parallel
+    so that species differences in clearance can be seen before an in vivo
+    study. Phase 1 oxidative metabolism is assessed by incubating the compound
+    with a liver subcellular fraction and a NADPH regeneration system that
+    supplies the cytochrome P450 cofactor, and measuring the parent compound
+    remaining over time; in this paper the fraction is described as liver
+    microsomes in the abstract and Experimental Section and as S9 in the
+    Results. Phase 2 conjugation is assessed as a variant of the same method,
+    directed at glucuronidation, which was the route the compound series was
+    redesigned to resist. The assay reports a fraction remaining or a half-life
+    and nothing about target engagement or toxicity.
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- liver microsomal stability assay
+- hepatic S9 metabolic stability assay
+species:
+- id: NCBITaxon:9606
+  name: Homo sapiens
+- id: NCBITaxon:10090
+  name: Mus musculus
+applications:
+- description: >-
+    Testing whether a structural change suppresses a specific metabolic route.
+    This paper's design strategy was to add steric hindrance near a carboxylic
+    acid to slow phase 2 glucuronidation, and the assay is what shows whether
+    that worked; the authors conclude the strategy produced metabolically more
+    stable compounds.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Comparing clearance between human and mouse preparations, so that a
+    rodent efficacy result can be interpreted against the expected human
+    half-life.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Selecting between compounds of comparable potency on predicted duration of
+    action: the compound carried forward was preferred partly for improved
+    microsomal stability in mice over the prior lead.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    A subcellular fraction is not a liver. There is no cellular uptake, no bile
+    canaliculus, no transporter-mediated clearance and no organ architecture, so
+    predicted clearance can diverge from hepatic clearance in vivo.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Stability is not activity or safety. The assay reports disappearance of the
+    parent compound and identifies no metabolite, so it cannot indicate whether
+    a metabolite is active or toxic.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The paper names two different preparations for the phase 1 result,
+    microsomes in the abstract and Experimental Section and S9 in the Results.
+    Because S9 carries cytosolic enzymes that microsomes do not, a user of this
+    record cannot tell which enzyme complement produced the reported stability.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 18502
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

@@ -1,0 +1,127 @@
+# A NAM from Webb et al. 2023 (PMID:37418196), the binding assay that ranks the
+# spiro imidazobenzodiazepine series. Curated through DisMech and not
+# represented in its graph: benzodiazepine-site occupancy of a GABA_A receptor
+# has no DisMech node. See dismech_status below.
+#
+# NAMO has no class for a radioligand competition binding assay on a tissue
+# extract. NAMModel is abstract and defined as not involving animal use, which
+# this does; AnimalModel does not fit, because the animal is not the model, its
+# brain extract is. `type:` is therefore left unset pending a NAMO proposal,
+# rather than forced into a class that would misdescribe the system.
+#
+# The paper is not open access. The assay details below (rat brain extract, the
+# PDSP program, the 10 uM screening concentration, the brain subtype
+# composition and the per-compound IC50 values other than 9 nM) are from the
+# PMC full text (PMC10833105, section 2.5); the cached reference holds the
+# abstract, which states only that design "correlated with in vitro binding
+# data" and that compound 5c has "an affinity of 9 nM for GABAARs".
+model:
+  id: gaba-a-receptor-radioligand-binding-rat-brain-extract
+  name: GABA_A receptor radioligand competition binding assay on rat brain extract
+  description: >-
+    A competition binding assay that measures displacement of the
+    benzodiazepine-site radioligand 3H-flunitrazepam from GABA_A receptors in
+    rat brain extract, run by the NIMH Psychoactive Drug Screening Program
+    (PDSP) at the University of North Carolina at Chapel Hill. Compounds are
+    screened at a single 10 uM concentration, and those displacing more than
+    50% of the radioligand are taken to a dose-response analysis yielding an
+    IC50. The assay reports affinity for the mixture of flunitrazepam-sensitive
+    GABA_A receptor subtypes present in brain tissue
+    (alpha1-3,5,6 beta1-3 gamma1-3/delta), whose composition the paper gives as
+    43% alpha1beta2gamma2, 15% alpha2beta3gamma2 plus 8% alpha2betagamma1, 10%
+    alpha3beta3gamma2, 6% alpha4betagamma/delta, 4% alpha5beta3gamma2 and 4%
+    alpha6beta2gamma2/delta. In this paper it was the best predictor of the
+    whole-animal bronchodilator outcome across the acid series, agreeing with
+    the in vivo result on all eight compounds reported in both.
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- 3H-flunitrazepam competition binding assay
+- GABA_AR benzodiazepine-site radioligand binding assay (PDSP)
+species:
+- id: NCBITaxon:10116
+  name: Rattus norvegicus
+applications:
+- description: >-
+    Ranking a congeneric ligand series by affinity for the GABA_A receptor
+    benzodiazepine site, as the primary structure-activity readout. Reported
+    IC50 values in this paper were 9 nM for compound 5c, 42 nM for 3c, 55 nM
+    for 5h, 87 nM for 4c, 134 nM for 3b, 145 nM for 5b, 289 nM for 5j, 509 nM
+    for 4i and 665 nM for 3g, with compounds 3e, 3f, 4e and 4f showing no
+    significant binding.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Establishing a steric limit on an allosteric binding pocket: affinity fell
+    as the spiro ring grew, supporting the conclusion that the site accommodates
+    only a three-membered ring.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    A reference measurement for validating structure-based docking scores,
+    which the paper correlates against percent displacement in this assay.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    The assay uses rat brain extract, while the therapeutic target named in the
+    paper is the alpha4- and alpha5-containing GABA_A receptor of human airway
+    smooth muscle. The affinity reported is therefore from the wrong species and
+    the wrong tissue for the intended indication.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The signal is dominated by subtypes that are not the airway target. By the
+    paper's own figures the brain population is 43% alpha1beta2gamma2, while
+    alpha4-containing receptors make up about 6% and alpha5beta3gamma2 about 4%.
+    An IC50 from this assay must not be entered or cited as an airway GABA_A
+    receptor affinity.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Binding is measured on a receptor mixture, so the assay cannot resolve
+    subtype selectivity, which is the property the compounds were designed for.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Occupancy is not function. The assay reports displacement of a radioligand
+    and measures no chloride conductance, no membrane potential and no change in
+    muscle tone, so it cannot establish that a bound compound is a positive
+    allosteric modulator rather than a neutral or negative one.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 18502
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

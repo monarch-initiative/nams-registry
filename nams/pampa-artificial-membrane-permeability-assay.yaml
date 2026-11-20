@@ -1,0 +1,93 @@
+# A NAM from Webb et al. 2023 (PMID:37418196). Curated through DisMech and not
+# represented in its graph: a permeability coefficient is a physicochemical
+# property, not a mechanism, so there is no node to anchor it to. This is the
+# shape recorded as dismech#16882 -- a method that belongs in the registry with
+# no DisMech home. See dismech_status below.
+#
+# `type:` is left out: NAMO has no class for a cell-free in chemico assay, as
+# src/nams_registry/schema/nam_records.yaml notes for the model slot.
+#
+# The paper is not open access. The membrane composition, the DMSO
+# concentration, the 18-hour equilibration and the reference standards below
+# are from the PMC full text (PMC10833105, the permeability section of the
+# Results); the cached reference holds the abstract, which states only that the
+# ligands have "low permeability".
+model:
+  id: pampa-artificial-membrane-permeability-assay
+  name: Parallel artificial membrane permeability assay (PAMPA)
+  description: >-
+    A cell-free assay that measures passive transcellular permeability across an
+    artificial lipid membrane. The membrane is a hexane/hexadecane layer
+    separating donor and acceptor compartments; compounds are added as dimethyl
+    sulfoxide solutions at a final concentration of 5% (v/v), and the
+    distribution across the membrane is read after 18 hours at pH 7.4 to give an
+    effective permeability, log Pe. Because no cells are involved there are no
+    transporters, no metabolism and no tight junctions: the assay isolates
+    passive diffusion driven by lipophilicity and ionisation. Results are
+    interpreted against reference standards run in the same format, in this
+    paper ranitidine at log Pe -7.0 cm/s for low permeability, naproxen at -5.0
+    cm/s for medium and verapamil at -4.0 cm/s for high.
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- PAMPA
+- parallel artificial membrane permeation assay
+applications:
+- description: >-
+    Ranking a compound series by passive permeability against reference
+    standards of known classification. In this paper the carboxylic acid
+    compounds had the lowest permeabilities of all compounds tested, in a narrow
+    range between log Pe -6.4 and -7.1 cm/s, which the authors attribute to the
+    charged carboxylate at neutral pH.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Supporting a tissue-selectivity design strategy: deliberately low passive
+    permeability is used as evidence that a compound will stay out of the
+    central nervous system and act peripherally.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    The membrane is artificial lipid, not a cell monolayer and not a blood-brain
+    barrier model. The assay has no transporters, no efflux pumps, no metabolism
+    and no junctional biology, so it cannot predict tissue distribution or
+    barrier penetration on its own; in this paper the blood-brain barrier claim
+    is tested separately, in vivo.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    log Pe is a physicochemical property of the compound, not a biological
+    response, so the assay reports nothing about any mechanism, target or
+    adverse outcome.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 18502
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'

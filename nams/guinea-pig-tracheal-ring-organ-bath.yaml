@@ -1,0 +1,144 @@
+# A NAM from Webb et al. 2023 (PMID:37418196), the ex vivo system that shows a
+# GABA_A receptor ligand relaxing contracted airway smooth muscle. One of only
+# two systems in this paper with a DisMech anchor: it bears on
+# Asthma#Bronchoconstriction, which it reverses. No link is recorded yet,
+# because the mechanism's proper home is a gaba_a_receptor_agonism module that
+# DisMech does not have; linking into the beta2 module instead would assert a
+# cAMP transducer this paper never measured. See dismech_status below.
+#
+# `type:` is left out: NAMO has no class for an ex vivo tissue preparation, as
+# src/nams_registry/schema/nam_records.yaml notes for the model slot.
+#
+# The paper is not open access. The whole protocol below (the substance P
+# contraction, the epithelium removal, the tetrodotoxin, pyrilamine,
+# indomethacin and N-vanillylnonanamide pretreatments, the 25 uM concentration
+# and the 30- and 60-minute timepoints) is from the PMC full text
+# (PMC10833105, the Results and the Experimental Section); the cached reference
+# holds the abstract, which states only that "Pharmacological activities at
+# lung GABAARs were demonstrated by ex vivo relaxation of guinea pig airway
+# smooth muscle".
+model:
+  id: guinea-pig-tracheal-ring-organ-bath
+  name: Guinea pig tracheal ring organ bath for airway smooth muscle relaxation
+  description: >-
+    An ex vivo contractility preparation measuring the force of guinea pig
+    airway smooth muscle. Tracheas from adult male Hartley guinea pigs are
+    transected into rings of two cartilaginous rings each, the epithelium is
+    removed with a cotton swab, and the rings are suspended in a water-jacketed
+    organ bath on silk threads against a force transducer. The buffer is bubbled
+    with 5% carbon dioxide and 95% oxygen and contains indomethacin to remove
+    prostanoid contributions. Rings are pre-treated with N-vanillylnonanamide to
+    deplete nonadrenergic noncholinergic nerves, cycled twice with increasing
+    acetylcholine, then pre-treated with tetrodotoxin and pyrilamine to remove
+    the confounding effects of endogenous airway nerves and histamine release.
+    Rings are contracted with substance P, and at the plateau of contractile
+    force a test compound or vehicle is added; remaining force is expressed as a
+    percentage of the initial substance P-induced force and compared against
+    vehicle at fixed timepoints. The preparation is deliberately reduced to
+    smooth muscle: by design it isolates direct relaxant action on the muscle
+    from epithelial, neural, histaminergic and prostanoid influences on airway
+    tone.
+  references:
+  - id: pmid:37418196
+    title: >-
+      Design, Synthesis, and Biological Evaluation of Novel Spiro
+      Imidazobenzodiazepines to Identify Improved Inhaled Bronchodilators
+    journal: Journal of Medicinal Chemistry
+    year: 2023
+    url: https://doi.org/10.1021/acs.jmedchem.3c00647
+synonyms:
+- guinea pig tracheal ring assay
+- isolated tracheal ring organ bath, airway smooth muscle contractility
+species:
+- id: NCBITaxon:10141
+  name: Cavia porcellus
+applications:
+- description: >-
+    Testing whether a compound relaxes already-contracted airway smooth muscle,
+    as a direct functional readout of bronchodilator action. In this paper 25 uM
+    of compounds 5c, 5f, 5h and 5j caused significant relaxation of
+    substance-P-contracted rings at 30 minutes, with 5c the strongest
+    (p < 0.001 at 30 minutes), and weak relaxation appearing for 5b and 5d by
+    60 minutes.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Isolating direct smooth-muscle action from other determinants of airway
+    tone, by removing the epithelium and blocking nerves, histamine and
+    prostanoids before the contraction is imposed.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Cross-checking a binding-affinity series against tissue function: relaxation
+    in this preparation tracked GABA_A receptor affinity across the acid series,
+    though not perfectly.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+limitations:
+- description: >-
+    It did not predict the whole-animal outcome for every compound. The authors
+    note that compound 5f showed a much stronger ex vivo effect than in vivo
+    effect; across the acid series the ex vivo result agreed with the conscious
+    mouse on six of eight compounds, where binding affinity agreed on eight of
+    eight.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The contractile agonist is substance P, a tachykinin, which is not the
+    stimulus of clinical bronchoconstriction. Reversal of a
+    substance-P-induced contraction does not establish reversal of
+    allergen-, cholinergic- or exercise-driven airway narrowing.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    Vehicle force falls over the experiment because substance P has a limited
+    half-life, so the readout is a difference against a declining vehicle
+    control rather than against a stable baseline.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The preparation is denuded and pharmacologically blocked, so it cannot speak
+    to epithelial, neural, histaminergic or prostanoid contributions to airway
+    tone, nor to inflammation, mucus or remodelling. It reports relaxation of
+    contracted muscle and nothing else.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+- description: >-
+    The tissue is guinea pig, not human, and no receptor-level control is
+    reported in this paper: no antagonist, no subunit-null tissue and no
+    concentration-response, so the relaxation is attributed to GABA_A receptors
+    on the strength of the correlation with binding and of the authors' prior
+    work, rather than demonstrated here.
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  supporting_references:
+  - pmid:37418196
+source_resources:
+- resource: scientific-literature
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+- resource: complement-arie-landscape-dashboard
+  source_urls:
+  - https://doi.org/10.1021/acs.jmedchem.3c00647
+  accessed_on: '2026-11-19'
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  dismech_issue_id: 18502
+  assessed_on: '2026-11-19'
+creation_date: '2026-11-19'
+last_modified_date: '2026-11-19'
