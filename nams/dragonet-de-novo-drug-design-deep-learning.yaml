@@ -110,5 +110,12 @@ source_resources:
   source_urls:
   - https://doi.org/10.1002/minf.202300064
   accessed_on: '2026-11-19'
+# No DisMech anchor by construction: the method generates candidate structures
+# from an expression signature and asserts no mechanism, which is the shape
+# recorded in dismech#16882. No DisMech issue is opened for it.
+dismech_status:
+  processed_through_dismech: true
+  present_in_dismech: false
+  assessed_on: '2026-11-21'
 creation_date: '2026-11-19'
-last_modified_date: '2026-11-19'
+last_modified_date: '2026-11-21'
