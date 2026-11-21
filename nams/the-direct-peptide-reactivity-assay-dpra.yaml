@@ -1,8 +1,7 @@
 model:
   id: the-direct-peptide-reactivity-assay-dpra
+  type: PeptideReactivityAssay
   name: The Direct Peptide Reactivity Assay (DPRA)
-  # Untyped: NAMO has no class for an in chemico method (namo#55). A class
-  # for it is part of the NAMO work under nams-registry#110.
   description: >-
     A cell-free, in chemico assay for skin sensitization that measures a test
     chemical's reactivity towards synthetic peptides standing in for the

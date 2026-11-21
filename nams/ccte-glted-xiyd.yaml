@@ -1,5 +1,6 @@
 model:
   id: ccte-glted-xiyd
+  type: BiochemicalAssay
   name: CCTE_GLTED_xIYD
   description: CCTE_GLTED_xIYD is a cell-free, single-readout assay that uses Xenopus (frog)
     iodotyrosine deiodinase (xIYD) enzyme from liver microsomes. Assay is based on iodide

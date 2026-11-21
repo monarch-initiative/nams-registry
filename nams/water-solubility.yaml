@@ -1,5 +1,6 @@
 model:
   id: water-solubility
+  type: PhysicochemicalAssay
   name: Water Solubility
 source_resources:
 - resource: namsnetwork

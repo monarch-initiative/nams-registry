@@ -1,5 +1,6 @@
 model:
   id: ccte-glted-xdio3
+  type: BiochemicalAssay
   name: CCTE_GLTED_xDIO3
   description: CCTE_GLTED_xDIO3 is a cell-free, single-readout assay designed to test the
     inhibitory activity of chemicals toward Xenopus (frog) iodothyronine Deiodinase Type 3

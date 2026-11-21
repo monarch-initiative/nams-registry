@@ -1,8 +1,7 @@
 model:
   id: the-kinetic-direct-peptide-reactivity-assay-kdpra
+  type: PeptideReactivityAssay
   name: The kinetic Direct Peptide Reactivity Assay (kDPRA)
-  # Untyped: NAMO has no class for an in chemico method (namo#55). A class
-  # for it is part of the NAMO work under nams-registry#110.
   description: >-
     A cell-free, in chemico assay for skin sensitization that extends the DPRA
     into a kinetic reading to assess potency, not just hazard. A test chemical

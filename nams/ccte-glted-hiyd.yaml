@@ -1,5 +1,6 @@
 model:
   id: ccte-glted-hiyd
+  type: BiochemicalAssay
   name: CCTE_GLTED_hIYD
   description: CCTE_GLTED_hIYD is a cell-free, single-readout assay that uses human iodotyrosine
     deiodinase (hIYD) enzyme produced with baculovirus-insect cell system. The assay is based

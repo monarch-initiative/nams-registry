@@ -1,5 +1,6 @@
 model:
   id: ccte-simmons-aur-rtpo
+  type: BiochemicalAssay
   name: CCTE_Simmons_AUR_rTPO
   description: CCTE_Simmons_AUR_rTPO is a biochemical, single-readout assay that uses microsomes
     from rat thyroid gland in a tissue-based cell-free assay. Measurements were taken 0.5

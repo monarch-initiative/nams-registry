@@ -1,5 +1,6 @@
 model:
   id: ccte-glted-htbg
+  type: BiochemicalAssay
   name: CCTE_GLTED_hTBG
   description: CCTE_GLTED_hTBG is a cell-free, single-readout assay designed to test the chemicals'
     ability to displace T4 from the human thyroxine-binding globulin (TBG) protein. TBG is

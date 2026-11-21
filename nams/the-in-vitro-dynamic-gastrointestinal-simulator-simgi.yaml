@@ -1,5 +1,6 @@
 model:
   id: the-in-vitro-dynamic-gastrointestinal-simulator-simgi
+  type: SimulatedFluidSystem
   name: The in vitro dynamic gastrointestinal simulator (simgi®)
 source_resources:
 - resource: namsnetwork

@@ -1,8 +1,7 @@
 model:
   id: the-amino-acid-derivative-reactivity-assay-adra
+  type: PeptideReactivityAssay
   name: The Amino Acid Derivative Reactivity Assay (ADRA)
-  # Untyped: NAMO has no class for an in chemico method (namo#55). A class
-  # for it is part of the NAMO work under nams-registry#110.
   description: >-
     A cell-free, in chemico assay for skin sensitization, developed from the
     DPRA to improve its sensitivity and reduce interference. In place of the

@@ -1,5 +1,6 @@
 model:
   id: ccte-simmons-gua-tpo
+  type: BiochemicalAssay
   name: CCTE_Simmons_GUA_TPO
   description: CCTE_Simmons_GUA_TPO is a biochemical, single-readout assay that uses microsomes
     from porcine thyroid gland in a tissue-based cell-free assay. Measurements were taken

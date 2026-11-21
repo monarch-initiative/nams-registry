@@ -1,5 +1,6 @@
 model:
   id: in-vitro-simulated-human-digestive-system-i
+  type: SimulatedFluidSystem
   name: In vitro simulated human digestive system I
 source_resources:
 - resource: namsnetwork

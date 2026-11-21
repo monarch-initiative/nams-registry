@@ -1,5 +1,6 @@
 model:
   id: ccte-glted-hdio1
+  type: BiochemicalAssay
   name: CCTE_GLTED_hDIO1
   description: CCTE_GLTED_hDIO1 is a cell-free, single-readout assay designed to test the
     inhibitory activity of chemicals toward human iodothyronine Deiodinase type 1 (DIO1) enzyme.

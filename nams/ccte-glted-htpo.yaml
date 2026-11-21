@@ -1,5 +1,6 @@
 model:
   id: ccte-glted-htpo
+  type: BiochemicalAssay
   name: CCTE_GLTED_hTPO
   description: CCTE_GLTED_hTPO is a cell-free, single-readout assay designed to test the inhibitory
     activity of chemicals toward human thyroperoxidase (TPO) protein. Uninhibited enzyme converts
