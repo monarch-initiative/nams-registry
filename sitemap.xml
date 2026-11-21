@@ -321,6 +321,10 @@
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/BiochemicalAssay/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/BiolinkEntity/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
@@ -342,6 +346,10 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/Cell/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/CellFreeSystem/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
@@ -665,6 +673,10 @@
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/PeptideReactivityAssay/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/PhenotypeEnum/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
@@ -674,6 +686,10 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/PhenotypicFeature/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/PhysicochemicalAssay/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
@@ -718,6 +734,10 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/SampleProcessingEnum/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/SimulatedFluidSystem/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
@@ -1277,6 +1297,10 @@
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/metabolic_activation_system/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/method/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
@@ -1525,6 +1549,14 @@
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/reaction_conditions/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/readout_method/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/real_time_data_sources/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
@@ -1698,6 +1730,10 @@
     </url>
     <url>
          <loc>https://monarch-initiative.github.io/nams-registry/nam-records/synonyms/</loc>
+         <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
+         <loc>https://monarch-initiative.github.io/nams-registry/nam-records/test_system_components/</loc>
          <lastmod>2026-11-21</lastmod>
     </url>
     <url>
