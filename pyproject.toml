@@ -74,7 +74,7 @@ fallback-version = "0.0.0"
 # The NAMO branch, tag or commit downloaded when there is no local NAMO
 # checkout (see scripts/link_namo.py). The NAMO_REF environment variable
 # overrides it.
-# NAMO main at 4a3d457. It includes namo#29, which binds NAMO's ontology enums
+# NAMO main at 292eb6a. It includes namo#29, which binds NAMO's ontology enums
 # with reachable_from; before #29, no enum could be checked against its
 # ontology. It also includes namo#46, which gives PBPKCompartmentEnum its
 # UTERUS and REST_OF_BODY values, and namo#47, which moves
@@ -90,7 +90,10 @@ fallback-version = "0.0.0"
 # in nams/ (a-j-mouse-methacholine-airway-hyperresponsiveness,
 # swiss-webster-mouse-rotarod-sensorimotor-assay) carry model references and
 # need it, since AnimalModel does not descend from NAMModel.
-ref = "4a3d457b20e6f07afd273879ddf5c293cef1321b"
+# It also includes namo#79 (for namo#55), which adds CellFreeSystem and its
+# subclasses BiochemicalAssay, PeptideReactivityAssay, SimulatedFluidSystem and
+# PhysicochemicalAssay, for in chemico and other cell-free methods.
+ref = "292eb6afe7b46775881b33a5e7543aa7c521ffa5"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
