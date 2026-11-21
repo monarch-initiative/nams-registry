@@ -129,6 +129,12 @@ just check-snippets --strict             # exit 1 on an unverified quote
 just deep-research --provider openscientist --input-file prompt.md \
   --output research/<stem>-deep-research-openscientist.md
 
+# A run on a researcher, team or organization, from a committed spec
+# (see research/README.md, "Running a research group"):
+just research-group-works carreras_puigvert      # its papers, from OpenAlex
+just research-group-prompt carreras_puigvert     # read before paying
+just research-group openscientist carreras_puigvert
+
 # A cheap end-to-end check that the recipe works; the mock provider is
 # off unless its own environment variable enables it:
 ENABLE_MOCK_PROVIDER=true just deep-research --provider mock "a test query"
@@ -171,13 +177,16 @@ is a lead, never a source.
 * [scripts/](scripts/) - scripts that fetch content from resources
   (`fetch_*.py`) and write NAM records from it (`write_*.py`), to be
   listed in the resource's `supporting_scripts`. Also `link_namo.py`,
-  which `just namo` runs.
+  which `just namo` runs, and `fetch_openalex_works.py` and
+  `research_group_vars.py`, which the `research-group` recipes run.
 * [projects/](projects/) - project pages for curation work that spans many
   records, such as the Complement-ARIE disease papers, with their review
   logs
 * [research/](research/) - deep-research reports, kept as provenance for
   the records they informed; a report is a lead, never a source (see its
   [README](research/README.md))
+* [templates/](templates/) - deep-research prompts, and one spec per
+  research group in `research_groups/`; `just research-group` runs them
 * [cache/](cache/) - ontology term lookups that `just test` checks NAM
   records against offline; `just validate-terms` adds to it (commit what
   it adds)
